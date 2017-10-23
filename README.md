@@ -45,12 +45,25 @@ Sobre el Curso
     * Eventos
     * Viajes
     * Festivos
+* Dias no lectivos:
+    * 01/11/2017
+    * 09/11/2017
+    * 10/11/2017
+    * 06/12/2017
+    * 07/12/2017
+    * 08/12/2017
+    * Navidad (25/12/2017 - 07/01/2018)
+    * Semana Santa (26/03/2018 - 30/03/2018)
+    * 30/04/2018
+    * 01/05/2018
+    * 02/05/2018
+    * 15/05/2018
 
 Teoría y Recursos
 =================
-Teoría | Recursos | Contenido
------------- | ------------- | -------------
-[Clase 1](teoria/dia1.md) | [Clase 1](recursos/dia1.md) | ¡Bienvenidos!
+Fecha | Teoría | Recursos | Contenido
+------------ | ------------ | ------------- | -------------
+25/10/2017 | [Clase 1](teoria/dia1.md) | [Clase 1](recursos/dia1.md) | Bienvenida
 
 Temario
 =================
