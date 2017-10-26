@@ -41,7 +41,7 @@
 **Trabajo efectivo**
 
 - [Clientes escritorio](https://mac.github.com)
-- [Consola (Cheat-sheet)](https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf)
+- [Consola (Cheat-sheet)](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
 - Repositorio
 - Tracking
 - Commits
@@ -631,7 +631,7 @@ git pull
 
 3. Preparamos nuestro commit (añadimos archivos y añadimos la información adicional)
  ```
-git add "ARCHIVO" 
+git add "ARCHIVO"
 git commit -m "MENSAJE..."
  ```
 
