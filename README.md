@@ -64,6 +64,7 @@ Teoría y Recursos
 Fecha | Teoría | Recursos | Contenido
 ------------ | ------------ | ------------- | -------------
 25/10/2017 | [Clase 1](teoria/dia1.md) | [Clase 1](recursos/dia1.md) | Bienvenida
+25/10/2017 | [Clase 2](teoria/dia2.md) | [Clase 2](recursos/dia2.md) | Github
 
 Temario
 =================
