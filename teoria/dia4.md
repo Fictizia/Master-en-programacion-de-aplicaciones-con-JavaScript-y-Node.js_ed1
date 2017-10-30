@@ -1,8 +1,10 @@
 # Clase 4
 
-### Nota
+### Recordatorios
 
 **[Issue Relevante](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/5)**
+
+**[Aountate a Slack!](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/1)**
 
 ### Ejercicios
 
