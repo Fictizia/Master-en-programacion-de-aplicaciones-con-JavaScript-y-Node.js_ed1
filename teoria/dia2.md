@@ -685,4 +685,4 @@ Recuerda que debes incluir este comando antes de tu próximo *git push*
 
 **2 -** Crea un [Gist](https://gist.github.com/) con el esqueleto de un index.html
 
-**3 -** Presentate en este [issue](https://github.com/Fictizia/Curso-In-Company-Liquid-Squad/issues/1)
+**3 -** Presentate en este [issue](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/1)
