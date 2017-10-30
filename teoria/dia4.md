@@ -1,5 +1,9 @@
 # Clase 4
 
+### Nota
+
+**[Issue Relevante](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/5)**
+
 ### Ejercicios
 
 **1 -** Diseña un programa que lea dos números y realice los siguientes cálculos:
