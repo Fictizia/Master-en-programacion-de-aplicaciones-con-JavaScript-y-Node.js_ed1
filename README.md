@@ -64,8 +64,9 @@ Teoría y Recursos
 Fecha | Teoría | Recursos | Contenido
 ------------ | ------------ | ------------- | -------------
 25/10/2017 | [Clase 1](teoria/dia1.md) | [Clase 1](recursos/dia1.md) | Bienvenida
-25/10/2017 | [Clase 2](teoria/dia2.md) | [Clase 2](recursos/dia2.md) | Github
-25/10/2017 | [Clase 3](teoria/dia3.md) | [Clase 3](recursos/dia3.md) | Practica de Github y Ginger Code
+26/10/2017 | [Clase 2](teoria/dia2.md) | [Clase 2](recursos/dia2.md) | Github
+27/10/2017 | [Clase 3](teoria/dia3.md) | [Clase 3](recursos/dia3.md) | Practica de Github y Ginger Code
+30/10/2017 | [Clase 4](teoria/dia4.md) | Clase 4 | Ejercicios con Ginger Code
 
 
 
