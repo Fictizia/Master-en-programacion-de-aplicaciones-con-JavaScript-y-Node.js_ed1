@@ -81,6 +81,18 @@ mostrar @numero
 7 - Diseña un programa que imprima la suma de los 50 primeros numeros pares y el total de números impares partiendo de un número dado por el usuario
 
     // Tu solución
+    
+    
+    pedir @numero
+repetir 50
+	si @numero%2==0
+		@sumanumero = @numero + @numero
+	si no
+    	mostrar @numero
+mostrar @sumanumero
+
+
+
 8 - Diseña un programa que cuente las veces que aparece una determinada letra en una frase que introduciremos por teclado.
 
     // Tu solución
