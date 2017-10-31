@@ -1,0 +1,213 @@
+1 - Diseña un programa que lea dos números y realice los siguientes cálculos:
+
+Valor de su suma
+Valor de su resta
+Valor de su division
+Valor de su producto
+
+    // Tu solución
+
+definir @numa = 6
+definir @numb = 3
+@suma = @numa + @numb
+@resta = @numa - @numb
+@multiplicar = @numa*@numb
+@dividir = @numa/@numb
+mostrar @suma
+mostrar @resta
+mostrar @multiplicar
+mostrar @dividir
+
+
+
+
+2 - Diseña un programa para calcular el porcentaje de hombres y mujeres en nuestro curso.
+
+Trucos:
+Calcular porcentajes (segmento*100)/total
+
+    // Tu solución
+
+definir @mujeres = 3
+definir @hombres = 5
+@total = @hombres+@mujeres
+@porcentajehombres = @hombres*100/@total
+@porcentajemujeres = @mujeres*100/@total
+mostrar "el porcentaje de hombres en el curso es de" + @porcentajehombres
+mostrar "el porcentaje de mujeres en el curso es de" + @porcentajemujeres
+
+
+
+3 - Diseña un programa que lea dos números y los compare. Como resultado esperamos que nos diga cual es mayor... o si son iguales.
+
+    // Tu solución
+
+definir @numa = 3
+definir @numb = 6
+si @numa > @numb
+mostrar @numa + "es el mayor"
+pero si @numb > @numa
+mostrar @numb + "es el mayor"
+si no
+mostrar "ambos números son iguales"
+
+
+
+
+4 - Diseña un programa que lea tres números distintos y nos diga cual de ellos es el mayor.
+
+    // Tu solución
+
+definir @numa = 2
+definir @numb = 5
+definir @numc = 3
+
+si @numa > @numb
+    si @numa > @numc
+        mostrar @numa + " es el mayor"
+    si @numc > @numa
+        mostrar @numc + " es el mayor"
+si no
+    si @numb > @numc
+        mostrar @numb + " es el mayor"
+    si @numc > @numb
+        mostrar @numc + " es el mayor"
+
+
+
+
+5 - Diseña un programa que siga el siguiente proceso:
+
+Pedir por teclado tres números.
+Si el primero es negativo, debe sumar los otros dos
+Si no multiplicará los tres numeros
+Mostrar el resultado final incluyendo una referencia a la operación realizada.
+
+    // Tu solución
+
+pedir @numa
+pedir @numb
+pedir @numc
+
+si @numa<0
+    @sumanum = @numb + @numc
+    mostrar "como el primer número es negativo sumamos los otros dos y el resultado es: " + @sumanum
+si no
+    @multiplicatodos = @numa * @numb * @numc
+    mostrar "como todos los números son positivos, multiplicamos los tres y el resultado es: " + @multiplicatodos
+
+
+
+6 - Diseña un algoritmo que aplique al precio de un producto un descuento cuando se den las siguientes caracteristicas.
+
+Se aplica un 25% cuando:
+Estamos en los meses de invierno
+Y no es viernes o fin de semana.
+
+    // Tu solución
+
+pedir @cantidad
+pedir @mes
+pedir @dia
+@cantidadcondescuento = @cantidad*25/100
+
+si @mes == "enero" O "febrero" O "noviembre" O "diciembre"
+    si @dia !== "viernes" O "sábado" O "domingo"
+        mostrar "felicidades, tienes descuento. El precio con descuento es de: " + @cantidadcondescuento
+    si no
+        mostrar "no tienes descuento"
+si no
+    mostrar "no tienes descuento"
+
+
+7 - Diseña un algoritmo que al introducir un numero por teclado. Que nos diga si es positivo o negativo.
+
+    // Tu solución
+
+
+
+    pedir @numero
+
+si @numero >= 0
+    mostrar @numero + "es positivo"
+si no
+    mostrar @numero + "es negativo"
+
+
+8 - Diseña un algoritmo que al introducir un numero por teclado. Que nos diga si es par o impar.
+
+    // Tu solución
+
+pedir @numero
+
+si @numero%2=0
+    mostrar "es par"
+si no
+    mostrar "es impar"
+
+9 - Diseña un algoritmo para identificar a los clientes autorizados a entrar a nuestro sistema.
+
+Características:
+La palabra clave es "Fictizia mola mucho"
+Solo existen tres intentos
+Si se pasan los tres intentos. Se despliega un mensaje informativo.
+   
+    // Tu solución
+
+@clave = "Fictizia mola mucho"
+
+@contador = 0
+repetir 3
+    @contador = @contador + 1
+    pedir @claveusuario
+    si @claveusuario = @clave
+        mostrar "hola"
+    si no
+        @contador = @contador + 1
+
+
+
+10 - Diseña un algoritmo que confirme si una fecha es valida y además devuelva la fecha en dos formatos diferentes.
+
+Características:
+El usuario introduce tres números (día, mes, año)
+Validar la fecha. En caso de error incluir un mensaje informativo.
+Después de validar, devolvemos la fecha en formato DD/MM/AAAA
+Convertimos el número del mes, en el nombre del mes real y devolvemos la fecha en el siguiente formato ( DD de MES de AAAA)
+    
+    // Tu solución
+
+    pedir @dia
+pedir @mes
+pedir @year
+@fecha = @dia + "/" + @mes+ "/" +@year
+
+si @dia>0 Y @dia<31 Y @mes>0 Y @mes<13 Y @year>1990 Y @year<2018
+    mostrar "la fecha es " + @fecha
+      si @mes == 1
+          mostrar @dia + "enero" + @year
+      si @mes == 2
+          mostrar @dia + "febrero" + @year
+      si @mes == 3
+          mostrar @dia + "marzo" + @year
+      si @mes == 4
+          mostrar @dia + "abril" + @year
+      si @mes == 5
+          mostrar @dia + "mayo" + @year
+      si @mes == 6
+          mostrar @dia + "junio" + @year
+      si @mes == 7
+          mostrar @dia + "julio" + @year
+      si @mes == 8
+          mostrar @dia + "agosto" + @year
+      si @mes == 9
+          mostrar @dia + "septiembre" + @year
+      si @mes == 10
+          mostrar @dia + "octubre" + @year
+      si @mes == 11
+          mostrar @dia + "noviembre" + @year
+      si @mes == 12
+          mostrar @dia + "diciembre" + @year
+        
+    si no
+    mostrar "los datos son erróneos"
