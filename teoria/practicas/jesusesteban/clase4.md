@@ -34,6 +34,7 @@ mostrar @division
   - Calcular porcentajes (segmento*100)/total
 ```
     // Tu solución
+
 @hombres = 5
 @mujeres = 3
 @total = @hombres + @mujeres
