@@ -16,12 +16,16 @@
 
 @numero = 5
 
-@operacion = @numero + @numero
-@operacion = @numero - @numero
-@operacion = @numero * @numero
-@operacion = @numero / @numero
+@suma = @numero + @numero
+@resta = @numero - @numero
+@multiplicacion = @numero * @numero
+@division = @numero / @numero
 
-mostrar @operacion
+mostrar @suma
+mostrar @resta
+mostrar @multiplicacion
+mostrar @division
+
 
 ```
 
