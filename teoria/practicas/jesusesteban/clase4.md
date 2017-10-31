@@ -48,3 +48,18 @@ mostrar @operacion
 
 ```
 
+**3 -** Diseña un programa que lea dos números y los compare. Como resultado esperamos que nos diga cual es mayor... o si son iguales.
+```
+    // Tu solución
+
+@numero1 = 10
+@numero2 = 5
+
+
+si @numero1 > @numero2
+  mostrar "Mayor"
+si no
+  mostrar "Menor"
+
+      
+```
