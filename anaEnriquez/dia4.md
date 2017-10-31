@@ -86,7 +86,16 @@
 	- Estamos en los meses de invierno
 	- Y no es viernes o fin de semana.
 ```
-    // Tu solución
+    // solo deberia haber 1 variable, falta función precargada date() para saber que dia es hoy
+    //validador typeof
+    procedimiento #discount @price y @day y @month y @dayWeek
+    	si @month == 12 AND @day >= 21 OR @month == 3 AND @day <= 20 OR @month == 1 OR @month == 2
+    		si @dayWeek <= 4
+    			// no se pueden usar parentesis asi que dividimos la operacion en 2
+    			definir @discountPhase1 = @price * 25
+    			definir @discount = @discountPhase1 / 100
+    			definir @appliedPrice = @price - @discount
+    			mostrar "Rebaja aplicada!El precio actualiado es de " + @appliedPrice
 ```
 
 7 - Diseña un algoritmo que al introducir un numero por teclado. Que nos diga si es positivo o negativo.
