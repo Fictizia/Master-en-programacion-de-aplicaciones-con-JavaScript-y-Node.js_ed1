@@ -148,5 +148,31 @@
 	- Después de validar, devolvemos la fecha en formato DD/MM/AAAA
 	- Convertimos el número del mes, en el nombre del mes real y devolvemos la fecha en el siguiente formato ( DD de MES de AAAA)
 ```
-    // Tu solución
+    repetir si @data<1
+	    pedir @day
+	    pedir @month
+	    pedir @year
+        @data = 1
+	    @defaultError = "Por favor, introduce una fecha correcta."
+	    si @day > 31
+    		@data = 0
+    		mostrar @defaultError + " No existen días superiores a 31"
+    	pero si @month > 12
+    		@data = 0
+    		mostrar @defaultError + " No existen meses superiores a 12"
+    	pero si @day > 30 Y (@month == 11 OR @month == 4 OR @month == 6 OR @month == 9)
+            @data = 0
+            mostrar @defaultError + " No existen días mayores a 30 en ese mes"
+        pero si @day > 28 Y @month == 2
+            @data = 0
+            mostrar @defaultError + " En febrero sólo hay 28 días"
+    	pero si @day > 31 Y (@month == 1 OR @month == 3 OR @month == 5 OR @month == 7 OR @month == 8 OR @month == 10 OR @month == 12)
+            @data = 0
+            mostrar @defaultError + " No existen días mayores a 31 en ese mes"
+    	//falta un pero si year no tiene 4 cifras...
+    	pero si data == 1
+    		// habria que mirar si dia y mes son 1 digito para añadir un 0 a la izquierda
+    		mostrar "La fecha introducida es " + @day + "/" + @month + "/" + @year
+    		@meses = "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            mostrar @day + " de " + @meses@month + " de " + @year
 ```
