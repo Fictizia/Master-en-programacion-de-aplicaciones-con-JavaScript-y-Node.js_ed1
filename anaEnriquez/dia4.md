@@ -96,16 +96,30 @@
     			definir @discount = @discountPhase1 / 100
     			definir @appliedPrice = @price - @discount
     			mostrar "Rebaja aplicada!El precio actualiado es de " + @appliedPrice
+    		si no
+    		    mostrar "Hoy no amigo"
+    	si no
+    	    mostrar "Hoy no amigo"
+    si no
+        mostrar "Hoy no amigo"
 ```
 
 7 - Diseña un algoritmo que al introducir un numero por teclado. Que nos diga si es positivo o negativo.
 ```
-    // Tu solución
+    pedir @numero
+    si @numero < 0
+	    mostrar @numero + " es un número negativo"
+    si no
+	    mostrar @numero + " es un número positivo"
 ```
 
 8 - Diseña un algoritmo que al  introducir un numero por teclado. Que nos diga si es par o impar.
 ```
-    // Tu solución
+    pedir @numero
+    si @numero % 2 == 0
+	    mostrar @numero + " es un número par"
+    si no
+	    mostrar @numero + " es un número impar"
 ```
 
 9 -  Diseña un algoritmo para identificar a los clientes autorizados a entrar a nuestro sistema.
@@ -114,7 +128,17 @@
 	- Solo existen tres intentos
 	- Si se pasan los tres intentos. Se despliega un mensaje informativo.
 ```
-    // Tu solución
+	pedir @masterpass
+    definir @count = 0
+	repetir si @count < 3
+		si @masterpass === "Fictizia mola mucho"
+			mostrar "Acceso concedido, su silla ejectará en 10 segundos para llevarle a la guarida secreta..."
+		si no
+        	@count = @count + 1
+			@intentos = 3 - @count
+			mostrar "Acceso denegado, le quedan " + @intentos + " más antes de que la pasma vaya a su dirección IP"
+	si count == 3
+	    mostrar "Sayonara baby"
 ```
 
 10 - Diseña un algoritmo que confirme si una fecha es valida y además devuelva la fecha en dos formatos diferentes.
