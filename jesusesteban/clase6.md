@@ -49,11 +49,39 @@ console.assert(x, "\"x\" es igual a \"False\"");
 **4 -** Agrupa cada tipo de mensaje y añade un contador de tiempo por cada grupo.
 ```javascript
     // Tu solución
+
+  console.time();
+    console.log('%c Jesús ', 'background: #CCC; color: #FFF; text-transform: uppercase;');
+  console.timeEnd();
+
+
+  console.time();
+    console.info('%c Jesús ', 'background: #f0f0f0; color: #FFF');
+  console.timeEnd();
+
+
+  console.time();
+    console.warn('%c Jesús ', 'background: #000; color: red;');
+  console.timeEnd();
+
 ```
 
 **5 -** Crea una tabla usando la consola para mostrar el nombre de tus compañeros y el puesto que ocupa en la clase.
 ```javascript
     // Tu solución
+
+var alumnos =[
+    {nombre: "Vicky", puesto: 1}, 
+    {nombre: "Felix", puesto: 2}, 
+    {nombre: "Victor", puesto: 3}, 
+    {nombre: "Iñigo", puesto: 4}, 
+    {nombre: "Elena", puesto: 5}, 
+    {nombre: "Ana", puesto: 6}, 
+    {nombre: "David", puesto: 7}, 
+    {nombre: "Jesus", puesto: 8}
+];
+
+
 ```
 
 
