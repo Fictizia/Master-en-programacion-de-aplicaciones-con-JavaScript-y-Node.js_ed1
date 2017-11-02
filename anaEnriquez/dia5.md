@@ -80,17 +80,45 @@
 
 **7 -** Diseña un programa que imprima la suma de los 50 primeros numeros pares y el total de números impares partiendo de un número dado por el usuario
 ```
-    // Tu solución
+    var number = promt("Introduce un número");
+    var iterations = 50;
+    var odd = 0;
+    var sum = number;
+    while(iterations >= 0){
+      if(number%2 == 0){
+        sum = sum +=  number;
+        console.log(sum);
+      } else {
+        odd++;
+        }
+      number++;
+      iterations --;
+    }
+    console.log("Hay " + odd + " números impares");
 ```
 
 **8 -** Diseña un programa que cuente las veces que aparece una determinada letra en una frase que introduciremos por teclado.
 ```
-    // Tu solución
+    var string = prompt("Dime una frase y contaremos la ocurrencia de una letra");
+    var letter = prompt("Ahora dime la letra que quieres contar");
+    function letterCount() {
+      var count = 0;
+      for (i = 0; i < string.length; i++) {
+        if (string[i] == letter) {
+          count++;
+        }
+      } 
+      console.log("La letra " + letter + " aparece " + count + " veces en la frase " + string);
+    }
+    letterCount();
 ```
 
 **9 -** Diseña un programa que simula el lanzamiento de una moneda al aire e imprimir si ha salido cara o cruz.
 ```
-    // Tu solución
+    function coinDrop() {
+        console.log((Math.floor(Math.random()*2) === 0) ? "cara" : 'cruz');
+    }
+    coinDrop();
 ```
 
 **10 -** Diseña un programa que  simula cien tiradas de dos dados y contar las veces que entre los dos suman 10.
