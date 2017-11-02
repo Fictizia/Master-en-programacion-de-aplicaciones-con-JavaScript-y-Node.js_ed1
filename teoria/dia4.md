@@ -72,7 +72,26 @@ FinProceso
 
 **3 -** Diseña un programa que lea dos números y los compare. Como resultado esperamos que nos diga cual es mayor... o si son iguales.
 ```
-    // Tu solución
+Proceso compararNumeros
+	Escribir "El primer número:"
+	Leer valor1
+	
+	Escribir "El segundo valor:"
+	Leer valor2
+	
+	Si valor1 > valor2 Entonces
+		Escribir valor1, " es mayor"
+	Fin Si
+	
+	Si valor1 < valor2 Entonces
+		Escribir valor2, " es mayor"
+	Fin Si
+	
+	Si valor1 = valor2 Entonces
+		Escribir "son iguales"
+	Fin Si
+	
+FinProceso
 ```
 
 **4 -** Diseña un programa que lea tres números distintos y nos diga cual de ellos es el mayor.
