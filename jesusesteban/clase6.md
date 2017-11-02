@@ -50,19 +50,16 @@ console.assert(x, "\"x\" es igual a \"False\"");
 ```javascript
     // Tu solución
 
-  console.time();
-    console.log('%c Jesús ', 'background: #CCC; color: #FFF; text-transform: uppercase;');
-  console.timeEnd();
+var miNombre = "Jesús";
+ 
+  console.group("bucleFor");
+     for(var i=2; i>0; i--){
+      console.log(miNombre);
+      console.info(miNombre);
+      console.warn(miNombre);
+    }
+  console.groupEnd();
 
-
-  console.time();
-    console.info('%c Jesús ', 'background: #f0f0f0; color: #FFF');
-  console.timeEnd();
-
-
-  console.time();
-    console.warn('%c Jesús ', 'background: #000; color: red;');
-  console.timeEnd();
 
 ```
 
