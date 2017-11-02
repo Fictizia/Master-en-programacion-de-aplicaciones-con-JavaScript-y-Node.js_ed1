@@ -109,7 +109,7 @@ Valor de su producto
 // Estamos en los meses de invierno
 // Y no es viernes o fin de semana.
 //     // Tu solución
-function productSales(price, day, month) {
+function productSales(price) {
     var date = new Date();
     var month = date.getMonth();
     var day = date.getDay();
