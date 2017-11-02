@@ -80,7 +80,7 @@ var alumnos =[
     {nombre: "David", puesto: 7}, 
     {nombre: "Jesus", puesto: 8}
 ];
-
+console.table(alumnos);
 
 ```
 
