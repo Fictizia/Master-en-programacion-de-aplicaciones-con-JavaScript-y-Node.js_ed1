@@ -68,6 +68,7 @@ Fecha | Teoría | Recursos | Contenido
 27/10/2017 | [Clase 3](teoria/dia3.md) | [Clase 3](recursos/dia3.md) | Práctica de Github y Ginger Code
 30/10/2017 | [Clase 4](teoria/dia4.md) | Clase 4 | Ejercicios con Ginger Code
 31/10/2017 | [Clase 5](teoria/dia5.md) | Clase 5 | Ejercicios con Ginger Code
+02/11/2017 | [Clase 6](teoria/dia6.md) | [Clase 6](recursos/dia6.md) | Consola, variables, matemáticas, interacción con el usuario...
 
 
 Temario
