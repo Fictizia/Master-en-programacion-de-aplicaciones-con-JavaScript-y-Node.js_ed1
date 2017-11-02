@@ -108,15 +108,48 @@ Se aplica un 25% cuando:
 Estamos en los meses de invierno
 Y no es viernes o fin de semana.
 ```
+pedir @elMes
+pedir @elDia
 
+@lista = diciembre Y enero Y febrero  Y marzo
+@lista2 = lunes, martes, miercoles, jueves
+por cada @mes en @lista
+  si @mes = @elMes
+    por cada @dia en @lista2
+      si @dia = @elDia
+        mostrar 'Tienes descuento del 25%'
+      si no
+        mostrar 'No hay descuento hoy'
 
+ERROR EN LISTA
 ```
 
 ### EJERCICIO 7
 7 - Diseña un algoritmo que al introducir un numero por teclado. Que nos diga si es positivo o negativo.
 
+```
+pedir @numero
+
+si @numero < 0
+  mostrar 'Tu número es negativo'
+si no
+  mostrar 'Tu número es positivo'
+
+```
+
 ### EJERCICIO 8
 8 - Diseña un algoritmo que al introducir un numero por teclado. Que nos diga si es par o impar.
+
+```
+var numero = prompt('Dame un número por favor');
+
+if (numero % 2 === 0) {
+  console.log('El número que me has dado es par');
+} else {
+  console.log('El número que mes has dado es impar');
+}
+
+```
 
 ### EJERCICIO 9
 9 - Diseña un algoritmo para identificar a los clientes autorizados a entrar a nuestro sistema.
@@ -141,26 +174,34 @@ Convertimos el número del mes, en el nombre del mes real y devolvemos la fecha 
 ## CODIGO DE GINGER CODE
 ```
 // Esto es un comentario
+
 // Mostrar información:
 mostrar "Hola Mundo!!"
+
 // Declarar variables
 definir @numero1 = 1
+
 // Asignar valor a variable
 @numero2 = 2
 @texto = "Un texto"
+
 // Operaciones sencillas
 @union = @texto + " y mas texto"
 @operacion = @numero1 * @numero2
 @condicion = @numero1 >= @numero2
+
 // Operaciones en versión texto natural
 @operacion = @numero1 multiplicado por @numero2
 @condicion = @numero1 es mayor o igual que @numero2
+
 // Listas (Arrays)
 @lista = 1 y 2 y 3
 @lista2 = 1,2,3
+
 // Prompt, solicitar dato al usuario
 pedir @nombre
-// Diccionarios, objetos o structuras
+
+// Diccionarios, objetos o estructuras
 @trabajador
 	@nombre = @nombre
 	@id = 123456
