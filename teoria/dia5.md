@@ -141,7 +141,20 @@
 
 **5 -** Diseña un programa que imprima los numeros pares entre 0 y 100.
 ```
-    // Tu solución
+	Proceso contadorPares
+		
+		controlador = 2
+		
+		Escribir "Empieza la cuenta!"
+		
+		Mientras controlador <= 100 Hacer
+			Escribir controlador
+			controlador = controlador +2
+		Fin Mientras
+		
+		Escribir "Terminó la cuenta mágica..."
+		
+	FinProceso 
 ```
 
 **6 -** Diseña un programa que imprima los números impares entre un número dado por el usuario y los siguientes 50 números.
