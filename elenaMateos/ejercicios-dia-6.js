@@ -44,3 +44,46 @@ console.error('%c Elena ala! ya lo has roto XD', 'color: white; background-color
 console.time();
 console.log('%c Elena está todo ok', 'color: white; background-color: #126e03');
 console.timeEnd();
+
+console.time();
+console.warn('%c Elena que se te está liando pero no es la muerte', 'color: white; background-color: #eb9412');
+console.timeEnd();
+
+console.time();
+console.error('%c Elena ala! ya lo has roto XD', 'color: white; background-color:#d60404');
+console.timeEnd();
+
+//5 - Crea una tabla usando la consola para mostrar el nombre de tus compañeros y el puesto que ocupa en la clase.
+
+var clase = [
+  {
+    nombre: 'Vicky',
+    puesto: 1
+  },
+  {
+    nombre: 'Ana Enriquez' ,
+    puesto: 6
+  },
+  {
+    nombre: 'David',
+    puesto: 7
+  },
+  {
+    nombre: 'Felix Grau',
+    puesto: 2
+  },
+  {
+    nombre: 'Iñigo',
+    puesto: 3
+  },
+  {
+    nombre: 'Jesus Esteban',
+    puesto: 8
+  },
+  {
+    nombre: 'Victor',
+    puesto: 4
+  },
+]
+
+console.table(clase, 'nombre', 'puesto');
