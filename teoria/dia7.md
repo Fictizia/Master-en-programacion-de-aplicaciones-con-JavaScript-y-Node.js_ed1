@@ -3,7 +3,6 @@
 ### Evento: Maker Faire Madrid
 
 ![img](https://i1.wp.com/madrid.makerfaire.com/wp-content/uploads/sites/157/2017/07/Madrid_MMF_logo.png?fit=750%2C750&strip=all)
-https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/13
 
 **[Info y entradas](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/13)**
 
