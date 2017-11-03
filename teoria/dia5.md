@@ -105,7 +105,20 @@
 
 **3 -** Diseña un programa que imprima los numeros del 1 al 100.
 ```
-    // Tu solución
+	Proceso contadorPositivo
+		
+		controlador = 1
+		
+		Escribir "Empieza la cuenta!"
+		
+		Mientras controlador <= 100 Hacer
+			Escribir controlador
+			controlador = controlador +1
+		Fin Mientras
+		
+		Escribir "Terminó la cuenta mágica..."
+		
+	FinProceso
 ```
 
 **4 -** Diseña un programa que imprima los numeros del 100 al 0.
