@@ -219,7 +219,30 @@
 
 **8 -** Diseña un programa que cuente las veces que aparece una determinada letra en una frase que introduciremos por teclado.
 ```
-    // Tu solución
+	Proceso cuantasVeces
+		Escribir "Dame una letra:"
+		Leer letra
+		
+		Escribir "Dame un texto:"
+		Leer texto
+		
+		controlador <- 0
+		longitudTexto <- Longitud(texto)
+		totalVeces <- 0
+		
+		Mientras controlador <= longitudTexto Hacer
+			letraActual <- SubCadena(texto,controlador,controlador)
+			controlador <- controlador + 1
+			
+			// Escribir "letra actual .... " letraActual
+			Si letraActual = letra Entonces
+				totalVeces = totalVeces +1
+			Fin Si
+			
+		Fin Mientras
+		
+		Escribir letra "se ha repetido un total de " totalVeces
+	FinProceso
 ```
 
 **9 -** Diseña un programa que simula el lanzamiento de una moneda al aire e imprimir si ha salido cara o cruz.
