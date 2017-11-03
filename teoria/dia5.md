@@ -187,7 +187,34 @@
 
 **7 -** Diseña un programa que imprima la suma de los 50 primeros numeros pares y el total de números impares partiendo de un número dado por el usuario
 ```
-    // Tu solución
+ 	Proceso contadorEspecial
+ 		Escribir "Dame un número:"
+ 		Leer numero
+ 		
+ 		controlador = 1
+ 		Totalimpares = 0
+ 		totalImpares = 0
+ 		
+ 		Escribir "Empieza la cuenta!"
+ 		
+ 		Mientras controlador <= 50 Hacer
+ 			
+ 			Si numero % 2 = 0 Entonces
+ 				controlador <- controlador + 1
+ 				totalPares<- totalPares + numero
+ 				numero <- numero + 1
+ 			Sino
+ 				totalImpares<- totalImpares + 1
+ 				numero <- numero + 1
+ 			Fin Si
+ 			
+ 		Fin Mientras
+ 		
+ 		Escribir "Total de suma de pares ", totalPares
+ 		Escribir "Total de impares ", totalImpares
+ 		Escribir "Terminó la cuenta mágica..."
+ 		
+ 	FinProceso
 ```
 
 **8 -** Diseña un programa que cuente las veces que aparece una determinada letra en una frase que introduciremos por teclado.
