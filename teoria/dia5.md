@@ -85,7 +85,22 @@
 	- Tiene que ser divisible entre 4 y no tiene que ser divisible entre 100
 	- O puede ser divisble entre 100 y entre 400
 ```
-    // Tu solución
+	Proceso esBisiesto
+		
+		Escribir "Dime el Año:"
+		Leer year
+		
+		Si year % 4 = 0 & year % 100 <> 0 Entonces
+			Escribir "Amigo, el año " year " es bisiesto!"
+		Sino
+			Si year % 400 = 0 & year % 100 = 0 Entonces
+				Escribir "Amigo, el año " year " es bisiesto!"
+			Sino
+				Escribir "Amigo, el año " year " NO es bisiesto!"
+			Fin Si
+		Fin Si
+		
+	FinProceso
 ```
 
 **3 -** Diseña un programa que imprima los numeros del 1 al 100.
