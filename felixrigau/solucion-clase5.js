@@ -30,7 +30,8 @@ function toConvertToRomanNumerals() {
     if (tens) {
 
     }
-
+    
+    //Obtener el número romano de las decenas 
     if (units == 4 || units == 9) {
         if (units == 4) {
             units = one + five;
@@ -61,6 +62,7 @@ function toConvertToRomanNumerals() {
         units = "";
     }
 
+    //Obtener el número romano de las unidades 
     if (typeof tens == "number") {
         if (tens%5 == 0) {
             tens = fifty;
