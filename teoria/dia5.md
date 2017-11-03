@@ -159,7 +159,30 @@
 
 **6 -** Diseña un programa que imprima los números impares entre un número dado por el usuario y los siguientes 50 números.
 ```
-    // Tu solución
+	Proceso contador50Impares
+		Escribir "Dame un número:"
+		Leer numero
+		
+		controlador = 1
+		
+		Escribir "Empieza la cuenta!"
+		
+		Mientras controlador <= 50 Hacer
+			
+			Si numero % 2 = 0 Entonces
+				numero <- numero + 1
+				controlador <- controlador + 1
+			Sino
+				Escribir numero
+				controlador <- controlador + 1
+				numero <- numero + 1
+			Fin Si
+			
+		Fin Mientras
+		
+		Escribir "Terminó la cuenta mágica..."
+		
+	FinProceso
 ```
 
 **7 -** Diseña un programa que imprima la suma de los 50 primeros numeros pares y el total de números impares partiendo de un número dado por el usuario
