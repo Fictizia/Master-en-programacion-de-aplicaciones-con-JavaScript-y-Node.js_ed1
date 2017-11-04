@@ -1,5 +1,12 @@
 # Clase 6
 
+### Evento: Cloud Fest 2017
+
+![img](https://cloudfestmad.firebaseapp.com/images/banners/banner.png)
+
+**[Info y entradas](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/12)**
+
+
 ## Proyecto personal
 
 **Funcionamiento:**
