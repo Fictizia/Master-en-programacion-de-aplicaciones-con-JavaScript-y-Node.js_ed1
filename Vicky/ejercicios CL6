@@ -59,3 +59,33 @@ var alumnos = [
 
 console.table(alumnos);
 
+
+
+1 - Vamos a solicitar la colaboración del usuario para lograr nuestros objetivos:
+
+Objetivos:
+
+Captura el nombre del usuario usando prompt
+Pregunta al usuario si desea "comprobar lo rápido que funciona su navegador".
+En caso afirmativo imprimiremos el nombre del usuario por consola aplicandole estilos y calculando el tiempo que tarda en realizar la operación
+En caso negativo mostraremos un alert informativo.
+Versión 1:
+
+    // Tu solución
+
+var user = prompt("Indica tu nombre");
+var speed = confirm("¿Quieres saber lo rápido que funciona tu navegador?");
+if (!speed) {
+  console.log("Oooh... tu te lo pierdes");
+	}
+  else {
+	console.time("name");
+	console.log('%c %s','background-color:blue; color:white;font-size:20px; border-radius:5px;', user);
+	console.timeEnd("name");
+	console.time("name");
+	console.warn('%c %s','background-color:lime; color:white;font-size:30px; border-radius:5px;', user);
+	console.timeEnd("name");
+	console.time("name");
+	console.info('%c %s','background-color:lavender; color:white;font-size:20px; font-weight:bolder; border-radius:5px;', user);
+	console.timeEnd("name");
+ 	 }
