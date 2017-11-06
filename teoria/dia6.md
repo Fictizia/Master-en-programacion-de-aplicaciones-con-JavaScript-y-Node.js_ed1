@@ -236,7 +236,23 @@ Formato | Descripción
 
 **5 -** Crea una tabla usando la consola para mostrar el nombre de tus compañeros y el puesto que ocupa en la clase.
 ```javascript
-    // Tu solución
+
+	function magicNumber(min, max){
+		return Math.floor(Math.random() * (max - min)) + min
+	}
+
+    var alumnos = [
+	     { nombre: "Felix", puesto: magicNumber(1, 20) },
+	     { nombre: "Jesus", puesto: magicNumber(1, 20) },
+	     { nombre: "Ana", puesto: magicNumber(1, 20) },
+	     { nombre: "David", puesto: magicNumber(1, 20) },
+	     { nombre: "Elena", puesto: magicNumber(1, 20) },
+	     { nombre: "Iñigo", puesto: magicNumber(1, 20) },
+	     { nombre: "Vicky", puesto: magicNumber(1, 20) },
+	     { nombre: "Victor", puesto: magicNumber(1, 20) }
+	 ];
+	 
+	 console.table(alumnos);
 ```
 
 
