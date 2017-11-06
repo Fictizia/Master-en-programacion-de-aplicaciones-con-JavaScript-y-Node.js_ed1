@@ -1,0 +1,32 @@
+1 - Diseña un algoritmo que lea dos números y realice los siguientes cálculos:
+
+Valor de su suma
+Valor de su resta
+Valor de su division
+Valor de su producto
+    // Tu solución
+
+
+
+var numa = prompt("indica un número");
+var numb = prompt("Indica otro número");
+console.log("la suma de ambos números es de " + (numa+numb));
+console.log("la resta de los dos números es de " + (numa-numb));
+console.log(numa+" entre "+numb + " es " + (numa / numb));
+console.log("si multiplicamos "+ numa +" y "+ numb + "el resultado es de " +(numa * numb));
+
+
+2 - Diseña un algoritmo para calcular el porcentaje de hombres y mujeres en nuestro curso.
+
+Trucos:
+Calcular porcentajes (segmento*100)/total
+
+// Tu solución
+
+
+var hombres = 5;
+var mujeres = 3;
+var porcentajehombres = (hombres*100)/(hombres+mujeres);
+var porcentajemujeres = (mujeres*100)/(hombres+mujeres);
+console.log("el porcentaje de hombres es de "+ porcentajehombres);
+console.log("el porcentaje de mujeres es de " + porcentajemujeres);

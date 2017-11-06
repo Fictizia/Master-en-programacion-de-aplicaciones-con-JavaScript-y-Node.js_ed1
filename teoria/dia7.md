@@ -3,7 +3,6 @@
 ### Evento: Maker Faire Madrid
 
 ![img](https://i1.wp.com/madrid.makerfaire.com/wp-content/uploads/sites/157/2017/07/Madrid_MMF_logo.png?fit=750%2C750&strip=all)
-https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/13
 
 **[Info y entradas](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/13)**
 
@@ -145,7 +144,14 @@ Otras palabras reservadas en modo estricto:
 - Valor de su producto
 
 ```javascript
-    // Tu solución
+	function calculosVarios(valor1, valor2){
+		console.info("El valor de la suma es:", valor1+valor2);
+		console.info("El valor de la resta es:",valor1-valor2);
+		console.info("El valor de la división es:", valor1/valor2);
+		console.info("El valor de la división es:", valor1*valor2)
+	};
+	
+	calculosVarios(5,5);
 ```
 
 **2 -** Diseña un algoritmo para calcular el porcentaje de hombres y mujeres en nuestro curso.
@@ -153,7 +159,21 @@ Otras palabras reservadas en modo estricto:
 	- Calcular porcentajes (segmento*100)/total
 
 ```javascript
-    // Tu solución
+	function porcentajeAlumnos(totalHombres, totalMujeres){
+		var totalAlumnos = totalHombres + totalMujeres;
+		var porcentajeMujeres = (totalMujeres*100)/totalAlumnos;
+		var porcentajeHombres = (totalHombres*100)/totalAlumnos;
+		
+		console.info("El total de alumnos es:", totalAlumnos)
+		
+		console.log("El total de mujeres es:", totalMujeres);
+		console.info("El % de mujeres es:", porcentajeMujeres);
+		
+		console.log("El total de hombres es:", totalHombres);
+		console.info("El % de hombres es:", porcentajeHombres);
+	};
+	
+	porcentajeAlumnos(5,3);
 ```
 
 
