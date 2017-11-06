@@ -144,7 +144,14 @@ Otras palabras reservadas en modo estricto:
 - Valor de su producto
 
 ```javascript
-    // Tu solución
+	function calculosVarios(valor1, valor2){
+		console.info("El valor de la suma es:", valor1+valor2);
+		console.info("El valor de la resta es:",valor1-valor2);
+		console.info("El valor de la división es:", valor1/valor2);
+		console.info("El valor de la división es:", valor1*valor2)
+	};
+	
+	calculosVarios(5,5);
 ```
 
 **2 -** Diseña un algoritmo para calcular el porcentaje de hombres y mujeres en nuestro curso.
