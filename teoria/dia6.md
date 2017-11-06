@@ -176,7 +176,8 @@ Formato | Descripción
 
 **1 -** Utiliza .assert para controlar cuando se muestra tu nombre por consola.
 ```javascript
-    // Tu solución
+	var controlador = false;
+	console.assert(controlador,  "Hola, yo soy Ulises Gascón");
 ```
 
 **2 -** Crea un script que nos permita calcular el tiempo que se necesita para realizar la siguientes acciones.
