@@ -509,16 +509,80 @@ function era3 () {
 
 ### Ejercicios
 
-**1 -** Vamos a solicitar la colaboración del usuario para lograr nuestros objetivos:
+**6 -** Vamos a solicitar la colaboración del usuario para lograr nuestros objetivos:
 - Objetivos:
 	-  Captura el nombre del usuario usando prompt
 	-  Pregunta al usuario si desea *"comprobar lo rápido que funciona su navegador"*.
 	-  En caso afirmativo imprimiremos el nombre del usuario por consola aplicandole estilos y calculando el tiempo que tarda en realizar la operación
     - En caso negativo mostraremos un *alert* informativo.
 
+
 - Versión 1:
 ```javascript
-    // Tu solución
+	var usuario = prompt("¿Quien eres?");
+
+	var respuesta = confirm("Bienvenido "+usuario+", ¿Deseas ver lo rápido que funciona tu navegador?");
+	if (respuesta === true) {
+	
+	    // console.log
+	    console.group("grupo console.log");
+	    console.time("tiempo grupo console.log");
+	    console.log("%c %s", "background: black; color: #FFF; font-size:20px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.log");
+	    console.groupEnd();
+	
+	    // console.info
+	    console.group("grupo console.info");
+	    console.time("tiempo grupo console.info");
+	    console.info("%c %s", "background: #3EBDFF; color: #FFF; font-size:20px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.info");
+	    console.groupEnd();
+	
+	    // console.warn
+	    console.group("grupo console.warn");
+	    console.time("tiempo grupo console.warn");
+	    console.warn("%c %s", "background: #FFAA00; color: #FFF; font-size:22px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.warn");
+	    console.groupEnd();
+	
+	} else {
+	    alert(usuario+" no desea saberlo");
+	}
 ```
 
+- Versión 2:
+```javascript
+	var usuario = prompt("¿Quien eres?");
 
+	while(!usuario){
+		usuario = prompt("¿Quien eres?")
+	}
+
+	var respuesta = confirm("Bienvenido "+usuario+", ¿Deseas ver lo rápido que funciona tu navegador?");
+	if (respuesta) {
+	
+	    // console.log
+	    console.group("grupo console.log");
+	    console.time("tiempo grupo console.log");
+	    console.log("%c %s", "background: black; color: #FFF; font-size:20px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.log");
+	    console.groupEnd();
+	
+	    // console.info
+	    console.group("grupo console.info");
+	    console.time("tiempo grupo console.info");
+	    console.info("%c %s", "background: #3EBDFF; color: #FFF; font-size:20px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.info");
+	    console.groupEnd();
+	
+	    // console.warn
+	    console.group("grupo console.warn");
+	    console.time("tiempo grupo console.warn");
+	    console.warn("%c %s", "background: #FFAA00; color: #FFF; font-size:22px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.warn");
+	    console.groupEnd();
+	
+	} else {
+	    alert(usuario+" no desea saberlo");
+	}
+```
