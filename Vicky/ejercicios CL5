@@ -1,0 +1,104 @@
+Clase 5
+
+Ejercicios
+
+1 - Diseña un algoritmo introducido un numero y pasarlo a número romanos.
+
+Esperamos que el número sea menor de 50
+numeros_romanos
+
+    // Tu solución
+2 - Diseña un programa que nos confirme si un año es bisiesto o no.
+
+Caracteristicas de un año bisiesto:
+Tiene que ser divisible entre 4 y no tiene que ser divisible entre 100
+O puede ser divisble entre 100 y entre 400
+    // Tu solución
+    
+pedir @year
+
+si @year%4==0 Y @year%100!==0
+	mostrar "es bisiesto"
+pero si @year%100==0 Y @year%400==0
+	mostrar "es bisiesto"
+si no
+	mostrar "el año no es bisiesto"
+
+    
+3 - Diseña un programa que imprima los numeros del 1 al 100.
+
+    // Tu solución
+    
+    
+    @contador = 0
+repetir 100
+	@contador = @contador + 1
+	mostrar @contador
+  
+  
+  
+  
+4 - Diseña un programa que imprima los numeros del 100 al 0.
+
+    // Tu solución
+    
+    
+    @contador = 100
+repetir 100
+	@contador = @contador - 1
+	mostrar @contador
+  
+  
+  
+5 - Diseña un programa que imprima los numeros pares entre 0 y 100.
+
+    // Tu solución
+    
+    
+    @contador = 100
+repetir 100
+	@contador = @contador - 1
+	si @contador%2==0
+		mostrar @contador
+    
+    
+6 - Diseña un programa que imprima los números impares entre un número dado por el usuario y los siguientes 50 números.
+
+    // Tu solución
+    
+    pedir @numero
+@contador = @numero
+repetir 50
+@verificar = @contador%2
+
+si @verificar == 0
+@contador = @contador + 1
+si no
+mostrar @numero
+@contador = @contador + 1
+
+
+7 - Diseña un programa que imprima la suma de los 50 primeros numeros pares y el total de números impares partiendo de un número dado por el usuario
+
+    // Tu solución
+    
+    
+    pedir @numero
+repetir 50
+	si @numero%2==0
+		@sumanumero = @numero + @numero
+	si no
+    	mostrar @numero
+mostrar @sumanumero
+
+
+
+8 - Diseña un programa que cuente las veces que aparece una determinada letra en una frase que introduciremos por teclado.
+
+    // Tu solución
+9 - Diseña un programa que simula el lanzamiento de una moneda al aire e imprimir si ha salido cara o cruz.
+
+    // Tu solución
+10 - Diseña un programa que simula cien tiradas de dos dados y contar las veces que entre los dos suman 10.
+
+    // Tu solución
