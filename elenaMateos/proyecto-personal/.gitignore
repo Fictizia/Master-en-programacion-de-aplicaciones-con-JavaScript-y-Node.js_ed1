@@ -1,3 +1,7 @@
+
+# Created by https://www.gitignore.io/api/node
+
+### Node ###
 # Logs
 logs
 *.log
@@ -57,11 +61,5 @@ typings/
 # dotenv environment variables file
 .env
 
-# .idea files from phpStorm
-.idea/
 
-
-# Anotaciones
-
-IDEAS
-notas.md
+# End of https://www.gitignore.io/api/node

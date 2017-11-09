@@ -69,6 +69,10 @@ Fecha | Teoría | Recursos | Contenido
 30/10/2017 | [Clase 4](teoria/dia4.md) | Clase 4 | Ejercicios con Ginger Code
 31/10/2017 | [Clase 5](teoria/dia5.md) | Clase 5 | Ejercicios con Ginger Code
 02/11/2017 | [Clase 6](teoria/dia6.md) | [Clase 6](recursos/dia6.md) | Consola, variables, matemáticas, interacción con el usuario...
+03/11/2017 | [Clase 7](teoria/dia7.md) | [Clase 7](recursos/dia7.md) | Modo Estrcito y comparadores
+06/11/2017 | [Clase 8](teoria/dia8.md) | [Clase 8](recursos/dia8.md) | Condicionales
+07/11/2017 | [Clase 9](teoria/dia9.md) | [Clase 9](recursos/dia9.md) | Bucles
+08/11/2017 | [Clase 10](teoria/dia10.md) | [Clase 10](recursos/dia10.md) | Números, Math y Dates
 
 
 Temario

@@ -1,0 +1,91 @@
+1.
+
+
+var vicky = false;
+ console.assert(vicky, "\"vicky\" es igual a \"true\"");
+
+2.
+
+console.time("name");
+ 
+console.log("Vicky")
+ 
+console.timeEnd("name");
+
+console.time("name");
+ 
+console.warn("Vicky")
+ 
+console.timeEnd("name");
+
+console.time("name");
+ 
+console.info("Vicky")
+ 
+console.timeEnd("name");
+
+3.
+
+
+console.log('%c Vicky ','background-color:blue; color:white;font-size:20px; border-radius:5px;')
+console.warn('%c Vicky ','background-color:lime; color:white;font-size:30px; border-radius:5px;')
+console.info('%c Vicky ','background-color:lavender; color:white;font-size:20px; font-weight:bolder; border-radius:5px;')
+
+4.
+
+console.time("name");
+console.log('%c Vicky ','background-color:blue; color:white;font-size:20px; border-radius:5px;')
+console.timeEnd("name");
+console.time("name");
+console.warn('%c Vicky ','background-color:lime; color:white;font-size:30px; border-radius:5px;')
+console.timeEnd("name");
+console.time("name");
+console.info('%c Vicky ','background-color:lavender; color:white;font-size:20px; font-weight:bolder; border-radius:5px;')
+console.timeEnd("name");
+
+
+5.
+
+var alumnos = [
+{ nombre: "Alumno1", extension: "Sitio 1" },
+{ nombre: "Alumno2", extension: "Sitio 2" },
+{ nombre: "Alumno3", extension: "Sitio 3" },
+{ nombre: "Alumno4", extension: "Sitio 4" },
+{ nombre: "Alumno5", extension: "Sitio 5" },
+{ nombre: "Alumno6", extension: "Sitio 6" },
+{ nombre: "Alumno7", extension: "Sitio 7" },
+{ nombre: "Alumno8", extension: "Sitio 8" },
+];
+
+console.table(alumnos);
+
+
+
+1 - Vamos a solicitar la colaboración del usuario para lograr nuestros objetivos:
+
+Objetivos:
+
+Captura el nombre del usuario usando prompt
+Pregunta al usuario si desea "comprobar lo rápido que funciona su navegador".
+En caso afirmativo imprimiremos el nombre del usuario por consola aplicandole estilos y calculando el tiempo que tarda en realizar la operación
+En caso negativo mostraremos un alert informativo.
+Versión 1:
+
+    // Tu solución
+
+var user = prompt("Indica tu nombre");
+var speed = confirm("¿Quieres saber lo rápido que funciona tu navegador?");
+if (!speed) {
+  console.log("Oooh... tu te lo pierdes");
+	}
+  else {
+	console.time("name");
+	console.log('%c %s','background-color:blue; color:white;font-size:20px; border-radius:5px;', user);
+	console.timeEnd("name");
+	console.time("name");
+	console.warn('%c %s','background-color:lime; color:white;font-size:30px; border-radius:5px;', user);
+	console.timeEnd("name");
+	console.time("name");
+	console.info('%c %s','background-color:lavender; color:white;font-size:20px; font-weight:bolder; border-radius:5px;', user);
+	console.timeEnd("name");
+ 	 }
