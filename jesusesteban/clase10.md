@@ -8,12 +8,24 @@
 
 ```javascript
     // Tu solución
+
+    var caraMoneda = Math.floor(Math.random() * 2);
+    
+    while(caraMoneda){
+    	console.log("Ha salido cara");
+    	var caraMoneda = Math.floor(Math.random() * 2);
+    }
+    console.log("Ha salido cruz");
+    
 ```
 
-**2 -** Diseña un algoritmo que  simula cien tiradas de dos dados y contar las veces que entre los dos suman 10.
+**2 -** Diseña un algoritmo que simula cien tiradas de dos dados y contar las veces que entre los dos suman 10.
 
 ```javascript
     // Tu solución
+    
+    
+    
 ```
 
 ### Dates

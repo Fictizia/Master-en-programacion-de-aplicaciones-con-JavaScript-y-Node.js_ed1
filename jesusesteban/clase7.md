@@ -1,7 +1,5 @@
 # Clase 7
 
-### Evento: Maker Faire Madrid
-
 ### Ejercicios
 
 **1 -** Diseña un algoritmo que lea dos números y realice los siguientes cálculos:
