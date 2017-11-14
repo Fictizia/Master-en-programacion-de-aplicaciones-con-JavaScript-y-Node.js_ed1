@@ -442,17 +442,44 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de condicion
 
 - Usando *if...else*
 ```javascript
-    // Tu solución
+	function esBisiesto (year) {
+		
+		if (year % 4 === 0 && year % 100 !== 0) {
+			console.info("Amigo, el año " +year+ " es bisiesto!");
+		} else if (year % 400 === 0 && year % 100 === 0) {
+			console.info("Amigo, el año " +year+ " es bisiesto!");
+		} else {
+			console.warn("Amigo, el año " +year+ " NO es bisiesto!");
+		};
+
+	}
 ```
 
 - Usando *Operador Ternario (?:)*
 ```javascript
-    // Tu solución
+	function esBisiesto (year) {
+		(year % 4 === 0 && year % 100 !== 0) 
+			? console.info("Amigo, el año " +year+ " es bisiesto!")
+			: (year % 400 === 0 && year % 100 === 0) 
+			? console.info("Amigo, el año " +year+ " es bisiesto!")
+			: console.warn("Amigo, el año " +year+ " NO es bisiesto!");
+	}
 ```
 
 - Usando *Switch*
 ```javascript
-    // Tu solución
+	function esBisiesto (year) {
+
+		switch(true){
+			case (year % 4 === 0 && year % 100 !== 0):
+			case (year % 400 === 0 && year % 100 === 0):
+				console.info("Amigo, el año " +year+ " es bisiesto!");
+				break;
+			default:
+				console.warn("Amigo, el año " +year+ " NO es bisiesto!");
+		}
+
+	}
 ```
 
 
