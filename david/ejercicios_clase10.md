@@ -9,11 +9,10 @@ if(aleatorio === 0){
 	console.log("Ha salido cruz");
 }
 resp = prompt("Desea continuar?");
-
 }while(resp!=="no");
 
 
-#Ejercicio 2
+# Ejercicio 2
 var contador= 0;
 for(i=0; i<=100; i++){
 	var dado1 = Math.floor(Math.random()*6+1);
