@@ -1,6 +1,5 @@
-
-
 /* Ejercicios teoria dia 8 */
+/****** Ejercicio 1 ******/
 //Ejercicio 1.1
 var a = 4, b = 7;
 
@@ -32,6 +31,7 @@ switch(true) {
         break;
 }
 
+/****** Ejercicio 2 ******/
 //Ejercicio 2.1
 var a = 4, b = 2, c = 5, num = 0;
 
@@ -66,6 +66,7 @@ switch(true) {
 
 console.log(num + " es el mayor");
 
+/****** Ejercicio 3 ******/
 //Ejercicio 3.1
 var a = 4, b = 5, c = 6, res = 0, op = "";
 
@@ -99,3 +100,156 @@ switch(true) {
 }
 
 console.log("Operacion: " + op + " / resultado: " + res);
+
+/****** Ejercicio 4 ******/
+//Ejercicio 4.1
+var price = 10, desc = 0;
+var date = new Date(), day = date.getDay(), month = date.getMonth();
+
+if(month >= 11 && month < 2 && day < 5) {
+    desc = price * 25 / 100;
+    price -= desc;
+}
+
+console.log("El precio final es: " + price);
+
+//Ejercicio 4.2
+var price = 10, desc = 0, priceDesc = 0;
+var date = new Date(), day = date.getDay(), month = date.getMonth();
+
+desc = price * 25 / 100;
+priceDesc = price - desc;
+
+price = month >= 11 && month < 2 && day < 5 ? priceDesc : price;
+
+console.log("El precio final es: " + price);
+
+//Ejercicio 4.3
+var price = 10, desc = 0;
+var date = new Date(), day = date.getDay(), month = date.getMonth();
+
+switch(true) {
+    case month >= 11 && month < 2 && day < 5:
+        desc = price * 25 / 100;
+        price -= desc;
+        break;
+}
+
+console.log("El precio final es: " + price);
+
+/****** Ejercicio 5 ******/
+//Ejercicio 5.1
+var num = prompt("Escribe un número");
+
+while(isNaN(num)) {
+    num = prompt("Debe introducir un número");
+}
+
+if(num >= 0) {
+    console.log("El número es positivo");
+} else {
+    console.log("El número es negativo");
+}
+
+//Ejercicio 5.2
+var num = prompt("Escribe un número");
+
+while(isNaN(num)) {
+    num = prompt("Debe introducir un número");
+}
+
+num >= 0 ? console.log("El número es positivo") : console.log("El número es negativo");
+
+//Ejercicio 5.3
+var num = prompt("Escribe un número");
+
+while(isNaN(num)) {
+    num = prompt("Debe introducir un número");
+}
+
+switch(true) {
+    case num >= 0:
+        console.log("El número es positivo");
+        break;
+    default:
+        console.log("El número es negativo");
+        break;
+}
+
+/****** Ejercicio 6 ******/
+//Ejercicio 6.1
+var num = prompt("Escribe un número");
+
+while(isNaN(num)) {
+    num = prompt("Debe introducir un número");
+}
+
+if(num %2 == 0) {
+    console.log("El número es par");
+} else {
+    console.log("El número es impar");
+}
+
+//Ejercicio 6.2
+var num = prompt("Escribe un número");
+
+while(isNaN(num)) {
+    num = prompt("Debe introducir un número");
+}
+
+num %2 == 0 ? console.log("El número es par") : console.log("El número es impar");
+
+//Ejercicio 6.3
+var num = prompt("Escribe un número");
+
+while(isNaN(num)) {
+    num = prompt("Debe introducir un número");
+}
+
+switch(true) {
+    case num %2 == 0:
+        console.log("El número es par");
+        break;
+    default:
+        console.log("El número es impar");
+        break;
+}
+
+/****** Ejercicio 7 ******/
+//Ejercicio 7.1
+var num = prompt("Escribe un número");
+
+while(isNaN(num)) {
+    num = prompt("Debe introducir un número");
+}
+
+if((num %4 == 0 && num %100 != 0) || num %400 == 0) {
+    console.log("Es bisiesto");
+} else {
+    console.log("No es bisiesto");
+}
+
+//Ejercicio 7.2
+var num = prompt("Escribe un número");
+
+while(isNaN(num)) {
+    num = prompt("Debe introducir un número");
+}
+
+(num %4 == 0 && num %100 != 0) || num %400 == 0 ? console.log("Es bisiesto") : console.log("No es bisiesto");
+
+//Ejercicio 7.3
+var num = prompt("Escribe un número");
+
+while(isNaN(num)) {
+    num = prompt("Debe introducir un número");
+}
+
+switch(true) {
+    case ((num %4 == 0 && num %100 != 0) || num %400 == 0):
+        console.log("Es bisiesto");
+        break;
+    default:
+        console.log("No es bisiesto");
+        break;
+}
