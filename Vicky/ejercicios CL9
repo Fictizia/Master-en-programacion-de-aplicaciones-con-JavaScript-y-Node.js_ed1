@@ -1,0 +1,292 @@
+1 - Diseña un algoritmo para identificar a los clientes autorizados a entrar a nuestro sistema.
+
+Características:
+
+La palabra clave es "Fictizia mola mucho"
+Solo existen tres intentos
+Si se pasan los tres intentos. Se despliega un mensaje informativo.
+Usando for
+
+    // Tu solución
+
+    var clave = "Fictizia mola mucho";
+    correcto=false
+    for(i=0;i<3 && !correcto;i++){
+        var preguntarclave=prompt("Introduce la contraseña");
+        if (preguntarclave===clave){
+            console.log("hola");
+            correcto=true;
+        }
+        else{
+        console.log("esa no es la contraseña, lo siento");
+        }
+    }
+
+
+
+
+Usando while y break
+    // Tu solución
+     var clave = "Fictizia mola mucho";
+     var contador=0;
+     while(contador<3){
+     var preguntarclave=prompt("Introduce la contraseña");
+        if (preguntarclave===clave){
+            console.log("hola");
+            break;}
+            else{
+            console.log("esa no es la contraseña, lo siento");
+            }
+            contador++
+     }
+
+
+
+Usando Do...While
+    // Tu solución
+
+    var clave = "Fictizia mola mucho";
+    var correcto=false;
+     var contador=0;
+     do{
+     var preguntarclave=prompt("Introduce la contraseña");
+        if (preguntarclave===clave){
+            console.log("hola");
+            break;}
+            else{
+            console.log("esa no es la contraseña, lo siento");
+            }
+            contador++;
+            } while ((contador<3) && (correcto=false));
+
+
+2 - Diseña un algoritmo que imprima los numeros del 1 al 100.
+
+Usando for
+    // Tu solución
+    for(i=0;i<=100;i++){
+    console.log(i);
+
+    }
+
+
+Usando while
+    // Tu solución
+    var contador=0;
+    while(contador<=100){
+    console.log(contador);
+    contador++;
+    }
+
+
+
+Usando Do...While
+    // Tu solución
+
+
+    var contador=0;
+    do{
+    console.log(contador);
+    contador++;
+    } while (contador<=100);
+
+
+3 - Diseña un algoritmo que imprima los numeros del 100 al 0.
+
+Usando for
+    // Tu solución
+
+
+     for(i=100;i>=0;i--){
+    console.log(i);
+
+    }
+
+
+
+
+Usando while
+    // Tu solución
+    var contador=100;
+    while(contador>=0){
+    console.log(contador);
+    contador--;
+    }
+
+
+
+
+Usando Do...While
+    // Tu solución
+
+     var contador=100;
+    do{
+    console.log(contador);
+    contador--;
+    } while (contador>=0);
+
+4 - Diseña un algoritmo que imprima los numeros pares entre 0 y 100.
+
+Usando for
+    // Tu solución
+
+    for(i=0;i<=100;i++){
+    if (i%2===0){
+    console.log(i);
+    
+    }
+    }
+
+
+Usando while
+    // Tu solución
+     var contador=0;
+    while(contador<=100){
+    if (contador%2===0){
+    console.log(contador);
+    }
+    contador++;
+    }
+
+
+Usando Do...While
+    // Tu solución
+
+    var contador=0;
+    do {
+    if (contador%2===0){
+    console.log(contador);
+    }
+    contador++;
+    } while (contador<=100);
+
+
+
+5 - Diseña un algoritmo que imprima los números impares entre un número dado por el usuario y los siguientes 50 números.
+
+Usando for (desestructurado)
+    // Tu solución
+
+    var num=prompt("indíca un número");
+    var contador=0;
+
+    for (;contador<50;){
+    if(num%2!==0){
+    console.log (num);
+    contador++;
+    }
+    num++;
+    }
+
+
+
+
+Usando while
+    // Tu solución
+
+    var num=prompt("indíca un número");
+    var contador=0;
+    while (contador<=50){
+       if(num%2!==0){
+        console.log (num);
+        contador++;
+        }
+        num++;
+    }
+
+
+
+
+Usando Do...While
+    // Tu solución
+
+    var num=prompt("indíca un número");
+    var contador=0;
+
+    do{
+         if(num%2!==0){
+        console.log (num);
+        contador++;
+        }
+        num++;
+    } while (contador<=50);
+
+
+
+
+6 - Diseña un algoritmo que imprima la suma de los 50 primeros numeros pares y el total de números impares partiendo de un número dado por el usuario
+
+Usando for
+    // Tu solución
+
+    var num=prompt("indíca un número");
+    var numeropar=0;
+    for(i=0;i<=50;i++){
+        if(num%2===0){
+            numeropar= numeropar+num;
+        }
+        else {
+        console.log(num);
+        }
+        num++
+
+    }
+    console.log("la suma de los 50 primeros números pares es de " + numeropar);
+
+
+
+
+Usando while
+    // Tu solución
+
+
+
+    var num=prompt("indíca un número");
+    var numeropar=0;
+    var contador=0;
+    while(contador<=50) {
+        if(num%2===0){
+            numeropar= numeropar+num;
+        }
+        else {
+        console.log(num);
+        }
+        num++;
+        contador++;
+
+    }
+    
+    console.log("la suma de los 50 primeros números pares es de " + numeropar);
+
+Usando Do...While
+    // Tu solución
+
+
+    var num=prompt("indíca un número");
+    var numeropar=0;
+    var contador=0;
+    do {
+        if(num%2===0){
+            numeropar= numeropar+num;
+        }
+        else {
+        console.log(num);
+        }
+        num++;
+        contador++;
+
+    }  while(contador<=50)
+    
+    console.log("la suma de los 50 primeros números pares es de " + numeropar);
+
+7 - Diseña un algoritmo introducido un numero y pasarlo a número romanos.
+
+Esperamos que el número sea menor de 50
+numeros_romanos
+
+Usando for
+    // Tu solución
+Usando while
+    // Tu solución
+Usando Do...While
+    // Tu solución

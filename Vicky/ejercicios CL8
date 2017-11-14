@@ -1,0 +1,356 @@
+1 - Diseña un algoritmo que lea dos números y los compare. Como resultado esperamos que nos diga cual es mayor... o si son iguales.
+
+Usando if...else
+    // Tu solución
+    var numa=prompt("indíca un número");
+    var numb=prompt("indíca otro número");
+
+    if (numa>numb){
+        console.log(numa+" es el mayor");
+    }
+    else if (numb>numa){
+        console.log(numb+" es el mayor");
+    }
+    else {
+        console.log("ambos números son iguales");
+    }
+
+
+
+
+Usando Operador Ternario (?:)
+    // Tu solución
+
+    var numa=prompt("indíca un número");
+    var numb=prompt("indíca otro número diferente");
+    numa>numb? numa+" es el mayor" : numb + " es el mayor";
+
+
+
+Usando Switch
+    // Tu solución
+
+
+    var numa=prompt("indíca un número");
+    var numb=prompt("indíca otro número");
+    switch(true){
+        case numa>numb:
+            console.log(numa+" es el mayor");
+            break;
+        case numb>numa:
+            console.log(numb+" es el mayor");
+            break;
+        default:
+            console.log("los dos números son iguales");
+            }
+
+
+
+2 - Diseña un script que lea tres números distintos y nos diga cual de ellos es el mayor.
+
+Usando if...else
+    // Tu solución
+
+    var numa=prompt("indíca un número");
+    var numb=prompt("indíca otro número");
+    var numc=prompt("indíca otro número");
+
+   if (numa!=numb && numb!=numc){
+    if (numa>numb && numa>numc){
+        console.log(numa+" es el mayor");
+    }
+    else if (numb>numa && numb>numc){
+        console.log(numb+" es el mayor");
+    }
+    else {
+        console.log(numc+" es el mayor");
+    }
+    }
+    else {
+    console.log("los 3 números son inguales");
+    }
+
+
+
+Usando Operador Ternario (?:)
+    // Tu solución
+
+    var numa=prompt("indíca un número");
+    var numb=prompt("indíca otro número diferente");
+    var numc=prompt("indíca otro número diferente");
+
+    var mayora= (numa>numb && numa>numc);
+    var mayorb= (numb>numa && numb>numc);
+    var mayorc= (numc>numb && numc>numa);
+
+    mayora=true? numa + " es el mayor" : numa + " no es el mayor";
+    mayorb=true? numb + " es el mayor" : numb + " no es el mayor";
+    mayorc=true? numc + " es el mayor" : numc + " no es el mayor";
+
+
+
+
+Usando Switch
+    // Tu solución
+
+    var numa=prompt("indíca un número");
+    var numb=prompt("indíca otro número");
+    var numc=prompt("indíca otro número");
+
+    switch(true){
+        case (numa>numb && numa>numc):
+        console.log(numa+ " es el mayor");
+        break;
+         case (numb>numa && numb>numc):
+        console.log(numb+ " es el mayor");
+        break;
+         case (numc>numb && numc>numa):
+        console.log(numc+ " es el mayor");
+        break;
+        default:
+        console.log("los 3 números son iguales")
+
+    }
+
+
+
+
+3 - Diseña un script que siga el siguiente proceso:
+
+Si el primero es negativo, debe sumar los otros dos
+
+Sino multiplicará los tres numeros
+
+Mostrar el resultado final incluyendo una referencia a la operación realizada.
+
+Usando if...else
+    // Tu solución
+
+    var numa=prompt("indíca un número");
+    var numb=prompt("indíca otro número");
+    var numc=prompt("indíca otro número");
+
+    if (numa<0){
+        console.log("Como " + numa + " es negativo" + " sumamos " + numb + "+" + numc + " y el resultado es " +parseInt(numb)+parseInt(numc));
+    }
+    else {
+        console.log("como los 3 números son positivos, vamos a multiplicarlos. El resultado es: " + numa*numb*numc);
+    }
+
+
+
+Usando Operador Ternario (?:)
+    // Tu solución
+
+
+    var numa=prompt("indíca un número");
+    var numb=prompt("indíca otro número");
+    var numc=prompt("indíca otro número");
+
+    numa<0 ? console.log("Como " + numa + " es negativo" + " sumamos " + numb + "+" + numc + " y el resultado es " + parseInt(numb)+parseInt(numc)) : console.log("como los 3 números son positivos, vamos a multiplicarlos. El resultado es: " + numa*numb*numc)
+
+Usando Switch
+    // Tu solución
+
+
+    var numa=prompt("indíca un número");
+    var numb=prompt("indíca otro número");
+    var numc=prompt("indíca otro número");
+
+    switch(true){
+        case(numa<0):
+        console.log("Como " + numa + " es negativo" + " sumamos " + numb + "+" + numc + " y el resultado es " + parseInt(numb)+parseInt(numc));
+        break;
+        default:
+        console.log("como los 3 números son positivos, vamos a multiplicarlos. El resultado es: " + numa*numb*numc);
+    }
+
+    
+
+
+4 - Diseña un algoritmo que aplique al precio de un producto un descuento cuando se den las siguientes caracteristicas.
+
+Se aplica un 25% cuando:
+
+Estamos en los meses de invierno
+Y no es viernes o fin de semana.
+Usando if...else
+
+    // Tu solución
+
+    var mes = prompt("introducir mes");
+    var dia = prompt("introducir día de la semana");
+    var precio = prompt("introducir precio");
+    precio =parseInt(precio);
+
+    if (mes=== "diciembre" || "enero" || "febrero") {
+        if (dia!= "viernes" ||"sábado"||"domingo"){
+            console.log("Felicidades, tienes un 25% de descuento. El precio con descuento es ", precio-((25*precio)/100) , "euros");
+        }
+        else{
+            console.log("no hay descuento, el precio es ", precio);
+        }
+    }
+    else {
+        console.log("no hay descuento, el precio es ", precio);
+    }
+
+
+
+
+Usando Operador Ternario (?:)
+    // Tu solución
+    var mes = prompt("introducir mes");
+    var dia = prompt("introducir día de la semana");
+    var precio = prompt("introducir precio");
+    precio =parseInt(precio);
+    var descuentomes = false;
+
+    (mes=== "diciembre" || "enero" || "febrero") ? descuentomes=true : descuentomes=false;
+    (descuentomes=true && dia!= "viernes" ||"sábado"||"domingo") ? console.log("Felicidades, tienes un 25% de descuento. El precio con descuento es ", precio-((25*precio)/100) , "euros") : console.log("lo sentimos, no se aplica descuento, el precio es " + precio);
+     
+
+
+
+Usando Switch
+    // Tu solución
+    var mes = prompt("introducir mes");
+    var dia = prompt("introducir día de la semana");
+    var precio = prompt("introducir precio");
+    precio =parseInt(precio);
+     switch (true) {
+            case ((mes === "diciembre" ||  "enero" || "febrero") && dia!= "viernes" ||"sábado"||"domingo")):
+                console.log("Felicidades, tienes un 25% de descuento. El precio con descuento es ", precio-((25*precio)/100) , "euros");
+                break;
+            case (mes !== "Diciembre" && mes !== "Enero" && mes !== "Febrero"):
+                console.log("lo sentimos, no se aplica descuento, el precio es " + precio);
+                break;
+            default:
+                console.log("lo sentimos, no se aplica descuento, el precio es " + precio);
+        }
+    }
+
+
+
+
+5 - Diseña un algoritmo que al introducir un numero nos diga si es positivo o negativo.
+
+Usando if...else
+    // Tu solución
+    var num = prompt("Escribe un número y te diré si es positivo o negativo");
+    if (num>0) {
+        console.log("el número es positivo");
+    }
+    else if (num==0 || num==-0){
+        console.log("el 0 no es positivo ni negativo");
+    }
+    else {
+        console.log ("el número es negativo");
+    }
+
+Usando Operador Ternario (?:)
+    // Tu solución
+     var num = prompt("Escribe un número y te diré si es positivo o negativo");
+     num>0 ? console.log("el número es positivo") : console.log ("el número es negativo");
+
+
+Usando Switch
+    // Tu solución
+
+    var num = prompt("Escribe un número y te diré si es positivo o negativo");
+    switch(true){
+    case (num>0):
+        console.log("el número es positivo");
+        break;
+   case (num==0 || num==-0):
+        console.log("el 0 no es positivo ni negativo");
+        break;
+   default:
+        console.log ("el número es negativo");
+    }
+
+
+6 - Diseña un algoritmo que al introducir un número nos diga si es par o impar.
+
+Usando if...else
+    // Tu solución
+      var num = prompt("Escribe un número y te diré si es par o impar");
+      if (num%2===0){
+      console.log("el número es par")
+      }
+      else{
+      console.log("el número es impar")
+      }
+
+Usando Operador Ternario (?:)
+    // Tu solución
+    var num = prompt("Escribe un número y te diré si es par o impar");
+    (num%2===0) ? console.log("el número es par") : console.log("el número es impar");
+      
+
+
+
+Usando Switch
+    // Tu solución
+     var num = prompt("Escribe un número y te diré si es par o impar");
+     switch(true){
+    case(num%2===0):
+     console.log("el número es par");
+     break;
+      default:
+       console.log("el número es impar");
+       }
+
+
+
+7 - Diseña un algoritmo que nos confirme si un año es bisiesto o no.
+
+Caracteristicas de un año bisiesto:
+
+Tiene que ser divisible entre 4
+No tiene que ser divisible entre 100
+Puede ser divisble entre 100 y entre 400
+Usando if...else
+
+    // Tu solución
+
+    var year= prompt("Escribe un año y te diré si es bisiesto o no");
+    year=parseInt(year);
+    if (year%4===0 && year%100!==0){
+    console.log(year + " es un año bisisesto");
+    }
+    else if (year%100===0 &&year%400===0){
+    console.log(year + " es un año bisisesto");
+    }
+    else{
+    console.log(year + "no es un año bisiesto")
+    }
+
+Usando Operador Ternario (?:)
+    // Tu solución
+
+  var year= prompt("Escribe un año y te diré si es bisiesto o no");
+    year=parseInt(year);
+        (year % 4 === 0 && year % 100 !== 0) 
+            ? console.log(year + " es un año bisisesto")
+            : (year % 400 === 0 && year % 100 === 0) 
+            ? console.log(year + " es un año bisisesto")
+            : console.log(year + " no es un año bisisesto");
+    
+
+Usando Switch
+    // Tu solución
+
+    var year= prompt("Escribe un año y te diré si es bisiesto o no");
+    year=parseInt(year);
+    switch(true){
+    case (year%4===0 && year%100!==0):
+        console.log(year + " es un año bisisesto");
+        break;
+    case (year%100===0 &&year%400===0):
+        console.log(year + " es un año bisisesto");
+        break;
+      default:
+        console.log(year + " no es un año bisisesto");
+        
+    }
