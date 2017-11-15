@@ -75,6 +75,7 @@ Fecha | Teoría | Recursos | Contenido
 08/11/2017 | [Clase 10](teoria/dia10.md) | [Clase 10](recursos/dia10.md) | Números, Math y Dates
 13/11/2017 | [Clase 11](teoria/dia11.md) | [Clase 11](recursos/dia11.md) | Strings
 14/11/2017 | [Clase 12](teoria/dia12.md) | [Clase 12](recursos/dia12.md) | Arrays
+15/11/2017 | [Clase 13](teoria/dia13.md) | Clase 13 | Ejercicios de Arrays
 
 
 Temario
