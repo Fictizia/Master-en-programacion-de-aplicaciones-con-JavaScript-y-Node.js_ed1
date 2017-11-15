@@ -177,12 +177,119 @@ do {
 } while (numeroUsuario < numeroFinal);
 
 /*
-6 - Diseña un algoritmo que imprima la suma de los 50 primeros numeros pares y el total de números impares partiendo de un número dado por el usuario
+6 - Diseña un algoritmo que imprima la suma de los 50 primeros numeros pares y el total de
+números impares partiendo de un número dado por el usuario
 */
 // Usando for
+var numeroUsuario = prompt('Dame un número!  ^.^ Así puedo jugar!');
+numeroUsuario = parseInt(numeroUsuario);
+var numeroFinal = numeroUsuario + 50;
+var esPar = 0;
+var esImpar = 0;
+var totalPar = 0;
+var totalImpar = 0;
+
+
+
+if (numeroUsuario%2 === 0) {
+  esPar = numeroUsuario;
+  totalPar = numeroUsuario;
+  totalImpar = numeroUsuario - 1;
+}else {
+  esImpar = numeroUsuario;
+  totalPar = numeroUsuario - 1;
+  totalImpar = numeroUsuario;
+}
+
+for (var i = 0; i < numeroFinal; i++) {
+  esPar = esPar + 2;
+  totalPar = totalPar + esPar;
+
+  esImpar = esImpar + 2;
+  totalImpar = totalImpar + esImpar;
+}
+console.log(totalPar);
+console.log(totalImpar);
+
+
+// Usando while >.< no sale
+var numeroUsuario = prompt('Dame un número!  ^.^ Así puedo jugar!');
+numeroUsuario = parseInt(numeroUsuario);
+var numeroFinal = numeroUsuario + 50;
+var esPar = 0;
+var esImpar = 0;
+var totalPar = 0;
+var totalImpar = 0;
+
+
+
+if (numeroUsuario%2 === 0) {
+  esPar = numeroUsuario;
+  totalPar = numeroUsuario;
+  totalImpar = numeroUsuario - 1;
+}else {
+  esImpar = numeroUsuario;
+  totalPar = numeroUsuario - 1;
+  totalImpar = numeroUsuario;
+};
+while (numeroUsuario < numeroFinal) {
+totalPar = totalPar + esPar;
+esPar = esPar +2;
+totalImpar = totalImpar + esImpar;
+esImpar = esImpar + 2;
+numeroUsuario = numeroUsuario + 1;
+};
+
+console.log(totalPar);
+console.log(totalImpar);
+
+
+
+// Usando Do...While
+var numeroUsuario = prompt('Dame un número!  ^.^ Así puedo jugar!');
+numeroUsuario = parseInt(numeroUsuario);
+var numeroFinal = numeroUsuario + 50;
+var esPar = 0;
+var esImpar = 0;
+var totalPar = 0;
+var totalImpar = 0;
+
+
+
+if (numeroUsuario%2 === 0) {
+  esPar = numeroUsuario;
+  totalPar = numeroUsuario;
+  totalImpar = numeroUsuario - 1;
+}else {
+  esImpar = numeroUsuario;
+  totalPar = numeroUsuario - 1;
+  totalImpar = numeroUsuario;
+};
+do {
+  totalPar = totalPar + esPar;
+  esPar = esPar + 2;
+  totalImpar = totalImpar + esImpar;
+  esImpar = esImpar + 2;
+  numeroUsuario = numeroUsuario + 1;
+
+} while (numeroUsuario < numeroFinal);
+
+console.log(totalPar);
+console.log(totalImpar);
+/*
+7 - Diseña un algoritmo introducido un numero y pasarlo a número romanos.
+
+__Esperamos que el número sea menor de 50__
+*/
+
+// Usando for
+var numeroUsuario = prompt('Dame un número igual o menor a 50 y lo pasaré a números romanos =)');
+numeroUsuario = parseInt(numeroUsuario);
+var numeroRomano = '';
+
+
 
 
 // Usando while
-
 
 // Usando Do...While

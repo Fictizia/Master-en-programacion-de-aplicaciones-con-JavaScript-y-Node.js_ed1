@@ -64,10 +64,10 @@ Usando while
     // Tu solución
 Usando Do...While
     // Tu solución
-7 - Diseña un algoritmo introducido un numero y pasarlo a número romanos.
+### 7 - Diseña un algoritmo introducido un numero y pasarlo a número romanos.
 
-Esperamos que el número sea menor de 50
-numeros_romanos
+__Esperamos que el número sea menor de 50__
+
 
 Usando for
     // Tu solución
