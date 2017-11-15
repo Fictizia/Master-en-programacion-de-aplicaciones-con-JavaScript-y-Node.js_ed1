@@ -111,7 +111,22 @@ Nota: Partiendo del ejemplo de [MDN](https://developer.mozilla.org/en-US/docs/We
 
 **5 -** Imprimir por consola la fecha completa (formato texto) en koreano, japones.
 ```javascript
-    // Tu solución
+	var ahora = new Date();
+	
+	var opciones = { 
+	    weekday: 'long',
+	    year: 'numeric', 
+	    month: 'long', 
+	    day: 'numeric'
+	};
+	
+	console.log(ahora.toLocaleString("ko-KO", opciones));
+	console.log(ahora.toLocaleString("ja-JA", { 
+	    weekday: 'long',
+	    year: 'numeric', 
+	    month: 'long', 
+	    day: 'numeric'
+	}));
 ```
 
 
