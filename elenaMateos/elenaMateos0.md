@@ -80,6 +80,12 @@ si @a > @b Y @a > @c
     mostrar @a + ' es el mayor'
 pero si @b > @a Y @b > @c
     mostrar @b + ' es el mayor'
+<<<<<<< HEAD
+si no 
+    mostrar @c + ' es el mayor'
+
+__ 5 - Diseña un programa que siga el siguiente proceso: __ 
+=======
 si no
     mostrar @c + ' es el mayor'
 ```
@@ -87,17 +93,25 @@ si no
 
 ### EJERCICIO 5
 5 - Diseña un programa que siga el siguiente proceso:
+>>>>>>> 32113809e613355733a21dfb3e67cdc3db99913b
 
 Pedir por teclado tres números.
 Si el primero es negativo, debe sumar los otros dos
 Si no multiplicará los tres numeros
 Mostrar el resultado final incluyendo una referencia a la operación realizada.
+<<<<<<< HEAD
+
+=======
 ```
+>>>>>>> 32113809e613355733a21dfb3e67cdc3db99913b
 pedir @a
 pedir @b
 pedir @c
 
 si @a < 0
+<<<<<<< HEAD
+entonces @b + @c
+=======
 entonces @b + @c
 ```
 
@@ -254,3 +268,4 @@ procedimiento #multiplicar @A y @B
 mostrar #multiplicar 2 y 2
 mostrar #dividir 10 y 5
 ```
+>>>>>>> 32113809e613355733a21dfb3e67cdc3db99913b
