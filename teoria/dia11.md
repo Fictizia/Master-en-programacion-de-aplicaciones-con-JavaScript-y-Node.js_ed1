@@ -102,7 +102,11 @@ Nota: Partiendo del ejemplo de [MDN](https://developer.mozilla.org/en-US/docs/We
 
 **4 -** ¿Que fecha será dentro de un año y 10 horas más?
 ```javascript
-    // Tu solución
+	var ahora = new Date();
+	console.log("Hoy es " + ahora.toLocaleString());
+	ahora.setHours(ahora.getHours() + 10);
+	ahora.setFullYear(ahora.getFullYear() + 1);
+	console.log("En un año y 10 horas será " + ahora.toLocaleString());
 ```
 
 **5 -** Imprimir por consola la fecha completa (formato texto) en koreano, japones.
