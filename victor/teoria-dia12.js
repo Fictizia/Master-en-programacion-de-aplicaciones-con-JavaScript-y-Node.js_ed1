@@ -1,11 +1,11 @@
 /* Ejercicios dia 12 */
 //Ejercicio 1
-var text = "lorem ipsum em posisd hene nem em ";
-var pos = 0;
-var cont = 0;
+var text = "lorem ipsum em posisd hene nem em";
+var textSearch = "em";
+var pos = 0, cont = 0;
 
 while(pos >= 0) {
-    pos = search(text, "em", pos);
+    pos = text.indexOf(textSearch, pos);
     
     if(pos >= 0) {
         pos++;
@@ -14,8 +14,3 @@ while(pos >= 0) {
 }
 
 console.log("Veces encontrado: " + cont);
-
-function search(text, search, start) {
-    return text.indexOf(search, start);
-    
-}
