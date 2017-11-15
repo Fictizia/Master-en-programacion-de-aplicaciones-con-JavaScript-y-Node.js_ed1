@@ -95,6 +95,30 @@ console.table(alumnos);
 - Versión 1:
 ```javascript
     // Tu solución
+
+    var usuario = prompt("¿Cual es tu nombre?");
+    var navegador = confirm("¿Quieres ver lo rápido que funciona tu navegador?");
+
+    if (navegador) {
+        console.time("velocidad");
+            console.log('%c %s','background: #CCC; color: #FFF; text-transform: uppercase;font-size: 12px;', usuario);
+        console.timeEnd("velocidad");
+        
+        console.time("velocidad");
+            console.warn('%c %s','background: yellow; color: #000; text-transform: uppercase;font-size: 14px;', usuario);
+        console.timeEnd("velocidad");
+        
+        console.time("velocidad");
+            console.info('%c %s','background: red; color: #FFF; text-transform: uppercase;font-size: 16px;', usuario);
+        console.timeEnd("velocidad");
+    }
+    else {
+        alert("Si quieres ver la velocidad de tu navegador, vuelve a intentarlo y acepta");
+    }    
+    
+    
+    
+    
 ```
 
 
