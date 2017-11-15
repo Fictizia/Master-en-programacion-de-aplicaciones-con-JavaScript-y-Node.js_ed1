@@ -1,0 +1,15 @@
+1 - Diseña un algoritmo que cuente las veces que aparece una determinada letra en una frase.
+
+    // Tu solución
+    
+    
+    var frase=prompt("introduce una frase");
+    var letra=prompt("introduce una letra");
+    
+    var arrayfrase=frase.split("",);
+    console.log(arrayfrase);
+    for(i=0;i<frase.length;i++) {
+        if (frase[i]===letra) {
+            console.log(i);
+            }
+        }

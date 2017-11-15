@@ -1,0 +1,62 @@
+1 - Diseña un algoritmo que simula el lanzamiento de una moneda al aire e imprimir si ha salido cara o cruz.
+
+    // Tu solución
+
+
+
+var azar = Math.floor(Math.random() * (2 - 0)) + 0;
+
+if (azar === 1){
+	console.log("cara");
+}
+else{
+	console.log("cruz")
+}
+
+
+
+
+2 - Diseña un algoritmo que simula cien tiradas de dos dados y contar las veces que entre los dos suman 10.
+
+    // Tu solución
+
+
+var contador = 0;
+
+for(var i=0;i<100;i++){
+	var dadoa = Math.floor(Math.random() * (7 - 1)) + 1;
+	var dadob = Math.floor(Math.random() * (7 - 1)) + 1;
+	var tirada= dadoa + dadob;
+
+	if (tirada===10){
+	 contador += 1;
+	}
+}
+
+console.log (contador);
+
+
+
+1 - Diseña un script que confirme si una fecha es valida y además devuelva la fecha en dos formatos diferentes.
+
+Características:
+El usuario introduce tres números (día, mes, año) usando una función.
+Validar la fecha. En caso de error incluir un mensaje informativo.
+Después de validar, devolvemos la fecha en formato DD/MM/AAAA
+Convertimos el número del mes, en el nombre del mes real y devolvemos la fecha en el siguiente formato ( DD de MES de AAAA)
+    // Tu solución
+
+
+    function fecha (day, month, year){
+	  	if (0<day<31 && 0<month<13 && 1900<year<2018) {
+		    console.log(day+"/"+month+"/"+year);
+		    var monthstr =["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+		  	console.log(day + " de " + monthstr[month-1] + " de " + year);
+		    
+		    }
+		  else {
+		    console.log("la fecha es errónea");
+		  }
+	}
+
+	fecha(2,10,2010);

@@ -1,0 +1,133 @@
+1 - Junta estos tres Arrays ["Oscar", ...], [9897667, ...], [false, ...] de tal forma que construyan un único Array anidado [["Oscar", 9897667, false], [etc...]]
+
+
+
+var arraya=["Oscar","Laura", "Pepe", "Paco"];
+var arrayb=[85432,98562,75412,45632];
+var arrayc=[false, true, true, false];
+var arrayTotal=[];
+
+for(i=0;i<arraya.length;i++) {
+    var arrayOrdenado = [arraya[i],arrayb[i],arrayc[i]]
+    arrayTotal.push(arrayOrdenado);
+}
+
+console.log(arrayTotal);
+
+
+
+Variante (Diferentes longitudes)
+    // Tu solución
+    
+var arraya=["Oscar","Laura", "Pepe", "Paco", "Luís", "Francisco"];
+var arrayb=[85432,98562,75412,45632];
+var arrayc=[false, true, true, false];
+var arrayTotal=[];
+
+var limite= Math.max(arraya.length,arrayb.length,arrayc.length);
+for(var i=0;i<limite;i++) {
+    var arrayOrdenado = [arraya[i],arrayb[i],arrayc[i]];
+    arrayTotal.push(arrayOrdenado);
+}
+
+console.log(arrayTotal);
+
+
+
+
+    
+    
+2 - Crea un Array con 100 numeros enteros al azar. Después crea un array para almacenar los números pares y otro array para los impares.
+
+Opcional: Ordena los números pares e impares en sus respectivos arrays
+    // Tu solución
+    
+var arrayTotal=[];
+var arrayPares=[];
+var arrayImpares=[];
+var azar = 0;
+
+for(var i=0;i<100;i++){
+    azar=Math.floor(Math.random() * (100) + 1);
+    arrayTotal.push(azar);
+    if (azar%2===0) {
+    arrayPares.push(azar);
+    }
+    else {
+    arrayImpares.push(azar);
+}
+}
+
+
+
+arrayTotal=arrayTotal.sort((a,b)=>a-b);
+arrayPares=arrayPares.sort((a,b)=>a-b);
+arrayImpares=arrayImpares.sort((a,b)=>a-b);
+
+
+console.log(arrayTotal);
+console.log(arrayPares);
+console.log(arrayImpares);
+    
+    
+    
+3 - Vamos a gestionar la lista de asistentes de un evento.
+
+Características:
+
+Cada asistente recibirá el identificador de su posición en el Array.
+El identificador no puede cambiar una vez reservado el asiento.
+Los asistentes pueden darse de baja, y el asiento que ocupaban queda libre.
+Los nuevos asistentes seran asigandos primero a asientos desocupados.
+Opcional:
+
+Verifica antes de asignar un asistente que no se registro previamente.
+    // Tu solución
+    
+var listaAsistentes=[];
+var asistente=prompt("Introduce nombre de asistente");
+
+for(var i=0;i<listaAsistentes.length;i++) {
+    if (asistente==listaAsistentes[i]) {
+        console.log("asistente ya registrado en la posición " + listaAsistentes.indexOf(asistente));
+    }
+  
+    else if (listaAsistentes[i] === undefined){
+        listaAsistentes[i] = asistente;
+        console.log("asistente registrado con el puesto " + listaAsistentes.indexOf(asistente));
+    }
+    else {
+        listaAsistentes.push(asistente);
+        console.log("asistente registrado con la posición " + listaAsistentes.length);
+    }
+
+}
+
+
+
+function add(name){
+    for(var i=0;i<listaAsistentes.length;i++) {
+    if (asistente==listaAsistentes[i]) {
+        console.log("asistente ya registrado en la posición " + listaAsistentes.indexOf(asistente));
+    }
+  
+    else if (listaAsistentes[i] === undefined){
+        listaAsistentes[i] = asistente;
+        console.log("asistente registrado con el puesto " + listaAsistentes.indexOf(asistente));
+    }
+    else {
+        listaAsistentes.push(asistente);
+        console.log("asistente registrado con la posición " + listaAsistentes.length);
+    }
+
+}
+
+
+function delete(name){
+    for(var i=0;i<listaAsistentes.length;i++) {
+    }
+    
+}
+
+
+
