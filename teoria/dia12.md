@@ -234,7 +234,34 @@
 **1 -** Diseña un algoritmo que cuente las veces que aparece una determinada letra en una frase.
 
 ```javascript
-    // Tu solución
+	function cuantasVeces (letra, texto) {
+		
+		var totalVeces = 0;
+		var seleccionTexto = texto.split("");
+		
+		for (var i = 0; i <= seleccionTexto.length; i++) {
+			
+			if (seleccionTexto[i] === letra){
+				totalVeces++
+			};
+			
+		};
+		
+		return {
+			letra: letra, 
+			totalVeces: totalVeces, 
+			texto: texto
+		}
+	}
+
+var nombreVar = cuantasVeces ("h", "hola");
+
+
+if(nombreVar.totalVeces > 0){
+	console.log("Tenemos resultados....")
+}
+
+console.log("Se repite "+nombreVar.letra+" "+nombreVar.totalVeces+" veces... en "+nombreVar.texto)
 ```
 
 
