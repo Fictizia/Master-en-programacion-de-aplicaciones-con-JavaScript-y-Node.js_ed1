@@ -5,7 +5,7 @@ var pos = 0;
 var cont = 0;
 
 while(pos >= 0) {
-    pos = recorrer(text, "em", pos);
+    pos = search(text, "em", pos);
     
     if(pos >= 0) {
         pos++;
@@ -15,7 +15,7 @@ while(pos >= 0) {
 
 console.log("Veces encontrado: " + cont);
 
-function recorrer(text, search, start) {
+function search(text, search, start) {
     return text.indexOf(search, start);
     
 }
