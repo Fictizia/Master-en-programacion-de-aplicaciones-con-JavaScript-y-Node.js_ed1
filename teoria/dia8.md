@@ -357,6 +357,72 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de condicion
 
 	}
 ```
+- alternativa
+
+
+```javascript
+
+/* -- Factores de error
+
+- Tipo de datos
+- limpieza de strings a no utf-8
+- 
+
+--- problemas de escalabilidad
+
+- comparacion con && y ||
+
+*/
+
+
+
+function fix(string){
+	string = string.trim();
+	string = string.toLowerCase();
+	// ¿Quitar los acentos?
+	return string
+}
+
+function calcularDescuento (mes, dia, precio) {
+
+	// Tratamiento
+	if(!mes && !dia && !precio) {
+		return false;
+	} else {
+		mes = fix(mes);
+		dia = fix(dia);
+	}
+
+/*
+	if(typeof(mes) === "string") {
+		mes = mes.trim();
+		mes = mes.toLowerCase();
+		// ¿Quitar los acentos?
+	}
+*/
+	//dia
+
+
+	var diasNoDescuento = ["viernes", "sabado", "domingo"];
+
+	var descuento = 25*precio/100;
+	var precioConDescuento = precio - descuento;
+
+	if (mes === "Diciembre" || mes === "Enero" || mes === "Febrero") {
+		
+		if(diasNoDescuento.indexOf(dia) === -1){
+			console.info("BINGO! Has acertado de mes y días. Debes pagar solamente", precioConDescuento);
+		} else {
+			console.warn("No se aplica descuento aunque sea invierno.. ven durante la semana mejor!. Debes pagar", precio);
+		}
+
+	} else {
+		console.warn("No se aplica descuento.. ven en invierno mejor!. Debes pagar", precio);
+	};
+
+}
+```
+
 
 **5 -** Diseña un algoritmo que al introducir un numero nos diga si es positivo o negativo.
 
