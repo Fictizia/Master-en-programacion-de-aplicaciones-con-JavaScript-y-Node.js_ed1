@@ -34,6 +34,9 @@
 
             if (tirada === 10) {
                 coincidencias++;
+            0,
+              1
+              
             }
         };
 
@@ -188,4 +191,6 @@
     }
 
     console.log(fechaDetalle);
+    
+    // LOS MESES  VAN DE 0 A 11. habría que restar uno para que la fecha coincidiera. 
 ```

@@ -33,26 +33,7 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de condicion
 
 - Usando *Switch*
 ```javascript
-    function numbersComparator(number1,number2) {  
-	  switch (number1,number2) {
-	    case number1 === number2:
-	      console.log("Los números introducidos son iguales");
-	      break;
-	    case number1 > number2:
-	      console.log(number1 + " es mayor que " + number2);
-	      break;
-	    case number1 < number2:
-	      console.log(number2 + " es mayor que " + number1);
-	      break;
-	    default:
-	      console.log("Eso no son números amigo");
-	  }
-	};
-
-	var firstNumber = prompt("Introduce el primer número");
-	var secondNumber = prompt("Introduce el segundo número");
-	
-	numbersComparator(firstNumber,secondNumber);
+   MAL
 ```
 
 **2 -** Diseña un script que lea tres números distintos y nos diga cual de ellos es el mayor.
@@ -87,23 +68,7 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de condicion
 
 - Usando *Switch*
 ```javascript
-    function numbersComparator(number1,number2,number3) {  
-	  switch (number1,number2,number3) {
-		    case number1 > number2 && number1 > number3:
-		      console.log(number1 + " es el número mayor");
-		      break;
-		    case number2 > number1 && number2 > number3:
-		      console.log(number2 + " es el número mayor");
-		      break;
-		    default:
-		      console.log(number3 + " es el número mayor");
-		  }
-	};
-	
-	var firstNumber = prompt("Introduce el primer número");
-	var secondNumber = prompt("Introduce el segundo número");
-	var thirdNumber = prompt("Introduce el tercer número");
-	numbersComparator(firstNumber,secondNumber, thirdNumber);
+    MAL
 ```
 
 
@@ -127,6 +92,11 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de condicion
 	var secondNumber = prompt("Introduce el segundo número");
 	var thirdNumber = prompt("Introduce el tercer número");
 	numbersComparator(firstNumber,secondNumber, thirdNumber);
+	
+	// REFACTORING !!!
+	
+	
+	
 ```
 
 - Usando *Operador Ternario (?:)*
@@ -148,21 +118,7 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de condicion
 
 - Usando *Switch*
 ```javascript
-    function mathOperations(number1,number2,number3) {
-	  switch (number1,number2,number3) {
-	    case number1 < 0:
-	      total = number2 + number3;
-	      console.log(number1 + " es un número negativo, asi que hemos sumado " + number2 + " y " + number3 + " y da un total de " + total);
-	      break;
-	    default:
-	      total = number1 * number2 * number3;
-	      console.log("El resultado de multiplicar los 3 números es " + total);
-	  }
-	}
-	var firstNumber = prompt("Introduce el primer número");
-	var secondNumber = prompt("Introduce el segundo número");
-	var thirdNumber = prompt("Introduce el tercer número");
-	numbersComparator(firstNumber,secondNumber, thirdNumber);
+    MAL
 ```
 
 
@@ -240,6 +196,7 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de condicion
 
 - Usando *Operador Ternario (?:)*
 ```javascript
+4
     var number = pprompt("Introduce un número positivo o negativo y lo sabré");
 	
 	console.log(number<0 ? "El número es negativo chaval" : "El número es positivo macho")

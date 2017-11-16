@@ -148,15 +148,15 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
     var number = pprompt("Introduce un número y te diremos los impares que hay durante 50 intentos");
     var control = 50;
     
-    for(i=0;i<=50;i++){
-      if(number%2){
+    for(i=0;i<=control;i++){
+      if(number%2 !== 0){
         console.log(number);    
       }
       number++;
     }
     
     while(control>0) {
-      if(number%2){
+      if(number%2 !== 0){
         console.log(number);    
       }
       number++;
@@ -164,7 +164,7 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
     }
     
     do {
-      if(number%2){
+      if(number%2 !== 0){
         console.log(number);    
       }
       number++;
@@ -246,7 +246,7 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 ```javascript
     function numberToRoman(number) {
       var numeral = [50,40,10,9,5,4,1];
-      var roman = ["L","XL","X","IX",V","IV","I"];
+      var roman = ["L","XL","X","IX","V","IV","I"];
       var result = "";
       for(i=0;i<numeral.length;i++) {
         while(number%numeral[i]<number) {
