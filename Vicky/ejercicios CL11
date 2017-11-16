@@ -42,5 +42,5 @@
 5 - Imprimir por consola la fecha completa (formato texto) en koreano, japones.
 
     // Tu solución
-    
+    var ahora=new Date();
     console.log(ahora.toLocaleString("ko-KO"));

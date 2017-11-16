@@ -6,9 +6,9 @@
       
       var pos = cadena.indexOf(buscar);
       
-      while(pos != -1 ) {
+      while(pos != -1) {
          con++;
-         pos = cadena.indexOf(buscar,pos+1);
+         pos = cadena.indexOf(buscar, pos + 1);
       }
       
       console.log("La cadena '" + buscar + "' aparece " + con + " veces");
