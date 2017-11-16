@@ -174,18 +174,66 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 
 **6 -** Diseña un algoritmo que imprima la suma de los 50 primeros numeros pares y el total de números impares partiendo de un número dado por el usuario
 - Usando *for*
+
 ```javascript
-    // Tu solución
+    var number = parseInt(pprompt("Dime un número y te sumo los 50 primeros pares y cuantos impares me he encontrado"));
+    var sum = number;
+    var oddCount = 0;
+    
+    for(i=0;i<=50;i++){
+      number++;
+      if(number%2) {
+        oddCount++;
+      }else {
+        console.log(number);
+        sum = sum + number;
+      }
+    }
+    console.log ("La suma de todos los pares es " + sum + " y había " + oddCount + " impares");
 ```
 
 - Usando *while*
+
 ```javascript
-    // Tu solución
+    var number = parseInt(pprompt("Dime un número y te sumo los 50 primeros pares y cuantos impares me he encontrado"));
+    var sum = number;
+    var oddCount = 0;
+    
+    i=0;
+    while(i<=50){
+      number++;
+      if(number%2) {
+        oddCount++;
+      }else {
+        console.log(number);
+        sum = sum + number;
+      }
+      i++;
+    }
+
+    console.log ("La suma de todos los pares es " + sum + " y había " + oddCount + " impares");
 ```
 
 - Usando *Do...While*
+
 ```javascript
-    // Tu solución
+    var number = parseInt(pprompt("Dime un número y te sumo los 50 primeros pares y cuantos impares me he encontrado"));
+    var sum = number;
+    var oddCount = 0;
+    
+    i=0;
+    do{
+      number++;
+      if(number%2) {
+        oddCount++;
+      }else {
+        console.log(number);
+        sum = sum + number;
+      }
+      i++;
+    }while(i<=50);
+    
+    console.log ("La suma de todos los pares es " + sum + " y había " + oddCount + " impares");
 ```
 
 **7 -** Diseña un algoritmo introducido un numero y pasarlo a número romanos.
@@ -194,8 +242,20 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 ![numeros_romanos](https://eloviparo.files.wordpress.com/2009/09/numeros-romans.jpg?w=466&h=172)
 
 - Usando *for*
+
 ```javascript
-    // Tu solución
+    function numberToRoman(number) {
+      var numeral = [50,40,10,9,5,4,1];
+      var roman = ["L","XL","X","IX",V","IV","I"];
+      var result = "";
+      for(i=0;i<numeral.length;i++) {
+        while(number%numeral[i]<number) {
+          result+=roman[i];
+          number-=numeral[i];
+        }
+      }
+      return result;
+    }
 ```
 
 - Usando *while*
