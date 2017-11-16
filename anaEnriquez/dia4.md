@@ -130,14 +130,16 @@
 ```
 	pedir @masterpass
     definir @count = 0
-	repetir si @count < 3
+    definir @magic = "no"
+	repetir si @count < 3 AND @magic = "yes"
 		si @masterpass === "Fictizia mola mucho"
 			mostrar "Acceso concedido, su silla ejectará en 10 segundos para llevarle a la guarida secreta..."
+			@magic = "yes"
 		si no
         	@count = @count + 1
 			@intentos = 3 - @count
 			mostrar "Acceso denegado, le quedan " + @intentos + " más antes de que la pasma vaya a su dirección IP"
-	si count == 3
+	si count >= 3
 	    mostrar "Sayonara baby"
 ```
 
@@ -154,10 +156,10 @@
 	    pedir @year
         @data = 1
 	    @defaultError = "Por favor, introduce una fecha correcta."
-	    si @day > 31
+	    si @day > 31 OR @day <= 0
     		@data = 0
     		mostrar @defaultError + " No existen días superiores a 31"
-    	pero si @month > 12
+    	pero si @month > 12 OR @month <= 0
     		@data = 0
     		mostrar @defaultError + " No existen meses superiores a 12"
     	pero si @day > 30 Y (@month == 11 OR @month == 4 OR @month == 6 OR @month == 9)

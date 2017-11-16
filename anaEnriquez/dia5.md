@@ -9,8 +9,8 @@
 
 ```
     function numberToRoman(number) {
-        var numeral = [50,40,10,5,4,1];
-        var roman = ["L","XL","X","V","IV","I"];
+        var numeral = [50,40,10,9,5,4,1];
+        var roman = ["L","XL","X","IX",V","IV","I"];
         var result = "";
         for(i=0;i<numeral.length;i++) {
             while(number%numeral[i]<number) {
@@ -125,3 +125,7 @@
 ```
     // Tu solución
 ```
+
+
+
+https://www.youtube.com/watch?v=w2vHSjIBwVA&feature=youtu.be
