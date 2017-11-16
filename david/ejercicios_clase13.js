@@ -57,7 +57,7 @@ do{
 
 
 function borrarPeople(arrayAgenda){
-    var nombre = prompt("Introduce un nombre a borrar: ");
+    var nombre = prompt("Introduce un nombre a borrar: ").toLocaleLowerCase();
     var pos = validar(nombre,arrayAgenda);
     if(pos !==-1){
         delete arrayAgenda[pos];
