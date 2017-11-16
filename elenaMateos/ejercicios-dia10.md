@@ -21,7 +21,7 @@ function tiraMoneda(){
 
     for (var i=0; i<=100; i++ ){
 
-        var dado1 =  Math.floor(Math.random()*6)+1;
+        var dado1 =  Math.floor(Math.random()*6)+1; // como patron entraría tb en una funcion
         var dado2 =  Math.floor(Math.random()*6)+1;
          if ((dado1 + dado2) === 10) {
             veces = veces + 1;
