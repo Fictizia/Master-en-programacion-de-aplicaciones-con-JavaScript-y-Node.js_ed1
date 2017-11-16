@@ -41,6 +41,32 @@ Características:
 -Los asistentes pueden darse de baja, y el asiento que ocupaban queda libre.
 -Los nuevos asistentes seran asigandos primero a asientos desocupados.
 Opcional: Verifica antes de asignar un asistente que no se registro previamente.*/
+
+        
+        var nombres = ["hola","pepe","maria"];
+        var condicion = true;
+        
+        function crear(){
+            var nom = prompt("Introduzca su nombre");
+            while(condicion === true){
+                if(nombres.indexOf(nom) < 0){
+                    console.log("entra");
+                    for (var i = 0; i<nombres.length; i++){
+                        if(typeof nombres[i] === undefined || nombres[i] === "undefined"){
+                            nombres[i] = nom;
+                            condicion = false;
+                            break;
+                        }else{
+                            nombres.push(nom);
+                            condicion = false;
+                        }
+                    }
+                }else{
+                    var nom = prompt("Ya existe ese nombre, introduzca otro");
+                }
+            }
+        };
+
         /*
         var nombres = ["hola","pepe","maria"];
         var asistentes = [];
