@@ -35,20 +35,71 @@ function impar(elemento){
 var arrayAgenda = []
 var opc = 0;
 do{
-    opc = prompt("Que desea hacer \n 1. Añadir gente\n 2. Darse de baja\n");
-}while(isNaN(opc) || opc > 2 || opc < 0);
+    opc = parseInt(prompt("Que desea hacer: \n1. Añadir gente\n2. Darse de baja\n3. Salir"));
 
-switch (opc) {
-    case 1:
-        // code
-        break;
-    case 2: 
-        break;
-    default:
-        break;
+    switch (opc) {
+        case 1:
+            arrayAgenda = anadirPeople(arrayAgenda);
+            console.log(arrayAgenda);
+            break;
+        case 2: 
+            arrayAgenda = borrarPeople(arrayAgenda);
+            console.log(arrayAgenda);
+            break;
+        case 3: 
+            alert("Que pases un buen día!! 8===========D~~~~");
+            console.log(arrayAgenda);
+            break;
+        default: alert("No contemplado")
+            break;
+    }
+}while(isNaN(opc) || opc !== 3);
+
+
+function borrarPeople(arrayAgenda){
+    var nombre = prompt("Introduce un nombre a borrar: ");
+    var pos = validar(nombre,arrayAgenda);
+    if(pos !==-1){
+        delete arrayAgenda[pos];
+         alert("El nombre ha sido borrado.");
+    }else{
+         alert("El nombre a borrar no existe.");
+    }
+    return arrayAgenda;
 }
 
 function anadirPeople(arrayAgenda){
-    
+    var nombre = prompt("Introduce un nombre a añadir: ").toLocaleLowerCase();
+    var pos = validar(nombre,arrayAgenda);
+    if(pos===-1){
+        anadirAsientosVacios(nombre,arrayAgenda);
+        alert("Registrado con exito")
+    }else{
+        alert("Este asistente ya está registrado");
+    }
     return arrayAgenda;
+}
+
+function validar(nombre,arrayAgenda){
+    var pos = -1;
+    if(arrayAgenda.indexOf(nombre)!==-1){
+        pos = arrayAgenda.indexOf(nombre);
+    }
+    return pos;
+}
+
+function anadirAsientosVacios(nombre,arrayAgenda){
+    var posVacia = 0;
+    var boolean = false;
+    for(var i=arrayAgenda.length; i>=0; i--){
+        if(typeof arrayAgenda[i] === "undefined"){
+            posVacia = i;
+            boolean = true;
+        }
+    }
+    if(boolean){
+        arrayAgenda[posVacia] = nombre;
+    }else{
+        arrayAgenda.push(nombre);
+    }
 }
