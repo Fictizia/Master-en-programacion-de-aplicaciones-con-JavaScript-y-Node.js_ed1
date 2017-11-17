@@ -19,8 +19,4 @@ function dameBanana(elemento) {
 }
 var filtrados = bananas.filter(dameBanana);
 
-function tamañoValido(elemento) {
-  return elemento === 10;
-}
-var filtrados = [true, 134, 10, 0, null, "Hola"].filter(tamañoValido);
 ```

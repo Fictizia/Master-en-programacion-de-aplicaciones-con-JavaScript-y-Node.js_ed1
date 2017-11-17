@@ -5,7 +5,7 @@ Ejercicios
  ```
  function tiraMoneda(){
   var resultado =  Math.floor(Math.random()*10);
- 
+
  if (resultado>5) {
      console.log('Es cara');
  }else{
@@ -18,10 +18,10 @@ Ejercicios
 ```
 function tiraMoneda(){
     var veces = 0;
- 
+
     for (var i=0; i<=100; i++ ){
-        
-        var dado1 =  Math.floor(Math.random()*6)+1;
+
+        var dado1 =  Math.floor(Math.random()*6)+1; // como patron entraría tb en una funcion
         var dado2 =  Math.floor(Math.random()*6)+1;
          if ((dado1 + dado2) === 10) {
             veces = veces + 1;
@@ -31,7 +31,7 @@ function tiraMoneda(){
     }
     console.log(veces);
     ```
-    
+
 ### 10 - Diseña un script que confirme si una fecha es valida y además devuelva la fecha en dos formatos diferentes.
 
 __Características:__
@@ -39,7 +39,7 @@ __Características:__
  * Validar la fecha. En caso de error incluir un mensaje informativo.
  * Después de validar, devolvemos la fecha en formato DD/MM/AAAA
  * Convertimos el número del mes, en el nombre del mes real y devolvemos la fecha en el siguiente formato ( DD de MES de AAAA)
- * 
+ *
 var dia = promt('Dame un número');
 parseInt(dia);
 
@@ -64,8 +64,8 @@ var anno = promt('Dame el año');
 parseInt(anno);
 
 function fecha(dia, mes, anno){
-    
-    
+
+
     if (dia < 1 && 31 < dia) {
         alert('Dame un día válido');
         return false;
@@ -75,10 +75,6 @@ function fecha(dia, mes, anno){
         return false
     }
     if (anno < 0 && anno === infinito)
-    
+
     var fecha = newDate(anno, mes, dia);
 };
-
-
-
- 
