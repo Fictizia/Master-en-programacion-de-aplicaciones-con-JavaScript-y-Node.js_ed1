@@ -77,6 +77,7 @@ Fecha | Teoría | Recursos | Contenido
 14/11/2017 | [Clase 12](teoria/dia12.md) | [Clase 12](recursos/dia12.md) | Arrays
 15/11/2017 | [Clase 13](teoria/dia13.md) | Clase 13 | Ejercicios de Arrays
 16/11/2017 | [Clase 14](teoria/dia14.md) | [Clase 14](recursos/dia14.md) | Objetos Literales
+17/11/2017 | [Clase 15](teoria/dia15.md) | [Clase 15](recursos/dia15.md) | Funciones
 
 
 Temario
