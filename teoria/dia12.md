@@ -127,7 +127,7 @@
 	var filtrados = [true, 134, 10, 0, null, "Hola"].filter(tamañoValido);
     ```
 
-- .forEach() *Se ejecuta la función por cada elemnto del array*:
+- .forEach() *Se ejecuta la función por cada elemento del array*:
     ```javascript
 	function logger(element, index, array) {
 	    console.log("array[" + index + "] = " + element);
@@ -135,7 +135,7 @@
 	[2, 5, 9].forEach(logger);
     ```
 
-- .indexOf() *Devuelve la posición donde se escuentra el elemnto o -1 si no lo encuentra*:
+- .indexOf() *Devuelve la posición donde se escuentra el elemento o -1 si no lo encuentra*:
     ```javascript
 	var array = [2, 5, 9];
 	var index = array.indexOf(9); // 2
