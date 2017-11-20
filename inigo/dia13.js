@@ -42,68 +42,56 @@ Características:
 -Los nuevos asistentes seran asigandos primero a asientos desocupados.
 Opcional: Verifica antes de asignar un asistente que no se registro previamente.*/
 
-        
-        var nombres = ["hola","pepe","maria"];
-        var condicion = true;
-        
-        function crear(){
-            var nom = prompt("Introduzca su nombre");
-            while(condicion === true){
-                if(nombres.indexOf(nom) < 0){
-                    console.log("entra");
-                    for (var i = 0; i<nombres.length; i++){
-                        if(typeof nombres[i] === undefined || nombres[i] === "undefined"){
-                            nombres[i] = nom;
-                            condicion = false;
-                            break;
-                        }else{
-                            nombres.push(nom);
-                            condicion = false;
-                        }
-                    }
-                }else{
-                    var nom = prompt("Ya existe ese nombre, introduzca otro");
-                }
-            }
-        };
-
-        /*
-        var nombres = ["hola","pepe","maria"];
         var asistentes = [];
-        var ids = [1,2,3];
-        for (var i = 0; i<nombres.length; i++){
-                asistentes.push([ids[i],nombres[i]]);
-               
-            }
-            console.log(ids);
-                console.log(nombres);
-            //asistentes = ids.concat(nombres);
-            console.log(asistentes);
-        */
-        var nombres = [];
-        var asistentes = [];
-        var ids = [];
-        
-        var crear = function crear(){
-            nombres.push(prompt("Introduzca su nombre"));
-            ids.push(nombres.length);
-        };
-        
-        var ver = function ver(){
-            for (var i = 0; i<nombres.length; i++){
-                asistentes.push([ids[i],nombres[i]]);
-               
-            }
-            console.log(ids);
-                console.log(nombres);
-            //asistentes = ids.concat(nombres);
-            console.log(asistentes);
-        };
-        
-        var eliminar = function eliminar(){
-            console.log(asistentes);
-            delete asistentes[2];
-            console.log(asistentes);
-        };
+	
+	function asignar(nombre) {
+	    var registrado = false;
+	    var vacante = false;
+	
+	    for (var i = 0; i < asistentes.length; i++) {
+	        if (asistentes[i] === undefined) {
+	            vacante = i;
+	        }
+	        if (asistentes[i] === nombre) {
+	            registrado = i;
+	        }
+	    }
+	
+	    if (registrado || registrado === 0) {
+	        console.log("Ya estabas registrado!");
+	        console.log("Eres el asistente número", registrado);
+	    } else {
+	        if (vacante || vacante === 0) {
+	            asistentes[vacante] = nombre;
+	            console.log("Eres el asistente número", vacante);
+	            console.log("Felicidades! has ocupado un asiento que estaba vacio.");
+	        } else {
+	            asistentes.push(nombre);
+	            console.log("Eres el asistente número", asistentes.length - 1);
+	            console.log("No quedan asientos vacios antes que el tuyo.");
+	        }
+	    }
+	
+	}
+	
+	function quitar(nombre) {
+	    var registrado = false;
+	
+	    for (var i = 0; i < asistentes.length; i++) {
+	        if (asistentes[i] === nombre) {
+	            registrado = i;
+	        }
+	    }
+	
+	
+	    if (registrado || registrado === 0) {
+	        asistentes[registrado] = undefined;
+	        console.log("El asistente " + nombre + " ha sido eliminado.");
+	        console.log("El asiento " + registrado + " esta vacio.");
+	    } else {
+	        console.log("El asistente " + nombre + "... no existe!");
+	    }
+	}
+       
         
        
