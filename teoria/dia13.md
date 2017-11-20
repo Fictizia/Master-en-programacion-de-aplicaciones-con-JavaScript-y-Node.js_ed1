@@ -5,6 +5,9 @@
 **1 -** Junta estos tres Arrays *["Oscar", ...], [9897667, ...], [false, ...]* de tal forma que construyan un único Array anidado *[["Oscar", 9897667, false], [etc...]]* 
 
 ```javascript
+	/*
+		--- COMO ARRAY ---
+	*/
 	var arreglo1 = ["Oscar", "Pedro", "Marco", "Juana"],
 		arreglo2 = [9897667, 81721623, 91823871, 71236123],
 		arreglo3 = [false, true, true, false];
@@ -14,6 +17,26 @@
 	for (var i = 0; i <= arreglo1.length; i++){
 		var resumen = [arreglo1[i], arreglo2[i], arreglo3[i]];
 		anidacion.push(resumen);
+	}
+	
+	console.log("El resultado es %O", anidacion);
+	
+	/*
+			---- COMO OBJETO ---
+	*/
+	
+	var arreglo1 = ["Oscar", "Pedro", "Marco", "Juana"],
+	arreglo2 = [9897667, 81721623, 91823871, 71236123],
+	arreglo3 = [false, true, true, false];
+
+	var anidacion = [];
+	
+	for (var i = 0; i <= arreglo1.length; i++){
+		anidacion.push({
+			nombre: arreglo1[i],
+			id: arreglo2[i], 
+			admin: arreglo3[i]
+		});
 	}
 	
 	console.log("El resultado es %O", anidacion);
