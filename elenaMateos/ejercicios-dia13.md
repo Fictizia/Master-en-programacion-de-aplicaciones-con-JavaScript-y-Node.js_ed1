@@ -20,6 +20,18 @@ function crearArray (){
 crearArray();
 typeof(agenda);
 
+//Solución de clase: lo suyo es poner un objeto dinámico
+function crearArray (){
+    for(var i = 0; i < nombres.length; i++){
+       // agenda[i] = nombres[i] + ',' + telefonos[i] + ',' + boleanos[i];
+        agenda.push({
+        }[nombres[i],telefonos[i],boleanos[i]]);
+    }
+
+
+}
+
+
 
 // Variante
 
@@ -54,6 +66,7 @@ for (var i = 0; i < agenda.length; i++) {
   }
 })
 console.log(agenda);
+
 ```
 ### 2 - Crea un Array con 100 numeros enteros al azar. Después crea un array para almacenar los números pares y otro array para los impares.
 ```javascript
@@ -79,6 +92,7 @@ for (var i = 0; i < 101; i++) {
 __Opcional: Ordena los números pares e impares en sus respectivos arrays__
 
 ```javascript
+//con arrayParaes = arrayPares.sort();
 
 ```
 ### 3 - Vamos a gestionar la lista de asistentes de un evento.
@@ -92,3 +106,8 @@ Los nuevos asistentes seran asigandos primero a asientos desocupados.
 Opcional:
 
 Verifica antes de asignar un asistente que no se registro previamente.
+crear lista
+crear funcion de asignación 
+crear función de quitar.
+indexOf (usar el indice de posición para getionar, busquedas en arrays mejor usar este método)
+
