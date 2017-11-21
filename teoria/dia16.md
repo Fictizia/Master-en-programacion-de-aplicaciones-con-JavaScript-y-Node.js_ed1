@@ -266,10 +266,6 @@ var nodesArray = Array.prototype.slice.call(document.querySelectorAll("div"));
 var nodesArray = [].slice.call(document.querySelectorAll("div"));
 ```
 
-### Trabajar sin JQuery
-
-- **[You Might Not Need Jquery](http://youmightnotneedjquery.com/)**
-- **[You Might Not Need Jquery(en GitHub)](https://github.com/HubSpot/youmightnotneedjquery)**
 
 ### Ejercicios
 
