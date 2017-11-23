@@ -81,6 +81,7 @@ Fecha | Teoría | Recursos | Contenido
 20/11/2017 | [Clase 16](teoria/dia16.md) | [Clase 16](recursos/dia16.md) | BOM y DOM
 21/11/2017 | [Clase 17](teoria/dia17.md) | Clase 17 | Vivir sin JQuery
 22/11/2017 | [Clase 18](teoria/dia18.md) | [Clase 18](recursos/dia18.md) | Eventos
+23/11/2017 | [Clase 19](teoria/dia19.md) | [Clase 19](recursos/dia19.md) | Introducción a AJAX
 
 Temario
 =================
