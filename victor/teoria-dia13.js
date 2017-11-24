@@ -21,7 +21,6 @@ for(var i = 0; i < 100; i++) {
     } else {
         impares[impares.length] = ran;
     }
-    
 }
 pares = pares.sort();
 impares = impares.sort();
