@@ -26,7 +26,7 @@
             {
                 pares.push(ale);
             }else{
-                impares.push(ale);
+                // impares.push(ale);
             }
         }
         console.log(numeros);
