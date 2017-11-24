@@ -1,24 +1,45 @@
-function countdown(id){
-            var fecha=new Date(2018,5,26)
-            var hoy=new Date()
-            var dias=0
-            var horas=0
-            var minutos=0
-            var segundos=0
+var intervalo;
+function fechasDif(){
+    var fecha=new Date(2017,11,7,0,0)
+    var hoy=new Date()
+    var dias=0
+    var horas=0
+    var minutos=0
+    var segundos=0
 
-            var diferencia=(fecha-hoy)/1000
-            dias=Math.floor((diferencia/86400))
-            diferencia=diferencia-(86400*dias)
-            horas=Math.floor(diferencia/3600)
-            diferencia=diferencia-(3600*horas)
-            minutos=Math.floor(diferencia/60)
-            diferencia=diferencia-(60*minutos)
-            segundos=Math.floor(diferencia)
-
-            document.getElementById(id).innerHTML='Quedan ' + dias + ' Dias, ' + horas + ' Horas, ' + minutos + ' Minutos, ' + segundos + ' Segundos'
-
-            if (dias>0 || horas>0 || minutos>0 || segundos>0){
-                    setTimeout("countdown(\"" + id + "\")",1000)
-            }
-            
-        }
+    var diferencia=(fecha-hoy)/1000
+    
+    if (diferencia <= 0){
+        document.querySelector("body").style.backgroundImage = "url(https://media.giphy.com/media/120ErahsQyf1q8/giphy.gif)"
+        document.querySelector("#textos img").style.display = "block";
+        diferencia = 0;
+        clearInterval(intervalo);
+    }
+    
+    dias=Math.floor((diferencia/86400))
+    diferencia=diferencia-(86400*dias)
+    horas=Math.floor(diferencia/3600)
+    diferencia=diferencia-(3600*horas)
+    minutos=Math.floor(diferencia/60)
+    diferencia=diferencia-(60*minutos)
+    segundos=Math.floor(diferencia)
+    
+    if(horas <10 ){
+        horas = "0" + horas;
+    }
+    if(minutos <10 ){
+        minutos = "0" + minutos;
+    }
+    if(segundos <10 ){
+        segundos = "0" + segundos;
+    }
+    document.getElementById("dias").innerHTML=dias;
+    document.getElementById("horas").innerHTML=horas;
+    document.getElementById("minutos").innerHTML=minutos;
+    document.getElementById("segundos").innerHTML=segundos;
+    
+    
+};
+document.addEventListener("DOMContentLoaded", function() {
+   intervalo = setInterval(fechasDif,1000);
+});
