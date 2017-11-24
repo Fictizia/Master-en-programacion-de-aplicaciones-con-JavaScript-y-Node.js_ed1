@@ -102,12 +102,15 @@ Características:
 Cada asistente recibirá el identificador de su posición en el Array.
 El identificador no puede cambiar una vez reservado el asiento.
 Los asistentes pueden darse de baja, y el asiento que ocupaban queda libre.
-Los nuevos asistentes seran asigandos primero a asientos desocupados.
+Los nuevos asistentes serán asigandos primero a asientos desocupados.
 Opcional:
 
 Verifica antes de asignar un asistente que no se registro previamente.
 crear lista
-crear funcion de asignación 
+crear funcion de asignación
 crear función de quitar.
-indexOf (usar el indice de posición para getionar, busquedas en arrays mejor usar este método)
+indexOf (usar el indice de posición para getionar, busquedas en arrays mejor usar este método).
 
+```javascript
+
+var asistente = '';
