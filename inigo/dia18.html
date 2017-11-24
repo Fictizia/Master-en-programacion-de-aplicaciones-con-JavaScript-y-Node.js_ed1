@@ -4,9 +4,17 @@
 	<title></title>
 	<meta charset="UTF-8">
 	<style type="text/css">
-            .text-center {
-              text-align: center;
-            }
+	        html, body{
+	            height: 100%;
+	            margin: 0;
+	        }
+	        .content{
+	            height: 100%;
+	            display: flex;
+	            justify-content: center;
+	            align-items: center;
+	            text-align: center;
+	        }
             .numeros{
                 display: inline-block;
                 background-color: #FF00FF;
@@ -29,33 +37,48 @@
 	</style>
 </head>
 <body>
-    <div class="text-center">
-        <h2>Cuenta atrás para que acabe el curso</h2>
-        <span class="numeros" id="dias">00</span>
-        <span class="separacion"> días </span>
-        <span class="numeros" id="horas">00</span>
-        <span class="puntos">:</span>
-        <span class="numeros" id="minutos">00</span>
-        <span class="puntos">:</span>
-        <span class="numeros" id="segundos">00</span>
+    <div class="content">
+        <div>
+            <h2>Cuenta atrás para que acabe el curso</h2>
+            <span class="numeros" id="dias">00</span>
+            <span class="separacion"> días </span>
+            <span class="numeros" id="horas">00</span>
+            <span class="puntos">:</span>
+            <span class="numeros" id="minutos">00</span>
+            <span class="puntos">:</span>
+            <span class="numeros" id="segundos">00</span>
+            <h3 id="mensaje"></h2>
+        </div>
     </div>
     <script type="text/javascript">
+        var intervalo;
+        
         function contador() {
-            var finCurso = new Date(2018, 5, 26, 19, 00);
-         	console.log(finCurso.toLocaleString());
+            //var finCurso = new Date(2018, 5, 26, 19, 00);
+            var finCurso = new Date(2017, 10, 24, 10, 39);
          	var hoy = new Date();
          	var diferencia = finCurso - hoy;
+         	
+         	if(diferencia <= 0){
+         	    diferencia = 0;
+         	    document.getElementById("mensaje").innerHTML = "Se Acabó!!!";
+         	    clearInterval(intervalo);
+            }
+            
         	var segundos = diferencia / 1000 ;
             var minutos = segundos / 60;
             var horas = minutos / 60;
             var dias = horas / 24;
+            
             segundos = segundos % 60;
             minutos = minutos % 60;
             horas = horas % 24;
+            
             dias = Math.floor(dias);
         	horas = Math.floor(horas);
         	minutos = Math.floor(minutos);
         	segundos = Math.floor(segundos);
+        	
             if(horas < 10){
                 horas = '0' + horas;
             }
@@ -65,14 +88,15 @@
             if(segundos < 10){
                 segundos = '0' + segundos;
             }
+            
         	document.getElementById("dias").innerHTML = dias;
         	document.getElementById("horas").innerHTML = horas;
         	document.getElementById("minutos").innerHTML = minutos;
-        	document.getElementById("segundos").innerHTML = segundos;
+        	document.getElementById("segundos").innerHTML = segundos;console.log("dentro");
         }
-        window.onload = function() {
-            setInterval(contador, 1000);
-        }
+        document.addEventListener("DOMContentLoaded", function() {
+            intervalo = setInterval(contador, 1000);
+        });
     </script>
 </body>
 </html>
