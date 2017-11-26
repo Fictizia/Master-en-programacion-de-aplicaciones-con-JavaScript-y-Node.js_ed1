@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Countdown</title>
+        <style type="text/css">
+            #countdown div {
+                display: inline-block;
+                text-align: right;
+                margin-right: 10px;
+                border-right: 1px solid #333;
+                padding-right: 10px;
+            }
+            #countdown div:last-child {
+                border-right: 0;
+            }
+            #countdown div .text {
+                margin-bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="countdown">
+            <div class="box-days">
+                <p class="text">Días: </p>
+                <p class="days"></p>
+            </div>
+            <div class="box-hours">
+                <p class="text">Horas: </p>
+                <p class="hours"></p>
+            </div>
+            <div class="box-minutes">
+                <p class="text">Minutos: </p>
+                <p class="minutes"></p>
+            </div>
+            <div class="box-seconds">
+                <p class="text">Segundos: </p>
+                <p class="seconds"></p>
+            </div>
+        </div>
+        <script type="text/javascript" src="teoria-dia18.js"></script>
+    </body>
+</html>

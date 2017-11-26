@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+        html, body, .container{
+            height: 100%;
+            margin: 0;
+        }
+        .content{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .numeros{
+            display: inline-block;
+            background-color: #FF00FF;
+            padding: 20px;
+            min-width: 40px;
+            font-size: 40px;
+            font-family: console;
+            border-radius: 10px;
+        }
+        .puntos{
+            font-size: 40px;
+            font-family: console;
+            padding: 10px;
+        }
+        .separacion{
+            font-size: 25px;
+            font-family: console;
+            padding: 10px;
+        }
+        .imgIzqSup{
+            position: absolute;
+            top: 8px;
+            left: -8px;
+            transform: rotate(90deg);
+        }
+        .imgDerSup{
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: rotate(180deg);
+        }
+        .imgIzqInf{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .imgDerInf{
+            position: absolute;
+            bottom: 8px;
+            right: -8px;
+            transform: rotate(270deg);
+        }
+        .fondo{
+            height: 100%;
+            background: url('https://media.sticker.market/gif/confetti-58c915e1e509b3731a17cd46-g.gif');
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        .hide{
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        #barra{
+            width: 100%;
+            background-color: #ddd;
+            height: 30px;
+        }
+        
+        #progreso {
+            width: 1%;
+            height: 30px;
+            background-color: #4CAF50;
+        }
+	</style>
+</head>
+<body>
+    <div class="container">
+        <img class="imgIzqSup hide" src="http://www.gifmania.com/Gif-Animados-Fiestas/Imagenes-Celebraciones/Cono-Confeti-Serpentina-84203.gif">
+        <img class="imgDerSup hide" src="http://www.gifmania.com/Gif-Animados-Fiestas/Imagenes-Celebraciones/Cono-Confeti-Serpentina-84203.gif">
+        <div class="content">
+            <div>
+                <h2>Cuenta atrás para que acabe el curso</h2>
+                <span class="numeros" id="dias">00</span>
+                <span class="separacion"> días </span>
+                <span class="numeros" id="horas">00</span>
+                <span class="puntos">:</span>
+                <span class="numeros" id="minutos">00</span>
+                <span class="puntos">:</span>
+                <span class="numeros" id="segundos">00</span>
+                <h3 id="mensaje">&nbsp;</h2>
+                <div id="barra">
+                    <div id="progreso"></div>
+                </div>
+                <img class="hide" src="http://www.canalgif.net/Gifs-animados/Bebidas/Cervezas/Imagen-animada-Cerveza-29.gif">
+            </div>
+        </div>
+        <img class="imgIzqInf hide" src="http://www.gifmania.com/Gif-Animados-Fiestas/Imagenes-Celebraciones/Cono-Confeti-Serpentina-84203.gif">
+        <img class="imgDerInf hide" src="http://www.gifmania.com/Gif-Animados-Fiestas/Imagenes-Celebraciones/Cono-Confeti-Serpentina-84203.gif">
+    </div>
+    <script type="text/javascript">
+        var intervalo;
+        
+        function mostrar(){
+            var elementos = document.getElementsByClassName('hide');
+            for (var i = 0; i < elementos.length; i++) {
+                elementos[i].style.opacity = 1;
+            }
+        }
+        
+        function barra() {
+            var elem = document.getElementById("progreso");   
+            var width = 1;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                } else {
+                    width++; 
+                    elem.style.width = width + '%'; 
+                    //elem.innerHTML = width * 1  + '%';
+                }
+            }
+        }
+        function contador(){
+            var finCurso = new Date(2018, 5, 26, 19, 00);
+            //var finCurso = new Date(2017, 10, 24, 12, 16);
+         	var hoy = new Date();
+         	var diferencia = finCurso - hoy;
+         	
+         	if(diferencia <= 0){
+         	    diferencia = 0;
+         	    document.getElementById("mensaje").innerHTML = "Se Acabó!!!";
+         	    mostrar();
+         	    clearInterval(intervalo);
+            }
+            
+        	var segundos = diferencia / 1000 ;
+            var minutos = segundos / 60;
+            var horas = minutos / 60;
+            var dias = horas / 24;
+            
+            segundos = segundos % 60;
+            minutos = minutos % 60;
+            horas = horas % 24;
+            
+            dias = Math.floor(dias);
+        	horas = Math.floor(horas);
+        	minutos = Math.floor(minutos);
+        	segundos = Math.floor(segundos);
+        	
+            if(horas < 10){
+                horas = '0' + horas;
+            }
+            if(minutos < 10){
+                minutos = '0' + minutos;
+            }
+            if(segundos < 10){
+                segundos = '0' + segundos;
+            }
+            
+        	document.getElementById("dias").innerHTML = dias;
+        	document.getElementById("horas").innerHTML = horas;
+        	document.getElementById("minutos").innerHTML = minutos;
+        	document.getElementById("segundos").innerHTML = segundos;
+        	
+        	barra();
+        }
+        document.addEventListener("DOMContentLoaded", function() {
+            intervalo = setInterval(contador, 1000);
+        });
+    </script>
+</body>
+</html>

@@ -1,21 +1,16 @@
 //Ejercicio 1
-
 var global = document.querySelectorAll('#areas section');
-
 var duracionCurso,nombreCurso,nombreStrong,contador,url;
-
 for (var i=0; i<global.length; i++){
     console.log("\n##"+global[i].getElementsByTagName('h2')[0].innerText+"##\n");
     var filtro = global[i].querySelectorAll('li');
-    contador=0;
+    console.log("**Total de cursos: "+filtro.length+"**");
     for (var j=0; j<filtro.length; j++){
         nombreStrong = filtro[j].getElementsByTagName('strong');
         duracionCurso = filtro[j].getElementsByClassName('contextualInfo');
         url = filtro[j].getElementsByTagName('a')[0].href;
-        console.log("["+nombreStrong[0].innerText+"("+duracionCurso[0].innerText+")] "+url);
-        contador++;
+        console.log("["+nombreStrong[0].innerText.trim()+"("+duracionCurso[0].innerText+")] "+url);
     }
-    console.log("**Total de cursos: "+contador+"**");
 }
 
 
