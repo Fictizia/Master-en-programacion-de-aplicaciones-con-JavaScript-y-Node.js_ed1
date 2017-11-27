@@ -107,20 +107,20 @@ for(var i=0;i<listaAsistentes.length;i++) {
 
 function add(name){
     for(var i=0;i<listaAsistentes.length;i++) {
-    if (asistente==listaAsistentes[i]) {
-        console.log("asistente ya registrado en la posición " + listaAsistentes.indexOf(asistente));
-    }
-  
-    else if (listaAsistentes[i] === undefined){
-        listaAsistentes[i] = asistente;
-        console.log("asistente registrado con el puesto " + listaAsistentes.indexOf(asistente));
-    }
-    else {
-        listaAsistentes.push(asistente);
-        console.log("asistente registrado con la posición " + listaAsistentes.length);
-    }
+        if (asistente==listaAsistentes[i]) {
+            console.log("asistente ya registrado en la posición " + listaAsistentes.indexOf(asistente));
+        }
+      
+        else if (listaAsistentes[i] === undefined){
+            listaAsistentes[i] = asistente;
+            console.log("asistente registrado con el puesto " + listaAsistentes.indexOf(asistente));
+        }
+        else {
+            listaAsistentes.push(asistente);
+            console.log("asistente registrado con la posición " + listaAsistentes.length);
+        }
 
-}
+        }
 
 
 function delete(name){

@@ -1,0 +1,33 @@
+Ejercicio 1:
+
+var secciones=document.querySelectorAll('.mainWrapper >h2');
+var datos=document.querySelectorAll('.mainWrapper >ul >li >a>strong');
+var enlaces=document.querySelectorAll('.mainWrapper >ul >li >a')
+for (var i = 0; i < datos.length-1; i++) {
+  console.log("#"+secciones[i].innerText)
+  for (var j = 0; j < datos.length; j++) {
+    console.log("*"+datos[j].innerText+"*")
+    console.log("["+enlaces[j].href+"]")
+}
+
+
+Ejercicio 2
+
+var datos = document.querySelectorAll('.txt > a');
+	
+	for (var i = 0; i < datos.length; i++) {
+	 console.log(datos[i].innerText);
+	}
+	
+	
+Ejercicio 3
+
+var datos = document.querySelectorAll('.td-module-thumb img');
+	
+	for (var i = 0; i < datos.length; i++) {
+	 console.log(datos[i].src);
+	 var ancho = console.log(datos[i].width);
+	 var alto = console.log(datos[i].height);
+	 datos[i].src = "https://placebear.com/"+ ancho + "/" + alto;
+	}
+	

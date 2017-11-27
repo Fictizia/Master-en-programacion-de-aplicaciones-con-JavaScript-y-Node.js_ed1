@@ -14,7 +14,7 @@
     var fin = new Date();
     var transcurso = fin.getTime() - inicio.getTime();
     transcurso=((transcurso/1000)/60)/60;
-    console.info("Pasaron "+Math.round(transcurso)+" horas");
+    console.info("Pasaron "+Math.floor(transcurso)+" horas");
     
 3 - ¿Cuantos milisengundos quedan para terminar el curso? y... ¿en horas o días?
 
@@ -24,9 +24,9 @@
     var restantes=fin.getTime() - hoy.getTime();
     console.log("quedan " + restantes + " ms para terminar el curso");
     var horas = ((restantes/1000)/60)/60;
-    console.log("quedan " + Math.round(horas) + " horas para terminar el curso");
+    console.log("quedan " + Math.floor(horas) + " horas para terminar el curso");
     var dias=horas/24;
-    console.log("quedan " + Math.round(dias) + " dias para terminar el curso");
+    console.log("quedan " + Math.floor(dias) + " dias para terminar el curso");
     
     
     
