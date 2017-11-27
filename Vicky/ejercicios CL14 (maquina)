@@ -1,0 +1,549 @@
+Paso 1 - Creamos los primeros objetos básicos:
+
+Maquina Expendedora (Objeto)
+Productos (Array)
+Clientes (Array)
+	// Tu solución
+	
+var maquina = {
+productos:[],
+clientes:[],
+};
+
+	
+Paso 2 - Creamos los primeros perfiles en el Array de clientes:
+
+Propiedades:
+Nombre
+Usuario
+Contraseña
+Tipo usuario
+Presupuesto
+	// Tu solución
+	
+		
+var maquina = {}
+var productos=[],
+
+var clientes=[
+{ 
+name: "Pablo",
+user: "Pablo01",
+pass: "0231pa",
+type: "basic",
+balance: 1450,
+purchases:["bollo","refresco"],
+spent:[100,120],
+
+},
+{ 
+name: "Ana",
+user: "Ana01",
+pass: "0231an",
+type: "basic",
+balance: 2000,
+purchases:["refresco","refresco"],
+spent:[120,120],
+},
+{ 
+name: "Sergio",
+user: "Sergio01",
+pass: "0231se",
+type: "basic",
+balance: 900,
+purchases:["bollo","café"],
+spent:[100,100],
+},
+{ 
+name: "Sara",
+user: "Sara01",
+pass: "0231sa",
+type: "basic",
+balance: 450,
+purchases:["agua","agua"],
+spent:[60,60],
+}
+];
+
+
+	
+Paso 3 - Creamos varios métodos para gestionar a los clientes y sus necesidades
+
+Metodos:
+
+Consultar saldo de un cliente
+Devolverá el saldo existente o -1 en caso de error
+Comprobaremos la contraseña y el usuario
+Consultar gastos de un cliente
+Devolverá un array o false en caso de error
+Comprobaremos la contraseña y el usuario
+Agregar un cliente
+Eliminar un cliente
+Caracteristicas:
+
+Evitaremos que se registren usuarios que ya existan
+Evitaremos eliminar usuarios que no existan
+Evitaremos dar de alta usuarios que no esten debidamente cumplimentados
+Protegeremos las funciones de gestión de usuarios con la contraseña ficticiaMola
+	// Tu solución
+	
+	
+var maquina = {};
+var productos=[];
+
+var clientes=[
+{ 
+nombre: "Pablo",
+user: "Pablo01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 1450,
+compras:["bollo","refresco"],
+gasto:[100,120],
+
+},
+{ 
+nombre: "Ana",
+user: "Ana01",
+pass: "0231an",
+tipo: "basic",
+saldo: 2000,
+compras:["refresco","refresco"],
+gasto:[120,120],
+},
+{ 
+nombre: "Sergio",
+user: "Sergio01",
+pass: "0231se",
+tipo: "basic",
+saldo: 900,
+compras:["bollo","café"],
+gasto:[100,100],
+},
+{ 
+nombre: "Sara",
+user: "Sara01",
+pass: "0231sa",
+tipo: "basic",
+saldo: 450,
+compras:["agua","agua"],
+gasto:[60,60],
+},
+{
+nombre: "Paco",
+user: "Paco01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 900,
+compras:["café","agua"],
+gasto:[100,60],
+}
+];
+
+/*PROTEGIENDO ACCESO*/
+
+function admin(){
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave!=="FictiziaMola"){
+			console.log("Clave incorrecta. Intentos restantes:" + [i])
+
+		}
+		else{
+			console.log("¡Correcto!");
+			break;
+			/*CONSULTAR SALDO */
+			function saldo(user,pass){
+				for(i=0;i<=clientes.length;i++){
+					if (clientes[i].nombre == user && clientes[i].pass == pass) {
+					return "El saldo de " + clientes[i].nombre + " es " + clientes[i].saldo;
+					}
+					else {
+						return "alguno de los datos introducidos no es correcto";
+					}
+				}
+			}
+
+
+
+
+			/*CONSULTAR GASTOS*/
+			function gastos(user,pass){
+			var listaGastos=[];
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre === user && clientes[i].pass === pass) {
+					var list=[clientes[i].compras, clientes[i].gasto];
+					listaGastos.push(list)
+					return listaGastos;
+					}
+				}
+					
+			}
+
+			/*AGREGAR CLIENTE*/
+
+
+			function agregar(newUser){
+				for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == newUser) {
+					return "usuario existente";
+					}
+					else{
+						clientes.push({
+							nombre: newUser,
+							user: newUser+01,
+							pass: "0231"+newUser,
+							tipo: "basic",
+							saldo: 3000,
+							compras:[],
+							gasto:[],
+						});
+						return "Usuario creado con éxito";
+						break;
+					}
+				}
+			}
+
+			/*BORRAR CLIENTE*/
+
+			function borrar(delUser){
+			var existe = false;
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == delUser) {
+						var existe=true;
+						clientes.splice(i,1);
+						console.log("cliente borrado")
+
+					}
+
+			}
+
+			if (existe!==true){
+				console.log("el cliente no existe");
+			}
+					}
+				}
+}
+
+
+
+Paso 4 - Creamos varios métodos para gestionar a los productos y sus necesidades
+
+Creamos 5 productos que estarán disponibles a la venta
+
+Métodos:
+
+Consumir un producto (cliente)
+Comprobaremos la contraseña y el usuario
+Devolverá el producto o -1 en caso de no existir o estar agotado
+Actualizaremos el stock
+Actualizaremos el saldo del cliente
+Agregar un producto a la máquina (administración)
+Eliminar un prodcutos de la máquina (administración)
+Caracteristicas:
+
+Evitaremos agregar productos que ya existan
+Evitaremos eliminar productos que no existan
+Evitaremos agregar productos que no esten debidamente cumplimentados
+Protegeremos las funciones de agregar y eliminar productos con la contraseña ficticiaMola
+	// Tu solución
+	
+	
+	
+	
+	var productos=[
+{
+	nombreProducto:"café",
+precioProducto:100
+},
+{
+	nombreProducto:"agua",
+precioProducto:60
+},
+{
+	nombreProducto:"bollo",
+precioProducto:100
+},
+{
+	nombreProducto:"refresco",
+	precioProducto:120
+}
+]
+
+
+/*ACCESO PARA COMPRAR UN PRODUCTO*/
+
+function comprar(user,pass){
+	
+	var compraAutorizada=false;
+	for (i = 0; i <=clientes.length-1 ; i++) {
+		if (clientes[i].nombre==user && clientes[i].pass==pass && compraAutorizada===false){// probar quitando compra autorizada fals
+				compraAutorizada=true;
+		}
+	}
+	
+
+	if(compraAutorizada){
+		var producto=prompt("Introduzca el nombre del producto que desee adquirir");
+		for (var i = 0; i <= productos.length-1; i++) {
+			if(productos[i].nombreProducto==producto && productos[i].cantidadProducto>=1){
+				console.log("recoja " + producto);
+				productos[i].cantidadProducto=productos[i].cantidadProducto-1;
+				console.log("Unidades restantes: " + productos[i].cantidadProducto);
+			}
+		}
+	}
+	else {
+		console.log("no está autorizado para realizar esta compra")
+	}
+	
+}
+
+
+
+	
+	
+	
+	
+Paso 5 - Ahora podemos agregar los métodos para agregar, retirar y resetear saldo de los usuarios.
+
+Importante:
+Los saldos jamas pueden ser negativos.
+	// Tu solución
+Paso 6 - Ahora podemos agregar el método para saber la disponibilidad de stock
+
+Importante:
+Es necesaria clave (adminsitrador)
+Debemos saber las existencias
+Debemos saber que productos estan disponibles y cuales no.
+Debemos incluir el código y el nombre
+Cuando se imprima el informe... es necesario incluir la fecha.
+	// Tu solución
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/////////////////////////
+	
+	
+	
+	
+	
+var maquina = {};
+var productos=[];
+
+var clientes=[
+{ 
+nombre: "Pablo",
+user: "Pablo01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 1450,
+compras:["bollo","refresco"],
+gasto:[100,120],
+
+},
+{ 
+nombre: "Ana",
+user: "Ana01",
+pass: "0231an",
+tipo: "basic",
+saldo: 2000,
+compras:["refresco","refresco"],
+gasto:[120,120],
+},
+{ 
+nombre: "Sergio",
+user: "Sergio01",
+pass: "0231se",
+tipo: "basic",
+saldo: 900,
+compras:["bollo","café"],
+gasto:[100,100],
+},
+{ 
+nombre: "Sara",
+user: "Sara01",
+pass: "0231sa",
+tipo: "basic",
+saldo: 450,
+compras:["agua","agua"],
+gasto:[60,60],
+},
+{
+nombre: "Paco",
+user: "Paco01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 900,
+compras:["café","agua"],
+gasto:[100,60],
+}
+];
+
+/*PROTEGIENDO ACCESO*/
+
+function admin(){
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave!=="Fictizia Mola"){
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+
+		}
+		else{
+			console.log("¡Correcto!");
+			break;
+			/*CONSULTAR SALDO */
+			function saldo(user,pass){
+				for(i=0;i<=clientes.length;i++){
+					if (clientes[i].nombre == user && clientes[i].pass == pass) {
+					return "El saldo de " + clientes[i].nombre + " es " + clientes[i].saldo;
+					}
+					else {
+						return "alguno de los datos introducidos no es correcto";
+					}
+				}
+			}
+
+
+
+
+			/*CONSULTAR GASTOS*/
+			function gastos(user,pass){
+			var listaGastos=[];
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre === user && clientes[i].pass === pass) {
+					var list=[clientes[i].compras, clientes[i].gasto];
+					listaGastos.push(list);
+					return listaGastos;
+					}
+				}
+					
+			}
+
+			/*AGREGAR CLIENTE*/
+
+
+			function agregar(newUser){
+				for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == newUser) {
+					return "usuario existente";
+					}
+					else{
+						clientes.push({
+							nombre: newUser,
+							user: newUser+01,
+							pass: "0231"+newUser,
+							tipo: "basic",
+							saldo: 3000,
+							compras:[],
+							gasto:[],
+						});
+						return "Usuario creado con éxito";
+						
+					}
+				}
+			}
+
+			/*BORRAR CLIENTE*/
+
+			function borrar(delUser){
+			var existe = false;
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == delUser) {
+						var existe=true;
+						clientes.splice(i,1);
+						console.log("cliente borrado");
+
+					}
+
+			}
+
+			if (existe!==true){
+				console.log("el cliente no existe");
+			}
+					}
+				}
+}
+}
+
+	
+
+
+var productos=[
+{
+	nombreProducto:"café",
+	cantidadProducto:10,
+precioProducto:100
+},
+{
+	nombreProducto:"agua",
+	cantidadProducto:10,
+precioProducto:60
+},
+{
+	nombreProducto:"bollo",
+	cantidadProducto:10,
+precioProducto:100
+},
+{
+	nombreProducto:"refresco",
+	cantidadProducto:10,
+	precioProducto:120
+}
+];
+
+
+/*ACCESO PARA COMPRAR UN PRODUCTO*/
+
+
+function comprar(user,pass){
+	
+	var compraAutorizada=false;
+	var puntosCliente=false;
+	for (i = 0; i <=clientes.length-1 ; i++) {
+		if (clientes[i].nombre==user && clientes[i].pass==pass && compraAutorizada===false){
+				compraAutorizada=true;
+				puntosCliente= clientes[i].saldo;
+
+
+				
+		}
+	}
+	
+
+	if(compraAutorizada){
+		var producto=prompt("Introduzca el nombre del producto que desee adquirir");
+		for (var i = 0; i <= productos.length-1; i++) {
+			if(productos[i].nombreProducto==producto && productos[i].cantidadProducto>=1 && puntosCliente>producto[i].precioProducto){
+				console.log("recoja " + producto);
+				productos[i].cantidadProducto=productos[i].cantidadProducto-1;
+				console.log("Unidades restantes: " + productos[i].cantidadProducto);
+				//clientes[posicionCliente].saldo=clientes[posicionCliente].saldo-productos[i].precioProducto;
+				//return clientes[posicionCliente].saldo;
+			}
+			if (productos[i].cantidadProducto<=0) {
+				return -1;
+			}
+		}
+	}
+	else {
+		console.log("no está autorizado para realizar esta compra")
+	}
+
+	
+}
+
+
