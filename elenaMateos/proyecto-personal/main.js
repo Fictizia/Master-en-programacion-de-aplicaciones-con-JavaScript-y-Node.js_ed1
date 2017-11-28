@@ -1,7 +1,11 @@
 'use strict';
 
+/* DATE */
+
 var hour = document.getElementById('hour');
 var date = document.getElementById('date');
+
+/* DISTRICT */
 var city = document.getElementById('city');
 var temperature = document.getElementById('temperature');
 var rainProbability = document.getElementById('rainProbability');
@@ -10,12 +14,22 @@ var district = document.getElementById('district');
 var optionDistrict = document.getElementById('optionDistrict');
 var values = document.getElementById('values');
 
+function mostrarHora() {
+  var giveHour = new Date();
 
-functio peticionAjax(url){
+  hour.innerHTML = giveHour.getHours()+ ':' +giveHour.getMinutes();
+  date.innerHTML = giveHour.getDate() + '/' + giveHour.getMonth() + '/' + giveHour.getFullYear();
+  // console.log(giveHour.getHours()+ ':' +giveHour.getMinutes());
+}
 
-    var request = new XMLHttpRequest();    
+mostrarHora();
+
+
+function peticionAjax(url){
+
+    var request = new XMLHttpRequest();
     request.open('GET','http://airemad.org/api/v1/pollution/' + optionDistrict.value)
-    
+
 }
 
 
