@@ -26,8 +26,6 @@ function peticionAjax(url) {
 
 function getData(json) {
     var bookList = json.results;
-    var isbnBook = "";
-    var imageUrl = "" + isbnBook + "";
     var html = "";
     
     bookList.forEach(function(e) {
