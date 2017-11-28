@@ -17,6 +17,11 @@ setInterval(function(){
     hours = Math.floor(hours % 24);
     days = Math.floor(days);
     
+    seconds = seconds < 10 ? "0" + seconds.toString() : seconds;
+    minutes = minutes < 10 ? "0" + minutes.toString() : minutes;
+    hours = hours < 10 ? "0" + hours.toString() : hours;
+    days = days < 10 ? "0" + days.toString() : days;
+    
     document.querySelector(".days").innerText = days;
     document.querySelector(".hours").innerText = hours;
     document.querySelector(".minutes").innerText = minutes;
