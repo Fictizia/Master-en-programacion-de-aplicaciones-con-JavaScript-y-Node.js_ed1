@@ -5,7 +5,7 @@ function peticionAjax(url) {
 
             if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
                 var datos = JSON.parse(xmlHttp.responseText);
-                imprimir(sacarDatos(datos));
+                console.log(sacarDatos(datos));
             } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
                 console.error("ERROR! 404");
             }
@@ -24,8 +24,6 @@ var objetoDatos = {
     descricion: '',
     caratula: ''
 }
-
-var array = []
 
 function sacarDatos(datos){
     var results = datos.results
