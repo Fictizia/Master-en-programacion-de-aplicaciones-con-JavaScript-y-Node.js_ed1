@@ -310,6 +310,327 @@ Paso 5 - Ahora podemos agregar los métodos para agregar, retirar y resetear sal
 Importante:
 Los saldos jamas pueden ser negativos.
 	// Tu solución
+	
+	
+		
+var maquina = {};
+var productos=[];
+
+var clientes=[
+{ 
+nombre: "Pablo",
+user: "Pablo01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 1450,
+compras:["bollo","refresco"],
+gasto:[100,120],
+
+},
+{ 
+nombre: "Ana",
+user: "Ana01",
+pass: "0231an",
+tipo: "basic",
+saldo: 2000,
+compras:["refresco","refresco"],
+gasto:[120,120],
+},
+{ 
+nombre: "Sergio",
+user: "Sergio01",
+pass: "0231se",
+tipo: "basic",
+saldo: 900,
+compras:["bollo","café"],
+gasto:[100,100],
+},
+{ 
+nombre: "Sara",
+user: "Sara01",
+pass: "0231sa",
+tipo: "basic",
+saldo: 450,
+compras:["agua","agua"],
+gasto:[60,60],
+},
+{
+nombre: "Paco",
+user: "Paco01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 900,
+compras:["café","agua"],
+gasto:[100,60],
+}
+];
+
+/*PROTEGIENDO ACCESO*/
+
+function admin(){
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave!=="Fictizia Mola"){
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+
+		}
+		else{
+			console.log("¡Correcto!");
+			break;
+			/*CONSULTAR SALDO */
+			function saldo(user,pass){
+				for(i=0;i<=clientes.length;i++){
+					if (clientes[i].nombre == user && clientes[i].pass == pass) {
+					return "El saldo de " + clientes[i].nombre + " es " + clientes[i].saldo;
+					}
+					else {
+						return "alguno de los datos introducidos no es correcto";
+					}
+				}
+			}
+
+
+
+
+			/*CONSULTAR GASTOS*/
+			function gastos(user,pass){
+			var listaGastos=[];
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre === user && clientes[i].pass === pass) {
+					var list=[clientes[i].compras, clientes[i].gasto];
+					listaGastos.push(list);
+					return listaGastos;
+					}
+				}
+					
+			}
+
+			/*AGREGAR CLIENTE*/
+
+
+			function agregar(newUser){
+				for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == newUser) {
+					return "usuario existente";
+					}
+					else{
+						clientes.push({
+							nombre: newUser,
+							user: newUser+01,
+							pass: "0231"+newUser,
+							tipo: "basic",
+							saldo: 3000,
+							compras:[],
+							gasto:[],
+						});
+						return "Usuario creado con éxito";
+						
+					}
+				}
+			}
+
+			/*BORRAR CLIENTE*/
+
+			function borrar(delUser){
+			var existe = false;
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == delUser) {
+						var existe=true;
+						clientes.splice(i,1);
+						console.log("cliente borrado");
+
+					}
+
+			}
+
+			if (existe!==true){
+				console.log("el cliente no existe");
+			}
+					}
+				}
+}
+}
+
+	
+
+
+var productos=[
+{
+	nombreProducto:"café",
+	cantidadProducto:10,
+	precioProducto:100
+},
+{
+	nombreProducto:"agua",
+	cantidadProducto:10,
+	precioProducto:60
+},
+{
+	nombreProducto:"bollo",
+	cantidadProducto:10,
+	precioProducto:100
+},
+{
+	nombreProducto:"refresco",
+	cantidadProducto:10,
+	precioProducto:120
+}
+];
+
+
+/*ACCESO PARA COMPRAR UN PRODUCTO*/
+
+
+function comprar(user,pass){
+	
+	var compraAutorizada=false;
+	var puntosCliente=0;
+	var posicionCliente=0;
+	for (i = 0; i <clientes.length ; i++) {
+		if (clientes[i].nombre==user && clientes[i].pass==pass && compraAutorizada==false){
+				compraAutorizada=true;
+				puntosCliente= clientes[i].saldo;
+				posicionCliente=i;
+
+
+				
+		}
+	}
+	
+	console.log(compraAutorizada)
+	if(compraAutorizada){
+		var producto=prompt("Introduzca el nombre del producto que desee adquirir");
+		for (var i = 0; i < productos.length; i++) {
+			if(productos[i].nombreProducto==producto && productos[i].cantidadProducto>=1 && puntosCliente>productos[i].precioProducto){
+				console.log(productos[i].precioProducto)
+				console.log("recoja " + producto);
+				productos[i].cantidadProducto--;
+				console.log("Unidades restantes: " + productos[i].cantidadProducto);
+				clientes[posicionCliente].saldo=clientes[posicionCliente].saldo-productos[i].precioProducto;
+				console.log("Saldo restante: " + clientes[posicionCliente].saldo);
+				clientes[posicionCliente].compras.push(producto);
+				clientes[posicionCliente].gasto.push(productos[i].precioProducto);
+				console.log(clientes[posicionCliente])
+
+			}
+			if (productos[i].cantidadProducto<=0) {
+				return -1;
+			}
+		}
+	}
+	else {
+		console.log("no está autorizado para realizar esta compra")
+	}
+
+	
+}
+
+
+
+/* AGREGAR PRODUCTO */
+
+
+
+
+function nuevoProducto (nombre,cantidad,precio) {
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	if(adminAutorizado){
+		productos.push({
+			nombreProducto:nombre,
+			cantidadProducto:cantidad,
+			precioProducto:precio
+			})
+		console.log("Añadido "+ cantidad + " ud de " + nombre + ", con un precio de : " + precio)
+	}
+}
+
+/* ELIMINAR PRODUCTO */
+
+function eliminarProducto (nombre) {
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	if(adminAutorizado){
+		for (var i = 0; i < productos.length; i++) {
+			if (productos[i].nombreProducto==nombre){
+				productos.splice(i,1);
+				console.log(nombre + " eliminado.")
+			}
+			else {
+				console.log("el producto indicado no existe");
+			}
+		}
+	}
+}
+
+
+
+/* GESTIONAR SALDO CLIENTES */
+
+
+function cambiarSaldo(cliente,nuevoSaldo){
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+		if (adminAutorizado) {
+			for (var i = 0; i < clientes.length; i++) {
+				var saldoOriginal=clientes[i].saldo;
+				if (nuevoSaldo!==0){
+					if ((clientes[i].saldo=clientes[i].saldo+nuevoSaldo)<0){
+						console.log("Error.El saldo no puede ser negativo")
+						clientes[i].saldo=saldoOriginal;
+						break;
+					}
+					else {
+						clientes[i].saldo=clientes[i].saldo
+						console.log("El saldo total de " + cliente + " es de "+ clientes[i].saldo)
+						break;
+					}
+				}
+					
+					
+				else {
+					clientes[i].saldo=0;
+					console.log("El saldo del cliente ha sido bloqueado");
+					break;
+				}
+			}
+		
+		}
+		
+
+}
+
+
+	
+	
 Paso 6 - Ahora podemos agregar el método para saber la disponibilidad de stock
 
 Importante:
@@ -322,11 +643,704 @@ Cuando se imprima el informe... es necesario incluir la fecha.
 	
 	
 	
+		
+var maquina = {};
+var productos=[];
+
+var clientes=[
+{ 
+nombre: "Pablo",
+user: "Pablo01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 1450,
+compras:["bollo","refresco"],
+gasto:[100,120],
+
+},
+{ 
+nombre: "Ana",
+user: "Ana01",
+pass: "0231an",
+tipo: "basic",
+saldo: 2000,
+compras:["refresco","refresco"],
+gasto:[120,120],
+},
+{ 
+nombre: "Sergio",
+user: "Sergio01",
+pass: "0231se",
+tipo: "basic",
+saldo: 900,
+compras:["bollo","café"],
+gasto:[100,100],
+},
+{ 
+nombre: "Sara",
+user: "Sara01",
+pass: "0231sa",
+tipo: "basic",
+saldo: 450,
+compras:["agua","agua"],
+gasto:[60,60],
+},
+{
+nombre: "Paco",
+user: "Paco01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 900,
+compras:["café","agua"],
+gasto:[100,60],
+}
+];
+
+/*PROTEGIENDO ACCESO*/
+
+function admin(){
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave!=="Fictizia Mola"){
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+
+		}
+		else{
+			console.log("¡Correcto!");
+			break;
+			/*CONSULTAR SALDO */
+			function saldo(user,pass){
+				for(i=0;i<=clientes.length;i++){
+					if (clientes[i].nombre == user && clientes[i].pass == pass) {
+					return "El saldo de " + clientes[i].nombre + " es " + clientes[i].saldo;
+					}
+					else {
+						return "alguno de los datos introducidos no es correcto";
+					}
+				}
+			}
+
+
+
+
+			/*CONSULTAR GASTOS*/
+			function gastos(user,pass){
+			var listaGastos=[];
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre === user && clientes[i].pass === pass) {
+					var list=[clientes[i].compras, clientes[i].gasto];
+					listaGastos.push(list);
+					return listaGastos;
+					}
+				}
+					
+			}
+
+			/*AGREGAR CLIENTE*/
+
+
+			function agregar(newUser){
+				for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == newUser) {
+					return "usuario existente";
+					}
+					else{
+						clientes.push({
+							nombre: newUser,
+							user: newUser+01,
+							pass: "0231"+newUser,
+							tipo: "basic",
+							saldo: 3000,
+							compras:[],
+							gasto:[],
+						});
+						return "Usuario creado con éxito";
+						
+					}
+				}
+			}
+
+			/*BORRAR CLIENTE*/
+
+			function borrar(delUser){
+			var existe = false;
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == delUser) {
+						var existe=true;
+						clientes.splice(i,1);
+						console.log("cliente borrado");
+
+					}
+
+			}
+
+			if (existe!==true){
+				console.log("el cliente no existe");
+			}
+					}
+				}
+}
+}
+
+	
+
+
+var productos=[
+{
+	nombreProducto:"café",
+	cantidadProducto:10,
+	precioProducto:100
+},
+{
+	nombreProducto:"agua",
+	cantidadProducto:10,
+	precioProducto:60
+},
+{
+	nombreProducto:"bollo",
+	cantidadProducto:10,
+	precioProducto:100
+},
+{
+	nombreProducto:"refresco",
+	cantidadProducto:10,
+	precioProducto:120
+}
+];
+
+
+/*ACCESO PARA COMPRAR UN PRODUCTO*/
+
+
+function comprar(user,pass){
+	
+	var compraAutorizada=false;
+	var puntosCliente=0;
+	var posicionCliente=0;
+	for (i = 0; i <clientes.length ; i++) {
+		if (clientes[i].nombre==user && clientes[i].pass==pass && compraAutorizada==false){
+				compraAutorizada=true;
+				puntosCliente= clientes[i].saldo;
+				posicionCliente=i;
+
+
+				
+		}
+	}
+	
+	console.log(compraAutorizada)
+	if(compraAutorizada){
+		var producto=prompt("Introduzca el nombre del producto que desee adquirir");
+		for (var i = 0; i < productos.length; i++) {
+			if(productos[i].nombreProducto==producto && productos[i].cantidadProducto>=1 && puntosCliente>productos[i].precioProducto){
+				console.log(productos[i].precioProducto)
+				console.log("recoja " + producto);
+				productos[i].cantidadProducto--;
+				console.log("Unidades restantes: " + productos[i].cantidadProducto);
+				clientes[posicionCliente].saldo=clientes[posicionCliente].saldo-productos[i].precioProducto;
+				console.log("Saldo restante: " + clientes[posicionCliente].saldo);
+				clientes[posicionCliente].compras.push(producto);
+				clientes[posicionCliente].gasto.push(productos[i].precioProducto);
+				console.log(clientes[posicionCliente])
+
+			}
+			if (productos[i].cantidadProducto<=0) {
+				return -1;
+			}
+		}
+	}
+	else {
+		console.log("no está autorizado para realizar esta compra")
+	}
+
+	
+}
+
+
+
+/* AGREGAR PRODUCTO */
+
+
+
+
+function nuevoProducto (nombre,cantidad,precio) {
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	if(adminAutorizado){
+		productos.push({
+			nombreProducto:nombre,
+			cantidadProducto:cantidad,
+			precioProducto:precio
+			})
+		console.log("Añadido "+ cantidad + " ud de " + nombre + ", con un precio de : " + precio)
+	}
+}
+
+/* ELIMINAR PRODUCTO */
+
+function eliminarProducto (nombre) {
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	if(adminAutorizado){
+		for (var i = 0; i < productos.length; i++) {
+			if (productos[i].nombreProducto==nombre){
+				productos.splice(i,1);
+				console.log(nombre + " eliminado.")
+			}
+			else {
+				console.log("el producto indicado no existe");
+			}
+		}
+	}
+}
+
+
+
+/* GESTIONAR SALDO CLIENTES */
+
+
+function cambiarSaldo(cliente,nuevoSaldo){
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+		if (adminAutorizado) {
+			for (var i = 0; i < clientes.length; i++) {
+				var saldoOriginal=clientes[i].saldo;
+				if (nuevoSaldo!==0){
+					if ((clientes[i].saldo=clientes[i].saldo+nuevoSaldo)<0){
+						console.log("Error.El saldo no puede ser negativo")
+						clientes[i].saldo=saldoOriginal;
+						break;
+					}
+					else {
+						clientes[i].saldo=clientes[i].saldo
+						console.log("El saldo total de " + cliente + " es de "+ clientes[i].saldo)
+						break;
+					}
+				}
+					
+					
+				else {
+					clientes[i].saldo=0;
+					console.log("El saldo del cliente ha sido bloqueado");
+					break;
+				}
+			}
+		
+		}
+		
+
+}
+
+
+/* DISPONIBILIDAD DE STOCK */
+
+
+function verStock(){
+	var ahora = new Date();
+	console.log("Estado stock con fecha" + ahora.toLocaleString());
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	for (var i = 0; i < productos.length; i++) {
+		if ((productos[i].cantidadProducto)>0) {
+			console.log("Producto: "productos[i].nombreProducto + "Disponible: "+ productos[i].cantidadProducto);
+		}
+		else {
+			console.log("Producto: "productos[i].nombreProducto + "Disponible: "+ productos[i].cantidadProducto);
+		}
+	}
+
+}
 	
 	
 	
 	
 	
+	
+	
+	/////////////////////////////////////////
+	
+	
+	
+	
+	
+var maquina = {};
+var productos=[];
+
+var clientes=[
+{ 
+nombre: "Pablo",
+user: "Pablo01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 1450,
+compras:["bollo","refresco"],
+gasto:[100,120],
+
+},
+{ 
+nombre: "Ana",
+user: "Ana01",
+pass: "0231an",
+tipo: "basic",
+saldo: 2000,
+compras:["refresco","refresco"],
+gasto:[120,120],
+},
+{ 
+nombre: "Sergio",
+user: "Sergio01",
+pass: "0231se",
+tipo: "basic",
+saldo: 900,
+compras:["bollo","café"],
+gasto:[100,100],
+},
+{ 
+nombre: "Sara",
+user: "Sara01",
+pass: "0231sa",
+tipo: "basic",
+saldo: 450,
+compras:["agua","agua"],
+gasto:[60,60],
+},
+{
+nombre: "Paco",
+user: "Paco01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 900,
+compras:["café","agua"],
+gasto:[100,60],
+}
+];
+
+/*PROTEGIENDO ACCESO*/
+
+function admin(){
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave!=="Fictizia Mola"){
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+
+		}
+		else{
+			console.log("¡Correcto!");
+			break;
+			/*CONSULTAR SALDO */
+			function saldo(user,pass){
+				for(i=0;i<=clientes.length;i++){
+					if (clientes[i].nombre == user && clientes[i].pass == pass) {
+					return "El saldo de " + clientes[i].nombre + " es " + clientes[i].saldo;
+					}
+					else {
+						return "alguno de los datos introducidos no es correcto";
+					}
+				}
+			}
+
+
+
+
+			/*CONSULTAR GASTOS*/
+			function gastos(user,pass){
+			var listaGastos=[];
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre === user && clientes[i].pass === pass) {
+					var list=[clientes[i].compras, clientes[i].gasto];
+					listaGastos.push(list);
+					return listaGastos;
+					}
+				}
+					
+			}
+
+			/*AGREGAR CLIENTE*/
+
+
+			function agregar(newUser){
+				for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == newUser) {
+					return "usuario existente";
+					}
+					else{
+						clientes.push({
+							nombre: newUser,
+							user: newUser+01,
+							pass: "0231"+newUser,
+							tipo: "basic",
+							saldo: 3000,
+							compras:[],
+							gasto:[],
+						});
+						return "Usuario creado con éxito";
+						
+					}
+				}
+			}
+
+			/*BORRAR CLIENTE*/
+
+			function borrar(delUser){
+			var existe = false;
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == delUser) {
+						var existe=true;
+						clientes.splice(i,1);
+						console.log("cliente borrado");
+
+					}
+
+			}
+
+			if (existe!==true){
+				console.log("el cliente no existe");
+			}
+					}
+				}
+}
+}
+
+	
+
+
+var productos=[
+{
+	nombreProducto:"café",
+	cantidadProducto:10,
+	precioProducto:100
+},
+{
+	nombreProducto:"agua",
+	cantidadProducto:10,
+	precioProducto:60
+},
+{
+	nombreProducto:"bollo",
+	cantidadProducto:10,
+	precioProducto:100
+},
+{
+	nombreProducto:"refresco",
+	cantidadProducto:10,
+	precioProducto:120
+}
+];
+
+
+/*ACCESO PARA COMPRAR UN PRODUCTO*/
+
+
+function comprar(user,pass){
+	
+	var compraAutorizada=false;
+	var puntosCliente=0;
+	var posicionCliente=0;
+	for (i = 0; i <clientes.length ; i++) {
+		if (clientes[i].nombre==user && clientes[i].pass==pass && compraAutorizada==false){
+				compraAutorizada=true;
+				puntosCliente= clientes[i].saldo;
+				posicionCliente=i;
+
+
+				
+		}
+	}
+	
+	console.log(compraAutorizada)
+	if(compraAutorizada){
+		var producto=prompt("Introduzca el nombre del producto que desee adquirir");
+		for (var i = 0; i < productos.length; i++) {
+			if(productos[i].nombreProducto==producto && productos[i].cantidadProducto>=1 && puntosCliente>productos[i].precioProducto){
+				console.log(productos[i].precioProducto)
+				console.log("recoja " + producto);
+				productos[i].cantidadProducto--;
+				console.log("Unidades restantes: " + productos[i].cantidadProducto);
+				clientes[posicionCliente].saldo=clientes[posicionCliente].saldo-productos[i].precioProducto;
+				console.log("Saldo restante: " + clientes[posicionCliente].saldo);
+				clientes[posicionCliente].compras.push(producto);
+				clientes[posicionCliente].gasto.push(productos[i].precioProducto);
+				console.log(clientes[posicionCliente])
+
+			}
+			if (productos[i].cantidadProducto<=0) {
+				return -1;
+			}
+		}
+	}
+	else {
+		console.log("no está autorizado para realizar esta compra")
+	}
+
+	
+}
+
+
+
+/* AGREGAR PRODUCTO */
+
+
+
+
+function nuevoProducto (nombre,cantidad,precio) {
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	if(adminAutorizado){
+		productos.push({
+			nombreProducto:nombre,
+			cantidadProducto:cantidad,
+			precioProducto:precio
+			})
+		console.log("Añadido "+ cantidad + " ud de " + nombre + ", con un precio de : " + precio)
+	}
+}
+
+/* ELIMINAR PRODUCTO */
+
+function eliminarProducto (nombre) {
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	if(adminAutorizado){
+		for (var i = 0; i < productos.length; i++) {
+			if (productos[i].nombreProducto==nombre){
+				productos.splice(i,1);
+				console.log(nombre + " eliminado.")
+			}
+			else {
+				console.log("el producto indicado no existe");
+			}
+		}
+	}
+}
+
+
+
+/* GESTIONAR SALDO CLIENTES */
+
+
+function cambiarSaldo(cliente,nuevoSaldo){
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+		if (adminAutorizado) {
+			for (var i = 0; i < clientes.length; i++) {
+				var saldoOriginal=clientes[i].saldo;
+				if (nuevoSaldo!==0){
+					if ((clientes[i].saldo=clientes[i].saldo+nuevoSaldo)<0){
+						console.log("Error.El saldo no puede ser negativo")
+						clientes[i].saldo=saldoOriginal;
+						break;
+					}
+					else {
+						clientes[i].saldo=clientes[i].saldo
+						console.log("El saldo total de " + cliente + " es de "+ clientes[i].saldo)
+						break;
+					}
+				}
+					
+					
+				else {
+					clientes[i].saldo=0;
+					console.log("El saldo del cliente ha sido bloqueado");
+					break;
+				}
+			}
+		
+		}
+		
+
+}
+
+
+/* DISPONIBILIDAD DE STOCK */
+
+
+function verStock(){
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	for (var i = 0; i < productos.length; i++) {
+		if(productos[i]cantidadProducto)>0{
+			console.log(productos[i].nombreProducto + "Disponible: "+ productos[i]cantidadProducto);
+		}
+		else {
+			console.log(productos[i].nombreProducto + "Disponible: "+ productos[i]cantidadProducto);
+		}
+	}
+
+}
 	
 	
 	
@@ -486,17 +1500,17 @@ var productos=[
 {
 	nombreProducto:"café",
 	cantidadProducto:10,
-precioProducto:100
+	precioProducto:100
 },
 {
 	nombreProducto:"agua",
 	cantidadProducto:10,
-precioProducto:60
+	precioProducto:60
 },
 {
 	nombreProducto:"bollo",
 	cantidadProducto:10,
-precioProducto:100
+	precioProducto:100
 },
 {
 	nombreProducto:"refresco",
@@ -513,8 +1527,8 @@ function comprar(user,pass){
 	
 	var compraAutorizada=false;
 	var puntosCliente=false;
-	for (i = 0; i <=clientes.length-1 ; i++) {
-		if (clientes[i].nombre==user && clientes[i].pass==pass && compraAutorizada===false){
+	for (i = 0; i <clientes.length ; i++) {
+		if (clientes[i].nombre===user && clientes[i].pass===pass && compraAutorizada===false){
 				compraAutorizada=true;
 				puntosCliente= clientes[i].saldo;
 
@@ -526,10 +1540,10 @@ function comprar(user,pass){
 
 	if(compraAutorizada){
 		var producto=prompt("Introduzca el nombre del producto que desee adquirir");
-		for (var i = 0; i <= productos.length-1; i++) {
+		for (var i = 0; i < productos.length; i++) {
 			if(productos[i].nombreProducto==producto && productos[i].cantidadProducto>=1 && puntosCliente>producto[i].precioProducto){
 				console.log("recoja " + producto);
-				productos[i].cantidadProducto=productos[i].cantidadProducto-1;
+				productos[i].cantidadProducto--;
 				console.log("Unidades restantes: " + productos[i].cantidadProducto);
 				//clientes[posicionCliente].saldo=clientes[posicionCliente].saldo-productos[i].precioProducto;
 				//return clientes[posicionCliente].saldo;
@@ -546,4 +1560,326 @@ function comprar(user,pass){
 	
 }
 
+
+
+
+
+
+////////////////// HASTA PASO 5
+
+	
+var maquina = {};
+var productos=[];
+
+var clientes=[
+{ 
+nombre: "Pablo",
+user: "Pablo01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 1450,
+compras:["bollo","refresco"],
+gasto:[100,120],
+
+},
+{ 
+nombre: "Ana",
+user: "Ana01",
+pass: "0231an",
+tipo: "basic",
+saldo: 2000,
+compras:["refresco","refresco"],
+gasto:[120,120],
+},
+{ 
+nombre: "Sergio",
+user: "Sergio01",
+pass: "0231se",
+tipo: "basic",
+saldo: 900,
+compras:["bollo","café"],
+gasto:[100,100],
+},
+{ 
+nombre: "Sara",
+user: "Sara01",
+pass: "0231sa",
+tipo: "basic",
+saldo: 450,
+compras:["agua","agua"],
+gasto:[60,60],
+},
+{
+nombre: "Paco",
+user: "Paco01",
+pass: "0231pa",
+tipo: "basic",
+saldo: 900,
+compras:["café","agua"],
+gasto:[100,60],
+}
+];
+
+/*PROTEGIENDO ACCESO*/
+
+function admin(){
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave!=="Fictizia Mola"){
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+
+		}
+		else{
+			console.log("¡Correcto!");
+			break;
+			/*CONSULTAR SALDO */
+			function saldo(user,pass){
+				for(i=0;i<=clientes.length;i++){
+					if (clientes[i].nombre == user && clientes[i].pass == pass) {
+					return "El saldo de " + clientes[i].nombre + " es " + clientes[i].saldo;
+					}
+					else {
+						return "alguno de los datos introducidos no es correcto";
+					}
+				}
+			}
+
+
+
+
+			/*CONSULTAR GASTOS*/
+			function gastos(user,pass){
+			var listaGastos=[];
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre === user && clientes[i].pass === pass) {
+					var list=[clientes[i].compras, clientes[i].gasto];
+					listaGastos.push(list);
+					return listaGastos;
+					}
+				}
+					
+			}
+
+			/*AGREGAR CLIENTE*/
+
+
+			function agregar(newUser){
+				for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == newUser) {
+					return "usuario existente";
+					}
+					else{
+						clientes.push({
+							nombre: newUser,
+							user: newUser+01,
+							pass: "0231"+newUser,
+							tipo: "basic",
+							saldo: 3000,
+							compras:[],
+							gasto:[],
+						});
+						return "Usuario creado con éxito";
+						
+					}
+				}
+			}
+
+			/*BORRAR CLIENTE*/
+
+			function borrar(delUser){
+			var existe = false;
+			for(i=0;i<clientes.length;i++){
+					if (clientes[i].nombre == delUser) {
+						var existe=true;
+						clientes.splice(i,1);
+						console.log("cliente borrado");
+
+					}
+
+			}
+
+			if (existe!==true){
+				console.log("el cliente no existe");
+			}
+					}
+				}
+}
+}
+
+	
+
+
+var productos=[
+{
+	nombreProducto:"café",
+	cantidadProducto:10,
+	precioProducto:100
+},
+{
+	nombreProducto:"agua",
+	cantidadProducto:10,
+	precioProducto:60
+},
+{
+	nombreProducto:"bollo",
+	cantidadProducto:10,
+	precioProducto:100
+},
+{
+	nombreProducto:"refresco",
+	cantidadProducto:10,
+	precioProducto:120
+}
+];
+
+
+/*ACCESO PARA COMPRAR UN PRODUCTO*/
+
+
+function comprar(user,pass){
+	
+	var compraAutorizada=false;
+	var puntosCliente=0;
+	var posicionCliente=0;
+	for (i = 0; i <clientes.length ; i++) {
+		if (clientes[i].nombre==user && clientes[i].pass==pass && compraAutorizada==false){
+				compraAutorizada=true;
+				puntosCliente= clientes[i].saldo;
+				posicionCliente=i;
+
+
+				
+		}
+	}
+	
+	console.log(compraAutorizada)
+	if(compraAutorizada){
+		var producto=prompt("Introduzca el nombre del producto que desee adquirir");
+		for (var i = 0; i < productos.length; i++) {
+			if(productos[i].nombreProducto==producto && productos[i].cantidadProducto>=1 && puntosCliente>productos[i].precioProducto){
+				console.log(productos[i].precioProducto)
+				console.log("recoja " + producto);
+				productos[i].cantidadProducto--;
+				console.log("Unidades restantes: " + productos[i].cantidadProducto);
+				clientes[posicionCliente].saldo=clientes[posicionCliente].saldo-productos[i].precioProducto;
+				console.log("Saldo restante: " + clientes[posicionCliente].saldo);
+				clientes[posicionCliente].compras.push(producto);
+				clientes[posicionCliente].gasto.push(productos[i].precioProducto);
+				console.log(clientes[posicionCliente])
+
+			}
+			if (productos[i].cantidadProducto<=0) {
+				return -1;
+			}
+		}
+	}
+	else {
+		console.log("no está autorizado para realizar esta compra")
+	}
+
+	
+}
+
+
+
+/* AGREGAR PRODUCTO */
+
+
+
+
+function nuevoProducto (nombre,cantidad,precio) {
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	if(adminAutorizado){
+		productos.push({
+			nombreProducto:nombre,
+			cantidadProducto:cantidad,
+			precioProducto:precio
+			})
+		console.log("Añadido "+ cantidad + " ud de " + nombre + ", con un precio de : " + precio)
+	}
+}
+
+/* ELIMINAR PRODUCTO */
+
+function eliminarProducto (nombre) {
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+	if(adminAutorizado){
+		for (var i = 0; i < productos.length; i++) {
+			if (productos[i].nombreProducto==nombre){
+				productos.splice(i,1);
+				console.log(nombre + " eliminado.")
+			}
+			else {
+				console.log("el producto indicado no existe");
+			}
+		}
+	}
+}
+
+
+
+/* GESTIONAR SALDO CLIENTES */
+
+
+function cambiarSaldo(cliente,nuevoSaldo){
+	var adminAutorizado = false;
+	for (var i = 3; i >=0; i--) {
+		var clave=prompt("Introduce la contraseña");
+		if (clave=="Fictizia Mola"){
+			adminAutorizado = true;
+			break;
+		}
+		else {
+			console.log("Clave incorrecta. Intentos restantes:" + [i]);
+		}
+	}
+		if (adminAutorizado) {
+			for (var i = 0; i < clientes.length; i++) {
+				var saldoOriginal=clientes[i].saldo;
+				if (nuevoSaldo!==0){
+					if ((clientes[i].saldo=clientes[i].saldo+nuevoSaldo)<0){
+						console.log("Error.El saldo no puede ser negativo")
+						clientes[i].saldo=saldoOriginal;
+						break;
+					}
+					else {
+						clientes[i].saldo=clientes[i].saldo
+						console.log("El saldo total de " + cliente + " es de "+ clientes[i].saldo)
+						break;
+					}
+				}
+					
+					
+				else {
+					clientes[i].saldo=0;
+					console.log("El saldo del cliente ha sido bloqueado");
+					break;
+				}
+			}
+		
+		}
+		
+
+}
 
