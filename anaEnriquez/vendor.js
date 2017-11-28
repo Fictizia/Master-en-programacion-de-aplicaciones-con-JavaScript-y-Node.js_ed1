@@ -87,6 +87,12 @@ function login(username) {
 	if(!found) { return "No hay ningún empleado con ese usuario" }
 
 }
+function isAdmin() {
+	var masterPass = prompt("Introduce la contraseña maestra");
+	if(masterPass === "Fictizia mola") {
+		return true;
+	}else {return false;}
+}
 function foundCoincidence(field, value) {
 
 	var found = false;
@@ -131,9 +137,7 @@ function checkHistory() {
 }
 function createUser() {
 
-	var masterPass = prompt("Introduce la contraseña maestra");
-
-	if(masterPass === "Fictizia mola") {
+	if(isAdmin()) {
 
 		var newEntry = {};
 
@@ -195,9 +199,7 @@ function createUser() {
 
 }
 function deleteUser() {
-	var masterPass = prompt("Introduce la contraseña maestra");
-
-	if(masterPass === "Fictizia mola") {
+	if(isAdmin()) {
 
 		var userName = prompt("Introduce el usuario del trabajador que deseas eliminar");
 
@@ -234,7 +236,12 @@ function buyProduct(user) {
 					if(clientsList[logged].wallet >= products[i][2]){
 
 						products[i][1] --;
-						clientsList[logged].wallet = clientsList[logged].wallet - products[i][2];
+                        clientsList[logged].wallet = clientsList[logged].wallet - products[i][2];
+                        var transactionDate = new Date;
+                        transactionDate = date.toLocaleDateString();
+                        var transactionHistory = [transactionDate,products[i][2]];
+                        var log = clientsList[logged].log;
+                        log.push(transactionHistory);
 						console.log("Transacción confirmada, recoge tu producto por favor");
 
 					}else{console.log("Lo siento, no dispones de saldo suficiente. Tienes " + clientsList[logged].wallet + " puntos y tu elección cuesta " + products[i][2])}
@@ -250,9 +257,7 @@ function buyProduct(user) {
 }
 function createProduct() {
 
-	var masterPass = prompt("Introduce la contraseña maestra");
-
-	if(masterPass === "Fictizia mola") {
+	if(isAdmin()) {
 
 		var newProduct = [];
 
@@ -317,10 +322,9 @@ function createProduct() {
 	}else { console.info("La contraseña maestra es incorrecta. Acceso denegado") }
 
 }
-function deleteUser() {
-	var masterPass = prompt("Introduce la contraseña maestra");
+function deleteProduct() {
 
-	if(masterPass === "Fictizia mola") {
+	if(isAdmin()) {
 
 		var selectProduct = prompt("Introduce el producto que deseas eliminar");
 
@@ -338,4 +342,48 @@ function deleteUser() {
 
 	}else { console.info("La contraseña maestra es incorrecta. Acceso denegado") }
 
+}
+function asignCredit() {
+	if(isAdmin()){
+		var election = prompt("Quieres MODIFICAR un saldo o RESETEAR? (Introduce una opción en mayúsculas)");
+		var username = prompt("Introduce el nombre de usuario del trabajador al que modificar el saldo");
+		var found = false;
+		for(i=0;i<clientsList.length;i++) {
+
+			if(clientsList[i].user === username) {
+				found = true;
+				if(election === "MODIFICIAR"){
+					badNumber = true;
+					while(badNumber)
+					var modifier = prompt("El saldo actual de "+ username + " es de " + clientsList[i].wallter + ". Introduce el número que quieres sumar o en negativo si quieres restar");
+					modifier = number(modifier)
+					if(isNaN(modifier)) {
+						console.log("El dato introducido no es un número");
+					}else {
+						badNumber = false;
+						clientsList[i].wallet = clientsList[i].wallet + modifier;
+						if(clientsList[i].wallet < 0) {clientsList[i].wallet = 0;}
+					}
+				}else if(election === "RESETEAR"){
+					clientsList[i].wallet = 0;
+					console.log("El saldo de " + username + " se ha reseteado a 0");
+				}else{console.log("No has introducido una opción correcta")}
+			}
+		}
+
+	}else {console.info("La contraseña maestra es incorrecta. Acceso denegado")}
+}
+function checkInventory(){
+	if(isAdmin()){
+
+		var date = new Date;
+		date = date.toLocaleString();
+		console.log("Informe de existencias. Fecha: " + date);
+		for(i=0;i<products.length;i++){
+			if(products[i][1] === 0) {
+				console.log(i+1 + ". Producto: " + products[i][0] + ". Stock: " + products[i][1] + ". PRODUCTO NO DISPONIBLE")
+			}else {console.log(i+1 + ". Producto: " + products[i][0] + ". Stock: " + products[i][1]);}
+		}
+	
+	}else {console.info("La contraseña maestra es incorrecta. Acceso denegado")}
 }
