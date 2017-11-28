@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+        html, body, .container{
+            height: 100%;
+            margin: 0;
+        }
+        .containerLibro{
+            display: inline-block;
+            border: 2px solid #FF00FF;
+            margin: 20px;
+            width: calc(33% - 40px);
+        }
+        .titulo{
+            margin: 0;
+            padding: 20px;
+            background: #FF00FF;
+        }
+        .ranking{
+            background: #fff;
+            border-radius: 25px;
+            padding: 15px;
+            margin-right: 10px;
+        }
+        .left{
+            float: left;
+        }
+        .imagen{
+            width: 33%;
+        }
+        .imagen img{
+            width: 100%;
+            max-height: 190px;
+        }
+        .contenido{
+            width: calc(67% - 30px);
+            padding: 15px;
+        }
+        
+	</style>
+</head>
+<body>
+    <div id="container">
+        
+    </div>
+    <script type="text/javascript">
+        //API NewYorkTimes -> "3b72d7bad83a47fb84bd5e47ddcb82ab"
+        //url -> https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction
+        //imagenes -> https://s1.nyt.com/du/books/images/9780385354288.jpg    donde el numero poner el primary_isbn13
+        function peticionAjax(url) {
+            var xmlHttp = new XMLHttpRequest();
+        
+            xmlHttp.onreadystatechange = function() {
+        
+                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                    //console.info(JSON.parse(xmlHttp.responseText));
+                    mostrar(JSON.parse(xmlHttp.responseText));
+                } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                    console.error("ERROR! 404");
+                    console.info(JSON.parse(xmlHttp.responseText));
+                }
+            };
+            xmlHttp.open("GET", url, true);
+            xmlHttp.send();
+        }
+        
+/*Debes incluir una animación mientras esperamos la carga del contenido.
+Los libros deben estar organizados según el orden de la lista oficial
+Debes incluir la carátula del libro
+Debes incluir la cantidad de semanas que lleva en la lista
+Debes incluir la descripción
+Debes incluir el titulo y la posición que ocupa en la lista ( #1 titulo.... #2 titulo....)
+Debes incluir el link para poder comprar el libro en amazon (debe abrirse en otra pestaña)*/
+        //peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction");
+        peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction&date=2016-01-16");
+        
+        var caja = document.getElementById("container");
+    
+        function mostrar(data){
+            caja.innerHTML = "";
+            var html = "";
+            var imagen = "https://s1.nyt.com/du/books/images/" + +".jpg"
+            
+            data.results.forEach(function(elemento){
+                console.log(elemento);
+                html += "<div class='containerLibro'>";
+                html += "<p class='titulo'><span class='ranking'>#" + elemento.rank + "</span> "+ elemento.book_details[0].title + "</p>";
+                html += "<div class='left imagen'><img src='https://s1.nyt.com/du/books/images/" +elemento.book_details[0].primary_isbn13 +".jpg'></div>";
+                html += "<div class='left contenido'>";
+                html += "<p>Semanas en la lista: " + elemento.weeks_on_list + "</p>";
+                html += "<p>Categoría: " + elemento.list_name + "</p>";
+                html += "<p>Descripción: " + elemento.book_details[0].description + "</p>";
+                html += "<p><a target='_blank' href='" + elemento.amazon_product_url + "'>Comprar en amazon</a></p>";
+                html += "</div>"
+                html += "</div>"
+            });
+            
+            caja.innerHTML = html;
+        }
+    </script>
+</body>
+</html>
