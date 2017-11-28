@@ -59,24 +59,24 @@ function cleanData(string){
 	}
 
 }
-
 function login(username) {
 	// Función para iniciar sesión
 	// 		códigos de error
 	//		0 = no user
 	//		1 = password incorrect
 	var found = false;
-	id(!username){var username = prompt("Introduce tu usuario");}
-	for(client in clientsList) {
+	if(!username){var username = prompt("Introduce tu usuario");}
+	for(i=0;i<clientsList.length;i++) {
 
-		if(clientsList[client].user === username) {
+		if(clientsList[i].user === username) {
 
 			var password = prompt("Introduce la contraseña");
 
-			if(clientsList[client].pass === password) {
+			if(clientsList[i].pass === password) {
 
 				found = true;
-				return [clientsList[client].user,clientsList[client].pass,clientsList[client].wallet,clientsList[client].log];
+				//return [clientsList[client].user,clientsList[client].pass,clientsList[client].wallet,clientsList[client].log];
+				return i;
 
 			} else { return "La contraseña es incorrecta" }
 
@@ -85,8 +85,14 @@ function login(username) {
 	}
 
 	if(!found) { return "No hay ningún empleado con ese usuario" }
-}
 
+}
+function isAdmin() {
+	var masterPass = prompt("Introduce la contraseña maestra");
+	if(masterPass === "Fictizia mola") {
+		return true;
+	}else {return false;}
+}
 function foundCoincidence(field, value) {
 
 	var found = false;
@@ -105,37 +111,33 @@ function foundCoincidence(field, value) {
 	}
 
 	if(!found) { return false }
-}
 
+}
 function checkWallet() {
 
 	var logged = login();
 
-	if(typeof(logged) === "object") {
+	if(typeof(logged) === "number") {
 		
-		console.info(logged[2]);
+		console.info(clientsList[logged].wallet);
 
 	} else console.info(logged);
 
 }
-
 function checkHistory() {
 
 	var logged = login();
 
-	if(typeof(logged) === "object") {
+	if(typeof(logged) === "number") {
 		
-		console.info(logged[3]);
+		console.info(clientsList[logged].log);
 
 	} else console.info(logged);
 
 }
-
 function createUser() {
 
-	var masterPass = prompt("Introduce la contraseña maestra");
-
-	if(masterPass === "Fictizia mola") {
+	if(isAdmin()) {
 
 		var newEntry = {};
 
@@ -197,9 +199,7 @@ function createUser() {
 
 }
 function deleteUser() {
-	var masterPass = prompt("Introduce la contraseña maestra");
-
-	if(masterPass === "Fictizia mola") {
+	if(isAdmin()) {
 
 		var userName = prompt("Introduce el usuario del trabajador que deseas eliminar");
 
@@ -218,11 +218,10 @@ function deleteUser() {
 	}else { console.info("La contraseña maestra es incorrecta. Acceso denegado") }
 
 }
-
 function buyProduct(user) {
 	var logged = login(user);
 
-	if(typeof(logged) === "object") {
+	if(typeof(logged) === "number") {
 		
 		var election = prompt("¿Qué quieres comprar hoy?");
 
@@ -231,15 +230,22 @@ function buyProduct(user) {
 		for(i=0;i<products.length;i++) {
 			if(products[i][0] === election) {
 
+				exists = true;
+
 				if(products[i][1] > 0){
-					if(logged[2]>=products[i][2]){
+					if(clientsList[logged].wallet >= products[i][2]){
 
 						products[i][1] --;
-						
+                        clientsList[logged].wallet = clientsList[logged].wallet - products[i][2];
+                        var transactionDate = new Date;
+                        transactionDate = date.toLocaleDateString();
+                        var transactionHistory = [transactionDate,products[i][2]];
+                        var log = clientsList[logged].log;
+                        log.push(transactionHistory);
+						console.log("Transacción confirmada, recoge tu producto por favor");
 
-					}
-				}elsev{console.log("Lo siento, no tenemos stock disponible")}
-				
+					}else{console.log("Lo siento, no dispones de saldo suficiente. Tienes " + clientsList[logged].wallet + " puntos y tu elección cuesta " + products[i][2])}
+				}else{console.log("Lo siento, no tenemos stock disponible")}
 
 			}
 		}
@@ -247,4 +253,137 @@ function buyProduct(user) {
 		if(!exists){console.log("El producto que has introducido no existe")}
 
 	} else console.info(logged);
+
+}
+function createProduct() {
+
+	if(isAdmin()) {
+
+		var newProduct = [];
+
+		errorName = true;
+		while(errorName) {
+			var newName = prompt("Introduce el nombre del producto");
+
+			if(cleanData(newName)) {
+				newName = newName.trim();
+				newName = newName.toLowerCase();
+				newProduct[0] = newName;
+				errorName = false;
+			}else { console.log("El nombre sólo puede contener letras y espacios");}
+		}
+		
+		var isNew = true;
+		for(i=0;i<products.length;i++) {
+			if(products[i][0]=== newProduct[0]){
+				isNew = false;
+			}
+		}
+
+		if(isNew) {
+			errorQuantity = true;
+			while(errorQuantity) {
+				var newQuantity = prompt("Introduce el stock actual del producto");
+				newQuantity = Number(newQuantity);
+				
+				if(isNaN(newQuantity) || newQuantity < 0) {
+
+					console.log("El stock sólo puede ser un número");
+					
+				}else { 
+
+					newProduct[1] = newQuantity;
+					errorQuantity = false;
+
+				}
+			}
+
+			errorPrice = true;
+			while(errorPrice) {
+				var newPrice = prompt("Introduce el precio del producto");
+				newPrice = Number(newPrice);
+				
+				if(isNaN(newPrice) || newPrice <= 0) {
+
+					console.log("El precio sólo puede ser un número");
+					
+				}else { 
+
+					newProduct[2] = newPrice;
+					errorPrice = false;
+
+				}
+			}
+
+			products.push(newProduct);
+
+		} else {console.log("El producto que intentas crear ya existe, permiso denegado")}
+		
+	}else { console.info("La contraseña maestra es incorrecta. Acceso denegado") }
+
+}
+function deleteProduct() {
+
+	if(isAdmin()) {
+
+		var selectProduct = prompt("Introduce el producto que deseas eliminar");
+
+		var productExists = false;
+		for(i=0;i<products.length;i++){
+			if(products[i][0] === selectProduct) {
+				productExists = true;
+				products.splice(i, 1);
+				console.log("El producto ha sido eliminado con exito");
+			}
+		}
+		if(!productExists) {
+			console.log("El producto no existe, inténtalo de nuevo");
+		}
+
+	}else { console.info("La contraseña maestra es incorrecta. Acceso denegado") }
+
+}
+function asignCredit() {
+	if(isAdmin()){
+		var election = prompt("Quieres MODIFICAR un saldo o RESETEAR? (Introduce una opción en mayúsculas)");
+		var username = prompt("Introduce el nombre de usuario del trabajador al que modificar el saldo");
+		var found = false;
+		for(i=0;i<clientsList.length;i++) {
+
+			if(clientsList[i].user === username) {
+				found = true;
+				if(election === "MODIFICIAR"){
+					badNumber = true;
+					while(badNumber)
+					var modifier = prompt("El saldo actual de "+ username + " es de " + clientsList[i].wallter + ". Introduce el número que quieres sumar o en negativo si quieres restar");
+					modifier = number(modifier)
+					if(isNaN(modifier)) {
+						console.log("El dato introducido no es un número");
+					}else {
+						badNumber = false;
+						clientsList[i].wallet = clientsList[i].wallet + modifier;
+						if(clientsList[i].wallet < 0) {clientsList[i].wallet = 0;}
+					}
+				}else if(election === "RESETEAR"){
+					clientsList[i].wallet = 0;
+					console.log("El saldo de " + username + " se ha reseteado a 0");
+				}else{console.log("No has introducido una opción correcta")}
+			}
+		}
+
+	}else {console.info("La contraseña maestra es incorrecta. Acceso denegado")}
+}
+function checkInventory(){
+	if(isAdmin()){
+
+		var date = new Date;
+		date = date.toLocaleString();
+		console.log("Informe de existencias. Fecha: " + date);
+		for(i=0;i<products.length;i++){
+			if(products[i][1] === 0) {
+				console.log(i+1 + ". Producto: " + products[i][0] + ". Stock: " + products[i][1] + ". PRODUCTO NO DISPONIBLE")
+			}else {console.log(i+1 + ". Producto: " + products[i][0] + ". Stock: " + products[i][1]);}
+		}
+	
+	}else {console.info("La contraseña maestra es incorrecta. Acceso denegado")}
 }
