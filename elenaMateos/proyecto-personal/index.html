@@ -20,25 +20,25 @@
             <p id="date">DATE</p>
           </div>
           <div class="district">
-            <p>MADRID</p>
+            <p id="city">MADRID</p>
           </div>
         </div>
       </div>
 
       <div class="data">
-        <p>Cº</p>
-        <p>Probabilidad de lluvia #%</p>
-        <p>Velocidad del viento: # km/h</p>
+        <p id="temperature">Cº</p>
+        <p id="rainProbability">Probabilidad de lluvia #%</p>
+        <p id="win">Velocidad del viento: # km/h</p>
         <button type="button" name="button">AEMET</button>
       </div>
 
     </header>
     <section class="main-info">
 
-      <div class="distric">
-        <h1>DISTRITO</h1>
-        <select class="select-district" name="select-district">
-          <option value="Usera">USERA</option>
+      <div class="district">
+        <h1 id="district">DISTRITO</h1>
+        <select id="optionDistrict" class="select-district" name="select-district">
+          <option  value="S056">USERA</option>
         </select>
       </div>
       <div class="container--air-quality">
@@ -47,7 +47,9 @@
           <p>Medio %??? </p>
         </div>
         <div class="values">
-          <p></p>
+          <ul id="values">
+            <li></li>
+          </ul>
           <input type="text" name="" value="">
 
         </div>
@@ -55,12 +57,10 @@
       </div>
 
       <div class="container--emoji">
-
+          <img id="giphy" src=""></img>
       </div>
 
     </section>
-<script type="text/javascript" src="main.js" charset="utf-8">
 
-</script>
   </body>
 </html>
