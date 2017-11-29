@@ -11,16 +11,34 @@
         p{
             margin-top: 0;
         }
+        #container{
+            background: #FFFF00;
+        }
         .containerLibro{
             display: inline-block;
-            border: 2px solid #FF00FF;
+            border: 2px solid #333;
             margin: 20px;
             width: calc(33% - 40px);
+        }
+        .containerLibro:nth-child(even) {
+            background: #FF00FF;
+            
+        }
+        .containerLibro:nth-child(odd) {
+            background: #00FF00;
+            
         }
         .titulo{
             margin: 0;
             padding: 20px;
+            background: #ccc;
+            border-bottom: 1px solid #333;
+        }
+        .containerLibro:nth-child(even) .titulo{
             background: #FF00FF;
+        }
+        .containerLibro:nth-child(odd) .titulo{
+            background: #00FF00;
         }
         .ranking{
             background: #fff;
@@ -32,7 +50,8 @@
             float: left;
         }
         .imagen img{
-            width: 170px;
+            height: 230px;
+            display: inherit;
         }
         .contenido{
             width: calc(100% - 200px);
@@ -41,7 +60,7 @@
         }
         #backLoader{
             background: #00000099;
-            position: absolute;
+            position: fixed;
             width: 100%;
             height: 101%;
         }
@@ -90,26 +109,37 @@
         function mostrar(data){
             var html = "";
             
-            data.results.forEach(function(elemento){
-                console.log(elemento);
-                html += "<div class='containerLibro'>";
-                html += "<p class='titulo'><span class='ranking'>#" + elemento.rank + "</span> "+ elemento.book_details[0].title + "</p>";
-                html += "<div class='left imagen'><img src='https://s1.nyt.com/du/books/images/" +elemento.book_details[0].primary_isbn13 +".jpg'></div>";
-                html += "<div class='left contenido'>";
-                html += "<p>Semanas en la lista: " + elemento.weeks_on_list + "</p>";
-                html += "<p>Categoría: " + elemento.list_name + "</p>";
-                html += "<p>Descripción: " + elemento.book_details[0].description + "</p>";
-                html += "<p><a target='_blank' href='" + elemento.amazon_product_url + "'>Comprar en amazon</a></p>";
-                html += "</div>"
-                html += "</div>"
+            data.results.forEach(function(elemento, i){
+
+                setTimeout(function() {
+                    html += "<div class='containerLibro'>";
+                    html += "<p class='titulo'><span class='ranking'>#" + elemento.rank + "</span> "+ elemento.book_details[0].title + "</p>";
+                    html += "<div class='left imagen'><img src='https://s1.nyt.com/du/books/images/" +elemento.book_details[0].primary_isbn13 +".jpg'></div>";
+                    html += "<div class='left contenido'>";
+                    html += "<p>Semanas en la lista: " + elemento.weeks_on_list + "</p>";
+                    html += "<p>Categoría: " + elemento.list_name + "</p>";
+                    html += "<p>Descripción: " + elemento.book_details[0].description + "</p>";
+                    html += "<p><a target='_blank' href='" + elemento.amazon_product_url + "'>Comprar en amazon</a></p>";
+                    html += "</div>"
+                    html += "</div>"
+                    
+                    caja.innerHTML = html;
+                    
+                    if(i >= data.results.length -1){
+                        document.getElementById("backLoader").remove();
+                    }
+                    
+                }, i * 200);
+                
             });
             
-            setTimeout(function() {
-                document.getElementById("backLoader").remove();
-            }, 1000);
-           
-            caja.innerHTML += html;
         }
+        
+        function sleep(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        
+        
     </script>
 </body>
 </html>
