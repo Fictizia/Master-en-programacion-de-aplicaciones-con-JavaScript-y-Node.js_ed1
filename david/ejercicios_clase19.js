@@ -53,6 +53,38 @@ peticionAjax("http://airemad.com/api/v1/pollen");
 
 
 //Ejercicio 2
+var caja = document.getElementsByTagName("body")[0];
+function peticionAjax(url) {
+        var xmlHttp = new XMLHttpRequest();
+
+        xmlHttp.onreadystatechange = function() {
+
+            if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                var datos = (JSON.parse(xmlHttp.responseText));
+                mostrar(datos);
+            } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                console.error("ERROR! 404");
+            }else if (xmlHttp.readyState === 4 && xmlHttp.status === 401){
+                console.error("ERROR! 401");
+            }
+        };
+        xmlHttp.open("GET", url, true);
+        xmlHttp.send();
+}
+
+peticionAjax("http://api.openweathermap.org/data/2.5/weather?q=Madrid&appid=3ab0d139c5a70e4b922516b82001f560")
+peticionAjax("http://api.openweathermap.org/data/2.5/weather?q=Barcelona&appid=3ab0d139c5a70e4b922516b82001f560")
+peticionAjax("http://api.openweathermap.org/data/2.5/weather?q=Valencia&appid=3ab0d139c5a70e4b922516b82001f560")
+
+function mostrar(data){
+    var html = "";
+    
+    html += "<h1>"+data.name+"</h1>";
+    html += "<h2>"+data.weather[0].description+"</h2>";
+
+    caja.innerHTML += html;
+}
+//Ejercicio 3
 function peticionAjax(url) {
         var xmlHttp = new XMLHttpRequest();
 
