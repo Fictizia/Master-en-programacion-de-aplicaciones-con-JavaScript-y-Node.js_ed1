@@ -1,6 +1,6 @@
 var url = "https://api.nytimes.com/svc/books/v3/lists.json?api-key=2b0fc35b474248939de2d3f42afdd5a3&list=hardcover-fiction";
 
-function peticionAjax(url) {
+function peticionAjax(url, callback) {
     var xmlHttp = new XMLHttpRequest();
     
     if(!document.querySelector(".box-loader")) {
@@ -10,7 +10,7 @@ function peticionAjax(url) {
     xmlHttp.onreadystatechange = function() {
 
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-            getData(JSON.parse(xmlHttp.responseText), function() {
+            callback(JSON.parse(xmlHttp.responseText), function() {
                 document.querySelector(".box-loader").remove();
             });
         } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
@@ -22,8 +22,12 @@ function peticionAjax(url) {
     xmlHttp.send();
 }
 
-function getData(json, callback) {
-    var bookList = json.results;
+function getBookCategoryList(categorias) {
+    
+}
+
+function getBookList(books, callback) {
+    var bookList = books.results;
     
     bookList.forEach(function(e, i) {
         var bookDetails = e.book_details[0];
@@ -41,3 +45,6 @@ function getData(json, callback) {
 }
 
 peticionAjax(url);
+
+//peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=4f6641e4884e41c387cf36d7f535b0b7&list="+this.innerText+"&sort-order=ASC",pintarLibros)
+//peticionAjax("https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=2b0fc35b474248939de2d3f42afdd5a3",sacarListasCategory);
