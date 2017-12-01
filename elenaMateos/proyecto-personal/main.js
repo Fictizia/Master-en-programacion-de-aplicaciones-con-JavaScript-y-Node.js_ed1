@@ -20,9 +20,41 @@ function mostrarHora() {
   hour.innerHTML = giveHour.getHours()+ ':' +giveHour.getMinutes();
   date.innerHTML = giveHour.getDate() + '/' + giveHour.getMonth() + '/' + giveHour.getFullYear();
   // console.log(giveHour.getHours()+ ':' +giveHour.getMinutes());
+  // timer para refrescar hora
+
 }
 
 mostrarHora();
+
+// url api pedir estaciones e id :'http://airemad.org/api/v1/station';
+
+/*
+[
+  {
+    "id": "P001",
+    "altitud": 637,
+    "direccion": "C/ General Pardiñas, 166",
+    "latitud": "40º 26' 13.254\" N",
+    "latitud_decimal": 40.437015,
+    "longitud": "3º 40' 47.32\" W",
+    "longitud_decimal": -3.6798112,
+    "nombre_estacion": "Barrio Salamanca",
+    "numero_estacion": 1,
+    "tipo_estacion": 1,
+    "datos_disponibles": {
+      "acustic": false,
+      "pollution": false,
+      "pollen": [
+        "Aliso",
+        "Cupresáceas/Taxáceas",
+        "Fresno",
+        "Olivo",
+        "Plantago",
+        "Plátano de paseo",
+        "Gramíneas"
+      ]
+    }
+  }, */
 
 
 function peticionAjax(url){
