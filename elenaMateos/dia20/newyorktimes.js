@@ -2,11 +2,14 @@
 var token = "217027b37588437fbc3efb9984aca1a6";
 var url = "https://api.nytimes.com/svc/books/v3/lists.json?api-key="+token+"&list=hardcover-fiction&sort-order=ASC";
 
+var container = document.getElementById('container');
 var title = document.getElementById('title');
 var pic = document.getElementById('pic');
 var autor = document.getElementById('autor');
 var amazon = document.getElementById('amazon');
 var weeks = document.getElementById('weeks');
+var listNunmber = '';
+var i = 0;
 
 function askForBooks() {
 
@@ -38,15 +41,18 @@ function askForBooks() {
 
 askForBooks();
 
-function pinta(results){
-
-   console.log(results[0].amazon_product_url) ;
-amazon.href = results[0].amazon_product_url;
-title.innerHTML = results[0].book_details[0].title;
-pic.src = 'https://s1.nyt.com/du/books/images/' + results[0].isbns[0].isbn13 + '.jpg';
-//pic.src = https://s1.nyt.com/du/books/images/9780316273909.jpg
-
+for (var i = 0; i < 10; i++) { // results.length
+  
+  function pinta(results){
+  amazon.href = results[i].amazon_product_url;
+  title.innerHTML = '#' + (i+1) + '. Título: ' + results[i].book_details[0].title;
+  pic.src = 'https://s1.nyt.com/du/books/images/' + results[i].isbns[0].isbn13 + '.jpg';
+  autor.innerHTML = results[i].book_details[0].author;
+  weeks.innerHTML = results[i].weeks_on_list + 'Weeks on List';
+  }
 }
+
+
 
 
 /*
