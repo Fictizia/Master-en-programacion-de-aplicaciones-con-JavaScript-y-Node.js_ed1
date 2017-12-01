@@ -11,14 +11,13 @@ function askForBooks() {
   request.onreadystatechange = function(){
     if (request.readyState === 4) {
         if (request.status >= 200 && request.status < 400) {
-          var results = JSON.parse(request.responseText).results;
 
+          var results = JSON.parse(request.responseText).results;
            pinta(results);
-           return results;
 
         }else {
-          console.log('Eror 404, el archivo no se encuentraaaaaaa');
-        } return results;
+          console.log('Eror 404, el archivo no se encuentraaaaaaa!!!!!');
+        }
     }else{
       console.log('oooh cargando!!!!');
     }
