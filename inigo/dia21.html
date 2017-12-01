@@ -63,6 +63,7 @@
             position: fixed;
             width: 100%;
             height: 101%;
+            display: none;
         }
         #backLoader img{
             position: absolute;
@@ -70,6 +71,12 @@
             height: 200px;
             left: calc(50% - 100px);
             top: calc(50% - 100px);
+        }
+        .containerCategoria{
+            display: inline-block;
+            border: 2px solid #333;
+            margin: 20px;
+            width: calc(33% - 40px);
         }
         
 	</style>
@@ -82,16 +89,21 @@
         
     </div>
     <script type="text/javascript">
-        function peticionAjax(url) {
+         setTimeout(function() {
+             console.log(peticionAjax("https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab", listarCategoria));
+            //peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction", mostrarCategoria);
+            //peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction&date=2016-01-16", mostrarCategoria);
+        }, 1500);
+    
+        function peticionAjax(url,funcionMostrar) {
             var xmlHttp = new XMLHttpRequest();
-        
+            document.getElementById("backLoader").style.display="block";
+            
             xmlHttp.onreadystatechange = function() {
         
                 if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
                     //console.info(JSON.parse(xmlHttp.responseText));
-                    setTimeout(function() {
-                        mostrar(JSON.parse(xmlHttp.responseText));
-                    }, 1500);
+                    funcionMostrar(JSON.parse(xmlHttp.responseText));
                     
                 } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
                     console.error("ERROR! 404");
@@ -101,14 +113,56 @@
             xmlHttp.open("GET", url, true);
             xmlHttp.send();
         }
-        peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction");
+        //peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction");
         //peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction&date=2016-01-16");
         
-        var caja = document.getElementById("container");
-    
-        function mostrar(data){
-            var html = "";
+        function listarCategoria(data){
+            var caja = document.getElementById("container");
+            var botones;
             
+            data.results.forEach(function(elemento, i){
+
+                setTimeout(function() {
+                    var html = "<div class='containerCategoria'>";
+                    html += "<p class=''>Categoría: " + elemento.display_name + "</p>";
+                    html += "<p class=''>Publicación más antigua: " + elemento.oldest_published_date + "</p>";
+                    html += "<p class=''>Publicación más nueva: " + elemento.newest_published_date + "</p>";
+                    html += "<p class=''>Frecuencia de actualización: " + elemento.updated + "</p>";
+                    html += "<button class='botonCategoria' value='" + elemento.list_name_encoded + "' class=''>Ir a: " + elemento.display_name + "</button>";
+                    html += "</div>"
+                    
+                    caja.innerHTML += html;
+                    
+                    
+                    botones = document.getElementsByClassName("botonCategoria");
+                    
+                    for (var i = 0; i < botones.length; i++) {
+                        botones[i].addEventListener("click",function(){
+                            peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=" + this.value, mostrarCategoria);
+                            console.log(this.value);
+                        });
+                    }
+                    
+                    if(i >= data.results.length){
+                        document.getElementById("backLoader").style.display="none";
+                    }
+                    
+                    
+                }, i * 200);
+                
+                
+                
+            });
+            
+           
+            
+            
+            
+        }
+    
+        function mostrarCategoria(data){
+            var caja = document.getElementById("container");
+            var html = "";
             data.results.forEach(function(elemento, i){
 
                 setTimeout(function() {
@@ -126,17 +180,11 @@
                     caja.innerHTML = html;
                     
                     if(i >= data.results.length -1){
-                        document.getElementById("backLoader").remove();
+                        document.getElementById("backLoader").style.display="none";
                     }
                     
                 }, i * 200);
-                
             });
-            
-        }
-        
-        function sleep(ms) {
-          return new Promise(resolve => setTimeout(resolve, ms));
         }
         
         
