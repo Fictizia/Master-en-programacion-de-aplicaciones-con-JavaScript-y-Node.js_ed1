@@ -37,11 +37,11 @@ function askForBooks() {
 function pinta(results){
   for (var i = 0; i < 10; i++) { // results.length en ved de 10, para poner todos los elementos q nos den
     container.innerHTML +='<ul class="book-card">' +
-                          ' <li class="list-element">' +'#' + (i+1) + '. Título: ' + results[i].book_details[0].title + '</li>' +
+                          ' <li class="list-element">' +'#' + (i+1) + '. Title: ' + results[i].book_details[0].title + '</li>' +
                           ' <li class="list-element"><img src="' + 'https://s1.nyt.com/du/books/images/' + results[i].isbns[0].isbn13 + '.jpg"' + ' class="book-pic" alt="Book Image"></img ></li>'+
-                          ' <li class="list-element">' + results[i].weeks_on_list + 'Weeks on List' + '</li>'+
+                          ' <li class="list-element">' + results[i].weeks_on_list + ' Weeks on List' + '</li>'+
                           ' <li class="list-element">AUTOR:'+ results[i].book_details[0].author + '</li>' +
-                          ' <li><a id="amazon" class="list-element" href="' + results[i].amazon_product_url + '" target="_blank" >Comprar en Amazon...</a></li>' +
+                          ' <li><a id="amazon" class="list-element" href="' + results[i].amazon_product_url + '" target="_blank" >Buy it at Amazon...</a></li>' +
                           '</ul>';
   }
 }

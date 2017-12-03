@@ -4,7 +4,7 @@
 }
 
 body{
-  background-color: #01011f;
+  background-color: #011312;
   color: #2b2b2a;
   font-family: sans-serif;
   font-size: 23px;
@@ -29,7 +29,7 @@ h1{
 
 .book-card{
   background-color: #f5f5d7;
-  border: 1px solid #ffffed;
+  border: 1px solid #016c66;
   list-style: none;
   list-style-position: inside;
   margin: 2px;
@@ -46,6 +46,11 @@ h1{
   width: 80%;
 }
 
+@media (min-width: 768px) {
+  .book-card{
+    width: 30%;
+  }
+}
 
 @media (min-width: 1024px){
   .book-card{
