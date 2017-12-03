@@ -35,7 +35,7 @@ function askForBooks() {
 
 // Función que inserta en el HTML los elementos (en este caso 10)
 function pinta(results){
-  for (var i = 0; i < 10; i++) { // results.length en ved de 10, para poner todos los elementos q nos den
+  for (var i = 0; i < 10; i++) { // results.length en ved de 10, para poner todos los elementos que nos den
     container.innerHTML +='<ul class="book-card">' +
                           ' <li class="list-element">' +'#' + (i+1) + '. Title: ' + results[i].book_details[0].title + '</li>' +
                           ' <li class="list-element"><img src="' + 'https://s1.nyt.com/du/books/images/' + results[i].isbns[0].isbn13 + '.jpg"' + ' class="book-pic" alt="Book Image"></img ></li>'+

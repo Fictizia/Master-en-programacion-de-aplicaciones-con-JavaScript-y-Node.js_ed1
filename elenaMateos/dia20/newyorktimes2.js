@@ -30,4 +30,9 @@ function askForBooks() {
 
   request.open('GET', url, true);
   request.send();
+};
+
+function muestraResultados(){
+  container.innerHTML =
+
 }

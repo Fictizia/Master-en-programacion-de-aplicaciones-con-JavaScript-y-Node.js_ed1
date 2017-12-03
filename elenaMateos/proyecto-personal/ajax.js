@@ -1,20 +1,34 @@
-function peticionAjax(url, myFunction) {
-    var peticion = new XMLHttpRequest();
-    console.log('entra en función');
-    peticion.onreadystatechange = function() {
-        console.log('entra en cambio estado');
-        if (peticion.readyState === 4 && peticion.status === 200) {
-            myFunction(JSON.parse(peticion.responseText));
-            console.log('buen estatus');
-        } else if (peticion.readyState === 4 && peticion.status === 404) {
-            console.error("ERROR! 404");
+var url = 'https://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/station';
+function peticionAjax() {
+
+      var peticion = new XMLHttpRequest(); // XML tipo de peticion, http protocolo
+
+    peticion.onreadystatechange = function(){
+      console.log('entra en cambio estado');
+      if (peticion.readyState === 4) {
+          if (peticion.status >= 200 && peticion.status < 400) {
+
+            var resultados = JSON.parse(peticion.responseText).results;
+            console.log(resultados);
+
+          }else {
+            console.log('Eror 404, el archivo no se encuentraaaaaaa!!!!!');
             console.info(JSON.parse(peticion.responseText));
-            console.log('mal status');
-        }
+          }
+      }else{
+        console.log('oooh cargando!!!!');
+      }
     };
-    peticion.open("GET", url, true);
+    peticion.onerror = function() {
+      alert('Error al tratar de conectarse con el servidor');
+    };
+
+    peticion.open('GET', url, true);
     peticion.send();
-}
+};
+///////
+
+
 
 function generateHTML(data) {
     data.forEach(function(e) {
@@ -53,7 +67,7 @@ function iterator(json) {
     return html;
 }
 
-peticionAjax("http://airemad.org/api/v1/station", generateHTML);
+peticionAjax(url, generateHTML);
 
 /*  JSON:
 BODY

@@ -8,6 +8,7 @@ var url = 'http://airemad.org/api/v1/pollution/';
 
 var hour = document.getElementById('hour');
 var date = document.getElementById('date');
+var aemetButton = document.getElementById('aemet');
 
 /* DISTRICT */
 var city = document.getElementById('city');
