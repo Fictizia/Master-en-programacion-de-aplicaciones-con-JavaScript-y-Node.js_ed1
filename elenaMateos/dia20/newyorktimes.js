@@ -1,4 +1,4 @@
-// TOKEN:   8ffd1ba3a80c41e8bc7eaf0b17215c5a
+
 var token = "217027b37588437fbc3efb9984aca1a6";
 var url = "https://api.nytimes.com/svc/books/v3/lists.json?api-key="+token+"&list=hardcover-fiction&sort-order=ASC";
 
@@ -13,7 +13,8 @@ function askForBooks() {
         if (request.status >= 200 && request.status < 400) {
 
           var results = JSON.parse(request.responseText).results;
-           pinta(results);
+          setTimeout(pinta(results), 4000);
+          setTimeout(eliminarElemento(), 4000);
 
         }else {
           console.log('Eror 404, el archivo no se encuentraaaaaaa!!!!!');
@@ -24,6 +25,7 @@ function askForBooks() {
   };
   request.onerror = function() {
     alert('Error al tratar de conectarse con el servidor');
+    carga();
   };
 
   request.open('GET', url, true);
@@ -31,12 +33,9 @@ function askForBooks() {
 
 }
 
-
-askForBooks();
-
-
+// Función que inserta en el HTML los elementos (en este caso 10)
 function pinta(results){
-  for (var i = 0; i < 10; i++) { // results.length
+  for (var i = 0; i < 10; i++) { // results.length en ved de 10, para poner todos los elementos q nos den
 container.innerHTML +='<ul class="book-card">' +
                       ' <li class="list-element">' +'#' + (i+1) + '. Título: ' + results[i].book_details[0].title + '</li>' +
                       ' <li class="list-element"><img src="' + 'https://s1.nyt.com/du/books/images/' + results[i].isbns[0].isbn13 + '.jpg"' + ' class="book-pic" alt="Book Image"></img ></li>'+
@@ -47,3 +46,18 @@ container.innerHTML +='<ul class="book-card">' +
 
   }
 }
+
+// Gift animado antes de la carga:
+
+function carga(){
+  container.innerHTML = '<img id="gift" src="mapache.gif">';
+}
+function eliminarElemento(){ // Elimina el elemento que se pone durante la carga
+  var imagen = document.getElementById('gift');
+  var padre = imagen.parentNode;
+
+    padre.removeChild(imagen);
+  }
+
+setTimeout("askForBooks()",4000);
+carga();

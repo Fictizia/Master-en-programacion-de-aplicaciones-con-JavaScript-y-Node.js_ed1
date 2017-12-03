@@ -1,5 +1,9 @@
 'use strict';
 
+/* API */
+
+var url = 'http://airemad.org/api/v1/pollution/';
+
 /* DATE */
 
 var hour = document.getElementById('hour');
@@ -56,11 +60,24 @@ mostrarHora();
     }
   }, */
 
-
+var url = 'http://airemad.org/api/v1/pollution/';
 function peticionAjax(url){
 
     var request = new XMLHttpRequest();
-    request.open('GET','http://airemad.org/api/v1/pollution/' + optionDistrict.value)
+
+    request.onreadystatechange = function() {
+
+        if (request.readyState === 4 && request.status === 200) {
+            console.info(JSON.parse(request.responseText));
+
+        } else if (request.readyState === 4 && request.status === 404) {
+            console.error("ERROR! 404");
+            console.info(JSON.parse(request.responseText));
+            console.log('redirige a pag de error'); // to do!!!!!!!!!!!!!!!!!!!
+        }
+    };
+    request.open("GET", 'http://airemad.org/api/v1/station', true);
+    request.send();
 
 }
 
@@ -69,7 +86,7 @@ function peticionAjax(url){
 function peticionAjax(url) {
     var request = new XMLHttpRequest();
 
-    xmlHttp.onreadystatechange = function() {
+    request.onreadystatechange = function() {
 
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             console.info(JSON.parse(xmlHttp.responseText));
