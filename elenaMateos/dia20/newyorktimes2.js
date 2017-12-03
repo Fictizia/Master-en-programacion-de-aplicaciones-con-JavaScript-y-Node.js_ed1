@@ -1,7 +1,9 @@
 var container = document.getElementById('container');
 
+var listInfo = document.getElementById('listInfo');
+
 var token = "217027b37588437fbc3efb9984aca1a6";
-var url = "https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key="+token;
+var url = "https://api.nytimes.com/svc/books/v3/lists/names.json?api-key="+token;
 
 
 function askForBooks() {
@@ -13,8 +15,7 @@ function askForBooks() {
         if (request.status >= 200 && request.status < 400) {
 
           var results = JSON.parse(request.responseText).results;
-          // setTimeout(pinta(results), 4000);
-          // setTimeout(eliminarElemento(), 4000);
+          muestraResultados(results)
           console.log(results);
 
         }else {
@@ -31,8 +32,30 @@ function askForBooks() {
   request.open('GET', url, true);
   request.send();
 };
+askForBooks();
 
-function muestraResultados(){
-  container.innerHTML =
+function muestraResultados(results){
+  for (var i = 0; i < results.length; i++) {
+    container.innerHTML +='<ul class="book-card">' +
+                            '<li class="list-element">'+ results[i].list_name +'</li>'+
+                            '<li class="list-element">First publication: ' + results[i].oldest_published_date + '</li>'+
+                            '<li class="list-element">Last publication' + results[i].newest_published_date + '</li>'+
+                            '<li class="list-element"> ' + results[i].updated + '</li>'+
+                            '<button id="' + results[i].list_name_encoded + '" class="button"> View info</button>' + // dar id results[i]
+                          '</ul>';
+
+    var button = document.getElementById(results[i].list_name_encoded);
+    button.addEventListener('click', openInfo());
+    function openInfo(){
+      var modal = document.getElementById('modal');
+
+      modal.classList.toggle('hidden');
+      modal.innerHTML += '<ul class="book-card">' +
+                              '<li class="list-element"> METER INFO</li>'+
+
+                            '</ul>';
+
+    }
+  }//<a href="https://api.nytimes.com/svc/books/v3/lists.json?api-key=' + token+ '&' + results[i].list_name_encoded + '&sort-order=ASC">'  '</a>
 
 }
