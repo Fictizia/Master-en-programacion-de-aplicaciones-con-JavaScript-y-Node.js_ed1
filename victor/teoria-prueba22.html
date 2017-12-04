@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Librería NYT</title>
+        <style type="text/css">
+            body,html{height:100%;margin:0}
+            .book-categories .category:nth-child(2n),
+            .book-list .book .book-title{color:#fff;background-color:#333}
+            .box-loader{position:fixed;width:100%;height:100%;background-color:rgba(0,0,0,.6);z-index:10;top:0;left:0}
+            .loader{position:absolute;max-width:250px;top:calc((100% - 250px)/ 2);left:calc((100% - 250px)/ 2)}
+            .back,.book-categories,.book-list{max-width:1170px;margin:0 auto}
+            .book-categories .category{padding:10px;border:1px solid #333}
+            .book-categories .category .category-title{margin-top:0;font-size:20px;text-transform:uppercase}
+            .book-categories .category div span{margin-right:10px}
+            .book-categories .category div span:last-child{margin-right:0}
+            .book-categories .category .link-book{cursor:pointer;text-decoration:underline}
+            .back-button{cursor:pointer;margin:20px auto;display:inline-block}
+            .book-list{display:flex;justify-content:space-around;align-items:center;overflow:hidden;flex-flow:row wrap}
+            .book-list::after{content:'';display:block;clear:both}
+            .book-list .book{flex:0 0 calc(326px - 50px);background-color:#333;min-height:751px;margin-bottom:30px;margin-right:60px}
+            .book-list .book .book-title{text-align:center;font-size:20px;margin:0;padding:20px 10px}
+            .book-list .book .book-image {width: 329px;height: 495px;}
+            .book-list .book p {padding: 0 10px;color: #fff;}
+            .book-list .book a {color: #fff;}
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript" src="teoria-dia22.js"></script>
+    </body>
+</html>

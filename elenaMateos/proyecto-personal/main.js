@@ -1,9 +1,14 @@
 'use strict';
 
+/* API */
+
+var url = 'http://airemad.org/api/v1/pollution/';
+
 /* DATE */
 
 var hour = document.getElementById('hour');
 var date = document.getElementById('date');
+var aemetButton = document.getElementById('aemet');
 
 /* DISTRICT */
 var city = document.getElementById('city');
@@ -20,15 +25,60 @@ function mostrarHora() {
   hour.innerHTML = giveHour.getHours()+ ':' +giveHour.getMinutes();
   date.innerHTML = giveHour.getDate() + '/' + giveHour.getMonth() + '/' + giveHour.getFullYear();
   // console.log(giveHour.getHours()+ ':' +giveHour.getMinutes());
+  // timer para refrescar hora
+
 }
 
 mostrarHora();
 
+// url api pedir estaciones e id :'http://airemad.org/api/v1/station';
 
+/*
+[
+  {
+    "id": "P001",
+    "altitud": 637,
+    "direccion": "C/ General Pardiñas, 166",
+    "latitud": "40º 26' 13.254\" N",
+    "latitud_decimal": 40.437015,
+    "longitud": "3º 40' 47.32\" W",
+    "longitud_decimal": -3.6798112,
+    "nombre_estacion": "Barrio Salamanca",
+    "numero_estacion": 1,
+    "tipo_estacion": 1,
+    "datos_disponibles": {
+      "acustic": false,
+      "pollution": false,
+      "pollen": [
+        "Aliso",
+        "Cupresáceas/Taxáceas",
+        "Fresno",
+        "Olivo",
+        "Plantago",
+        "Plátano de paseo",
+        "Gramíneas"
+      ]
+    }
+  }, */
+
+var url = 'http://airemad.org/api/v1/pollution/';
 function peticionAjax(url){
 
     var request = new XMLHttpRequest();
-    request.open('GET','http://airemad.org/api/v1/pollution/' + optionDistrict.value)
+
+    request.onreadystatechange = function() {
+
+        if (request.readyState === 4 && request.status === 200) {
+            console.info(JSON.parse(request.responseText));
+
+        } else if (request.readyState === 4 && request.status === 404) {
+            console.error("ERROR! 404");
+            console.info(JSON.parse(request.responseText));
+            console.log('redirige a pag de error'); // to do!!!!!!!!!!!!!!!!!!!
+        }
+    };
+    request.open("GET", 'http://airemad.org/api/v1/station', true);
+    request.send();
 
 }
 
@@ -37,7 +87,7 @@ function peticionAjax(url){
 function peticionAjax(url) {
     var request = new XMLHttpRequest();
 
-    xmlHttp.onreadystatechange = function() {
+    request.onreadystatechange = function() {
 
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             console.info(JSON.parse(xmlHttp.responseText));

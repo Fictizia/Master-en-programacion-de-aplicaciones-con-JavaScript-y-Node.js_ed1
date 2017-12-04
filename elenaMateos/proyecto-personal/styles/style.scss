@@ -1,7 +1,7 @@
 @import "reset.scss";
-@import "styles/_animations",
-        "styles/_buttons",
-        "styles/_images"
-        "styles/_responsive";
+@import "components/animations",
+        "components/buttons",
+        "components/images";
 @import "header";
 @import "variables";
+@import "responsive";

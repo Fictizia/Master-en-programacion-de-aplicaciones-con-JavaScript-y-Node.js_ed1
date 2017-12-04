@@ -10,11 +10,9 @@ function peticionAjax(url) {
     xmlHttp.onreadystatechange = function() {
 
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-            getData(JSON.parse(xmlHttp.responseText));
-            
-            setTimeout(function() {
+            getData(JSON.parse(xmlHttp.responseText), function() {
                 document.querySelector(".box-loader").remove();
-            }, 2000);
+            });
         } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
             console.error("ERROR! 404");
             console.info(JSON.parse(xmlHttp.responseText));
@@ -24,23 +22,22 @@ function peticionAjax(url) {
     xmlHttp.send();
 }
 
-function getData(json) {
+function getData(json, callback) {
     var bookList = json.results;
-    var html = "";
     
-    bookList.forEach(function(e) {
+    bookList.forEach(function(e, i) {
         var bookDetails = e.book_details[0];
         
-        html += "<div class='book'>" +
+        var html = "<div class='book'>" +
                     "<p class='book-title'>" + bookDetails.title + " #" + e.rank +"</p>" +
                     "<img src='https://s1.nyt.com/du/books/images/" + bookDetails.primary_isbn13 + ".jpg' class='book-image' />" +
                     "<p>" + bookDetails.description + "</p>" +
                     "<p>Semanas en lista: " + e.weeks_on_list + "</p>" +
-                    "<p><a href='" + e.amazon_product_url + "' >Cómpralo</a></p>" +
+                    "<p><a href='" + e.amazon_product_url + "' target='_blank'>Cómpralo</a></p>" +
                 "</div>";
+        document.querySelector(".book-list").innerHTML += html;
     });
-    
-    document.querySelector(".book-list").innerHTML = html;
+    callback();
 }
 
 peticionAjax(url);
