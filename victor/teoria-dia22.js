@@ -56,7 +56,6 @@ function getBookCategoryList(categories, callback) {
     
     document.querySelectorAll(".link-book").forEach(function(e, i) {
         e.addEventListener("click", function() {
-            console.log(this);
             ajaxRequest(config.urlBooks + "?api-key=" + config.apiKey + "&list=" + arrayLinks[i], getBookList);
         });
     });
@@ -84,7 +83,7 @@ function getBookList(books, callback) {
         
         var html = "<div class='book'>" +
                     "<p class='book-title'>" + bookDetails.title + " #" + e.rank +"</p>" +
-                    "<img src='https://s1.nyt.com/du/books/images/" + nomImg + ".jpg' class='book-image' />" +
+                    "<img src='https://s1.nyt.com/du/books/images/" + nomImg + ".jpg' class='book-image' onerror='this.src=\"https://s1.nyt.com/du/books/images/" + bookDetails.primary_isbn13 + ".jpg\";' />" +
                     "<p>" + bookDetails.description + "</p>" +
                     "<p>Semanas en lista: " + e.weeks_on_list + "</p>" +
                     "<p><a href='" + e.amazon_product_url + "' target='_blank'>Cómpralo</a></p>" +

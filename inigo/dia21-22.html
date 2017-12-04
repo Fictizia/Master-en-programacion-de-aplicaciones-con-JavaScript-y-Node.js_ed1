@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+        html, body, .container{
+            height: 100%;
+            margin: 0;
+        }
+        p{
+            margin-top: 0;
+        }
+        #container{
+            background: #FFFF00;
+        }
+        .containerLibro{
+            display: inline-block;
+            border: 2px solid #333;
+            margin: 20px;
+            width: calc(33% - 40px);
+        }
+        .containerLibro:nth-child(even) {
+            background: #FF00FF;
+            
+        }
+        .containerLibro:nth-child(odd) {
+            background: #00FF00;
+            
+        }
+        .titulo{
+            margin: 0;
+            padding: 20px;
+            background: #ccc;
+            border-bottom: 1px solid #333;
+        }
+        .containerLibro:nth-child(even) .titulo{
+            background: #FF00FF;
+        }
+        .containerLibro:nth-child(odd) .titulo{
+            background: #00FF00;
+        }
+        .ranking{
+            background: #fff;
+            border-radius: 25px;
+            padding: 15px;
+            margin-right: 10px;
+        }
+        .left{
+            float: left;
+        }
+        .imagen img{
+            height: 230px;
+            display: inherit;
+        }
+        .contenido{
+            width: calc(100% - 200px);
+            padding: 15px;
+            padding-bottom: 0;
+        }
+        #backLoader{
+            background: #00000099;
+            position: fixed;
+            width: 100%;
+            height: 101%;
+            display: none;
+        }
+        #backLoader img{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: calc(50% - 100px);
+            top: calc(50% - 100px);
+        }
+        .containerCategoria{
+            display: inline-block;
+            border: 2px solid #333;
+            margin: 20px;
+            width: calc(33% - 40px);
+        }
+        
+	</style>
+</head>
+<body>
+    <div id="backLoader">
+        <img id="loader" src="img/load.svg">
+    </div>
+    <div id="container">
+        
+    </div>
+    <script type="text/javascript">
+         setTimeout(function() {
+             console.log(peticionAjax("https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab", listarCategoria));
+            //peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction", mostrarCategoria);
+            //peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction&date=2016-01-16", mostrarCategoria);
+        }, 1500);
+    
+        function peticionAjax(url,funcionMostrar) {
+            var xmlHttp = new XMLHttpRequest();
+            document.getElementById("backLoader").style.display="block";
+            
+            xmlHttp.onreadystatechange = function() {
+        
+                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                    //console.info(JSON.parse(xmlHttp.responseText));
+                    funcionMostrar(JSON.parse(xmlHttp.responseText));
+                    
+                } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                    console.error("ERROR! 404");
+                    console.info(JSON.parse(xmlHttp.responseText));
+                }
+            };
+            xmlHttp.open("GET", url, true);
+            xmlHttp.send();
+        }
+        //peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction");
+        //peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=Hardcover-Fiction&date=2016-01-16");
+        
+        function listarCategoria(data){
+            var caja = document.getElementById("container");
+            var botones;
+            
+            data.results.forEach(function(elemento, i){
+
+                setTimeout(function() {
+                    var html = "<div class='containerCategoria'>";
+                    html += "<p class=''>Categoría: " + elemento.display_name + "</p>";
+                    html += "<p class=''>Publicación más antigua: " + elemento.oldest_published_date + "</p>";
+                    html += "<p class=''>Publicación más nueva: " + elemento.newest_published_date + "</p>";
+                    html += "<p class=''>Frecuencia de actualización: " + elemento.updated + "</p>";
+                    html += "<button class='botonCategoria' value='" + elemento.list_name_encoded + "' class=''>Ir a: " + elemento.display_name + "</button>";
+                    html += "</div>"
+                    
+                    caja.innerHTML += html;
+                    
+                    
+                    botones = document.getElementsByClassName("botonCategoria");
+                    
+                    for (var i = 0; i < botones.length; i++) {
+                        botones[i].addEventListener("click",function(){
+                            peticionAjax("https://api.nytimes.com/svc/books/v3/lists.json?api-key=3b72d7bad83a47fb84bd5e47ddcb82ab&list=" + this.value, mostrarCategoria);
+                            console.log(this.value);
+                        });
+                    }
+                    
+                    if(i >= data.results.length){
+                        document.getElementById("backLoader").style.display="none";
+                    }
+                    
+                    
+                }, i * 200);
+                
+                
+                
+            });
+            
+           
+            
+            
+            
+        }
+    
+        function mostrarCategoria(data){
+            var caja = document.getElementById("container");
+            var html = "";
+            data.results.forEach(function(elemento, i){
+
+                setTimeout(function() {
+                    html += "<div class='containerLibro'>";
+                    html += "<p class='titulo'><span class='ranking'>#" + elemento.rank + "</span> "+ elemento.book_details[0].title + "</p>";
+                    html += "<div class='left imagen'><img src='https://s1.nyt.com/du/books/images/" +elemento.book_details[0].primary_isbn13 +".jpg' onerror='this.src=\"https://placeimg.com/200/300/animals\"' ></div>";
+                    html += "<div class='left contenido'>";
+                    html += "<p>Semanas en la lista: " + elemento.weeks_on_list + "</p>";
+                    html += "<p>Categoría: " + elemento.list_name + "</p>";
+                    html += "<p>Descripción: " + elemento.book_details[0].description + "</p>";
+                    html += "<p><a target='_blank' href='" + elemento.amazon_product_url + "'>Comprar en amazon</a></p>";
+                    html += "</div>"
+                    html += "</div>"
+                    
+                    caja.innerHTML = html;
+                    
+                    if(i >= data.results.length -1){
+                        document.getElementById("backLoader").style.display="none";
+                    }
+                    
+                }, i * 200);
+            });
+        }
+        
+        
+    </script>
+</body>
+</html>
