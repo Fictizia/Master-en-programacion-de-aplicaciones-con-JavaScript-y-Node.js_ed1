@@ -331,7 +331,16 @@ Características:
 - Saca el estado actual de todas las líneas del metro de Madrid por consola.
 
 ```javascript
-    // Tu solución
+	var lineas = document.querySelectorAll('.bloquet');
+	
+	for (var i = 0; i < lineas.length; i++) {
+	  var estado = lineas[i].querySelector('.circulacion > .txt > a');
+	  
+	  if(!estado) estado = lineas[i].querySelector('.circulacion > .r > a');
+	  
+	  if(estado) console.log(estado.innerText.trim());
+	  
+	}
 ```
 
 
