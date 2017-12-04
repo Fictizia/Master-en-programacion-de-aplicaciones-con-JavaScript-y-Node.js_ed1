@@ -346,6 +346,16 @@ Características:
 
 **3 -**  Diseña un script que sustituya todas las imágenes de las entradas de [Tecnología del Mundo Today](http://www.elmundotoday.com/noticias/tecnologia/) por [imágenes dummy de gatitos](https://placekitten.com/).
 ```javascript
-    // Tu solución
+		var imagenes = document.querySelectorAll('.td-module-thumb img');
+
+		for(var i = 0; i < imagenes.length; i++){
+			var url = document.querySelectorAll('.td-module-thumb img')[i].src;
+			var ancho = document.querySelectorAll('.td-module-thumb img')[i].width;
+			var alto = document.querySelectorAll('.td-module-thumb img')[i].height;
+			var sustituto = "http://lorempixel.com/"+ancho+"/"+alto+"/cats";
+			document.querySelectorAll('.td-module-thumb img')[i].src = sustituto;
+			// Hack para solucionar el visionado
+			document.querySelectorAll('.td-module-thumb img')[i].removeAttribute("srcset");
+		}
 ```
 
