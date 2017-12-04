@@ -22,6 +22,13 @@ for(i=0;i<categories.length;i++){
 		}
 	}
 }
+
+var categories = document.querySelectorAll('[id$=_Area] ul li a');
+.innerText (  nombre     master de 300 horas)
+.trim()
+re=/\s\s+/;
+split(re);
+.href (http)
 ```
 
 - Respuesta esperada (consola):
