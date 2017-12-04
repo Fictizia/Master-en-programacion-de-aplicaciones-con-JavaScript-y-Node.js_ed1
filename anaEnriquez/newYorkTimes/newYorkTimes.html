@@ -1,0 +1,278 @@
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div id="loading">
+	<img src="img/loading.gif">
+</div>
+<div id="dashboard">
+    
+</div>
+
+
+<script type="text/javascript">
+var apiKey = "766d7427eb2742e5bf895e7963a4ea1d";
+var urlApi = "https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=" + apiKey;
+
+function peticionAjax(url, callback) {
+    var xmlHttp = new XMLHttpRequest();
+
+    xmlHttp.onreadystatechange = function() {
+
+        if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+            var datos = JSON.parse(xmlHttp.responseText);
+            callback(datos);
+
+        } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+            console.error("ERROR! 404");
+            console.info(JSON.parse(xmlHttp.responseText));
+        }
+    };
+    xmlHttp.open("GET", url, true);
+    xmlHttp.send();
+}
+
+peticionAjax(urlApi, listsDashboard);
+
+function listsDashboard(datos){
+    var petition = datos.results;
+    //console.log(petition);
+    for(i=0;i<petition.length;i++){
+        var list = petition[i];
+        console.log(list);
+        var listContainer = document.createElement('a');
+        dashboard.appendChild(listContainer);
+        var listID = "list" + (i+1)
+        listContainer.id= listID;
+
+        backgroundColor(listID);
+
+        listContainer.className = "panel";
+        var absoluteContainer = document.createElement('div');
+        listContainer.appendChild(absoluteContainer);
+        absoluteContainer.className = "container";
+        var updated = document.createElement('span');
+        absoluteContainer.appendChild(updated);
+        updated.className = "updated";
+        updated.innerText = list.updated;
+        var listName = document.createElement('h2');
+        absoluteContainer.appendChild(listName);
+        listName.className = "listName";
+        listName.innerText = list.display_name;
+        var oldestPublished = document.createElement('span');
+        absoluteContainer.appendChild(oldestPublished);
+        oldestPublished.className = "dates";
+        oldestPublished.innerText = "Oldest published book: " + list.oldest_published_date;
+        var newestPublished = document.createElement('span');
+        absoluteContainer.appendChild(newestPublished);
+        newestPublished.className = "dates";
+        newestPublished.innerText = "Newest published book: " +list.newest_published_date;
+
+    }
+    var lists = document.querySelectorAll('.panel');
+
+    for (var i = 0; i < lists.length; i++) {
+        lists[i].addEventListener('click', function() {
+            var selected = this.id;
+            selected = selected.replace(/\D+/g, '');
+            selected = Number(selected) -1;
+            console.log(selected);
+            for(j=0;j<lists.length;j++){
+                
+                if(j===selected) {
+                    lists[j].classList.add( 'listSelected' );
+                    lists[j].classList.remove( 'listHide' );
+                    var category = petition[selected].list_name_encoded;
+
+                    callTheBooks(category);
+                }else { lists[j].classList.add( 'listHide' );
+                        lists[j].classList.remove( 'listSelected' ); }  
+            }  
+        });
+    }
+
+    
+
+    document.getElementById("loading").classList.add('hidden');
+    setTimeout(function(){
+        document.getElementById("loading").setAttribute("style","display:none");
+        document.getElementById("dashboard").setAttribute('style','opacity:1');
+        
+    }, 1000)
+}
+
+function backgroundColor(id){
+    var div = document.getElementById(id);
+    //console.log(div);
+    var number = id.replace(/\D+/g, '');
+    number = number%5;
+    switch(number){
+        case 1:
+            div.setAttribute("style","background-color:#B7DED2");
+            break;
+        case 2:
+            div.setAttribute("style","background-color:#F6A6B2");
+            break;
+        case 3:
+            div.setAttribute("style","background-color:#F7C297");
+            break;
+        case 4:
+            div.setAttribute("style","background-color:#FFECB8");
+            break;
+        case 0:
+            div.setAttribute("style","background-color:#90D2D8");
+            break;
+    }
+}
+
+function callTheBooks(category) {
+var urlApi2 = "https://api.nytimes.com/svc/books/v3/lists.json?api-key=" + apiKey + "&list=" + category + "&sort-order=ASC";
+    console.log(category);
+    peticionAjax(urlApi2, listOfBooks);
+}
+
+
+function listOfBooks(datos){
+    var petition = datos;
+    petition = petition.results;
+    console.log(petition);
+    var list = document.querySelector(".listSelected");
+    var close = document.createElement('p');
+    list.appendChild(close);
+    close.innerText = "Close list &#10006;"
+    var content = document.createElement('div');
+    list.appendChild(content);
+    content.id="content";
+    for(i=0;i<petition.length;i++){
+        //console.log(petition[i]);
+        var bookDetails = petition[i].book_details;
+        var photo = bookDetails[0].primary_isbn13;
+        var wol = petition[i].rank_last_week;
+        var link = petition[i].amazon_product_url;
+        //console.log(wol);
+        //console.log(photo);
+        var ficha = document.createElement('article');
+        ficha.id = 'ficha' + i;
+        ficha.className = "ficha";
+        content.appendChild(ficha);
+        var cover = document.createElement('img');
+        cover.className = 'coverPhoto';
+        ficha.appendChild(cover);
+        cover.src = "https://s1.nyt.com/du/books/images/"+photo+".jpg";
+        var title = document.createElement('h3');
+        title.className = 'bookTitle';
+        ficha.appendChild(title);
+        var shoppingLink = document.createElement('a');
+        title.appendChild(shoppingLink);
+        shoppingLink.href=link;
+        var rank = petition[i].rank;
+        var titleBook = bookDetails[0].title;
+        var descriptionBook = bookDetails[0].description;
+        titleBook = '#' + rank + " " + titleBook;
+        titleBook = titleBook.toLowerCase();
+        shoppingLink.innerText = titleBook;
+        var weeks = document.createElement('p');
+        weeks.className = 'weeks';
+        ficha.appendChild(weeks);
+        weeks.innerText = wol + " weeks on list";
+        var description = document.createElement('p');
+        description.className = 'bookDescription'
+        ficha.appendChild(description);
+        description.innerText = descriptionBook;
+
+    }
+
+    document.getElementById("loading").classList.add('hidden');
+    setTimeout(function(){
+        document.getElementById("loading").setAttribute("style","display:none");
+        document.getElementById("content").setAttribute('style','opacity:1');
+        
+    }, 1000)
+
+}       
+</script>
+
+<script type="text/javascript">
+/*
+var urlApi = "https://api.nytimes.com/svc/books/v3/lists.json?api-key=" + apiKey + "&list=hardcover-fiction&sort-order=ASC"
+function peticionAjax(url, callback) {
+        var xmlHttp = new XMLHttpRequest();
+
+        xmlHttp.onreadystatechange = function() {
+
+            if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                var datos = JSON.parse(xmlHttp.responseText);
+                callback(datos);
+
+            } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                console.error("ERROR! 404");
+                console.info(JSON.parse(xmlHttp.responseText));
+            }
+        };
+        xmlHttp.open("GET", url, true);
+        xmlHttp.send();
+    }
+
+peticionAjax(urlApi, listOfBooks);
+var results = {}
+function listOfBooks(datos){
+	var petition = datos;
+	petition = petition.results;
+    console.log(petition);
+    var content = document.getElementById("content");
+    for(i=0;i<petition.length;i++){
+        //console.log(petition[i]);
+        var bookDetails = petition[i].book_details;
+        var photo = bookDetails[0].primary_isbn13;
+        var wol = petition[i].rank_last_week;
+        var link = petition[i].amazon_product_url;
+        //console.log(wol);
+        //console.log(photo);
+        var ficha = document.createElement('article');
+        ficha.id = 'ficha' + i;
+        ficha.className = "ficha";
+        content.appendChild(ficha);
+        var cover = document.createElement('img');
+        cover.className = 'coverPhoto';
+        ficha.appendChild(cover);
+        cover.src = "https://s1.nyt.com/du/books/images/"+photo+".jpg";
+        var title = document.createElement('h3');
+        title.className = 'bookTitle';
+        ficha.appendChild(title);
+        var shoppingLink = document.createElement('a');
+        title.appendChild(shoppingLink);
+        shoppingLink.href=link;
+        var rank = petition[i].rank;
+        var titleBook = bookDetails[0].title;
+        var descriptionBook = bookDetails[0].description;
+        titleBook = '#' + rank + " " + titleBook;
+        titleBook = titleBook.toLowerCase();
+        shoppingLink.innerText = titleBook;
+        var weeks = document.createElement('p');
+        weeks.className = 'weeks';
+        ficha.appendChild(weeks);
+        weeks.innerText = wol + " weeks on list";
+        var description = document.createElement('p');
+        description.className = 'bookDescription'
+        ficha.appendChild(description);
+        description.innerText = descriptionBook;
+
+    }
+
+    document.getElementById("loading").classList.add('hidden');
+    setTimeout(function(){
+        document.getElementById("loading").setAttribute("style","display:none");
+        document.getElementById("content").setAttribute('style','opacity:1');
+        
+    }, 1000)
+
+}    	
+
+// http://www.heroesdelaweb.com/threads/como-crear-un-efecto-loading.697/
+
+*/
+</script>
+</body>
+</html>
