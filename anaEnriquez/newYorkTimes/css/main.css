@@ -1,0 +1,194 @@
+body {
+	background-color:#141414;
+	color:white;
+}
+#loading img{
+	display: block;
+	text-align: center;
+	padding-top:calc(50vh - 75px);
+	padding-left: calc(50vw - 75px);
+	max-width:150px;
+}
+.hidden {
+	opacity: 0;
+	-webkit-transition: opacity 1s;
+	transition: opacity 1s;
+}
+#loading {
+	-webkit-transition: opacity 1s;
+	transition: opacity 1s;
+}
+#content {
+	opacity:0;
+	-webkit-transition: opacity 1s;
+	transition: opacity 1s;
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.ficha{
+	background-color:white;
+	width: 32%;
+	margin-top: 50px;
+    margin-bottom: 25px;
+}
+.coverPhoto {
+    max-width: 30%;
+    margin-left: 5%;
+    float: left;
+    margin-top: -20px;
+    padding-bottom: 25px;
+}
+.bookTitle, .weeks, .bookDescription {
+	width: 55%;
+    float: right;
+    display: block;
+    padding: 0 5%;
+    color: #3b3b3b;
+    font-family: "Helvetica Neue", sans-serif;
+}
+.bookTitle {
+	margin-bottom: 0;
+}
+.bookTitle + .weeks {
+	margin-top: 0;
+	font-size:11px;
+	letter-spacing: 1px;
+	font-weight: 200;
+	text-decoration: underline;
+}
+.bookDescription {
+	font-size:14px;
+	font-weight: 300;
+}
+.bookTitle a {
+	text-decoration: none;
+	color:#3b3b3b;
+	font-family: "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size:17px;
+	text-transform: capitalize;
+}
+.bookTitle a:hover {
+	color:#ff9966;
+	letter-spacing: 1px;
+	font-weight: 500;
+}
+@media (max-width: 1199px) {
+	#content {
+		justify-content: space-around;
+	}
+	.ficha {
+  		width: 40%;
+  	}
+}
+@media (max-width: 991px) {
+	#content {
+		max-width: 960px;
+	}
+	.ficha {
+  		width: 48%;
+  	}
+}
+@media (max-width: 767px) {
+	#content {
+		max-width: 720px;
+	}
+	.ficha {
+  		width: 70%;
+  		margin:50px auto 25px;
+  	}
+}
+@media (max-width: 575px) {
+	#content {
+    	max-width: 540px;
+  	}
+  	.ficha {
+  		width: 90%;
+  	}
+}
+@media (max-width: 400px;) {
+	.ficha {
+  		width: 100%;
+  	}
+}
+
+body{
+	margin: 0;
+	font-family: "Helvetica-neue",sans-serif;
+    font-weight: 300;
+}
+#dashboard {
+	opacity:0;
+	-webkit-transition: opacity 1s;
+	transition: opacity 1s;
+	display: flex;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	width: auto;
+	height: 100%;
+	transition: opacity .3s;
+}
+.panel {
+	min-width: 320px;
+	cursor: pointer;
+	display: block;
+	position: relative;
+	-webkit-transition: all 0.3s;
+  	transition: all 0.3s;
+  	transition: all .3s;
+  	width: 320px;
+}
+.panel:hover{
+	min-width: 360px;
+	width: 360px;
+	transition:min-width.35s;
+	overflow: hidden;
+}
+
+.container{
+	/*height: 100%;*/
+    opacity: 1;
+    overflow: hidden;
+    -webkit-transition: opacity .45s;
+    transition: opacity .45s;
+    z-index: 2;
+    padding:20px;
+}
+#dashboard:hover > .panel {
+    opacity: 0.3;
+    transition: opacity.35s;
+    transition:min-width.35s;
+}
+#dashboard:hover > .panel:hover {
+  	opacity: 1;
+  	transition: all.35s;
+}
+.listName{
+	text-align: left;
+	text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 24px;
+    margin-top:0;
+}
+.updated, .dates {
+	font-size:12px;
+	display:block;
+}
+.listHide {
+	display: none;
+}
+.listSelected {
+	width:100%;
+	transition: all .35s;
+	cursor: initial;
+}
+.listSelected:hover {
+	min-width: 100%;
+	width: 100%;
+}
+.listSelected span, .listSelected h2 {
+	text-align: center;
+}

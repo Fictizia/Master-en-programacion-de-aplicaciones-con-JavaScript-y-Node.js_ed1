@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>AireMad APP</title>
-    <link rel="stylesheet" href="styles/stile.css">
+    <link rel="stylesheet" href="styles/style.css">
     <meta name="viewport" content="initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Raleway" rel="stylesheet">
   </head>
@@ -12,7 +12,7 @@
 
       <div class="weather-info">
         <div class="weather-gift">
-          <img src="images/sunny.gif" alt="sunny day!">
+          <img class="gift" src="images/sunny.gif" alt="sunny day!">
         </div>
         <div class="time-district">
           <div class="time">
@@ -20,25 +20,25 @@
             <p id="date">DATE</p>
           </div>
           <div class="district">
-            <p>MADRID</p>
+            <p id="city">MADRID</p>
           </div>
         </div>
       </div>
 
       <div class="data">
-        <p>Cº</p>
-        <p>Probabilidad de lluvia #%</p>
-        <p>Velocidad del viento: # km/h</p>
-        <button type="button" name="button">AEMET</button>
+        <p id="temperature">Cº</p>
+        <p id="rainProbability">Probabilidad de lluvia #%</p>
+        <p id="win">Velocidad del viento: # km/h</p>
+        <button id="aemet" type="button" name="button">AEMET</button>
       </div>
 
     </header>
     <section class="main-info">
 
-      <div class="distric">
-        <h1>DISTRITO</h1>
-        <select class="select-district" name="select-district">
-          <option value="Usera">USERA</option>
+      <div class="district">
+        <h1 id="district">DISTRITO</h1>
+        <select id="optionDistrict" class="select-district" name="select-district">
+          <option  value="S056">USERA</option>
         </select>
       </div>
       <div class="container--air-quality">
@@ -47,7 +47,9 @@
           <p>Medio %??? </p>
         </div>
         <div class="values">
-          <p></p>
+          <ul id="values">
+            <li></li>
+          </ul>
           <input type="text" name="" value="">
 
         </div>
@@ -55,12 +57,11 @@
       </div>
 
       <div class="container--emoji">
-
+          <img id="giphy" src=""></img>
       </div>
 
     </section>
-<script type="text/javascript" src="main.js" charset="utf-8">
-
-</script>
+    <script type="text/javascript" src="main.js"> </script>
+    <script type="text/javascript" src="ajax.js"> </script>
   </body>
 </html>

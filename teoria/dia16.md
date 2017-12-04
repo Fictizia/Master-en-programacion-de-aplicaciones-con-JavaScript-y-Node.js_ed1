@@ -275,7 +275,30 @@ Características:
 - Cada curso debe contener el enlace al mismo y especificar el número de horas entre parentesis.
 
 ```javascript
-    // Tu solución
+	// Simular el Click (Opcional)
+	document.getElementById('web_Tab').click();
+	
+	var areas = document.querySelectorAll('#areas > section');
+	var markdown = "# Cursos de Fictizia\n\n";
+	
+	for (var i = 0; areas.length > i; i++) {
+	
+	    var area = areas[i].querySelectorAll('li > a');
+	    markdown += "## " + areas[i].querySelector('h2').innerText.trim() + "\n\n";
+	    markdown += "**Total de cursos: " + area.length + "**\n";
+	  
+	    for (var j = 0; area.length > j; j++) {
+	            var link = area[j].getAttribute("href");
+	            var horas = area[j].querySelector(".contextualInfo").innerText.trim();
+	                horas = horas.replace("Curso de ", "").replace("Workshop de ").replace("Master de ", "").replace("undefined", "");
+	            var titulo = area[j].querySelector("strong").innerText.trim();
+	            var curso = "- [" + titulo + " (" + horas + ")](" + link + ")\n";
+	            markdown += curso;
+	    }
+	    markdown += "\n\n"
+	}
+	
+	console.log(markdown);
 ```
 
 - Respuesta esperada (consola):
@@ -308,12 +331,31 @@ Características:
 - Saca el estado actual de todas las líneas del metro de Madrid por consola.
 
 ```javascript
-    // Tu solución
+	var lineas = document.querySelectorAll('.bloquet');
+	
+	for (var i = 0; i < lineas.length; i++) {
+	  var estado = lineas[i].querySelector('.circulacion > .txt > a');
+	  
+	  if(!estado) estado = lineas[i].querySelector('.circulacion > .r > a');
+	  
+	  if(estado) console.log(estado.innerText.trim());
+	  
+	}
 ```
 
 
 **3 -**  Diseña un script que sustituya todas las imágenes de las entradas de [Tecnología del Mundo Today](http://www.elmundotoday.com/noticias/tecnologia/) por [imágenes dummy de gatitos](https://placekitten.com/).
 ```javascript
-    // Tu solución
+		var imagenes = document.querySelectorAll('.td-module-thumb img');
+
+		for(var i = 0; i < imagenes.length; i++){
+			var url = document.querySelectorAll('.td-module-thumb img')[i].src;
+			var ancho = document.querySelectorAll('.td-module-thumb img')[i].width;
+			var alto = document.querySelectorAll('.td-module-thumb img')[i].height;
+			var sustituto = "http://lorempixel.com/"+ancho+"/"+alto+"/cats";
+			document.querySelectorAll('.td-module-thumb img')[i].src = sustituto;
+			// Hack para solucionar el visionado
+			document.querySelectorAll('.td-module-thumb img')[i].removeAttribute("srcset");
+		}
 ```
 
