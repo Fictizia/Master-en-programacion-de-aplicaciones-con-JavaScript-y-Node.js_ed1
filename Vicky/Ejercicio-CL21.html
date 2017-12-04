@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Bestsellers Herdcover using New York Times API</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  </head>
+  <style type="text/css">
+        .loader {
+          border: 16px solid #f3f3f3; /* Light grey */
+          border-top: 16px solid #3498db; /* Blue */
+          border-radius: 50%;
+          width: 120px;
+          height: 120px;
+          animation: spin 2s linear infinite;
+      }
+      
+      @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+      }
+      .caja{
+          height:450px;
+          border:1px solid lightgrey;
+          border-radius:4px;
+          -webkit-box-shadow: 7px 7px 30px -13px rgba(163,163,163,1);
+            -moz-box-shadow: 7px 7px 30px -13px rgba(163,163,163,1);
+            box-shadow: 7px 7px 30px -13px rgba(163,163,163,1);
+            margin-bottom:20px;
+      }
+      
+      .caja img{
+          max-height:250px;
+          display: block; margin-left: auto; margin-right: auto;
+      }
+      h3{
+          font-size:14px;
+      }
+      p{
+          padding:0px 10px 0px 10px;
+      }
+      btn{
+          border-radius:4px;
+      }
+  </style>
+  <body>
+    
+     
+     <div class="container">
+             <h1>Bestsellers Hardcover Fiction (by New York Times)</h1>
+             <div id="loader"></div>
+       
+        </div>
+     
+      <script>
+         function Ajax(url,callback) {
+          var xmlHttp = new XMLHttpRequest();
+  
+          xmlHttp.onreadystatechange = function() {
+  
+              if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                  var datos = (JSON.parse(xmlHttp.responseText));
+                  callback(datos);
+              } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                  console.error("ERROR! 404");
+                  console.info(JSON.parse(xmlHttp.responseText));
+              }
+          };
+          xmlHttp.open("GET", url, true);
+          xmlHttp.send();
+          }
+          var url = "https://api.nytimes.com/svc/books/v3/lists.json";
+          var apiKey = ""
+          var list = "hardcover-fiction"
+          url = url + "?api-key=" + apiKey +"&list=" +list;
+          
+          
+          
+          var print=document.getElementById("loader")
+          
+          Ajax(url, function (datos){
+            
+           
+          
+
+            for (var i = 0;i<datos.results.length;i++){
+                var position = datos.results[i].rank
+                var title = datos.results[i].book_details[0].title
+                var imgUrl="https://s1.nyt.com/du/books/images/"
+                if (datos.results[i].isbns[0].isbn13==""){
+                  var image = imgUrl + datos.results[i].isbns[1].isbn13+".jpg";
+                }
+                else {
+                  var image = imgUrl + datos.results[i].isbns[0].isbn13+".jpg";
+                }
+                
+                
+                
+                
+                var weeks = datos.results[i].weeks_on_list;
+                var desc = datos.results[i].book_details[0].description
+                var shortDesc = desc.substring(0, 80)+"...";
+                var amazon = datos.results[i].amazon_product_url
+               print.innerHTML += '<div class="col-md-3"><div class="caja text-center"><h3>'+position+'. '+title+ '</h3> <img class="img-responsive" src='+ image +'>' +'<p>Weeks on list: '+ weeks + '</p><p>Description: ' + shortDesc + '</p><button class="btn btn-info"><a href="'+amazon+'">Buy at amazon</a></button</div></div>';
+               
+            }
+           
+          });
+      
+      </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>
