@@ -43,8 +43,8 @@ function muestraResultados(results){
                             '<li class="list-element"> ' + results[i].updated + '</li>'+
                             '<button id="' + results[i].list_name_encoded + '" class="button"> View info</button>' + // dar id results[i]
                           '</ul>';
-
-    var button = document.getElementById(results[i].list_name_encoded);
+    var id = results[i].list_name_encoded;
+    var button = document.getElementById(id);
     button.addEventListener('click', openInfo());
     function openInfo(){
       var modal = document.getElementById('modal');
