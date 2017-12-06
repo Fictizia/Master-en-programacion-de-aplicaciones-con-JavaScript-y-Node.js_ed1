@@ -21,4 +21,5 @@ p {
   width: 100%; }
 
 body {
-  font-family: "Raleway", sans-serif; }
+  font-family: "Raleway", sans-serif;
+  padding: 20px; }

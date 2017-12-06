@@ -54,20 +54,53 @@ function pintaDistritos(resultados){
   for (var i = 0; i < resultados.length; i++) {
     console.log();
     optionDistrict.innerHTML += '<option value="' + resultados[i].id + '">' + resultados[i].nombre_estacion + '</option>' ;
+
   }
+
 
 
 };
 function pintaResultados(){
-  console.log(resultados);
+  var id = 0;
+  for (var i = 0; i < resultados.length; i++) {
+    id = i;
+
+
+  values.innerHTML =  '<li class="values-element">' +resultados[id].datos_disponibles.pollution[0]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[1]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[2]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[3]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[4]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[5]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[6]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[7]  + ' </li>' ;
+  }
 }
-// function pintaResultados(){
-//   console.log('cucu');
-// }
+  console.log(resultados);
 
+/* -----------   otra opcion ------------ */
+/*SEGUNDA LLAMADA A API PARA OBTENER DATOS....
+VAR URL: http://airemad.org/api/v1/pollution
+O LA DE MOCK:
 
-///////
+http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution
 
+var request = new XMLHttpRequest();
+
+request.open('GET', 'http://airemad.org/api/v1/pollution');
+
+request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+  }
+};
+
+request.send();
+
+*/
+// optionDistrict.addEventListener('change', pintaResultados()); no chufla
 
 
 /*  JSON:
