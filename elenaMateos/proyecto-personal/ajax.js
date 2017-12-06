@@ -65,7 +65,7 @@ function pintaResultados(){
   for (var i = 0; i < resultados.length; i++) {
     id = i;
 
-
+// solo muestra ultimo...
   values.innerHTML =  '<li class="values-element">' +resultados[id].datos_disponibles.pollution[0]  + ' </li>' +
                       '<li class="values-element">' +resultados[id].datos_disponibles.pollution[1]  + ' </li>' +
                       '<li class="values-element">' +resultados[id].datos_disponibles.pollution[2]  + ' </li>' +
@@ -78,6 +78,20 @@ function pintaResultados(){
 }
   console.log(resultados);
 
+
+  var request = new XMLHttpRequest();
+
+  request.open('GET', 'http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution');
+
+  request.onreadystatechange = function () {
+    if (this.readyState === 4) {
+      console.log('Status:', this.status);
+      console.log('Headers:', this.getAllResponseHeaders());
+      console.log('Body:', this.responseText);
+    }
+  };
+
+  request.send();
 /* -----------   otra opcion ------------ */
 /*SEGUNDA LLAMADA A API PARA OBTENER DATOS....
 VAR URL: http://airemad.org/api/v1/pollution
