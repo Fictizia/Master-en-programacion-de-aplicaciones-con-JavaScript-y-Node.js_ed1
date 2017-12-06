@@ -47,16 +47,7 @@ function muestraResultados(results){
     var button = document.getElementById(id);
     button.addEventListener('click', openInfo());
 
-    function openInfo(){
-      var modal = document.getElementById('modal');
 
-      modal.classList.toggle('hidden');
-      modal.innerHTML += '<ul class="book-card">' +
-                              '<li class="list-element"> METER INFO</li>'+
-
-                            '</ul>';
-
-    }
     /*
 
     function asignarEventos(){
@@ -76,5 +67,15 @@ function muestraResultados(results){
 	//console.log("eeeeee");
 	if(evento.type=='click'){}*/
   }//<a href="https://api.nytimes.com/svc/books/v3/lists.json?api-key=' + token+ '&' + results[i].list_name_encoded + '&sort-order=ASC">'  '</a>
+
+}
+function openInfo(){
+  var modal = document.getElementById('modal');
+
+  modal.classList.toggle('hidden');
+  modal.innerHTML += '<ul class="book-card">' +
+                          '<li class="list-element"> METER INFO</li>'+
+
+                        '</ul>';
 
 }
