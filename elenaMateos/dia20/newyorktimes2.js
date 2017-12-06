@@ -46,6 +46,7 @@ function muestraResultados(results){
     var id = results[i].list_name_encoded;
     var button = document.getElementById(id);
     button.addEventListener('click', openInfo());
+
     function openInfo(){
       var modal = document.getElementById('modal');
 
@@ -56,6 +57,24 @@ function muestraResultados(results){
                             '</ul>';
 
     }
+    /*
+
+    function asignarEventos(){
+	if (document.readyState == 'complete') {
+		//var datos = document.getElementById("teclado").getElementsByTagName("button");
+		//console.log(datos[2]);
+		for(var i=0;i<10;i++){
+			/*genero un bucle para realizar un evento para cada elemento*/
+/*			var numero= document.getElementById("n"+i);
+			//console.log(numero);
+			numero.addEventListener("click", resalta);
+		}
+  }
+  */
+  /*function resalta(elEvento){
+  var evento = elEvento || window.event;
+	//console.log("eeeeee");
+	if(evento.type=='click'){}*/
   }//<a href="https://api.nytimes.com/svc/books/v3/lists.json?api-key=' + token+ '&' + results[i].list_name_encoded + '&sort-order=ASC">'  '</a>
 
 }
