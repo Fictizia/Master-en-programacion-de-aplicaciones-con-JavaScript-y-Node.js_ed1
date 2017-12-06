@@ -1,0 +1,65 @@
+/*---------- MAIN INFO  -------*/
+.main-info{
+  display: flex;
+  flex-direction: column;
+}
+/*-------  DATA  -------*/
+
+.data{
+  display: flex;
+  border-bottom: 2px solid $secondary-color;
+  justify-content: space-around;
+  padding-bottom: 5px;
+}
+.aemet-link{
+  background-color: $primary-color;
+  color: $background;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px;
+  transition: 0.3s linear 0s;
+}
+.aemet-link:hover{
+  background-color: $secondary-color;
+}
+
+/*------- DISTRICT INFO ---------*/
+
+.district{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0px ;
+}
+.district-menu{
+  background-color: inherit;
+  border: 1px solid $secondary-color;
+}
+
+
+/*--------  AIR QUALITY  --------*/
+
+.data-container{
+  align-items: flex-end;
+  border: 2px solid $secondary-color;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+
+.container--air-quality{
+  padding: 5px;
+}
+/* -------  CONTAINER EMOJI --------*/
+.refresh-button{
+  background-color: inherit;
+  border: 1px solid $primary-color;
+  border-radius: 50%;
+  padding: 5px;
+  transition: 0.3s linear 0s;
+}
+.refresh-button:hover{
+  background-color: $primary-color;
+}
+.refresh-button-image{
+  width: 40px;
+}
