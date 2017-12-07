@@ -17,6 +17,27 @@
 	}
 	
 	console.log("El resultado es %O", anidacion);
+	
+	/*
+			---- COMO OBJETO ---
+	*/
+	
+	var arreglo1 = ["Oscar", "Pedro", "Marco", "Juana"],
+	arreglo2 = [9897667, 81721623, 91823871, 71236123],
+	arreglo3 = [false, true, true, false];
+
+	var anidacion = [];
+	
+	for (var i = 0; i <= arreglo1.length; i++){
+		anidacion.push({
+			nombre: arreglo1[i],
+			id: arreglo2[i], 
+			admin: arreglo3[i]
+		});
+	}
+	
+	console.log("El resultado es %O", anidacion);	
+	
 ```
 
 - Variante (Diferentes longitudes)
