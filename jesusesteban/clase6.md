@@ -7,10 +7,8 @@
 **1 -** Utiliza .assert para controlar cuando se muestra tu nombre por consola.
 ```javascript
     // Tu solución
-
-var x = 0;
-Boolean(x);
-console.assert(x, "\"x\" es igual a \"False\"");
+    var controlador = false;
+    console.assert(controlador,  "Hola, soy Jesús");
 
 ```
 
@@ -20,13 +18,13 @@ console.assert(x, "\"x\" es igual a \"False\"");
 ```javascript
     // Tu solución
 
- console.time("Ejercicio");
- var miNombre = "Jesús";
- console.log(miNombre);
- console.info(miNombre);
- console.warn(miNombre);
- 
- console.timeEnd("Ejercicio");
+     console.time("Ejercicio");
+     var miNombre = "Jesús";
+     console.log(miNombre);
+     console.info(miNombre);
+     console.warn(miNombre);
+     
+     console.timeEnd("Ejercicio");
 
 ```
 
@@ -35,30 +33,27 @@ console.assert(x, "\"x\" es igual a \"False\"");
     // Tu solución
 
 
- console.time("Ejercicio");
-  var miNombre = "Jesús";
-  console.log('%c Jesús ', 'background: #CCC; color: #FFF; text-transform: uppercase;');
- 
- console.timeEnd("Ejercicio");
-
-
-
-
+    console.time("Ejercicio");
+    var miNombre = "Jesús";
+    console.log('%c Jesús ', 'background: #CCC; color: #FFF; text-transform: uppercase;');
+    
+    console.timeEnd("Ejercicio");
+    
 ```
 
 **4 -** Agrupa cada tipo de mensaje y añade un contador de tiempo por cada grupo.
 ```javascript
     // Tu solución
 
-var miNombre = "Jesús";
- 
-  console.group("bucleFor");
-     for(var i=2; i>0; i--){
-      console.log(miNombre);
-      console.info(miNombre);
-      console.warn(miNombre);
+    var miNombre = "Jesús";
+    
+    console.group("bucleFor");
+    for(var i=2; i>0; i--){
+        console.log(miNombre);
+        console.info(miNombre);
+        console.warn(miNombre);
     }
-  console.groupEnd();
+    console.groupEnd();
 
 
 ```
@@ -67,17 +62,17 @@ var miNombre = "Jesús";
 ```javascript
     // Tu solución
 
-var alumnos =[
-    {nombre: "Vicky", puesto: 1}, 
-    {nombre: "Felix", puesto: 2}, 
-    {nombre: "Victor", puesto: 3}, 
-    {nombre: "Iñigo", puesto: 4}, 
-    {nombre: "Elena", puesto: 5}, 
-    {nombre: "Ana", puesto: 6}, 
-    {nombre: "David", puesto: 7}, 
-    {nombre: "Jesus", puesto: 8}
-];
-console.table(alumnos);
+    var alumnos =[
+        {nombre: "Vicky", puesto: 1}, 
+        {nombre: "Felix", puesto: 2}, 
+        {nombre: "Victor", puesto: 3}, 
+        {nombre: "Iñigo", puesto: 4}, 
+        {nombre: "Elena", puesto: 5}, 
+        {nombre: "Ana", puesto: 6}, 
+        {nombre: "David", puesto: 7}, 
+        {nombre: "Jesus", puesto: 8}
+    ];
+    console.table(alumnos);
 
 ```
 
@@ -96,29 +91,75 @@ console.table(alumnos);
 ```javascript
     // Tu solución
 
-    var usuario = prompt("¿Cual es tu nombre?");
-    var navegador = confirm("¿Quieres ver lo rápido que funciona tu navegador?");
+    var usuario = prompt("¿Quien eres?");
 
-    if (navegador) {
-        console.time("velocidad");
-            console.log('%c %s','background: #CCC; color: #FFF; text-transform: uppercase;font-size: 12px;', usuario);
-        console.timeEnd("velocidad");
-        
-        console.time("velocidad");
-            console.warn('%c %s','background: yellow; color: #000; text-transform: uppercase;font-size: 14px;', usuario);
-        console.timeEnd("velocidad");
-        
-        console.time("velocidad");
-            console.info('%c %s','background: red; color: #FFF; text-transform: uppercase;font-size: 16px;', usuario);
-        console.timeEnd("velocidad");
-    }
-    else {
-        alert("Si quieres ver la velocidad de tu navegador, vuelve a intentarlo y acepta");
-    }    
+	var respuesta = confirm("Bienvenido "+usuario+", ¿Deseas ver lo rápido que funciona tu navegador?");
+	if (respuesta === true) {
+	
+	    // console.log
+	    console.group("grupo console.log");
+	    console.time("tiempo grupo console.log");
+	    console.log("%c %s", "background: black; color: #FFF; font-size:20px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.log");
+	    console.groupEnd();
+	
+	    // console.info
+	    console.group("grupo console.info");
+	    console.time("tiempo grupo console.info");
+	    console.info("%c %s", "background: #3EBDFF; color: #FFF; font-size:20px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.info");
+	    console.groupEnd();
+	
+	    // console.warn
+	    console.group("grupo console.warn");
+	    console.time("tiempo grupo console.warn");
+	    console.warn("%c %s", "background: #FFAA00; color: #FFF; font-size:22px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.warn");
+	    console.groupEnd();
+	
+	} else {
+	    alert(usuario+" no desea saberlo");
+	}
     
     
     
     
 ```
 
+- Versión 2:
+```javascript
+	var usuario = prompt("¿Quien eres?");
+
+	while(!usuario){
+		usuario = prompt("¿Quien eres?")
+	}
+
+	var respuesta = confirm("Bienvenido "+usuario+", ¿Deseas ver lo rápido que funciona tu navegador?");
+	if (respuesta) {
+	
+	    // console.log
+	    console.group("grupo console.log");
+	    console.time("tiempo grupo console.log");
+	    console.log("%c %s", "background: black; color: #FFF; font-size:20px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.log");
+	    console.groupEnd();
+	
+	    // console.info
+	    console.group("grupo console.info");
+	    console.time("tiempo grupo console.info");
+	    console.info("%c %s", "background: #3EBDFF; color: #FFF; font-size:20px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.info");
+	    console.groupEnd();
+	
+	    // console.warn
+	    console.group("grupo console.warn");
+	    console.time("tiempo grupo console.warn");
+	    console.warn("%c %s", "background: #FFAA00; color: #FFF; font-size:22px;" ,usuario);
+	    console.timeEnd("tiempo grupo console.warn");
+	    console.groupEnd();
+	
+	} else {
+	    alert(usuario+" no desea saberlo");
+	}
+```
 
