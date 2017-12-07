@@ -42,8 +42,6 @@ mostrar @division
 mostrar @operacion
 
 
-
-
 ```
 
 **3 -** Diseña un programa que lea dos números y los compare. Como resultado esperamos que nos diga cual es mayor... o si son iguales.
@@ -165,4 +163,28 @@ si no
   - Convertimos el número del mes, en el nombre del mes real y devolvemos la fecha en el siguiente formato ( DD de MES de AAAA)
 ```
     // Tu solución
+	Proceso azarMoneda
+	
+		coincidencias <- 0
+		controlador <- 0
+		
+		Mientras controlador <= 100 Hacer
+			
+			dado1 <- azar(7)
+			dado2 <- azar(7)
+			tirada <- dado1 + dado2
+	
+			Si tirada = 10 Entonces
+				coincidencias = coincidencias +1
+			Fin Si
+			
+			controlador = controlador + 1
+			
+		Fin Mientras
+		
+		Escribir "El azar ... sumó 10 un total de " coincidencias " veces"
+	
+	FinProceso    
+    
+    
 ```
