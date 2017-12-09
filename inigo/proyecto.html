@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+        html, body, #container{
+            height: 100%;
+            margin: 0;
+        }
+        p{
+            margin-top: 0;
+        }
+        div:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        #container{
+            background: #FFF;
+        }
+        #backLoader{
+            background: #00000099;
+            position: fixed;
+            width: 100%;
+            height: 101%;
+            display: none;
+            z-index: 1;
+        }
+        #backLoader img{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            left: calc(50% - 100px);
+            top: calc(50% - 100px);
+        }
+        .izquierda{
+            width: 50%;
+            height: 100%;
+            float: left;
+            overflow: auto;
+        }
+        .derecha{
+            width: 50%;
+            height: 100%;
+            float: left;
+        }
+        #map{
+            height: 100%;
+            width: 100%;
+        }
+        .contenedorGasolinera{
+            margin: 20px;
+            margin-left: 0;
+            margin-bottom: 0;
+            display: inline-block;
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+	</style>
+</head>
+<body>
+    <div id="backLoader">
+        <img id="loader" src="img/load.svg">
+    </div>
+    <div id="container">
+        <div class="izquierda">
+            <select id="buscarProvincia">
+                <option selected disabled >Seleccione una provincia</option>
+                <option value='todas'>Todas las provincias</option>
+                <option value='alava'>Álava</option>
+                <option value='albacete'>Albacete</option>
+                <option value='alicante'>Alicante/Alacant</option>
+                <option value='almeria'>Almería</option>
+                <option value='asturias'>Asturias</option>
+                <option value='avila'>Ávila</option>
+                <option value='badajoz'>Badajoz</option>
+                <option value='barcelona'>Barcelona</option>
+                <option value='burgos'>Burgos</option>
+                <option value='caceres'>Cáceres</option>
+                <option value='cadiz'>Cádiz</option>
+                <option value='cantabria'>Cantabria</option>
+                <option value='castellon de la plana'>Castellón/Castelló</option>
+                <option value='ceuta'>Ceuta</option>
+                <option value='ciudadreal'>Ciudad Real</option>
+                <option value='cordoba'>Córdoba</option>
+                <option value='cuenca'>Cuenca</option>
+                <option value='girona'>Girona</option>
+                <option value='laspalmas'>Las Palmas</option>
+                <option value='granada'>Granada</option>
+                <option value='guadalajara'>Guadalajara</option>
+                <option value='guipuzcoa'>Guipúzcoa</option>
+                <option value='huelva'>Huelva</option>
+                <option value='huesca'>Huesca</option>
+                <option value='illesbalears'>Illes Balears</option>
+                <option value='jaen'>Jaén</option>
+                <option value='acoruña'>A Coruña</option>
+                <option value='larioja'>La Rioja</option>
+                <option value='leon'>León</option>
+                <option value='lleida'>Lleida</option>
+                <option value='lugo'>Lugo</option>
+                <option value='madrid'>Madrid</option>
+                <option value='malaga'>Málaga</option>
+                <option value='melilla'>Melilla</option>
+                <option value='murcia'>Murcia</option>
+                <option value='navarra'>Navarra</option>
+                <option value='ourense'>Ourense</option>
+                <option value='palencia'>Palencia</option>
+                <option value='pontevedra'>Pontevedra</option>
+                <option value='salamanca'>Salamanca</option>
+                <option value='segovia'>Segovia</option>
+                <option value='sevilla'>Sevilla</option>
+                <option value='soria'>Soria</option>
+                <option value='tarragona'>Tarragona</option>
+                <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+                <option value='teruel'>Teruel</option>
+                <option value='toledo'>Toledo</option>
+                <option value='valencia'>Valencia/Valéncia</option>
+                <option value='valladolid'>Valladolid</option>
+                <option value='vizcaya'>Vizcaya</option>
+                <option value='zamora'>Zamora</option>
+                <option value='zaragoza'>Zaragoza</option>
+            </select>
+            <div id="cajaMostrar"></div>
+        </div>
+        <div class="derecha">
+            <div id="map"></div>
+        </div>
+    </div>
+ <script type="text/javascript">
+        //Documentacion: --> https://github.com/datos-precio-carburante/json2016h1
+        //api key maps -->  "AIzaSyCJ2M-CACUQ52ksG8h4jcV0vj16utyqGDA"
+        peticionAjax("http://datos-precio-carburante.github.io/json2016h1/20171209.json", procesar);
+        
+        var gasolineras = [];
+        var selectProvincias = document.getElementById("buscarProvincia");
+        var map;
+        var markers= [];
+        
+        selectProvincias.addEventListener("change", function(){
+            var valorSelect = selectProvincias.options[ selectProvincias.selectedIndex ].value;
+            console.log(filtrarProvincia(valorSelect));
+            mostrar(filtrarProvincia(valorSelect));
+        });
+        
+        function peticionAjax(url,funcionMostrar) {
+            var xmlHttp = new XMLHttpRequest();
+            
+            xmlHttp.onreadystatechange = function() {
+        
+                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                    //console.info(JSON.parse(xmlHttp.responseText));
+                    funcionMostrar(JSON.parse(xmlHttp.responseText));
+                    
+                } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                    console.error("ERROR! 404");
+                    console.info(JSON.parse(xmlHttp.responseText));
+                }
+            };
+            xmlHttp.open("GET", url, true);
+            xmlHttp.send();
+        }
+        function procesar(data){
+            var datos = data.ListaEESSPrecio;
+            datos.forEach(function(elemento, i){
+                gasolineras.push(elemento);
+            });
+        }
+        function filtrarProvincia(provincia){
+            if(provincia === "todas"){
+                return gasolineras;
+            }else{
+                var array = gasolineras.filter(function (el) {
+                    return quitarAcentos(el.Provincia.toLowerCase().trim()) === provincia.toLowerCase().trim();
+                });
+                return array;
+            }
+        }
+        function quitarAcentos(str){
+            for (var i=0;i<str.length;i++){
+                //Sustituye "á é í ó ú"
+                if (str.charAt(i)=="á") str = str.replace(/á/,"a");
+                if (str.charAt(i)=="é") str = str.replace(/é/,"e");
+                if (str.charAt(i)=="í") str = str.replace(/í/,"i");
+                if (str.charAt(i)=="ó") str = str.replace(/ó/,"o");
+                if (str.charAt(i)=="ú") str = str.replace(/ú/,"u");
+            }
+            return str;
+        }
+        function mostrar(data){
+            var caja = document.getElementById("cajaMostrar");
+            var html = "";
+            caja.innerHTML = "";
+            document.getElementById("backLoader").style.display="block";
+            deleteMarkers();
+            
+            data.forEach(function(elemento, i){
+                setTimeout(function() {
+                    console.time("tiempoEnMostrar");
+                    html = '<div class="contenedorGasolinera">';
+                    html += '<span class="direccion">' + elemento["Dirección"] + ' | ' + elemento["C.P."] + ' ' + elemento["Municipio"] + ', ' + elemento["Provincia"] + '<br/>';
+                    html += '<span class="horario">Horario: <span>' + elemento["Horario"] + '</span></span><br/>';
+                    html += '<span class="marca">Marca: <span>' + elemento["Rótulo"] + '</span></span><br/>';
+                    html += '<span class="diesel">Diesel: <span>' + elemento["Precio Gasoleo A"] + '</span></span><br/>';
+                    html += '<span class="dieselPlus">Diesel Plus: <span>' + elemento["Precio Nuevo Gasoleo A"] + '</span></span><br/>';
+                    html += '<span class="gasolina95">Gasolina 95: <span>' + elemento["Precio Gasolina 95 Protección"] + '</span></span><br/>';
+                    html += '<span class="gasolina98">Gasolina 98: <span>' + elemento["Precio Gasolina  98"] + '</span></span><br/>';
+                    html += '<span class="dieselB">Diesel B: <span>' + elemento["Precio Gasoleo B"] + '</span></span><br/>';
+                    html += '<span class="latitud">Latitud: <span>' + elemento["Latitud"] + '</span></span><br/>';
+                    html += '<span class="longitud">Longitud: <span>' + elemento["Longitud (WGS84)"] + '</span></span><br/>';
+                    html += '</div>';
+                    
+                    caja.innerHTML += html;
+                    
+                    var latitud = parseFloat(elemento["Latitud"].replace(/,/g, '.'));
+                    var longitud = parseFloat(elemento["Longitud (WGS84)"].replace(/,/g, '.'));
+                    var posicion = {lat: latitud, lng: longitud};
+                    
+                    addMarker(posicion, html);
+                    
+                    if(i >= data.length -1){
+                        document.getElementById("backLoader").style.display="none";
+                        console.timeEnd("tiempoEnMostrar");
+                    }
+                }, i * 100);
+            });
+        }
+        function initMap() {
+            var madrid = {lat: 40.4167, lng: -3.70325};
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 6,
+                center: madrid
+            });
+        }
+        function addMarker(location, descripcion) {
+            var marker = new google.maps.Marker({
+              position: location,
+              map: map,
+              animation: google.maps.Animation.DROP
+            });
+            var infowindow = new google.maps.InfoWindow({
+                content: descripcion
+            });
+            marker.addListener('click', function() {
+                infowindow.open(map, marker);
+            });
+            markers.push(marker);
+        }
+        function setMapOnAll(map) {
+            for (var i = 0; i < markers.length; i++) {
+              markers[i].setMap(map);
+            }
+        }
+        function deleteMarkers() {
+            setMapOnAll(null);
+            markers = [];
+        }
+
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ2M-CACUQ52ksG8h4jcV0vj16utyqGDA&callback=initMap"></script>
+</body>
+</html>

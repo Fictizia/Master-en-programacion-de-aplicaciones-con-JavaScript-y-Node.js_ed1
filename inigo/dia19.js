@@ -111,5 +111,5 @@ peticionAjax("http://opendata.gijon.es/descargar.php?id=163&tipo=JSON")
 function mostrar(data){
     var cuadroMando = data.cuadromandos;
     cuadroMando = cuadroMando.cuadromando;
-    console.table(cuadroMando[5]);
+    console.log(cuadroMando[5]);
 }
