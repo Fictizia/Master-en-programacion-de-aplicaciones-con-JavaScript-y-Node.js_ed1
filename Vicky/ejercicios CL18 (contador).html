@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Bestsellers Herdcover using New York Times API</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  </head>
+  <style type="text/css">
+      .caja{
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border: 0px solid #000000;
+        background-color:lightgray;
+        margin:10px;
+              }
+        
+        p {
+          font-size:24px;
+        }
+        .bajo{
+          padding-top:30px;
+        }
+        .alto{
+          padding-bottom:30px;
+        }
+        
+  </style>
+  <body onload="countdown('contador')">
+    
+     
+     <div class="container">
+             <h1>cuenta atrás para acabar el curso</h1>
+             <div id="contador"></div>
+       
+        </div>
+     
+      <script>
+              function countdown(id){
+              var fecha=new Date('2018','7','26','19','00','00')
+              var hoy=new Date()
+            
+          
+              if (fecha>hoy){
+                  var diferencia=(fecha.getTime()-hoy.getTime())/1000
+                  var dias=Math.floor(diferencia/86400)
+                  diferencia=diferencia-(86400*dias)
+                  var horas=Math.floor(diferencia/3600)
+                  diferencia=diferencia-(3600*horas)
+                  var minutos=Math.floor(diferencia/60)
+                  diferencia=diferencia-(60*minutos)
+                  var segundos=Math.floor(diferencia)
+          
+                  document.getElementById(id).innerHTML='<div class="container"><div class="col-xs-12 text-center"><p> Quedan</p></div><div class="col-xs-2 caja text-center" ><p class="bajo">Días</p><p class="alto"> ' + dias + '</p></div> <div class="col-xs-2 caja text-center" > <p class="bajo">Horas </p><p class="alto">' + horas + ' </div> <div class="col-xs-2 caja text-center" ><p class="bajo">Minutos </p><p class="alto">' + minutos + '</p></div><div class="col-xs-2 caja text-center" ><p class="bajo">Segundos</p><p class="alto"> ' + segundos;
+          
+                  if (dias>0 || horas>0 || minutos>0 || segundos>0){
+                      setTimeout("countdown("+id+")",1000)
+                  }
+              }
+              
+          }
+      
+      </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+  </body>
+</html>

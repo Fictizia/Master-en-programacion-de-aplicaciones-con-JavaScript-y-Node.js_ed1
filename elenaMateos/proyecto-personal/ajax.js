@@ -1,15 +1,32 @@
+/* DISTRICT */
+var city = document.getElementById('city');
+var temperature = document.getElementById('temperature');
+var rainProbability = document.getElementById('rainProbability');
+var win = document.getElementById('win');
+var district = document.getElementById('district');
+var optionDistrict = document.getElementById('optionDistrict');
+var values = document.getElementById('values');
+
+
+/* PETICION AJAX */
+
+
 var url = 'https://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/station';
+var resultados = [];
+
 function peticionAjax() {
 
-      var peticion = new XMLHttpRequest(); // XML tipo de peticion, http protocolo
+  var peticion = new XMLHttpRequest(); // XML tipo de peticion, http protocolo
 
-    peticion.onreadystatechange = function(){
-      console.log('entra en cambio estado');
-      if (peticion.readyState === 4) {
-          if (peticion.status >= 200 && peticion.status < 400) {
+  peticion.onreadystatechange = function(){
 
-            var resultados = JSON.parse(peticion.responseText).results;
-            console.log(resultados);
+    if (peticion.readyState === 4) {
+        if (peticion.status >= 200 && peticion.status < 400) {
+
+           resultados = JSON.parse(peticion.responseText);
+            // console.log(resultados);
+            pintaDistritos(resultados);
+
 
           }else {
             console.log('Eror 404, el archivo no se encuentraaaaaaa!!!!!');
@@ -18,56 +35,87 @@ function peticionAjax() {
       }else{
         console.log('oooh cargando!!!!');
       }
+
     };
-    peticion.onerror = function() {
+
+  peticion.onerror = function() {
       alert('Error al tratar de conectarse con el servidor');
     };
 
-    peticion.open('GET', url, true);
+    peticion.open('GET', url, true); //aki se le pasa el método de llamada y la URL a la que se llama.
     peticion.send();
-};
-///////
 
-
-
-function generateHTML(data) {
-    data.forEach(function(e) {
-        document.querySelector("body").innerHTML += "<h1>ID: " + e.id + "</h1>" +
-                                                    "<h2>Datos recogidos:</h2>"+
-                                                    "<div>" +
-                                                        "<p>Estación: " + e.nombre_estacion + "</p>" +
-                                                        "<p>Latitud: " + e.latitud + " / Longitud: " + e.longitud +" / Altura: " + e.altitud + "</p>" +
-                                                        "<div class='list'>" +
-                                                            "<p>Parámetros: </p>" +
-                                                            iterator(e.datos_disponibles) +
-                                                        // "</div><div class='list'>" +
-                                                        //     "<p>Mediciones: </p>" +
-                                                        //     iterator(e.mediciones) +
-                                                        // "</div>" +
-                                                    "</div>";
-    });
-}
-
-function iterator(json) {
-    var html = "";
-
-    if(typeof json === "object") {
-        for(var obj in json) {
-            html += "<ul>";
-
-            if(typeof json[obj] === "object") {
-                html += "<li>" + obj.replace("_", " ") + "</li>" + iterator(json[obj]);
-            } else {
-                html += "<li>" + obj.replace("_", " ") + ": " + json[obj] + "</li>";
-            }
-
-            html += "</ul>";
-        }
     }
-    return html;
-}
 
-peticionAjax(url, generateHTML);
+peticionAjax();
+
+function pintaDistritos(resultados){
+  console.log(resultados);
+  for (var i = 0; i < resultados.length; i++) {
+    console.log();
+    optionDistrict.innerHTML += '<option value="' + resultados[i].id + '">' + resultados[i].nombre_estacion + '</option>' ;
+
+  }
+
+
+
+};
+function pintaResultados(){
+  var id = 0;
+  for (var i = 0; i < resultados.length; i++) {
+    id = i;
+
+// solo muestra ultimo...
+  values.innerHTML =  '<li class="values-element">' +resultados[id].datos_disponibles.pollution[0]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[1]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[2]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[3]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[4]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[5]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[6]  + ' </li>' +
+                      '<li class="values-element">' +resultados[id].datos_disponibles.pollution[7]  + ' </li>' ;
+  }
+}
+  console.log(resultados);
+
+
+  var request = new XMLHttpRequest();
+
+  request.open('GET', 'http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution');
+
+  request.onreadystatechange = function () {
+    if (this.readyState === 4) {
+      console.log('Status:', this.status);
+      console.log('Headers:', this.getAllResponseHeaders());
+      console.log('Body:', this.responseText);
+    }
+  };
+
+  request.send();
+/* -----------   otra opcion ------------ */
+/*SEGUNDA LLAMADA A API PARA OBTENER DATOS....
+VAR URL: http://airemad.org/api/v1/pollution
+O LA DE MOCK:
+
+http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution
+
+var request = new XMLHttpRequest();
+
+request.open('GET', 'http://airemad.org/api/v1/pollution');
+
+request.onreadystatechange = function () {
+  if (this.readyState === 4) {
+    console.log('Status:', this.status);
+    console.log('Headers:', this.getAllResponseHeaders());
+    console.log('Body:', this.responseText);
+  }
+};
+
+request.send();
+
+*/
+// optionDistrict.addEventListener('change', pintaResultados()); no chufla
+
 
 /*  JSON:
 BODY

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<title></title>
+    	<meta charset="UTF-8">
+    	<style type="text/css">
+            html, body, .container{
+                height: 100%;
+                margin: 0;
+                background: #DBDBDB;
+            }
+            .loading{
+                overflow: hidden;
+                position: fixed;
+                background: rgba(51, 51, 51, 0.7);
+                top:0;
+                left:0;
+                z-index:10;
+                width: 100%;
+                height: 100%;
+            }
+            .loading img{
+                position: absolute;
+                width:250px;
+                top: calc((100% - 250px) / 2);
+                left: calc((100% - 250px) / 2);
+            }
+            .container{
+                margin: 0 auto;
+                max-width: 1170px;
+                flex-flow: row wrap;
+                display: flex;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+            .box-content{
+                position: relative;
+                flex: 1 0 100%;
+                background:#fff;
+                padding-left: 20px;
+                padding-bottom: 10px;
+            }
+            .box-content:nth-child(odd){
+                background: #333;
+                color: #fff;
+            }
+            .textos{
+                width:75%;
+                float: left;
+            }
+            .textos a{
+                color: #333;
+                background: #F3A847;
+                border-radius: 5px;
+                text-decoration: none;
+                padding: 0 7px;
+                margin-top:20px;
+            }
+            .textos a:hover{
+                color: #F3A847;
+                background: #333;
+            }
+            .imagen{
+                width: 12%;
+                padding: 20px;
+                float: right;
+            }
+            .imagen img{
+                max-width: 100%;
+            }
+            .lista{
+                width: 28%;
+                background: #fff;
+                margin: 10px;
+                list-style: none;
+            }
+            .lista:nth-child(odd){
+                color: #fff;
+                background: #333;
+                
+            }
+            .lista .botones{
+                font-size: 15px;
+                background:#F3A847;
+                margin-bottom:15px;
+            }
+    	</style>
+    </head>
+    <body>
+        <div class="container">
+        </div>
+        <div class="container2">
+        </div>
+        <script type="text/javascript" src="ejercicio_clase21.js"></script>	
+    </body>
+</html>

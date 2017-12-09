@@ -16,7 +16,7 @@
         </div>
         <div class="time-district">
           <div class="time">
-            <p id="hour">00:00</p>
+            <p id="hour">00:00:00</p>
             <p id="date">DATE</p>
           </div>
           <div class="district">
@@ -26,10 +26,10 @@
       </div>
 
       <div class="data">
-        <p id="temperature">Cº</p>
+        <p id="temperature">#Cº</p>
         <p id="rainProbability">Probabilidad de lluvia #%</p>
         <p id="win">Velocidad del viento: # km/h</p>
-        <button id="aemet" type="button" name="button">AEMET</button>
+        <a class="aemet-link" href="http://www.aemet.es/es/eltiempo/prediccion/municipios/horas/madrid-id28079" target="blank">AEMET</a>
       </div>
 
     </header>
@@ -37,27 +37,30 @@
 
       <div class="district">
         <h1 id="district">DISTRITO</h1>
-        <select id="optionDistrict" class="select-district" name="select-district">
-          <option  value="S056">USERA</option>
+        <select class="district-menu" id="optionDistrict" onchange="pintaResultados()" class="select-district" name="select-district">
+          <option  value="S056" selected> Pza. Fernández Ladreda</option>
         </select>
       </div>
-      <div class="container--air-quality">
-        <div class="air-quality">
-          <p>Nivel de contaminación media</p>
-          <p>Medio %??? </p>
-        </div>
-        <div class="values">
-          <ul id="values">
-            <li></li>
-          </ul>
-          <input type="text" name="" value="">
+      <div class="data-container">
+
+        <div class="container--air-quality">
+          <div class="air-quality">
+            <p>Nivel de contaminación media</p>
+            <p>Medio %??? </p>
+          </div>
+          <div class="values">
+            <ul id="values">
+              <li class="values-element"> </li>
+            </ul>
+          </div>
 
         </div>
 
-      </div>
+        <div class="container--emoji">
+            <img id="giphy" src=""></img>
+            <button id="refresh" class="refresh-button" type="button" name="button"><img class="refresh-button-image"src="images/refresh.png" alt="refresh button"></button>
+        </div>
 
-      <div class="container--emoji">
-          <img id="giphy" src=""></img>
       </div>
 
     </section>
