@@ -50,6 +50,10 @@
             width: 100%;
         }
         .contenedorGasolinera{
+            border: 2px solid #ff00ff;
+            padding: 10px;
+        }
+        #cajaMostrar .contenedorGasolinera{
             margin: 20px;
             margin-left: 0;
             margin-bottom: 0;
@@ -66,7 +70,7 @@
     <div id="container">
         <div class="izquierda">
             <select id="buscarProvincia">
-                <option selected disabled >Seleccione una provincia</option>
+                <option selected="selected" disabled="disabled" value="defecto" >Seleccione una provincia</option>
                 <option value='todas'>Todas las provincias</option>
                 <option value='alava'>Álava</option>
                 <option value='albacete'>Albacete</option>
@@ -112,7 +116,7 @@
                 <option value='sevilla'>Sevilla</option>
                 <option value='soria'>Soria</option>
                 <option value='tarragona'>Tarragona</option>
-                <option value='santacruztenerife'>Santa Cruz de Tenerife</option>
+                <option value='santacruzdetenerife'>Santa Cruz de Tenerife</option>
                 <option value='teruel'>Teruel</option>
                 <option value='toledo'>Toledo</option>
                 <option value='valencia'>Valencia/Valéncia</option>
@@ -130,12 +134,16 @@
  <script type="text/javascript">
         //Documentacion: --> https://github.com/datos-precio-carburante/json2016h1
         //api key maps -->  "AIzaSyCJ2M-CACUQ52ksG8h4jcV0vj16utyqGDA"
-        peticionAjax("http://datos-precio-carburante.github.io/json2016h1/20171209.json", procesar);
         
         var gasolineras = [];
         var selectProvincias = document.getElementById("buscarProvincia");
         var map;
         var markers= [];
+        var fecha = new Date();
+        fecha = fecha.getFullYear() + "" + (fecha.getMonth() + 1) + "" + fecha.getDate();
+        
+        selectProvincias.options[selectProvincias.selectedIndex].value="defecto";
+        peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
         
         selectProvincias.addEventListener("change", function(){
             var valorSelect = selectProvincias.options[ selectProvincias.selectedIndex ].value;
@@ -178,7 +186,6 @@
         }
         function quitarAcentos(str){
             for (var i=0;i<str.length;i++){
-                //Sustituye "á é í ó ú"
                 if (str.charAt(i)=="á") str = str.replace(/á/,"a");
                 if (str.charAt(i)=="é") str = str.replace(/é/,"e");
                 if (str.charAt(i)=="í") str = str.replace(/í/,"i");
@@ -190,6 +197,7 @@
         function mostrar(data){
             var caja = document.getElementById("cajaMostrar");
             var html = "";
+            var disponibilidad = "No disponible";
             caja.innerHTML = "";
             document.getElementById("backLoader").style.display="block";
             deleteMarkers();
@@ -198,14 +206,14 @@
                 setTimeout(function() {
                     console.time("tiempoEnMostrar");
                     html = '<div class="contenedorGasolinera">';
-                    html += '<span class="direccion">' + elemento["Dirección"] + ' | ' + elemento["C.P."] + ' ' + elemento["Municipio"] + ', ' + elemento["Provincia"] + '<br/>';
+                    html += '<span class="direccion">' + elemento["Dirección"] + ' | ' + elemento["C.P."] + ' ' + elemento["Municipio"] + ', ' + elemento["Provincia"] + '</span><br/>';
                     html += '<span class="horario">Horario: <span>' + elemento["Horario"] + '</span></span><br/>';
                     html += '<span class="marca">Marca: <span>' + elemento["Rótulo"] + '</span></span><br/>';
-                    html += '<span class="diesel">Diesel: <span>' + elemento["Precio Gasoleo A"] + '</span></span><br/>';
-                    html += '<span class="dieselPlus">Diesel Plus: <span>' + elemento["Precio Nuevo Gasoleo A"] + '</span></span><br/>';
-                    html += '<span class="gasolina95">Gasolina 95: <span>' + elemento["Precio Gasolina 95 Protección"] + '</span></span><br/>';
-                    html += '<span class="gasolina98">Gasolina 98: <span>' + elemento["Precio Gasolina  98"] + '</span></span><br/>';
-                    html += '<span class="dieselB">Diesel B: <span>' + elemento["Precio Gasoleo B"] + '</span></span><br/>';
+                    html += '<span class="diesel">Diesel: <span>' + ((elemento["Precio Gasoleo A"] == null) ? disponibilidad : elemento["Precio Gasoleo A"]) + '</span></span><br/>';
+                    html += '<span class="dieselPlus">Diesel Plus: <span>' + ((elemento["Precio Nuevo Gasoleo A"] == null) ? disponibilidad : elemento["Precio Nuevo Gasoleo A"]) + '</span></span><br/>';
+                    html += '<span class="gasolina95">Gasolina 95: <span>' + ((elemento["Precio Gasolina 95"] == null) ? disponibilidad : elemento["Precio Gasolina 95"]) + '</span></span><br/>';
+                    html += '<span class="gasolina98">Gasolina 98: <span>' + ((elemento["Precio Gasolina  98"] == null) ? disponibilidad : elemento["Precio Gasolina  98"]) + '</span></span><br/>';
+                    html += '<span class="dieselB">Diesel B: <span>' + ((elemento["Precio Gasoleo B"] == null) ? disponibilidad : elemento["Precio Gasoleo B"]) + '</span></span><br/>';
                     html += '<span class="latitud">Latitud: <span>' + elemento["Latitud"] + '</span></span><br/>';
                     html += '<span class="longitud">Longitud: <span>' + elemento["Longitud (WGS84)"] + '</span></span><br/>';
                     html += '</div>';
@@ -218,7 +226,7 @@
                     
                     addMarker(posicion, html);
                     
-                    if(i >= data.length -1){
+                    if(i >= data.length - 1){
                         document.getElementById("backLoader").style.display="none";
                         console.timeEnd("tiempoEnMostrar");
                     }
@@ -234,9 +242,9 @@
         }
         function addMarker(location, descripcion) {
             var marker = new google.maps.Marker({
-              position: location,
-              map: map,
-              animation: google.maps.Animation.DROP
+                position: location,
+                map: map,
+                animation: google.maps.Animation.DROP
             });
             var infowindow = new google.maps.InfoWindow({
                 content: descripcion
@@ -248,7 +256,7 @@
         }
         function setMapOnAll(map) {
             for (var i = 0; i < markers.length; i++) {
-              markers[i].setMap(map);
+                markers[i].setMap(map);
             }
         }
         function deleteMarkers() {
