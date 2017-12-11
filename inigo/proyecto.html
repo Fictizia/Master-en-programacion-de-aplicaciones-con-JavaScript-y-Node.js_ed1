@@ -27,12 +27,20 @@
             display: none;
             z-index: 1;
         }
-        #backLoader img{
+        .posicionLoader{
             position: absolute;
-            width: 200px;
-            height: 200px;
-            left: calc(50% - 100px);
-            top: calc(50% - 100px);
+            width: 400px;
+            /*height: 200px;*/
+            left: calc(50% - 200px);
+            top: calc(50% - 200px);
+        }
+        .posicionLoader img{
+            display: block;
+            margin: 0 auto;
+        }
+        #contador{
+            display: block;
+            text-align: center;
         }
         .izquierda{
             width: 50%;
@@ -61,11 +69,28 @@
             border: 2px solid #ccc;
             padding: 10px;
         }
+        #barra{
+            margin-top: 20px;
+            width: 100%;
+            background-color: #ddd;
+            height: 30px;
+        }
+        #progreso {
+            width: 1%;
+            height: 30px;
+            background-color: #4CAF50;
+        }
 	</style>
 </head>
 <body>
     <div id="backLoader">
-        <img id="loader" src="img/load.svg">
+        <div class="posicionLoader">
+            <img id="loader" src="img/load.svg">
+            <span id="contador"></span>
+            <div id="barra">
+                <div id="progreso"></div>
+            </div>
+        </div>
     </div>
     <div id="container">
         <div class="izquierda">
@@ -141,6 +166,8 @@
         var markers= [];
         var fecha = new Date();
         fecha = fecha.getFullYear() + "" + (fecha.getMonth() + 1) + "" + fecha.getDate();
+        var fechaAyer = new Date();
+        fechaAyer = fechaAyer.getFullYear() + "" + (fechaAyer.getMonth() + 1) + "" + (fechaAyer.getDate() - 1);
         
         selectProvincias.options[selectProvincias.selectedIndex].value="defecto";
         peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
@@ -170,9 +197,16 @@
         }
         function procesar(data){
             var datos = data.ListaEESSPrecio;
-            datos.forEach(function(elemento, i){
-                gasolineras.push(elemento);
-            });
+            console.log(datos);
+            if (datos === undefined || datos.length == 0) {
+                alert("No hay datos para el día de hoy, se mostraran los datos de ayer");
+                peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fechaAyer + ".json", procesar);
+            }else{
+                datos.forEach(function(elemento, i){
+                    gasolineras.push(elemento);
+                });
+            }
+            console.log("Gasolineras:", gasolineras.length);
         }
         function filtrarProvincia(provincia){
             if(provincia === "todas"){
@@ -196,8 +230,10 @@
         }
         function mostrar(data){
             var caja = document.getElementById("cajaMostrar");
+            var contador = document.getElementById("contador");
             var html = "";
             var disponibilidad = "No disponible";
+            
             caja.innerHTML = "";
             document.getElementById("backLoader").style.display="block";
             deleteMarkers();
@@ -219,6 +255,8 @@
                     html += '</div>';
                     
                     caja.innerHTML += html;
+                    contador.innerHTML = i + 1 + " / " + data.length + " gasolineras";
+                    barra(i + 1, data.length);
                     
                     var latitud = parseFloat(elemento["Latitud"].replace(/,/g, '.'));
                     var longitud = parseFloat(elemento["Longitud (WGS84)"].replace(/,/g, '.'));
@@ -232,6 +270,14 @@
                     }
                 }, i * 100);
             });
+        }
+        function barra(actual, total) {
+            var elem = document.getElementById("progreso");   
+            var width = 1;
+            width = (width * actual * 100) / total;
+            width++; 
+            elem.style.width = width + '%'; 
+            
         }
         function initMap() {
             var madrid = {lat: 40.4167, lng: -3.70325};
@@ -263,8 +309,6 @@
             setMapOnAll(null);
             markers = [];
         }
-
-
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ2M-CACUQ52ksG8h4jcV0vj16utyqGDA&callback=initMap"></script>
 </body>
