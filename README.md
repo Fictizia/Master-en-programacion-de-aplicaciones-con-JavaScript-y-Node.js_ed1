@@ -87,6 +87,7 @@ Fecha | Teoría | Recursos | Contenido
 28/11/2017 | [Clase 22](teoria/dia22.md) | Clase 22 | Práctica: NYTimes II
 04/12/2017 | Clase 23 | Clase 23 | Soluciones y dudas
 05/12/2017 | [Clase 24](teoria/dia24.md) | Clase 24 | Hagamos un proyecto express (Github | Social Network Project)
+11/12/2017 | [Clase 25](teoria/dia25.md) | Clase 25 | Práctica: Buenos días, Madrid!
 
 
 Temario
