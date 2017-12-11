@@ -80,6 +80,33 @@
             height: 30px;
             background-color: #4CAF50;
         }
+        select{
+            border: 3px solid #ffa500;
+            background: #808080;
+            padding: 20px 30px;
+            outline: 0;
+            color: #FFF;
+        }
+        option:nth-child(even){
+            background-color: #808080;
+            padding: 10px 20px;
+            color: #FFF;
+          
+        } 
+        option:nth-child(odd){
+            background-color: #666;
+            padding: 10px 20px;
+            color: #FFF;
+        }
+        .contenedorTitulo{
+            background-color: #808080;
+            color: #ffa500;
+        }
+        .contenedorTitulo h2{
+            margin: 0;
+            padding: 30px;
+            text-align: center;
+        }
 	</style>
 </head>
 <body>
@@ -94,7 +121,10 @@
     </div>
     <div id="container">
         <div class="izquierda">
-            <select id="buscarProvincia">
+            <div class="contenedorTitulo">
+                <h2>Encuentra cualquier gasolinera y descubre su precio</h2>
+            </div>
+            <select id="buscarProvincia" class="cs-select cs-skin-rotate">
                 <option selected="selected" disabled="disabled" value="defecto" >Seleccione una provincia</option>
                 <option value='todas'>Todas las provincias</option>
                 <option value='alava'>Álava</option>
