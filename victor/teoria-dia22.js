@@ -79,8 +79,6 @@ function getBookList(books, callback) {
             }
         });
         
-        nomImg = nomImg === "" ? bookDetails.primary_isbn13 : nomImg;
-        
         var html = "<div class='book'>" +
                     "<p class='book-title'>" + bookDetails.title + " #" + e.rank +"</p>" +
                     "<img src='https://s1.nyt.com/du/books/images/" + nomImg + ".jpg' class='book-image' onerror='this.src=\"https://s1.nyt.com/du/books/images/" + bookDetails.primary_isbn13 + ".jpg\";' />" +

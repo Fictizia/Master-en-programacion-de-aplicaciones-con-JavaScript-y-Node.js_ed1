@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Proyecto Ajax</title>
+	<style type="text/css">
+		body, html{height:100%;width:100%;margin:0;background-color:#333;}
+		.clear::after{content:'';display:block;clear:both;}
+		.border-b{border-bottom:1px solid #fff;}
+		#content{max-width:1170px;margin:0 auto;height:100%;}
+		#content h1{text-align:center;color:#fff;margin:0;padding:20px 0;}
+		.loader{position:absolute;background:#333;bottom:0;top:0;left:0;right:0;display:flex;justify-content:center;align-items:center;flex-direction:column;z-index:1;}
+		.loader p{color:#fff;font-size:20px;}
+		.search-bar,.search-limit-bar{padding:10px;color:#333;border-radius:5px;border: 0;box-shadow:5px 5px 10px #000;margin-right:10px;}
+		.search-bar{width:60%;}
+		.search-limit-bar{width:20%;}
+		.search-button{display:inline-block;height:37px;vertical-align:bottom;cursor:pointer;}
+		.search-button img{max-height:100%;}
+		.music-container{margin-top: 100px;}
+		.music-container .music-box{border-top:1px solid #666;padding:15px;color:#fff;display:flex;justify-content:space-between;align-items:center;}
+		.music-container .music-box:last-child{border-bottom:1px solid #666;}
+		.music-container .music-box:hover{background-color: #666;}
+		.music-container .music-box div{flex: 0 0 20%;}
+		.music-container .music-box div a{color:#fff;}
+	</style>
+</head>
+<body>
+	<div id="content" class="clear">
+	    <div class="search-container">
+	        <h1>Tú pones los límites en tu búsqueda :)</h1>
+	        <input class="search-bar" type="text" value="" placeholder="Escribe algo..." /><input class="search-limit-bar" type="text" value="" placeholder="Pon el límite..." title="Si dejas el campo vacío por defecto apareceran como máximo 50 resultados" /><span class="search-button"><img src="img/icon-search.svg" /></span>
+	    </div>
+	    <div class="music-container">
+	    	
+	    </div>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
