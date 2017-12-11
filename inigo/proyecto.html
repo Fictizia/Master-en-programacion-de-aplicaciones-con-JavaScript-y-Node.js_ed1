@@ -294,6 +294,10 @@
                     
                     addMarker(posicion, html);
                     
+                    var markerCluster = new MarkerClusterer(map, markers,{
+                        imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+                    });
+                    
                     if(i >= data.length - 1){
                         document.getElementById("backLoader").style.display="none";
                         console.timeEnd("tiempoEnMostrar");
@@ -340,6 +344,7 @@
             markers = [];
         }
     </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ2M-CACUQ52ksG8h4jcV0vj16utyqGDA&callback=initMap"></script>
 </body>
 </html>
