@@ -12,6 +12,8 @@ var values = document.getElementById('values');
 
 
 var url = 'https://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/station';
+// http://airemad.com/api/v1/pollution/S056 es la buena
+
 var resultados = [];
 
 function peticionAjax() {
