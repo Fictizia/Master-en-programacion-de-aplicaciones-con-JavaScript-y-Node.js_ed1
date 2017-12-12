@@ -18,8 +18,9 @@ function peticionAjax(url, callback) {
 }
 
 
-var query = document.querySelector(".query").value;
+var query = "";
 document.getElementById('busqueda').addEventListener("click", function(e){
+    query = document.querySelector(".query").value;
     document.querySelector('.container').innerHTML = ""
     validar(query);
 });
@@ -40,7 +41,6 @@ function pintar(datos){
     var html = '';
     
     results.forEach(function(e,i){
-        setTimeout(function(){
             html = 
             "<div class='box-content'>"+
                 "<div class='textos'>"+
@@ -56,9 +56,10 @@ function pintar(datos){
             +"</div>"
             document.querySelector(".container").innerHTML += html;
             if(i>=results.length-1){
-                document.querySelector('.loading').remove();
+                setTimeout(function(){
+                    document.querySelector('.loading').remove();
+                },1000);
             }
-        }, i*600)
     });
     
 }
