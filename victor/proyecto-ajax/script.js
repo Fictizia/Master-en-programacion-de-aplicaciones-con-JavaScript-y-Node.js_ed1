@@ -28,18 +28,21 @@
                     var query = document.querySelector(".search-bar").value;
                     var limit = document.querySelector(".search-limit-bar").value;
                     
-                    limit = limit === "" ? limit : "&limit=" + limit;
+                    if(limit.trim() === "") {
+                        limit = limit.trim();
+                    } else {
+                        var auxLimit = parseInt(limit).toString();
+                        limit = "&limit=" + auxLimit;
+                        
+                    }
                     
                     url = URL_ITUNES + "term=" + query + limit;
                     
                     ajax.request(url, itunes.setHTML);
-                    
-                    loader.delete();
                 }
             });
         },
         setHTML: function(json) {
-            console.log(json);
             var html = "";
             document.querySelector(".music-container").innerHTML = "";
             
@@ -59,11 +62,56 @@
                             "</div>" +
                             "<div class='links'>" +
                                 "<a href='" + e.trackViewUrl + "'title='Ver álbum' target='_blank'><img src='img/icon-eye.svg'/></a>" +
+                                "<img class='link-play' src='img/icon-play.svg' />" +
+                                "<img class='link-pause' src='img/icon-pause.svg' />" +
+                                "<audio><source src='" + e.previewUrl + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>" +
                             "</div>" +
                         "</div>";
             });
             
             document.querySelector(".music-container").innerHTML = html;
+            
+            itunes.activeAudio();
+            
+            loader.delete();
+        },
+        activeAudio: function() {
+            var plays = document.querySelectorAll(".link-play");
+            var pauses = document.querySelectorAll(".link-pause");
+            var audios = document.querySelectorAll("audio");
+            
+            audios.forEach(function(e, i) {
+                e.onended = function() {
+                     this.currentTime = 0;
+                     e.parentNode.querySelector(".link-play").style.display = "inline";
+                     e.parentNode.querySelector(".link-pause").style.display = "none";
+                };
+            });
+            
+            plays.forEach(function(e, i) {
+                e.addEventListener("click", function() {
+                    
+                    audios.forEach(function(element, index) {
+                        if(!element.paused) {
+                            element.pause();
+                            element.parentNode.querySelector(".link-play").style.display = "inline";
+                            element.parentNode.querySelector(".link-pause").style.display = "none";
+                        }
+                    });
+                    
+                    this.style.display = "none";
+                    this.parentNode.querySelector(".link-pause").style.display = "inline";
+                    this.parentNode.querySelector("audio").play();
+                });
+            });
+            
+            pauses.forEach(function(e, i) {
+                e.addEventListener("click", function() {
+                    this.style.display = "none";
+                    this.parentNode.querySelector(".link-play").style.display = "inline";
+                    this.parentNode.querySelector("audio").pause();
+                });
+            });
         }
     }
 
