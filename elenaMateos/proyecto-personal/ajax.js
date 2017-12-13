@@ -8,6 +8,12 @@ var optionDistrict = document.getElementById('optionDistrict');
 var values = document.getElementById('values');
 
 
+/* PETICION AJAX */
+
+
+var url = 'https://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/station';
+// http://airemad.com/api/v1/pollution/S056 es la buena
+
 var resultados = [];
 var resultados2 = [];
 var url1 = 'http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution';
