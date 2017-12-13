@@ -89,6 +89,7 @@ Fecha | Teoría | Recursos | Contenido
 05/12/2017 | [Clase 24](teoria/dia24.md) | Clase 24 | Hagamos un proyecto express (Github | Social Network Project)
 11/12/2017 | [Clase 25](teoria/dia25.md) | Clase 25 | Práctica: Buenos días, Madrid!
 12/12/2017 | [Clase 26](teoria/dia26.md) | Clase 26 | Rendimiento, JSDocs, Guías de estilo y SEMVER
+13/12/2017 | [Clase 27](teoria/dia27.md) | [Clase 27](recursos/dia27.md) | Introducción al testing unitario
 
 Temario
 =================
