@@ -25,8 +25,4 @@
 ![buenos_dias_madrid.png](../OTROS/buenos_dias_madrid.png)
 
 
-**Solución:**
-
-```
-    // Tu solución
-```
+**[Solución](../OTROS/buenos_dias_madrid)**
