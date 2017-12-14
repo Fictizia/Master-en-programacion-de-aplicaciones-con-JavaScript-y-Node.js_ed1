@@ -10,7 +10,7 @@ var datos = [];
 request.open('GET', url);
 
 request.onreadystatechange = function () {
-    
+
   if (this.readyState === 4) {
     //console.log('Status:', this.status);
    // console.log('Headers:', this.getAllResponseHeaders());
@@ -27,7 +27,7 @@ request.send();
 /**
  * YUJUUUUU
  */
- 
+
  /**
   * function pintaResultados(){
   var id = 0;
@@ -47,13 +47,11 @@ request.send();
 }
   console.log(resultados);
   */
-  
+
   function pintaDatos(datos){
       for (var element in datos) {
     if (typeof(datos[element]) === 'object'){
-        container.innerHTML += '<li class="values-element">' + datos[element].parameter; + '(' + datos[element].parameter + '):' + 'medida' + '. Medido por <i>' + datos[element].technique + '</i> </li>' ;
+        container.innerHTML += '<li class="values-element">' + datos[element].parameter + ' (' + datos[element].abrebiation + '): ' + 'MEDIDAVAR' + 'Medido por <i>' + datos[element].technique + '</i> </li>' ;
     };
     }
   }
-
-
