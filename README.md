@@ -91,6 +91,7 @@ Fecha | Teoría | Recursos | Contenido
 12/12/2017 | [Clase 26](teoria/dia26.md) | Clase 26 | Rendimiento, JSDocs, Guías de estilo y SEMVER
 13/12/2017 | [Clase 27](teoria/dia27.md) | [Clase 27](recursos/dia27.md) | Introducción al testing unitario
 14/12/2017 | Clase 28 | Clase 28 | Soluciones y dudas
+15/12/2017 | [Clase 29](teoria/dia29.md) | Clase 29 | Proyecto Colectivo: Generador de Gifs 
 
 Temario
 =================
