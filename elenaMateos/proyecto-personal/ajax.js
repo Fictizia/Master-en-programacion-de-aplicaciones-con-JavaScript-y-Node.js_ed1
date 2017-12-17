@@ -1,36 +1,41 @@
 var optionDistrict = document.getElementById('optionDistrict');
+var refreshButton = document.getElementById('refresh');
+
 var idLista = [];
 var idSeleccionado = '';
 
 /* PETICION AJAX   http://airemad.com/api/v1/pollution/S056 es la buena*/
+//refreshButton.addEventListener ('click', llamandoApi());
 
 var resultados = [];
 var url = 'http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution';
 
-function peticionAjax(url, callback) { // Con callback lo que haces es decirle q tiene otro parámetro que aun no se ha definido (se hace luego).
+//function llamandoApi(){
+  function peticionAjax(url, callback) { // Con callback lo que haces es decirle q tiene otro parámetro que aun no se ha definido (se hace luego).
 
-    var peticion = new XMLHttpRequest();
-    peticion.open('GET', url);
-    peticion.onreadystatechange = function () {
-        if (this.readyState === 4) {
+      var peticion = new XMLHttpRequest();
+      peticion.open('GET', url);
+      peticion.onreadystatechange = function () {
+          if (this.readyState === 4) {
 
-          callback(this.responseText); // dentro de callback paso this.responseText
-        } else {
-          //  funcion cargando
-          console.log('Cargandoooo!!!!');
-        }
-      };
-    peticion.send();
-}
+            callback(this.responseText); // dentro de callback paso this.responseText
+          } else {
+            //  funcion cargando
+          }
+        };
+      peticion.send();
+  }
 
-peticionAjax(url, function(data){ // Aki definimos callback!!!
-  resultados= JSON.parse(data);
-  // console.log(resultados);
-  pintaDistritos();
+  peticionAjax(url, function(data){ // Aki definimos callback!!!
+    resultados= JSON.parse(data);
+    // console.log(resultados);
+    pintaDistritos();
 
-  return resultados;
-});
-
+    return resultados;
+  });
+//  return resultados;
+//}
+//llamandoApi();
 /* FUNCION PARA PINTAR DISTRITOS DENTRO DEL INPUT */
 
 

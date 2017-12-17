@@ -98,6 +98,7 @@ p {
   width: 30px; }
 
 body {
+  background-color: white;
   color: #393939;
   font-family: "Raleway", sans-serif;
   padding: 20px; }
