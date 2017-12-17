@@ -27,18 +27,28 @@ p {
 
 /*-------  DATA  -------*/
 .data {
+  flex-wrap: wrap;
   display: flex;
   border-bottom: 2px solid #052001;
   justify-content: space-around;
   padding-bottom: 5px; }
 
+.data > p {
+  margin-left: 10px; }
+
 .aemet-link {
   background-color: #106302;
+  border-radius: 3px;
+  display: block;
   color: #fbfbec;
+  font-size: 0.9em;
   font-weight: bold;
+  margin: 5px auto;
+  text-align: center;
   text-decoration: none;
-  padding: 10px;
-  transition: 0.3s linear 0s; }
+  padding: 7px;
+  transition: 0.3s linear 0s;
+  width: 40%; }
 
 .aemet-link:hover {
   background-color: #052001; }

@@ -119,3 +119,63 @@ function pintaDatos(resultados){
 }
 }
 setTimeout('pintaDatos(resultados)', 6000);
+
+
+/* para el TIEMPO
+
+/*
+
+var estacion = "S024";
+
+       function horaEstimada() {
+           var hora = new Date();
+           var horaCalculada = hora.getHours() - 2;
+           return "hora" + horaCalculada;
+       }
+       // Gestión de peticiones AJAX
+       function peticionAjax(url) {
+           var xmlHttp = new XMLHttpRequest();
+           xmlHttp.onreadystatechange = function() {
+               if (xmlHttp.readyState === 4) {
+                   if (xmlHttp.status >= 100 && xmlHttp.status <= 300) {
+                       var datosCrudos = JSON.parse(xmlHttp.responseText);
+
+                       var datos = datosCrudos.list;
+                       for (var i = 0, x = 1; i < datos.length; i += 8, x++) {
+                           if (x !== 1 && x <= 5) {
+                               var y = x - 1;
+                               var hora = datos[i].dt_txt;
+                               var contenido = '<div><h6><strong>' + diaSemana(y) + ' (' + hora.substring(11, 16) + ')</strong></h6>';
+                               contenido += '<i class="owf owf-' + datos[i].weather[0].id + ' owf-5x owf-pull-left owf-border"></i>';
+                               contenido += '<strong>' + capitalizeIt(datos[i].weather[0].description) + '</strong><br>';
+                               contenido += 'Temp ' + datos[i].main.temp + '°C<br>';
+                               contenido += 'Min ' + datos[i].main.temp_min + '°C Max ' + datos[i].main.temp_max + '°C<br>';
+                               contenido += 'H ' + datos[i].main.humidity + '% - ' + datos[i].main.pressure + ' psi</div>';
+                               document.getElementById("col" + y).innerHTML = contenido;
+                           } else {
+                               var hora = datos[i].dt_txt;
+                               var contenido = '<div><i class="owf owf-' + datos[i].weather[0].id + ' owf-12x owf-pull-left azul-madrid"></i>'
+                               contenido += datos[i].main.temp + '°C<br>';
+                               contenido += 'Min ' + datos[i].main.temp_min + '°C | Max ' + datos[i].main.temp_max + '°C<br>';
+                               contenido += 'Hum ' + datos[i].main.humidity + '% | Pres ' + datos[i].main.pressure + ' psi<br>';
+                               contenido += 'Viento ' + datos[i].wind.deg + '° | ' + datos[i].wind.speed + ' km/h</div><br>';
+                               document.getElementById("colAhora").innerHTML = contenido;
+                           }
+                       }
+                   } else if (xmlHttp.status >= 400 && xmlHttp.status <= 600) {
+                       errorDatos(JSON.parse(xmlHttp.responseText));
+                   }
+               }
+           };
+           xmlHttp.open("GET", url, true);
+           xmlHttp.send();
+       }
+       function errorDatos(error) {
+           document.getElementById("cargando").style.display = 'none';
+           document.getElementById("error-ajax").style.display = 'block';
+           document.getElementById("row-contenido").innerHTML = '<img src="http://www.404notfound.fr/assets/images/pages/img/androiddev101.jpg">';
+           console.error("ERROR! 404", error);
+       }
+       // Arrancando
+       peticionAjax("http://airemad.com/api/v1/weather/"+estacion);
+*/

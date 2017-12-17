@@ -6,18 +6,28 @@
 /*-------  DATA  -------*/
 
 .data{
+  flex-wrap: wrap;
   display: flex;
   border-bottom: 2px solid $secondary-color;
   justify-content: space-around;
   padding-bottom: 5px;
 }
+.data > p{
+  margin-left: 10px;
+}
 .aemet-link{
   background-color: $primary-color;
+  border-radius: 3px;
+  display: block;
   color: $background;
+  font-size: 0.9em;
   font-weight: bold;
+  margin: 5px auto;
+  text-align: center;
   text-decoration: none;
-  padding: 10px;
+  padding: 7px;
   transition: 0.3s linear 0s;
+  width: 40%;
 }
 .aemet-link:hover{
   background-color: $secondary-color;

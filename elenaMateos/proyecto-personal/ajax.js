@@ -11,7 +11,10 @@ function peticionAjax(url, callback) { // Con callback lo que haces es decirle q
     peticion.open('GET', url);
     peticion.onreadystatechange = function () {
         if (this.readyState === 4) {
+
           callback(this.responseText); // dentro de callback paso this.responseText
+        } else {
+          //  funcion cargando
         }
       };
     peticion.send();
