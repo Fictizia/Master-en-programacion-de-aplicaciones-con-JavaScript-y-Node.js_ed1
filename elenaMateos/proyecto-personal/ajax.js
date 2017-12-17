@@ -15,7 +15,7 @@ function peticionAjax(url, callback) { // Con callback lo que haces es decirle q
         }
       };
     peticion.send();
-};
+}
 
 peticionAjax(url, function(data){ // Aki definimos callback!!!
   resultados= JSON.parse(data);
@@ -36,8 +36,8 @@ function pintaDistritos(){
     optionDistrict.innerHTML += '<option class="menu_Element" id="' + distritoId + '" value="' + distritoId + '" name="distrito">' + distritoNombre + '</option>' ;
     // Relleno array de id's:
     idLista.push(distritoId);
-  };
-};
+  }
+}
 /**  Tenemos el id del distrito
 * 1. pasar el id a resultados para obtener los datos de una estación concreta:
 * 2. Renderizar los datos de la estación
@@ -85,43 +85,5 @@ function pintaDatos(resultados){
      };
        break;
     };
-
-      // for (var element in resultados[i]) {
-      //     if (typeof(resultados[i][element]) === 'object'){
-      //   container.innerHTML += '<li class="values-element">' + resultados[i][element].parameter + ' (' + resultados[i][element].abrebiation + '): ' + 'MEDIDAVAR' + ' </li>' ;
-      //   };
-      // }
-
-
   };
-
 };
-
-
-
-/* FUNCIONES PARA PINTAR LOS RESULTADOS DENTRO DE LA LISTA */
-
-//Función para determinar el elemento del input elegido:
-//info sacada de "https://www.lawebdelprogramador.com/codigo/JavaScript/3605-Mostrar-el-texto-del-select-seleccionado-en-un-input-type-text.html"
-
-/**
-	 * Función que recibe el objeto seleccionado
-	 *
-	 * objeto.value contiene el value del elemento seleccionado
-	 * objeto[value].innerHTML contiene el texto del valor seleccionado
-	 */
-
-	// function mostrar(objeto)
-	// {
-	// 	if(objeto.value==0)
-	// 	{
-	// 		document.getElementById("idSeleccionado").value="0";
-	// 		document.getElementById("textoSeleccionado").value="Default";
-	// 	}else{
-	// 		document.getElementById("idSeleccionado").value=objeto.value;
-	// 		document.getElementById("textoSeleccionado").value=objeto[objeto.value].innerHTML;
-	// 	}
-	// }
-// Función determinar el estado para saber que elemnto pintar:
-
-// Pintar los datos
