@@ -31,8 +31,5 @@
 ![NYTimes.png](../OTROS/best_sellers2.png)
 
 
-**Solución:**
+**[Solución](../OTROS/NYTimes/NYTimes_best_sellers.html)**
 
-```
-    // Tu solución
-```

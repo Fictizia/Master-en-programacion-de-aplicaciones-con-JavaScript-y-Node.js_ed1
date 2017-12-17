@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Buenos Días, Madrid</title>
+    <meta name="description" content="Good Morning Madrid">
+    <meta name="author" content="Ulises Gascón">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="http://bootswatch.com/paper/bootstrap.min.css">
+    <!-- owfont - symbol font for Open Weather Map API -->
+    <link href="css/owfont-regular.css" rel="stylesheet" type="text/css">
+
+
+    <style type="text/css">
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        
+        .azul-madrid {
+            color: #0676BE;
+        }
+        
+        body {
+            /* Margin bottom by footer height */
+            margin-bottom: 60px;
+        }
+        
+        .owf-12x {
+            font-size: 12em;
+        }
+        
+        .amazon {
+            width: 125px;
+        }
+        
+        .row {
+            display: none;
+        }
+        
+        ul {
+            padding: 0px;
+        }
+        
+        li {
+            list-style-type: none;
+        }
+        
+        #cabecera-meteo {
+            font-size: 20px;
+        }
+        
+        #camara-trafico {
+            height: 330px;
+        }
+        
+        #foto-portada {
+            margin-bottom: -15px;
+        }
+        
+        #back-boton {
+            display: none;
+            margin-bottom: 20px;
+        }
+        
+        #error-ajax {
+            display: none;
+        }
+        
+        #cargando {
+            float: none;
+            margin: auto;
+        }
+        
+        .caratula {
+            width: 230px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="alert alert-dismissible alert-danger" id="error-ajax">
+            <button type="button" class="close" data-dismiss="alert">x</button>
+            <strong>Oh Error!</strong> Error al cargar los datos del <a href="http://openweathermap.org/api" target="_blank" class="alert-link">OpenWeatherMap API</a>
+        </div>
+
+        <div class="page-header">
+            <h3 id="titulo_lista">Buenos Días, Madrid!</h3>
+        </div>
+        <div id="cargando">
+            <img src="https://d13yacurqjgara.cloudfront.net/users/493970/screenshots/1691794/progress.gif">
+        </div>
+
+        <div class="row">
+            <div class="col-md-6" id="colAhora"></div>
+            <div class="col-md-6" id="colContaminacion"></div>
+        </div>
+
+        <hr>
+
+        <div class="row" id="row-contenido">
+            <div class="col-md-3" id="col1"></div>
+            <div class="col-md-3" id="col2"></div>
+            <div class="col-md-3" id="col3"></div>
+            <div class="col-md-3" id="col4"></div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script>
+        var estacion = "S024"; 
+
+        function capitalizeIt(texto) {
+            return texto.charAt(0).toUpperCase() + texto.slice(1).toLowerCase();
+        }
+
+        function camarasDGT() {
+            var numeroAleatorio = (Math.floor(Math.random() * 222) + 1) + "";
+            var patron = "00000";
+            var numeroFinal = patron.substring(0, patron.length - numeroAleatorio.length) + numeroAleatorio;
+            return "http://informo.munimadrid.es/informo/Camaras/Camara" + numeroFinal + "_mdf.jpg";
+        }
+
+        function horaEstimada() {
+            var hora = new Date();
+            var horaCalculada = hora.getHours() - 2;
+            return "hora" + horaCalculada;
+        }
+
+        function diaSemana(incremento) {
+            var dia = new Date();
+            dia.setDate(dia.getDate() + (incremento || 0));
+            dia = dia.getDay();
+            var semana = new Array(7);
+            semana[0] = "Domingo";
+            semana[1] = "Lunes";
+            semana[2] = "Martes";
+            semana[3] = "Miércoles";
+            semana[4] = "Jueves";
+            semana[5] = "Viernes";
+            semana[6] = "Sabado";
+
+            return semana[dia];
+        }
+
+        // Gestión de peticiones AJAX
+        function peticionAjax(url) {
+            var xmlHttp = new XMLHttpRequest();
+
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState === 4) {
+                    if (xmlHttp.status >= 100 && xmlHttp.status <= 300) {
+
+                        var datosCrudos = JSON.parse(xmlHttp.responseText);
+                        
+                        var datos = datosCrudos.list;
+
+                        for (var i = 0, x = 1; i < datos.length; i += 8, x++) {
+
+                            if (x !== 1 && x <= 5) {
+                                var y = x - 1;
+                                var hora = datos[i].dt_txt;
+
+                                var contenido = '<div><h6><strong>' + diaSemana(y) + ' (' + hora.substring(11, 16) + ')</strong></h6>';
+                                contenido += '<i class="owf owf-' + datos[i].weather[0].id + ' owf-5x owf-pull-left owf-border"></i>';
+                                contenido += '<strong>' + capitalizeIt(datos[i].weather[0].description) + '</strong><br>';
+                                contenido += 'Temp ' + datos[i].main.temp + '°C<br>';
+                                contenido += 'Min ' + datos[i].main.temp_min + '°C Max ' + datos[i].main.temp_max + '°C<br>';
+                                contenido += 'H ' + datos[i].main.humidity + '% - ' + datos[i].main.pressure + ' psi</div>';
+
+                                document.getElementById("col" + y).innerHTML = contenido;
+
+                            } else {
+
+                                var hora = datos[i].dt_txt;
+
+                                var contenido = '<div><i class="owf owf-' + datos[i].weather[0].id + ' owf-12x owf-pull-left azul-madrid"></i>';
+                                contenido += '<strong class="azul-madrid" id="cabecera-meteo">' + capitalizeIt(datos[i].weather[0].description) + '</strong><br>';
+                                contenido += datos[i].main.temp + '°C<br>';
+                                contenido += 'Min ' + datos[i].main.temp_min + '°C | Max ' + datos[i].main.temp_max + '°C<br>';
+                                contenido += 'Hum ' + datos[i].main.humidity + '% | Pres ' + datos[i].main.pressure + ' psi<br>';
+                                contenido += 'Viento ' + datos[i].wind.deg + '° | ' + datos[i].wind.speed + ' km/h</div><br>';
+                                contenido += '<div><img id="camara-trafico" src="' + camarasDGT() + '"></div>';
+                                document.getElementById("colAhora").innerHTML = contenido;
+                            }
+                        }
+
+                        // Petición Datos Contaminacion
+                        var peticionContaminacion = new XMLHttpRequest();
+
+                        peticionContaminacion.onreadystatechange = function() {
+                            if (peticionContaminacion.readyState === 4) {
+                                if (peticionContaminacion.status >= 100 && peticionContaminacion.status <= 300) {
+
+                                    document.getElementById("cargando").style.display = 'none';
+                                    document.getElementsByClassName("row")[0].style.display = 'block';
+                                    document.getElementsByClassName("row")[1].style.display = 'block';
+                                    var datosContaminacion = JSON.parse(peticionContaminacion.responseText);
+                                    var contaminacion = "<h3>Datos de "+datosContaminacion.name+". Estación "+datosContaminacion.id+"</h3>";
+                                    for (var elemento in datosContaminacion){
+                                        var parametro = datosContaminacion[elemento]
+                                        if(typeof(parametro) === "object"){
+                                            var ultimaMedicion = "ERROR";
+                                            
+                                            for (var i = parametro.values.length -1; i > 0 ; i-- ){
+                                                if (parametro.values[i].estado === "Pasado"){
+                                                    ultimaMedicion = parametro.values[i].valor
+                                                    break;
+                                                }
+                                            }
+
+                                            contaminacion += "<p><strong>" + parametro.parameter + " ("+parametro.abrebiation+"):</strong> " + ultimaMedicion + " μg/m3 <em>medido por " + parametro.technique + "</em></p>";
+                                        }
+                                        
+                                    }
+
+                                    document.getElementById("colContaminacion").innerHTML = contaminacion;
+
+                                } else if (peticionContaminacion.status >= 400 && peticionContaminacion.status <= 600) {
+                                    errorDatos(JSON.parse(peticionContaminacion.responseText));
+                                }
+                            }
+                        };
+
+                        peticionContaminacion.open("GET", "http://airemad.com/api/v1/pollution/"+estacion, true);
+                        peticionContaminacion.send();
+
+                    } else if (xmlHttp.status >= 400 && xmlHttp.status <= 600) {
+
+                        errorDatos(JSON.parse(xmlHttp.responseText));
+
+                    }
+                }
+            };
+            xmlHttp.open("GET", url, true);
+            xmlHttp.send();
+        }
+
+        function errorDatos(error) {
+            document.getElementById("cargando").style.display = 'none';
+            document.getElementById("error-ajax").style.display = 'block';
+            document.getElementById("row-contenido").innerHTML = '<img src="http://www.404notfound.fr/assets/images/pages/img/androiddev101.jpg">';
+            console.error("ERROR! 404", error);
+        }
+
+        // Arrancando
+        peticionAjax("http://airemad.com/api/v1/weather/"+estacion);
+    </script>
+</body>
+
+</html>

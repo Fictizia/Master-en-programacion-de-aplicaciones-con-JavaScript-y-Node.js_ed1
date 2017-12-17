@@ -24,8 +24,4 @@
 
 ![NYTimes.png](../OTROS/NYTimes.png)
 
-**Solución:**
-
-```
-    // Tu solución
-```
+**[Solución](../OTROS/NYTimes/NYTimes_hardcover_fiction_today.html)**
