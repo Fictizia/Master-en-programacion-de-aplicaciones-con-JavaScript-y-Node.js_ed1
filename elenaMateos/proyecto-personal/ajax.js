@@ -1,15 +1,12 @@
-
 var optionDistrict = document.getElementById('optionDistrict');
 
 /* PETICION AJAX   http://airemad.com/api/v1/pollution/S056 es la buena*/
 
 var resultados = [];
 var url = 'http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution';
-//var url2 = 'http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution/S004';
 
-// Con callback lo que haces es decirle q tiene otro parámetro que aun no se ha definido (se hace luego).
+function peticionAjax(url, callback) { // Con callback lo que haces es decirle q tiene otro parámetro que aun no se ha definido (se hace luego).
 
-function peticionAjax(url, callback) {
     var peticion = new XMLHttpRequest();
     peticion.open('GET', url);
     peticion.onreadystatechange = function () {
@@ -30,7 +27,7 @@ peticionAjax(url, function(data){ // Aki definimos callback!!!
 
 /* FUNCION PARA PINTAR DISTRITOS DENTRO DEL INPUT */
 var idLista = [];
-//console.log(typeof(idLista));
+
 function pintaDistritos(){
   for (var i = 0; i < resultados.length; i++) {
 
@@ -53,10 +50,6 @@ function giveId(){
   return idSeleccionado;
 }
 
-
-//var container = document.getElementById('values');
-
-
 function pintaDatos(resultados){
   // Limpio la lista de datos:
   var container = document.getElementById('values');
@@ -69,26 +62,24 @@ function pintaDatos(resultados){
 
   var datoContaminante = '';
   for (var i = 0; i < resultados.length; i++) {
-    //console.log(resultados[i].id);
-    // if (resultados[i].id == idSeleccionado) {
-    //   console.log('cucu');
-    // }
+
     if (resultados[i].id == idSeleccionado) {
-      //console.log(idSeleccionado);
+      // En caso de que el id seleccionado en el select coincida con el id de algún resultado continúa trabajando
+      // Almaceno el registro en cuestion en una variable
       var estacion = resultados[i];
-      //console.log(estacion);
+
       for (var element in estacion) {
         if (typeof(estacion[element]) === 'object'){
+
             for (var j = 0; j < estacion[element].values.length; j++) {
-              // console.log(estacion[element].values[j]);
+
               if (estacion[element].values[j].estado == 'Pendiente') {
+                // Declaro la variable que almacena los datos de cada contaminante en la última medición disponible
                 var medidaVar = estacion[element].values[j - 1].valor;
-                // console.log(medidaVar);
                 break;
               }
-
             }
-
+            //Renderizo en la lista los elementos
             container.innerHTML += '<li class="values-element">' + estacion[element].parameter + ' (' + estacion[element].abrebiation + '): ' + medidaVar + '  μg/m3</li>' ;
        };
      };
