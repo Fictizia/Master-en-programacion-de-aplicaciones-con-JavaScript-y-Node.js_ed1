@@ -80,7 +80,7 @@ function pintaDatos(resultados){
               }
             }
             //Renderizo en la lista los elementos
-            container.innerHTML += '<li class="values-element">' + estacion[element].parameter + ' (' + estacion[element].abrebiation + '): ' + medidaVar + '  μg/m3</li>' ;
+            container.innerHTML += '<li class="values-element">' + estacion[element].parameter + ' (' + estacion[element].abrebiation + '): ' + medidaVar + '  μg/m3 .</li>' ;
        };
      };
        break;

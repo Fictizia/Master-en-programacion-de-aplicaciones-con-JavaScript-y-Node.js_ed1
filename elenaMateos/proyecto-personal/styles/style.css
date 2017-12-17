@@ -64,6 +64,15 @@ p {
 .container--air-quality {
   padding: 5px; }
 
+.values-list {
+  padding-left: 15px; }
+
+.values-element {
+  left: 0;
+  list-style: none;
+  margin-bottom: 5px;
+  position: relative; }
+
 /* -------  CONTAINER EMOJI --------*/
 .refresh-button {
   background-color: inherit;
@@ -76,7 +85,7 @@ p {
   background-color: #106302; }
 
 .refresh-button-image {
-  width: 40px; }
+  width: 30px; }
 
 body {
   color: #393939;
