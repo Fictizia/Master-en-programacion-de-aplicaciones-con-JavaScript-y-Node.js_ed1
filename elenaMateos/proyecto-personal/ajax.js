@@ -1,4 +1,6 @@
 var optionDistrict = document.getElementById('optionDistrict');
+var idLista = [];
+var idSeleccionado = '';
 
 /* PETICION AJAX   http://airemad.com/api/v1/pollution/S056 es la buena*/
 
@@ -15,6 +17,7 @@ function peticionAjax(url, callback) { // Con callback lo que haces es decirle q
           callback(this.responseText); // dentro de callback paso this.responseText
         } else {
           //  funcion cargando
+          console.log('Cargandoooo!!!!');
         }
       };
     peticion.send();
@@ -29,7 +32,7 @@ peticionAjax(url, function(data){ // Aki definimos callback!!!
 });
 
 /* FUNCION PARA PINTAR DISTRITOS DENTRO DEL INPUT */
-var idLista = [];
+
 
 function pintaDistritos(){
   for (var i = 0; i < resultados.length; i++) {
@@ -46,7 +49,7 @@ function pintaDistritos(){
 * 2. Renderizar los datos de la estación
 * 3. Renderizar los datos concretos
 */
-var idSeleccionado = '';
+
 function giveId(){
   idSeleccionado = optionDistrict.value;
   pintaDatos(resultados); // Llamada a rellenar la lista cuando cambia el distrito seleccionado.
