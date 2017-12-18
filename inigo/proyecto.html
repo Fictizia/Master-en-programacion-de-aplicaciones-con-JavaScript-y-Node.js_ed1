@@ -196,8 +196,8 @@
         var markers= [];
         var fecha = new Date();
         fecha = fecha.getFullYear() + "" + (fecha.getMonth() + 1) + "" + fecha.getDate();
-        var fechaAyer = new Date();
-        fechaAyer = fechaAyer.getFullYear() + "" + (fechaAyer.getMonth() + 1) + "" + (fechaAyer.getDate() - 1);
+        //var fechaAyer = new Date();
+        //fechaAyer = fechaAyer.getFullYear() + "" + (fechaAyer.getMonth() + 1) + "" + (fechaAyer.getDate() - 1);
         
         selectProvincias.options[selectProvincias.selectedIndex].value="defecto";
         peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
@@ -228,10 +228,12 @@
         function procesar(data){
             var datos = data.ListaEESSPrecio;
             console.log(datos);
+            console.log(datos);
             if (datos === undefined || datos.length == 0) {
-                alert("No hay datos para el día de hoy, se mostraran los datos de ayer");
-                peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fechaAyer + ".json", procesar);
+                fecha--;
+                peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
             }else{
+                alert("Se mostraran los datos del último día registrado: " + fecha );
                 datos.forEach(function(elemento, i){
                     gasolineras.push(elemento);
                 });
