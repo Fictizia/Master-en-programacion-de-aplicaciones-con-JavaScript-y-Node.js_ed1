@@ -16,7 +16,7 @@ function peticionAjax(url, callback) { // Con callback lo que haces es decirle q
 
             callback(this.responseText); // dentro de callback paso this.responseText
           } else {
-            //  funcion cargando
+            //  funcion cargando o error
           }
         };
       peticion.send();
@@ -27,6 +27,7 @@ peticionAjax('http://airemad.com/api/v1/pollution', function(data){ // Aki defin
 });
 
 
+/*@ulises: No usar variable global resultados*/
 //var resultados = [];
 ///var url = ;
 

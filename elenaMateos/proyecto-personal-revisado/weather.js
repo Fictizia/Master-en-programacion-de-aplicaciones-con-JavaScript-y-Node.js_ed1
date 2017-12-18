@@ -8,7 +8,7 @@ var tiempoHoy = '';
 
 /*  PETICION ajax*/
 
-/* @Ulises: Usar un solo méodo para llamar AJAX
+/* @Ulises: Usar un solo méodo para llamar AJAX. Eliminar request
 peticionAjax('http://airemad.com/api/v1/weather/S024', function(datos){
   pintaTiempo(datos);
   iconRender(tiempoHoy);

@@ -1,3 +1,12 @@
+/*
+@ulises:
+- Linter para eliminar codigo muerto
+- Usar solo una funcion para AJAX
+- No devolver lso datos de AJAX a variables globales
+- Usar parametros para gestionar el pintado despues de la llamada Ajax
+*/
+
+
 /* DATE */
 
 var hour = document.getElementById('hour');
