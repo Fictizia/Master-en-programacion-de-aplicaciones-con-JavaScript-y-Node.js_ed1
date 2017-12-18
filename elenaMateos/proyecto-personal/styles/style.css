@@ -27,18 +27,28 @@ p {
 
 /*-------  DATA  -------*/
 .data {
+  flex-wrap: wrap;
   display: flex;
   border-bottom: 2px solid #052001;
   justify-content: space-around;
   padding-bottom: 5px; }
 
+.data > p {
+  margin-left: 10px; }
+
 .aemet-link {
   background-color: #106302;
+  border-radius: 3px;
+  display: block;
   color: #fbfbec;
+  font-size: 0.9em;
   font-weight: bold;
+  margin: 5px auto;
+  text-align: center;
   text-decoration: none;
-  padding: 10px;
-  transition: 0.3s linear 0s; }
+  padding: 7px;
+  transition: 0.3s linear 0s;
+  width: 40%; }
 
 .aemet-link:hover {
   background-color: #052001; }
@@ -64,6 +74,15 @@ p {
 .container--air-quality {
   padding: 5px; }
 
+.values-list {
+  padding-left: 15px; }
+
+.values-element {
+  left: 0;
+  list-style: none;
+  margin-bottom: 5px;
+  position: relative; }
+
 /* -------  CONTAINER EMOJI --------*/
 .refresh-button {
   background-color: inherit;
@@ -76,9 +95,10 @@ p {
   background-color: #106302; }
 
 .refresh-button-image {
-  width: 40px; }
+  width: 30px; }
 
 body {
+  background-color: white;
   color: #393939;
   font-family: "Raleway", sans-serif;
   padding: 20px; }

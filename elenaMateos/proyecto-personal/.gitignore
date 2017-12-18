@@ -63,3 +63,9 @@ typings/
 
 
 # End of https://www.gitignore.io/api/node
+
+#Personal stuff:
+restos.js
+.eslintrc.js
+ajax2.js
+ajax3.js
