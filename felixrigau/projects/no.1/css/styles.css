@@ -1,0 +1,93 @@
+#map {
+  height: 100%;
+  background: transparent url(../images/loader.svg) no-repeat center center;
+}
+.loader {
+  height: 100px;
+  background: url(../images/progress-loader.svg);
+  background-size: 100% 100%;
+  width: 100px;
+  position: relative;
+  top: -34px;
+  left: 34%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: lato;
+}
+
+.combo-container {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  text-align: right;
+  transition: all 1s;
+        
+}
+.countries {
+    width: 65%;
+    margin: 10px;
+    height: 49px;
+    font-family: lato;
+    border: none;
+    border-bottom: 5px solid rgb(67, 102, 138);
+    color: rgba(192, 57, 43, 1);
+    font-size: 16px;
+    background-color: rgba(255,255,255,0.8);
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.country-container {
+  position: absolute;
+  z-index: 1;
+  width: 30%;
+  height: 100%;
+  border-right: 10px solid rgba(255,255,255,0.4);
+  transition: all 1s;
+  left: 0px;
+}
+.button {
+  height: 49px;
+  width: 49px;
+  background: #2ecc71;
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+;
+  position: absolute;
+  right: -49px;
+  top: 10px;
+}
+
+.hidden{
+  left: -30%;
+}
+.country-info {
+  background-color: rgba(4, 51, 88, 0.74);
+  height: 100%;
+}
+img.flag {
+  width: 100%;
+}
+.name {
+  color: #fff;
+  font-size: 36px;
+  margin: 10px 0px;
+  text-align: center;
+}
+.country-info p {
+    font-size: 22px;
+    color: #fff;
+    font-weight: bold;
+    padding: 0 10px;
+}
+.country-info span {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+}
