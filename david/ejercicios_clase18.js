@@ -1,6 +1,6 @@
 var intervalo;
 function fechasDif(){
-    var fecha=new Date(2017,11,7,0,0)
+    var fecha=new Date(2018,1,19,0,0)
     var hoy=new Date()
     var dias=0
     var horas=0
@@ -10,8 +10,6 @@ function fechasDif(){
     var diferencia=(fecha-hoy)/1000
     
     if (diferencia <= 0){
-        document.querySelector("body").style.backgroundImage = "url(https://media.giphy.com/media/120ErahsQyf1q8/giphy.gif)"
-        document.querySelector("#textos img").style.display = "block";
         diferencia = 0;
         clearInterval(intervalo);
     }

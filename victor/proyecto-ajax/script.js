@@ -46,31 +46,36 @@
             var html = "";
             document.querySelector(".music-container").innerHTML = "";
             
-            json.results.forEach(function(e, i) {
-                html += "<div class='music-box'>" +
-                            "<div class='music-image'>" +
-                                "<img src='" + e.artworkUrl30 + "' />" +
-                            "</div>" +
-                            "<div class='track-name'>" +
-                                "<span>" + e.trackName + "</span>" +
-                            "</div>"+
-                            "<div class='track-time'>" +
-                                "<span>" + utils.setTime(e.trackTimeMillis) + "</span>" +
-                            "</div>" +
-                            "<div class='artist-link'>" +
-                                "<a href='" + e.artistViewUrl + "' title='Ver página del artista' target='_blank'>" + e.artistName + "</a>" +
-                            "</div>" +
-                            "<div class='links'>" +
-                                "<a href='" + e.trackViewUrl + "'title='Ver álbum' target='_blank'><img src='img/icon-eye.svg'/></a>" +
-                                "<img class='link-play' src='img/icon-play.svg' />" +
-                                "<img class='link-pause' src='img/icon-pause.svg' />" +
-                                "<audio><source src='" + e.previewUrl + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>" +
-                            "</div>" +
-                        "</div>";
-            });
+            if(json.resultCount === 0) {
+                html += "<div class='color-white'><span>No se encontraron resultados.</span></div>";
+            } else {
+                html += "<div class='color-white'><span>Número de resultados: " + json.resultCount + "</span></div>";
+                json.results.forEach(function(e, i) {
+                    html += "<div class='music-box'>" +
+                                "<div class='music-image'>" +
+                                    "<img src='" + e.artworkUrl30 + "' />" +
+                                "</div>" +
+                                "<div class='track-name'>" +
+                                    "<span>" + e.trackName + "</span>" +
+                                "</div>"+
+                                "<div class='track-time'>" +
+                                    "<span>" + utils.setTime(e.trackTimeMillis) + "</span>" +
+                                "</div>" +
+                                "<div class='artist-link'>" +
+                                    "<a href='" + e.artistViewUrl + "' title='Ver página del artista' target='_blank'>" + e.artistName + "</a>" +
+                                "</div>" +
+                                "<div class='links'>" +
+                                    "<a href='" + e.trackViewUrl + "'title='Ver álbum' target='_blank'><img src='img/icon-eye.svg'/></a>" +
+                                    "<img class='link-play' src='img/icon-play.svg' />" +
+                                    "<img class='link-pause' src='img/icon-pause.svg' />" +
+                                    "<audio><source src='" + e.previewUrl + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>" +
+                                "</div>" +
+                            "</div>";
+                });
+            }
             
             document.querySelector(".music-container").innerHTML = html;
-            
+                
             itunes.activeAudio();
             
             loader.delete();
@@ -80,38 +85,40 @@
             var pauses = document.querySelectorAll(".link-pause");
             var audios = document.querySelectorAll("audio");
             
-            audios.forEach(function(e, i) {
-                e.onended = function() {
-                     this.currentTime = 0;
-                     e.parentNode.querySelector(".link-play").style.display = "inline";
-                     e.parentNode.querySelector(".link-pause").style.display = "none";
-                };
-            });
-            
-            plays.forEach(function(e, i) {
-                e.addEventListener("click", function() {
-                    
-                    audios.forEach(function(element, index) {
-                        if(!element.paused) {
-                            element.pause();
-                            element.parentNode.querySelector(".link-play").style.display = "inline";
-                            element.parentNode.querySelector(".link-pause").style.display = "none";
-                        }
+            if(plays.length > 0) {
+                audios.forEach(function(e, i) {
+                    e.onended = function() {
+                         this.currentTime = 0;
+                         e.parentNode.querySelector(".link-play").style.display = "inline";
+                         e.parentNode.querySelector(".link-pause").style.display = "none";
+                    };
+                });
+                
+                plays.forEach(function(e, i) {
+                    e.addEventListener("click", function() {
+                        
+                        audios.forEach(function(element, index) {
+                            if(!element.paused) {
+                                element.pause();
+                                element.parentNode.querySelector(".link-play").style.display = "inline";
+                                element.parentNode.querySelector(".link-pause").style.display = "none";
+                            }
+                        });
+                        
+                        this.style.display = "none";
+                        this.parentNode.querySelector(".link-pause").style.display = "inline";
+                        this.parentNode.querySelector("audio").play();
                     });
-                    
-                    this.style.display = "none";
-                    this.parentNode.querySelector(".link-pause").style.display = "inline";
-                    this.parentNode.querySelector("audio").play();
                 });
-            });
-            
-            pauses.forEach(function(e, i) {
-                e.addEventListener("click", function() {
-                    this.style.display = "none";
-                    this.parentNode.querySelector(".link-play").style.display = "inline";
-                    this.parentNode.querySelector("audio").pause();
+                
+                pauses.forEach(function(e, i) {
+                    e.addEventListener("click", function() {
+                        this.style.display = "none";
+                        this.parentNode.querySelector(".link-play").style.display = "inline";
+                        this.parentNode.querySelector("audio").pause();
+                    });
                 });
-            });
+            }
         }
     }
 

@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0; }
+
+h1, h2, h3, h4, h5, h6,
+p {
+  margin: 0; }
+
+.weather-info {
+  align-items: center;
+  display: flex;
+  justify-content: space-around; }
+
+.weather-gift {
+  width: 30%; }
+
+.gift {
+  width: 100%; }
+
+/*---------- MAIN INFO  -------*/
+.main-info {
+  display: flex;
+  flex-direction: column; }
+
+/*-------  DATA  -------*/
+.data {
+  flex-wrap: wrap;
+  display: flex;
+  border-bottom: 2px solid #052001;
+  justify-content: space-around;
+  padding-bottom: 5px; }
+
+.data > p {
+  margin-left: 10px; }
+
+.aemet-link {
+  background-color: #106302;
+  border-radius: 3px;
+  display: block;
+  color: #fbfbec;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 5px auto;
+  text-align: center;
+  text-decoration: none;
+  padding: 7px;
+  transition: 0.3s linear 0s;
+  width: 40%; }
+
+.aemet-link:hover {
+  background-color: #052001; }
+
+/*------- DISTRICT INFO ---------*/
+.district {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0px; }
+
+.district-menu {
+  background-color: inherit;
+  border: 1px solid #052001; }
+
+/*--------  AIR QUALITY  --------*/
+.data-container {
+  align-items: flex-end;
+  border: 2px solid #052001;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px; }
+
+.container--air-quality {
+  padding: 5px; }
+
+.values-list {
+  padding-left: 15px; }
+
+.values-element {
+  left: 0;
+  list-style: none;
+  margin-bottom: 5px;
+  position: relative; }
+
+/* -------  CONTAINER EMOJI --------*/
+.refresh-button {
+  background-color: inherit;
+  border: 1px solid #106302;
+  border-radius: 50%;
+  padding: 5px;
+  transition: 0.3s linear 0s; }
+
+.refresh-button:hover {
+  background-color: #106302; }
+
+.refresh-button-image {
+  width: 30px; }
+
+body {
+  background-color: white;
+  color: #393939;
+  font-family: "Raleway", sans-serif;
+  padding: 20px; }

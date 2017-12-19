@@ -1,0 +1,109 @@
+html, body, .container{
+    height:100%;
+    background: #e5e5e5;
+    margin:0;
+}
+.loading{
+    overflow: hidden;
+    position: fixed;
+    background: rgba(51, 51, 51, 0.7);
+    top:0;
+    left:0;
+    z-index:10;
+    width: 100%;
+    height: 100%;
+}
+.loading img{
+    position: absolute;
+    width:250px;
+    top: calc((100% - 250px) / 2);
+    left: calc((100% - 250px) / 2);
+}
+.container{
+    margin: 0 auto;
+    max-width: 1170px;
+    flex-flow: row wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.container img{
+    margin: 0 auto;
+}
+.container1{
+    margin: 0 auto;
+    max-width: 1170px;
+    margin-bottom: 50px;
+}
+.container1 h2{
+    text-align: center;
+}
+.buscador{
+    display: flex;
+    justify-content: center;
+    margin:10px 0;
+}
+.query{
+    width: 60%;
+    padding: 5px 0;
+    border-radius: 5px;
+    border: 1px solid;
+    margin-right: 10px;
+}
+#busqueda{
+    border-radius: 5px;
+    border: 0;
+    background: #333;
+    color: #fff;
+}
+.box-content{
+    position: relative;
+    flex: 1 0 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+.box-content:nth-child(odd){
+    background: #333;
+    color: #fff;
+}
+.box-content:nth-child(odd) a{
+    color: #fff;
+}
+.textos{
+    width:75%;
+    float: left;
+}
+.textos a{
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+}
+.imagen{
+    width: 12%;
+    padding: 20px;
+    float: right;
+}
+.imagen img{
+    max-width: 100%;
+}
+.lista{
+    width: 28%;
+    background: #fff;
+    margin: 10px;
+    list-style: none;
+}
+.lista:nth-child(odd){
+    color: #fff;
+    background: #333;
+}
+
+.lista .botones{
+    font-size: 15px;
+    background:#F3A847;
+    margin-bottom:15px;
+}
+.idioma{
+    border-radius: 5px;
+    margin-right: 5px;
+    border: 1px solid #333;
+}
