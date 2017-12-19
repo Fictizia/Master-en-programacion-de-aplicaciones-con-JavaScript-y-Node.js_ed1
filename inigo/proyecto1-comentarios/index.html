@@ -4,6 +4,7 @@
 	<title>Gasolineras España</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!-- @ULISES: VIEWPORT -->
 </head>
 <body>
     <div id="backLoader">
@@ -20,6 +21,7 @@
             <div class="contenedorTitulo">
                 <h2>Encuentra cualquier gasolinera y descubre su precio</h2>
                 <select id="buscarProvincia" class="cs-select cs-skin-rotate">
+                    <!--@Ulises: Cargar dinamicamente desde un json o similar...  -->
                     <option selected="selected" disabled="disabled" value="defecto" >Seleccione una provincia</option>
                     <option value='todas'>Todas las provincias</option>
                     <option value='alava'>Álava</option>
@@ -83,6 +85,7 @@
         </div>
     </div>
     <script src="js/script.js"></script>
+    <!--@Ulises: Alternativas con web worker -->
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ2M-CACUQ52ksG8h4jcV0vj16utyqGDA&callback=initMap"></script>
 </body>

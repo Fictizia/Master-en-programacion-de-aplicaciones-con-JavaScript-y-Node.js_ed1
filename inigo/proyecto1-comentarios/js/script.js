@@ -18,6 +18,7 @@ selectProvincias.addEventListener("change", function(){
     mostrar(filtrarProvincia(valorSelect));
 });
 
+//@Ulises: Cambiar nombre del callback
 function peticionAjax(url,funcionMostrar) {
     var xmlHttp = new XMLHttpRequest();
     
@@ -25,7 +26,11 @@ function peticionAjax(url,funcionMostrar) {
 
         if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
             //console.info(JSON.parse(xmlHttp.responseText));
+            
+            //@Ulises: Hacer con función recursiva de fecha vs. contenido
             funcionMostrar(JSON.parse(xmlHttp.responseText));
+            
+            //@Ulises: Hacer un callback real
             
         } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
             console.error("ERROR! 404");
@@ -37,10 +42,12 @@ function peticionAjax(url,funcionMostrar) {
 }
 function procesar(data){
     var datos = data.ListaEESSPrecio;
+    
     if (datos === undefined || datos.length == 0) {
         fecha--;
         peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
     }else{
+        // @Ulises: Sustituir por callback en AJAX
         datos.forEach(function(elemento, i){
             gasolineras.push(elemento);
         });
@@ -50,13 +57,15 @@ function filtrarProvincia(provincia){
     if(provincia === "todas"){
         return gasolineras;
     }else{
-        var array = gasolineras.filter(function (el) {
+        // @Ulises: Limpiar
+        return gasolineras.filter(function (el) {
             return quitarAcentos(el.Provincia.toLowerCase().trim()) === provincia.toLowerCase().trim();
         });
-        return array;
+        //return array;
     }
 }
 function quitarAcentos(str){
+    // @Ulises: Refactor usando REGEX basado en https://stackoverflow.com/q/990904
     for (var i=0;i<str.length;i++){
         if (str.charAt(i)=="á") str = str.replace(/á/,"a");
         if (str.charAt(i)=="é") str = str.replace(/é/,"e");
@@ -75,11 +84,14 @@ function mostrar(data){
     caja.innerHTML = "";
     
     if (data === undefined || data.length == 0) {
+        //@Ulises: Pintar esto en el lugar de los detalles de la gasolinera
         alert("No hay datos que mostrar, asegúrate que la página está cargando sobre el protocolo http");
     }else{
         document.getElementById("backLoader").style.display="block";
         data.forEach(function(elemento, i){
             setTimeout(function() {
+                
+                //@Ulises: Refactorizar con templeate string `... ${} ...`
                 console.time("tiempoEnMostrar");
                 html = '<div class="contenedorGasolinera">';
                 html += '<span class="direccion">' + elemento["Dirección"] + ' | ' + elemento["C.P."] + ' ' + elemento["Municipio"] + ', ' + elemento["Provincia"] + '</span><br/>';
