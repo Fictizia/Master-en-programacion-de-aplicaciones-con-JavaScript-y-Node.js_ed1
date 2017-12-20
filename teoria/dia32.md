@@ -324,7 +324,7 @@
         var usuario = {
           nombre : 'Yo',
           apellido : 'Mismo',
-          nombreCompleto : this.name + this.lastName,
+          nombreCompleto : this.nombre + this.apellido,
           metodoNombre: function(){
             return this.nombre + " " + this.apellido
           },
@@ -333,10 +333,10 @@
           }
         }
         // ERROR - Undefined  -> this=window
-        console.log( usuario.nombreCompleto);
+        console.log("usuario.nombreCompleto", usuario.nombreCompleto);
         
         // FUNCIONA - this=usuario
-        console.log(usuario.metodoNombre());
+        console.log("usuario.metodoNombre()", usuario.metodoNombre());
         
         // FUNCIONA - this=usuario
         usuario.valorThis();
@@ -353,7 +353,7 @@
 
 	objeto.incrementar(6);
 	
-	// objeto.valor
+	console.log("objeto.valor:", objeto.valor)
 	```
 
 
