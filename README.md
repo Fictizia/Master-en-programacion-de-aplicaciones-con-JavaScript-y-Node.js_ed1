@@ -94,6 +94,7 @@ Fecha | Teoría | Recursos | Contenido
 15/12/2017 | [Clase 29](teoria/dia29.md) | Clase 29 | Proyecto Colectivo: Generador de Gifs 
 18/12/2017 | [Clase 30](teoria/dia30.md) | Clase 30 | Entrega de proyecto personal
 19/12/2017 | [Clase 31](teoria/dia31.md) | Clase 31 | Empezamos JavaScript Avanzado
+20/12/2017 | [Clase 32](teoria/dia32.md) | [Clase 32](recursos/dia32.md) | POO
 
 
 Temario
