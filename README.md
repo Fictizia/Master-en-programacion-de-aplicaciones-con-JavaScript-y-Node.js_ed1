@@ -95,7 +95,7 @@ Fecha | Teoría | Recursos | Contenido
 18/12/2017 | [Clase 30](teoria/dia30.md) | Clase 30 | Entrega de proyecto personal
 19/12/2017 | [Clase 31](teoria/dia31.md) | Clase 31 | Empezamos JavaScript Avanzado
 20/12/2017 | [Clase 32](teoria/dia32.md) | [Clase 32](recursos/dia32.md) | POO
-
+21/12/2017 | Clase 33 | Clase 33 | ¡Invitado sorpresa!
 
 Temario
 =================
