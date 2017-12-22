@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Recomendador de música</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> 
+ 
+    <style type="text/css">
+ 
+         body{
+                background-image: url('back1.jpg');
+                background-position: center center;
+                background-repeat:no-repeat;
+                background-attachment: fixed;
+                background-size: 3000px;
+                height: 100%;
+                 background-color: rgba(0, 0, 0, 0.6);
+              }
+              .bajo{
+                margin-top:5%;
+              }
+              .form-control{
+                background-color: black;
+                border:1px solid black;
+                opacity: 0.3;
+                height:60px;
+                width:500px;
+                color: white;
+              }
+              
+              .btn{
+                  height: 60px;
+                  background-color:#202020;
+              }
+              
+              .glyphicon{
+                  font-size: 40px;
+                  padding-left: 10px;
+                  padding-right:10px;
+                  color:white;
+              }
+              
+              .caja{
+        
+                  border:1px solid lightgrey;
+                  border-radius:4px;
+                  -webkit-box-shadow: 7px 7px 30px -13px rgba(163,163,163,1);
+                    -moz-box-shadow: 7px 7px 30px -13px rgba(163,163,163,1);
+                    box-shadow: 7px 7px 30px -13px rgba(163,163,163,1);
+                    margin-bottom:20px;
+              }
+        
+              .caja img{
+                  max-height:250px;
+                  display: block; margin-left: auto; margin-right: auto;
+                  padding-bottom: 30px;
+              }
+              h1{
+                  color:white;
+                  padding-bottom:20px;
+              }
+              h2{
+                color:white;
+              }
+              h3{
+                  font-size:14px;
+                  color:white;
+              }
+              p{
+                  padding:0px 10px 0px 10px;
+                  color:white;
+              }
+              
+              .sombra{
+                  background-color: rgba(0, 0, 0, 0.5);
+                  padding:20px;
+              }
+              
+              #results{
+                  margin-top:20px;
+              }
+              
+              h1:hover {
+          animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+          transform: translate3d(0, 0, 0);
+          backface-visibility: hidden;
+          perspective: 1000px;
+        }
+        
+        @keyframes shake {
+          10%, 90% {
+            transform: translate3d(-1px, 0, 0);
+          }
+          
+          20%, 80% {
+            transform: translate3d(2px, 0, 0);
+          }
+        
+          30%, 50%, 70% {
+            transform: translate3d(-4px, 0, 0);
+          }
+        
+          40%, 60% {
+            transform: translate3d(4px, 0, 0);
+          }
+        }
+              
+              
+             .spinner {
+          width: 40px;
+          height: 40px;
+        
+          position: relative;
+          margin: 100px auto;
+        }
+        
+        .double-bounce1, .double-bounce2 {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background-color: #333;
+          opacity: 0.6;
+          position: absolute;
+          top: 0;
+          left: 0;
+          
+          -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+          animation: sk-bounce 2.0s infinite ease-in-out;
+        }
+        
+        .double-bounce2 {
+          -webkit-animation-delay: -1.0s;
+          animation-delay: -1.0s;
+        }
+        
+        @-webkit-keyframes sk-bounce {
+          0%, 100% { -webkit-transform: scale(0.0) }
+          50% { -webkit-transform: scale(1.0) }
+        }
+        
+        @keyframes sk-bounce {
+          0%, 100% { 
+            transform: scale(0.0);
+            -webkit-transform: scale(0.0);
+          } 50% { 
+            transform: scale(1.0);
+            -webkit-transform: scale(1.0);
+          }
+        }
+    </style>
+ 
+  </head>
+ 
+  <body>
+      <div class="container">
+            <div class="container bajo text-center sombra">
+               <h1 class="text-center">Encuentra artistas y grupos similares a los que escuchas</h1>
+               <div id="searchbox">
+                 <form class="">
+                     <div class="form-group col-xs-12 col-md-6 col-md-push-3">
+                         <label for="search" class="sr-only ">Introduce un artista o grupo para buscar similare</label>
+                         <input type="search" class="form-control" id="searchArtist" placeholder="ex: Iron Maiden" value="">
+                     </div>
+                     <button type="button" class="btn" id="go"><span class="glyphicon glyphicon-search"></span></button>
+                 </form>
+              </div>
+            </div>
+            <div id="info" class="container bajo"></div>
+            <div></div>
+            <div id="results" class="container bajo"></div>
+      </div>
+  
+      
+      
+      <script>
+        
+          var cogerDatos =  document.getElementById("go");
+          
+          //Función que se inicia con click
+          cogerDatos.addEventListener("click", function(e){
+                var loader=document.getElementById("results")
+                loader.innerHTML ='<div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>'
+                
+                var clean=document.getElementById("info");
+                clean.innerHTML='<div></div>'
+              
+                var artist = document.getElementById("searchArtist").value.trim();
+                
+                // validación de datos  de entrada
+                if(typeof(artist) === "string") {
+      	        	artist = artist.toLowerCase();
+      	        	artist= artist.split(" ")
+      	        	
+      	        	//transformamos el nombre del grupo para que tenga la forma necesaria para urlFinal
+      	        	var artistU = "";
+                  for (var i=0; i < artist.length; i++) {
+                      artistU +=(artist[i] + "-");
+                  }
+                  
+                  artistU=artistU.slice(0,-1);
+                   
+                   
+                  //transformamos el nombre del grupo para que tenga la forma necesaria para urlInfo 
+                	var artistN = "";
+                  for (var i=0; i < artist.length; i++) {
+                    artistN +=(artist[i] + "%20");
+                  }
+                  
+                  artistN=artistN.slice(0,-3);
+                  
+
+                      
+                var apiKey = "apikey"
+                var urlFinal = "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist="+artistU+"&api_key="+apiKey+"&format=json";
+                var urlInfo = "https://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist="+artistN+"&api_key="+apiKey+"&format=json";
+          
+             
+                //llamando a las funciones para información de artista y artistas similares
+                Ajax(urlInfo, printInfo);
+                Ajax(urlFinal, printResults);
+                
+                
+              }
+               else {
+                   console.log ("hay un error")
+               } //Fin validación de datos  de entrada
+  
+          });
+          //Fin función click
+          
+          
+          //Pintar información de artista
+          function printInfo(datos){
+            var artistPrint = document.getElementById("info");
+            var artistImage = datos.artist.image[2]["#text"];
+            var artistBio = datos.artist.bio.summary;
+            
+            var userArtist = document.getElementById("searchArtist").value.trim();
+              userArtist=userArtist.toLowerCase();
+              userArtist= userArtist.charAt(0).toUpperCase()+ userArtist.slice(1);
+            
+            
+            artistPrint.innerHTML += '<div class="sombra col-md-12"><h2 class="text-center">'+userArtist+'</h2><div class="col-md-4"><img class="img-responsive" src="'+artistImage+'"></div><div class="col-md-8"><h3>Bio:</h3><p>'+artistBio+'</p></div></div>'
+           
+          }
+          
+          
+          
+          //Pintar artistas similares    
+          function printResults(datos){
+            
+            var userArtist = document.getElementById("searchArtist").value.trim();
+              userArtist=userArtist.toLowerCase();
+              userArtist= userArtist.charAt(0).toUpperCase()+ userArtist.slice(1);
+              
+            var erase = document.getElementById("results");
+            erase.innerHTML ='<div class="sombra"><h2 class="text-center">Artistas similares a: '+userArtist+'</h2>'
+           
+            for (var i = 0;i<datos.similarartists.artist.length;i++){
+                var name = datos.similarartists.artist[i].name
+                var image = datos.similarartists.artist[i].image[2]["#text"]
+                var print=document.getElementById("results")
+                print.innerHTML += '<div class="col-md-3 sombra"><div class="caja text-center"><h3>'+name+'</h3> <img class="img-responsive" src="'+image+'"></div>';
+            }
+           
+            print.innerHTML += '</div>'
+          }
+           
+        //llamada AJAX
+           function Ajax(url,callback) {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", url, true);
+                xmlHttp.onreadystatechange = function() {
+      
+                    if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                        var datos = (JSON.parse(xmlHttp.responseText));
+                        callback(datos);
+                    } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                        console.error("ERROR! 404");
+                        console.info(JSON.parse(xmlHttp.responseText));
+                    }
+                };
+                
+                xmlHttp.send();
+            }
+  
+    </script>
+  
+      
+  </body>
+</html>
