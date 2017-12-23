@@ -5,7 +5,11 @@ var idLista = [];
 var idSeleccionado = '';
 
 /* PETICION AJAX   http://airemad.com/api/v1/pollution/S056 es la buena*/
-//refreshButton.addEventListener ('click', llamandoApi());
+refreshButton.addEventListener ('click', llamandoApi);
+
+function llamandoApi(){
+ console.log('cucu');  // meter aki la ejecución de toda la llamada a api
+}
 
 var resultados = [];
 var url = 'http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution';
