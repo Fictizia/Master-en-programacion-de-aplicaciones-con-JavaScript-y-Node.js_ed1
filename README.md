@@ -97,6 +97,7 @@ Fecha | Teoría | Recursos | Contenido
 20/12/2017 | [Clase 32](teoria/dia32.md) | [Clase 32](recursos/dia32.md) | POO
 21/12/2017 | Clase 33 | Clase 33 | ¡Invitado sorpresa!
 22/12/2017 | [Clase 34](teoria/dia34.md) | Clase 34 | Tiempo de proyectos
+08/01/2018 | Clase 35 | Clase 35 | Entrega de proyecto personal
 
 Temario
 =================
