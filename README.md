@@ -98,6 +98,8 @@ Fecha | Teoría | Recursos | Contenido
 21/12/2017 | Clase 33 | Clase 33 | ¡Invitado sorpresa!
 22/12/2017 | [Clase 34](teoria/dia34.md) | Clase 34 | Tiempo de proyectos
 08/01/2018 | Clase 35 | Clase 35 | Entrega de proyecto personal
+09/01/2018 | [Clase 36](teoria/dia36.md) | [Clase 36](recursos/dia36.md) | LocalStorage & ContentEditable
+
 
 Temario
 =================
