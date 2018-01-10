@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: Impact;
 }
 .general-container{
     display: flex;
@@ -21,6 +22,8 @@ body {
     font-size: 50px;
     padding: 10px;
     box-sizing: border-box;
+    text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+    letter-spacing: 2px;
 }
 .preview .preview-image-container .preview-text-top {
     top: 0;

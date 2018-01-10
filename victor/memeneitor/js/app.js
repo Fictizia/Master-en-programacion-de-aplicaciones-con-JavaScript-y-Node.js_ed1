@@ -28,16 +28,21 @@ var app = {
             imagePreview.height > 0 ? canvas.height = imagePreview.height : canvas.height = 300
 
             context.drawImage(imagePreview, 0, 0);
-            context.font = properties.textSize +'px helvetica';
+            /*context.font = properties.textSize +'px impact';
             context.fillStyle = properties.textColor;
             context.textAlign = 'center';
             context.textBaseline = 'hanging';
-
+            context.strokeStyle = 'black';*/
+            
             if (textAbove) {
-                context.fillText(textAbove, canvas.width/2, properties.textPadding);
+                app.tools.drawStroked(context, textAbove, canvas.width / 2, properties.textPadding, properties);
+                /*context.strokeText(textAbove, canvas.width/2, properties.textPadding, 2);
+                context.fillText(textAbove, canvas.width/2, properties.textPadding);*/
             }
             if (textBelow) {
-                context.fillText(textBelow, canvas.width/2, canvas.height - properties.textSize - properties.textPadding);
+                app.tools.drawStroked(context, textBelow, canvas.width / 2, canvas.height - properties.textSize - (properties.textPadding / 2), properties);
+                /*context.strokeText(textBelow, canvas.width/2, canvas.height - properties.textSize - properties.textPadding, 2);
+                context.fillText(textBelow, canvas.width/2, canvas.height - properties.textSize - properties.textPadding);*/
             }
 
             return canvas.toDataURL(properties.imageFormat);
@@ -53,12 +58,12 @@ var app = {
             properties = {
                 textSize: 50,
                 textColor: colorText,
-                textPadding: 10,
+                textPadding: 20,
                 imageFormat: 'image/png'
             };
 
             /* Víctor: Como la función createImage nos devuelve la imagen en base64 pues lo cogemos y seteamos el src de la imagen final a la imagen final */
-            var dataUrlImage = app.tools.createImage(imagePreview, textAbove, textBelow, properties);
+            var dataUrlImage = app.tools.createImage(imagePreview, textAbove.toUpperCase(), textBelow.toUpperCase(), properties);
             if(image) {
                 image.src = dataUrlImage;
             } else {
@@ -81,7 +86,7 @@ var app = {
         },
         previewTextEvent: function(input, span) {
             input.addEventListener("keyup", function() {
-                span.innerText = this.value;
+                span.innerText = this.value.toUpperCase();
             });
         },
         previewTextColorEvent: function(input, textTop, textBottom) {
@@ -89,6 +94,16 @@ var app = {
                 textTop.style.color = this.value;
                 textBottom.style.color = this.value;
             });
+        },
+        drawStroked: function(ctx, text, x, y, properties) {
+            ctx.font = properties.textSize +'px impact';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'hanging';
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 8;
+            ctx.strokeText(text, x, y);
+            ctx.fillStyle = properties.textColor;
+            ctx.fillText(text, x, y);
         }
         /* End Victor */
     },
