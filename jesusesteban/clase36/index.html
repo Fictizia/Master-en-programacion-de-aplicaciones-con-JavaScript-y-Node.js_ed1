@@ -36,7 +36,7 @@
 							<input type="tel" class="form-control" id="phone" />
 						</div>
 						<div>
-        					<button type="button" class="btn btn-primary">
+        					<button type="button" class="btn btn-primary" id="contact">
         						Añadir Contacto
         					</button> 
 						</div>
@@ -47,17 +47,17 @@
         		<div>
             		 <ul style="list-style: none; padding-left: 0;">
             		     <li style="display: inline-block; margin-right: 20px;">
-            				<button type="button" class="btn btn-danger">
+            				<button type="button" class="btn btn-danger" id="delete">
             					Borrar Contacto
             				</button> 
                          </li>					         
             		     <li style="display: inline-block; margin-right: 20px;">
-            				<button type="button" class="btn btn-danger">
+            				<button type="button" class="btn btn-danger" id="delete-all">
             					Borrar Todos
             				</button> 
                          </li>					         
             		     <li style="display: inline-block; margin-right: 20px;">
-            				<button type="button" class="btn btn-info">
+            				<button type="button" class="btn btn-info" id="recovery">
             					Recuperar Contacto
             				</button>
                          </li>					         
@@ -68,7 +68,39 @@
 		</div>
 	</div>
 	
-	
+	<script>
+
+	    //Click boton
+	    document.getElementById("contact").addEventListener("click", function(){
+            var nombre = document.getElementById("name").value;
+            var telefono = document.getElementById("phone").value;
+            localStorage.setItem("Nombre", nombre);
+            localStorage.setItem("Teléfono", telefono);
+        });
+	    
+
+        // Borrar Contacto
+	    document.getElementById("delete").addEventListener("click", function(){
+            var nombre = document.getElementById("name").value;
+            var telefono = document.getElementById("phone").value;
+            localStorage.removeItem(nombre);
+            localStorage.removeItem(telefono);
+        });
+
+        // BorrarTodo
+	    document.getElementById("delete-all").addEventListener("click", function(){
+            localStorage.clear();
+        });
+
+        // RecuperarContacto
+	    document.getElementById("recovery").addEventListener("click", function(){
+            var nombre = document.getElementById("name").value;
+            var telefono = document.getElementById("phone").value;
+            localStorage.getItem(nombre);
+            localStorage.getItem(telefono);
+        });
+	    
+	</script>
 
 </div>
 </body>
