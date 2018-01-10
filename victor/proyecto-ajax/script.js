@@ -5,14 +5,16 @@
         request: function(url, callback) {
             var xmlHttp = new XMLHttpRequest();
             
-            loader.load();
+            loader.show();
             
             xmlHttp.onreadystatechange = function() {
                 if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
                     callback(JSON.parse(xmlHttp.responseText));
+                    loader.hide();
                 } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
-                    console.error("ERROR! 404");
+                    alert("Ups, algo fue mal");
                     console.info(JSON.parse(xmlHttp.responseText));
+                    loader.hide();
                 }
             };
             xmlHttp.open("GET", url, true);
@@ -24,51 +26,43 @@
         search: function() {
             document.querySelector(".search-button").addEventListener("click", function() {
                 if(utils.validator()) {
-                    var url = "";
                     var query = document.querySelector(".search-bar").value;
-                    var limit = document.querySelector(".search-limit-bar").value;
+                    var limit = document.querySelector(".search-limit-bar").value.trim();
                     
-                    if(limit.trim() === "") {
-                        limit = limit.trim();
-                    } else {
-                        var auxLimit = parseInt(limit).toString();
-                        limit = "&limit=" + auxLimit;
-                        
+                    if(limit !== "" && parseInt(limit) >= 0) {
+                        limit = "&limit=" + limit;
                     }
                     
-                    url = URL_ITUNES + "term=" + query + limit;
-                    
-                    ajax.request(url, itunes.setHTML);
+                    ajax.request(URL_ITUNES + "term=" + query + limit, itunes.setHTML);
                 }
             });
         },
-        setHTML: function(json) {
-            var html = "";
+        setHTML: function(data) {
             document.querySelector(".music-container").innerHTML = "";
             
-            if(json.resultCount === 0) {
-                html += "<div class='color-white'><span>No se encontraron resultados.</span></div>";
+            if(data.resultCount === 0) {
+                var html = "<div class='color-white'><span>No se encontraron resultados.</span></div>";
             } else {
-                html += "<div class='color-white'><span>Número de resultados: " + json.resultCount + "</span></div>";
-                json.results.forEach(function(e, i) {
+                var html = "<div class='color-white'><span>Número de resultados: " + data.resultCount + "</span></div>";
+                data.results.forEach(function(element, i) {
                     html += "<div class='music-box'>" +
                                 "<div class='music-image'>" +
-                                    "<img src='" + e.artworkUrl30 + "' />" +
+                                    "<img src='" + element.artworkUrl30 + "' />" +
                                 "</div>" +
                                 "<div class='track-name'>" +
-                                    "<span>" + e.trackName + "</span>" +
+                                    "<span>" + element.trackName + "</span>" +
                                 "</div>"+
                                 "<div class='track-time'>" +
-                                    "<span>" + utils.setTime(e.trackTimeMillis) + "</span>" +
+                                    "<span>" + utils.setTime(element.trackTimeMillis) + "</span>" +
                                 "</div>" +
                                 "<div class='artist-link'>" +
-                                    "<a href='" + e.artistViewUrl + "' title='Ver página del artista' target='_blank'>" + e.artistName + "</a>" +
+                                    "<a href='" + element.artistViewUrl + "' title='Ver página del artista' target='_blank'>" + element.artistName + "</a>" +
                                 "</div>" +
                                 "<div class='links'>" +
-                                    "<a href='" + e.trackViewUrl + "'title='Ver álbum' target='_blank'><img src='img/icon-eye.svg'/></a>" +
+                                    "<a href='" + element.trackViewUrl + "'title='Ver álbum' target='_blank'><img src='img/icon-eye.svg'/></a>" +
                                     "<img class='link-play' src='img/icon-play.svg' />" +
                                     "<img class='link-pause' src='img/icon-pause.svg' />" +
-                                    "<audio><source src='" + e.previewUrl + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>" +
+                                    "<audio><source src='" + element.previewUrl + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>" +
                                 "</div>" +
                             "</div>";
                 });
@@ -77,8 +71,6 @@
             document.querySelector(".music-container").innerHTML = html;
                 
             itunes.activeAudio();
-            
-            loader.delete();
         },
         activeAudio: function() {
             var plays = document.querySelectorAll(".link-play");
@@ -86,17 +78,16 @@
             var audios = document.querySelectorAll("audio");
             
             if(plays.length > 0) {
-                audios.forEach(function(e, i) {
-                    e.onended = function() {
+                audios.forEach(function(audioElement, i) {
+                    audioElement.onended = function() {
                          this.currentTime = 0;
-                         e.parentNode.querySelector(".link-play").style.display = "inline";
-                         e.parentNode.querySelector(".link-pause").style.display = "none";
+                         audioElement.parentNode.querySelector(".link-play").style.display = "inline";
+                         audioElement.parentNode.querySelector(".link-pause").style.display = "none";
                     };
                 });
                 
-                plays.forEach(function(e, i) {
-                    e.addEventListener("click", function() {
-                        
+                plays.forEach(function(playElement, i) {
+                    playElement.addEventListener("click", function() {
                         audios.forEach(function(element, index) {
                             if(!element.paused) {
                                 element.pause();
@@ -111,8 +102,8 @@
                     });
                 });
                 
-                pauses.forEach(function(e, i) {
-                    e.addEventListener("click", function() {
+                pauses.forEach(function(pauseElement, i) {
+                    pauseElement.addEventListener("click", function() {
                         this.style.display = "none";
                         this.parentNode.querySelector(".link-play").style.display = "inline";
                         this.parentNode.querySelector("audio").pause();
@@ -123,39 +114,21 @@
     }
 
     var loader = {
-        load: function() {
-            if(!document.querySelector(".loader")) {
-                document.querySelector("body").innerHTML += '<div class="loader"><svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="lds-cube"><g transform="translate(25,25)"><rect x="-20" y="-20" width="40" height="40" fill="#999999"><animateTransform attributeName="transform" type="scale" calcMode="spline" values="1.5;1" keyTimes="0;1" dur="1s" keySplines="0 0.5 0.5 1" begin="-0.3s" repeatCount="indefinite"></animateTransform></rect></g><g transform="translate(75,25)"><rect x="-20" y="-20" width="40" height="40" fill="#ebebeb"><animateTransform attributeName="transform" type="scale" calcMode="spline" values="1.5;1" keyTimes="0;1" dur="1s" keySplines="0 0.5 0.5 1" begin="-0.2s" repeatCount="indefinite"></animateTransform></rect></g><g transform="translate(25,75)"><rect x="-20" y="-20" width="40" height="40" fill="#ebebeb"><animateTransform attributeName="transform" type="scale" calcMode="spline" values="1.5;1" keyTimes="0;1" dur="1s" keySplines="0 0.5 0.5 1" begin="0s" repeatCount="indefinite"></animateTransform></rect></g><g transform="translate(75,75)"><rect x="-20" y="-20" width="40" height="40" fill="#999999"><animateTransform attributeName="transform" type="scale" calcMode="spline" values="1.5;1" keyTimes="0;1" dur="1s" keySplines="0 0.5 0.5 1" begin="-0.1s" repeatCount="indefinite"></animateTransform></rect></g></svg><p><strong>Estamos cargando su contenido...</strong></p></div>';
-                itunes.search();
-            }
+        show: function() {
+            document.querySelector(".loader").style.display = "flex";
+            itunes.search();
         },
-        delete: function() {
-            if(document.querySelector(".loader")) {
-                setTimeout(function() {
-                    document.querySelector(".loader").remove();
-                }, 1500);
-            }
+        hide: function() {
+            setTimeout(function() {
+                document.querySelector(".loader").style.display = "none";
+            }, 1500);
         }
     }
     
     var utils = {
         validator: function() {
-            var querySearchInput = "", queryLimitSearchInput = "";
-            
-            if(document.querySelector(".search-bar")) {
-                querySearchInput = document.querySelector(".search-bar").value;
-            } else {
-                return false;
-            }
-            
-            if(document.querySelector(".search-limit-bar")) {
-                queryLimitSearchInput = document.querySelector(".search-limit-bar").value;
-            } else {
-                return false;
-            }
-            
-            querySearchInput = querySearchInput.trim().toString();
-            queryLimitSearchInput = queryLimitSearchInput.trim().toString();
+            var querySearchInput = document.querySelector(".search-bar").value.trim();
+            var queryLimitSearchInput = document.querySelector(".search-limit-bar").value.trim();
             
             if(querySearchInput === "") { 
                 alert("El campo de búsqueda no debe estar vacío.");
@@ -171,10 +144,9 @@
         },
         setTime: function(time) {
             var date = new Date(time);
-            var minutes = "", seconds = "";
             
-            minutes = date.getMinutes() <= 9 ? "0" + date.getMinutes().toString() : date.getMinutes().toString();
-            seconds = date.getSeconds() <= 9 ? "0" + date.getSeconds().toString() : date.getSeconds().toString();
+            var minutes = date.getMinutes() <= 9 ? "0" + date.getMinutes().toString() : date.getMinutes().toString();
+            var seconds = date.getSeconds() <= 9 ? "0" + date.getSeconds().toString() : date.getSeconds().toString();
             
             return minutes + ":" + seconds;
         }

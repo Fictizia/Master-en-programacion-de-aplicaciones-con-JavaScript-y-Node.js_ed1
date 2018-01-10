@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+}
+.general-container{
+    display: flex;
+    flex-flow: column;
+}
+
+/* Victor: Estilos del preview de la imagen; */
+.preview .preview-image-container {
+    position: relative;
+    display: inline-block;
+}
+.preview .preview-image-container .preview-text-top,
+.preview .preview-image-container .preview-text-bottom {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.preview .preview-image-container .preview-text-top {
+    top: 0;
+}
+.preview .preview-image-container .preview-text-bottom {
+    bottom: 0;
+}
+/* End Victor */
+.button {
+    width: 80px;
+    height: 32px;
+    text-align: center;
+    border-radius: 2px;
+    font-family: monospace;
+    padding-top: 13px;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #34495e;
+    font-weight: bold;
+    cursor: pointer;
+}
+.first_text{
+    display: block;
+}
+
+.create {
+    background-color: #f1c40f;
+}
+
+.convert {
+    background-color: #2ecc71;
+}
