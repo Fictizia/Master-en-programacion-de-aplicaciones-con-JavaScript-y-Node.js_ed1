@@ -100,6 +100,8 @@ Fecha | Teoría | Recursos | Contenido
 08/01/2018 | Clase 35 | Clase 35 | Entrega de proyecto personal
 09/01/2018 | [Clase 36](teoria/dia36.md) | [Clase 36](recursos/dia36.md) | LocalStorage & ContentEditable
 10/01/2018 | [Clase 37](teoria/dia37.md) | [Clase 37](recursos/dia37.md) | WebSockets 
+12/01/2018 | [Clase 38](teoria/dia38.md) | Clase 38 | [#OpenSourceFriday](https://opensourcefriday.com)
+
 
 
 Temario
