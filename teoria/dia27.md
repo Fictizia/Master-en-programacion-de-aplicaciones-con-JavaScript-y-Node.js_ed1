@@ -829,6 +829,45 @@ Todos los ejercicios deben seguir el mismo proceso:
 
 ```javascript
 	// Tests
+	QUnit.module( "Módulo de conversionRomana()", function(){
+
+	    QUnit.test("Verificar números", function() {
+			deepEqual(conversionRomana(1), "I", "1 = I");
+			deepEqual(conversionRomana(4), "IV", "4 = IV");
+			deepEqual(conversionRomana(5), "V", "5 = V");
+			deepEqual(conversionRomana(6), "VI", "6 = VI");
+			deepEqual(conversionRomana(7), "VII", "7 = VII");
+			deepEqual(conversionRomana(8), "VIII", "8 = VIII");
+			deepEqual(conversionRomana(9), "IX", "9 = IX");
+			deepEqual(conversionRomana(10), "X", "10 = X");
+			deepEqual(conversionRomana(12), "XII", "12 = XII");
+			deepEqual(conversionRomana(23), "XXIII", "23 = XXIII");
+			deepEqual(conversionRomana(34), "XXXIV", "23 = XXIII");
+			deepEqual(conversionRomana(45), "XLV", "45 = XLV");
+			deepEqual(conversionRomana(50), "L", "50 = L");
+	    }); 
+
+	    QUnit.test("Verificar cadenas", function() {
+			deepEqual(conversionRomana("1"), "I", "\"1\" = I");
+			deepEqual(conversionRomana("4"), "IV", "\"4\" = IV");
+			deepEqual(conversionRomana("5"), "V", "\"5\" = V");
+			deepEqual(conversionRomana("6"), "VI", "\"6\" = VI");
+			deepEqual(conversionRomana("7"), "VII", "\"7\" = VII");
+			deepEqual(conversionRomana("8"), "VIII", "\"8\" = VIII");
+			deepEqual(conversionRomana("9"), "IX", "\"9\" = IX");
+			deepEqual(conversionRomana("10"), "X", "\"10\" = X");
+			deepEqual(conversionRomana("12"), "XII", "\"12\" = XII");
+			deepEqual(conversionRomana("23"), "XXIII", "\"23\" = XXIII");
+			deepEqual(conversionRomana("34"), "XXXIV", "\"23\" = XXIII");
+			deepEqual(conversionRomana("45"), "XLV", "\"45\" = XLV");
+			deepEqual(conversionRomana("50"), "L", "\"50\" = L");
+	    });
+
+	    QUnit.test("Verificar otros", function() {
+			notOk(conversionRomana(51), "51 - fuera de rango");
+			notOk(conversionRomana(-1), "-1 - fuera de rango");
+	    }); 
+    });
 
 	// Código
 	
