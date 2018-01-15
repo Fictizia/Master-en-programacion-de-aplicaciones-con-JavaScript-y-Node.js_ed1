@@ -102,7 +102,7 @@ Fecha | Teoría | Recursos | Contenido
 10/01/2018 | Clase 37 | Clase 37 | LocalStorage en la práctica
 11/01/2018 | [Clase 38](teoria/dia38.md) | [Clase 38](recursos/dia38.md) | WebSockets 
 12/01/2018 | [Clase 39](teoria/dia39.md) | Clase 39 | [#OpenSourceFriday](https://opensourcefriday.com)
-
+15/01/2018 | [Clase 40](teoria/dia40.md) | Clase 40 | Soluciones y dudas
 
 Temario
 =================
