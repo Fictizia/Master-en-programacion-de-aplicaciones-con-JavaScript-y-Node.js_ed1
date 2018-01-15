@@ -729,6 +729,25 @@ Todos los ejercicios deben seguir el mismo proceso:
 
 ```javascript
 	// Tests
+	QUnit.module( "Módulo de verificadorDeFechas()", function(){
+		
+		var condicion = "Error! los datos no son correctos!";
+		var condicion2 = {fecha: "24/03/2016", fechaCompleta: "jueves, 24 de marzo de 2016"};
+	    
+	    QUnit.test("Entrada de datos", function() {
+			deepEqual(verificadorDeFechas(24,3,2016), condicion2, "(24/03/2016) Fecha completa");
+			deepEqual(verificadorDeFechas("24","3","2016"), condicion2, "(24/03/2016) Fecha completa (string)");
+	    	deepEqual(verificadorDeFechas(-1, 1, 1980), condicion, "(-1) Día fuera de rango");
+	    	deepEqual(verificadorDeFechas(32, 1, 1980), condicion, "(32) Día fuera de rango");
+	    	deepEqual(verificadorDeFechas("hola", 1, 1980), condicion, "(\"hola\") Día no válido");
+	    	deepEqual(verificadorDeFechas(1, -1, 1980), condicion, "(-1) Mes fuera de rango");
+	    	deepEqual(verificadorDeFechas(1, 13, 1980), condicion, "(13) Mes fuera de rango");
+	    	deepEqual(verificadorDeFechas(1, "hola", 1980), condicion, "(\"hola\") Mes no válido");
+	    	deepEqual(verificadorDeFechas(1, 1, 1969), condicion, "(1969) Mes fuera de rango");
+	    	deepEqual(verificadorDeFechas(1, 1, "hola"), condicion, "(\"hola\") Mes no válido");
+	    }); 
+
+    });
 
 	// Código
 	function verificadorDeFechas(day, month, year) {
