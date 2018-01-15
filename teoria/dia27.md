@@ -785,6 +785,17 @@ Todos los ejercicios deben seguir el mismo proceso:
 
 ```javascript
 	// Tests
+	QUnit.module( "Módulo de cuantasVeces()", function(){
+
+	    QUnit.test("Verificar resultados", function() {
+	    	deepEqual(cuantasVeces("a", "amigas, amigos, y demas... gentes"), 4, "(a) 4 veces en \"amigas, amigos, y demas... gentes\"");
+	    	deepEqual(cuantasVeces("x", "amigas, amigos, y demas... gentes"), 0, "(x) 0 veces en \"amigas, amigos, y demas... gentes\"");
+	    	notOk(cuantasVeces(), "false, sin parámetros");
+	    	notOk(cuantasVeces(1, 1123), "false, usando números");
+	    	notOk(cuantasVeces({letra:"a"}, {texto:"hola"}), "false, usando objetos");
+	    }); 
+
+    });
 
 	// Código
 	
