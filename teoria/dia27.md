@@ -933,6 +933,4 @@ Todos los ejercicios deben seguir el mismo proceso:
 - Requisitos: 
 	- Utiliza una estructura de archivos acorde
 
-```
-    // Tu solución
-```
+- [Solución](../OTROS/test_completo/index.html)
