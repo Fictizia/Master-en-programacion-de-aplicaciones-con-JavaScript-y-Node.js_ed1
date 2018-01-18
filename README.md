@@ -105,6 +105,9 @@ Fecha | Teoría | Recursos | Contenido
 15/01/2018 | [Clase 40](teoria/dia40.md) | Clase 40 | Soluciones y dudas
 16/01/2018 | [Clase 41](teoria/dia41.md) | [Clase 41](recursos/dia41.md) | Geolocalizacion
 17/01/2018 | [Clase 42](teoria/dia42.md) | [Clase 42](recursos/dia42.md)  | Firebase I
+18/01/2018 | [Clase 43](teoria/dia43.md) | Clase 43 | Practicas de Firebase
+
+
 
 Temario
 =================
