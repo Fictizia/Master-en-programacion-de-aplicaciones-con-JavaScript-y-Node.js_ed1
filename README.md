@@ -106,7 +106,7 @@ Fecha | Teoría | Recursos | Contenido
 16/01/2018 | [Clase 41](teoria/dia41.md) | [Clase 41](recursos/dia41.md) | Geolocalizacion
 17/01/2018 | [Clase 42](teoria/dia42.md) | [Clase 42](recursos/dia42.md)  | Firebase I
 18/01/2018 | [Clase 43](teoria/dia43.md) | Clase 43 | Practicas de Firebase
-
+19/01/2018 | [Clase 44](teoria/dia44.md) | Clase 44 | [#OpenSourceFriday](https://opensourcefriday.com)
 
 
 Temario
