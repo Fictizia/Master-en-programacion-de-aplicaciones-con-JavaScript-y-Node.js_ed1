@@ -99,7 +99,14 @@ Fecha | Teoría | Recursos | Contenido
 22/12/2017 | [Clase 34](teoria/dia34.md) | Clase 34 | Tiempo de proyectos
 08/01/2018 | Clase 35 | Clase 35 | Entrega de proyecto personal
 09/01/2018 | [Clase 36](teoria/dia36.md) | [Clase 36](recursos/dia36.md) | LocalStorage & ContentEditable
-10/01/2018 | [Clase 37](teoria/dia37.md) | [Clase 37](recursos/dia37.md) | WebSockets 
+10/01/2018 | Clase 37 | Clase 37 | LocalStorage en la práctica
+11/01/2018 | [Clase 38](teoria/dia38.md) | [Clase 38](recursos/dia38.md) | WebSockets 
+12/01/2018 | [Clase 39](teoria/dia39.md) | Clase 39 | [#OpenSourceFriday](https://opensourcefriday.com)
+15/01/2018 | [Clase 40](teoria/dia40.md) | Clase 40 | Soluciones y dudas
+16/01/2018 | [Clase 41](teoria/dia41.md) | [Clase 41](recursos/dia41.md) | Geolocalizacion
+17/01/2018 | [Clase 42](teoria/dia42.md) | [Clase 42](recursos/dia42.md)  | Firebase I
+18/01/2018 | [Clase 43](teoria/dia43.md) | Clase 43 | Practicas de Firebase
+19/01/2018 | [Clase 44](teoria/dia44.md) | Clase 44 | [#OpenSourceFriday](https://opensourcefriday.com)
 
 
 Temario
