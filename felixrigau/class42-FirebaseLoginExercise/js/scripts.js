@@ -12,25 +12,30 @@
     var database = firebase.database();
 
 // Empty JS for your own code to be here
-function addBehaviorToLoginBUtton() {
-  var loginButton = document.querySelector('.register');
-  loginButton.addEventListener('click',loginUser)
+var APP = {
+  init:function () {
+    APP.behavior.addBehaviorToLoginBUtton();
+  },
+  
+  behavior:{
+    addBehaviorToLoginBUtton:function () {
+      var loginButton = document.querySelector('.register');
+      loginButton.addEventListener('click',APP.db.addUser);
+    }
+  },
+  
+  db:{
+    addUser:function () {
+      var name = document.querySelector('.name').value;
+      var email = document.querySelector('.email').value;
+      var password = document.querySelector('.password').value;
+      database.ref('users/' + Date.now()).set({
+        username: name,
+        email: email,
+        password : password
+      });
+      document.querySelector('form').reset();
+    }
+  }
 }
 
-function addUser(event) {
-  var name = document.querySelector('.name').value;
-  var email = document.querySelector('.email').value;
-  var password = document.querySelector('.password').value;
-  database.ref('users/' + Date.now()).set({
-    username: name,
-    email: email,
-    password : password
-  });
-  document.querySelector('form').reset();
-}
-
-
-
-(function () {
-  addBehaviorToLoginBUtton();
-})();
