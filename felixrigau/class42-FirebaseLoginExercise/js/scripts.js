@@ -14,8 +14,8 @@
 // Empty JS for your own code to be here
 var APP = {
   init:function () {
-    APP.behavior.addBehaviorToLoginBUtton();
     APP.db.getAllUser();
+    APP.behavior.addBehaviorToLoginBUtton();
   },
   
   behavior:{
@@ -30,16 +30,31 @@ var APP = {
       var name = document.querySelector('.name').value;
       var email = document.querySelector('.email').value;
       var password = document.querySelector('.password').value;
-      database.ref('users/' + Date.now()).set({
-        username: name,
-        email: email,
-        password : password
-      });
+      if (!APP.db.userExist(email)) {
+        database.ref('users/' + Date.now()).set({
+          id:email,
+          username: name,
+          email: email,
+          password : password
+        });
+      } else {
+        console.log('User already exist.')
+      }
       document.querySelector('form').reset();
     },
     
+    userExist:function (email) {
+      database.ref('/users').orderByChild("email").equalTo(email).once('value',function (snapshot) {
+        if (snapshot.val()) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+    },
+    
     getAllUser:function () {
-      database.ref('users/').on('value',function (snapshot) {
+      database.ref('/users').on('value',function (snapshot) {
         if (snapshot.val()) {
           APP.view.updateUserList(snapshot.val());
         } else {
@@ -54,10 +69,10 @@ var APP = {
       var userList = document.querySelector('.user-list');
       userList.innerHTML = '';
       for(var key in users){
-        userList.innerHTML += `<blockquote>
+        userList.innerHTML += `<blockquote data-user-id="${key}">
   				<p>
   					${users[key].username}
-  				</p> <small>${users[key].email}<cite>${key}</cite></small>
+  				</p> <small>${users[key].email}</small>
   			</blockquote>`;
       }
     }
