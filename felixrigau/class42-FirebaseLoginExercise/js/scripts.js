@@ -15,6 +15,7 @@
 var APP = {
   init:function () {
     APP.behavior.addBehaviorToLoginBUtton();
+    APP.db.getAllUser();
   },
   
   behavior:{
@@ -35,7 +36,32 @@ var APP = {
         password : password
       });
       document.querySelector('form').reset();
+    },
+    
+    getAllUser:function () {
+      database.ref('users/').on('value',function (snapshot) {
+        if (snapshot.val()) {
+          APP.view.updateUserList(snapshot.val());
+        } else {
+          console.log('There isn\'t datas to show');
+        }
+      })
+    }
+  },
+  
+  view:{
+    updateUserList:function (users) {
+      var userList = document.querySelector('.user-list');
+      userList.innerHTML = '';
+      for(var key in users){
+        userList.innerHTML += `<blockquote>
+  				<p>
+  					${users[key].username}
+  				</p> <small>${users[key].email}<cite>${key}</cite></small>
+  			</blockquote>`;
+      }
     }
   }
 }
 
+APP.init();
