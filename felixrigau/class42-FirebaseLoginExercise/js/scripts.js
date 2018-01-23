@@ -22,6 +22,11 @@ var APP = {
     addBehaviorToLoginBUtton:function () {
       var loginButton = document.querySelector('.register');
       loginButton.addEventListener('click',APP.db.addUser);
+    },
+    
+    addBehaviorToDeleteBUtton:function () {
+      var loginButton = document.querySelector('.register');
+      loginButton.addEventListener('click',APP.db.addUser);
     }
   },
   
@@ -73,6 +78,7 @@ var APP = {
   				<p>
   					${users[key].username}
   				</p> <small>${users[key].email}</small>
+  				<div class="actions"><i class="delete fa fa-trash"></i></div>
   			</blockquote>`;
       }
     }
