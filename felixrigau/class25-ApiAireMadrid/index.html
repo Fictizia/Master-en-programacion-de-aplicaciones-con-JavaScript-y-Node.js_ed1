@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hola Madrid!</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+  <div class="loader hidden"></div>
+  <div class="general-container">
+    <h1 class="title-page">Hola Madrid!</h1>
+    <h2 class="subtitle-page">Conozca el estado del tiempo y la contaminación en diferentes puntos de Madrid</h2>
+    <div class="combo-container">
+      <select name="stations" class="stations">
+        <option value="">Seleccione una estación...</option>
+      </select>
+    </div>
+    <div class="info-container hidden">
+      <div class="station-info">
+        <div class="weather-container">
+          <div class="day-info-container">
+          </div>
+          <div class="image-container">
+            <img src="http://informo.munimadrid.es/informo/Camaras/Camara00004_mdf.jpg?v=39541" alt="">
+          </div>
+        </div>
+        <div class="pollution">
+          <h3 class="subtitle-page hidden">- Lo sentimos, no hay mediciones de contaminación para esta estación -</h3>
+          <ul class="parameter-list">
+          </ul>
+        </div>
+      </div>
+      <div class="weater-prediction">
+        <ul class="days">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
