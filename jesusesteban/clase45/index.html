@@ -24,6 +24,15 @@
 			</div>
             <div class="row">
 				<div class="col-md-6">
+                    <ul>
+                        <li>
+                            <span>Película</span>||
+                            <a href="#" class="edit-movie">Editar</a>||
+                            <a href="#" class="delete-movie">Borrar</a>
+                        </li>
+                    </ul>
+				</div>
+				<div class="col-md-6">
 					<form role="form">
 						<div class="form-group">
 							<label for="search-movie">Busca tu película</label>
@@ -34,102 +43,27 @@
 						</button>
 					</form>
 				</div>
-				<div class="col-md-6">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>
-									#
-								</th>
-								<th>
-									Product
-								</th>
-								<th>
-									Payment Taken
-								</th>
-								<th>
-									Status
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									1
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									01/04/2012
-								</td>
-								<td>
-									Default
-								</td>
-							</tr>
-							<tr class="active">
-								<td>
-									1
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									01/04/2012
-								</td>
-								<td>
-									Approved
-								</td>
-							</tr>
-							<tr class="success">
-								<td>
-									2
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									02/04/2012
-								</td>
-								<td>
-									Declined
-								</td>
-							</tr>
-							<tr class="warning">
-								<td>
-									3
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									03/04/2012
-								</td>
-								<td>
-									Pending
-								</td>
-							</tr>
-							<tr class="danger">
-								<td>
-									4
-								</td>
-								<td>
-									TB - Monthly
-								</td>
-								<td>
-									04/04/2012
-								</td>
-								<td>
-									Call in to confirm
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+
+<!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBWdVvlQmquX4ui3-mF-IFEL-oulrhCdFg",
+        authDomain: "clase45-474f1.firebaseapp.com",
+        databaseURL: "https://clase45-474f1.firebaseio.com",
+        projectId: "clase45-474f1",
+        storageBucket: "",
+        messagingSenderId: "688264605206"
+      };
+      firebase.initializeApp(config);
+    </script>
+
 
 
 </body>
