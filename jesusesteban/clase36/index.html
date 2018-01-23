@@ -36,7 +36,7 @@
 							<input type="tel" class="form-control" id="phone" />
 						</div>
 						<div>
-        					<button type="button" class="btn btn-primary" id="contact">
+        					<button type="button" class="btn btn-primary" id="anadir">
         						Añadir Contacto
         					</button> 
 						</div>
@@ -64,20 +64,59 @@
             		 </ul>
         		</div>
         	</div>	
+        	<div class="row" style="padding-top: 40px;">
+        		<div>
+            		 <ul id="lista">
+            		 </ul>
+        		</div>
+        	</div>	
+
+
 			
 		</div>
 	</div>
 	
 	<script>
 
+	
+		// Inputs
+	    var nombre = document.getElementById("name").value;
+	    var telefono = document.getElementById("phone").value;
+
+	    var slcLista = document.getElementById("lista");
+
+		// Funcion
+		function saveItem(value){
+			
+			var currenTask = JSON.parse(localStorage.getItem("nombre") || []);
+			
+			currenTask.push(value);
+			
+			localStorage.setItem("Nombre", currenTask);
+		}
+
+		function updateHtml(item){
+			slcLista.innerHTML += `<li>${item}</Li>`;
+		}
+
+
+
 	    //Click boton
-	    document.getElementById("contact").addEventListener("click", function(){
+	    document.getElementById("anadir").addEventListener("click", function(){
+            saveItem;
+        });
+	    
+	    
+	    
+	    
+	    /*
+	    document.getElementById("anadir").addEventListener("click", function(){
             var nombre = document.getElementById("name").value;
             var telefono = document.getElementById("phone").value;
             localStorage.setItem("Nombre", nombre);
             localStorage.setItem("Teléfono", telefono);
         });
-	    
+	    */
 
         // Borrar Contacto
 	    document.getElementById("delete").addEventListener("click", function(){
