@@ -108,6 +108,7 @@ Fecha | Teoría | Recursos | Contenido
 18/01/2018 | [Clase 43](teoria/dia43.md) | Clase 43 | Practicas de Firebase
 19/01/2018 | [Clase 44](teoria/dia44.md) | Clase 44 | [#OpenSourceFriday](https://opensourcefriday.com)
 22/01/2018 | [Clase 45](teoria/dia45.md) | [Clase 45](recursos/dia45.md) | Patrones I
+23/01/2018 | [Clase 46](teoria/dia46.md) | [Clase 46](recursos/dia46.md) | Patrones II
 
 
 Temario
