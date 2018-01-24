@@ -27,6 +27,7 @@ var APP = {
                 if (snapshot.val()) {
                     APP.view.updateFilmList(snapshot.val())
                 } else {
+                    APP.view.updateFilmList(snapshot.val())
                     console.log('No hay películas en la base de datos.')
                 }
             })
