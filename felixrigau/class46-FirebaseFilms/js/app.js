@@ -44,10 +44,24 @@ var APP = {
     },
     
     view:{
-        renderFilmList:function () {
-            
+        renderFilmList:function (films) {
+            var filmsUL = document.querySelector('.film-list');
+            filmsUL.innerHTML = '';
+            for(var key in films){
+                filmsUL.innerHTML += `
+                    <li class="film">
+                        <span class="title">${films[key].Title}</span>
+                        <span class="delete">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </span>
+                        <span class="view">
+                            <i class="fa fa-eye" aria-hidden="true"></i>
+                        </span>
+                    </li>
+                `;
+            }
         }
-    }
+    },
     
     tools:{
         makeRequest: function (httpMethod, url, asynchronous, callback) {
