@@ -17,12 +17,13 @@ var APP = {
     
     init:function () {
         APP.behavior.search();
+        APP.behavior.viewAndDelete();
         APP.db.getAllFilm();
     },
     
     db:{
         getAllFilm:function () {
-            database.ref('/films/').on('value',function (snapshot) {
+            database.ref('/films').on('value',function (snapshot) {
                 if (snapshot.val()) {
                     APP.view.updateFilmList(snapshot.val())
                 } else {
@@ -53,6 +54,18 @@ var APP = {
                     return false;
                 }
             })
+        },
+        
+        viewFilm:function (id) {
+            database.ref('/films/'+id).once('value', function (snapshot) {
+                if (snapshot.val()) {
+                    APP.view.updateDetailsFilm(snapshot.val())
+                }
+            })
+        },
+        
+        deleteFilm:function (id) {
+            database.ref('/films').child(id).remove();
         }
     },
     
@@ -68,6 +81,19 @@ var APP = {
                     }
                 }
             })
+        },
+        
+        viewAndDelete:function () {
+            var filmsUL = document.querySelector('.film-list');
+            filmsUL.addEventListener('click',function (e) {
+                if(e.target.nodeName === 'I'){
+                   if (e.target.parentNode.getAttribute('data-type') === 'view') {
+                       APP.db.viewFilm(e.target.parentNode.getAttribute('data-id-film'));
+                   } else {
+                       APP.db.deleteFilm(e.target.parentNode.getAttribute('data-id-film'));
+                   } 
+                }
+            })
         }
     },
     
@@ -79,10 +105,10 @@ var APP = {
                 filmsUL.innerHTML += `
                     <li class="film">
                         <span class="title">${films[key].Title}</span>
-                        <span class="delete" data-id-film="${films[key]}">
+                        <span class="delete" data-id-film="${key}" data-type="delete">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </span>
-                        <span class="view" data-id-film="${films[key]}">
+                        <span class="view" data-id-film="${key}" data-type="view">
                             <i class="fa fa-eye" aria-hidden="true"></i>
                         </span>
                     </li>
