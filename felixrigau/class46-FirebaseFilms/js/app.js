@@ -17,16 +17,43 @@ var APP = {
     
     init:function () {
         APP.behavior.search();
+        APP.db.getAllFilm();
     },
     
-    datas:{
+    db:{
+        getAllFilm:function () {
+            database.ref('/films/').on('value',function (snapshot) {
+                if (snapshot.val()) {
+                    APP.view.updateFilmList(snapshot.val())
+                } else {
+                    console.log('No hay películas en la base de datos.')
+                }
+            })
+        },
+        
         saveFilm:function (film) {
             if (film.Title) {
-                database.ref('/films/'+film.imdbID).set(film);
+                var exist = APP.db.filmExist(film.imdbID);
+                if(!exist){
+                    database.ref('/films/'+film.imdbID).set(film);
+                }else{
+                    console.log('La película ya está registrada en la base de datos.')
+                }
+                
             } else {
                 console.log('La película no existe o no escribió el nombre correctamente.');
             }
         },
+        
+        filmExist:function (id) {
+            database.ref('/films/'+id).once('value', function (snapshot) {
+                if (snapshot.val()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            })
+        }
     },
     
     behavior:{
@@ -35,7 +62,7 @@ var APP = {
             searchInput.addEventListener('keyup',function (e) {
                 if(e.keyCode === 13){
                     if (e.target.value != "" && e.target.value != null) {
-                        APP.tools.makeRequest('GET', APP.urlApi+e.target.value, true, APP.datas.saveFilm);
+                        APP.tools.makeRequest('GET', APP.urlApi+e.target.value, true, APP.db.saveFilm);
                     } else {
                         console.log('Debes escribir el nombre de una película.')
                     }
