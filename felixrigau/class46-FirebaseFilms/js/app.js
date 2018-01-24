@@ -10,6 +10,7 @@ var config = {
     messagingSenderId: "645761269047"
 };
 firebase.initializeApp(config);
+var database = firebase.database();
     
 var APP = {
     urlApi:'http://www.omdbapi.com/?apikey=b426c167&t=',
@@ -21,11 +22,11 @@ var APP = {
     datas:{
         saveFilm:function (film) {
             if (film.Title) {
-                
+                database.ref('/films/'+film.imdbID).set(film);
             } else {
                 console.log('La película no existe o no escribió el nombre correctamente.');
             }
-        }
+        },
     },
     
     behavior:{
