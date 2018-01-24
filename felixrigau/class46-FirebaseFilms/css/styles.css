@@ -1,0 +1,14 @@
+body{
+  font-family: Lato;
+}
+ul,li{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  display: flex;
+}
+.details{
+  display: flex;
+  flex-direction: column;
+}

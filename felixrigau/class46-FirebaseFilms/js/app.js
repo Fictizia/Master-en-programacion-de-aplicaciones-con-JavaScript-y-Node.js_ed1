@@ -1,29 +1,53 @@
 // Initialize Firebase
-/*global firebase
-  var config = {
+/*global firebase*/
+
+var config = {
     apiKey: "AIzaSyCuyhD-WepVZyPb5OwmEAnarSn5MvD3Xvc",
     authDomain: "myfilms-6b0bc.firebaseapp.com",
     databaseURL: "https://myfilms-6b0bc.firebaseio.com",
     projectId: "myfilms-6b0bc",
     storageBucket: "",
     messagingSenderId: "645761269047"
-  };
-  firebase.initializeApp(config);*/
-
+};
+firebase.initializeApp(config);
+    
 var APP = {
+    urlApi:'http://www.omdbapi.com/?apikey=b426c167&t=',
+    
     init:function () {
-        
+        APP.behavior.search();
     },
     
-    db:{
-        test:function (name) {
-            APP.tools.makeRequest('GET','http://www.omdbapi.com/?apikey=b426c167&t='+name,true,APP.db.testJSON);
-        },
-        
-        testJSON:function (json) {
-            console.log(json)
+    datas:{
+        saveFilm:function (film) {
+            if (film.Title) {
+                
+            } else {
+                console.log('La película no existe o no escribió el nombre correctamente.');
+            }
         }
     },
+    
+    behavior:{
+        search:function () {
+            var searchInput = document.querySelector('.searh');
+            searchInput.addEventListener('keyup',function (e) {
+                if(e.keyCode === 13){
+                    if (e.target.value != "" && e.target.value != null) {
+                        APP.tools.makeRequest('GET', APP.urlApi+e.target.value, true, APP.datas.saveFilm);
+                    } else {
+                        console.log('Debes escribir el nombre de una película.')
+                    }
+                }
+            })
+        }
+    },
+    
+    view:{
+        renderFilmList:function () {
+            
+        }
+    }
     
     tools:{
         makeRequest: function (httpMethod, url, asynchronous, callback) {
@@ -38,7 +62,7 @@ var APP = {
                 return false;
             }
             };
-            request.send(null);
+            request.send();
         },
     }
 };
