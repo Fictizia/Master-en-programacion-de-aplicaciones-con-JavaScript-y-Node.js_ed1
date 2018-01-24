@@ -12,17 +12,23 @@ var buscar = document.getElementById('buttonLookFor');
 * al pulsar en el boton de buscar busca en los datos almacenados
 * devolviendo los datos del usuario
 */
-
+  var arrayNombre = [];
 function guardar(){
   var nombre = document.getElementById('getName').value;
   var mail = document.getElementById('getMail').value;
 
+  var arrayMail = [];
 
   nombre = normalize(nombre);
+  nombre.toLowerCase();
   mail = normalize(mail);
+  mail.toLowerCase();
   console.log(nombre + ' '+ mail);
-  takeData('userName', nombre);
+  userName = takeData('userName', nombre);
+  console.log(userName);
   takeData('userMail', mail);
+  // arrayNombre = arrayNombre.push(userName);
+  return arrayNombre;
 }
 
 
@@ -49,7 +55,7 @@ function takeData(clave, valor) {
 */
 
 function insertData(valor) {
-  
+
 }
 
 btnGuardar.addEventListener("click", guardar);

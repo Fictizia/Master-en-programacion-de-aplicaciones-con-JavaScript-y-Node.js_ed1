@@ -16,12 +16,23 @@ var APP = {
   init:function () {
     APP.db.getAllUser();
     APP.behavior.addBehaviorToLoginBUtton();
+    APP.behavior.addBehaviorToDeleteBUtton();
   },
   
   behavior:{
     addBehaviorToLoginBUtton:function () {
       var loginButton = document.querySelector('.register');
       loginButton.addEventListener('click',APP.db.addUser);
+    },
+    
+    addBehaviorToDeleteBUtton:function () {
+      var userList = document.querySelector('.user-list');
+      userList.addEventListener('click',function (e) {
+        if(e.target.nodeName == "I"){
+          var id = e.target.parentNode.parentNode.getAttribute('data-user-id');
+          APP.db.deleteUser(id);
+        }
+      });
     }
   },
   
@@ -61,6 +72,10 @@ var APP = {
           console.log('There isn\'t datas to show');
         }
       })
+    },
+    
+    deleteUser:function (id) {
+      database.ref('/users').child(id).remove();
     }
   },
   
@@ -73,6 +88,7 @@ var APP = {
   				<p>
   					${users[key].username}
   				</p> <small>${users[key].email}</small>
+  				<div class="actions"><i class="delete fa fa-trash"></i></div>
   			</blockquote>`;
       }
     }
