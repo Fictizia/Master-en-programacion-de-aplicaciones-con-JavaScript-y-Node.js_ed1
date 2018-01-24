@@ -44,23 +44,36 @@ var APP = {
     },
     
     view:{
-        renderFilmList:function (films) {
+        updateFilmList:function (films) {
             var filmsUL = document.querySelector('.film-list');
             filmsUL.innerHTML = '';
             for(var key in films){
                 filmsUL.innerHTML += `
                     <li class="film">
                         <span class="title">${films[key].Title}</span>
-                        <span class="delete">
+                        <span class="delete" data-id-film="${films[key]}">
                             <i class="fa fa-trash" aria-hidden="true"></i>
                         </span>
-                        <span class="view">
+                        <span class="view" data-id-film="${films[key]}">
                             <i class="fa fa-eye" aria-hidden="true"></i>
                         </span>
                     </li>
                 `;
             }
+        },
+        
+        updateDetailsFilm:function (film) {
+            var detailsContainer = document.querySelector('.details-container');
+            detailsContainer.innerHTML = `
+                <div class="details">
+                    <span>${film.Title}</span> 
+                    <span>${film.Year}</span> 
+                    <span>${film.Director}</span> 
+                    <span>${film.Genre}</span> 
+                </div>
+            `;
         }
+        
     },
     
     tools:{
