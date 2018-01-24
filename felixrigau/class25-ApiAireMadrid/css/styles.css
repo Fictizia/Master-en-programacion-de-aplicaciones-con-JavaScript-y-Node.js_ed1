@@ -1,0 +1,159 @@
+.loader {
+  background: url(../images/loader.svg);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-size: 70% 70%;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.general-container {
+  padding: 30px;
+}
+
+.title-page {
+  text-align: center;
+  font-family: Lato;
+  color: #f1c40f;
+  font-size: 60px;
+  padding: 0;
+  margin: 0;
+}
+.subtitle-page {
+  text-align: center;
+  font-family: Lato;
+  font-size: 14px;
+  color: #C9c9c9;
+}
+.combo-container {
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+.stations {
+  width: 65%;
+  margin: 10px;
+  height: 49px;
+  font-family: lato;
+  border: none;
+  border-bottom: 5px solid rgb(67, 102, 138);
+  color: rgba(192, 57, 43, 1);
+  font-size: 16px;
+  background-color: rgba(255,255,255,0.8);
+  font-weight: bold;
+  padding-left: 10px;
+  margin-bottom: 30px;
+}
+.station-name {
+    font-size: 24px;
+    font-family: Lato;
+    text-align: center;
+    margin: 0 0 50px 0;
+    color: #e74c3c;
+}
+
+.station-info {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid #c7c7c7;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+.station-info > div {
+    width: 50%;
+}
+.weather-container .day-info-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.image-container {
+  text-align: center;
+}
+.weather-container .icon > img {
+  width: 130px;
+}
+
+.day-info-container {
+    margin-bottom: 40px;
+}
+.day-info {
+  margin-left: 40px;
+}
+.day-info h3, .day-info p{
+  margin: 0;
+}
+.day-info h3{
+  color: #0366d6;
+  font-family: Lato;
+  font-size: 16px;
+  margin-bottom: 15px
+}
+.day-info p{
+  font-family: Lato;
+  font-size: 12px;
+  margin-right: 5px;
+  color: #7d7d7d;
+  margin-bottom: 8px;
+}
+
+.parameter-list > li{
+  display: flex;
+}
+.parameter-list{
+  margin: 0px;
+  padding: 0px;
+}
+.parameter-list > li p {
+  font-family: Lato;
+  font-size: 12px;
+  margin-right: 5px;
+  color: #7d7d7d;
+  margin-top: 0px;
+}
+.parameter-list > li p.parameter {
+  font-weight: bold;
+  color: #585858;
+}
+
+.days {    display: flex;
+  justify-content: center;
+  margin: 0 10px 0 10px;
+  padding: 0px;
+}
+.day {
+  margin: 0 15px 0 15px;
+  list-style: none;
+}
+.weater-prediction .day-info-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.day img {
+  width: 80px;
+}
+.weater-prediction .day-info{
+  margin-left: 15px;
+}
+.weater-prediction .title{
+  color: #666;
+  font-family: Lato;
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+.weater-prediction .day-info h3{
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.weater-prediction .day-info p{
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+
+.hidden{
+  display: none;
+}

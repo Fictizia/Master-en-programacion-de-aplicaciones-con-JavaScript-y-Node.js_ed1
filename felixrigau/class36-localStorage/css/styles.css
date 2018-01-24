@@ -1,0 +1,54 @@
+.general-container{
+  display: flex;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.form input{
+  margin-bottom: 15px;
+}
+.button {
+  width: 80px;
+  height: 32px;
+  text-align: center;
+  border-radius: 2px;
+  font-family: monospace;
+  padding-top: 13px;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #34495e;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.add{
+  background-color: #2ecc71;
+}
+.clear{
+  background-color: #c0392b;
+}
+.edit{
+  background-color: #f4a527;
+  display: block;
+}
+.remove{
+  background-color: #e74c3c;
+  display: block;
+}
+.contact-list{
+  display: flex;
+}
+.contact-item{
+  display: flex;
+  list-style-type: none;
+  margin: 10px;
+}
+.contact-item>img{
+  width: 100px;
+  height: 100px;
+}
