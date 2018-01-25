@@ -6,15 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Firebase</title>
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container1">
 	    <h2>Busca tu película: </h2>
-		<input type="text" id="inputPelis"/>
+		<input type="text" id="inputPelis" onkeypress="runScript(event)"/>
     </div>
-    <div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 container"></div>
+            <div class="col-md-12 ficha-peli" style="margin-top: 55px;display:none">
+                <div class="row">
+                    <div class="col">
+                        <div class="thumbnail container-ficha">
+                            <div class="caption">
+                                <span id="titulo">Titulo: <strong></strong></span>
+                                <span id="anio">Año: <strong></strong></span>
+                                <img src="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="background.js"></script>
 </body>
 </html>
