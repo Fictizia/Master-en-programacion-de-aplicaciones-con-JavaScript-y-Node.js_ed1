@@ -468,5 +468,5 @@ robot.masLento(); // Min alcanzado
 
 ![MVC Convencional](http://cdn.infoq.com/statics_s1_20151222-0055/resource/news/2014/05/facebook-mvc-flux/en/resources/flux-react-mvc.png)
 
-- [Aproximación de Alex Netkachov](https://alexatnet.com/articles/model-view-controller-mvc-javascript)
+- [Aproximación de Alex Netkachov](https://webcache.googleusercontent.com/search?q=cache:NQ4lsKof02EJ:https://alexatnet.com/model-view-controller-mvc-in-javascript/+&cd=2&hl=es&ct=clnk&gl=es)
 - [Ejemplo de Alex Netkachov](http://jsfiddle.net/alex_netkachov/ZgBrK/)
