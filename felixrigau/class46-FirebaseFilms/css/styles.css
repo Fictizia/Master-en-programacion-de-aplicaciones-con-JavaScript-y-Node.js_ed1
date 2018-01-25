@@ -8,7 +8,11 @@ ul,li{
 .container{
   display: flex;
 }
+.film-list{
+  margin-top: 30px;
+}
 .details{
   display: flex;
   flex-direction: column;
+  margin-left: 30px;
 }

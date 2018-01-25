@@ -66,9 +66,8 @@ var APP = {
     
     getAllUser:function () {
       database.ref('/users').on('value',function (snapshot) {
-        if (snapshot.val()) {
-          APP.view.updateUserList(snapshot.val());
-        } else {
+        APP.view.updateUserList(snapshot.val());
+        if (!snapshot.val()) {
           console.log('There isn\'t datas to show');
         }
       })

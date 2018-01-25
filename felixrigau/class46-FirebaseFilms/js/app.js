@@ -24,10 +24,8 @@ var APP = {
     db:{
         getAllFilm:function () {
             database.ref('/films').on('value',function (snapshot) {
-                if (snapshot.val()) {
-                    APP.view.updateFilmList(snapshot.val())
-                } else {
-                    APP.view.updateFilmList(snapshot.val())
+                APP.view.updateFilmList(snapshot.val())
+                if (!snapshot.val()) {
                     console.log('No hay películas en la base de datos.')
                 }
             })
@@ -38,6 +36,7 @@ var APP = {
                 var exist = APP.db.filmExist(film.imdbID);
                 if(!exist){
                     database.ref('/films/'+film.imdbID).set(film);
+                    document.querySelector('.search').value = '';
                 }else{
                     console.log('La película ya está registrada en la base de datos.')
                 }
@@ -48,17 +47,19 @@ var APP = {
         },
         
         filmExist:function (id) {
-            database.ref('/films/'+id).once('value', function (snapshot) {
+            var exist;
+            database.ref('/films').child(id).once('value', function (snapshot) {
                 if (snapshot.val()) {
-                    return true;
+                    exist = true;
                 } else {
-                    return false;
+                    exist = false;
                 }
             })
+            return exist;
         },
         
         viewFilm:function (id) {
-            database.ref('/films/'+id).once('value', function (snapshot) {
+            database.ref('/films').child(id).once('value', function (snapshot) {
                 if (snapshot.val()) {
                     APP.view.updateDetailsFilm(snapshot.val())
                 }
@@ -72,7 +73,7 @@ var APP = {
     
     behavior:{
         search:function () {
-            var searchInput = document.querySelector('.searh');
+            var searchInput = document.querySelector('.search');
             searchInput.addEventListener('keyup',function (e) {
                 if(e.keyCode === 13){
                     if (e.target.value != "" && e.target.value != null) {
