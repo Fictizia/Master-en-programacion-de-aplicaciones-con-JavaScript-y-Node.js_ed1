@@ -1,21 +1,24 @@
 //Firebase
   /*global firebase*/
  var config = {
-      apiKey: "AIzaSyBniihu3Yo0UJofX6E4C6ejczL5g8D9ZfE",
-      authDomain: "logindemo-a463b.firebaseapp.com",
-      databaseURL: "https://logindemo-a463b.firebaseio.com",
-      projectId: "logindemo-a463b",
-      storageBucket: "logindemo-a463b.appspot.com",
-      messagingSenderId: "450796995221"
-    };
-    firebase.initializeApp(config);
-    var database = firebase.database();
+    apiKey: "AIzaSyBniihu3Yo0UJofX6E4C6ejczL5g8D9ZfE",
+    authDomain: "logindemo-a463b.firebaseapp.com",
+    databaseURL: "https://logindemo-a463b.firebaseio.com",
+    projectId: "logindemo-a463b",
+    storageBucket: "logindemo-a463b.appspot.com",
+    messagingSenderId: "450796995221"
+  };
+  firebase.initializeApp(config);
+  var database = firebase.database();
+  var auth = firebase.auth();
+  var provider = new firebase.auth.GithubAuthProvider();
 
 // Empty JS for your own code to be here
 var APP = {
   init:function () {
     APP.db.getAllUser();
     APP.behavior.addBehaviorToLoginBUtton();
+    APP.behavior.addBehaviorToLogoutBUtton();
     APP.behavior.addBehaviorToDeleteBUtton();
   },
   
@@ -33,6 +36,20 @@ var APP = {
           APP.db.deleteUser(id);
         }
       });
+    },
+    
+    addBehaviorToLoginBUtton:function () {
+      var loginButton = document.querySelector('.loginGithub');
+      loginButton.addEventListener('click',function () {
+        APP.security.loginGithub();
+      })
+    },
+    
+    addBehaviorToLogoutBUtton:function () {
+      var loginButton = document.querySelector('.logoutGithub');
+      loginButton.addEventListener('click',function () {
+        APP.security.logoutGithub();
+      })
     }
   },
   
@@ -75,6 +92,27 @@ var APP = {
     
     deleteUser:function (id) {
       database.ref('/users').child(id).remove();
+    }
+  },
+  
+  security:{
+    loginGithub:function () {
+      firebase.auth().signInWithPopup(provider).then(function(result) {
+        // User signed in!
+        var uid = result.user.uid;
+        console.log(uid)
+      }).catch(function(error) {
+        console.log(error)
+      });
+    },
+    
+    logoutGithub:function () {
+      console.log('aki')
+      firebase.auth().signOut().then(function() {
+        console.log("Pa fuera!")
+      }).catch(function(error) {
+        console.log(error)
+      });
     }
   },
   
