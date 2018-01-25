@@ -37,11 +37,11 @@
 					<form role="form">
 						<div class="form-group">
 							<label for="search-movie">Busca tu película</label>
-							<input type="text" class="form-control" id="search-movie" placeholder="introduce tu película"/>
+							<input type="text" class="form-control" id="search-movie" placeholder="introduce tu película" onkeypress="runScript(event)"/>
 						</div>
-						<button type="submit" class="btn btn-primary search-button">
+                        <!--<button type="submit" class="btn btn-primary search-button">
 							Busca
-						</button>
+						</button>-->						
 					</form>
 				</div>
 			</div>
@@ -52,6 +52,7 @@
 
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script type="text/javascript" src="app.js"></script>
 
 </body>
 </html>
