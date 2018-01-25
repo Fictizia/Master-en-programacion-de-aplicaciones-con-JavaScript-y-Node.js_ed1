@@ -82,13 +82,15 @@ var APP = {
     updateUserList:function (users) {
       var userList = document.querySelector('.user-list');
       userList.innerHTML = '';
-      for(var key in users){
-        userList.innerHTML += `<blockquote data-user-id="${key}">
-  				<p>
-  					${users[key].username}
-  				</p> <small>${users[key].email}</small>
-  				<div class="actions"><i class="delete fa fa-trash"></i></div>
-  			</blockquote>`;
+      if(users){
+        for(var key in users){
+          userList.innerHTML += `<blockquote data-user-id="${key}">
+    				<p>
+    					${users[key].username}
+    				</p> <small>${users[key].email}</small>
+    				<div class="actions"><i class="delete fa fa-trash"></i></div>
+    			</blockquote>`;
+        }
       }
     }
   }
