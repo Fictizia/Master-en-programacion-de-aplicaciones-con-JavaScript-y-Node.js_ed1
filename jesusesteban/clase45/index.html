@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clase 45</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="jumbotron">
+				<h2>Ejercicio clase 45</h2>
+				<p>Desarrolla una aplicación para gestionar las peliculas que te gustan. Incluyendo llamadas AJAX a la base de datos de IMBD para enriquecer los datos, usando OMDb API.</p>
+				<ul>
+				    <li><span>Todas las películas que se introducen quedan guardadas en Firebase.</span></li>
+				    <li><span>Las peliculas pueden ser consultadas.</span></li>
+				    <li><span>Las peliculas pueden ser eliminadas.</span></li>
+				    <li><span>Las peliculas pueden ser editadas desde el html.</span></li>
+				</ul>
+			</div>
+            <div class="row">
+				<div class="col-md-6">
+                    <ul>
+                        <li>
+                            <span>Película</span>||
+                            <a href="#" class="detail-movie">Detalles</a>||
+                            <a href="#" class="edit-movie">Editar</a>||
+                            <a href="#" class="delete-movie">Borrar</a>
+                        </li>
+                    </ul>
+				</div>
+				<div class="col-md-6">
+					<form role="form">
+						<div class="form-group">
+							<label for="search-movie">Busca tu película</label>
+							<input type="text" class="form-control" id="search-movie" placeholder="introduce tu película" onkeypress="runScript(event)"/>
+						</div>
+                        <!--<button type="submit" class="btn btn-primary search-button">
+							Busca
+						</button>-->						
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
