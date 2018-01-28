@@ -7,12 +7,83 @@
   <body>
 
     <main class="container">
-      <input id="getName"type="text" name="nombre" value="" placeholder="Pon el nombre">
-      <input id="getMail"type="text" name="" value=""placeholder="Pon el mail">
+      <input id="getName"type="text" name="nombre"  placeholder="Pon el nombre">
+      <input id="getMail"type="text" name=""  placeholder="Pon el mail">
       <button id="buttonSave" type="button" name="button">GUARDAR</button>
       <button id="buttonLookFor" type="button" name="button">BUSCAR</button>
       <img src="" alt="foto">
+      <ul id="lista">
+        <li><span> Nombre : </span> <span>Mail: </span></li>
+
+      </ul>
     </main>
-    <script src="ejercicios-dia36.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+
+    	/* -- Necesitaremos:
+    	---- EDITAR Y BORRAR ---
+    	*/
+    	// Selectores
+      var btnGuardar = document.getElementById('buttonSave');
+      var btnBuscar = document.getElementById('buttonLookFor');
+      var slcNombre = document.getElementById('getName');
+      var slcMail = document.getElementById('getMail');
+      var lista = document.getElementById('lista');
+
+
+      	// Funciones
+      /**
+      *
+      *
+      *
+      */
+    	function updateList(valueName, valueMail){
+    	  var currentName = JSON.parse(localStorage.getItem('Nombre')) || [];
+        var currentMail = JSON.parse(localStorage.getItem('Mail')) || [];
+
+    	  currentName.push(valueName);
+    	  localStorage.setItem('Nombre', JSON.stringify(currentName));
+        console.log(valueMail);
+        currentMail.push(valueMail);
+        localStorage.setItem('Mail', JSON.stringify(currentMail));
+    	};
+
+    	// Eventos
+    	btnGuardar.addEventListener('click', function(event){
+    	  if(slcNombre.value !== "" && slcMail.value !== ""){
+          console.log(slcNombre.value);
+          var valueName = slcNombre.value.trim();
+          var valueMail = slcMail.value.trim();
+    	    updateList(valueName, valueMail);
+    	  }
+        else {
+          alert('Dame datos válido!!!!');
+        }
+    	} );
+
+      var nombre = JSON.parse(localStorage.getItem('Nombre'));
+      var mail = JSON.parse(localStorage.getItem('Mail'));
+      if(Array.isArray(nombre) && Array.isArray(mail)){
+        console.log('cucu');
+        for (var i = 0; i < name.length; i++) {
+        function pintaHtml(nombre, mail){
+            lista.innerHTML +='<li><span> Nombre: ' + nombre[i] + ' </span> <span> Mail: ' + mail[i] + '</span></li>'
+        }
+      }
+    }
+    else {
+
+      console.log(nombre);
+    }
+
+      // function pintaHtml(nombre, mail) {
+      //   lista.innerHTML +='<li><span> Nombre: ' + nombre + ' </span> <span> Mail: ' + mail + '</span></li>'
+      //
+      // }
+
+
+
+    </script>
+    <!-- <script src="ejercicios-dia36.js" charset="utf-8"></script> -->
   </body>
 </html>
