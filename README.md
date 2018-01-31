@@ -112,6 +112,9 @@ Fecha | Teoría | Recursos | Contenido
 24/01/2018 | Clase 47 | Clase 47 | Repaso Patrones
 25/01/2018 | Clase 48 | Clase 48 | Repaso Firebase
 29/01/2018 | [Clase 49](teoria/dia49.md) | [Clase 49](recursos/dia49.md) | Patrones III y Algoritmia
+30/01/2018 | Clase 50 | Clase 50 | Tiempo Proyecto Personal y ejercicios
+31/01/2018 | [Clase 51](teoria/dia51.md) | [Clase 51](recursos/dia51.md) | Patrones y Arquitecturas alternativas I
+
 
 
 Temario

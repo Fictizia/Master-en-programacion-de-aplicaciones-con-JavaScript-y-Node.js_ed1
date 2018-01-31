@@ -26,3 +26,4 @@
 - [User Auth](https://www.firebase.com/docs/web/guide/user-auth.html)
 - [Ejemplo en jsfiddle](http://jsfiddle.net/firebase/a221m6pb/embedded/result,js,css/)
 - [Desplegando nuestra App en la nube](https://www.firebase.com/docs/web/guide/deploying.html)
+- [Firebase Database API Cheatsheet by odigity](https://gist.github.com/odigity/88742ab16c736b21971c4f65bb9bc232)
