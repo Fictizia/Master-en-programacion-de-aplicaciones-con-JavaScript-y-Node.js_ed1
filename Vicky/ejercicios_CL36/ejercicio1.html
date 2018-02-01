@@ -12,7 +12,7 @@
 	<input type="text" name="nombre" id="nombre">
   <input type="text" name="telefono" id="telefono">
   <button type="button" id="guardar">Guardar</button>
-  <button type="button" id="borrar">Borrar</button>
+  <button type="button" id="borrarAll">Borrar</button>
 	<h3>Agenda:</h3>
 	<ul id="lista"></ul>
 
@@ -20,11 +20,12 @@
 
   // Selectores
   var botonGuardar = document.getElementById("guardar")
+  var botonBorrar = document.getElementById("borrarAll")
   var slctel = document.getElementById("telefono")
   var slcnombre = document.getElementById("nombre")
   var slcLista = document.getElementById("lista")
-      var listaNombres = JSON.parse(localStorage.getItem("nombres")) || [];
-          var listaTel = JSON.parse(localStorage.getItem("telefonos")) || [];
+  var listaNombres = JSON.parse(localStorage.getItem("nombres")) || [];
+  var listaTel = JSON.parse(localStorage.getItem("telefonos")) || [];
 
 
 
@@ -50,6 +51,12 @@
   	listaTel.splice(position,1);
   	localStorage.setItem("telefonos", JSON.stringify(listaTel))
   	
+  }
+  
+  function deleteAll() {
+     localStorage.removeItem("nombres");
+     localStorage.removeItem("telefonos");
+     
   }
 
 
@@ -87,6 +94,13 @@
 
 
   })
+  
+  //borrar lista entera
+    botonBorrar.addEventListener("click", function(e){
+      console.log(slcLista)
+      slcLista.parentNode.removeChild(slcLista)
+      deleteAll();
+    })
   
   
 
