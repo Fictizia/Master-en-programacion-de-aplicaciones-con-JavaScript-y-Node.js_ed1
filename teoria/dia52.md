@@ -189,7 +189,7 @@ Deberían ser escapados.
 **Clases de caracteres**
 
 - \d
-    numérico (incluyendo _)
+    numérico
     ```javascript
     "Hola u_123! *.*".match(/\d/g);
     //["1", "2", "3"]
