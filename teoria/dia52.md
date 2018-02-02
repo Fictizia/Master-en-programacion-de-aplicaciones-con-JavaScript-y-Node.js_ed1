@@ -181,7 +181,7 @@ Deberían ser escapados.
     /[1-9]{2, 5}/.test(12345);
 
     // {2,} Exactamente 2 o más. Encuentra 11, 666, 74511 pero no 1,
-    /[1-9]{2}/.test(123);
+    /[1-9]{2,}/.test(123);
     ```
 
 
@@ -189,7 +189,7 @@ Deberían ser escapados.
 **Clases de caracteres**
 
 - \d
-    numérico (incluyendo _)
+    numérico
     ```javascript
     "Hola u_123! *.*".match(/\d/g);
     //["1", "2", "3"]
