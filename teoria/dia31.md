@@ -56,11 +56,14 @@
 - Persistencia de datos en Firebase
 - Login Social con Firebase
 - HTML5 Apis como Localstorage, geolocalización, etc...
+- Sin frameworks ni librerias externas en la medida de lo posible
+- Buenas practicas y código limpio
+
+**Opcional (muuuy recomendado)**
 - Uso de al menos 3 patrones avanzados
 - Uso de Expresiones regulares
 - Rutas en el front para gestionar vistas
-- Sin frameworks ni librerias externas en la medida de lo posible
-- Buenas practicas y código limpio
+
 
 **Extras:**
 - Testing

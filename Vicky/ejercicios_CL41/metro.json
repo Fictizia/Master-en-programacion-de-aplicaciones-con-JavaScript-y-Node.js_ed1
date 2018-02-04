@@ -1,0 +1,6833 @@
+{
+  "items": [
+    {
+      "id": "7913",
+      "heading": 220.0,
+      "latitude": 34.179363,
+      "longitude": -118.449913,
+      "run_id": "237_12_1",
+      "route_id": "237",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8126",
+      "heading": 165.0,
+      "latitude": 33.989697,
+      "longitude": -118.280548,
+      "run_id": "460_176_0",
+      "route_id": "460",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5914",
+      "heading": 220.0,
+      "latitude": 33.9322779,
+      "longitude": -118.352432,
+      "run_id": "212_192_0",
+      "route_id": "212",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4140",
+      "heading": 0.0,
+      "latitude": 34.0400769,
+      "longitude": -118.184677,
+      "run_id": "665_15_0",
+      "route_id": "665",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9509",
+      "heading": 220.0,
+      "latitude": 34.0151899,
+      "longitude": -118.497475,
+      "run_id": "733_81_0",
+      "route_id": "733",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4171",
+      "heading": 103.0,
+      "latitude": 34.182941,
+      "longitude": -118.160088,
+      "run_id": "268_134_1",
+      "route_id": "268",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9567",
+      "heading": 285.0,
+      "latitude": 34.054241,
+      "longitude": -118.262192,
+      "run_id": "720_881_1",
+      "route_id": "720",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9270",
+      "heading": 345.0,
+      "latitude": 33.961704,
+      "longitude": -118.291565,
+      "run_id": "754_92_0",
+      "route_id": "754",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5877",
+      "heading": 165.0,
+      "latitude": 34.222126,
+      "longitude": -118.240005,
+      "run_id": "91_310_1",
+      "route_id": "91",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "4023",
+      "heading": 15.0,
+      "latitude": 34.075279,
+      "longitude": -118.271599,
+      "run_id": "603_20_0",
+      "route_id": "603",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5518",
+      "heading": 360.0,
+      "latitude": 34.034744,
+      "longitude": -118.192375,
+      "run_id": "30_668_1",
+      "route_id": "30",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8555",
+      "heading": 195.0,
+      "latitude": 34.027977,
+      "longitude": -118.276291,
+      "run_id": "81_179_1",
+      "route_id": "81",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "9412",
+      "heading": 220.0,
+      "latitude": 34.098572,
+      "longitude": -118.291695,
+      "run_id": "754_70_1",
+      "route_id": "754",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8206",
+      "heading": 195.0,
+      "latitude": 34.302784,
+      "longitude": -118.501534,
+      "run_id": "236_124_1",
+      "route_id": "236",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4068",
+      "heading": 216.0,
+      "latitude": 34.056992,
+      "longitude": -118.274979,
+      "run_id": "487_95_0",
+      "route_id": "487",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8608",
+      "heading": 210.0,
+      "latitude": 34.0334239,
+      "longitude": -118.265633,
+      "run_id": "91_306_0",
+      "route_id": "91",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9449",
+      "heading": 220.0,
+      "latitude": 33.873867,
+      "longitude": -118.353218,
+      "run_id": "204_103_0",
+      "route_id": "204",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4180",
+      "heading": 165.0,
+      "latitude": 34.1529079,
+      "longitude": -118.132523,
+      "run_id": "180_147_1",
+      "route_id": "180",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8293",
+      "heading": 135.0,
+      "latitude": 34.2445949,
+      "longitude": -118.417236,
+      "run_id": "230_90_1",
+      "route_id": "230",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "5686",
+      "heading": 30.0,
+      "latitude": 34.045826,
+      "longitude": -118.252853,
+      "run_id": "2_1024_1",
+      "route_id": "2",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8628",
+      "heading": 219.0,
+      "latitude": 33.959667,
+      "longitude": -118.353119,
+      "run_id": "115_499_0",
+      "route_id": "115",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5646",
+      "heading": 220.0,
+      "latitude": 34.076241,
+      "longitude": -118.379341,
+      "run_id": "16_254_0",
+      "route_id": "16",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8118",
+      "heading": 17.0,
+      "latitude": 34.026989,
+      "longitude": -118.274353,
+      "run_id": "460_179_1",
+      "route_id": "460",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8394",
+      "heading": 180.0,
+      "latitude": 34.183849,
+      "longitude": -118.150978,
+      "run_id": "260_250_1",
+      "route_id": "260",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "8570",
+      "heading": 220.0,
+      "latitude": 34.142735,
+      "longitude": -118.227119,
+      "run_id": "81_179_1",
+      "route_id": "81",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "8533",
+      "heading": 345.0,
+      "latitude": 34.095928,
+      "longitude": -118.300514,
+      "run_id": "206_155_0",
+      "route_id": "206",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "7578",
+      "heading": 360.0,
+      "latitude": 33.9272459,
+      "longitude": -118.265144,
+      "run_id": "48_451_1",
+      "route_id": "48",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "9237",
+      "heading": 345.0,
+      "latitude": 34.063068,
+      "longitude": -118.309067,
+      "run_id": "66_363_0",
+      "route_id": "66",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3963",
+      "heading": 299.0,
+      "latitude": 34.03389,
+      "longitude": -118.265015,
+      "run_id": "55_192_1",
+      "route_id": "55",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5959",
+      "heading": 84.0,
+      "latitude": 34.10154,
+      "longitude": -118.325424,
+      "run_id": "222_64_0",
+      "route_id": "222",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4162",
+      "heading": 18.0,
+      "latitude": 33.9149249,
+      "longitude": -118.158615,
+      "run_id": "265_8_0",
+      "route_id": "265",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9254",
+      "heading": 285.0,
+      "latitude": 34.061802,
+      "longitude": -118.319458,
+      "run_id": "720_913_0",
+      "route_id": "720",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3865",
+      "heading": 30.0,
+      "latitude": 34.047806,
+      "longitude": -118.251015,
+      "run_id": "4_260_1",
+      "route_id": "4",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8257",
+      "heading": 255.0,
+      "latitude": 34.194023,
+      "longitude": -118.422905,
+      "run_id": "165_168_1",
+      "route_id": "165",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8237",
+      "heading": 95.0,
+      "latitude": 34.166328,
+      "longitude": -118.586006,
+      "run_id": "150_155_0",
+      "route_id": "150",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5454",
+      "heading": 300.0,
+      "latitude": 34.050884,
+      "longitude": -118.237679,
+      "run_id": "30_669_1",
+      "route_id": "30",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8125",
+      "heading": 319.0,
+      "latitude": 34.254028,
+      "longitude": -118.409302,
+      "run_id": "224_224_0",
+      "route_id": "224",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4043",
+      "heading": 180.0,
+      "latitude": 33.987499,
+      "longitude": -118.225388,
+      "run_id": "60_128_1",
+      "route_id": "60",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9458",
+      "heading": 270.0,
+      "latitude": 34.057789,
+      "longitude": -118.289497,
+      "run_id": "66_385_1",
+      "route_id": "66",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8333",
+      "heading": 220.0,
+      "latitude": 34.293739,
+      "longitude": -118.451355,
+      "run_id": "230_90_1",
+      "route_id": "230",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9363",
+      "heading": 90.0,
+      "latitude": 34.188633,
+      "longitude": -118.591347,
+      "run_id": "901_35_0",
+      "route_id": "901",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9581",
+      "heading": 120.0,
+      "latitude": 34.038673,
+      "longitude": -118.23951,
+      "run_id": "720_881_1",
+      "route_id": "720",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4058",
+      "heading": 270.0,
+      "latitude": 34.0626559,
+      "longitude": -118.10778,
+      "run_id": "70_246_1",
+      "route_id": "70",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "9451",
+      "heading": 4.0,
+      "latitude": 34.056797,
+      "longitude": -118.237282,
+      "run_id": "40_874_0",
+      "route_id": "40",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8132",
+      "heading": 358.0,
+      "latitude": 33.916519,
+      "longitude": -118.081848,
+      "run_id": "460_172_1",
+      "route_id": "460",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9517",
+      "heading": 345.0,
+      "latitude": 34.049675,
+      "longitude": -118.246071,
+      "run_id": "720_917_1",
+      "route_id": "720",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9217",
+      "heading": 120.0,
+      "latitude": 34.017418,
+      "longitude": -118.500092,
+      "run_id": "704_151_0",
+      "route_id": "704",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8222",
+      "heading": 90.0,
+      "latitude": 34.235382,
+      "longitude": -118.594887,
+      "run_id": "166_75_0",
+      "route_id": "166",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3103",
+      "heading": 300.0,
+      "latitude": 34.2457769,
+      "longitude": -118.481445,
+      "run_id": "167_89_0",
+      "route_id": "167",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5712",
+      "heading": 90.0,
+      "latitude": 34.07217,
+      "longitude": -118.390388,
+      "run_id": "14_410_1",
+      "route_id": "14",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8591",
+      "heading": 75.0,
+      "latitude": 34.186516,
+      "longitude": -118.528252,
+      "run_id": "164_51_0",
+      "route_id": "164",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5968",
+      "heading": 52.0,
+      "latitude": 34.116306,
+      "longitude": -118.262421,
+      "run_id": "201_42_0",
+      "route_id": "201",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "9477",
+      "heading": 220.0,
+      "latitude": 33.924606,
+      "longitude": -118.291496,
+      "run_id": "204_103_0",
+      "route_id": "204",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8192",
+      "heading": 333.0,
+      "latitude": 34.173809,
+      "longitude": -118.379929,
+      "run_id": "224_224_0",
+      "route_id": "224",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8569",
+      "heading": 203.0,
+      "latitude": 34.061062,
+      "longitude": -118.367508,
+      "run_id": "28_537_0",
+      "route_id": "28",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8545",
+      "heading": 34.0,
+      "latitude": 34.052864,
+      "longitude": -118.247971,
+      "run_id": "28_533_0",
+      "route_id": "28",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3895",
+      "heading": 360.0,
+      "latitude": 33.995308,
+      "longitude": -118.300148,
+      "run_id": "206_155_0",
+      "route_id": "206",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9433",
+      "heading": 360.0,
+      "latitude": 34.046982,
+      "longitude": -118.308998,
+      "run_id": "207_276_0",
+      "route_id": "207",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8402",
+      "heading": 255.0,
+      "latitude": 34.18679,
+      "longitude": -118.398514,
+      "run_id": "164_50_1",
+      "route_id": "164",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "7467",
+      "heading": 90.0,
+      "latitude": 34.076183,
+      "longitude": -118.291267,
+      "run_id": "14_410_1",
+      "route_id": "14",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5936",
+      "heading": 180.0,
+      "latitude": 34.034496,
+      "longitude": -118.284157,
+      "run_id": "200_39_1",
+      "route_id": "200",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8273",
+      "heading": 270.0,
+      "latitude": 34.221027,
+      "longitude": -118.522614,
+      "run_id": "152_126_1",
+      "route_id": "152",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3925",
+      "heading": 150.0,
+      "latitude": 34.056686,
+      "longitude": -118.244949,
+      "run_id": "92_222_1",
+      "route_id": "92",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8311",
+      "heading": 90.0,
+      "latitude": 33.974655,
+      "longitude": -118.247871,
+      "run_id": "111_319_0",
+      "route_id": "111",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8501",
+      "heading": 219.0,
+      "latitude": 34.042774,
+      "longitude": -118.248627,
+      "run_id": "460_175_0",
+      "route_id": "460",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8585",
+      "heading": 96.0,
+      "latitude": 34.047119,
+      "longitude": -118.318176,
+      "run_id": "30_647_0",
+      "route_id": "30",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5899",
+      "heading": 135.0,
+      "latitude": 34.005508,
+      "longitude": -118.329849,
+      "run_id": "102_52_0",
+      "route_id": "102",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9392",
+      "heading": 90.0,
+      "latitude": 34.090843,
+      "longitude": -118.290123,
+      "run_id": "4_259_0",
+      "route_id": "4",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8462",
+      "heading": 75.0,
+      "latitude": 33.974518,
+      "longitude": -118.318275,
+      "run_id": "111_319_0",
+      "route_id": "111",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8262",
+      "heading": 255.0,
+      "latitude": 33.960243,
+      "longitude": -118.256035,
+      "run_id": "115_350_1",
+      "route_id": "115",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4118",
+      "heading": 75.0,
+      "latitude": 34.257217,
+      "longitude": -118.550903,
+      "run_id": "158_46_0",
+      "route_id": "158",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4123",
+      "heading": 90.0,
+      "latitude": 34.0533069,
+      "longitude": -118.245148,
+      "run_id": "30_647_0",
+      "route_id": "30",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5929",
+      "heading": 165.0,
+      "latitude": 34.069752,
+      "longitude": -118.300415,
+      "run_id": "206_160_1",
+      "route_id": "206",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8453",
+      "heading": 276.0,
+      "latitude": 33.974709,
+      "longitude": -118.291435,
+      "run_id": "111_334_1",
+      "route_id": "111",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5603",
+      "heading": 183.0,
+      "latitude": 34.083775,
+      "longitude": -118.260193,
+      "run_id": "603_19_1",
+      "route_id": "603",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5457",
+      "heading": 219.0,
+      "latitude": 34.057129,
+      "longitude": -118.23053,
+      "run_id": "68_131_0",
+      "route_id": "68",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9486",
+      "heading": 220.0,
+      "latitude": 34.104374,
+      "longitude": -118.309364,
+      "run_id": "207_271_1",
+      "route_id": "207",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4163",
+      "heading": 120.0,
+      "latitude": 34.052975,
+      "longitude": -118.244659,
+      "run_id": "70_255_0",
+      "route_id": "70",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5491",
+      "heading": 225.0,
+      "latitude": 34.0178299,
+      "longitude": -118.408714,
+      "run_id": "33_434_1",
+      "route_id": "33",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "8470",
+      "heading": 90.0,
+      "latitude": 33.945366,
+      "longitude": -118.382622,
+      "run_id": "117_51_0",
+      "route_id": "117",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9253",
+      "heading": 255.0,
+      "latitude": 34.045742,
+      "longitude": -118.34745,
+      "run_id": "733_78_1",
+      "route_id": "733",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8428",
+      "heading": 195.0,
+      "latitude": 34.034222,
+      "longitude": -118.262131,
+      "run_id": "38_224_1",
+      "route_id": "38",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9341",
+      "heading": 49.0,
+      "latitude": 34.270252,
+      "longitude": -118.416313,
+      "run_id": "233_132_0",
+      "route_id": "233",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9510",
+      "heading": 180.0,
+      "latitude": 34.035183,
+      "longitude": -118.291626,
+      "run_id": "754_70_1",
+      "route_id": "754",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5613",
+      "heading": 330.0,
+      "latitude": 34.049648,
+      "longitude": -118.246033,
+      "run_id": "16_254_0",
+      "route_id": "16",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3901",
+      "heading": 219.0,
+      "latitude": 34.04269,
+      "longitude": -118.247871,
+      "run_id": "33_433_1",
+      "route_id": "33",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5693",
+      "heading": 75.0,
+      "latitude": 34.032654,
+      "longitude": -118.302803,
+      "run_id": "37_409_0",
+      "route_id": "37",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "6013",
+      "heading": 310.0,
+      "latitude": 34.043514,
+      "longitude": -118.250816,
+      "run_id": "52_265_0",
+      "route_id": "52",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5641",
+      "heading": 270.0,
+      "latitude": 34.04731,
+      "longitude": -118.299789,
+      "run_id": "30_669_1",
+      "route_id": "30",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5679",
+      "heading": 75.0,
+      "latitude": 34.083584,
+      "longitude": -118.295036,
+      "run_id": "10_429_0",
+      "route_id": "10",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3875",
+      "heading": 220.0,
+      "latitude": 34.061886,
+      "longitude": -118.246986,
+      "run_id": "55_192_1",
+      "route_id": "55",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3958",
+      "heading": 166.0,
+      "latitude": 33.945644,
+      "longitude": -118.21637,
+      "run_id": "60_128_1",
+      "route_id": "60",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9305",
+      "heading": 105.0,
+      "latitude": 34.075966,
+      "longitude": -118.255569,
+      "run_id": "704_151_0",
+      "route_id": "704",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5942",
+      "heading": 220.0,
+      "latitude": 34.099754,
+      "longitude": -118.325127,
+      "run_id": "180_164_0",
+      "route_id": "180",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4037",
+      "heading": 345.0,
+      "latitude": 33.960548,
+      "longitude": -118.265076,
+      "run_id": "51_203_0",
+      "route_id": "51",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8429",
+      "heading": 105.0,
+      "latitude": 34.033066,
+      "longitude": -118.269402,
+      "run_id": "35_200_1",
+      "route_id": "35",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4035",
+      "heading": 30.0,
+      "latitude": 34.0519559,
+      "longitude": -118.248787,
+      "run_id": "10_451_1",
+      "route_id": "10",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4070",
+      "heading": 220.0,
+      "latitude": 34.033314,
+      "longitude": -118.264885,
+      "run_id": "70_255_0",
+      "route_id": "70",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8111",
+      "heading": 284.0,
+      "latitude": 34.019646,
+      "longitude": -118.153404,
+      "run_id": "18_204_1",
+      "route_id": "18",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5967",
+      "heading": 30.0,
+      "latitude": 34.048492,
+      "longitude": -118.251999,
+      "run_id": "83_121_0",
+      "route_id": "83",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9508",
+      "heading": 235.0,
+      "latitude": 34.01321,
+      "longitude": -118.416908,
+      "run_id": "733_78_1",
+      "route_id": "733",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8625",
+      "heading": 360.0,
+      "latitude": 33.874691,
+      "longitude": -118.326439,
+      "run_id": "210_256_0",
+      "route_id": "210",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8642",
+      "heading": 90.0,
+      "latitude": 33.960052,
+      "longitude": -118.240593,
+      "run_id": "115_499_0",
+      "route_id": "115",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5648",
+      "heading": 135.0,
+      "latitude": 34.063866,
+      "longitude": -118.251968,
+      "run_id": "10_398_0",
+      "route_id": "10",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5901",
+      "heading": 75.0,
+      "latitude": 34.111412,
+      "longitude": -118.289894,
+      "run_id": "180_171_0",
+      "route_id": "180",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9434",
+      "heading": 345.0,
+      "latitude": 33.933624,
+      "longitude": -118.309036,
+      "run_id": "207_276_0",
+      "route_id": "207",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8160",
+      "heading": 180.0,
+      "latitude": 34.166771,
+      "longitude": -118.623375,
+      "run_id": "152_126_1",
+      "route_id": "152",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8509",
+      "heading": 120.0,
+      "latitude": 34.043049,
+      "longitude": -118.25721,
+      "run_id": "81_178_0",
+      "route_id": "81",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8214",
+      "heading": 214.0,
+      "latitude": 34.0334239,
+      "longitude": -118.265633,
+      "run_id": "94_224_0",
+      "route_id": "94",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4062",
+      "heading": 240.0,
+      "latitude": 34.094334,
+      "longitude": -118.128792,
+      "run_id": "78_469_1",
+      "route_id": "78",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "9203",
+      "heading": 300.0,
+      "latitude": 34.082291,
+      "longitude": -118.272385,
+      "run_id": "704_149_1",
+      "route_id": "704",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3919",
+      "heading": 219.0,
+      "latitude": 34.042637,
+      "longitude": -118.24823,
+      "run_id": "20_558_1",
+      "route_id": "20",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5872",
+      "heading": 360.0,
+      "latitude": 33.94006,
+      "longitude": -118.278061,
+      "run_id": "45_516_0",
+      "route_id": "45",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3965",
+      "heading": 285.0,
+      "latitude": 34.043625,
+      "longitude": -118.283699,
+      "run_id": "33_433_1",
+      "route_id": "33",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9250",
+      "heading": 220.0,
+      "latitude": 34.1517259,
+      "longitude": -118.446899,
+      "run_id": "233_133_0",
+      "route_id": "233",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8607",
+      "heading": 315.0,
+      "latitude": 34.084957,
+      "longitude": -118.223648,
+      "run_id": "94_224_0",
+      "route_id": "94",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9494",
+      "heading": 345.0,
+      "latitude": 34.038097,
+      "longitude": -118.308937,
+      "run_id": "207_277_0",
+      "route_id": "207",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5884",
+      "heading": 240.0,
+      "latitude": 34.1132009,
+      "longitude": -118.189293,
+      "run_id": "256_59_1",
+      "route_id": "256",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3868",
+      "heading": 345.0,
+      "latitude": 33.91069,
+      "longitude": -118.208862,
+      "run_id": "60_115_0",
+      "route_id": "60",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4051",
+      "heading": 220.0,
+      "latitude": 34.033176,
+      "longitude": -118.265274,
+      "run_id": "71_84_0",
+      "route_id": "71",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9546",
+      "heading": 285.0,
+      "latitude": 34.180767,
+      "longitude": -118.552017,
+      "run_id": "901_47_1",
+      "route_id": "901",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "6075",
+      "heading": 255.0,
+      "latitude": 34.023991,
+      "longitude": -118.182312,
+      "run_id": "18_204_1",
+      "route_id": "18",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5951",
+      "heading": 15.0,
+      "latitude": 34.05677,
+      "longitude": -118.201424,
+      "run_id": "252_65_0",
+      "route_id": "252",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9337",
+      "heading": 188.0,
+      "latitude": 34.104897,
+      "longitude": -118.309364,
+      "run_id": "207_273_1",
+      "route_id": "207",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8208",
+      "heading": 129.0,
+      "latitude": 34.219131,
+      "longitude": -118.369247,
+      "run_id": "94_218_1",
+      "route_id": "94",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5718",
+      "heading": 270.0,
+      "latitude": 33.989174,
+      "longitude": -118.308708,
+      "run_id": "108_359_1",
+      "route_id": "108",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4104",
+      "heading": 180.0,
+      "latitude": 34.22089,
+      "longitude": -118.536217,
+      "run_id": "240_154_0",
+      "route_id": "240",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8552",
+      "heading": 225.0,
+      "latitude": 34.080502,
+      "longitude": -118.413628,
+      "run_id": "2_1024_1",
+      "route_id": "2",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8189",
+      "heading": 270.0,
+      "latitude": 34.18668,
+      "longitude": -118.503471,
+      "run_id": "164_50_1",
+      "route_id": "164",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "3912",
+      "heading": 15.0,
+      "latitude": 34.054295,
+      "longitude": -118.261833,
+      "run_id": "16_307_1",
+      "route_id": "16",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5649",
+      "heading": 180.0,
+      "latitude": 34.085396,
+      "longitude": -118.361542,
+      "run_id": "217_191_1",
+      "route_id": "217",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4176",
+      "heading": 218.0,
+      "latitude": 34.056633,
+      "longitude": -118.24115,
+      "run_id": "78_469_1",
+      "route_id": "78",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5796",
+      "heading": 270.0,
+      "latitude": 33.962334,
+      "longitude": -118.199783,
+      "run_id": "611_22_0",
+      "route_id": "611",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8012",
+      "heading": 219.0,
+      "latitude": 34.0512159,
+      "longitude": -118.230858,
+      "run_id": "745_88_1",
+      "route_id": "745",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8261",
+      "heading": 90.0,
+      "latitude": 34.271736,
+      "longitude": -118.459976,
+      "run_id": "234_35_0",
+      "route_id": "234",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8546",
+      "heading": 307.0,
+      "latitude": 34.044369,
+      "longitude": -118.262558,
+      "run_id": "28_541_1",
+      "route_id": "28",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8454",
+      "heading": 255.0,
+      "latitude": 33.974571,
+      "longitude": -118.333061,
+      "run_id": "111_347_1",
+      "route_id": "111",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4050",
+      "heading": 105.0,
+      "latitude": 34.0669169,
+      "longitude": -118.222038,
+      "run_id": "76_162_0",
+      "route_id": "76",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8278",
+      "heading": 220.0,
+      "latitude": 34.034962,
+      "longitude": -118.435982,
+      "run_id": "234_35_0",
+      "route_id": "234",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8282",
+      "heading": 90.0,
+      "latitude": 34.186596,
+      "longitude": -118.369774,
+      "run_id": "164_51_0",
+      "route_id": "164",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6121",
+      "heading": 168.0,
+      "latitude": 33.875408,
+      "longitude": -118.223122,
+      "run_id": "60_115_0",
+      "route_id": "60",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8276",
+      "heading": 279.0,
+      "latitude": 34.1539,
+      "longitude": -118.465675,
+      "run_id": "240_164_1",
+      "route_id": "240",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "5841",
+      "heading": 308.0,
+      "latitude": 34.048023,
+      "longitude": -118.247345,
+      "run_id": "16_307_1",
+      "route_id": "16",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8620",
+      "heading": 278.0,
+      "latitude": 33.973942,
+      "longitude": -118.221939,
+      "run_id": "111_347_1",
+      "route_id": "111",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8502",
+      "heading": 30.0,
+      "latitude": 34.0494,
+      "longitude": -118.246162,
+      "run_id": "460_175_0",
+      "route_id": "460",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8259",
+      "heading": 105.0,
+      "latitude": 34.158768,
+      "longitude": -118.499245,
+      "run_id": "240_154_0",
+      "route_id": "240",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8586",
+      "heading": 345.0,
+      "latitude": 34.041836,
+      "longitude": -118.553947,
+      "run_id": "602_2_0",
+      "route_id": "602",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4057",
+      "heading": 178.0,
+      "latitude": 34.072941,
+      "longitude": -118.376656,
+      "run_id": "105_224_1",
+      "route_id": "105",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8139",
+      "heading": 34.0,
+      "latitude": 34.038567,
+      "longitude": -118.261307,
+      "run_id": "94_221_0",
+      "route_id": "94",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8225",
+      "heading": 255.0,
+      "latitude": 34.143394,
+      "longitude": -118.397598,
+      "run_id": "150_166_1",
+      "route_id": "150",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "3882",
+      "heading": 220.0,
+      "latitude": 33.869469,
+      "longitude": -118.287659,
+      "run_id": "52_265_0",
+      "route_id": "52",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9565",
+      "heading": 165.0,
+      "latitude": 33.95821,
+      "longitude": -118.353378,
+      "run_id": "40_885_1",
+      "route_id": "40",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9452",
+      "heading": 345.0,
+      "latitude": 34.052589,
+      "longitude": -118.231384,
+      "run_id": "40_885_1",
+      "route_id": "40",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8191",
+      "heading": 225.0,
+      "latitude": 34.223339,
+      "longitude": -118.386848,
+      "run_id": "94_216_1",
+      "route_id": "94",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9398",
+      "heading": 90.0,
+      "latitude": 34.057705,
+      "longitude": -118.291924,
+      "run_id": "66_363_0",
+      "route_id": "66",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "4003",
+      "heading": 210.0,
+      "latitude": 34.0595209,
+      "longitude": -118.245216,
+      "run_id": "60_128_1",
+      "route_id": "60",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4143",
+      "heading": 352.0,
+      "latitude": 34.059658,
+      "longitude": -118.133575,
+      "run_id": "260_251_0",
+      "route_id": "260",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8526",
+      "heading": 345.0,
+      "latitude": 33.9900019,
+      "longitude": -118.282616,
+      "run_id": "81_178_0",
+      "route_id": "81",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "11039",
+      "heading": 90.0,
+      "latitude": 33.872822,
+      "longitude": -118.11525,
+      "run_id": "130_88_0",
+      "route_id": "130",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9578",
+      "heading": 210.0,
+      "latitude": 34.051792,
+      "longitude": -118.245544,
+      "run_id": "733_78_1",
+      "route_id": "733",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4076",
+      "heading": 225.0,
+      "latitude": 34.034412,
+      "longitude": -118.090408,
+      "run_id": "68_132_1",
+      "route_id": "68",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8127",
+      "heading": 94.0,
+      "latitude": 34.034908,
+      "longitude": -118.238106,
+      "run_id": "18_186_0",
+      "route_id": "18",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9478",
+      "heading": 220.0,
+      "latitude": 33.865616,
+      "longitude": -118.353973,
+      "run_id": "40_874_0",
+      "route_id": "40",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5676",
+      "heading": 220.0,
+      "latitude": 34.026161,
+      "longitude": -118.37085,
+      "run_id": "217_218_0",
+      "route_id": "217",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4095",
+      "heading": 315.0,
+      "latitude": 34.013649,
+      "longitude": -118.346336,
+      "run_id": "105_236_0",
+      "route_id": "105",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "5701",
+      "heading": 255.0,
+      "latitude": 33.982052,
+      "longitude": -118.237869,
+      "run_id": "110_217_1",
+      "route_id": "110",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4186",
+      "heading": 274.0,
+      "latitude": 34.140427,
+      "longitude": -118.136719,
+      "run_id": "267_75_0",
+      "route_id": "267",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "5992",
+      "heading": 158.0,
+      "latitude": 34.167542,
+      "longitude": -118.346954,
+      "run_id": "222_63_1",
+      "route_id": "222",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5843",
+      "heading": 255.0,
+      "latitude": 34.1400409,
+      "longitude": -118.033798,
+      "run_id": "79_477_1",
+      "route_id": "79",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "6043",
+      "heading": 90.0,
+      "latitude": 34.052616,
+      "longitude": -118.292778,
+      "run_id": "16_328_1",
+      "route_id": "16",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9558",
+      "heading": 165.0,
+      "latitude": 34.059986,
+      "longitude": -118.291794,
+      "run_id": "754_70_1",
+      "route_id": "754",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8531",
+      "heading": 90.0,
+      "latitude": 34.059299,
+      "longitude": -118.38324,
+      "run_id": "28_533_0",
+      "route_id": "28",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8504",
+      "heading": 297.0,
+      "latitude": 34.055752,
+      "longitude": -118.266029,
+      "run_id": "18_204_1",
+      "route_id": "18",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6059",
+      "heading": 360.0,
+      "latitude": 33.962086,
+      "longitude": -118.256363,
+      "run_id": "53_160_0",
+      "route_id": "53",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8304",
+      "heading": 345.0,
+      "latitude": 33.930794,
+      "longitude": -118.326439,
+      "run_id": "210_259_0",
+      "route_id": "210",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3867",
+      "heading": 220.0,
+      "latitude": 34.062214,
+      "longitude": -118.289139,
+      "run_id": "51_217_1",
+      "route_id": "51",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5609",
+      "heading": 255.0,
+      "latitude": 34.111221,
+      "longitude": -118.004395,
+      "run_id": "78_469_1",
+      "route_id": "78",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9439",
+      "heading": 220.0,
+      "latitude": 34.252377,
+      "longitude": -118.598984,
+      "run_id": "901_34_0",
+      "route_id": "901",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9507",
+      "heading": 220.0,
+      "latitude": 34.274075,
+      "longitude": -118.411301,
+      "run_id": "744_5_1",
+      "route_id": "744",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "9406",
+      "heading": 180.0,
+      "latitude": 34.048439,
+      "longitude": -118.291695,
+      "run_id": "204_106_1",
+      "route_id": "204",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8134",
+      "heading": 195.0,
+      "latitude": 34.062931,
+      "longitude": -118.239548,
+      "run_id": "94_216_1",
+      "route_id": "94",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8578",
+      "heading": 157.0,
+      "latitude": 34.153324,
+      "longitude": -118.275269,
+      "run_id": "94_218_1",
+      "route_id": "94",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9261",
+      "heading": 38.0,
+      "latitude": 34.046375,
+      "longitude": -118.248886,
+      "run_id": "733_81_0",
+      "route_id": "733",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8319",
+      "heading": 255.0,
+      "latitude": 33.874447,
+      "longitude": -118.188637,
+      "run_id": "260_236_1",
+      "route_id": "260",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8215",
+      "heading": 150.0,
+      "latitude": 34.146942,
+      "longitude": -118.363869,
+      "run_id": "224_216_1",
+      "route_id": "224",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5726",
+      "heading": 105.0,
+      "latitude": 34.0326809,
+      "longitude": -118.27845,
+      "run_id": "603_19_1",
+      "route_id": "603",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4059",
+      "heading": 165.0,
+      "latitude": 33.923889,
+      "longitude": -118.265343,
+      "run_id": "51_213_1",
+      "route_id": "51",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9242",
+      "heading": 345.0,
+      "latitude": 34.050282,
+      "longitude": -118.291595,
+      "run_id": "754_92_0",
+      "route_id": "754",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4157",
+      "heading": 75.0,
+      "latitude": 34.103329,
+      "longitude": -118.088539,
+      "run_id": "78_488_0",
+      "route_id": "78",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4080",
+      "heading": 298.0,
+      "latitude": 34.054733,
+      "longitude": -118.247215,
+      "run_id": "76_170_1",
+      "route_id": "76",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8590",
+      "heading": 45.0,
+      "latitude": 34.248032,
+      "longitude": -118.417854,
+      "run_id": "166_75_0",
+      "route_id": "166",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4169",
+      "heading": 90.0,
+      "latitude": 34.062626,
+      "longitude": -118.051727,
+      "run_id": "70_255_0",
+      "route_id": "70",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5928",
+      "heading": 30.0,
+      "latitude": 34.056961,
+      "longitude": -118.276451,
+      "run_id": "200_40_0",
+      "route_id": "200",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "6138",
+      "heading": 255.0,
+      "latitude": 34.090843,
+      "longitude": -118.352463,
+      "run_id": "4_260_1",
+      "route_id": "4",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8359",
+      "heading": 270.0,
+      "latitude": 34.062984,
+      "longitude": -118.17009,
+      "run_id": "950_192_1",
+      "route_id": "950",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8234",
+      "heading": 270.0,
+      "latitude": 34.1726839,
+      "longitude": -118.550346,
+      "run_id": "150_155_0",
+      "route_id": "150",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8172",
+      "heading": 255.0,
+      "latitude": 34.0636439,
+      "longitude": -118.297859,
+      "run_id": "18_204_1",
+      "route_id": "18",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5771",
+      "heading": 90.0,
+      "latitude": 33.982384,
+      "longitude": -118.269897,
+      "run_id": "110_229_0",
+      "route_id": "110",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9469",
+      "heading": 345.0,
+      "latitude": 33.936264,
+      "longitude": -118.352531,
+      "run_id": "40_874_0",
+      "route_id": "40",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5971",
+      "heading": 300.0,
+      "latitude": 34.138775,
+      "longitude": -118.193161,
+      "run_id": "180_154_1",
+      "route_id": "180",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "5908",
+      "heading": 345.0,
+      "latitude": 34.063343,
+      "longitude": -118.300377,
+      "run_id": "206_155_0",
+      "route_id": "206",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5991",
+      "heading": 270.0,
+      "latitude": 33.872906,
+      "longitude": -118.325943,
+      "run_id": "344_48_1",
+      "route_id": "344",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9549",
+      "heading": 75.0,
+      "latitude": 34.180382,
+      "longitude": -118.518875,
+      "run_id": "901_34_0",
+      "route_id": "901",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8538",
+      "heading": 225.0,
+      "latitude": 34.117271,
+      "longitude": -118.234695,
+      "run_id": "28_521_1",
+      "route_id": "28",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4016",
+      "heading": 220.0,
+      "latitude": 34.078083,
+      "longitude": -118.257378,
+      "run_id": "200_39_1",
+      "route_id": "200",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6014",
+      "heading": 300.0,
+      "latitude": 34.045193,
+      "longitude": -118.253052,
+      "run_id": "51_248_0",
+      "route_id": "51",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8611",
+      "heading": 90.0,
+      "latitude": 33.959915,
+      "longitude": -118.300644,
+      "run_id": "115_494_0",
+      "route_id": "115",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8560",
+      "heading": 30.0,
+      "latitude": 34.112129,
+      "longitude": -118.187889,
+      "run_id": "81_178_0",
+      "route_id": "81",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9291",
+      "heading": 229.0,
+      "latitude": 34.084076,
+      "longitude": -118.385338,
+      "run_id": "704_150_1",
+      "route_id": "704",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "4089",
+      "heading": 300.0,
+      "latitude": 34.059025,
+      "longitude": -118.282516,
+      "run_id": "52_265_0",
+      "route_id": "52",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8593",
+      "heading": 229.0,
+      "latitude": 34.071262,
+      "longitude": -118.229942,
+      "run_id": "28_541_1",
+      "route_id": "28",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9430",
+      "heading": 180.0,
+      "latitude": 34.178154,
+      "longitude": -118.448898,
+      "run_id": "233_139_1",
+      "route_id": "233",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "6106",
+      "heading": 346.0,
+      "latitude": 33.88847,
+      "longitude": -118.206963,
+      "run_id": "60_115_0",
+      "route_id": "60",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8291",
+      "heading": 345.0,
+      "latitude": 34.090759,
+      "longitude": -118.475182,
+      "run_id": "234_35_0",
+      "route_id": "234",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "5944",
+      "heading": 360.0,
+      "latitude": 34.003666,
+      "longitude": -118.278252,
+      "run_id": "45_516_0",
+      "route_id": "45",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8312",
+      "heading": 90.0,
+      "latitude": 33.945091,
+      "longitude": -118.214142,
+      "run_id": "117_51_0",
+      "route_id": "117",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8568",
+      "heading": 165.0,
+      "latitude": 34.010101,
+      "longitude": -118.219879,
+      "run_id": "251_119_1",
+      "route_id": "251",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "4159",
+      "heading": 60.0,
+      "latitude": 34.062931,
+      "longitude": -118.161369,
+      "run_id": "487_95_0",
+      "route_id": "487",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3950",
+      "heading": 255.0,
+      "latitude": 34.101624,
+      "longitude": -118.336502,
+      "run_id": "217_191_1",
+      "route_id": "217",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9210",
+      "heading": 255.0,
+      "latitude": 33.930984,
+      "longitude": -118.313721,
+      "run_id": "207_276_0",
+      "route_id": "207",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8606",
+      "heading": 90.0,
+      "latitude": 33.9532049,
+      "longitude": -118.19664,
+      "run_id": "115_494_0",
+      "route_id": "115",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5762",
+      "heading": 220.0,
+      "latitude": 33.972591,
+      "longitude": -118.113319,
+      "run_id": "108_359_1",
+      "route_id": "108",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9428",
+      "heading": 165.0,
+      "latitude": 34.233952,
+      "longitude": -118.597282,
+      "run_id": "901_34_0",
+      "route_id": "901",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3934",
+      "heading": 203.0,
+      "latitude": 34.034882,
+      "longitude": -118.369804,
+      "run_id": "217_191_1",
+      "route_id": "217",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9553",
+      "heading": 270.0,
+      "latitude": 34.186241,
+      "longitude": -118.484131,
+      "run_id": "901_46_1",
+      "route_id": "901",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "9586",
+      "heading": 255.0,
+      "latitude": 34.023964,
+      "longitude": -118.18071,
+      "run_id": "720_917_1",
+      "route_id": "720",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5922",
+      "heading": 225.0,
+      "latitude": 34.2239689,
+      "longitude": -118.385963,
+      "run_id": "152_126_1",
+      "route_id": "152",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8572",
+      "heading": 165.0,
+      "latitude": 33.991154,
+      "longitude": -118.300285,
+      "run_id": "206_160_1",
+      "route_id": "206",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5840",
+      "heading": 90.0,
+      "latitude": 34.066944,
+      "longitude": -118.387375,
+      "run_id": "20_572_0",
+      "route_id": "20",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8530",
+      "heading": 220.0,
+      "latitude": 33.9635729,
+      "longitude": -118.222961,
+      "run_id": "251_114_0",
+      "route_id": "251",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8464",
+      "heading": 360.0,
+      "latitude": 33.983234,
+      "longitude": -118.330765,
+      "run_id": "210_256_0",
+      "route_id": "210",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8264",
+      "heading": 90.0,
+      "latitude": 33.970036,
+      "longitude": -118.186218,
+      "run_id": "111_320_0",
+      "route_id": "111",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5945",
+      "heading": 15.0,
+      "latitude": 34.033066,
+      "longitude": -118.264458,
+      "run_id": "45_518_0",
+      "route_id": "45",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9448",
+      "heading": 210.0,
+      "latitude": 34.045853,
+      "longitude": -118.251114,
+      "run_id": "40_885_1",
+      "route_id": "40",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "4190",
+      "heading": 220.0,
+      "latitude": 34.189953,
+      "longitude": -118.132195,
+      "run_id": "687_50_1",
+      "route_id": "687",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "5821",
+      "heading": 220.0,
+      "latitude": 33.945175,
+      "longitude": -117.998596,
+      "run_id": "120_71_1",
+      "route_id": "120",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9500",
+      "heading": 358.0,
+      "latitude": 34.200981,
+      "longitude": -118.597115,
+      "run_id": "901_46_1",
+      "route_id": "901",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3995",
+      "heading": 360.0,
+      "latitude": 34.037548,
+      "longitude": -118.368652,
+      "run_id": "217_218_0",
+      "route_id": "217",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5678",
+      "heading": 219.0,
+      "latitude": 34.084793,
+      "longitude": -118.381508,
+      "run_id": "534_143_1",
+      "route_id": "534",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "5621",
+      "heading": 345.0,
+      "latitude": 34.090458,
+      "longitude": -118.344009,
+      "run_id": "212_192_0",
+      "route_id": "212",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5837",
+      "heading": 90.0,
+      "latitude": 34.10154,
+      "longitude": -118.333588,
+      "run_id": "217_218_0",
+      "route_id": "217",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9380",
+      "heading": 180.0,
+      "latitude": 34.213547,
+      "longitude": -118.448929,
+      "run_id": "233_145_1",
+      "route_id": "233",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9542",
+      "heading": 255.0,
+      "latitude": 34.180576,
+      "longitude": -118.449089,
+      "run_id": "901_47_1",
+      "route_id": "901",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5615",
+      "heading": 34.0,
+      "latitude": 34.036446,
+      "longitude": -118.264359,
+      "run_id": "14_382_0",
+      "route_id": "14",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4044",
+      "heading": 40.0,
+      "latitude": 34.056385,
+      "longitude": -118.24118,
+      "run_id": "79_484_0",
+      "route_id": "79",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3887",
+      "heading": 285.0,
+      "latitude": 34.064663,
+      "longitude": -118.374031,
+      "run_id": "20_572_0",
+      "route_id": "20",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3884",
+      "heading": 360.0,
+      "latitude": 33.993053,
+      "longitude": -118.273926,
+      "run_id": "48_451_1",
+      "route_id": "48",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5513",
+      "heading": 45.0,
+      "latitude": 34.038345,
+      "longitude": -118.37233,
+      "run_id": "33_447_0",
+      "route_id": "33",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8503",
+      "heading": 105.0,
+      "latitude": 34.01981,
+      "longitude": -118.154816,
+      "run_id": "18_186_0",
+      "route_id": "18",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8557",
+      "heading": 195.0,
+      "latitude": 34.047832,
+      "longitude": -118.337219,
+      "run_id": "30_647_0",
+      "route_id": "30",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3881",
+      "heading": 180.0,
+      "latitude": 33.875435,
+      "longitude": -118.223289,
+      "run_id": "60_115_0",
+      "route_id": "60",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6098",
+      "heading": 270.0,
+      "latitude": 33.737991,
+      "longitude": -118.305916,
+      "run_id": "550_122_0",
+      "route_id": "550",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5768",
+      "heading": 90.0,
+      "latitude": 33.976498,
+      "longitude": -118.173561,
+      "run_id": "110_229_0",
+      "route_id": "110",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9572",
+      "heading": 285.0,
+      "latitude": 34.066093,
+      "longitude": -118.3797,
+      "run_id": "720_881_1",
+      "route_id": "720",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4011",
+      "heading": 220.0,
+      "latitude": 34.070412,
+      "longitude": -118.0457,
+      "run_id": "268_123_0",
+      "route_id": "268",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "9368",
+      "heading": 89.0,
+      "latitude": 34.010708,
+      "longitude": -118.318542,
+      "run_id": "40_874_0",
+      "route_id": "40",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9390",
+      "heading": 73.0,
+      "latitude": 34.0486829,
+      "longitude": -118.440178,
+      "run_id": "704_151_0",
+      "route_id": "704",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3136",
+      "heading": 166.0,
+      "latitude": 34.058697,
+      "longitude": -118.206703,
+      "run_id": "605_40_1",
+      "route_id": "605",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "5624",
+      "heading": 75.0,
+      "latitude": 34.047256,
+      "longitude": -118.285568,
+      "run_id": "30_604_0",
+      "route_id": "30",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9292",
+      "heading": 225.0,
+      "latitude": 34.024456,
+      "longitude": -118.485313,
+      "run_id": "704_149_1",
+      "route_id": "704",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4096",
+      "heading": 237.0,
+      "latitude": 34.154175,
+      "longitude": -118.796898,
+      "run_id": "161_81_1",
+      "route_id": "161",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8645",
+      "heading": 210.0,
+      "latitude": 33.913441,
+      "longitude": -118.140488,
+      "run_id": "117_59_1",
+      "route_id": "117",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "6058",
+      "heading": 360.0,
+      "latitude": 34.011642,
+      "longitude": -118.256454,
+      "run_id": "53_148_0",
+      "route_id": "53",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3946",
+      "heading": 180.0,
+      "latitude": 33.955433,
+      "longitude": -118.256523,
+      "run_id": "53_162_1",
+      "route_id": "53",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "11038",
+      "heading": 178.0,
+      "latitude": 33.922295,
+      "longitude": -118.387505,
+      "run_id": "232_73_0",
+      "route_id": "232",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "4045",
+      "heading": 75.0,
+      "latitude": 34.1458439,
+      "longitude": -118.139244,
+      "run_id": "686_52_0",
+      "route_id": "686",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4175",
+      "heading": 195.0,
+      "latitude": 34.116886,
+      "longitude": -118.271828,
+      "run_id": "180_154_1",
+      "route_id": "180",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8360",
+      "heading": 270.0,
+      "latitude": 33.743298,
+      "longitude": -118.282616,
+      "run_id": "950_190_0",
+      "route_id": "950",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "8539",
+      "heading": 124.0,
+      "latitude": 34.049236,
+      "longitude": -118.274422,
+      "run_id": "28_533_0",
+      "route_id": "28",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4106",
+      "heading": 45.0,
+      "latitude": 34.159702,
+      "longitude": -118.635567,
+      "run_id": "161_82_0",
+      "route_id": "161",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5629",
+      "heading": 220.0,
+      "latitude": 34.141224,
+      "longitude": -118.148949,
+      "run_id": "501_7_1",
+      "route_id": "501",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4168",
+      "heading": 255.0,
+      "latitude": 34.077477,
+      "longitude": -118.142952,
+      "run_id": "76_170_1",
+      "route_id": "76",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8198",
+      "heading": 60.0,
+      "latitude": 34.221714,
+      "longitude": -118.388947,
+      "run_id": "152_132_0",
+      "route_id": "152",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "4094",
+      "heading": 165.0,
+      "latitude": 33.896557,
+      "longitude": -118.224007,
+      "run_id": "51_248_0",
+      "route_id": "51",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9432",
+      "heading": 360.0,
+      "latitude": 34.034248,
+      "longitude": -118.291496,
+      "run_id": "204_103_0",
+      "route_id": "204",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8109",
+      "heading": 345.0,
+      "latitude": 34.182636,
+      "longitude": -118.466141,
+      "run_id": "234_35_0",
+      "route_id": "234",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "4027",
+      "heading": 75.0,
+      "latitude": 34.003944,
+      "longitude": -118.235313,
+      "run_id": "105_224_1",
+      "route_id": "105",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "11016",
+      "heading": 75.0,
+      "latitude": 33.895893,
+      "longitude": -118.220535,
+      "run_id": "125_152_0",
+      "route_id": "125",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5704",
+      "heading": 165.0,
+      "latitude": 34.072197,
+      "longitude": -118.377312,
+      "run_id": "30_599_0",
+      "route_id": "30",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8543",
+      "heading": 220.0,
+      "latitude": 34.088558,
+      "longitude": -118.224335,
+      "run_id": "81_178_0",
+      "route_id": "81",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3956",
+      "heading": 220.0,
+      "latitude": 33.902988,
+      "longitude": -118.269341,
+      "run_id": "45_516_0",
+      "route_id": "45",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3896",
+      "heading": 60.0,
+      "latitude": 34.035072,
+      "longitude": -118.103783,
+      "run_id": "68_131_0",
+      "route_id": "68",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5727",
+      "heading": 75.0,
+      "latitude": 33.989174,
+      "longitude": -118.271866,
+      "run_id": "108_378_0",
+      "route_id": "108",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8226",
+      "heading": 90.0,
+      "latitude": 34.193886,
+      "longitude": -118.393372,
+      "run_id": "165_159_0",
+      "route_id": "165",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8384",
+      "heading": 360.0,
+      "latitude": 33.988873,
+      "longitude": -118.280487,
+      "run_id": "910_173_0",
+      "route_id": "910",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "9460",
+      "heading": 220.0,
+      "latitude": 34.168587,
+      "longitude": -118.377411,
+      "run_id": "901_47_1",
+      "route_id": "901",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "4004",
+      "heading": 220.0,
+      "latitude": 33.998085,
+      "longitude": -118.079262,
+      "run_id": "265_10_1",
+      "route_id": "265",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4007",
+      "heading": 255.0,
+      "latitude": 34.003944,
+      "longitude": -118.261276,
+      "run_id": "105_236_0",
+      "route_id": "105",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8551",
+      "heading": 45.0,
+      "latitude": 34.098572,
+      "longitude": -118.204666,
+      "run_id": "81_178_0",
+      "route_id": "81",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9297",
+      "heading": 175.0,
+      "latitude": 33.999405,
+      "longitude": -118.331024,
+      "run_id": "40_885_1",
+      "route_id": "40",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5639",
+      "heading": 270.0,
+      "latitude": 34.098076,
+      "longitude": -118.33519,
+      "run_id": "2_1057_1",
+      "route_id": "2",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8579",
+      "heading": 225.0,
+      "latitude": 34.245834,
+      "longitude": -118.421097,
+      "run_id": "166_116_1",
+      "route_id": "166",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3962",
+      "heading": 180.0,
+      "latitude": 34.009911,
+      "longitude": -118.335159,
+      "run_id": "105_224_1",
+      "route_id": "105",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9409",
+      "heading": 179.0,
+      "latitude": 34.098293,
+      "longitude": -118.309326,
+      "run_id": "207_271_1",
+      "route_id": "207",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8441",
+      "heading": 90.0,
+      "latitude": 34.043461,
+      "longitude": -118.317886,
+      "run_id": "33_447_0",
+      "route_id": "33",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9519",
+      "heading": 345.0,
+      "latitude": 34.215748,
+      "longitude": -118.448631,
+      "run_id": "744_4_0",
+      "route_id": "744",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9400",
+      "heading": 285.0,
+      "latitude": 34.027676,
+      "longitude": -118.218536,
+      "run_id": "66_385_1",
+      "route_id": "66",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9275",
+      "heading": 244.0,
+      "latitude": 34.043957,
+      "longitude": -118.455811,
+      "run_id": "704_150_1",
+      "route_id": "704",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5601",
+      "heading": 120.0,
+      "latitude": 34.144604,
+      "longitude": -118.22702,
+      "run_id": "180_171_0",
+      "route_id": "180",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5853",
+      "heading": 75.0,
+      "latitude": 34.168118,
+      "longitude": -118.373802,
+      "run_id": "183_52_0",
+      "route_id": "183",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3989",
+      "heading": 315.0,
+      "latitude": 34.126209,
+      "longitude": -118.257378,
+      "run_id": "603_20_0",
+      "route_id": "603",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8480",
+      "heading": 255.0,
+      "latitude": 33.961842,
+      "longitude": -118.35302,
+      "run_id": "115_438_1",
+      "route_id": "115",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8302",
+      "heading": 270.0,
+      "latitude": 33.94556,
+      "longitude": -118.308838,
+      "run_id": "117_59_1",
+      "route_id": "117",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5698",
+      "heading": 15.0,
+      "latitude": 34.032074,
+      "longitude": -118.351151,
+      "run_id": "212_192_0",
+      "route_id": "212",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8129",
+      "heading": 187.0,
+      "latitude": 33.988625,
+      "longitude": -118.185463,
+      "run_id": "260_236_1",
+      "route_id": "260",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3861",
+      "heading": 329.0,
+      "latitude": 33.984802,
+      "longitude": -118.399765,
+      "run_id": "108_378_0",
+      "route_id": "108",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5658",
+      "heading": 75.0,
+      "latitude": 34.032433,
+      "longitude": -118.361015,
+      "run_id": "37_382_0",
+      "route_id": "37",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5869",
+      "heading": 209.0,
+      "latitude": 34.065323,
+      "longitude": -118.236923,
+      "run_id": "45_505_1",
+      "route_id": "45",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3115",
+      "heading": 270.0,
+      "latitude": 34.242779,
+      "longitude": -118.57103,
+      "run_id": "167_96_1",
+      "route_id": "167",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3974",
+      "heading": 360.0,
+      "latitude": 34.15588,
+      "longitude": -118.448669,
+      "run_id": "155_31_0",
+      "route_id": "155",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6077",
+      "heading": 75.0,
+      "latitude": 34.073627,
+      "longitude": -118.211914,
+      "run_id": "45_516_0",
+      "route_id": "45",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5880",
+      "heading": 180.0,
+      "latitude": 34.051819,
+      "longitude": -118.064476,
+      "run_id": "266_21_1",
+      "route_id": "266",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3891",
+      "heading": 30.0,
+      "latitude": 34.035843,
+      "longitude": -118.26075,
+      "run_id": "55_186_0",
+      "route_id": "55",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8556",
+      "heading": 255.0,
+      "latitude": 34.098213,
+      "longitude": -118.298706,
+      "run_id": "2_1024_1",
+      "route_id": "2",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9536",
+      "heading": 88.0,
+      "latitude": 34.011066,
+      "longitude": -118.283142,
+      "run_id": "40_874_0",
+      "route_id": "40",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3968",
+      "heading": 165.0,
+      "latitude": 33.929749,
+      "longitude": -118.254395,
+      "run_id": "53_155_1",
+      "route_id": "53",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5691",
+      "heading": 270.0,
+      "latitude": 34.083584,
+      "longitude": -118.301003,
+      "run_id": "10_493_1",
+      "route_id": "10",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5668",
+      "heading": 90.0,
+      "latitude": 33.93819,
+      "longitude": -118.348564,
+      "run_id": "212_192_0",
+      "route_id": "212",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3914",
+      "heading": 120.0,
+      "latitude": 34.06205,
+      "longitude": -118.270752,
+      "run_id": "16_254_0",
+      "route_id": "16",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8102",
+      "heading": 220.0,
+      "latitude": 34.063206,
+      "longitude": -118.308342,
+      "run_id": "18_186_0",
+      "route_id": "18",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8197",
+      "heading": 220.0,
+      "latitude": 34.17931,
+      "longitude": -118.312935,
+      "run_id": "164_50_1",
+      "route_id": "164",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5937",
+      "heading": 180.0,
+      "latitude": 34.142735,
+      "longitude": -118.257965,
+      "run_id": "181_166_1",
+      "route_id": "181",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4102",
+      "heading": 90.0,
+      "latitude": 34.221275,
+      "longitude": -118.47699,
+      "run_id": "152_132_0",
+      "route_id": "152",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8609",
+      "heading": 90.0,
+      "latitude": 33.945396,
+      "longitude": -118.292152,
+      "run_id": "117_51_0",
+      "route_id": "117",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5798",
+      "heading": 75.0,
+      "latitude": 34.0255579,
+      "longitude": -118.325943,
+      "run_id": "38_196_0",
+      "route_id": "38",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9296",
+      "heading": 228.0,
+      "latitude": 34.060318,
+      "longitude": -118.243645,
+      "run_id": "704_151_0",
+      "route_id": "704",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4082",
+      "heading": 165.0,
+      "latitude": 33.9635729,
+      "longitude": -118.265213,
+      "run_id": "51_217_1",
+      "route_id": "51",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5777",
+      "heading": 33.0,
+      "latitude": 34.0470619,
+      "longitude": -118.282745,
+      "run_id": "200_40_0",
+      "route_id": "200",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4192",
+      "heading": 225.0,
+      "latitude": 34.091778,
+      "longitude": -118.16317,
+      "run_id": "79_477_1",
+      "route_id": "79",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "4001",
+      "heading": 135.0,
+      "latitude": 34.298084,
+      "longitude": -118.437782,
+      "run_id": "92_222_1",
+      "route_id": "92",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "4167",
+      "heading": 285.0,
+      "latitude": 34.0582009,
+      "longitude": -118.21096,
+      "run_id": "70_246_1",
+      "route_id": "70",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8474",
+      "heading": 300.0,
+      "latitude": 33.922569,
+      "longitude": -118.148781,
+      "run_id": "117_59_1",
+      "route_id": "117",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "4071",
+      "heading": 25.0,
+      "latitude": 34.057896,
+      "longitude": -118.238136,
+      "run_id": "68_131_0",
+      "route_id": "68",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "6041",
+      "heading": 219.0,
+      "latitude": 34.043129,
+      "longitude": -118.248001,
+      "run_id": "16_307_1",
+      "route_id": "16",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9555",
+      "heading": 255.0,
+      "latitude": 34.1685299,
+      "longitude": -118.381042,
+      "run_id": "901_46_1",
+      "route_id": "901",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4160",
+      "heading": 220.0,
+      "latitude": 34.033283,
+      "longitude": -118.265045,
+      "run_id": "78_488_0",
+      "route_id": "78",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8168",
+      "heading": 319.0,
+      "latitude": 34.253864,
+      "longitude": -118.409103,
+      "run_id": "94_224_0",
+      "route_id": "94",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "11026",
+      "heading": 315.0,
+      "latitude": 33.790379,
+      "longitude": -118.281075,
+      "run_id": "232_73_0",
+      "route_id": "232",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8522",
+      "heading": 90.0,
+      "latitude": 34.061722,
+      "longitude": -118.300903,
+      "run_id": "20_572_0",
+      "route_id": "20",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4137",
+      "heading": 75.0,
+      "latitude": 34.0719489,
+      "longitude": -118.041466,
+      "run_id": "76_170_1",
+      "route_id": "76",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "4006",
+      "heading": 345.0,
+      "latitude": 34.004025,
+      "longitude": -118.227318,
+      "run_id": "105_236_0",
+      "route_id": "105",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8529",
+      "heading": 360.0,
+      "latitude": 33.932884,
+      "longitude": -118.300247,
+      "run_id": "206_155_0",
+      "route_id": "206",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5895",
+      "heading": 90.0,
+      "latitude": 34.085892,
+      "longitude": -118.190872,
+      "run_id": "252_71_1",
+      "route_id": "252",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3871",
+      "heading": 220.0,
+      "latitude": 34.011505,
+      "longitude": -118.280258,
+      "run_id": "200_40_0",
+      "route_id": "200",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4120",
+      "heading": 270.0,
+      "latitude": 34.06271,
+      "longitude": -118.099815,
+      "run_id": "70_246_1",
+      "route_id": "70",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "11056",
+      "heading": 60.0,
+      "latitude": 33.908051,
+      "longitude": -118.393402,
+      "run_id": "125_152_0",
+      "route_id": "125",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6064",
+      "heading": 75.0,
+      "latitude": 33.930931,
+      "longitude": -118.32106,
+      "run_id": "120_69_0",
+      "route_id": "120",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5977",
+      "heading": 15.0,
+      "latitude": 34.037327,
+      "longitude": -118.260948,
+      "run_id": "30_646_0",
+      "route_id": "30",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "6128",
+      "heading": 255.0,
+      "latitude": 33.931011,
+      "longitude": -118.329254,
+      "run_id": "120_71_1",
+      "route_id": "120",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8395",
+      "latitude": 34.072556,
+      "longitude": -118.04612,
+      "heading": 90.0,
+      "route_id": "950",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "3986",
+      "heading": 135.0,
+      "latitude": 34.034466,
+      "longitude": -118.230103,
+      "run_id": "60_128_1",
+      "route_id": "60",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "3935",
+      "heading": 91.0,
+      "latitude": 34.090649,
+      "longitude": -118.344398,
+      "run_id": "4_259_0",
+      "route_id": "4",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5652",
+      "heading": 360.0,
+      "latitude": 34.047886,
+      "longitude": -118.257805,
+      "run_id": "20_558_1",
+      "route_id": "20",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8108",
+      "heading": 22.0,
+      "latitude": 34.146557,
+      "longitude": -118.247147,
+      "run_id": "91_306_0",
+      "route_id": "91",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8581",
+      "heading": 220.0,
+      "latitude": 34.326214,
+      "longitude": -118.44706,
+      "run_id": "224_216_1",
+      "route_id": "224",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8589",
+      "heading": 285.0,
+      "latitude": 34.045246,
+      "longitude": -118.278091,
+      "run_id": "30_673_1",
+      "route_id": "30",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9566",
+      "heading": 345.0,
+      "latitude": 34.081657,
+      "longitude": -118.291695,
+      "run_id": "754_92_0",
+      "route_id": "754",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4046",
+      "heading": 180.0,
+      "latitude": 34.101814,
+      "longitude": -118.259346,
+      "run_id": "92_222_1",
+      "route_id": "92",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8391",
+      "heading": 345.0,
+      "latitude": 33.864819,
+      "longitude": -118.281532,
+      "run_id": "950_190_0",
+      "route_id": "950",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9475",
+      "heading": 180.0,
+      "latitude": 34.071236,
+      "longitude": -118.309227,
+      "run_id": "207_273_1",
+      "route_id": "207",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "6126",
+      "heading": 220.0,
+      "latitude": 33.869274,
+      "longitude": -118.287926,
+      "run_id": "550_124_1",
+      "route_id": "550",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8366",
+      "heading": 217.0,
+      "latitude": 34.0545959,
+      "longitude": -118.24984,
+      "run_id": "950_192_1",
+      "route_id": "950",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3102",
+      "heading": 295.0,
+      "latitude": 34.143559,
+      "longitude": -118.392715,
+      "run_id": "218_32_1",
+      "route_id": "218",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "4028",
+      "heading": 225.0,
+      "latitude": 34.065788,
+      "longitude": -118.412384,
+      "run_id": "4_260_1",
+      "route_id": "4",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8595",
+      "heading": 270.0,
+      "latitude": 34.201256,
+      "longitude": -118.527168,
+      "run_id": "163_129_1",
+      "route_id": "163",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3133",
+      "heading": 111.0,
+      "latitude": 34.021652,
+      "longitude": -118.205063,
+      "run_id": "605_38_0",
+      "route_id": "605",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8571",
+      "heading": 105.0,
+      "latitude": 34.053909,
+      "longitude": -118.321129,
+      "run_id": "28_537_0",
+      "route_id": "28",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9255",
+      "heading": 45.0,
+      "latitude": 34.028172,
+      "longitude": -118.487144,
+      "run_id": "720_909_0",
+      "route_id": "720",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8544",
+      "heading": 255.0,
+      "latitude": 34.0527,
+      "longitude": -118.299263,
+      "run_id": "28_521_1",
+      "route_id": "28",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4115",
+      "heading": 226.0,
+      "latitude": 34.18206,
+      "longitude": -118.312935,
+      "run_id": "92_222_1",
+      "route_id": "92",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4073",
+      "heading": 255.0,
+      "latitude": 34.047226,
+      "longitude": -118.311462,
+      "run_id": "30_669_1",
+      "route_id": "30",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3125",
+      "heading": 15.0,
+      "latitude": 34.034824,
+      "longitude": -118.265732,
+      "run_id": "96_247_0",
+      "route_id": "96",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9249",
+      "heading": 345.0,
+      "latitude": 33.988789,
+      "longitude": -118.291435,
+      "run_id": "204_103_0",
+      "route_id": "204",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4040",
+      "heading": 360.0,
+      "latitude": 33.988926,
+      "longitude": -118.225121,
+      "run_id": "60_115_0",
+      "route_id": "60",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8559",
+      "heading": 86.0,
+      "latitude": 33.936211,
+      "longitude": -118.207977,
+      "run_id": "251_110_1",
+      "route_id": "251",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4019",
+      "heading": 1.0,
+      "latitude": 34.049702,
+      "longitude": -118.284157,
+      "run_id": "603_20_0",
+      "route_id": "603",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "5804",
+      "heading": 220.0,
+      "latitude": 34.033283,
+      "longitude": -118.265533,
+      "run_id": "70_255_0",
+      "route_id": "70",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "6056",
+      "heading": 120.0,
+      "latitude": 34.041286,
+      "longitude": -118.243736,
+      "run_id": "53_162_1",
+      "route_id": "53",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6016",
+      "heading": 270.0,
+      "latitude": 34.068981,
+      "longitude": -118.315887,
+      "run_id": "16_307_1",
+      "route_id": "16",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "6057",
+      "heading": 360.0,
+      "latitude": 33.976688,
+      "longitude": -118.278221,
+      "run_id": "45_518_0",
+      "route_id": "45",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5607",
+      "heading": 162.0,
+      "latitude": 34.126015,
+      "longitude": -118.090927,
+      "run_id": "487_92_1",
+      "route_id": "487",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8146",
+      "heading": 180.0,
+      "latitude": 33.934311,
+      "longitude": -118.182449,
+      "run_id": "260_250_1",
+      "route_id": "260",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "6039",
+      "heading": 220.0,
+      "latitude": 33.9276849,
+      "longitude": -118.28199,
+      "run_id": "45_518_0",
+      "route_id": "45",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "9444",
+      "heading": 180.0,
+      "latitude": 34.051464,
+      "longitude": -118.309135,
+      "run_id": "207_271_1",
+      "route_id": "207",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8639",
+      "heading": 360.0,
+      "latitude": 34.025009,
+      "longitude": -118.33503,
+      "run_id": "210_259_0",
+      "route_id": "210",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9204",
+      "heading": 345.0,
+      "latitude": 34.2284239,
+      "longitude": -118.450172,
+      "run_id": "233_133_0",
+      "route_id": "233",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4113",
+      "heading": 360.0,
+      "latitude": 34.2463,
+      "longitude": -118.502357,
+      "run_id": "236_123_0",
+      "route_id": "236",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3959",
+      "heading": 300.0,
+      "latitude": 34.079155,
+      "longitude": -118.259048,
+      "run_id": "200_39_1",
+      "route_id": "200",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8284",
+      "heading": 300.0,
+      "latitude": 34.249271,
+      "longitude": -118.289955,
+      "run_id": "90_316_0",
+      "route_id": "90",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4108",
+      "heading": 270.0,
+      "latitude": 34.235546,
+      "longitude": -118.596985,
+      "run_id": "166_116_1",
+      "route_id": "166",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "7852",
+      "heading": 152.0,
+      "latitude": 34.089989,
+      "longitude": -118.277176,
+      "run_id": "2_1059_0",
+      "route_id": "2",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8432",
+      "heading": 220.0,
+      "latitude": 33.931618,
+      "longitude": -118.126038,
+      "run_id": "115_350_1",
+      "route_id": "115",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5939",
+      "heading": 210.0,
+      "latitude": 34.117325,
+      "longitude": -118.261703,
+      "run_id": "201_38_1",
+      "route_id": "201",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4129",
+      "heading": 319.0,
+      "latitude": 34.276604,
+      "longitude": -118.414711,
+      "run_id": "92_226_0",
+      "route_id": "92",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5957",
+      "heading": 203.0,
+      "latitude": 34.062489,
+      "longitude": -118.238335,
+      "run_id": "83_132_1",
+      "route_id": "83",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "6021",
+      "heading": 165.0,
+      "latitude": 33.957989,
+      "longitude": -118.27832,
+      "run_id": "45_505_1",
+      "route_id": "45",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "3854",
+      "heading": 277.0,
+      "latitude": 33.987526,
+      "longitude": -118.18808,
+      "run_id": "108_345_1",
+      "route_id": "108",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8303",
+      "heading": 0.0,
+      "latitude": 34.090569,
+      "longitude": -118.326538,
+      "run_id": "210_259_0",
+      "route_id": "210",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3885",
+      "heading": 180.0,
+      "latitude": 34.004135,
+      "longitude": -118.256592,
+      "run_id": "53_155_1",
+      "route_id": "53",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3979",
+      "heading": 120.0,
+      "latitude": 34.1775779,
+      "longitude": -118.310081,
+      "run_id": "155_29_1",
+      "route_id": "155",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3911",
+      "heading": 273.0,
+      "latitude": 34.073875,
+      "longitude": -118.204765,
+      "run_id": "45_505_1",
+      "route_id": "45",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8537",
+      "heading": 277.0,
+      "latitude": 33.95491,
+      "longitude": -118.212013,
+      "run_id": "251_108_0",
+      "route_id": "251",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "11042",
+      "heading": 255.0,
+      "latitude": 33.9020269,
+      "longitude": -118.321686,
+      "run_id": "125_150_1",
+      "route_id": "125",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9588",
+      "heading": 298.0,
+      "latitude": 34.037464,
+      "longitude": -118.269829,
+      "run_id": "733_78_1",
+      "route_id": "733",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8621",
+      "heading": 277.0,
+      "latitude": 33.967258,
+      "longitude": -118.158028,
+      "run_id": "111_334_1",
+      "route_id": "111",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5956",
+      "heading": 180.0,
+      "latitude": 34.168365,
+      "longitude": -118.374359,
+      "run_id": "183_51_1",
+      "route_id": "183",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9401",
+      "heading": 228.0,
+      "latitude": 34.27512,
+      "longitude": -118.409958,
+      "run_id": "233_145_1",
+      "route_id": "233",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5811",
+      "heading": 45.0,
+      "latitude": 34.139107,
+      "longitude": -118.185661,
+      "run_id": "180_164_0",
+      "route_id": "180",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8565",
+      "heading": 165.0,
+      "latitude": 33.956806,
+      "longitude": -118.282814,
+      "run_id": "81_179_1",
+      "route_id": "81",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5773",
+      "heading": 135.0,
+      "latitude": 34.126785,
+      "longitude": -118.258064,
+      "run_id": "603_19_1",
+      "route_id": "603",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9445",
+      "heading": 75.0,
+      "latitude": 33.974461,
+      "longitude": -118.333977,
+      "run_id": "40_874_0",
+      "route_id": "40",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3886",
+      "heading": 137.0,
+      "latitude": 34.0082049,
+      "longitude": -118.157043,
+      "run_id": "62_225_1",
+      "route_id": "62",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5846",
+      "heading": 240.0,
+      "latitude": 34.055038,
+      "longitude": -118.448959,
+      "run_id": "20_572_0",
+      "route_id": "20",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5876",
+      "heading": 270.0,
+      "latitude": 34.03466,
+      "longitude": -118.231117,
+      "run_id": "60_115_0",
+      "route_id": "60",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5972",
+      "heading": 220.0,
+      "latitude": 34.099724,
+      "longitude": -118.325096,
+      "run_id": "180_171_0",
+      "route_id": "180",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8136",
+      "heading": 45.0,
+      "latitude": 34.306278,
+      "longitude": -118.413071,
+      "run_id": "234_36_1",
+      "route_id": "234",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5881",
+      "heading": 180.0,
+      "latitude": 33.901752,
+      "longitude": -118.143013,
+      "run_id": "266_21_1",
+      "route_id": "266",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9309",
+      "heading": 30.0,
+      "latitude": 34.037189,
+      "longitude": -118.240791,
+      "run_id": "720_881_1",
+      "route_id": "720",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9425",
+      "heading": 90.0,
+      "latitude": 34.168503,
+      "longitude": -118.39563,
+      "run_id": "901_34_0",
+      "route_id": "901",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4005",
+      "heading": 270.0,
+      "latitude": 34.0627939,
+      "longitude": -118.059921,
+      "run_id": "70_246_1",
+      "route_id": "70",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8521",
+      "heading": 270.0,
+      "latitude": 34.057045,
+      "longitude": -118.336502,
+      "run_id": "28_541_1",
+      "route_id": "28",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "3977",
+      "heading": 220.0,
+      "latitude": 34.063148,
+      "longitude": -118.168747,
+      "run_id": "71_88_1",
+      "route_id": "71",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "6146",
+      "heading": 15.0,
+      "latitude": 34.017086,
+      "longitude": -118.26413,
+      "run_id": "51_248_0",
+      "route_id": "51",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9489",
+      "heading": 90.0,
+      "latitude": 34.018764,
+      "longitude": -118.195625,
+      "run_id": "66_363_0",
+      "route_id": "66",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9228",
+      "heading": 45.0,
+      "latitude": 34.045799,
+      "longitude": -118.465317,
+      "run_id": "720_909_0",
+      "route_id": "720",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8619",
+      "heading": 22.0,
+      "latitude": 34.061829,
+      "longitude": -118.320313,
+      "run_id": "210_256_0",
+      "route_id": "210",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8167",
+      "heading": 255.0,
+      "latitude": 34.201256,
+      "longitude": -118.426933,
+      "run_id": "162_126_1",
+      "route_id": "162",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9284",
+      "heading": 220.0,
+      "latitude": 34.018791,
+      "longitude": -118.15403,
+      "run_id": "720_917_1",
+      "route_id": "720",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "8301",
+      "heading": 302.0,
+      "latitude": 33.946934,
+      "longitude": -118.115906,
+      "run_id": "111_347_1",
+      "route_id": "111",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "3864",
+      "heading": 180.0,
+      "latitude": 33.934036,
+      "longitude": -118.265244,
+      "run_id": "52_212_1",
+      "route_id": "52",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4146",
+      "heading": 255.0,
+      "latitude": 34.080284,
+      "longitude": -118.089386,
+      "run_id": "76_170_1",
+      "route_id": "76",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "9437",
+      "heading": 165.0,
+      "latitude": 33.989342,
+      "longitude": -118.309036,
+      "run_id": "207_271_1",
+      "route_id": "207",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "9207",
+      "heading": 60.0,
+      "latitude": 33.994976,
+      "longitude": -118.450729,
+      "run_id": "733_81_0",
+      "route_id": "733",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5847",
+      "heading": 345.0,
+      "latitude": 34.129314,
+      "longitude": -118.257767,
+      "run_id": "180_164_0",
+      "route_id": "180",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8135",
+      "heading": 135.0,
+      "latitude": 34.108387,
+      "longitude": -118.241646,
+      "run_id": "90_315_1",
+      "route_id": "90",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "6078",
+      "heading": 150.0,
+      "latitude": 33.954029,
+      "longitude": -118.219383,
+      "run_id": "60_128_1",
+      "route_id": "60",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5753",
+      "heading": 75.0,
+      "latitude": 33.988514,
+      "longitude": -118.392029,
+      "run_id": "110_229_0",
+      "route_id": "110",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8374",
+      "heading": 210.0,
+      "latitude": 33.92807,
+      "longitude": -118.280907,
+      "run_id": "950_192_1",
+      "route_id": "950",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "4088",
+      "heading": 360.0,
+      "latitude": 33.915283,
+      "longitude": -118.265213,
+      "run_id": "52_265_0",
+      "route_id": "52",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5665",
+      "heading": 220.0,
+      "latitude": 33.963326,
+      "longitude": -118.222992,
+      "run_id": "102_47_1",
+      "route_id": "102",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "7644",
+      "heading": 285.0,
+      "latitude": 34.077919,
+      "longitude": -118.259933,
+      "run_id": "4_260_1",
+      "route_id": "4",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9222",
+      "heading": 45.0,
+      "latitude": 34.038181,
+      "longitude": -118.372589,
+      "run_id": "733_81_0",
+      "route_id": "733",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3870",
+      "heading": 150.0,
+      "latitude": 34.025669,
+      "longitude": -118.264061,
+      "run_id": "48_429_0",
+      "route_id": "48",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4002",
+      "heading": 54.0,
+      "latitude": 34.10627,
+      "longitude": -118.135406,
+      "run_id": "79_484_0",
+      "route_id": "79",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8580",
+      "heading": 181.0,
+      "latitude": 34.257549,
+      "longitude": -118.467613,
+      "run_id": "234_36_1",
+      "route_id": "234",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3107",
+      "heading": 30.0,
+      "latitude": 34.168449,
+      "longitude": -118.306114,
+      "run_id": "96_247_0",
+      "route_id": "96",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "7747",
+      "heading": 278.0,
+      "latitude": 34.088943,
+      "longitude": -118.338333,
+      "run_id": "237_16_0",
+      "route_id": "237",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4029",
+      "heading": 330.0,
+      "latitude": 34.0388949,
+      "longitude": -118.369179,
+      "run_id": "105_236_0",
+      "route_id": "105",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8636",
+      "heading": 264.0,
+      "latitude": 33.943169,
+      "longitude": -118.228462,
+      "run_id": "117_59_1",
+      "route_id": "117",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8315",
+      "heading": 360.0,
+      "latitude": 33.951748,
+      "longitude": -118.385796,
+      "run_id": "111_339_0",
+      "route_id": "111",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8171",
+      "heading": 30.0,
+      "latitude": 34.055916,
+      "longitude": -118.245087,
+      "run_id": "90_316_0",
+      "route_id": "90",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "9514",
+      "heading": 220.0,
+      "latitude": 34.05677,
+      "longitude": -118.447746,
+      "run_id": "720_913_0",
+      "route_id": "720",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "6136",
+      "heading": 180.0,
+      "latitude": 33.941463,
+      "longitude": -118.24633,
+      "run_id": "55_192_1",
+      "route_id": "55",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3892",
+      "heading": 255.0,
+      "latitude": 34.040573,
+      "longitude": -118.178116,
+      "run_id": "68_132_1",
+      "route_id": "68",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "11018",
+      "heading": 165.0,
+      "latitude": 33.914814,
+      "longitude": -118.116821,
+      "run_id": "125_150_1",
+      "route_id": "125",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9511",
+      "heading": 165.0,
+      "latitude": 33.90992,
+      "longitude": -118.352791,
+      "run_id": "40_885_1",
+      "route_id": "40",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9454",
+      "heading": 345.0,
+      "latitude": 33.962471,
+      "longitude": -118.308998,
+      "run_id": "207_277_0",
+      "route_id": "207",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5818",
+      "heading": 273.0,
+      "latitude": 34.0780559,
+      "longitude": -118.261406,
+      "run_id": "2_1057_1",
+      "route_id": "2",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8583",
+      "heading": 300.0,
+      "latitude": 34.142845,
+      "longitude": -118.391014,
+      "run_id": "230_90_1",
+      "route_id": "230",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9248",
+      "heading": 360.0,
+      "latitude": 34.047916,
+      "longitude": -118.291565,
+      "run_id": "754_92_0",
+      "route_id": "754",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9426",
+      "heading": 345.0,
+      "latitude": 33.9383539,
+      "longitude": -118.291595,
+      "run_id": "204_103_0",
+      "route_id": "204",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5732",
+      "heading": 360.0,
+      "latitude": 33.881458,
+      "longitude": -118.142525,
+      "run_id": "266_19_0",
+      "route_id": "266",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8175",
+      "heading": 135.0,
+      "latitude": 34.002483,
+      "longitude": -118.151237,
+      "run_id": "18_204_1",
+      "route_id": "18",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6054",
+      "heading": 220.0,
+      "latitude": 34.049343,
+      "longitude": -118.252754,
+      "run_id": "18_204_1",
+      "route_id": "18",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3879",
+      "heading": 180.0,
+      "latitude": 33.9801829,
+      "longitude": -118.247841,
+      "run_id": "611_27_1",
+      "route_id": "611",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8630",
+      "heading": 90.0,
+      "latitude": 33.974628,
+      "longitude": -118.278023,
+      "run_id": "111_339_0",
+      "route_id": "111",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6061",
+      "heading": 90.0,
+      "latitude": 34.1900059,
+      "longitude": -118.131805,
+      "run_id": "180_147_1",
+      "route_id": "180",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5617",
+      "heading": 284.0,
+      "latitude": 34.052563,
+      "longitude": -118.220764,
+      "run_id": "68_132_1",
+      "route_id": "68",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8255",
+      "heading": 270.0,
+      "latitude": 34.17271,
+      "longitude": -118.553291,
+      "run_id": "150_166_1",
+      "route_id": "150",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4116",
+      "heading": 165.0,
+      "latitude": 33.872906,
+      "longitude": -118.160088,
+      "run_id": "265_10_1",
+      "route_id": "265",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4047",
+      "heading": 303.0,
+      "latitude": 34.054211,
+      "longitude": -118.24646,
+      "run_id": "79_477_1",
+      "route_id": "79",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9394",
+      "heading": 270.0,
+      "latitude": 34.090843,
+      "longitude": -118.310738,
+      "run_id": "704_150_1",
+      "route_id": "704",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4150",
+      "heading": 270.0,
+      "latitude": 34.193581,
+      "longitude": -118.646614,
+      "run_id": "164_51_0",
+      "route_id": "164",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4000",
+      "heading": 90.0,
+      "latitude": 34.085976,
+      "longitude": -118.184311,
+      "run_id": "78_488_0",
+      "route_id": "78",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4133",
+      "heading": 270.0,
+      "latitude": 34.101788,
+      "longitude": -118.300972,
+      "run_id": "180_147_1",
+      "route_id": "180",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9272",
+      "heading": 225.0,
+      "latitude": 34.041508,
+      "longitude": -118.470795,
+      "run_id": "720_881_1",
+      "route_id": "720",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8482",
+      "heading": 182.0,
+      "latitude": 33.924026,
+      "longitude": -118.326637,
+      "run_id": "210_260_1",
+      "route_id": "210",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8260",
+      "heading": 75.0,
+      "latitude": 34.201061,
+      "longitude": -118.543068,
+      "run_id": "163_128_0",
+      "route_id": "163",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9589",
+      "heading": 75.0,
+      "latitude": 34.090706,
+      "longitude": -118.310577,
+      "run_id": "704_151_0",
+      "route_id": "704",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8219",
+      "heading": 270.0,
+      "latitude": 34.257301,
+      "longitude": -118.463547,
+      "run_id": "158_53_1",
+      "route_id": "158",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4048",
+      "heading": 36.0,
+      "latitude": 34.043709,
+      "longitude": -118.258194,
+      "run_id": "76_162_0",
+      "route_id": "76",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5682",
+      "heading": 220.0,
+      "latitude": 34.034935,
+      "longitude": -118.368851,
+      "run_id": "38_196_0",
+      "route_id": "38",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3893",
+      "heading": 261.0,
+      "latitude": 34.047226,
+      "longitude": -118.337585,
+      "run_id": "33_433_1",
+      "route_id": "33",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5802",
+      "heading": 15.0,
+      "latitude": 34.020279,
+      "longitude": -118.281075,
+      "run_id": "200_40_0",
+      "route_id": "200",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5839",
+      "heading": 270.0,
+      "latitude": 34.032707,
+      "longitude": -118.307266,
+      "run_id": "37_410_1",
+      "route_id": "37",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8643",
+      "heading": 270.0,
+      "latitude": 33.945614,
+      "longitude": -118.395798,
+      "run_id": "117_59_1",
+      "route_id": "117",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4026",
+      "heading": 360.0,
+      "latitude": 34.036118,
+      "longitude": -118.283958,
+      "run_id": "603_20_0",
+      "route_id": "603",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9574",
+      "heading": 220.0,
+      "latitude": 34.015026,
+      "longitude": -118.497375,
+      "run_id": "733_81_0",
+      "route_id": "733",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5739",
+      "heading": 225.0,
+      "latitude": 33.979935,
+      "longitude": -118.325058,
+      "run_id": "110_217_1",
+      "route_id": "110",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5774",
+      "heading": 220.0,
+      "latitude": 34.0998919,
+      "longitude": -118.325096,
+      "run_id": "212_213_1",
+      "route_id": "212",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3957",
+      "heading": 219.0,
+      "latitude": 34.043213,
+      "longitude": -118.248131,
+      "run_id": "16_307_1",
+      "route_id": "16",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4031",
+      "heading": 105.0,
+      "latitude": 34.076214,
+      "longitude": -118.256165,
+      "run_id": "4_259_0",
+      "route_id": "4",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5608",
+      "heading": 273.0,
+      "latitude": 34.132092,
+      "longitude": -118.051956,
+      "run_id": "264_71_1",
+      "route_id": "264",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3916",
+      "heading": 220.0,
+      "latitude": 34.0639759,
+      "longitude": -118.251282,
+      "run_id": "53_155_1",
+      "route_id": "53",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8155",
+      "heading": 75.0,
+      "latitude": 34.2011449,
+      "longitude": -118.435524,
+      "run_id": "162_127_0",
+      "route_id": "162",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5352",
+      "heading": 45.0,
+      "latitude": 34.068897,
+      "longitude": -118.406746,
+      "run_id": "4_259_0",
+      "route_id": "4",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3954",
+      "heading": 75.0,
+      "latitude": 34.071838,
+      "longitude": -118.226105,
+      "run_id": "45_518_0",
+      "route_id": "45",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8268",
+      "heading": 360.0,
+      "latitude": 34.231808,
+      "longitude": -118.536018,
+      "run_id": "240_164_1",
+      "route_id": "240",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8165",
+      "heading": 133.0,
+      "latitude": 34.293877,
+      "longitude": -118.452499,
+      "run_id": "224_216_1",
+      "route_id": "224",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "6112",
+      "heading": 165.0,
+      "latitude": 34.060097,
+      "longitude": -118.291664,
+      "run_id": "52_212_1",
+      "route_id": "52",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3106",
+      "heading": 180.0,
+      "latitude": 34.180794,
+      "longitude": -118.413887,
+      "run_id": "167_89_0",
+      "route_id": "167",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8451",
+      "heading": 53.0,
+      "latitude": 34.090786,
+      "longitude": -118.38295,
+      "run_id": "2_1059_0",
+      "route_id": "2",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8151",
+      "heading": 345.0,
+      "latitude": 33.876728,
+      "longitude": -118.18602,
+      "run_id": "260_207_0",
+      "route_id": "260",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "8618",
+      "heading": 165.0,
+      "latitude": 34.099834,
+      "longitude": -118.326866,
+      "run_id": "210_260_1",
+      "route_id": "210",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "3105",
+      "heading": 120.0,
+      "latitude": 34.098515,
+      "longitude": -118.248528,
+      "run_id": "96_246_1",
+      "route_id": "96",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5500",
+      "heading": 135.0,
+      "latitude": 34.057018,
+      "longitude": -118.245186,
+      "run_id": "2_1056_0",
+      "route_id": "2",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5831",
+      "heading": 346.0,
+      "latitude": 33.905628,
+      "longitude": -118.254456,
+      "run_id": "53_148_0",
+      "route_id": "53",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9534",
+      "heading": 90.0,
+      "latitude": 34.034576,
+      "longitude": -118.232887,
+      "run_id": "720_913_0",
+      "route_id": "720",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5628",
+      "heading": 220.0,
+      "latitude": 34.033642,
+      "longitude": -118.264816,
+      "run_id": "603_20_0",
+      "route_id": "603",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6042",
+      "heading": 255.0,
+      "latitude": 33.858494,
+      "longitude": -118.087029,
+      "run_id": "62_234_0",
+      "route_id": "62",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5752",
+      "heading": 270.0,
+      "latitude": 34.069035,
+      "longitude": -118.346397,
+      "run_id": "16_328_1",
+      "route_id": "16",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9438",
+      "heading": 180.0,
+      "latitude": 34.016563,
+      "longitude": -118.308998,
+      "run_id": "207_273_1",
+      "route_id": "207",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "6063",
+      "heading": 345.0,
+      "latitude": 34.144493,
+      "longitude": -118.257805,
+      "run_id": "181_163_0",
+      "route_id": "181",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8413",
+      "heading": 14.0,
+      "latitude": 34.135391,
+      "longitude": -118.215096,
+      "run_id": "28_537_0",
+      "route_id": "28",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5695",
+      "heading": 210.0,
+      "latitude": 34.046074,
+      "longitude": -118.257408,
+      "run_id": "37_398_1",
+      "route_id": "37",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9419",
+      "heading": 220.0,
+      "latitude": 34.006279,
+      "longitude": -118.124725,
+      "run_id": "66_385_1",
+      "route_id": "66",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6097",
+      "heading": 230.0,
+      "latitude": 34.069695,
+      "longitude": -118.406677,
+      "run_id": "16_328_1",
+      "route_id": "16",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "9529",
+      "heading": 90.0,
+      "latitude": 34.0615809,
+      "longitude": -118.306969,
+      "run_id": "720_913_0",
+      "route_id": "720",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8458",
+      "heading": 97.0,
+      "latitude": 33.974186,
+      "longitude": -118.225449,
+      "run_id": "111_342_0",
+      "route_id": "111",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "9229",
+      "heading": 180.0,
+      "latitude": 34.063839,
+      "longitude": -118.291756,
+      "run_id": "204_106_1",
+      "route_id": "204",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8138",
+      "heading": 90.0,
+      "latitude": 34.193775,
+      "longitude": -118.572144,
+      "run_id": "165_159_0",
+      "route_id": "165",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8371",
+      "heading": 287.0,
+      "latitude": 34.072445,
+      "longitude": -118.044518,
+      "run_id": "910_169_1",
+      "route_id": "910",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9492",
+      "heading": 345.0,
+      "latitude": 34.087597,
+      "longitude": -118.309135,
+      "run_id": "207_277_0",
+      "route_id": "207",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8534",
+      "heading": 180.0,
+      "latitude": 33.980511,
+      "longitude": -118.225319,
+      "run_id": "251_110_1",
+      "route_id": "251",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "4015",
+      "heading": 1.0,
+      "latitude": 34.081741,
+      "longitude": -118.376488,
+      "run_id": "105_236_0",
+      "route_id": "105",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8331",
+      "heading": 126.0,
+      "latitude": 34.1677589,
+      "longitude": -118.376526,
+      "run_id": "152_126_1",
+      "route_id": "152",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9223",
+      "heading": 360.0,
+      "latitude": 33.988102,
+      "longitude": -118.308899,
+      "run_id": "207_276_0",
+      "route_id": "207",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5940",
+      "heading": 271.0,
+      "latitude": 34.146366,
+      "longitude": -118.24469,
+      "run_id": "180_147_1",
+      "route_id": "180",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3857",
+      "heading": 220.0,
+      "latitude": 33.9843369,
+      "longitude": -118.399338,
+      "run_id": "110_229_0",
+      "route_id": "110",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5883",
+      "heading": 251.0,
+      "latitude": 34.072498,
+      "longitude": -118.274849,
+      "run_id": "603_19_1",
+      "route_id": "603",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8614",
+      "heading": 285.0,
+      "latitude": 33.900871,
+      "longitude": -118.32621,
+      "run_id": "210_259_0",
+      "route_id": "210",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8204",
+      "heading": 255.0,
+      "latitude": 34.193829,
+      "longitude": -118.582336,
+      "run_id": "165_168_1",
+      "route_id": "165",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8166",
+      "heading": 120.0,
+      "latitude": 34.188,
+      "longitude": -118.323753,
+      "run_id": "94_216_1",
+      "route_id": "94",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8573",
+      "heading": 214.0,
+      "latitude": 34.096096,
+      "longitude": -118.20739,
+      "run_id": "81_179_1",
+      "route_id": "81",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3873",
+      "heading": 220.0,
+      "latitude": 34.07811,
+      "longitude": -118.257507,
+      "run_id": "200_39_1",
+      "route_id": "200",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5960",
+      "heading": 30.0,
+      "latitude": 34.115345,
+      "longitude": -118.18454,
+      "run_id": "83_121_0",
+      "route_id": "83",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9285",
+      "heading": 120.0,
+      "latitude": 34.048767,
+      "longitude": -118.25518,
+      "run_id": "720_909_0",
+      "route_id": "720",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "4147",
+      "heading": 220.0,
+      "latitude": 34.072392,
+      "longitude": -118.045044,
+      "run_id": "70_246_1",
+      "route_id": "70",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8542",
+      "heading": 220.0,
+      "latitude": 33.9244119,
+      "longitude": -118.209747,
+      "run_id": "251_108_0",
+      "route_id": "251",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8239",
+      "heading": 165.0,
+      "latitude": 34.061829,
+      "longitude": -118.307884,
+      "run_id": "18_186_0",
+      "route_id": "18",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8161",
+      "heading": 129.0,
+      "latitude": 34.0467609,
+      "longitude": -118.252296,
+      "run_id": "18_186_0",
+      "route_id": "18",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5848",
+      "heading": 273.0,
+      "latitude": 34.073875,
+      "longitude": -118.204933,
+      "run_id": "45_504_1",
+      "route_id": "45",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3863",
+      "heading": 90.0,
+      "latitude": 34.00386,
+      "longitude": -118.252396,
+      "run_id": "105_224_1",
+      "route_id": "105",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8123",
+      "heading": 60.0,
+      "latitude": 34.063755,
+      "longitude": -118.290154,
+      "run_id": "18_186_0",
+      "route_id": "18",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "7484",
+      "heading": 120.0,
+      "latitude": 34.051243,
+      "longitude": -118.242165,
+      "run_id": "30_604_0",
+      "route_id": "30",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8475",
+      "heading": 330.0,
+      "latitude": 34.032818,
+      "longitude": -118.300316,
+      "run_id": "210_262_1",
+      "route_id": "210",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5904",
+      "heading": 30.0,
+      "latitude": 34.050526,
+      "longitude": -118.248398,
+      "run_id": "45_516_0",
+      "route_id": "45",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4060",
+      "heading": 220.0,
+      "latitude": 34.03334,
+      "longitude": -118.265373,
+      "run_id": "4_260_1",
+      "route_id": "4",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4086",
+      "heading": 208.0,
+      "latitude": 34.056713,
+      "longitude": -118.276779,
+      "run_id": "200_39_1",
+      "route_id": "200",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4084",
+      "heading": 270.0,
+      "latitude": 33.955597,
+      "longitude": -118.183823,
+      "run_id": "611_22_0",
+      "route_id": "611",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8540",
+      "heading": 70.0,
+      "latitude": 34.136986,
+      "longitude": -118.18808,
+      "run_id": "81_179_1",
+      "route_id": "81",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8547",
+      "heading": 15.0,
+      "latitude": 34.032074,
+      "longitude": -118.217056,
+      "run_id": "251_117_0",
+      "route_id": "251",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8459",
+      "heading": 270.0,
+      "latitude": 33.974766,
+      "longitude": -118.247704,
+      "run_id": "111_334_1",
+      "route_id": "111",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "4196",
+      "heading": 118.0,
+      "latitude": 34.056084,
+      "longitude": -118.206406,
+      "run_id": "70_255_0",
+      "route_id": "70",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8446",
+      "heading": 315.0,
+      "latitude": 34.063728,
+      "longitude": -118.274422,
+      "run_id": "16_328_1",
+      "route_id": "16",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9441",
+      "heading": 360.0,
+      "latitude": 34.1867329,
+      "longitude": -118.4487,
+      "run_id": "233_132_0",
+      "route_id": "233",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9575",
+      "heading": 315.0,
+      "latitude": 34.013596,
+      "longitude": -118.489967,
+      "run_id": "720_909_0",
+      "route_id": "720",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8349",
+      "heading": 180.0,
+      "latitude": 34.183987,
+      "longitude": -118.466331,
+      "run_id": "234_36_1",
+      "route_id": "234",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8513",
+      "heading": 7.0,
+      "latitude": 33.975479,
+      "longitude": -118.225121,
+      "run_id": "251_114_0",
+      "route_id": "251",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5681",
+      "heading": 180.0,
+      "latitude": 33.986618,
+      "longitude": -118.395729,
+      "run_id": "108_378_0",
+      "route_id": "108",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "6066",
+      "heading": 345.0,
+      "latitude": 33.985241,
+      "longitude": -118.247704,
+      "run_id": "55_186_0",
+      "route_id": "55",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6084",
+      "heading": 131.0,
+      "latitude": 34.0494,
+      "longitude": -118.258522,
+      "run_id": "20_572_0",
+      "route_id": "20",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9456",
+      "heading": 220.0,
+      "latitude": 34.099285,
+      "longitude": -118.291893,
+      "run_id": "204_106_1",
+      "route_id": "204",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "7652",
+      "heading": 90.0,
+      "latitude": 34.259609,
+      "longitude": -118.312149,
+      "run_id": "222_64_0",
+      "route_id": "222",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5664",
+      "heading": 282.0,
+      "latitude": 34.068707,
+      "longitude": -118.284775,
+      "run_id": "16_307_1",
+      "route_id": "16",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4153",
+      "heading": 300.0,
+      "latitude": 34.0533069,
+      "longitude": -118.244949,
+      "run_id": "70_246_1",
+      "route_id": "70",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4055",
+      "heading": 210.0,
+      "latitude": 34.052425,
+      "longitude": -118.252068,
+      "run_id": "60_128_1",
+      "route_id": "60",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9215",
+      "heading": 97.0,
+      "latitude": 34.062984,
+      "longitude": -118.361839,
+      "run_id": "720_913_0",
+      "route_id": "720",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8554",
+      "heading": 324.0,
+      "latitude": 34.058834,
+      "longitude": -118.420967,
+      "run_id": "16_263_0",
+      "route_id": "16",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "5795",
+      "heading": 345.0,
+      "latitude": 33.997452,
+      "longitude": -118.265175,
+      "run_id": "52_265_0",
+      "route_id": "52",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5788",
+      "heading": 212.0,
+      "latitude": 34.031746,
+      "longitude": -118.265633,
+      "run_id": "45_505_1",
+      "route_id": "45",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5867",
+      "heading": 310.0,
+      "latitude": 34.043709,
+      "longitude": -118.251053,
+      "run_id": "60_115_0",
+      "route_id": "60",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4014",
+      "heading": 220.0,
+      "latitude": 34.072472,
+      "longitude": -118.044388,
+      "run_id": "487_92_1",
+      "route_id": "487",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "5442",
+      "heading": 345.0,
+      "latitude": 34.084244,
+      "longitude": -118.383636,
+      "run_id": "105_224_1",
+      "route_id": "105",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4194",
+      "heading": 360.0,
+      "latitude": 34.159069,
+      "longitude": -118.067986,
+      "run_id": "268_134_1",
+      "route_id": "268",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4025",
+      "heading": 219.0,
+      "latitude": 34.1689409,
+      "longitude": -118.375244,
+      "run_id": "501_8_0",
+      "route_id": "501",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9308",
+      "heading": 270.0,
+      "latitude": 34.067028,
+      "longitude": -118.383408,
+      "run_id": "720_913_0",
+      "route_id": "720",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4092",
+      "heading": 118.0,
+      "latitude": 34.053936,
+      "longitude": -118.27137,
+      "run_id": "51_213_1",
+      "route_id": "51",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5708",
+      "heading": 90.0,
+      "latitude": 33.988762,
+      "longitude": -118.20224,
+      "run_id": "108_378_0",
+      "route_id": "108",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4197",
+      "heading": 225.0,
+      "latitude": 34.105389,
+      "longitude": -118.137344,
+      "run_id": "260_207_0",
+      "route_id": "260",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8113",
+      "heading": 210.0,
+      "latitude": 33.883163,
+      "longitude": -117.996696,
+      "run_id": "460_175_0",
+      "route_id": "460",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8140",
+      "heading": 270.0,
+      "latitude": 34.0346339,
+      "longitude": -118.229584,
+      "run_id": "18_204_1",
+      "route_id": "18",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8644",
+      "heading": 30.0,
+      "latitude": 33.959171,
+      "longitude": -118.448013,
+      "run_id": "115_494_0",
+      "route_id": "115",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8488",
+      "heading": 220.0,
+      "latitude": 33.975616,
+      "longitude": -118.331161,
+      "run_id": "111_319_0",
+      "route_id": "111",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9427",
+      "heading": 225.0,
+      "latitude": 34.262661,
+      "longitude": -118.426903,
+      "run_id": "233_139_1",
+      "route_id": "233",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9541",
+      "heading": 90.0,
+      "latitude": 34.06216,
+      "longitude": -118.344666,
+      "run_id": "720_909_0",
+      "route_id": "720",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "11048",
+      "heading": 91.0,
+      "latitude": 33.872768,
+      "longitude": -118.299362,
+      "run_id": "130_88_0",
+      "route_id": "130",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5745",
+      "heading": 270.0,
+      "latitude": 33.9892309,
+      "longitude": -118.238892,
+      "run_id": "108_359_1",
+      "route_id": "108",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9209",
+      "heading": 315.0,
+      "latitude": 34.046375,
+      "longitude": -118.445389,
+      "run_id": "4_259_0",
+      "route_id": "4",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "9491",
+      "heading": 313.0,
+      "latitude": 34.032021,
+      "longitude": -118.244003,
+      "run_id": "66_385_1",
+      "route_id": "66",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8350",
+      "heading": 180.0,
+      "latitude": 34.217369,
+      "longitude": -118.387894,
+      "run_id": "224_216_1",
+      "route_id": "224",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3998",
+      "heading": 75.0,
+      "latitude": 34.097912,
+      "longitude": -118.326141,
+      "run_id": "2_1056_0",
+      "route_id": "2",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9414",
+      "heading": 360.0,
+      "latitude": 34.025311,
+      "longitude": -118.291527,
+      "run_id": "204_103_0",
+      "route_id": "204",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3967",
+      "heading": 255.0,
+      "latitude": 34.090843,
+      "longitude": -118.3069,
+      "run_id": "4_260_1",
+      "route_id": "4",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6006",
+      "heading": 105.0,
+      "latitude": 34.139488,
+      "longitude": -118.367935,
+      "run_id": "237_12_1",
+      "route_id": "237",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3951",
+      "heading": 179.0,
+      "latitude": 33.877716,
+      "longitude": -118.082474,
+      "run_id": "62_225_1",
+      "route_id": "62",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "11064",
+      "heading": 153.0,
+      "latitude": 33.9235339,
+      "longitude": -118.387604,
+      "run_id": "232_84_1",
+      "route_id": "232",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "5645",
+      "heading": 270.0,
+      "latitude": 34.0768739,
+      "longitude": -118.381966,
+      "run_id": "14_409_0",
+      "route_id": "14",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "9582",
+      "heading": 220.0,
+      "latitude": 34.018517,
+      "longitude": -118.154221,
+      "run_id": "720_917_1",
+      "route_id": "720",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8567",
+      "heading": 220.0,
+      "latitude": 34.087818,
+      "longitude": -118.223846,
+      "run_id": "251_110_1",
+      "route_id": "251",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9580",
+      "heading": 269.0,
+      "latitude": 34.010983,
+      "longitude": -118.292122,
+      "run_id": "40_885_1",
+      "route_id": "40",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5606",
+      "heading": 90.0,
+      "latitude": 33.98901,
+      "longitude": -118.312836,
+      "run_id": "108_381_0",
+      "route_id": "108",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3910",
+      "heading": 319.0,
+      "latitude": 33.997589,
+      "longitude": -118.145798,
+      "run_id": "62_234_0",
+      "route_id": "62",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8158",
+      "heading": 165.0,
+      "latitude": 34.104099,
+      "longitude": -118.134789,
+      "run_id": "260_236_1",
+      "route_id": "260",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4141",
+      "heading": 75.0,
+      "latitude": 34.076954,
+      "longitude": -118.149704,
+      "run_id": "76_162_0",
+      "route_id": "76",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5729",
+      "heading": 270.0,
+      "latitude": 34.10154,
+      "longitude": -118.339188,
+      "run_id": "212_213_1",
+      "route_id": "212",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8009",
+      "heading": 270.0,
+      "latitude": 34.058254,
+      "longitude": -118.239281,
+      "run_id": "745_88_1",
+      "route_id": "745",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5954",
+      "heading": 75.0,
+      "latitude": 33.943169,
+      "longitude": -118.24118,
+      "run_id": "612_21_1",
+      "route_id": "612",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5758",
+      "heading": 220.0,
+      "latitude": 34.145458,
+      "longitude": -118.260818,
+      "run_id": "603_19_1",
+      "route_id": "603",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8561",
+      "heading": 270.0,
+      "latitude": 34.142845,
+      "longitude": -118.233841,
+      "run_id": "28_541_1",
+      "route_id": "28",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6073",
+      "heading": 53.0,
+      "latitude": 33.983784,
+      "longitude": -118.458992,
+      "run_id": "108_381_0",
+      "route_id": "108",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4069",
+      "heading": 195.0,
+      "latitude": 34.032459,
+      "longitude": -118.153534,
+      "run_id": "260_250_1",
+      "route_id": "260",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9246",
+      "heading": 220.0,
+      "latitude": 33.959255,
+      "longitude": -118.311264,
+      "run_id": "207_277_0",
+      "route_id": "207",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5934",
+      "heading": 165.0,
+      "latitude": 34.006336,
+      "longitude": -118.247475,
+      "run_id": "55_192_1",
+      "route_id": "55",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5969",
+      "heading": 210.0,
+      "latitude": 34.049839,
+      "longitude": -118.247414,
+      "run_id": "45_504_1",
+      "route_id": "45",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5781",
+      "heading": 45.0,
+      "latitude": 34.038673,
+      "longitude": -118.371674,
+      "run_id": "105_224_1",
+      "route_id": "105",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9450",
+      "heading": 345.0,
+      "latitude": 34.098156,
+      "longitude": -118.287399,
+      "run_id": "204_106_1",
+      "route_id": "204",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "5716",
+      "heading": 176.0,
+      "latitude": 33.971684,
+      "longitude": -118.357613,
+      "run_id": "212_213_1",
+      "route_id": "212",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8290",
+      "heading": 89.0,
+      "latitude": 34.2198179,
+      "longitude": -118.588821,
+      "run_id": "152_132_0",
+      "route_id": "152",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8137",
+      "heading": 1.0,
+      "latitude": 33.87175,
+      "longitude": -118.356827,
+      "run_id": "210_256_0",
+      "route_id": "210",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "8307",
+      "heading": 270.0,
+      "latitude": 33.970612,
+      "longitude": -118.190475,
+      "run_id": "111_334_1",
+      "route_id": "111",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8450",
+      "heading": 90.0,
+      "latitude": 34.076103,
+      "longitude": -118.345154,
+      "run_id": "14_398_1",
+      "route_id": "14",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5765",
+      "heading": 270.0,
+      "latitude": 34.03257,
+      "longitude": -118.352821,
+      "run_id": "37_398_1",
+      "route_id": "37",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8500",
+      "heading": 300.0,
+      "latitude": 33.885883,
+      "longitude": -117.997284,
+      "run_id": "460_179_1",
+      "route_id": "460",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5713",
+      "heading": 90.0,
+      "latitude": 33.930874,
+      "longitude": -118.296875,
+      "run_id": "206_160_1",
+      "route_id": "206",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3140",
+      "heading": 90.0,
+      "latitude": 34.145649,
+      "longitude": -118.161011,
+      "run_id": "256_54_0",
+      "route_id": "256",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "7535",
+      "heading": 30.0,
+      "latitude": 34.034771,
+      "longitude": -118.263077,
+      "run_id": "35_224_1",
+      "route_id": "35",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8506",
+      "heading": 0.0,
+      "latitude": 33.933788,
+      "longitude": -118.282547,
+      "run_id": "81_178_0",
+      "route_id": "81",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4093",
+      "heading": 165.0,
+      "latitude": 33.992916,
+      "longitude": -118.265305,
+      "run_id": "51_213_1",
+      "route_id": "51",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9418",
+      "heading": 130.0,
+      "latitude": 34.042416,
+      "longitude": -118.256264,
+      "run_id": "66_363_0",
+      "route_id": "66",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9515",
+      "heading": 220.0,
+      "latitude": 34.154587,
+      "longitude": -118.466042,
+      "run_id": "744_4_0",
+      "route_id": "744",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8403",
+      "heading": 317.0,
+      "latitude": 34.231834,
+      "longitude": -118.403496,
+      "run_id": "230_89_0",
+      "route_id": "230",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8548",
+      "heading": 199.0,
+      "latitude": 34.060455,
+      "longitude": -118.239349,
+      "run_id": "28_521_1",
+      "route_id": "28",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8575",
+      "heading": 137.0,
+      "latitude": 34.083939,
+      "longitude": -118.222633,
+      "run_id": "251_110_1",
+      "route_id": "251",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "8380",
+      "heading": 75.0,
+      "latitude": 34.054131,
+      "longitude": -118.235214,
+      "run_id": "910_173_0",
+      "route_id": "910",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5703",
+      "heading": 285.0,
+      "latitude": 34.016235,
+      "longitude": -118.267342,
+      "run_id": "102_47_1",
+      "route_id": "102",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6083",
+      "heading": 90.0,
+      "latitude": 34.068981,
+      "longitude": -118.300873,
+      "run_id": "16_263_0",
+      "route_id": "16",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "9251",
+      "heading": 75.0,
+      "latitude": 34.044064,
+      "longitude": -118.29776,
+      "run_id": "733_81_0",
+      "route_id": "733",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9386",
+      "heading": 165.0,
+      "latitude": 33.967422,
+      "longitude": -118.291855,
+      "run_id": "204_106_1",
+      "route_id": "204",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5988",
+      "heading": 220.0,
+      "latitude": 34.011036,
+      "longitude": -118.282089,
+      "run_id": "200_40_0",
+      "route_id": "200",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4085",
+      "heading": 90.0,
+      "latitude": 34.146446,
+      "longitude": -118.42218,
+      "run_id": "150_155_0",
+      "route_id": "150",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "6139",
+      "heading": 300.0,
+      "latitude": 33.9178659,
+      "longitude": -118.14016,
+      "run_id": "120_71_1",
+      "route_id": "120",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "3909",
+      "heading": 150.0,
+      "latitude": 34.042221,
+      "longitude": -118.247803,
+      "run_id": "16_328_1",
+      "route_id": "16",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3100",
+      "heading": 255.0,
+      "latitude": 34.221714,
+      "longitude": -118.417038,
+      "run_id": "167_96_1",
+      "route_id": "167",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8437",
+      "heading": 165.0,
+      "latitude": 34.024181,
+      "longitude": -118.33522,
+      "run_id": "210_260_1",
+      "route_id": "210",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "9231",
+      "heading": 179.0,
+      "latitude": 33.988022,
+      "longitude": -118.291565,
+      "run_id": "754_70_1",
+      "route_id": "754",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "5990",
+      "heading": 165.0,
+      "latitude": 33.901642,
+      "longitude": -118.208435,
+      "run_id": "60_128_1",
+      "route_id": "60",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "8256",
+      "heading": 220.0,
+      "latitude": 34.034988,
+      "longitude": -118.435783,
+      "run_id": "234_35_0",
+      "route_id": "234",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "5825",
+      "heading": 165.0,
+      "latitude": 33.778606,
+      "longitude": -118.26239,
+      "run_id": "246_70_1",
+      "route_id": "246",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3982",
+      "heading": 270.0,
+      "latitude": 34.057072,
+      "longitude": -118.233383,
+      "run_id": "76_170_1",
+      "route_id": "76",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8512",
+      "heading": 30.0,
+      "latitude": 34.049374,
+      "longitude": -118.251282,
+      "run_id": "28_537_0",
+      "route_id": "28",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6065",
+      "heading": 220.0,
+      "latitude": 34.148563,
+      "longitude": -118.080177,
+      "run_id": "181_166_1",
+      "route_id": "181",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8220",
+      "heading": 268.0,
+      "latitude": 34.257244,
+      "longitude": -118.605904,
+      "run_id": "245_47_0",
+      "route_id": "245",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "8445",
+      "heading": 225.0,
+      "latitude": 33.9977,
+      "longitude": -118.480103,
+      "run_id": "33_433_1",
+      "route_id": "33",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "6070",
+      "heading": 255.0,
+      "latitude": 34.0037499,
+      "longitude": -118.295822,
+      "run_id": "105_236_0",
+      "route_id": "105",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8329",
+      "heading": 225.0,
+      "latitude": 34.179859,
+      "longitude": -118.309952,
+      "run_id": "94_224_0",
+      "route_id": "94",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5622",
+      "heading": 220.0,
+      "latitude": 33.949409,
+      "longitude": -118.391861,
+      "run_id": "102_52_0",
+      "route_id": "102",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "6034",
+      "heading": 219.0,
+      "latitude": 33.965031,
+      "longitude": -118.150749,
+      "run_id": "110_217_1",
+      "route_id": "110",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3128",
+      "heading": 97.0,
+      "latitude": 34.071621,
+      "longitude": -118.362137,
+      "run_id": "218_29_0",
+      "route_id": "218",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "5709",
+      "heading": 195.0,
+      "latitude": 34.039749,
+      "longitude": -118.347939,
+      "run_id": "212_213_1",
+      "route_id": "212",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8535",
+      "heading": 23.0,
+      "latitude": 34.053249,
+      "longitude": -118.203621,
+      "run_id": "251_109_0",
+      "route_id": "251",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8602",
+      "heading": 270.0,
+      "latitude": 34.101788,
+      "longitude": -118.300415,
+      "run_id": "206_160_1",
+      "route_id": "206",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5643",
+      "heading": 220.0,
+      "latitude": 34.084736,
+      "longitude": -118.381508,
+      "run_id": "30_646_0",
+      "route_id": "30",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "4083",
+      "heading": 33.0,
+      "latitude": 34.061226,
+      "longitude": -118.247086,
+      "run_id": "60_128_1",
+      "route_id": "60",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5750",
+      "heading": 188.0,
+      "latitude": 34.083141,
+      "longitude": -118.326111,
+      "run_id": "10_398_0",
+      "route_id": "10",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "9379",
+      "heading": 90.0,
+      "latitude": 34.0908159,
+      "longitude": -118.359055,
+      "run_id": "4_259_0",
+      "route_id": "4",
+      "seconds_since_report": 83,
+      "predictable": true
+    },
+    {
+      "id": "6060",
+      "heading": 255.0,
+      "latitude": 33.92466,
+      "longitude": -118.238068,
+      "run_id": "55_186_0",
+      "route_id": "55",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9443",
+      "heading": 180.0,
+      "latitude": 33.928703,
+      "longitude": -118.292023,
+      "run_id": "204_106_1",
+      "route_id": "204",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "3866",
+      "heading": 330.0,
+      "latitude": 33.957413,
+      "longitude": -118.221321,
+      "run_id": "60_115_0",
+      "route_id": "60",
+      "seconds_since_report": 204,
+      "predictable": true
+    },
+    {
+      "id": "4112",
+      "heading": 189.0,
+      "latitude": 34.202602,
+      "longitude": -118.629601,
+      "run_id": "162_127_0",
+      "route_id": "162",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "4154",
+      "heading": 271.0,
+      "latitude": 34.132313,
+      "longitude": -117.987022,
+      "run_id": "264_72_0",
+      "route_id": "264",
+      "seconds_since_report": 264,
+      "predictable": true
+    },
+    {
+      "id": "5817",
+      "heading": 90.0,
+      "latitude": 34.101677,
+      "longitude": -118.306541,
+      "run_id": "181_163_0",
+      "route_id": "181",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "5717",
+      "heading": 220.0,
+      "latitude": 33.972786,
+      "longitude": -118.113251,
+      "run_id": "108_359_1",
+      "route_id": "108",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "8362",
+      "heading": 195.0,
+      "latitude": 34.056084,
+      "longitude": -118.210144,
+      "run_id": "910_169_1",
+      "route_id": "910",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "5635",
+      "heading": 15.0,
+      "latitude": 34.016647,
+      "longitude": -118.078865,
+      "run_id": "266_19_0",
+      "route_id": "266",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "3975",
+      "heading": 285.0,
+      "latitude": 34.10704,
+      "longitude": -118.263016,
+      "run_id": "92_226_0",
+      "route_id": "92",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "3945",
+      "heading": 34.0,
+      "latitude": 34.036064,
+      "longitude": -118.26059,
+      "run_id": "10_493_1",
+      "route_id": "10",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8013",
+      "heading": 30.0,
+      "latitude": 34.033504,
+      "longitude": -118.264061,
+      "run_id": "745_67_0",
+      "route_id": "745",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "9293",
+      "heading": 219.0,
+      "latitude": 34.05127,
+      "longitude": -118.230789,
+      "run_id": "704_150_1",
+      "route_id": "704",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "8592",
+      "heading": 220.0,
+      "latitude": 34.218857,
+      "longitude": -118.370262,
+      "run_id": "163_129_1",
+      "route_id": "163",
+      "seconds_since_report": 143,
+      "predictable": true
+    },
+    {
+      "id": "8216",
+      "heading": 315.0,
+      "latitude": 34.129784,
+      "longitude": -118.260391,
+      "run_id": "94_221_0",
+      "route_id": "94",
+      "seconds_since_report": 24,
+      "predictable": true
+    },
+    {
+      "id": "4135",
+      "heading": 309.0,
+      "latitude": 34.177109,
+      "longitude": -118.297691,
+      "run_id": "92_226_0",
+      "route_id": "92",
+      "seconds_since_report": 84,
+      "predictable": true
+    },
+    {
+      "id": "6109",
+      "heading": 135.0,
+      "latitude": 34.045357,
+      "longitude": -118.253799,
+      "run_id": "51_217_1",
+      "route_id": "51",
+      "seconds_since_report": 24,
+      "predictable": true
+    }
+  ]
+}

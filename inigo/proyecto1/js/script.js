@@ -1,16 +1,24 @@
 //Documentacion: --> https://github.com/datos-precio-carburante/json2016h1
 //api key maps -->  "AIzaSyCJ2M-CACUQ52ksG8h4jcV0vj16utyqGDA"
+//https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/
 
 var gasolineras = [];
 var selectProvincias = document.getElementById("buscarProvincia");
 var map;
 var markers= [];
 var fecha = new Date();
+var mes = fecha.getMonth() + 1;
 
-fecha = fecha.getFullYear() + "" + (fecha.getMonth() + 1) + "" + fecha.getDate();
+if(mes < 10 ){
+    mes = "0" + mes;
+}
+
+fecha = fecha.getFullYear() + "" + mes + "" + fecha.getDate();
+
 
 selectProvincias.options[selectProvincias.selectedIndex].value="defecto";
 peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
+//peticionAjax("https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/", procesar);
 
 selectProvincias.addEventListener("change", function(){
     var valorSelect = selectProvincias.options[ selectProvincias.selectedIndex ].value;
@@ -28,11 +36,14 @@ function peticionAjax(url,funcionMostrar) {
             funcionMostrar(JSON.parse(xmlHttp.responseText));
             
         } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
-            console.error("ERROR! 404");
-            console.info(JSON.parse(xmlHttp.responseText));
+            fecha--;
+            peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
+            //console.error("ERROR! 404");
+            //console.info(JSON.parse(xmlHttp.responseText));
         }
     };
     xmlHttp.open("GET", url, true);
+    //xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xmlHttp.send();
 }
 function procesar(data){

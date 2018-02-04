@@ -36,8 +36,12 @@ function validar(query,idioma){
     if(query === "" || !isNaN(query)){
         alert("Introduce un campo de búsqueda válido.")
     }else{
-        console.log(idioma)
-        peticionAjax("https://newsapi.org/v2/top-headlines?language="+idioma+"&q="+query+"&apiKey=78e4e5060c7043e88f12b0407bb4a06c",pintar);        
+        if(idioma === "defecto"){
+            alert("Debe seleccionar un idioma!")
+        }else{
+            peticionAjax("https://newsapi.org/v2/everything?language="+idioma+"&q="+query+"&apiKey=78e4e5060c7043e88f12b0407bb4a06c",pintar);        
+        }
+        
     }
     
 }

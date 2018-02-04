@@ -1,0 +1,68 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+    
+      var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 8,
+            center: new google.maps.LatLng(34.052235, -118.243683),
+            mapTypeId: 'terrain',
+            styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"color":"#000000"},{"lightness":13}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#144b53"},{"lightness":14},{"weight":1.4}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#08304b"}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#0c4152"},{"lightness":5}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#0b434f"},{"lightness":25}]},{"featureType":"road.arterial","elementType":"geometry.fill","stylers":[{"color":"#000000"}]},{"featureType":"road.arterial","elementType":"geometry.stroke","stylers":[{"color":"#0b3d51"},{"lightness":16}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"}]},{"featureType":"transit","elementType":"all","stylers":[{"color":"#146474"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#021019"}]}]
+          });
+        }
+      
+        Ajax("https://preview.c9users.io/vickysolo/fork_master/Vicky/ejercicios_CL41/metro.json",printResults);
+          function printResults(datos){
+           for (var i = 0; i < datos.items.length; i++) {
+              var latitud = datos.items[i].latitude;
+              var longitud = datos.items[i].longitude;
+              var latLng = new google.maps.LatLng(latitud,longitud);
+              var iconBase = 'iconbus.png';
+                  //icon from flaticon
+              var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                icon: iconBase
+              });
+            }
+          }
+      
+
+         function Ajax(url,callback) {
+                  var xmlHttp = new XMLHttpRequest();
+                  xmlHttp.open("GET", url, true);
+                  xmlHttp.onreadystatechange = function() {
+                      if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                          var datos = (JSON.parse(xmlHttp.responseText));
+                          callback(datos);
+                      } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                          console.error("ERROR! 404");
+                          console.info(JSON.parse(xmlHttp.responseText));
+                      }
+                  };
+                  
+                  xmlHttp.send();
+            }
+            
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap">
+    </script>
+   
+  </body>
+</html>
