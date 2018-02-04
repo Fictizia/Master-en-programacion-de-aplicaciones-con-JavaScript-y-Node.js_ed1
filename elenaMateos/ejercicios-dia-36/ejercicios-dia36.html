@@ -13,7 +13,7 @@
       <button id="buttonLookFor" type="button" name="button">BUSCAR</button>
       <img src="" alt="foto">
       <ul id="lista">
-        <li><span> Nombre : </span> <span>Mail: </span></li>
+
 
       </ul>
     </main>
@@ -37,7 +37,21 @@
       *
       *
       */
+      // Código extraido de: https://es.stackoverflow.com/questions/142/validar-un-email-en-javascript
+      function validarEmail(valor) {
+        if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+         console.log("La dirección de email " + valor + " es correcta!.");
+         return true;
+        } else {
+         console.log("La dirección de email" + valor + " es incorrecta!.");
+         return false;
+        }
+      }
+
+
+
     	function updateList(valueName, valueMail){
+        console.log('El email es: ' +valueMail);
     	  var currentName = JSON.parse(localStorage.getItem('Nombre')) || [];
         var currentMail = JSON.parse(localStorage.getItem('Mail')) || [];
 
@@ -48,42 +62,46 @@
         localStorage.setItem('Mail', JSON.stringify(currentMail));
     	};
 
-    	// Eventos
+    	// EVENTOS:
+
+      //Guardar:
     	btnGuardar.addEventListener('click', function(event){
+
     	  if(slcNombre.value !== "" && slcMail.value !== ""){
-          console.log(slcNombre.value);
+
           var valueName = slcNombre.value.trim();
           var valueMail = slcMail.value.trim();
-    	    updateList(valueName, valueMail);
+
+          if (validarEmail(valueMail)) {
+            updateList(valueName, valueMail);
+          }
+          else {
+            alert('Dame datos válidos!!!!');
+          }
     	  }
-        else {
-          alert('Dame datos válido!!!!');
-        }
-    	} );
+    } );
 
       var nombre = JSON.parse(localStorage.getItem('Nombre'));
+
       var mail = JSON.parse(localStorage.getItem('Mail'));
+
       if(Array.isArray(nombre) && Array.isArray(mail)){
-        console.log('cucu');
-        for (var i = 0; i < name.length; i++) {
+
+        for (var i = 0; i < nombre.length; i++) {
+
         function pintaHtml(nombre, mail){
-            lista.innerHTML +='<li><span> Nombre: ' + nombre[i] + ' </span> <span> Mail: ' + mail[i] + '</span></li>'
-        }
+          console.log(mail);
+            lista.innerHTML +='<li style="font-family: sans-serif;"><span> NOMBRE: ' + nombre + ' </span> <span style="margin-left: 10px;"> E-MAIL: ' + mail + '</span></li>'
+            }
+          pintaHtml(nombre[i], mail[i]);
       }
-    }
-    else {
-
-      console.log(nombre);
-    }
-
-      // function pintaHtml(nombre, mail) {
-      //   lista.innerHTML +='<li><span> Nombre: ' + nombre + ' </span> <span> Mail: ' + mail + '</span></li>'
-      //
-      // }
-
+      }
+      else {
+          console.log('No hay datos en localStorage');
+        }
 
 
     </script>
-    <!-- <script src="ejercicios-dia36.js" charset="utf-8"></script> -->
+
   </body>
 </html>
