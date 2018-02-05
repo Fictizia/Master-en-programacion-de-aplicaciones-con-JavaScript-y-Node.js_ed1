@@ -2,22 +2,43 @@
 //api key maps -->  "AIzaSyCJ2M-CACUQ52ksG8h4jcV0vj16utyqGDA"
 //https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/
 
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyD79Ygv4lm8nXzGvk5n1Ifm85bZ1DsrW0w",
+    authDomain: "gasolinera-1512844125964.firebaseapp.com",
+    databaseURL: "https://gasolinera-1512844125964.firebaseio.com",
+    projectId: "gasolinera-1512844125964",
+    storageBucket: "gasolinera-1512844125964.appspot.com",
+    messagingSenderId: "531378974867"
+};
+firebase.initializeApp(config);
+
+var fire = firebase.database().ref();
+console.log(fire);
+
+
+
 var gasolineras = [];
 var selectProvincias = document.getElementById("buscarProvincia");
 var map;
 var markers= [];
 var fecha = new Date();
 var mes = fecha.getMonth() + 1;
+var dia = fecha.getDate();
+var posActual;
 
 if(mes < 10 ){
     mes = "0" + mes;
 }
+if(dia < 10 ){
+    dia = "0" + dia;
+}
 
-fecha = fecha.getFullYear() + "" + mes + "" + fecha.getDate();
-
+fecha = fecha.getFullYear() + "" + mes + "" + dia;
 
 selectProvincias.options[selectProvincias.selectedIndex].value="defecto";
-peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
+peticionAjax("js/json.json", procesar);
+//peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
 //peticionAjax("https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/", procesar);
 
 selectProvincias.addEventListener("change", function(){
@@ -37,25 +58,34 @@ function peticionAjax(url,funcionMostrar) {
             
         } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
             fecha--;
-            peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
+            //peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
             //console.error("ERROR! 404");
             //console.info(JSON.parse(xmlHttp.responseText));
         }
     };
     xmlHttp.open("GET", url, true);
+    //xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     //xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xmlHttp.send();
+    
 }
 function procesar(data){
     var datos = data.ListaEESSPrecio;
     if (datos === undefined || datos.length == 0) {
         fecha--;
-        peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
+        //peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
     }else{
         datos.forEach(function(elemento, i){
             gasolineras.push(elemento);
         });
     }
+    fire.push(gasolineras, function(error) {
+    if (error) {
+      console.warn("No se han podido guardar los datos." + error);
+    } else {
+      console.info("Datos guardados con exito. : " + gasolineras);
+    }
+});
 }
 function filtrarProvincia(provincia){
     if(provincia === "todas"){
@@ -92,6 +122,11 @@ function mostrar(data){
         data.forEach(function(elemento, i){
             setTimeout(function() {
                 console.time("tiempoEnMostrar");
+                
+                var latitud = parseFloat(elemento["Latitud"].replace(/,/g, '.'));
+                var longitud = parseFloat(elemento["Longitud (WGS84)"].replace(/,/g, '.'));
+                var posicion = {lat: latitud, lng: longitud};
+                
                 html = '<div class="contenedorGasolinera">';
                 html += '<span class="direccion">' + elemento["Dirección"] + ' | ' + elemento["C.P."] + ' ' + elemento["Municipio"] + ', ' + elemento["Provincia"] + '</span><br/>';
                 html += '<span class="horario">Horario: <span>' + elemento["Horario"] + '</span></span><br/>';
@@ -101,17 +136,15 @@ function mostrar(data){
                 html += '<span class="gasolina95">Gasolina 95: <span>' + ((elemento["Precio Gasolina 95"] == null) ? disponibilidad : elemento["Precio Gasolina 95"]) + '</span></span><br/>';
                 html += '<span class="gasolina98">Gasolina 98: <span>' + ((elemento["Precio Gasolina  98"] == null) ? disponibilidad : elemento["Precio Gasolina  98"]) + '</span></span><br/>';
                 html += '<span class="dieselB">Diesel B: <span>' + ((elemento["Precio Gasoleo B"] == null) ? disponibilidad : elemento["Precio Gasoleo B"]) + '</span></span><br/>';
-                html += '<span class="latitud">Latitud: <span>' + elemento["Latitud"] + '</span></span><br/>';
-                html += '<span class="longitud">Longitud: <span>' + elemento["Longitud (WGS84)"] + '</span></span><br/>';
+                html += '<span class="latitud">Latitud: <span>' + latitud + '</span></span><br/>';
+                html += '<span class="longitud">Longitud: <span>' + longitud + '</span></span><br/>';
+                html += '<button class="botonMostrar" lat="' + latitud + '" long="' + longitud + '">Mostrar en el mapa</button><br/>';
+                html += '<button class="botonIr" lat="' + latitud + '" long="' + longitud + '">Cómo llegar</button><br/>';
                 html += '</div>';
                 
                 caja.innerHTML += html;
                 contador.innerHTML = i + 1 + " / " + data.length + " gasolineras";
                 barra(i + 1, data.length);
-                
-                var latitud = parseFloat(elemento["Latitud"].replace(/,/g, '.'));
-                var longitud = parseFloat(elemento["Longitud (WGS84)"].replace(/,/g, '.'));
-                var posicion = {lat: latitud, lng: longitud};
                 
                 addMarker(posicion, html);
                 
@@ -133,13 +166,83 @@ function barra(actual, total) {
     width = (width * actual * 100) / total;
     width++; 
     elem.style.width = width + '%'; 
-    
 }
+function clickLocation(directionsService, directionsDisplay){
+    var botones = document.querySelector("#cajaMostrar");
+    botones.addEventListener("click",function(e){
+        if(e.target.nodeName === 'BUTTON'){
+            var lat = parseFloat(e.target.getAttribute('lat'));
+            var long = parseFloat(e.target.getAttribute('long'));
+            if(e.target.getAttribute('class') === "botonMostrar"){
+                newLocation(lat,long);
+            }
+            if(e.target.getAttribute('class') === "botonIr"){
+                var origen = posActual;
+                var destino = {lat: lat, lng: long};
+                calculateAndDisplayRoute(directionsService, directionsDisplay, origen, destino);
+            }
+        }
+        
+    });     
+};
 function initMap() {
     var madrid = {lat: 40.4167, lng: -3.70325};
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 6,
         center: madrid
+    });
+    directionsDisplay.setMap(map);
+    clickLocation(directionsService, directionsDisplay);
+    var infoWindow = new google.maps.InfoWindow({map: map});
+    getPosicion(map, infoWindow);
+}
+function getPosicion(map, infoWindow){
+     // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        posActual = pos;
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('Location found.');
+        map.setCenter(pos);
+      }, function() {
+        handleLocationError(true, infoWindow, map.getCenter());
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infoWindow, map.getCenter());
+    }
+}
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+}
+function newLocation(newLat,newLng)
+{
+    map.setZoom(20);
+	map.setCenter({
+		lat : newLat,
+		lng : newLng
+	});
+}
+function calculateAndDisplayRoute(directionsService, directionsDisplay, origen, destino) {
+    directionsService.route({
+      origin: origen,
+      destination: destino,
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
     });
 }
 function addMarker(location, descripcion) {
