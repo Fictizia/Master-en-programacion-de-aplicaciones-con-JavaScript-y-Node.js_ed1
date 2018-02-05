@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Experimentos con LocalStorage</title>
+	<style type="text/css">
+		#txt-info {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" name="nombre" id="nombre">
+  <input type="text" name="telefono" id="telefono">
+  <button type="button" id="guardar">Guardar</button>
+  <button type="button" id="borrarAll">Borrar</button>
+	<h3>Agenda:</h3>
+	<ul id="lista"></ul>
+
+	<script>
+
+  // Selectores
+  var botonGuardar = document.getElementById("guardar")
+  var botonBorrar = document.getElementById("borrarAll")
+  var slctel = document.getElementById("telefono")
+  var slcnombre = document.getElementById("nombre")
+  var slcLista = document.getElementById("lista")
+  var listaNombres = JSON.parse(localStorage.getItem("nombres")) || [];
+  var listaTel = JSON.parse(localStorage.getItem("telefonos")) || [];
+
+
+
+  // Funciones
+  function updateNames(valueA, valueB){
+    listaNombres.push(valueA)
+    localStorage.setItem("nombres", JSON.stringify(listaNombres))
+    listaTel.push(valueB)
+    localStorage.setItem("telefonos", JSON.stringify(listaTel))
+    updateHtml(valueA,valueB);
+  }
+  
+  
+  
+  function deleteNames(e,numTelefono) {
+  	var position = listaTel.indexOf(numTelefono);
+  	listaNombres.splice(position,1);
+  	localStorage.setItem("nombres", JSON.stringify(listaNombres))
+  	listaTel.splice(position,1);
+  	localStorage.setItem("telefonos", JSON.stringify(listaTel))
+  }
+  
+  function deleteAll() {
+     localStorage.removeItem("nombres");
+     localStorage.removeItem("telefonos");
+  }
+  
+  function getNumber (userName) {
+    var position = listaNombres.indexOf(userName);
+    alert(listaTel[position])
+  }
+
+
+  function updateHtml(valueA,valueB){
+    slcLista.innerHTML += '<li><p>Nombre: '+valueA+' </p><button data-id="'+valueB+'">borrar</button><button data-tel="'+valueA+'">Ver teléfono</button></li>';
+  }
+
+  // Eventos
+  guardar.addEventListener("click", function(e){
+    if (!slcnombre.value || !slctel.value){
+      alert("rellene todos los campos")
+    }
+    else {
+      if (typeof(parseInt(slctel.value))==="number" && slctel.value.length===9){
+        updateNames(slcnombre.value.trim(),slctel.value.trim())
+        slcnombre.value = "";
+        slctel.value = "";
+      }
+      else {
+        alert("el teléfono debe contener solo 9 números")
+      }
+    }
+  });
+
+
+//borrar elemento de la lista
+  slcLista.addEventListener("click", function(e){
+  	var numTelefono= e.target.getAttribute("data-id")
+    if(e.target.nodeName === "BUTTON"){
+        if (numTelefono===null){
+      		 var userName = e.target.getAttribute("data-tel")
+      		 getNumber(userName)
+        }
+        else {
+         
+          slcLista.removeChild(e.target.parentNode)
+      		deleteNames(e,numTelefono)
+        }
+    }
+
+
+  })
+  
+  //borrar lista entera
+    botonBorrar.addEventListener("click", function(e){
+      console.log(slcLista)
+      slcLista.parentNode.removeChild(slcLista)
+      deleteAll();
+    })
+  
+  
+
+  // Arranque
+  var nameItems = JSON.parse(localStorage.getItem("nombres"))
+  var telItems = JSON.parse(localStorage.getItem("telefonos"))
+  if(Array.isArray(nameItems) && Array.isArray(telItems)){
+    for (var i = 0; i < nameItems.length; i++) {
+      updateHtml(nameItems[i],telItems[i])
+    }
+
+  }
+</script>
+</body>
+</html>

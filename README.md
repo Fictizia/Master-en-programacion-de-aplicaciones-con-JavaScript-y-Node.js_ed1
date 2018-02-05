@@ -112,6 +112,10 @@ Fecha | Teoría | Recursos | Contenido
 24/01/2018 | Clase 47 | Clase 47 | Repaso Patrones
 25/01/2018 | Clase 48 | Clase 48 | Repaso Firebase
 29/01/2018 | [Clase 49](teoria/dia49.md) | [Clase 49](recursos/dia49.md) | Patrones III y Algoritmia
+30/01/2018 | Clase 50 | Clase 50 | Tiempo Proyecto Personal y ejercicios
+31/01/2018 | [Clase 51](teoria/dia51.md) | [Clase 51](recursos/dia51.md) | Patrones y Arquitecturas alternativas I
+01/02/2018 | [Clase 52](teoria/dia52.md) | [Clase 52](recursos/dia52.md) | Expresiones Regulares
+02/02/2018 | [Clase 53](teoria/dia53.md) | Clase 53 | #OpenSourceFriday
 
 
 Temario
