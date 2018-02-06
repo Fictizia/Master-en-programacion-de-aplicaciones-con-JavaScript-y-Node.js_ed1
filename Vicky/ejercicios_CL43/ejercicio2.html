@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prueba firebase</title>
+</head>
+<body>
+    
+    <button onclick='login()'>Entrar</button>
+    <button onclick='logout()'>Salir</button>
+    <div id="print"></div>
+    
+    
+    
+    
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+      //aquí van los datos dados por firebase
+      };
+      firebase.initializeApp(config);
+      
+    </script>
+
+    
+    <script>
+    
+    // la URL para el callback nos la da firebase en la pestaña método de acceso
+       
+ 
+       
+       
+        var userRef = firebase.database().ref("users");
+
+        // OAUTH
+        var auth = firebase.auth();
+        var provider = new firebase.auth.GithubAuthProvider();
+
+        // Evento de OAUTH
+        function login (){
+          firebase.auth().signInWithPopup(provider).then(function(result) {
+              var token = result.credential.accessToken;
+              var user = result.user;
+              console.log(user + ","+token)
+            console.log("User signed in! UID:", result.user.uid)
+    
+            // -- HACK -- //Preguntar a Carlos por otras opciones de clonar objetos sin Hack
+            var userData = JSON.stringify(user)
+                userData = JSON.parse(userData)
+    
+            // Alamacenando el usuario en /user/{{uid}}/datos...
+            userRef.child(userData.uid).set(userData)
+          }).catch(function(error) {
+            console.log("User OUT!")
+             // Handle Errors here.
+              var errorCode = error.code;
+              console.log(errorCode)
+              var errorMessage = error.message;
+              console.log(errorMessage)
+              // The email of the user's account used.
+              var email = error.email;
+              console.log(email)
+              // The firebase.auth.AuthCredential type that was used.
+              var credential = error.credential;
+              console.log(credential)
+          })
+        }
+        
+        //lOGOUT
+        
+        function logout (){
+            firebase.auth().signOut().then(function() {
+              alert("adios!!")
+            }).catch(function(error) {
+              console.log("error en log out");
+            });
+        }
+        
+        
+        //MOSTRAR USUASIOS REGISTRADOS
+        console.log(userRef.child("user"))
+         userRef.on("child_added", function(snapshot) {
+            var usuario = snapshot.val()
+           
+                var photo = usuario.photoURL  
+                var user = usuario.displayName 
+                printList (user, photo)
+            
+            
+        });
+        
+        
+        function printList (user, photo) {
+            var contactList = document.getElementById("print")
+            contactList.innerHTML += '<p>'+ user +'</p><img src="'+ photo +'" width="150px;">'
+        }
+    
+       
+
+   
+    </script>
+</body>
+</html>
+   
