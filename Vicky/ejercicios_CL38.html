@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Websockets</title>
+	 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> 
+	<style type="text/css">
+		body {
+			background-color:#073642;
+			font-family:'Arial', sans-serif;
+		}
+		
+		h1 {
+			color:#f5f5f5;
+			margin-top:100px;
+		}
+		
+		.btc-info {
+			color:#8BC73E;
+			font-size: 30px;
+			margin-top:50px;
+		}
+		
+		.yellow {
+			color: yellow;
+		}
+		
+		.red {
+			color: red;
+		}
+		
+		.marquee {
+		    background-color: #073642;
+		    overflow: hidden;
+		    white-space: nowrap;
+		    animation: marquee 50s linear infinite;
+		}
+		
+		.marquee:hover {
+		    animation-play-state: paused
+		}
+		
+		/* Make it move */
+		@keyframes marquee {
+		    0%   { text-indent: 1px }
+		    100% { text-indent: -105em }
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1 class="text-center">BLOCKCHAIN IN REALTIME</h1>
+		<div id="bitcoins">
+		</div>
+		<div id="conversionRates" class="marquee">
+		</div>
+		<div id="conversionSell" class="marquee">
+		</div>
+	</div>
+	
+	<script>
+		var myWebSocket = new WebSocket("wss://ws.blockchain.info/inv");
+		
+		myWebSocket.onopen = function() { 
+			myWebSocket.send(JSON.stringify({"op":"unconfirmed_sub"}))
+			myWebSocket.send(JSON.stringify({"op":"blocks_sub"}))
+		};
+		
+		var suma = 0;
+		
+		myWebSocket.onmessage = function(evt) { 
+			// añadir .data para que nos devuelva solo lo que hay dentro del mensaje
+				
+				var myData = JSON.parse(evt.data)
+				
+				if (myData.op === "utx") {
+					for (var i = 0; i < myData.x.out.length; i++) {
+				      suma += myData.x.out[i].value;
+				    }
+				    
+				print();	
+				}
+
+		};
+			
+	
+		function print (){
+			var btc = suma/100000000
+			var bitcoinResults = document.getElementById("bitcoins")
+			bitcoinResults.innerHTML = '<div><p class="btc-info text-center">BTC: ' + btc + '</p></div>'
+		} 
+		
+		
+		
+		myWebSocket.onclose = function() { console.log("Connection closed."); };   
+		
+		
+		Ajax("https://blockchain.info/es/ticker?cors=true", printCurrency)
+		
+		
+		function printCurrency (datos) {
+
+			var conversionData = document.getElementById("conversionRates");
+			var sellPrice =document.getElementById("conversionSell");
+		
+			for (var currency in datos){
+				 conversionData.innerHTML += '<span class="yellow"> '+ currency +' '+ datos[currency].buy +' |</span>'
+				 sellPrice.innerHTML += '<span class="red"> '+ currency +' '+ datos[currency].sell +' |</span>'
+			}
+			
+			
+			
+			
+		}
+		
+		 function Ajax(url,callback) {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", url, true);
+                xmlHttp.onreadystatechange = function() {
+                    if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                        var datos = (JSON.parse(xmlHttp.responseText));
+                        callback(datos);
+                       console.log(datos)
+                    } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                        console.error("ERROR! 404");
+                        console.info(JSON.parse(xmlHttp.responseText));
+                    }
+                };
+                
+                xmlHttp.send();
+            }
+		
+	</script>
+</body>
+</html>
