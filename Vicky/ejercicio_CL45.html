@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Ejercicio Películas</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> 
+ 
+    <style type="text/css">
+     </style>
+ 
+  </head>
+ 
+  <body>
+      <div class="container">
+         <div class="form-group">
+          <label for="movie" class="">Movie Name</label>
+          <input type="text" class="form-control" id="movie" required>
+          
+       
+        </div>
+        <button type="button" class="btn btn-primary col-md-2" id="go"><span class="glyphicon glyphicon-search"></span></button>
+      </div>
+        <div class="container" id="list">
+          
+        </div>
+         
+      
+      <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+      <script>
+        // Initialize Firebase
+        var config = {
+         //info firebase
+        };
+        firebase.initializeApp(config);
+      </script>
+  
+   <script>
+      getData = document.getElementById("go");
+   
+      getData.addEventListener("click", function(e){
+          var apikey = ""
+          var movieName = document.getElementById("movie").value.trim();
+          movieName = movieName.replace(" ","+")
+          
+          /*
+            movieName = movieName.split(" ");
+            for (var i=0; i < movieName.length; i++) {
+                      movieN +=(movieName[i] + "+");
+                  }
+            console.log(movieN)
+            */
+          var url ="https://www.omdbapi.com/?apikey=" + apikey +"&t="+ movieName
+          
+         
+          console.log(url)
+          
+          Ajax(url,printData)
+      });
+         
+    
+      function printData (data) {
+        console.log(data)
+        
+        var printList = document.getElementById("list")
+        var title = data.Title;
+        var img = data.Poster;
+        console.log(img)
+        
+        printList.innerHTML += '<div class="col-md-4"><p>'+title+'</p><img class="img-responsive" src="' + img  + '" width="150px;"></div>'
+        
+      
+      }
+      
+     
+           
+        //llamada AJAX
+           function Ajax(url,callback) {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.open("GET", url, true);
+                xmlHttp.onreadystatechange = function() {
+                    //@Ulises: Mejorar las condi...
+                    if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                        var data = (JSON.parse(xmlHttp.responseText));
+                        callback(data);
+                    } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                        console.error("ERROR! 404");
+                        console.info(JSON.parse(xmlHttp.responseText));
+                    }
+                };
+                
+                xmlHttp.send();
+            }
+  
+    </script>
+  
+      
+  </body>
+</html>
