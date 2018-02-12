@@ -2,8 +2,8 @@
 
 ### ¿Qué tenemos pendiente de solucionar?
 
-- [ ] Ejercicio ¡Buenos días, Madrid! en [clase 25](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia25.md)
-- [ ] Ejercicos de Testing unitario con QUnit en [clase 27](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia27.md)
+- [x] Ejercicio ¡Buenos días, Madrid! en [clase 25](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia25.md)
+- [x] Ejercicos de Testing unitario con QUnit en [clase 27](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia27.md)
 - [ ] Ejercicios de Libretas de contactos en [clase 36](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia36.md)
 - [ ] Ejercicio de Bitcoin en [clase 38](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia38.md)
 - [ ] Ejercicio de posicionar al usuario usando Google Maps en [clase 41](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia41.md#ejercicios)
