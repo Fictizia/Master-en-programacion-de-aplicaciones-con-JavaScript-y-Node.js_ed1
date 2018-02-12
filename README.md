@@ -115,8 +115,12 @@ Fecha | Teoría | Recursos | Contenido
 30/01/2018 | Clase 50 | Clase 50 | Tiempo Proyecto Personal y ejercicios
 31/01/2018 | [Clase 51](teoria/dia51.md) | [Clase 51](recursos/dia51.md) | Patrones y Arquitecturas alternativas I
 01/02/2018 | [Clase 52](teoria/dia52.md) | [Clase 52](recursos/dia52.md) | Expresiones Regulares
-02/02/2018 | [Clase 53](teoria/dia53.md) | Clase 53 | #OpenSourceFriday
-
+02/02/2018 | [Clase 53](teoria/dia53.md) | Clase 53 | [#OpenSourceFriday](https://opensourcefriday.com)
+05/02/2018 | Clase 54 | Clase 54 | Tiempo Proyecto Personal
+06/02/2018 | Clase 55 | Clase 55 | Tiempo Proyecto Personal
+07/02/2018 | Clase 56 | Clase 56 | Tiempo Proyecto Personal
+08/02/2018 | Clase 57 | Clase 57 | Tiempo Proyecto Personal
+09/02/2018 | [Clase 59](teoria/dia59.md) | Clase 59 | [#OpenSourceFriday](https://opensourcefriday.com)
 
 Temario
 =================
