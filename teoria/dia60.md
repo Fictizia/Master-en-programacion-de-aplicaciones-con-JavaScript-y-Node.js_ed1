@@ -14,7 +14,7 @@
 - [ ] Ejercicios de expresiones regualres en [clase 45](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia52.md#ejercicios)
 
 ### Extras y revisiones
-- [ ] Memezinga v0.1.1
+- [x] Memezinga v0.1.1
 - [ ] Nuevo Proyecto personal para el bloque de JS Avanzado. Especificaciones en [clase 31](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia31.md#nuevo-proyecto-personal)
 - [ ] [NASA Rover Challenge](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/49)
 - [ ] [Refactorizar y mejorar nipstr](https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/issues/62)
