@@ -121,6 +121,8 @@ Fecha | Teoría | Recursos | Contenido
 07/02/2018 | Clase 56 | Clase 56 | Tiempo Proyecto Personal
 08/02/2018 | Clase 57 | Clase 57 | Tiempo Proyecto Personal
 09/02/2018 | [Clase 59](teoria/dia59.md) | Clase 59 | [#OpenSourceFriday](https://opensourcefriday.com)
+12/02/2018 | [Clase 60](teoria/dia60.md) | Clase 60 | Soluciones y dudas
+
 
 Temario
 =================
