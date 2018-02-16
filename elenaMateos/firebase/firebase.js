@@ -12,12 +12,12 @@
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyC9DtPuAVPoZ9tbNjUFlkOAbtTRis5X8Yc",
-  authDomain: "memezinga.firebaseapp.com",
-  databaseURL: "https://memezinga.firebaseio.com",
-  projectId: "memezinga",
-  storageBucket: "memezinga.appspot.com",
-  messagingSenderId: "490549726466"
+  apiKey: "XXXXXXXXXXXX",
+  authDomain: "xxxxxxxx.firebaseapp.com",
+  databaseURL: "https://xxxxxx.firebaseio.com",
+  projectId: "xxxxxxxxxx",
+  storageBucket: "xxxxxxxxxxx.appspot.com",
+  messagingSenderId: "xxxxxxxxxxxxxx"
 };
 firebase.initializeApp(config);
 
@@ -28,7 +28,7 @@ firebase.initializeApp(config);
 var userRef = firebase.database().ref("users");
 /**
 * Para crear una autentificación mediante una red social como github o twitter, dentro de la página de firebase hay q ir a
-* la segunda pestaña para 'Configurar método de iniio de sesión'. Una vez ahí seleccionar el métod en cuestión y este nos dará una
+* la segunda pestaña para 'Configurar método de inicio de sesión'. Una vez ahí seleccionar el método en cuestión y este nos dará una
 * clave de usuario y un token para meter dentro de la red social en cuestión y que de esta forma pueda comunicarse con firebase
 * nos pedirá los dominios autorizados, en este caso poner un localhost (para poder trabajar), y uno externo para poder
 * tener la app que vamos a crear y a la que se accede a través del loggin social.
