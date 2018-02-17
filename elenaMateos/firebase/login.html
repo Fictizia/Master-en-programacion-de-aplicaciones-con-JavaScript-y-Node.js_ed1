@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Memezinga!</title>
+  </head>
+  <body>
+    <button onclick='logearme()'>Github Party... yeah!</button>
+    <button onclick='sacame_de_aqui()'>Bye!</button>
+    <h1>Esta gente ya confia en nosotros, generando memes de calidad desde 2017...</h1>
+    <ul id="gente-confiada"></ul>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "XXXXXXXXXXXXXXXXXXXXXX",
+        authDomain: "XXXXXXX.firebaseapp.com",
+        databaseURL: "https://XXXXXXXXX.firebaseio.com",
+        projectId: "XXXXXX",
+        storageBucket: "XXXXXXXXX.appspot.com",
+        messagingSenderId: "XXXXXXXXXXXXXXX"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+    //var rootRef = firebase.database().ref();
+    var userRef = firebase.database().ref("users");
+
+    // OAUTH
+    var auth = firebase.auth();
+    var provider = new firebase.auth.GithubAuthProvider();
+
+    // Evento de OAUTH
+    function logearme (){
+      firebase.auth().signInWithPopup(provider).then(function(result) {
+        console.log("User signed in! UID:", result.user.uid)
+
+        // -- HACK --
+        var userData = JSON.stringify(result.user)
+            userData = JSON.parse(userData)
+
+        // Alamacenando el usuario en /user/{{uid}}/datos...
+        userRef.child(userData.uid).set(userData)
+      }).catch(function(error) {
+        console.log("User OUT!")
+      })
+    }
+
+    function sacame_de_aqui (){
+      firebase.auth().signOut().then(function() {
+        console.log("User OUT!. Es lo que esperaba...")
+      }).catch(function(error) {
+        console.log("ERRRRRRRRROR! CON: User OUT!")
+      });
+    }
+
+    //Evento para sacar a los usuarios
+    userRef.on("value", function(snapshot) {
+      var usersList = snapshot.val();
+      console.log("Nuevos cambios. Lista actualizada: ", usersList);
+      for (var userData in usersList) {
+        var user = usersList[userData];
+        document.getElementById("gente-confiada").innerHTML += `<li>${user.displayName} (${user.uid})</li>`
+      }
+    });
+    </script>
+  </body>
+</html>

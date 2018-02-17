@@ -7,12 +7,101 @@
   <body>
 
     <main class="container">
-      <input id="getName"type="text" name="nombre" value="" placeholder="Pon el nombre">
-      <input id="getMail"type="text" name="" value=""placeholder="Pon el mail">
+      <input id="getName"type="text" name="nombre"  placeholder="Pon el nombre">
+      <input id="getMail"type="text" name=""  placeholder="Pon el mail">
       <button id="buttonSave" type="button" name="button">GUARDAR</button>
       <button id="buttonLookFor" type="button" name="button">BUSCAR</button>
       <img src="" alt="foto">
+      <ul id="lista">
+
+
+      </ul>
     </main>
-    <script src="ejercicios-dia36.js" charset="utf-8"></script>
+
+    <script type="text/javascript">
+
+    	/* -- Necesitaremos:
+    	---- EDITAR Y BORRAR ---
+    	*/
+    	// Selectores
+      var btnGuardar = document.getElementById('buttonSave');
+      var btnBuscar = document.getElementById('buttonLookFor');
+      var slcNombre = document.getElementById('getName');
+      var slcMail = document.getElementById('getMail');
+      var lista = document.getElementById('lista');
+
+
+      	// Funciones
+      /**
+      *
+      *
+      *
+      */
+      // Código extraido de: https://es.stackoverflow.com/questions/142/validar-un-email-en-javascript
+      function validarEmail(valor) {
+        if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+         console.log("La dirección de email " + valor + " es correcta!.");
+         return true;
+        } else {
+         console.log("La dirección de email" + valor + " es incorrecta!.");
+         return false;
+        }
+      }
+
+
+
+    	function updateList(valueName, valueMail){
+        console.log('El email es: ' +valueMail);
+    	  var currentName = JSON.parse(localStorage.getItem('Nombre')) || [];
+        var currentMail = JSON.parse(localStorage.getItem('Mail')) || [];
+
+    	  currentName.push(valueName);
+    	  localStorage.setItem('Nombre', JSON.stringify(currentName));
+        console.log(valueMail);
+        currentMail.push(valueMail);
+        localStorage.setItem('Mail', JSON.stringify(currentMail));
+    	};
+
+    	// EVENTOS:
+
+      //Guardar:
+    	btnGuardar.addEventListener('click', function(event){
+
+    	  if(slcNombre.value !== "" && slcMail.value !== ""){
+
+          var valueName = slcNombre.value.trim();
+          var valueMail = slcMail.value.trim();
+
+          if (validarEmail(valueMail)) {
+            updateList(valueName, valueMail);
+          }
+          else {
+            alert('Dame datos válidos!!!!');
+          }
+    	  }
+    } );
+
+      var nombre = JSON.parse(localStorage.getItem('Nombre'));
+
+      var mail = JSON.parse(localStorage.getItem('Mail'));
+
+      if(Array.isArray(nombre) && Array.isArray(mail)){
+
+        for (var i = 0; i < nombre.length; i++) {
+
+        function pintaHtml(nombre, mail){
+          console.log(mail);
+            lista.innerHTML +='<li style="font-family: sans-serif;"><span> NOMBRE: ' + nombre + ' </span> <span style="margin-left: 10px;"> E-MAIL: ' + mail + '</span></li>'
+            }
+          pintaHtml(nombre[i], mail[i]);
+      }
+      }
+      else {
+          console.log('No hay datos en localStorage');
+        }
+
+
+    </script>
+
   </body>
 </html>

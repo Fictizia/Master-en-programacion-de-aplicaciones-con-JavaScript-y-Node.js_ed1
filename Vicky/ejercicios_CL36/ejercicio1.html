@@ -12,7 +12,7 @@
 	<input type="text" name="nombre" id="nombre">
   <input type="text" name="telefono" id="telefono">
   <button type="button" id="guardar">Guardar</button>
-  <button type="button" id="borrar">Borrar</button>
+  <button type="button" id="borrarAll">Borrar</button>
 	<h3>Agenda:</h3>
 	<ul id="lista"></ul>
 
@@ -20,42 +20,47 @@
 
   // Selectores
   var botonGuardar = document.getElementById("guardar")
+  var botonBorrar = document.getElementById("borrarAll")
   var slctel = document.getElementById("telefono")
   var slcnombre = document.getElementById("nombre")
   var slcLista = document.getElementById("lista")
-      var listaNombres = JSON.parse(localStorage.getItem("nombres")) || [];
-          var listaTel = JSON.parse(localStorage.getItem("telefonos")) || [];
+  var listaNombres = JSON.parse(localStorage.getItem("nombres")) || [];
+  var listaTel = JSON.parse(localStorage.getItem("telefonos")) || [];
 
 
 
   // Funciones
   function updateNames(valueA, valueB){
-    console.log(valueA + "+"+valueB)
     listaNombres.push(valueA)
     localStorage.setItem("nombres", JSON.stringify(listaNombres))
     listaTel.push(valueB)
     localStorage.setItem("telefonos", JSON.stringify(listaTel))
     updateHtml(valueA,valueB);
-
   }
   
   
   
   function deleteNames(e,numTelefono) {
-  	console.log(numTelefono)
   	var position = listaTel.indexOf(numTelefono);
-  	console.log(position)
   	listaNombres.splice(position,1);
   	localStorage.setItem("nombres", JSON.stringify(listaNombres))
   	listaTel.splice(position,1);
   	localStorage.setItem("telefonos", JSON.stringify(listaTel))
-  	
+  }
+  
+  function deleteAll() {
+     localStorage.removeItem("nombres");
+     localStorage.removeItem("telefonos");
+  }
+  
+  function getNumber (userName) {
+    var position = listaNombres.indexOf(userName);
+    alert(listaTel[position])
   }
 
 
   function updateHtml(valueA,valueB){
-
-    slcLista.innerHTML += '<li><p>Nombre: '+valueA+' Teléfono: '+valueB+' </p><button data-id="'+valueB+'">borrar</button</li>';
+    slcLista.innerHTML += '<li><p>Nombre: '+valueA+' </p><button data-id="'+valueB+'">borrar</button><button data-tel="'+valueA+'">Ver teléfono</button></li>';
   }
 
   // Eventos
@@ -78,15 +83,28 @@
 
 //borrar elemento de la lista
   slcLista.addEventListener("click", function(e){
-  	var numTelefono= e.target.getAttribute("data-id");
+  	var numTelefono= e.target.getAttribute("data-id")
     if(e.target.nodeName === "BUTTON"){
-    		slcLista.removeChild(e.target.parentNode)
-    		console.log(numTelefono)
-    		deleteNames(e,numTelefono)
+        if (numTelefono===null){
+      		 var userName = e.target.getAttribute("data-tel")
+      		 getNumber(userName)
+        }
+        else {
+         
+          slcLista.removeChild(e.target.parentNode)
+      		deleteNames(e,numTelefono)
+        }
     }
 
 
   })
+  
+  //borrar lista entera
+    botonBorrar.addEventListener("click", function(e){
+      console.log(slcLista)
+      slcLista.parentNode.removeChild(slcLista)
+      deleteAll();
+    })
   
   
 

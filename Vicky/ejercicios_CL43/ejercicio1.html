@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prueba firebase</title>
+</head>
+<body>
+    <div>
+        <input id="nombre" type="text" name="nombre" placeholder="nombre"/>
+        <input id="email" type="text" name="email" placeholder="email"/>
+        <button id="guardar" type="submit">Enviar</button>
+    </div>
+    <div id="print">
+        
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/4.8.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        /*Aquí va la información que proporciona Firebase*/
+      };
+      firebase.initializeApp(config);
+      
+    </script>
+
+    
+    <script>
+        var database = firebase.database();
+        var rootRef = firebase.database().ref();
+        //pintar datos
+        
+        /*rootRef.child("usuarios").once("value", function(snapshot) {
+            var usuarios = snapshot.val()
+            for (var id in usuarios){
+                var email = usuarios[id].email  
+                var user = usuarios[id].name 
+                printList (user, email)
+            }
+            
+        });*/
+        
+        //Por cada hijo añadido se cogerán los datos de nombre y email
+        
+        rootRef.child("usuarios").on("child_added", function(snapshot) {
+            var usuario = snapshot.val()
+            var email = usuario.email  
+            var user = usuario.name 
+            printList (user, email)
+
+        });
+        
+        
+        function printList (user, email) {
+            var contactList = document.getElementById("print")
+            contactList.innerHTML += '<p>'+ user +'</p><p>'+ email +'</p> <hr><br>'
+        }
+        
+
+        //guardando datos del usuario (los datos se pushean)
+        document.getElementById("guardar").addEventListener("click", function(){
+            
+             // validar que el email no existe
+              var userName = document.getElementById("nombre").value
+              var userEmail = document.getElementById("email").value
+              var dataRef = rootRef.child("usuarios");
+              var found = false;
+              dataRef.orderByChild("email").equalTo(userEmail).once("value", function(snapshot) {
+                   // .val() para que nos devuelva el valor. 
+                   if (snapshot.val() === null){
+                      dataRef.push({name:userName, email:userEmail})
+                         
+                   }
+                   else {
+                       alert("el email ya existe")
+                   }
+                   
+                });
+            });
+
+    </script>
+</body>
+</html>
+   
