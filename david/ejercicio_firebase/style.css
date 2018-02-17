@@ -45,3 +45,9 @@ h1 {
     margin: 0 auto!important;
     text-align: center!important;
 }
+.row.text-center{
+  margin-bottom: 5px;
+}
+.row.text-center .col-md-2 img{
+  width: 30%;
+}

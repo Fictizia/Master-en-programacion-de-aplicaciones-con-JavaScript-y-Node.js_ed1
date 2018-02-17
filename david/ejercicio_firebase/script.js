@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 programaPelis.configuracion = (function(){
     var init = function () {
         programaPelis.herramientas.inicializarBotones();
-        //firebase.initializeApp(config);
+        firebase.auth().signOut();
     };
     return {inicializar: init};
 })();
@@ -32,7 +32,6 @@ programaPelis.llamada = (function(){
     }
     return {buscar : ajax};
 })();
-
 programaPelis.herramientas = (function(){
     var mis_pelis = firebase.database();
     var initButtons = function(){
@@ -40,9 +39,7 @@ programaPelis.herramientas = (function(){
         botonGuardar.addEventListener("click",function(e){
             if(!firebase.auth().currentUser){
                 alert("Debes estar logueado.")
-                
             }else{
-                console.log(firebase.auth().currentUser)
                 if(e.target.nodeName === 'BUTTON'){
                     if(e.target.getAttribute('data-type') === "guardar"){
                         var idPeli = e.target.getAttribute('data-id');
@@ -69,10 +66,10 @@ programaPelis.herramientas = (function(){
         botonLoggin.addEventListener("click",function(e){
             if(firebase.auth().currentUser===null){
                 programaPelis.logging.loggin();
-                console.log("entro")
             }else{
-                console.log("salgo")
                 firebase.auth().signOut();
+                document.getElementById("icono").src = "img/icon.svg"
+                document.getElementById("misPelis").style.display = 'none'
             }
         });
     };
@@ -91,7 +88,7 @@ programaPelis.herramientas = (function(){
                     <div class="col-md-4">
                         <div class="row lista">
                             <div class="col-md-12">
-                                <button type="button" data="${element}" data-poster="${element.Poster}" data-year="${element.Year}" data-id="${element.imdbID}" data-name="${element.Title}" data-type="guardar" class="btn btn-default">
+                                <button type="button" data-poster="${element.Poster}" data-year="${element.Year}" data-id="${element.imdbID}" data-name="${element.Title}" data-type="guardar" class="btn btn-default">
                                     Guardar
                                 </button>
                             </div>
@@ -102,23 +99,19 @@ programaPelis.herramientas = (function(){
     };
     return {referencia: mis_pelis, inicializarBotones: initButtons};
 })();
-
-
-
 /*programaPelis.firebase = (function(){
-    var lectura
+    var escritura = function(){
+        
+    }
     
     return {};
 })();*/
-
 programaPelis.logging = (function(){
     var usuario = function(){
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider).then(function(result) {
-          var user = result.user;
-          document.querySelectorAll(".btn").disabled = true;
-          /*window.location.href += "?id="+ programaPelis.logging.loggin().uid;
-          document.querySelectorAll(".guardar").removeAttribute("disabled");*/
+            document.getElementById("icono").src = result.user.photoURL
+            document.getElementById("misPelis").style.display = 'block'
         }).catch(function(error) {
           console.error(error)
         });
