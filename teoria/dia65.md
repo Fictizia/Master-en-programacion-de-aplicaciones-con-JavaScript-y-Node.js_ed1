@@ -2,14 +2,14 @@
 
 ### Node.js
 
-![Node_logo](http://www.fictizia.com/assets/styles/styleImgs/wideBox/widebox_nodejs.png)
+![Node_logo](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png)
 
 > Node.js es un entorno en tiempo de ejecución multiplataforma, de código abierto, para la capa del servidor (pero no limitándose a ello) basado en el lenguaje de programación ECMAScript, asíncrono, con I/O de datos en una arquitectura orientada a eventos y basado en el motor V8 de Google. Fue creado con el enfoque de ser útil en la creación de programas de red altamente escalables, como por ejemplo, servidores web. Fue creado por Ryan Dahl en 2009 y su evolución está apadrinada por la empresa Joyent, que además tiene contratado a Dahl en plantilla - [Wikipedia](https://www.wikiwand.com/es/Node.js)
 
 
 **Otra manera es posible**
 
-![bloqueo](https://sezaman.com/content/images/2016/04/node-drupal-queue-comparison.jpg)
+![bloqueo](https://servercheck.in/sites/servercheck.in/files/node-drupal-queue-comparison.jpg)
 
 
 **Puntos Fuertes**
