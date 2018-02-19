@@ -4,7 +4,7 @@
 
 ![WideImg](http://fictizia.com/img/github/Fictizia-plan-estudios-github.jpg)
 
-# Master en programación de aplicaciones con JavaScript y Node.js
+# Master en Programación de Aplicaciones con JavaScript y Node.js
 ### JS, Node.js, Frontend, Express, Patrones, IoT, HTML5_APIs, Asincronía, Websockets, ECMA6, ECMA7
 
 
