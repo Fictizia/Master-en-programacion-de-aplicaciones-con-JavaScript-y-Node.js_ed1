@@ -14,6 +14,15 @@ body {
   color: #fff!important;
 }
 
+.navegar{
+  width: 100%;
+  height: auto;
+  text-align: right;
+  margin-top: 15px;
+}
+.navegar img{
+  width: 4%;
+}
 h1 {
   text-align: center;
   font-family: Tahoma, Arial, sans-serif;
@@ -23,9 +32,8 @@ h1 {
 .container1{
     margin: 0 auto;
     text-align: center;
-    margin-top: 25px;
 }
-.container1 #inputPelis{
+.container1 #input{
     width: 80%;
     height: 30px;
     padding: 5px;
@@ -36,4 +44,10 @@ h1 {
 .container-ficha{
     margin: 0 auto!important;
     text-align: center!important;
+}
+.row.text-center{
+  margin-bottom: 5px;
+}
+.row.text-center .col-md-2 img{
+  width: 30%;
 }
