@@ -126,6 +126,7 @@ Fecha | Teoría | Recursos | Contenido
 14/02/2018 | Clase 62 | Clase 62 | ES6 (ES2015)
 15/02/2018 | Clase 63 | Clase 63 | Tiempo Proyecto Personal
 16/02/2018 | Clase 64 | Clase 64 | [#OpenSourceFriday](https://opensourcefriday.com)
+19/02/2018 | [Clase 65](teoria/dia65.md) | [Clase 65](recursos/dia65.md) | Nodejs I: Funcionamiento y ecosistema
 
 
 Temario
