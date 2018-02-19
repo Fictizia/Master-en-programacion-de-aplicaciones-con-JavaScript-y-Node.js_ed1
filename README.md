@@ -123,6 +123,9 @@ Fecha | Teoría | Recursos | Contenido
 09/02/2018 | [Clase 59](teoria/dia59.md) | Clase 59 | [#OpenSourceFriday](https://opensourcefriday.com)
 12/02/2018 | [Clase 60](teoria/dia60.md) | Clase 60 | Soluciones y dudas
 13/02/2018 | [Clase 61](teoria/dia61.md) | [Clase 61](recursos/dia61.md) | ES6 (ES2015)
+14/02/2018 | Clase 62 | Clase 62 | ES6 (ES2015)
+15/02/2018 | Clase 63 | Clase 63 | Tiempo Proyecto Personal
+16/02/2018 | Clase 64 | Clase 64 | [#OpenSourceFriday](https://opensourcefriday.com)
 
 
 Temario
