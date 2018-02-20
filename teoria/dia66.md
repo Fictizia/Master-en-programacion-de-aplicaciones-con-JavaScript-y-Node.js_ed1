@@ -2,7 +2,7 @@
 
 ### Librerías Nativas (CORE)
 
-**Los estados**
+**[Los estados](https://nodejs.org/docs/latest-v9.x/api/documentation.html)**
 - 0 *Deprecated*
 - 1 *Experimental*
 - 2 *Unstable*
