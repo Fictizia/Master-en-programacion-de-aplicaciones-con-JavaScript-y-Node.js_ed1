@@ -2,11 +2,12 @@
 ![shieldsIO](https://img.shields.io/github/forks/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
 ![shieldsIO](https://img.shields.io/github/stars/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
 
-# Master en programación de aplicaciones con JavaScript y Node.js
+![WideImg](http://fictizia.com/img/github/Fictizia-plan-estudios-github.jpg)
+
+# Master en Programación de Aplicaciones con JavaScript y Node.js
 ### JS, Node.js, Frontend, Express, Patrones, IoT, HTML5_APIs, Asincronía, Websockets, ECMA6, ECMA7
 
-![WideImg](http://fictizia.com/assets/styles/styleImgs/wideBox/wideImg-MasterJS_v17.jpg)
-![Fictizia Logo](https://media.licdn.com/media/p/1/000/1ed/254/29475de.png)
+
 
 
 Aprende con este Máster en Programación de aplicaciones con JavaScript y Node.js todo lo necesario para desarrollar cualquier tipo de proyecto interactivo utilizando el lenguaje de programación más utilizado en el mundo del desarrollo interactivo.
