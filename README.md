@@ -129,7 +129,7 @@ Fecha | Teoría | Recursos | Contenido
 16/02/2018 | Clase 64 | Clase 64 | [#OpenSourceFriday](https://opensourcefriday.com)
 19/02/2018 | [Clase 65](teoria/dia65.md) | [Clase 65](recursos/dia65.md) | Nodejs I: Funcionamiento y ecosistema
 20/02/2018 | [Clase 66](teoria/dia66.md) | [Clase 66](recursos/dia66.md) | Nodejs II: Core
-
+21/02/2018 | [Clase 67](teoria/dia67.md) | [Clase 67](recursos/dia67.md) | NPM y YARN
 
 Temario
 =================
