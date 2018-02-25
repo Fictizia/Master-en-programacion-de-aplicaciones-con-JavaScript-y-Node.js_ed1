@@ -65,10 +65,27 @@
         </div>
 
       </div>
+      <button id="githubLogin" class="btn github-login">login</button>
+      <button id="githubLogOut" class="btn github-login">log out</button>
 
     </section>
+    <!--  FIREBASE    -->
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAnso-JAoFUWMQK79hj5Ypfzvuv5a8_QAk",
+        authDomain: "airemadapp.firebaseapp.com",
+        databaseURL: "https://airemadapp.firebaseio.com",
+        projectId: "airemadapp",
+        storageBucket: "",
+        messagingSenderId: "787373497234"
+      };
+      firebase.initializeApp(config);
+    </script>
     <script type="text/javascript" src="time.js"> </script>
     <script type="text/javascript" src="ajax.js"> </script>
     <script type="text/javascript" src="weather.js"> </script>
+    <script type="text/javascript" src="firebase-code.js"> </script>
   </body>
 </html>

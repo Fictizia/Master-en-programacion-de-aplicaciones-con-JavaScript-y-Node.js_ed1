@@ -67,7 +67,7 @@ function giveId(){
 }
 
 function pintaDatos(resultados){
-  console.log('CUCUUUUUUUUU')
+
   // Limpio la lista de datos:
   var container = document.getElementById('values');
   var fc = container.firstChild;
