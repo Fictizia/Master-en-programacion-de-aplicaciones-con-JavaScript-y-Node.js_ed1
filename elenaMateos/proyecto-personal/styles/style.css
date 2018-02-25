@@ -9,6 +9,17 @@ h1, h2, h3, h4, h5, h6,
 p {
   margin: 0; }
 
+.btn {
+  background: none;
+  background-color: #106302;
+  border: none;
+  border-radius: 4px;
+  color: white; }
+
+.github-login {
+  height: 30px;
+  width: 60px; }
+
 .weather-info {
   align-items: center;
   display: flex;
