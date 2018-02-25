@@ -13,6 +13,7 @@
       <div class="login-header">
         <button id="githubLogin" class="btn github-login">login</button>
         <button id="githubLogOut" class="btn github-login hidden">log out</button>
+        <p id="logData" class="hidden"> Usuario: <spam id="usuario"></spam></p>
       </div>
 
       <div class="weather-info">
@@ -42,6 +43,7 @@
 
       <div class="district">
         <h1 id="district">ESTACION</h1>
+        <button id="favorito" class="btn hidden">favorito</button>
         <!-- El select tiene como funcion en onchange lo que renderiza lo seleccionado -->
         <select class="district-menu" id="optionDistrict" onchange="giveId()" class="select-district" name="select-district">
           <option  value="S056"> Pza. Fernández Ladreda</option>
@@ -83,7 +85,8 @@
         databaseURL: "https://airemadapp.firebaseio.com",
         projectId: "airemadapp",
         storageBucket: "",
-        messagingSenderId: "787373497234"
+        messagingSenderId: "787373497234",
+        
       };
       firebase.initializeApp(config);
     </script>
