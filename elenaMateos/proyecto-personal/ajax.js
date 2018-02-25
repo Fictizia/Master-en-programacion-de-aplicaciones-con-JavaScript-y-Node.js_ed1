@@ -12,7 +12,8 @@ function llamandoApi(){
 }
 
 var resultados = [];
-var url = 'http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution';
+//var url = 'https://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/pollution';
+var url = 'http://airemad.com/api/v1/pollution';
 
 //function llamandoApi(){
   function peticionAjax(url, callback) { // Con callback lo que haces es decirle q tiene otro parámetro que aun no se ha definido (se hace luego).
@@ -34,7 +35,7 @@ var url = 'http://private-anon-bfc6c9db09-airemad.apiary-mock.com/api/v1/polluti
     resultados= JSON.parse(data);
     // console.log(resultados);
     pintaDistritos();
-
+    pintaDatos(resultados);
     return resultados;
   });
 //  return resultados;
@@ -66,6 +67,7 @@ function giveId(){
 }
 
 function pintaDatos(resultados){
+  console.log('CUCUUUUUUUUU')
   // Limpio la lista de datos:
   var container = document.getElementById('values');
   var fc = container.firstChild;
