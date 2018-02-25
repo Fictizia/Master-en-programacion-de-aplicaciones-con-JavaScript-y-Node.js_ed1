@@ -14,18 +14,30 @@ p {
   background-color: #106302;
   border: none;
   border-radius: 4px;
-  color: white; }
+  color: white;
+  margin: 5px; }
 
 .github-login {
   height: 30px;
   width: 60px; }
 
+.login-header {
+  align-items: center;
+  border-bottom: 2px solid #106302;
+  display: flex;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
 .weather-info {
   align-items: center;
   display: flex;
+  margin-top: 50px;
   justify-content: space-around; }
 
 .weather-gift {
+  max-width: 300px;
   width: 30%; }
 
 .gift {
@@ -113,3 +125,6 @@ body {
   color: #393939;
   font-family: "Raleway", sans-serif;
   padding: 20px; }
+
+.hidden {
+  display: none; }
