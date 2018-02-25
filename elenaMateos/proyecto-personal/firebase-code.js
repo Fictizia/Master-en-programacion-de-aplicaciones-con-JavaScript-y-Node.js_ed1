@@ -38,3 +38,16 @@ function logOut (){
 
 githubBtn.addEventListener('click', logMe);
 githubLogOut.addEventListener('click', logOut);
+
+/**
+ * Guardar favoitos: El usuario puede guardar datos de sus sitios favoritos
+ * 
+ * 1. Crear formulrio de guardar favorito
+ * 2. Crear modal para guardar favorito: 
+ *  2.1. Input de tipo de favorito (casa, trabajo, colegio, casa2, trabajo2...)
+ *  2.2. Menú para seleccionar estación.
+ *  2.3. Botón de guardar (toma los datos de esa escaión y los guarda en datos de favorito en firebase).
+ */
+ 
+ 
+ 
