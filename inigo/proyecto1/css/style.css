@@ -1,6 +1,7 @@
 html, body, #container{
     height: 100%;
     margin: 0;
+    font-family: roboto;
 }
 p{
     margin-top: 0;
@@ -105,15 +106,75 @@ option:nth-child(odd){
 .contenedorTitulo{
     background-color: #808080;
     color: #ffa500;
-    text-align: center;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .contenedorTitulo h2{
     display: inline-block;
     margin: 0;
     /*padding: 30px 60px;*/
     text-align: center;
-    margin-bottom: 20px;
+    /*margin-bottom: 20px;*/
+}
+#loginGoogle{
+    display:inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    margin: 0 10px;
+    border-radius: 100%;
+    background: #FFF;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+#imgUser{
+    border-radius: 100%;
+}
+#loginGoogle:active {
+    box-shadow: none;
+    box-shadow: 0 0 16px 1px #505050;
+    -ms-transform: scale(0.95);
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+}
+#loginGoogle img{
+    width: 100%;
+}
+#contentLogin{
+    background: #0000006b;
+    position: absolute;
+    top: 95px;
+    left: 57px;
+    display: none;
+    width: 250px;
+    padding: 20px;
+}
+#contentLogin span{
+    display: block;
+}
+#contentLogin:before{
+    content: "";
+    clear: both;
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 7.5px 10px 7.5px;
+    border-color: transparent transparent #0000006b transparent;
+}
+#cerrarSesion{
+    text-align: right;
+    cursor: pointer;
+    display: inline-block !important;
+    float: right;
+}
+#map button{
+    display: none;
 }
 @media (max-width: 1650px) {
     .contenedorTitulo h2{
