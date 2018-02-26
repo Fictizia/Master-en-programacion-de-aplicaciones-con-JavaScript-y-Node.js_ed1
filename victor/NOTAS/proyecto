@@ -1,0 +1,698 @@
+(function() {
+    // @ulises: Usar o 5.1 o +6
+    const URL_ITUNES = "https://itunes.apple.com/search?entity=song&";
+        
+    var myApp = myApp || {};
+    var actualUser = "";
+    var config = {
+        apiKey: "AIzaSyDfR2_fFwHKgX5zmqaQiBNxaLLTnlazzcQ",
+        authDomain: "steel-sonar-111611.firebaseapp.com",
+        databaseURL: "https://steel-sonar-111611.firebaseio.com",
+        projectId: "steel-sonar-111611",
+        storageBucket: "steel-sonar-111611.appspot.com",
+        messagingSenderId: "302954418758"
+    };
+    firebase.initializeApp(config);
+
+    myApp.itunes = (function() {
+        var musicContainer = document.querySelector("#music-container");
+        
+        function search() {
+            document.querySelector(".search-bar").addEventListener("keyup", function(e) {
+                if(e.keyCode === 13) { init(); }
+            });
+            
+            document.querySelector(".search-limit-bar").addEventListener("keyup", function(e) {
+                if(e.keyCode === 13) { init(); }
+            });
+            
+            document.querySelector(".search-button").addEventListener("click", function() {
+                init();
+            });
+            
+            function init() {
+                if(myApp.utils.validator.search()) {
+                    var query = document.querySelector(".search-bar").value;
+                    var limit = document.querySelector(".search-limit-bar").value.trim();
+                    
+                    //@Ulises : Comaparativa simple
+                    if(limit !== "" && parseInt(limit) >= 0) {
+                        limit = "&limit=" + limit;
+                    }
+                    //@Ulises: Funcion para retornar la URL usando Tempalte strings 
+                    myApp.ajax.request(URL_ITUNES + "term=" + query + limit, setHTML);
+                }
+            }
+        }
+        function setHTML(data) {
+            musicContainer.innerHTML = "";
+            
+            //@Ulises: html = pasarlo a una función. y añadir extras en el "else"
+            if(data.resultCount === 0) {
+                var html = "<div class='color-white'><span>No se encontraron resultados.</span></div>";
+            } else {
+                var html = "<div class='color-white'><span>Número de resultados: " + data.resultCount + "</span></div>";
+                data.results.forEach(function(element, i) {
+                    //@Ulises: template strings
+                    html += "<div class='music-box'>" +
+                                "<div class='music-image'>" +
+                                    "<img src='" + element.artworkUrl100 + "' width='30' />" +
+                                "</div>" +
+                                "<div class='track-name'>" +
+                                    "<span>" + element.trackName + "</span>" +
+                                "</div>"+
+                                "<div class='track-time'>" +
+                                    "<span>" + myApp.utils.setTime(element.trackTimeMillis) + "</span>" +
+                                "</div>" +
+                                "<div class='artist-link'>" +
+                                    "<a href='" + element.artistViewUrl + "' title='Ver página del artista' target='_blank'>" + element.artistName + "</a>" +
+                                "</div>" +
+                                "<div class='links'>" +
+                                    "<a class='album' href='" + element.trackViewUrl + "'title='Ver álbum' target='_blank'><img src='img/icon-eye.svg'/></a>" +
+                                    "<img class='link-play' title='Reproducir clip de canción' src='img/icon-play.svg' />" +
+                                    "<img class='link-pause' title='Parar clip de canción' src='img/icon-pause.svg' />" +
+                                    "<audio><source src='" + element.previewUrl + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>" +
+                                    "<img class='link-fav' isSaved='false' data-track-id='" + element.trackId + "' data-artist-id='" + element.artistId + "' title='Guardar como favoritos' src='img/icon-star.svg' />" +
+                                "</div>" +
+                            "</div>";
+                });
+            }
+            musicContainer.innerHTML = html;
+            checkSavedTracks(data.results);
+            resetAudios();
+        }
+        function attachMusicEvents() {
+            musicContainer.addEventListener("click", function(event) {
+                saveMusic(actualUser, event);
+                playPauseEvents(event.target);
+            });
+        }
+        function playPauseEvents(element) {
+            var _self = element;
+            var _parent = _self.parentNode;
+            var audios = document.querySelectorAll("audio");
+            
+            if(_self.nodeName === "IMG" && _self.className === "link-play") {
+                audios.forEach(function(element, index) {
+                    if(!element.paused) {
+                        element.pause();
+                        element.parentNode.querySelector(".link-play").style.display = "inline";
+                        element.parentNode.querySelector(".link-pause").style.display = "none";
+                    }
+                });
+                
+                //@Ulises: abstraccion
+                
+                _self.style.display = "none";
+                _parent.querySelector(".link-pause").style.display = "inline";
+                _parent.querySelector("audio").play();
+                
+            } else if(_self.nodeName === "IMG" && _self.className === "link-pause") {
+                //@Ulises: abstraccion
+
+                _self.style.display = "none";
+                _parent.querySelector(".link-play").style.display = "inline";
+                _parent.querySelector("audio").pause();
+            }
+        }
+        function resetAudios() {
+            var audios = document.querySelectorAll("audio");
+            
+            audios.forEach(function(element, index) {
+                element.addEventListener("ended", function() {
+                    this.currentTime = 0;
+                    this.parentNode.querySelector(".link-play").style.display = "inline";
+                    this.parentNode.querySelector(".link-pause").style.display = "none";
+                });
+            });
+        }
+        function saveMusic(user, element) {
+            var _self = element.target;
+            //@Ulises: mejorar condicones de los ifs con una función
+            if(_self.nodeName === "IMG" && _self.className === "link-fav") {
+                var trackId = _self.getAttribute("data-track-id");
+                var artistId = _self.getAttribute("data-artist-id");
+                
+                if(user) {
+                    if(_self.getAttribute("isSaved") == "true") {
+                        //@Ulises: confirm y alerts... remplazarlos por modales
+                        if(confirm("¿Desea eliminar está canción de favoritos?")) {
+                            myApp.db.deleteTrackByUser(user.uid, artistId, trackId, function(hasDelete) {
+                                if(hasDelete) {
+                                    _self.setAttribute("isSaved", "false");
+                                    _self.src = "img/icon-star.svg";
+                                }
+                            });
+                        }
+                    } else {
+                        myApp.db.getTrackByUser(user.uid, artistId, trackId, function(snapshot) {
+                            if(!snapshot) {
+                                var trackInfoBox = _self.parentNode.parentNode, trackInfo = {};
+                                
+                                trackInfo.trackImage = trackInfoBox.querySelector(".music-image img").src,
+                                trackInfo.trackName = trackInfoBox.querySelector(".track-name span").innerText,
+                                trackInfo.trackTime = trackInfoBox.querySelector(".track-time span").innerText,
+                                trackInfo.trackArtist = trackInfoBox.querySelector(".artist-link a").innerText,
+                                trackInfo.trackArtistLink = trackInfoBox.querySelector(".artist-link a").href,
+                                trackInfo.trackAlbumLink = trackInfoBox.querySelector(".links a.album").href,
+                                trackInfo.trackClipLink = trackInfoBox.querySelector(".links audio source").src;
+                                
+                                myApp.db.createTrackByUser(user.uid, artistId, trackId, trackInfo, function(hasSaved) {
+                                    if(hasSaved) {
+                                        _self.setAttribute("isSaved", "true");
+                                        _self.src = "img/icon-star-active.svg"; 
+                                    }
+                                });
+                            }
+                        });
+                    }
+                } else {
+                    //@Ulises: es lo peor... de todo el script ¬¬'
+                    alert("Inicie sesión para acceder a esta funcionalidad.");
+                }
+            }
+        }
+        
+        function checkSavedTracks(data) {
+            var artistIds = [];
+            
+            if(actualUser) {
+                data.forEach(function(element, index) {
+                    if(artistIds.indexOf(element.artistId) < 0) {
+                        artistIds.push(element.artistId);
+                        myApp.db.getTracksByArtistAndUser(actualUser.uid, element.artistId, function(snapshot) {
+                            if(snapshot) {
+                                var arrayKeys = Object.keys(snapshot);
+                                
+                                arrayKeys.forEach(function(key, i) {
+                                    var htmlObject = document.querySelector(".link-fav[data-track-id='" + key + "']");
+                                    
+                                    if(htmlObject) {
+                                        htmlObject.setAttribute("isSaved", "true");
+                                        htmlObject.src = "img/icon-star-active.svg";
+                                    }
+                                })
+                            }
+                        });
+                    }
+                });
+            }
+        }
+        //@Ulises: bien jugado!
+        return {
+                search: search,
+                attachMusicEvents: attachMusicEvents,
+                playPauseEvents: playPauseEvents,
+                resetAudios: resetAudios,
+                checkSavedTracks: checkSavedTracks
+        };
+    })();
+    
+    myApp.login = (function() {
+        //@Ulises: puedes igualar multiple https://stackoverflow.com/questions/16975350/assign-multiple-variables-to-the-same-value-in-javascript
+        //@Ulises: NO MEZCLAMOS TIPOS..... creamos mejor en vacio
+        var loginButton = "", signinButton = "", signinAcceptButton = "", signinCancelButton = "", inputEmail = "", inputPass = "", inputRepeatPass = "", labelRepeatPass = "";
+        
+        function login() {
+            userStateChanged();
+            loginButton = document.querySelector(".login");
+
+            loginButton.addEventListener("click", function() {
+                inputEmail = document.querySelector("#email");
+                inputPass = document.querySelector("#pass");
+                
+                firebase.auth().signInWithEmailAndPassword(inputEmail.value, inputPass.value).then(function(result) {
+                    //@Ulises: tosco... mejor un router^^
+                    window.location.href = "myAccount.html";
+                    
+                }).catch(function(error) {
+                    if(error.code === "auth/invalid-email") {
+                        alert("Email no válido.");
+                    } else if(error.code === "auth/wrong-password") {
+                        alert("Contraseña incorrecta.");
+                    } else if(error.code === "auth/user-not-found") {
+                        alert("Usuario no encontrado.");
+                    }
+                    //@Ulises:  else?? definitivo....
+                });
+                
+            });
+        }
+        function loginGoogle() {
+            var loginButtonGoogle = document.querySelector(".social-login-google-button");
+            
+            loginButtonGoogle.addEventListener("click", function() {
+                var provider = new firebase.auth.GoogleAuthProvider();
+            
+                firebase.auth().signInWithPopup(provider).catch(function(error) {
+                    //@Ulises: en serio???
+                    alert("Algo falló.");
+                });
+            });
+        }
+        function showLoginForm() {
+            updateElements();
+            signinCancelButton.addEventListener("click", function() {
+                var _self = this;
+                
+                //@Ulises: foreach mejor... 
+                inputEmail.value = "";
+                inputPass.value = "";
+                inputRepeatPass.value = "";
+                
+                labelRepeatPass.style.display = "none";
+                inputRepeatPass.style.display = "none";
+                signinAcceptButton.style.display = "none";
+                _self.style.display = "none";
+                loginButton.style.display = "inline-block";
+                signinButton.style.display = "inline-block";
+            });
+        }
+        //@Ulises: router...
+        function redirecLoggedUser(user) {
+            if(window.location.href.indexOf("login.html") >= 0) {
+                if(user) {
+                    document.querySelector("body").innertHtml = "";
+                    window.location.href = "myAccount.html";
+                }
+            } else if(window.location.href.indexOf("myAccount.html") >= 0) {
+                if(!user) {
+                    document.querySelector("body").innertHtml = "";
+                    window.location.href = "login.html";
+                }
+            }
+        }
+        function userStateChanged() {
+            firebase.auth().onAuthStateChanged(function(user) {
+                actualUser = user;
+                
+                if(window.location.href.indexOf("login.html") >= 0) {
+                    redirecLoggedUser(user);
+                } else if(window.location.href.indexOf("search.html") >= 0) {
+                    if(user) {
+                        document.querySelector(".user-link").href = "myAccount.html";
+                        myApp.utils.setUserImage(user.photoURL);
+                    }
+                } else if(window.location.href.indexOf("myAccount.html") >= 0) {
+                    redirecLoggedUser(user);
+                    myApp.myAccount.init(user);
+                    document.querySelector("#music-container").addEventListener("click", function(event) {
+                        myApp.itunes.playPauseEvents(event.target);
+                        
+                        //@Ulises: sacar fuera...
+                        if(event.target.classList.contains("link-fav")) {
+                            if(confirm("¿Está seguro de que desea eliminar esta canción de favoritos?")) {
+                                myApp.db.deleteTrackByUser(actualUser.uid, event.target.getAttribute("data-artist-id"), event.target.getAttribute("data-track-id"));
+                            }
+                        }
+                    });
+                    myApp.utils.getGeolocation(user.uid);
+                }
+            });
+        }
+        function signin() {
+            signinAcceptButton = document.querySelector(".signin-accept");
+            
+            signinAcceptButton.addEventListener("click", function() {
+                var validateResults = [];
+                
+                //@Ulises: guarda variables con .value?
+                inputEmail = document.querySelector("#email");
+                inputPass = document.querySelector("#pass");
+                inputRepeatPass = document.querySelector("#repeat-pass");
+                
+                validateResults.push(myApp.utils.validator.email(inputEmail.value));
+                //@Ulises:  me siento muy seguro....
+                validateResults.push(myApp.utils.validator.pass(inputPass.value));
+                validateResults.push(myApp.utils.validator.repeatPass(inputPass.value, inputRepeatPass.value));
+                
+                if(validateResults.indexOf(false) < 0) {
+                    firebase.auth().createUserWithEmailAndPassword(inputEmail.value, inputPass.value).then(function() {
+                        alert("Usuario registrado correctamente.");
+                    })
+                    .catch(function(error) {
+                        alert("No se pudo registrar al usuario correctamente.");
+                    });
+                } else {
+                    alert("Ups algo no fue como debería, revise el usuario o la contraseña.");
+                }
+            });
+        }
+        function showSigninForm() {
+            updateElements();
+            
+            signinButton.addEventListener("click", function() {
+                var _self = this;
+                
+                //@Ulises: foreach con funcion de vacio
+                inputEmail.value = "";
+                inputPass.value = "";
+                inputRepeatPass.value = "";
+                
+                labelRepeatPass.style.display = "block";
+                inputRepeatPass.style.display = "block";
+                loginButton.style.display = "none";
+                _self.style.display = "none";
+                signinAcceptButton.style.display = "inline-block";
+                signinCancelButton.style.display = "inline-block";
+            });
+        }
+        function logout() {
+            var logoutButton = document.querySelector(".user-link");
+            
+            logoutButton.addEventListener("click", function(event) {
+                event.preventDefault();
+                
+               if(confirm("¿Está seguro que desea finalizar la sesión?")) {
+                    firebase.auth().signOut();
+                    
+                    window.location.href = "login.html";
+                }
+            });
+        }
+        //@Ulises: mejor con un return? sin variables globales
+        function updateElements() {
+            signinButton = document.querySelector(".signin");
+            loginButton = document.querySelector(".login");
+            signinAcceptButton = document.querySelector(".signin-accept");
+            signinCancelButton = document.querySelector(".signin-cancel");
+            inputEmail = document.querySelector("#email");
+            inputPass = document.querySelector("#pass");
+            inputRepeatPass = document.querySelector("#repeat-pass");
+            labelRepeatPass = document.querySelector(".label-pass-hidden");
+        }
+        //@Ulises: bien jugado!
+        return {
+            login: login,
+            loginGoogle: loginGoogle,
+            showLoginForm: showLoginForm,
+            userStateChanged: userStateChanged,
+            signin: signin,
+            showSigninForm: showSigninForm,
+            logout: logout
+        };
+    })();
+    
+    //@Ulises: refactorización.. esperandote... llamando a tu puerta...
+    myApp.myAccount = (function() {
+        function init(user) {
+            myApp.db.getTrackListByUser(user.uid, function(snapshot) {
+                myApp.loader.show();
+                var musicContainer = document.querySelector("#music-container");
+                //@Ulises: DRY
+                var html = "", artistsHTML = "", tracksHTML = "";
+                var artistBreakpoint = 4;
+                //@Ulises: document.body....
+                if(document.querySelector("body").offsetWidth <= 768) {
+                    artistBreakpoint = 2;
+                }
+                
+                if(snapshot) {
+                    var numArtists = Object.keys(snapshot).length;
+                    var contArtists = 0;
+                    
+                    for(var artist in snapshot) {
+                        var contTracks = 0;
+                        var numTracks = Object.keys(snapshot[artist]).length - 1;
+                        
+                        for(var track in snapshot[artist]) {
+                            //@Ulises: too much....
+                            var _self = snapshot[artist][track];
+                            
+                            if(contTracks === 0) {
+                                artistsHTML += "<div class='artist-container' data-id-artist='" + artist + "'>" +
+                                                "<img class='artist-image' src='" + _self.trackImage + "' />" +
+                                                "<div class='artist-info'>" +
+                                                    "<p class='artist-name'><strong>" + _self.trackArtist.toUpperCase() + "</strong></p>" +
+                                                    "<img class='link-accordion' openned='false' src='img/icon-arrow-accordion.svg' width='10' />" +
+                                                "</div>" +
+                                            "</div>";
+                                tracksHTML += "<div class='music-container-box'  data-id-artist='" + artist + "'>";
+                            }
+                            tracksHTML += "<div class='music-box'>"+
+                                            "<div class='music-image'><img src='" + _self.trackImage + "' alt='" + _self.trackImage + "' title='" + _self.trackImage + "' width='30' /></div>"+
+                                            "<div class='artist-link'><a href='" + _self.trackArtistLink + "' target='_blank'>" + _self.trackArtist + "</a></div>" +
+                                            "<div class='track-name'><span title='" + _self.trackImage + "'>" + _self.trackName + "</span></div>"+
+                                            "<div class='track-time'><span>" + _self.trackTime + "</span></div>"+
+                                            "<div class='links'>"+
+                                                "<a class='album' href='" + _self.trackAlbumLink + "' title='Ver álbum' target='_blank'><img src='img/icon-eye.svg'/></a>"+
+                                                "<img class='link-play' title='Reproducir clip de canción' src='img/icon-play.svg' />"+
+                                                "<img class='link-pause' title='Parar clip de canción' src='img/icon-pause.svg' />"+
+                                                "<audio><source src='" + _self.trackClipLink + "' type='audio/mpeg'>Your browser does not support the audio element.</audio>"+
+                                                "<img class='link-fav' data-track-id='" + track + "' data-artist-id='" + artist + "' title='Guardar como favoritos' src='img/icon-star-active.svg' />"+
+                                            "</div>" +
+                                        "</div>";
+                            if(contTracks === numTracks) {
+                                tracksHTML += "</div>";
+                            }
+                            contTracks++;
+                        }
+                        contArtists++;
+                        
+                        if(numArtists >= artistBreakpoint && contArtists === artistBreakpoint) {
+                            html +=artistsHTML;
+                            html +=tracksHTML;
+                            artistsHTML = "";
+                            tracksHTML = "";
+                            contArtists = 0;
+                            numArtists -= artistBreakpoint;
+                        } else if(numArtists < artistBreakpoint && contArtists === numArtists) {
+                            html +=artistsHTML;
+                            html +=tracksHTML;
+                        }
+                    }
+                } else {
+                    html = "<div class='color-white'><span>Vaya parece que aun no has guardado ninguna canción todavía. <a href='search.html'><img src='img/icon-left-arrow.svg' width='12' /> Ir al buscador</a></span></div>";
+                }
+                
+                musicContainer.innerHTML = html;
+                dropdownArtistTracks();
+                
+                myApp.loader.hide();
+                myApp.itunes.resetAudios();
+            });
+        }
+        
+        function dropdownArtistTracks() {
+            var artistContainers = document.querySelectorAll(".artist-container");
+            
+            if(artistContainers.length > 0) {
+                artistContainers.forEach(function(element) {
+                    element.addEventListener("click", function() {
+                        var height = 20;
+                        var id = this.getAttribute("data-id-artist");
+                        var musicBox = document.querySelector(".music-container-box[data-id-artist='" + id + "']");
+                        var listBox = document.querySelectorAll(".artist-container:not([data-id-artist='" + id + "'])");
+                        
+                        if(musicBox.offsetHeight === 0) {
+                            listBox.forEach(function(target) {
+                                var thisId = target.getAttribute("data-id-artist");
+                                var thisMusicBox = document.querySelector(".music-container-box[data-id-artist='" + thisId + "']");
+                                
+                                if(thisMusicBox.offsetHeight > 0) {
+                                    target.querySelector(".link-accordion").setAttribute("openned", "false");
+                                    thisMusicBox.style.height = "0px";
+                                }
+                                
+                                target.style.opacity = 0.2;
+                            });
+                            
+                            musicBox.querySelectorAll(".music-box").forEach(function(target) {
+                                height += target.offsetHeight;
+                            });
+                            
+                            musicBox.style.height = height + "px";
+                            element.style.opacity = 1;
+                            element.querySelector(".link-accordion").setAttribute("openned", "true");
+                            setTimeout(function() {
+                                window.scrollTo({top: musicBox.offsetTop});
+                            }, 301);
+                        } else {
+                            musicBox.style.height = "0px";
+                            element.querySelector(".link-accordion").setAttribute("openned", "false");
+                            
+                            listBox.forEach(function(target) {
+                                target.style.opacity = 1;
+                            });
+                        }
+                    });
+                });
+            }
+        }
+        return {init: init}
+    })();
+    
+    myApp.db = (function() {
+        //@Ulises: refactorización....
+        
+        function getTrackByUser(userId, artistId, trackId, callback) {
+            firebase.database().ref(userId + "/playlists/" + artistId + "/" + trackId).once('value', function(snapshot) {
+                if(callback){ callback(snapshot.val()); }
+            });
+        }
+        
+        function getTrackListByUser(userId, callback) {
+            firebase.database().ref(userId + "/playlists/").on('value', function(snapshot) {
+                if(callback){ callback(snapshot.val()); }
+            });
+        }
+        
+        function getTracksByArtistAndUser(userId, artistId, callback) {
+            firebase.database().ref(userId + "/playlists/" + artistId).on('value', function(snapshot) {
+                if(callback){ callback(snapshot.val()); }
+            });
+        }
+        
+        function createTrackByUser(userId, artistId, trackId, trackInfo, callback) {
+            firebase.database().ref(userId + "/playlists/" + artistId + "/" + trackId).set(trackInfo).then(function() {
+                if(callback){ callback(true); }
+            }).catch(function() {
+                if(callback){ callback(false); }
+            });
+        }
+        
+        function deleteTrackByUser(userId, artistId, trackId, callback) {
+            firebase.database().ref(userId + "/playlists/" + artistId + "/" + trackId).remove().then(function() {
+                if(callback){ callback(true); }
+            }).catch(function() {
+                if(callback){ callback(false); }
+            });
+        }
+        
+        function createGeolocationByUser(userId, location, callback) {
+            firebase.database().ref(userId + "/geolocation/").set(location).then(function() {
+                if(callback){ callback(true); }
+            }).catch(function() {
+                if(callback){ callback(false); }
+            });
+        }
+        
+        return {
+            //@Ulises: abstraer esto... https://github.com/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1/blob/master/teoria/dia49.md#promesas ver AJAX con Patrón Adaptador
+            getTrackByUser: getTrackByUser,
+            getTrackListByUser: getTrackListByUser,
+            getTracksByArtistAndUser: getTracksByArtistAndUser,
+            createTrackByUser: createTrackByUser,
+            deleteTrackByUser: deleteTrackByUser,
+            createGeolocationByUser: createGeolocationByUser
+        }
+    })();
+    
+    myApp.ajax = (function() {
+        function request(url, callback) {
+            var xmlHttp = new XMLHttpRequest();
+            
+            myApp.loader.show();
+            
+            xmlHttp.onreadystatechange = function() {
+                if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+                    callback(JSON.parse(xmlHttp.responseText));
+                    myApp.loader.hide();
+                } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
+                    //@ulises: El alert... para tu codigo :-(
+                    alert("Ups, algo fue mal");
+                    console.info(JSON.parse(xmlHttp.responseText));
+                    myApp.loader.hide();
+                }
+            };
+            xmlHttp.open("GET", url, true);
+            xmlHttp.send();
+        }
+        
+        return {request: request};
+    })();
+    
+    myApp.loader = (function() {
+        function show(callback) {
+            document.querySelector(".loader").style.display = "flex";
+            
+            if(callback) { callback() }
+        }
+        function hide(callback) {
+            setTimeout(function() {
+                document.querySelector(".loader").style.display = "none";
+                
+                if(callback) { callback() }
+            }, 1500);
+        }
+        return {show: show, hide: hide}
+    })();
+    
+    myApp.utils = (function() {
+        var validator = {
+            email: function(email) {
+                return  /^([a-z0-9]+@[a-z0-9]+([\.][a-z]+)+)$/.test(email);
+            },
+            pass: function(pass) {
+                return /^[a-zA-Z0-9\.\#\?]+$/.test(pass);
+            },
+            repeatPass: function(pass1, pass2) {
+                if(validator.pass(pass2)) {
+                    if(pass1 === pass2) {
+                        return true;
+                    }
+                    return false;
+                } else {
+                    return validator.pass(pass2);
+                }
+            },
+            search: function() {
+                var querySearchInput = document.querySelector(".search-bar").value.trim();
+                var queryLimitSearchInput = document.querySelector(".search-limit-bar").value.trim();
+                
+                if(querySearchInput === "") {
+                    alert("El campo de búsqueda no debe estar vacío.");
+                    return false;
+                }
+                if(queryLimitSearchInput !== "" && isNaN(queryLimitSearchInput)) {
+                    alert("El campo límite solo acepta números");
+                    return false;
+                }
+                
+                return true;
+            }
+        }
+        function setTime(time) {
+            var date = new Date(time);
+            
+            var minutes = date.getMinutes() <= 9 ? "0" + date.getMinutes().toString() : date.getMinutes().toString();
+            var seconds = date.getSeconds() <= 9 ? "0" + date.getSeconds().toString() : date.getSeconds().toString();
+            
+            return minutes + ":" + seconds;
+        }
+        function setUserImage(photo) {
+            var userImage = document.querySelector(".icon-login");
+            
+            if(userImage && photo) {
+                userImage.src = photo;
+            }
+        }
+        function getGeolocation(userUid) {
+            if ("geolocation" in navigator) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    myApp.db.createGeolocationByUser(userUid, {latitude: position.coords.latitude, longitude: position.coords.longitude});
+                });
+            } else {
+                console.warn("Geolocation no soportado :-( ");
+            }
+        }
+        return {validator: validator, setTime: setTime, setUserImage: setUserImage, getGeolocation: getGeolocation}
+    })();
+    
+    //Initialization
+    myApp.login.userStateChanged();
+    
+    //@ulises:  manejar los estados con variables... ya que son ficheros independientes
+    if(window.location.href.indexOf("login.html") >= 0) {
+        myApp.login.showLoginForm();
+        myApp.login.showSigninForm();
+        myApp.login.login();
+        myApp.login.loginGoogle();
+        myApp.login.signin();
+    } else if(window.location.href.indexOf("search.html") >= 0) {
+        myApp.itunes.search();
+        myApp.itunes.attachMusicEvents();
+    } else if(window.location.href.indexOf("myAccount.html") >= 0) {
+        myApp.login.logout();
+    }
+})();
