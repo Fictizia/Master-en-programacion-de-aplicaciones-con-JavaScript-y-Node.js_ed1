@@ -1,12 +1,26 @@
-.weather-info{
+//LOGIN
+
+.login-header {
   align-items: center;
+  border-bottom: 2px solid #106302;
   display: flex;
-  justify-content: space-around;
+  height: 40px;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 90%;
 }
 
 
-
+// WEATHER
+.weather-info{
+  align-items: center;
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-around;
+}
 .weather-gift{
+  max-width: 300px;
   width: 30%;
 }
 .gift{

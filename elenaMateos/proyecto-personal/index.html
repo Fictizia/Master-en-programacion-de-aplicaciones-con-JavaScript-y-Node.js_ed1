@@ -10,6 +10,12 @@
   <body>
     <header>
 
+      <div class="login-header">
+        <button id="githubLogin" class="btn github-login">login</button>
+        <button id="githubLogOut" class="btn github-login hidden">log out</button>
+        <p id="logData" class="hidden"> Usuario: <spam id="usuario"></spam></p>
+      </div>
+
       <div class="weather-info">
         <div class="weather-gift">
           <img id="emoji" class="gift" src="images/sunny.gif" alt="Dia soleado!">
@@ -37,6 +43,7 @@
 
       <div class="district">
         <h1 id="district">ESTACION</h1>
+        <button id="favorito" class="btn hidden">favorito</button>
         <!-- El select tiene como funcion en onchange lo que renderiza lo seleccionado -->
         <select class="district-menu" id="optionDistrict" onchange="giveId()" class="select-district" name="select-district">
           <option  value="S056"> Pza. Fernández Ladreda</option>
@@ -66,9 +73,26 @@
 
       </div>
 
+
     </section>
+    <!--  FIREBASE    -->
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAnso-JAoFUWMQK79hj5Ypfzvuv5a8_QAk",
+        authDomain: "airemadapp.firebaseapp.com",
+        databaseURL: "https://airemadapp.firebaseio.com",
+        projectId: "airemadapp",
+        storageBucket: "",
+        messagingSenderId: "787373497234",
+        
+      };
+      firebase.initializeApp(config);
+    </script>
     <script type="text/javascript" src="time.js"> </script>
     <script type="text/javascript" src="ajax.js"> </script>
     <script type="text/javascript" src="weather.js"> </script>
+    <script type="text/javascript" src="firebase-code.js"> </script>
   </body>
 </html>
