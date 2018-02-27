@@ -3,6 +3,7 @@ var githubBtn = document.getElementById('githubLogin');
 var githubLogOut = document.getElementById('githubLogOut');
 var favorito = document.getElementById('favorito');
 var usuarioNombre = document.getElementById('usuario');
+//var pic = document.getElementById('userPic');
 var usuarioDatos = document.getElementById('logData');
 
 var userRef = firebase.database().ref("users");
@@ -16,37 +17,41 @@ var storageRef = storage.bucket;
 // Evento de OAUTH
 function logMe (){
   firebase.auth().signInWithPopup(provider).then(function(result) {
-    console.log("User signed in! UID:", result.user.uid)
     // Datos q obtenemos del usuario --
     var userData = JSON.stringify(result.user);
         userData = JSON.parse(userData);
-      console.log('Los datos del usuario son: ' + userData);
+      
     // Alamacenando el usuario en /user/{{uid}}/datos...
-    userRef.child(userData.uid).set(userData);
-  
-  // Hacer visible el botón de logOut y oculta el de login:
-    githubBtn.classList.toggle('hidden');
-    githubLogOut.classList.toggle('hidden');
-    favorito.classList.toggle('hidden');
-    usuarioDatos.classList.toggle('hidden');
-    console.log(userData.displayName)
-    usuarioNombre.innerHTML = userData.displayName;
-    
-   
-    
+       userRef.child(userData.uid).set(userData);
+       favorito.addEventListener('click', favoritoAdd);
+  // Hacer visible el botón de logOut y usuario. Oculta el de login:
+       loginDisplay(userData);
+       usuarioNombre.innerHTML = userData.displayName;
+       
+       function favoritoAdd(){
+        var userFav = optionDistrict.value;
+        var user = userRef.child(userData.uid);
+        user.push(userFav, function(error) {
+          if (error) {
+            console.warn("No se han podido guardar los datos. " + error);
+          } else {
+            console.info("Datos guardados con exito!");
+          }
+       })
+      }
+      
   }).catch(function(error) {
       console.log( error + " Error con el login");
     })
-}
+} // end logMe()
+   
+
+
 
 function logOut (){
     firebase.auth().signOut().then(function() {
     console.log("User OUT!");
-      // Hacer visible el botón de logOut y oculta el de login:
-    githubLogOut.classList.toggle('hidden');
-    githubBtn.classList.toggle('hidden');
-    favorito.classList.toggle('hidden');
-    
+    loginDisplay();
   }).catch(function(error) {
     console.log("Ha falllado el User OUT");
   });
@@ -55,6 +60,14 @@ function logOut (){
 
 githubBtn.addEventListener('click', logMe);
 githubLogOut.addEventListener('click', logOut);
+
+
+function loginDisplay() {
+    githubBtn.classList.toggle('hidden');
+    githubLogOut.classList.toggle('hidden');
+    favorito.classList.toggle('hidden');
+    usuarioDatos.classList.toggle('hidden');
+}
 
 /**
  * Guardar favoitos: El usuario puede guardar datos de sus sitios favoritos
@@ -65,24 +78,3 @@ githubLogOut.addEventListener('click', logOut);
  *  2.2. Menú para seleccionar estación.
  *  2.3. Botón de guardar (toma los datos de esa escaión y los guarda en datos de favorito en firebase).
  */
-
-function favoritoAdd(){
-  console.log(optionDistrict.value);
-  var userFav = optionDistrict.value;
-  
-  // Get a reference to the storage service, which is used to create references in your storage bucket
-
-
-  // Create a storage reference from our storage service
-
-  // Create a child reference
-  var favRef = storageRef.child('favoritos');
-  
-
-  // Child references can also take paths delimited by '/'
-  var placeRef = storageRef.child('lugar/casa');
-  // spaceRef now points to "images/space.jpg"
-  // imagesRef still points to "images"
-}
-
-favorito.addEventListener('click', favoritoAdd);

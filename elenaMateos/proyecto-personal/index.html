@@ -13,6 +13,7 @@
       <div class="login-header">
         <button id="githubLogin" class="btn github-login">login</button>
         <button id="githubLogOut" class="btn github-login hidden">log out</button>
+        <!--   <img id="userPic" class="user-pic hidden" src=""/> -->
         <p id="logData" class="hidden"> Usuario: <spam id="usuario"></spam></p>
       </div>
 
@@ -84,11 +85,11 @@
         authDomain: "airemadapp.firebaseapp.com",
         databaseURL: "https://airemadapp.firebaseio.com",
         projectId: "airemadapp",
-        storageBucket: "",
-        messagingSenderId: "787373497234",
-        
+        storageBucket: "airemadapp.appspot.com",
+        messagingSenderId: "787373497234"
       };
       firebase.initializeApp(config);
+
     </script>
     <script type="text/javascript" src="time.js"> </script>
     <script type="text/javascript" src="ajax.js"> </script>
@@ -96,3 +97,4 @@
     <script type="text/javascript" src="firebase-code.js"> </script>
   </body>
 </html>
+

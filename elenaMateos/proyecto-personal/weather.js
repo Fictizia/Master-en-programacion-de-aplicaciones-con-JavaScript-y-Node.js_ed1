@@ -40,15 +40,17 @@ function pintaTiempo(datos){
     humidity.innerHTML = 'Humedad: ' + datos[i].main.humidity + ' %';
     wind.innerHTML = 'Viento: ' + datos[i].wind.speed + ' m/s';
 
-    tiempoHoy = datos[i].weather[0].main
+    tiempoHoy = datos[i].weather[0].main;
     }
+    
     return tiempoHoy
+  
   };
 
   /*  FUNCION PARA CAMBIAR ICONO DEL TIEMPO */
   function iconRender(tiempoHoy){
     //  Diferéntes parámetros: Clear, Clouds, Rain, Snow, Storm
-    //  tiempoHoy = 'Snow'
+    //tiempoHoy = 'Clouds'
 
     switch (tiempoHoy) {
 
@@ -56,10 +58,12 @@ function pintaTiempo(datos){
         pic.src = 'images/rain.gif';
         pic.alt = 'Lloviendo!'
         break;
+        
       case 'Clouds':
         pic.src = 'images/cloudy2.gif';
         pic.alt = 'Nublado!'
         break;
+        
       case 'Snow':
 
         pic.src = 'images/snow.gif';
