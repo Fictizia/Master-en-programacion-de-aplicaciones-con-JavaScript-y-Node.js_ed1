@@ -3,7 +3,7 @@
 //https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/
 
 (function(){
-
+    // Initialize Firebase
     var config = {
         apiKey: "AIzaSyDZshwNV4jEFbmQm9jETYEOaFZbKcEIkdE",
         authDomain: "gasolineras-5b253.firebaseapp.com",
@@ -18,45 +18,34 @@
     
     var app = app || {};
     
+    //fire.remove();
+    
     var gasolineras = [];
     var arrayProvincias = ["alava", "albacete", "alicante", "almeria", "asturias", "avila", "badajoz", "barcelona", "burgos", "caceres", "cadiz", "cantabria", "castellon/castello", "ceuta", "ciudadreal", "cordoba", "cuenca", "girona", "palmas(las)", "granada", "guadalajara", "guipuzcoa", "huelva", "huesca", "balears(illes)", "jaen", "coruña(a)", "rioja(la)", "leon", "lleida", "lugo", "madrid", "malaga", "melilla", "murcia", "navarra", "ourense", "palencia", "pontevedra", "salamanca", "segovia", "sevilla", "soria", "tarragona", "santacruzdetenerife", "teruel", "toledo", "valencia/valencia", "valladolid", "vizcaya", "zamora", "zaragoza"];
-    
     var selectProvincias = document.getElementById("buscarProvincia");
     var botonLogin = document.getElementById("loginGoogle");
     var cajaLogin = document.getElementById("contentLogin");
     var spanNombre = document.getElementById("campoNombre");
     var botonLogout = document.getElementById("cerrarSesion");
     var imgUser = document.getElementById("imgUser");
-    
     var map;
     var markers = [];
+    var fecha = new Date();
+    var mes = fecha.getMonth() + 1;
+    var dia = fecha.getDate();
     var posActual;
     
+    if(mes < 10 ){
+        mes = "0" + mes;
+    }
+    if(dia < 10 ){
+        dia = "0" + dia;
+    }
+    
+    //fecha = fecha.getFullYear() + "" + mes + "" + dia;
+    
+    
     app.gasolineras = (function(){
-        
-        function getParametros(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        }
-        
-        function rutas(options){
-            console.log(getParametros("provincia"));
-            if(getParametros("provincia") != null){
-                app.gasolineras.mostrar(getParametros("provincia"));
-                selectProvincias.options[selectProvincias.selectedIndex].value = getParametros("provincia");
-            }
-            
-            //for (var i = 0; i <= options.length; i++){
-            //    console.log(options[i]);
-                
-            //}
-            
-        }
         
         function rellenarSelect(select,options){
             for (var i = 0; i <= options.length; i++){
@@ -77,10 +66,15 @@
                     funcion(JSON.parse(xmlHttp.responseText));
                     
                 } else if (xmlHttp.readyState === 4 && xmlHttp.status === 404) {
-                    console.info(JSON.parse(xmlHttp.responseText));
+                    fecha--;
+                    //peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
+                    //console.error("ERROR! 404");
+                    //console.info(JSON.parse(xmlHttp.responseText));
                 }
             };
             xmlHttp.open("GET", url, true);
+            //xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            //xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xmlHttp.send();
             
         }
@@ -88,23 +82,34 @@
         function procesar(data){
             var datos = data.ListaEESSPrecio;
             if (datos === undefined || datos.length == 0) {
-                alert("no hay datos que mostrar");
+                fecha--;
+                //peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
             }else{
                 datos.forEach(function(elemento, i){
                     gasolineras.push(elemento);
+                    //console.log(i)
                 });
                 console.log("he acabado de traerme el json");
             }
             for (var i = 0; i < arrayProvincias.length; i++) {
                 filtrarProvincia(arrayProvincias[i]);
             }
+                
+                
+            
+            //filtrarProvincia("santacruzdetenerife");
         }
     
         function filtrarProvincia(provincia){
-            var array = gasolineras.filter(function (el) {
-                return quitarAcentos(el.Provincia.toLowerCase().trim().replace(/\s/g,"").replace("/ ","")) === provincia.toLowerCase().trim().replace(/\s/g,"").replace("/ ","");
-            });
-            insertar(fire,array,provincia);
+            /*if(provincia === "todas"){
+                return gasolineras;
+            }else{ */
+                var array = gasolineras.filter(function (el) {
+                    return quitarAcentos(el.Provincia.toLowerCase().trim().replace(/\s/g,"").replace("/ ","")) === provincia.toLowerCase().trim().replace(/\s/g,"").replace("/ ","");
+                });
+                insertar(fire,array,provincia);
+                    //return array;
+            /*}*/
         }
         
         function comprobar(referencia,callback){
@@ -215,158 +220,174 @@
             width++; 
             elem.style.width = width + '%'; 
         }
+        
+        
     
-        return { comprobar : comprobar, procesar : procesar, peticionAjax : peticionAjax, rellenarSelect : rellenarSelect, mostrar : mostrar, rutas : rutas };
+    return { comprobar : comprobar, procesar : procesar, peticionAjax : peticionAjax, rellenarSelect : rellenarSelect, mostrar : mostrar };
     
     })();
     
     app.google = (function(){
         
-        function login(){
-            var provider = new firebase.auth.GoogleAuthProvider();
-                
-            firebase.auth().signInWithPopup(provider).then(function(result) {
-                //var user = result.user;
-                app.google.getUser()
-                //console.log(user.displayName);
-            }).catch(function(error) {
-                //var errorCode = error.code;
-                //var errorMessage = error.message;
-                //var email = error.email;
-                //var credential = error.credential;
-              // ...
-            });
+    function login(){
+        var provider = new firebase.auth.GoogleAuthProvider();
+        
             
-        }
+        firebase.auth().signInWithPopup(provider).then(function(result) {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          var token = result.credential.accessToken;
+          // The signed-in user info.
+          var user = result.user;
+          app.google.getUser()
+          console.log(user.displayName);
+          
+          // ...
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // ...
+        });
         
-        function logout(){
-            firebase.auth().signOut().then(function() {
-                alert("has cerrado sesion");
-            }).catch(function(error) {
-                alert("algo ha ido mal al cerrar sesion");
-            });
+    }
+    
+    function logout(){
+        firebase.auth().signOut().then(function() {
+          // Sign-out successful.
+          alert("has cerrado sesion");
+        }).catch(function(error) {
+          // An error happened.
+          alert("algo ha ido mal al cerrar sesion");
+        });
+    }
+    
+    function getUser(){
+        if(firebase.auth().currentUser != null){
+            spanNombre.innerHTML = firebase.auth().currentUser.displayName;
+            imgUser.src = firebase.auth().currentUser.photoURL;
         }
-        
-        function getUser(){
-            if(firebase.auth().currentUser != null){
-                spanNombre.innerHTML = firebase.auth().currentUser.displayName;
-                imgUser.src = firebase.auth().currentUser.photoURL;
-            }
-            return firebase.auth().currentUser;
-        }
-        
-        function clickLocation(directionsService, directionsDisplay){
-            var botones = document.querySelector("#cajaMostrar");
-            botones.addEventListener("click",function(e){
-                if(e.target.nodeName === 'BUTTON'){
-                    var lat = parseFloat(e.target.getAttribute('lat'));
-                    var long = parseFloat(e.target.getAttribute('long'));
-                    if(e.target.getAttribute('class') === "botonMostrar"){
-                        newLocation(lat,long);
-                    }
-                    if(e.target.getAttribute('class') === "botonIr"){
-                        var origen = posActual;
-                        var destino = {lat: lat, lng: long};
-                        calculateAndDisplayRoute(directionsService, directionsDisplay, origen, destino);
-                    }
+        return firebase.auth().currentUser;
+    }
+    
+    function clickLocation(directionsService, directionsDisplay){
+        var botones = document.querySelector("#cajaMostrar");
+        botones.addEventListener("click",function(e){
+            if(e.target.nodeName === 'BUTTON'){
+                var lat = parseFloat(e.target.getAttribute('lat'));
+                var long = parseFloat(e.target.getAttribute('long'));
+                if(e.target.getAttribute('class') === "botonMostrar"){
+                    newLocation(lat,long);
                 }
-                
-            });     
-        };
-        function initMap() {
-            var madrid = {lat: 40.4167, lng: -3.70325};
-            var directionsService = new google.maps.DirectionsService;
-            var directionsDisplay = new google.maps.DirectionsRenderer;
-            map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 6,
-                center: madrid
-            });
-            directionsDisplay.setMap(map);
-            clickLocation(directionsService, directionsDisplay);
-            var infoWindow = new google.maps.InfoWindow({map: map});
-            getPosicion(map, infoWindow);
-        }
-        function getPosicion(map, infoWindow){
-             // Try HTML5 geolocation.
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var pos = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    };
-                    posActual = pos;
-                    infoWindow.setPosition(pos);
-                    infoWindow.setContent('Estás aquí');
-                    map.setCenter(pos);
-                }, function() {
-                    handleLocationError(true, infoWindow, map.getCenter());
-                });
-            } else {
-                handleLocationError(false, infoWindow, map.getCenter());
+                if(e.target.getAttribute('class') === "botonIr"){
+                    var origen = posActual;
+                    var destino = {lat: lat, lng: long};
+                    calculateAndDisplayRoute(directionsService, directionsDisplay, origen, destino);
+                }
             }
-        }
-        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            
+        });     
+    };
+    function initMap() {
+        var madrid = {lat: 40.4167, lng: -3.70325};
+        var directionsService = new google.maps.DirectionsService;
+        var directionsDisplay = new google.maps.DirectionsRenderer;
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 6,
+            center: madrid
+        });
+        directionsDisplay.setMap(map);
+        clickLocation(directionsService, directionsDisplay);
+        var infoWindow = new google.maps.InfoWindow({map: map});
+        getPosicion(map, infoWindow);
+    }
+    function getPosicion(map, infoWindow){
+         // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            posActual = pos;
             infoWindow.setPosition(pos);
-            infoWindow.setContent(browserHasGeolocation ?
-                                  'Error: The Geolocation service failed.' :
-                                  'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.setContent('Location found.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
         }
-        function newLocation(newLat,newLng)
-        {
-            map.setZoom(20);
-        	map.setCenter({
-        		lat : newLat,
-        		lng : newLng
-        	});
+    }
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+    }
+    function newLocation(newLat,newLng)
+    {
+        map.setZoom(20);
+    	map.setCenter({
+    		lat : newLat,
+    		lng : newLng
+    	});
+    }
+    function calculateAndDisplayRoute(directionsService, directionsDisplay, origen, destino) {
+        directionsService.route({
+          origin: origen,
+          destination: destino,
+          travelMode: 'DRIVING'
+        }, function(response, status) {
+            if (status === 'OK') {
+                setMapOnAll(null);
+                directionsDisplay.setDirections(response);
+            } else {
+            window.alert('Directions request failed due to ' + status);
+          }
+        });
+    }
+    function addMarker(location, descripcion) {
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            animation: google.maps.Animation.DROP
+        });
+        var infowindow = new google.maps.InfoWindow({
+            content: descripcion
+        });
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+        markers.push(marker);
+    }
+    function setMapOnAll(map) {
+        console.log("hola1");
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(map);
         }
-        function calculateAndDisplayRoute(directionsService, directionsDisplay, origen, destino) {
-            directionsService.route({
-                origin: origen,
-                destination: destino,
-                travelMode: 'DRIVING'
-            }, function(response, status) {
-                if (status === 'OK') {
-                    setMapOnAll(null);
-                    directionsDisplay.setDirections(response);
-                } else {
-                window.alert('Directions request failed due to ' + status);
-              }
-            });
-        }
-        function addMarker(location, descripcion) {
-            var marker = new google.maps.Marker({
-                position: location,
-                map: map,
-                animation: google.maps.Animation.DROP
-            });
-            var infowindow = new google.maps.InfoWindow({
-                content: descripcion
-            });
-            marker.addListener('click', function() {
-                infowindow.open(map, marker);
-            });
-            markers.push(marker);
-        }
-        function setMapOnAll(map) {
-            for (var i = 0; i < markers.length; i++) {
-                markers[i].setMap(map);
-            }
-        }
-        function clearMarkers() {
-            setMapOnAll(null);
-        }
-        function deleteMarkers() {
-            clearMarkers();
-            markers = [];
-            initMap();
-        }
-        
-        return { addMarker : addMarker, deleteMarkers:deleteMarkers, initMap:initMap, login:login, logout:logout, getUser:getUser };
-        
+    }
+    function clearMarkers() {
+        setMapOnAll(null);
+        console.log("hola2");
+    }
+    function deleteMarkers() {
+        clearMarkers();
+        markers = [];
+        //initMap();
+    }
+    
+    
+    return { addMarker : addMarker, deleteMarkers:deleteMarkers, initMap:initMap, login:login, logout:logout, getUser:getUser };
+    
     })();
     
     selectProvincias.options[selectProvincias.selectedIndex].value="defecto";
-    
     app.gasolineras.comprobar(fire,function(dat){
         if(dat){
             console.log("Esta lleno");
@@ -375,12 +396,13 @@
             console.log("Esta vacio");
         }
     });
-    
     app.gasolineras.rellenarSelect(selectProvincias,arrayProvincias);
-    
+    //peticionAjax("http://datos-precio-carburante.github.io/json2016h1/" + fecha + ".json", procesar);
+    //peticionAjax("https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburantes/PreciosCarburantes/EstacionesTerrestres/", procesar);
     selectProvincias.addEventListener("change", function(){
         var valorSelect = selectProvincias.options[ selectProvincias.selectedIndex ].value;
         app.google.deleteMarkers();
+        //filtrarProvincia(valorSelect);
         app.gasolineras.mostrar(valorSelect);
     });
     
@@ -409,7 +431,6 @@
         setTimeout(function(){
             app.google.getUser();  
         },500);
-        app.gasolineras.rutas(arrayProvincias);
     })
     
     
