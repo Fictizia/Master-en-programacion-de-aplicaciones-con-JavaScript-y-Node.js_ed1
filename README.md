@@ -7,9 +7,6 @@
 # Master en Programación de Aplicaciones con JavaScript y Node.js
 ### JS, Node.js, Frontend, Express, Patrones, IoT, HTML5_APIs, Asincronía, Websockets, ECMA6, ECMA7
 
-
-
-
 Aprende con este Máster en Programación de aplicaciones con JavaScript y Node.js todo lo necesario para desarrollar cualquier tipo de proyecto interactivo utilizando el lenguaje de programación más utilizado en el mundo del desarrollo interactivo.
 
 Los alumnos del Máster aprenderán todos sobre fundamentos y lógica de la programación, la manipulación dinámica del DOM y el desarrollo de aplicaciones interactivas usando AJAX. Tambien conocerán en profundidad el uso de patrones de diseño, control de versiones, testing, fundamentos de trabajo Node.js... y serán capaces de integrarse en entornos de desarrollo modernos y eficientes.
@@ -133,6 +130,7 @@ Fecha | Teoría | Recursos | Contenido
 22/02/2018 | Clase 68 | Clase 68 | Tiempo Proyecto Personal
 23/02/2018 | Clase 69 | Clase 69 | [#OpenSourceFriday](https://opensourcefriday.com)
 26/02/2018 | Clase 70 | Clase 70 | Entrega de proyectos
+27/02/2018 | Clase 71 | Clase 71 | Entrega de proyectos
 
 Temario
 =================
