@@ -3,7 +3,7 @@ var githubBtn = document.getElementById('githubLogin');
 var githubLogOut = document.getElementById('githubLogOut');
 var favorito = document.getElementById('favorito');
 var usuarioNombre = document.getElementById('usuario');
-//var pic = document.getElementById('userPic');
+var userPic = document.getElementById('userPic');
 var usuarioDatos = document.getElementById('logData');
 
 var userRef = firebase.database().ref("users");
@@ -19,14 +19,17 @@ function logMe (){
   firebase.auth().signInWithPopup(provider).then(function(result) {
     // Datos q obtenemos del usuario --
     var userData = JSON.stringify(result.user);
+    console.log(userData);
         userData = JSON.parse(userData);
       
     // Alamacenando el usuario en /user/{{uid}}/datos...
        userRef.child(userData.uid).set(userData);
        favorito.addEventListener('click', favoritoAdd);
   // Hacer visible el botón de logOut y usuario. Oculta el de login:
-       loginDisplay(userData);
+       loginDisplay();
        usuarioNombre.innerHTML = userData.displayName;
+       
+       userPic.src = userData.providerData[0].photoUrl;
        
        function favoritoAdd(){
         var userFav = optionDistrict.value;
@@ -35,7 +38,7 @@ function logMe (){
           if (error) {
             console.warn("No se han podido guardar los datos. " + error);
           } else {
-            console.info("Datos guardados con exito!");
+            console.info("Datos guardados con exito! cucu");
           }
        })
       }
@@ -67,6 +70,7 @@ function loginDisplay() {
     githubLogOut.classList.toggle('hidden');
     favorito.classList.toggle('hidden');
     usuarioDatos.classList.toggle('hidden');
+    userPic. classList.toggle('hidden');// refactorizar en una función
 }
 
 /**
