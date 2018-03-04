@@ -26,7 +26,6 @@ p {
   border-bottom: 2px solid #106302;
   display: flex;
   height: 40px;
-  justify-content: space-between;
   position: fixed;
   top: 0;
   width: 90%; }
