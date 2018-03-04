@@ -19,7 +19,7 @@ function logMe (){
   firebase.auth().signInWithPopup(provider).then(function(result) {
     // Datos q obtenemos del usuario de Github --
     var userData = JSON.stringify(result.user);
-    console.log(userData);
+
         userData = JSON.parse(userData);
       
     // Alamacenando el usuario en /user/{{uid}}/...

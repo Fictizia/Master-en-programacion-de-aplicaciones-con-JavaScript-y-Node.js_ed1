@@ -104,3 +104,10 @@ function pintaDatos(resultados){
     };
   };
 };
+
+// GEOLOCALIZACIÓN:
+
+  var userLatitud = localStorage.getItem("Latitud"); 
+  var userLongitud = localStorage.getItem("Longitud"); 
+  
+  
