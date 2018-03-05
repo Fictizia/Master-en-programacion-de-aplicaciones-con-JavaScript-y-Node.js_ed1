@@ -6,6 +6,13 @@ var rover = {
   orientation: "N"
 }
 
+var cardinalPoints = {
+  'N': { 'R': "E", 'L': "W" },
+  'E': { 'R': "S", 'L': "N" },
+  'S': { 'R': "W", 'L': "E" },
+  'W': { 'R': "N", 'L': "S" },
+}
+
 function setup(grid, position, itinerary) {
   setPositionAndOrientation(position);
   itinerary.forEach((element) => {
@@ -14,7 +21,6 @@ function setup(grid, position, itinerary) {
     }
     else if (element === "M") {
       move(element)
-      console.log(rover.x + ' ' + rover.y + ' ' + rover.orientation)
     }
     else {
       console.log(element, ': Unexpected action.')
@@ -23,19 +29,12 @@ function setup(grid, position, itinerary) {
   console.log(rover.x + ' ' + rover.y + ' ' + rover.orientation)
 }
 
-var cardinalPoints = {
-  'N': { 'R': "E", 'L': "W" },
-  'E': { 'R': "S", 'L': "N" },
-  'S': { 'R': "W", 'L': "E" },
-  'W': { 'R': "N", 'L': "S" },
-}
 
 function setPositionAndOrientation(position) {
   var positionAndOrientation = position.split(" ");
   rover.x = parseInt(positionAndOrientation[0]);
   rover.y = parseInt(positionAndOrientation[1]);
   rover.orientation = positionAndOrientation[2];
-  console.log(rover);
 }
 
 function turn(direction) {
