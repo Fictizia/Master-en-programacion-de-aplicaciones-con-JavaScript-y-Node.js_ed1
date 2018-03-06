@@ -131,6 +131,9 @@ Fecha | Teoría | Recursos | Contenido
 23/02/2018 | Clase 69 | Clase 69 | [#OpenSourceFriday](https://opensourcefriday.com)
 26/02/2018 | Clase 70 | Clase 70 | Entrega de proyectos
 27/02/2018 | Clase 71 | Clase 71 | Entrega de proyectos
+28/02/2018 | Clase 72 | Clase 72 | Entrega de proyectos
+05/03/2018 | Clase 73 | Clase 73 | Soluciones y dudas
+
 
 Temario
 =================
