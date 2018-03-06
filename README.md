@@ -133,7 +133,7 @@ Fecha | Teoría | Recursos | Contenido
 27/02/2018 | Clase 71 | Clase 71 | Entrega de proyectos
 28/02/2018 | Clase 72 | Clase 72 | Entrega de proyectos
 05/03/2018 | Clase 73 | Clase 73 | Soluciones y dudas
-
+06/03/2018 | Clase 74 | Clase 74 | Entrega de proyectos
 
 Temario
 =================
