@@ -11,8 +11,15 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-xs-12">
+			<div class="pull-right">
+				<ul>
+					<li><a href="" id="register">Registro</a></li>
+					<li><a href="" id="login">Login</a></li>
+				</ul>
+			</div>
+
 			<div class="jumbotron">
-				<h2>¡Hola, mundo!</h2>
+				<h2>Proyecto personal</h2>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac luctus nulla. Suspendisse posuere sit amet leo tincidunt dapibus. Mauris lacinia semper tincidunt.</p>
 				<p>
 					<a class="btn btn-primary btn-large" href="#">Leer más</a>
@@ -20,111 +27,38 @@
 			</div>
 			
 			<div class="row">
-				<div class="col-md-2 col-xs-12">
-				    <div>
-    				    <div>
-    				    	<a href="#" id="mostrar-equipos">Mostrar Equipos</a>
-    				    </div>
-    				    <div>
-    				    	<a href="#" id="mostrar-goleadores">Mostrar Goleadores</a>	
-    				    </div>
-				    </div>
-				</div>
-				<div class="col-md-10">
-				    <div class="resultados">
-					      <table class="table">
-					        <thead>
-					          <tr>
-					            <th>
-					              #
-					            </th>
-					            <th>
-					              Product
-					            </th>
-					            <th>
-					              Payment Taken
-					            </th>
-					            <th>
-					              Status
-					            </th>
-					          </tr>
-					        </thead>
-					        <tbody>
-					          <tr>
-					            <td>
-					              1
-					            </td>
-					            <td>
-					              TB - Monthly
-					            </td>
-					            <td>
-					              01/04/2012
-					            </td>
-					            <td>
-					              Default
-					            </td>
-					          </tr>
-					          <tr class="active">
-					            <td>
-					              1
-					            </td>
-					            <td>
-					              TB - Monthly
-					            </td>
-					            <td>
-					              01/04/2012
-					            </td>
-					            <td>
-					              Approved
-					            </td>
-					          </tr>
-					          <tr class="success">
-					            <td>
-					              2
-					            </td>
-					            <td>
-					              TB - Monthly
-					            </td>
-					            <td>
-					              02/04/2012
-					            </td>
-					            <td>
-					              Declined
-					            </td>
-					          </tr>
-					          <tr class="warning">
-					            <td>
-					              3
-					            </td>
-					            <td>
-					              TB - Monthly
-					            </td>
-					            <td>
-					              03/04/2012
-					            </td>
-					            <td>
-					              Pending
-					            </td>
-					          </tr>
-					          <tr class="danger">
-					            <td>
-					              4
-					            </td>
-					            <td>
-					              TB - Monthly
-					            </td>
-					            <td>
-					              04/04/2012
-					            </td>
-					            <td>
-					              Call in to confirm
-					            </td>
-					          </tr>
-					        </tbody>
-					      </table>
 
+				<!-- MAPA -->
+				<div class="col-md-6 col-xs-12">
+				    <div>
+						<iframe width="100%" height="520" frameborder="0" src="https://jesusesteban.carto.com/viz/fd0e0301-6727-4ac3-8672-0dfee7ed2deb/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
 				    </div>
 				</div>
+				<!-- end MAPA -->
+				
+				<!-- Selection box -->
+				<div class="col-md-6">
+					<div>
+						<label for="">Selecciona un circuito</label>
+						<select name="" id="">
+							<option>Wadus</option>
+						</select>
+					</div>
+					<div>
+						<label for="">Selecciona un piloto</label>
+						<select name="" id="">
+							<option>Wadus</option>
+						</select>
+					</div>
+					<div>
+						<label for="">Selecciona una escudería</label>
+						<select name="" id="">
+							<option>Wadus</option>
+						</select>
+					</div>
+
+				</div>
+				<!-- end Selection box -->
 			</div>
 		</div>
 	</div>
