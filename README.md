@@ -134,6 +134,8 @@ Fecha | Teoría | Recursos | Contenido
 28/02/2018 | Clase 72 | Clase 72 | Entrega de proyectos
 05/03/2018 | Clase 73 | Clase 73 | Soluciones y dudas
 06/03/2018 | Clase 74 | Clase 74 | Entrega de proyectos
+07/03/2018 | [Clase 75](teoria/dia75.md) | [Clase 75](recursos/dia75.md) | Express I
+
 
 Temario
 =================
