@@ -1,0 +1,58 @@
+ul{
+    list-style: none
+}
+
+
+.jumbotron{
+    background: #475577;     
+    color: #EFEFEF;
+}
+
+.box-50{
+    display: inline-block;
+    float: left;
+    height: 100vh;
+    width: calc(50% - 0px);
+}
+
+
+.box-map{
+
+}
+.box-map iframe{
+    height: 100vh;
+}
+
+.box-selection{
+    background: #fafafa; 
+    color: #75706B;
+    padding: 20px;
+}
+.box-logo{
+    background: url(images/logo.png) center center no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 6%;
+    width: 100%;
+}
+
+
+
+
+/*RESPONSIVE Mobile version -  1024*/
+@media screen and (max-width: 1024px) {
+    
+}
+
+
+/*RESPONSIVE Mobile version -  768*/
+@media screen and (max-width: 767px) {
+    .box-50{
+        height: auto;
+        width: calc(100% - 0px);
+    }    
+    .box-map iframe{
+        height: auto;
+    }
+    
+}
