@@ -1,38 +1,29 @@
 /*LAYOUT*/
+body {
+    background-color: #f4f5fa;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
 ul{
     list-style: none
 }
 
 
-.jumbotron{
-    background: #475577;     
-    color: #EFEFEF;
+.main-container {
+    flex-grow: 5;
+    display: flex;
+    height: calc(100vh - 525px);  
 }
 
-.box-50{
-    display: inline-block;
-    float: left;
-    height: 100vh;
-    width: calc(50% - 0px);
-}
-
-
-.box-map{
-
-}
-.box-map iframe{
-    height: 100vh;
-}
-
-.box-selection{
-    background: #f4f5fa; 
-    color: #2a5089;
-}
 
 .login{
     bottom: 0;
+    height: 40px;
     position: absolute;
-    width: 50%;    
+    right: 0;
+    top: 0;
+    width: 20%;
 }
 
 .login ul{
@@ -56,20 +47,54 @@ ul{
     color: #FFF;
 }
 
-
 .box-logo{
-    background: url(images/logo.png) center center no-repeat;
+    background: url(images/logo.png) top center no-repeat;
     background-size: contain;
     display: inline-block;
-    height: 6%;
-    margin: 5% 0;    
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    left: 70px;
+    top: 30px;
+}
+
+
+
+
+
+.box-selection{
+    background: #f4f5fa; 
+    color: #2a5089;
+    position: relative;
+}
+
+
+.box-left {
+    position: relative;
+    text-align: center;
     width: 100%;
 }
-
-.box-tabs{
-    padding: 0 20px;
+.nav-tabs{
 }
-
+.nav-tabs>li{
+    float: none;
+    width: calc(33% - -1px);
+    display: inline-block;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
+    background: #ff1e00;
+    color: #FFF;
+    height: 100%;
+    border: 0 none;
+    border-radius: 0;    
+}
+.nav-tabs>li>a, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover{
+    background: #15151e;
+    color: #FFF;
+    height: 100%;
+    border: 0 none;
+    border-radius: 0;    
+}
 
 
 /*RESPONSIVE Mobile version -  1024*/
