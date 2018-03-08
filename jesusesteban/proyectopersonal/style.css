@@ -1,3 +1,4 @@
+/*LAYOUT*/
 ul{
     list-style: none
 }
@@ -24,18 +25,50 @@ ul{
 }
 
 .box-selection{
-    background: #fafafa; 
-    color: #75706B;
-    padding: 20px;
+    background: #f4f5fa; 
+    color: #2a5089;
 }
+
+.login{
+    bottom: 0;
+    position: absolute;
+    width: 50%;    
+}
+
+.login ul{
+    padding-left: 0;
+    width: 100%;
+}
+
+.login ul li{
+    background: #ff1e00;
+    display: inline-block;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;    
+    width: calc(50% - 0px);
+}
+.login ul li:last-child{
+    background: #15151e;
+}
+.login ul li a{
+    color: #FFF;
+}
+
+
 .box-logo{
     background: url(images/logo.png) center center no-repeat;
     background-size: contain;
     display: inline-block;
     height: 6%;
+    margin: 5% 0;    
     width: 100%;
 }
 
+.box-tabs{
+    padding: 0 20px;
+}
 
 
 

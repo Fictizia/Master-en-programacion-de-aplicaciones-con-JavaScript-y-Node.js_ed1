@@ -23,34 +23,54 @@
 				
 				<!-- Selection box -->
 				<div class="box-selection box-50">
-					<div class="pull-right">
+					<div class="login">
 						<ul>
-							<li><a href="" id="register">Registro</a></li>
-							<li><a href="" id="login">Login</a></li>
+							<li><a href="" id="register">Login</a></li>
+							<li><a href="" id="login">Registro</a></li>
 						</ul>
 					</div>
 					
 					
 					<div class="box-logo"></div>
 					
-					
-					<div>
-						<label for="">Selecciona un circuito</label>
-						<select name="" id="">
-							<option>Wadus</option>
-						</select>
-					</div>
-					<div>
-						<label for="">Selecciona un piloto</label>
-						<select name="" id="">
-							<option>Wadus</option>
-						</select>
-					</div>
-					<div>
-						<label for="">Selecciona una escudería</label>
-						<select name="" id="">
-							<option>Wadus</option>
-						</select>
+					<div class="box-tabs">
+						<ul class="nav nav-tabs">
+							<li class="active"><a  href="#1" data-toggle="tab">Races</a></li>
+							<li><a href="#2" data-toggle="tab">Drivers</a></li>
+							<li><a href="#3" data-toggle="tab">Teams</a>
+							</li>
+						</ul>
+						<div class="tab-content ">
+							<div class="tab-pane active" id="1">
+								<h3>Aquí irán las carreras</h3>
+								<div>
+									<label for="">Selecciona un circuito</label>
+									<select name="" id="">
+										<option>Wadus</option>
+									</select>
+								</div>
+								<div>
+									<label for="">Selecciona un piloto</label>
+									<select name="" id="">
+										<option>Wadus</option>
+									</select>
+								</div>
+								<div>
+									<label for="">Selecciona una escudería</label>
+									<select name="" id="">
+										<option>Wadus</option>
+									</select>
+								</div>
+								
+							</div>
+							<div class="tab-pane" id="2">
+								<h3>Aquí irán los pilotos</h3>
+							</div>
+							<div class="tab-pane" id="3">
+								<h3>Aquí irán las escuderias</h3>
+							</div>
+						</div>
+
 					</div>
 
 				</div>
@@ -58,7 +78,14 @@
 			</div>
 
 	</div>
-</div></body>
+</div>
+
+
+	<!-- Bootstrap JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+</body>
 </html>
 
 
