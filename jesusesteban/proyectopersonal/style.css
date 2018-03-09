@@ -22,7 +22,6 @@ ul{
     height: 40px;
     position: absolute;
     right: 0;
-    top: 0;
     width: 20%;
 }
 
@@ -72,6 +71,7 @@ ul{
 .box-left {
     position: relative;
     text-align: center;
+    padding-top: 20px;
     width: 100%;
 }
 .nav-tabs{
@@ -95,6 +95,31 @@ ul{
     border: 0 none;
     border-radius: 0;    
 }
+
+
+.box-data{
+    margin-top: 80px;
+    width: 580px;
+    position: relative;
+    left: 50%;
+    margin-left: -290px;
+}
+.list-data{
+    display: none;
+    text-align: left;    
+    margin-top: 20px;
+}
+
+.list-data li{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.list-data li span:first-child{
+    font-weight: bold;
+    
+}
+
 
 
 /*RESPONSIVE Mobile version -  1024*/
