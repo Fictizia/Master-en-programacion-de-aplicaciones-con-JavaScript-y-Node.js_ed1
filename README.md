@@ -135,6 +135,7 @@ Fecha | Teoría | Recursos | Contenido
 05/03/2018 | Clase 73 | Clase 73 | Soluciones y dudas
 06/03/2018 | Clase 74 | Clase 74 | Entrega de proyectos
 07/03/2018 | [Clase 75](teoria/dia75.md) | [Clase 75](recursos/dia75.md) | Express I
+09/03/2018 | Clase 76 | Clase 76 | [#OpenSourceFriday](https://opensourcefriday.com)
 
 
 Temario
