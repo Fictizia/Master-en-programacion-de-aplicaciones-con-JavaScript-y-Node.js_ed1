@@ -3,6 +3,7 @@ body {
     background-color: #f4f5fa;
     height: 100%;
     font-family: 'Open Sans', sans-serif;
+    overflow: hidden;    
 }
 
 ul{
@@ -11,10 +12,21 @@ ul{
 
 
 .main-container {
-    flex-grow: 5;
-    display: flex;
-    height: calc(100vh - 525px);  
+    background: #f4f5fa;
+    display: inline-block;
+    /*height: calc(100vh - 525px);  */
+    height: 100vh;
+    position: relative;    
+    width: 30%;
 }
+
+.box-map{
+    display: inline-block;
+    float: left;    
+    width: 70%;
+}
+
+
 
 
 .login{
@@ -22,9 +34,8 @@ ul{
     height: 40px;
     position: absolute;
     right: 0;
-    width: 20%;
+    width: 100%;
 }
-
 .login ul{
     padding-left: 0;
     width: 100%;
@@ -47,16 +58,14 @@ ul{
 }
 
 .box-logo{
-    background: url(images/logo.png) top center no-repeat;
-    background-size: contain;
+    background: url(images/logo.png) center center no-repeat;
+    background-size: 40%;
     display: inline-block;
     height: 150px;
-    width: 150px;
-    position: absolute;
-    left: 70px;
-    top: 30px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
 }
-
 
 
 
@@ -71,14 +80,13 @@ ul{
 .box-left {
     position: relative;
     text-align: center;
-    padding-top: 20px;
     width: 100%;
 }
 .nav-tabs{
 }
 .nav-tabs>li{
     float: none;
-    width: calc(33% - -1px);
+    width: calc(32% - 0px);
     display: inline-block;
 }
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
@@ -99,10 +107,6 @@ ul{
 
 .box-data{
     margin-top: 80px;
-    width: 580px;
-    position: relative;
-    left: 50%;
-    margin-left: -290px;
 }
 .list-data{
     display: none;
