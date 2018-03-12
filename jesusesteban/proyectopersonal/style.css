@@ -135,7 +135,7 @@ ul{
         width: calc(100% - 0px);
     }    
     .box-map iframe{
-        height: auto;
+        height: 400px;
     }
     
 }

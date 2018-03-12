@@ -11,7 +11,7 @@
             center_lat: 0,
             center_lon: 0,
             zoom: 3
-        }).done(function(vis, layers) {
+            }).done(function(vis, layers) {
           map = vis.getNativeMap();
           lastMarker = L.marker([lat, long]).addTo(map);
         })  
