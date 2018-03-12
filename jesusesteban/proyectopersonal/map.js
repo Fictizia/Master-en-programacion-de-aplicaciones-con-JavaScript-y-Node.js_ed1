@@ -1,6 +1,10 @@
  var map;
  var lastMarker;
  
+var latCarto = localStorage.getItem("Latitud");
+var longCarto = localStorage.getItem("Longitud");
+
+
  function loadMap(lat, long){
  cartodb.createVis('map', 'https://jesusesteban.carto.com/api/v2/viz/fd0e0301-6727-4ac3-8672-0dfee7ed2deb/viz.json', {
             shareable: false,
@@ -8,12 +12,12 @@
             description: false,
             search: false,
             tiles_loader: false,
-            center_lat: 0,
-            center_lon: 0,
-            zoom: 3
+            center_lat: latCarto,
+            center_lon: longCarto,
+            zoom: 4
             }).done(function(vis, layers) {
           map = vis.getNativeMap();
-          lastMarker = L.marker([lat, long]).addTo(map);
+          lastMarker = L.marker([latCarto, longCarto]).addTo(map);
         })  
         
         
@@ -36,5 +40,4 @@
  }
  
  
- 
- 
+
