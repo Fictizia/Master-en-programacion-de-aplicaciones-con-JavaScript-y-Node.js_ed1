@@ -11,8 +11,15 @@ var config = {
 firebase.initializeApp(config);
 
 
-var database = firebase.database();
-var auth = firebase.auth();
-var provider = new firebase.auth.GithubAuthProvider();
+// LOGIN Button
+document.getElementById("login").addEventListener("click", login);
+function login() {
+    console.log("LOGIN");
+}
 
 
+// REGISTER Button
+document.getElementById("register").addEventListener("click", register);
+function register() {
+    console.log("REGISTER");
+}

@@ -58,7 +58,7 @@ ul{
 }
 
 .box-logo{
-    background: url(images/logo.png) center center no-repeat;
+    background: url(../images/logo.png) center center no-repeat;
     background-size: 40%;
     display: inline-block;
     height: 150px;
