@@ -286,7 +286,7 @@
 - Rutas: Capturando Parámetros http://localhost:8080/hola/Eduardo, http://localhost:8080/hola/Oscar...
 ```javascript
   app.get('/hello/:nombre', function(req, res) {
-      res.send('Hola ' + req.nombre + '!');
+      res.send('Hola ' + req.params.nombre + '!');
   });
 ```
 - Rutas: Capturando varios parámetros http://localhost:8080/desde/Madrid/a/Malga, http://localhost:8080/desde/Madrid/a/NYC
