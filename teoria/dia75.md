@@ -468,7 +468,7 @@
 
 
   - [res.sendFile()](http://expressjs.com/es/4x/api.html#res.sendFile) *Envía un archivo para ser visualizado.*
-  - [res.sendStatus()](http://expressjs.com/es/4x/api.html#res.sendStatus) *Envía un archivo para ser descargado.*
+  - [res.sendStatus()](http://expressjs.com/es/4x/api.html#res.sendStatus) *Envia un estado HTTP.*
 
 
 **Mecánica: app.use()**
