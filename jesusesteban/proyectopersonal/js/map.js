@@ -1,11 +1,11 @@
 var map;
 var lastMarker;
 
-//collect data from the localstorage
+/* collect data from the localstorage */
 var latCarto = localStorage.getItem("Latitud");
 var longCarto = localStorage.getItem("Longitud");
 
-//Init Map
+/* Init Map */
 function loadMap(lat, long){
 cartodb.createVis('map', 'https://jesusesteban.carto.com/api/v2/viz/fd0e0301-6727-4ac3-8672-0dfee7ed2deb/viz.json', {
            shareable: false,
@@ -24,8 +24,7 @@ cartodb.createVis('map', 'https://jesusesteban.carto.com/api/v2/viz/fd0e0301-672
 
 window.onload = loadMap(1, 1);
  
-
-// Geolocate marker according to circuit LAT & LONG
+/* Geolocate marker according to circuit LAT & LONG */
 function addMarker (locationLat, locationLong){
  map.removeLayer(lastMarker);
  lastMarker = L.marker([locationLat, locationLong]).addTo(map);

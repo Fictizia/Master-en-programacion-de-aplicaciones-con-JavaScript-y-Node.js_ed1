@@ -1,5 +1,5 @@
-//Firebase
-// Initialize Firebase
+/* Firebase */
+/* Initialize Firebase */
 var config = {
   apiKey: "AIzaSyC2SW60Fe3C2kwNfeLHDyKnqD8O8zHJOWM",
   authDomain: "login-f1.firebaseapp.com",
@@ -10,10 +10,10 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
+/* Provider GITHUB */
 var provider = new firebase.auth.GithubAuthProvider();
 
-// LOGIN Button
+/* LOGIN Button */
 document.getElementById("login").addEventListener("click", login);
 
 function login() {
@@ -37,7 +37,7 @@ function login() {
 }
 
 
-// REGISTER Button
+/* REGISTER Button */
 document.getElementById("register").addEventListener("click", register);
 function register() {
     console.log("REGISTER");
