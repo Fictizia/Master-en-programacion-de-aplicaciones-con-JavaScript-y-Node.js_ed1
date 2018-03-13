@@ -93,6 +93,7 @@
   curl -I 127.0.0.1:3000
   ```
 - [PostMan](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
+- [Insomnia](https://insomnia.rest/)
 - [Html2Jade](http://html2jade.org/)
 
 
