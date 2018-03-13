@@ -137,6 +137,7 @@ Fecha | Teoría | Recursos | Contenido
 07/03/2018 | [Clase 75](teoria/dia75.md) | [Clase 75](recursos/dia75.md) | Express I
 09/03/2018 | Clase 76 | Clase 76 | [#OpenSourceFriday](https://opensourcefriday.com)
 12/03/2018 | [Clase 77](teoria/dia77.md) | [Clase 77](recursos/dia77.md) | Express II y Pug (Jade)
+13/03/2018 | [Clase 78](teoria/dia78.md) | Clase 78 | Prácticas de Express I
 
 
 Temario
