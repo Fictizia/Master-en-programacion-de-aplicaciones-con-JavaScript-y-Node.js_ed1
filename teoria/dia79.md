@@ -39,7 +39,7 @@ const storageRef = firebase.storage().ref();
 const file = ...
 
 // Upload the file
-ref.put(file).then((snapshot) => {
+storageRef.put(file).then((snapshot) => {
   console.log('Uploaded a blob or file!');
 });
 ```
