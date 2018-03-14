@@ -7,9 +7,6 @@ var listSeason = [];
 /* LINK api SEASONF1*/
 var urlSeason = 'https://ergast.com/api/f1/seasons.json?limit=100';
 
-/* LINK api YEARS F1*/
-var urlYear = 'https://ergast.com/api/f1/seasons.json?limit=100';
-
 
 /* AJAX Request */
 var season = [];
@@ -43,4 +40,27 @@ function printSeason(){
     selectSeason.innerHTML += '<option id="' + showSeason + '" value="' + showSeason + '" name="season">' + showSeason +'</option>' ;
   }
 }
+
+
+/* api YEARS F1*/
+document.getElementById("selectSeason").addEventListener("change", myFunction);
+function myFunction() {
+  var  selectYear = document.getElementById ('selectSeason');
+  var  selectedYear = selectYear.options [selectYear.selectedIndex] .text;
+  var urlYear = 'https://ergast.com/api/f1/' + selectedYear + '/results' + '.json' + '?limit=1000';
+  //console.log(urlYear);
+  
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
 
