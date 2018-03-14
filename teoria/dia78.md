@@ -11,7 +11,16 @@
 
 ### Ejercicios
 
-**1 -** Crearemos una aplicación usando Firebase y Express para gestionar las peliculas que nos gustan.
+**1 -** Crea las rutas básicas para tener una página web clásica (¿Quienes somos? | ¿Donde Estamos? | ¿Que hacemos? | Contacto... etc...) con server render usando Express y Jade
+Requisitos:
+- Utilizar imports dentro de JADE para las secciones comunes como `Navbar`, `cabeceras`, etc...
+
+```javascript
+    // Tu solución
+```
+
+
+**2 -** Crearemos una aplicación usando Firebase y Express para gestionar las peliculas que nos gustan.
 
 - Objetivos:
     - Crear un APIRest para poder gestionar la aplicación desde otros dominios
