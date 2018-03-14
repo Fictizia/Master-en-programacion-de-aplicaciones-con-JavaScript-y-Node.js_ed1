@@ -44,9 +44,14 @@
 							<div class="tab-pane active" id="1">
 								<div class="box-data">
 
+									<select id="selectSeason">
+										<option value="">Year</option>
+									</select>
+									
 									<select id="selectCircuit" onchange="recoveryId(this)">
 										<option value="">Ciruit selection</option>
 									</select>
+
 									
 									<ul class="list-data" id="list-data">
 										<!--<li>
@@ -127,6 +132,11 @@
 
 	<!-- AJAX -->
 	<script src="js/ajax.js"></script>
+
+	<!-- SEASON -->
+	<script src="js/season.js"></script>
+
+
 
 	<!-- FIREBASE -->
 	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>

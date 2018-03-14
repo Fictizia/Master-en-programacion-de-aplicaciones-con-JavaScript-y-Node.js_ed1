@@ -8,8 +8,9 @@ var country = document.getElementById('country');
 /* Circuit Array */
 var listCircuit = [];
 
-/* LINK api F1*/
+/* LINK api Circuits F1*/
 var url = 'https://ergast.com/api/f1/circuits.json?limit=100';
+
 
 /* AJAX Request */
 var resultados = [];
@@ -79,3 +80,5 @@ function recoveryId(select){
 
 
 }
+
+

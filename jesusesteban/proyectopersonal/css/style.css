@@ -124,6 +124,23 @@ ul{
     
 }
 
+.list-results{
+    text-align: left;    
+    margin-top: 20px;
+}
+
+.list-results li{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.list-results li h3{
+    font-weight: bold;
+    
+}
+
+
+
 
 
 /*RESPONSIVE Mobile version -  1024*/
