@@ -24,7 +24,7 @@ cartodb.createVis('map', 'https://jesusesteban.carto.com/api/v2/viz/fd0e0301-672
 
 window.onload = loadMap(1, 1);
  
-/* Geolocate marker according to circuit LAT & LONG */
+/* Init Map */
 function addMarker (locationLat, locationLong){
  map.removeLayer(lastMarker);
  lastMarker = L.marker([locationLat, locationLong]).addTo(map);
