@@ -127,6 +127,7 @@ npm install -g firebase-tools
 
 **Puesta en marcha**
 1. Ejecuta `firebase login` para acceder a través del navegador y autenticar la herramienta de Firebase.
+_Nota: `firebase login --no-localhost` en C9.io_
 2. Ve al directorio de tu proyecto de Firebase.
 3. Ejecuta `firebase init functions`.
 
