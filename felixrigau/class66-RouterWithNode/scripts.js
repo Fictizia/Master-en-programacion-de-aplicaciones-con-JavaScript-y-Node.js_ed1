@@ -12,19 +12,19 @@ http.createServer(function(req, res) {
       res.end('HomePage!');
     }
     else if (route === '/quienes-somos') {
-      res.end('Quienes somos...');
+      res.end('Quienes somos...', 'utf8');
     }
     else if (route === '/servicios') {
-      res.end('Nuestros servicios...');
+      res.end('Nuestros servicios...', 'utf8');
     }
     else if (route === '/precios') {
-      res.end('Precios...');
+      res.end('Precios...', 'utf8');
     }
     else if (route === '/contactenos') {
-      res.end('Contáctenos...');
+      res.end('Contáctenos...', 'utf8');
     }
     else {
-      res.end('Página no encontrada...');
+      res.end('Página no encontrada...', 'utf8');
     }
   }
 
