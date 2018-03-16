@@ -3,15 +3,21 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
-exports.addMessage = functions.https.onRequest((req, res) => {
-  const text = req.query.text || 'default text';
-  const ip = req.ip;
+exports.addLog = functions.https.onRequest((req, res) => {
+  var text = req.query.text || 'default text';
+  var ip = req.ip;
   var datas = { text, ip };
-  admin.database().ref('/messages').push(datas).then(snapshot => {
-    console.log(datas);
+  var timestand = Date.now();
+  admin.database().ref('/logs/' + timestand).set(datas).then(snapshot => {
     res.send(datas);
   });
 });
+
+exports.addUser = functions.database.ref('/logs/{logId}').onWrite(event => {
+  const log = event.data.val();
+  console.log('Datos', event.params.pushId, log);
+});
+
 
 
 
