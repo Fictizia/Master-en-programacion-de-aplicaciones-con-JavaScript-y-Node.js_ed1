@@ -139,6 +139,8 @@ Fecha | Teoría | Recursos | Contenido
 12/03/2018 | [Clase 77](teoria/dia77.md) | [Clase 77](recursos/dia77.md) | Express II y Pug (Jade)
 13/03/2018 | [Clase 78](teoria/dia78.md) | Clase 78 | Prácticas de Express I
 14/03/2018 | [Clase 79](teoria/dia79.md) | [Clase 79](recursos/dia79.md) | Firebase II
+15/03/2018 | Clase 80 | Clase 80 | Prácticas: Memezinga PinHead version 
+
 
 Temario
 =================
