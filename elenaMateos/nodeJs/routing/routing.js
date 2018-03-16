@@ -1,11 +1,11 @@
 var http = require('http'),
     url = require('url');
-//   var fs = require('fs');
+ var fs = require('fs');
 
 /*
-var quienes = fs.readFileSync('/quienes_somos.html'),
-    queHacemos = fs.readFile('/que_hacemos.html'),
-    quienesSomos = fs.readFile('/quienes_somos.html');
+var quienes = fs.readFileSync('./quienes_somos.html'),
+    queHacemos = fs.readFile('./que_hacemos.html'),
+    quienesSomos = fs.readFile('./quienes_somos.html');
     
 */
 /** 
@@ -26,27 +26,42 @@ var quienes = fs.readFileSync('/quienes_somos.html'),
       res.end('Index!');
 
     } else if (ruta === '/quienes') { // cuando la ruta sea default/otro imprimimos 'sencillamente otra página'
+      
+      
         res.writeHead(200, {
-        'Content-Type': 'text/plain; charset=utf-8'
+        'Content-Type': 'text/html; charset=utf-8'
       });
+      fs.readFile('./quienes_somos.html', function (err, data) {
+          console.log("data:", data)
+          
+          res.end(err ? "<h1>Quienes somos está rotooooooo</h1>" : data);
+      })
      
-      res.end('Quienes somos???');
+      
 
 
     }else if (ruta === '/que') { // cuando la ruta sea default/otro imprimimos 'sencillamente otra página'
         res.writeHead(200, {
         'Content-Type': 'text/plain; charset=utf-8'
       });
+      fs.readFile('./que_hacemos.html', function (err, data) {
+          console.log("data:", data)
+          
+          res.end(err ? "<h1>Que hacemos está rotooooooo</h1>" : data);
+      })
      
-      res.end('Qué hacemos???');
-
-
-    } else if (ruta === '/donde') { // cuando la ruta sea default/otro imprimimos 'sencillamente otra página'
+     
+  } else if (ruta === '/donde') { // cuando la ruta sea default/otro imprimimos 'sencillamente otra página'
         res.writeHead(200, {
         'Content-Type': 'text/plain; charset=utf-8'
       });
      
-      res.end('Dónde estamos???');
+      fs.readFile('./donde_estamos.html', function (err, data) {
+          console.log("data:", data)
+          
+          res.end(err ? "<h1>Donde está rotooooooo</h1>" : data);
+      })
+     
 
     } else {
         res.writeHead(301, { // si se pone cualquier otra cosa después de root/ da error y un 404
