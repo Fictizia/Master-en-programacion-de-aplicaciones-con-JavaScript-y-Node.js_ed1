@@ -4,7 +4,7 @@
 ### Pasos:
 
  1. Crear un fichero html con la llamada al scrip de firebase como hemos hecho hasta el momento, para inicializar un proyecto de firebase:
-```(html)
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,7 +37,7 @@
  2. Vamos a crear una página muy sencilla con una barra de progreso y un texto que nos dice que fichero se sube a firebase.
  De forma que al hacer clic en el fichero, veremos en la barra de progreso como ese fichero sube al storage de Firebase.
  3. Por abreviar pondremos el estilo dentro del html:
- ```(html)
+ ```html
  <!DOCTYPE html>
 <html>
   <head>
@@ -95,7 +95,7 @@ terminado la práctica, estas reglas deben setarse de nuevo a 'logeado' para evi
 **allow read, write if true** es como ha de ponerse para que funcione la práctica.
  
 
-```(javascrip)
+```javascritp
 
 // Script a añadir después del script de firebase
 
