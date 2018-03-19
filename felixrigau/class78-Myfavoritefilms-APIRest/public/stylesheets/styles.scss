@@ -1,0 +1,21 @@
+//Font variables
+$dark-grey: #616161;
+$red: #b71c1c;
+
+a.logo.navbar-brand {
+  color: $red;
+  font-weight: bold;
+  font-size: 38px;
+}
+
+body {
+  background-color: $dark-grey;
+}
+
+.search {
+    display: flex;
+}
+  
+.container {
+  margin-top: 100px;
+}

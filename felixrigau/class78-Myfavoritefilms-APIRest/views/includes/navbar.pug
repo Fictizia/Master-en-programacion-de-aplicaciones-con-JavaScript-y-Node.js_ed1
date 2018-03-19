@@ -1,0 +1,15 @@
+header
+  // Fixed navbar
+  nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
+    a.logo.navbar-brand(href='/') FAV FILMS
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse', aria-controls='navbarCollapse', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbarCollapse.collapse.navbar-collapse
+      ul.navbar-nav.mr-auto
+        li.nav-item.active
+          a.nav-link(href='/')
+            | Mis filmes 
+            span.sr-only
+      .search
+        input.form-control.mr-sm-2(type='text', placeholder='Search', aria-label='Search')
+        button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search

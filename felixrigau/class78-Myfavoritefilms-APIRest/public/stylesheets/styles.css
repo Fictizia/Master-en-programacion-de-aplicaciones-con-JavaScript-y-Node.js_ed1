@@ -1,0 +1,15 @@
+a.logo.navbar-brand {
+  color: #b71c1c;
+  font-weight: bold;
+  font-size: 38px; }
+
+body {
+  background-color: #616161; }
+
+.search {
+  display: flex; }
+
+.container {
+  margin-top: 100px; }
+
+/*# sourceMappingURL=styles.css.map */
