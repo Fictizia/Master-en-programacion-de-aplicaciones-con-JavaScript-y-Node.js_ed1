@@ -1,5 +1,5 @@
 a.logo.navbar-brand {
-  color: #b71c1c;
+  color: #00bfa5;
   font-weight: bold;
   font-size: 38px; }
 
@@ -8,6 +8,10 @@ body {
 
 .search {
   display: flex; }
+
+.btn-outline-success {
+  color: #00bfa5;
+  border-color: #00bfa5; }
 
 .container {
   margin-top: 100px; }
