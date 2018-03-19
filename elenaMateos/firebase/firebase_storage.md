@@ -92,10 +92,10 @@ terminado la práctica, estas reglas deben setarse de nuevo a 'logeado' para evi
 
 **allow read, write: if auth != null;** Es lo que viene por defecto y como debe dejarse al terminar.
 
-*allow read, write if true* es como ha de ponerse para que funcione la práctica.
+**allow read, write if true** es como ha de ponerse para que funcione la práctica.
  
 
-```javascrip
+```(javascrip)
 
 // Script a añadir después del script de firebase
 
