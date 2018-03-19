@@ -12,18 +12,20 @@
     <title> </title>
   </head>
   <body>
-    <!-- Codigo html -->
+    <progress value="0" max="100" class="uploader" id="uploader">0%
+    </progress>
+    <input type="file" value="upload" id="fileButton" />
     
+    
+    // Inicialización de Firebase:
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
-        apiKey: "XXXXXXXXXXXXXXXXXXXXXX",
-        authDomain: "XXXXXXX.firebaseapp.com",
-        databaseURL: "https://XXXXXXXXX.firebaseio.com",
-        projectId: "XXXXXX",
-        storageBucket: "XXXXXXXXX.appspot.com",
-        messagingSenderId: "XXXXXXXXXXXXXXX"
+        apiKey: '<your-api-key>',
+        authDomain: '<your-auth-domain>',
+        databaseURL: '<your-database-url>',
+        storageBucket: '<your-storage-bucket>'
       };
       firebase.initializeApp(config);
       </script>
@@ -53,7 +55,7 @@
         flex-direction: column;
     }
     
-    #uploader {
+    .uploader {
         -webkit-appearance: none;
         appearance: none;
         width: 50%;
@@ -82,8 +84,15 @@
  ```
  4. Asignamos variales a los elementos del DOM que vamos a manejar.
  5. Asignamos evento al botón fileButton y un callback, para coger
- 6. el fichero, crear la referencia al Storage y subirlo, y para 
- 7. actualizar la barra de progreso mientras el fichero sube.
+  el fichero, crear la referencia al Storage y subirlo, y para 
+  actualizar la barra de progreso mientras el fichero sube.
+ 6. IMPORTANTE: En el proceso de desarrollo y mientras realizamos la práctica las **reglas de escritura** deben estar habilitadas,
+es decir, dentro de la consola de Firebase en, reglas de seguridad, se ha de poner 'true' para lectura y escritura o no funcionará. Una vez se haya
+terminado la práctica, estas reglas deben setarse de nuevo a 'logeado' para evitar que cualquiera pueda acceder =):
+
+**allow read, write: if auth != null;** Es lo que viene por defecto y como debe dejarse al terminar.
+
+*allow read, write if true* es como ha de ponerse para que funcione la práctica.
  
 
 ```(javascrip)
@@ -120,18 +129,19 @@ fileButton.addEventListener('change', function(e){
     },
     
     function(error){
-        
-        
+        // que hacer si hay error
+        console.log('Errorrrrrrrr subiendo archivo!!!!!')
     },
     
     function complete(){
-        
-        
+        // que hacer al completarse la carga
+        // Mostrar un pop-up...
+        alert('Archivo subido!');
     }
-  
   );
-  
-  
 })
 
 ```
+
+
+
