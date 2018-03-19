@@ -95,7 +95,7 @@ terminado la práctica, estas reglas deben setarse de nuevo a 'logeado' para evi
 **allow read, write if true** es como ha de ponerse para que funcione la práctica.
  
 
-```javascritp
+```javascript
 
 // Script a añadir después del script de firebase
 
