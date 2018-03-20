@@ -12,7 +12,7 @@ APP.behavior = {
       if (e.keyCode === 13) {
         if (e.target.value != "" && e.target.value != null) {
           let filmName = e.target.value;
-          APP.tools.makeRequest('GET', `${document.URL}getDataAPi/${filmName}`, true, APP.db.saveFilm);
+          APP.tools.makeRequest('GET', `${document.URL}getDataAPi/${filmName}`, true, APP.ui.fillSelectFilm);
         }
         else {
           console.log('Debes escribir el nombre de una película.')
@@ -24,24 +24,18 @@ APP.behavior = {
 
 APP.ui = {
   fillSelectFilm: (data) => {
-
+    let listFilms = document.querySelector('.films-list');
+    listFilms.innerHTML = '';
     if (data) {
-      if (Array.isArray(data.Search)) {
-        data.Search.forEach((item) => {
-          if (item.Poster && item.Poster.indexOf('amazon') !== -1) {
-
-          }
-          else {
-
-          }
-        })
-      }
-      else {
-
-      }
+      data.Search.forEach((item) => {
+        if (item.Poster && item.Poster.indexOf('amazon') !== -1) {
+          console.log(item.Title)
+          listFilms.innerHTML += `<li><span>${item.Title} (${item.Year})</span></li>`;
+        }
+      });
     }
     else {
-
+      console.log('No hay datos');
     }
   }
 }

@@ -12,8 +12,43 @@ body {
   background-color: $dark-grey;
 }
 
+.search {
+    position: relative;
+}
+
 .search-input {
     width: 400px;
+}
+
+.films-list-select {
+    left: 0;
+    top: 30px;
+    position: absolute;
+    border: 1px solid red;
+    width: 100%;
+    transition: height .5s;
+    height: 100px;
+    background-color: #f5f5f5;
+}
+
+.films-list {
+  padding: 0;
+  margin: 0;
+  
+  li {
+    list-style: none;
+    display: flex;
+    padding: 16px;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #bdbdbd;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
+    &:hover {
+      background-color: #e0f7fa;
+    }
+  }
 }
 
 .btn-outline-success {
