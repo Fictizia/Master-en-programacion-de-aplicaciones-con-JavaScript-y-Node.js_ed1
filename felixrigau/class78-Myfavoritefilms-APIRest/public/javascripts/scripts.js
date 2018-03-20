@@ -24,10 +24,11 @@ APP.behavior = {
 
 APP.ui = {
   fillSelectFilm: (data) => {
+
     if (data) {
       if (Array.isArray(data.Search)) {
         data.Search.forEach((item) => {
-          if (item.Poster.indexOf('amazon') !== -1) {
+          if (item.Poster && item.Poster.indexOf('amazon') !== -1) {
 
           }
           else {

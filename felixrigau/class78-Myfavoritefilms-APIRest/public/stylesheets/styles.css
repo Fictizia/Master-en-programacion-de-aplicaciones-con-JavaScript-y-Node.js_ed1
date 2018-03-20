@@ -6,8 +6,8 @@ a.logo.navbar-brand {
 body {
   background-color: #616161; }
 
-.search {
-  display: flex; }
+.search-input {
+  width: 400px; }
 
 .btn-outline-success {
   color: #00bfa5;
