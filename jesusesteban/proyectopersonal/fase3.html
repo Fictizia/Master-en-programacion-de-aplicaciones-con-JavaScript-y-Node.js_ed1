@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proyecto personal</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/carto.css">-->
+</head>
+<body>
+<div>
+	<div>
+			<div>
+
+				<!-- MAPA -->
+				<div class="box-map ">
+				    <div id="map" style="width: 100%;height: 100vh;">
+						<!--<iframe width="100%" height="520" frameborder="0" src="https://jesusesteban.carto.com/viz/fd0e0301-6727-4ac3-8672-0dfee7ed2deb/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>-->
+				    </div>
+				</div>
+				<!-- end MAPA -->
+				
+				<!-- Selection box -->
+				  <div class="main-container">
+					<div class="box-logo"></div>
+					<div class="login">
+						<ul>
+							<li><a href="#" id="login">Login</a></li>
+							<li><a href="#" id="register">Registro</a></li>
+						</ul>
+					</div>					
+				    <div class="box-left">
+						<ul class="nav nav-tabs">
+							<li class="active"><a  href="#1" data-toggle="tab">Races</a></li>
+							<li><a href="#2" data-toggle="tab">Drivers</a></li>
+							<li><a href="#3" data-toggle="tab">Teams</a>
+							</li>
+						</ul>
+						<div class="tab-content ">
+							<div class="tab-pane active" id="1">
+								<div class="box-data">
+
+									<select id="selectSeason">
+										<option value="">Year</option>
+									</select>
+									
+									<div style="margin-top: 20px;">
+										<a href="#" id="start-map">Start</a>	
+									</div>
+									
+									
+									<select id="selectCircuit" onchange="recoveryId(this)" style="display: none;">
+										<option value="">Ciruit selection</option>
+									</select>
+
+									
+									<ul class="list-data" id="list-data">
+										<!--<li>
+											<span>Race name:</span>
+											<span id="raceName">"British Grand Prix"</span>
+										</li>-->
+										<li>
+											<span>Circuit name:</span>
+											<span id="circuitName">Silverstone Circuit</span>
+										</li>
+										<li>
+											<span>Wikipedia:</span>
+											<a href="http://en.wikipedia.org/wiki/1950_British_Grand_Prix" id="linkUrl" target="_blank">Link</a>
+										</li>
+										<li>
+											<span>Locality:</span>
+											<span id="locality">Silverstone</span>
+										</li>
+										<li>
+											<span>Country:</span>
+											<span id="country">UK</span>
+										</li>
+									</ul>
+									
+									<!-- <ul class="list-results" id="list-results">
+										<li>
+											<h3>Pole position</h3>
+											<span>Gisueppe Farina</span>
+										</li>
+										<li>
+											<h3>Fastest lap</h3>
+											<span>Gisueppe Farina</span>
+										</li>
+										<li>
+											<h3>Podium</h3>
+											<span>Gisueppe Farina</span>
+											<span>Luigi Faglioli</span>
+											<span>Reg Parnell</span>
+										</li>
+									</ul> -->
+								</div>
+								
+							</div>
+							<div class="tab-pane" id="2">
+								<h3>Aquí irán los pilotos</h3>
+							</div>
+							<div class="tab-pane" id="3">
+								<h3>Aquí irán las escuderias</h3>
+							</div>
+						</div>
+
+
+
+				
+				    </div>
+				  </div>
+				<!-- end Selection box -->
+			</div>
+
+	</div>
+</div>
+
+	<!-- MAP -->	
+	
+	<!-- <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>-->	
+	<script src="https://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+	<!--<script src="js/carto.js"></script>-->	
+	<script src="js/map.js"></script>
+
+
+	<!-- JQUERY -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<!-- MAIN -->
+	<script src="js/main.js"></script>
+
+	<!-- AJAX -->
+	<script src="js/ajax.js"></script>
+
+	<!-- SEASON -->
+	<script src="js/season.js"></script>
+
+
+
+	<!-- FIREBASE -->
+	<script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+
+	<script src="js/firebase.js"></script>
+
+
+</body>
+</html>
+
+
