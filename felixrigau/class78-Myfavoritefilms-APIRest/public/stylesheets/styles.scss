@@ -21,34 +21,58 @@ body {
 }
 
 .films-list-select {
-    left: 0;
-    top: 30px;
-    position: absolute;
-    border: 1px solid red;
-    width: 100%;
-    transition: height .5s;
-    height: 100px;
-    background-color: #f5f5f5;
+  left: 0;
+  top: 30px;
+  position: absolute;
+  border-bottom: 4px solid #00bfa5;
+  width: 100%;
+  transition: height .5s;
+  background-color: #fdfcfc;
+  height: 0px;
+  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .films-list {
-  padding: 0;
   margin: 0;
+  padding: 10px;
+  background-color: white;
+}
+
+.films-list__item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  background-color: #fdfdfd;
+  box-shadow: 1px 1px 1px #e6e6e6;
+  border-right: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 10px;
   
-  li {
-    list-style: none;
-    display: flex;
-    padding: 16px;
-    align-items: center;
-    background-color: #f5f5f5;
-    border-bottom: 1px solid #bdbdbd;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    
-    &:hover {
-      background-color: #e0f7fa;
-    }
+  &:hover {
+    border-right: 4px solid #00bfa5;
   }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.films-list__item-mask {
+  position: absolute;
+  width: 95%;
+  background-color: transparent;
+  height: 70px;
+  z-index: 300;
+}
+
+.films-list__item-image {
+  height: 70px;
+}
+
+.films-list__item-title {
+  margin-left: 10px;
 }
 
 .btn-outline-success {
@@ -57,5 +81,5 @@ body {
 }
   
 .container {
-  margin-top: 100px;
+  margin-top: 70px;
 }
