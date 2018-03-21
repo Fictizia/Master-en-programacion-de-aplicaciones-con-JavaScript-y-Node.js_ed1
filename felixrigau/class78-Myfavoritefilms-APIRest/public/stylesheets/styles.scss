@@ -1,9 +1,9 @@
 //Font variables
 $dark-grey: #616161;
-$red: #b71c1c;
+$blue: #00bfa5;
 
 a.logo.navbar-brand {
-  color: $red;
+  color: $blue;
   font-weight: bold;
   font-size: 38px;
 }
@@ -13,9 +13,73 @@ body {
 }
 
 .search {
-    display: flex;
+    position: relative;
+}
+
+.search-input {
+    width: 400px;
+}
+
+.films-list-select {
+  left: 0;
+  top: 30px;
+  position: absolute;
+  border-bottom: 4px solid #00bfa5;
+  width: 100%;
+  transition: height .5s;
+  background-color: #fdfcfc;
+  height: 0px;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.films-list {
+  margin: 0;
+  padding: 10px;
+  background-color: white;
+}
+
+.films-list__item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  background-color: #fdfdfd;
+  box-shadow: 1px 1px 1px #e6e6e6;
+  border-right: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 10px;
+  
+  &:hover {
+    border-right: 4px solid #00bfa5;
+  }
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.films-list__item-mask {
+  position: absolute;
+  width: 95%;
+  background-color: transparent;
+  height: 70px;
+  z-index: 300;
+}
+
+.films-list__item-image {
+  height: 70px;
+}
+
+.films-list__item-title {
+  margin-left: 10px;
+}
+
+.btn-outline-success {
+    color: $blue;
+    border-color: $blue;
 }
   
 .container {
-  margin-top: 100px;
+  margin-top: 70px;
 }
