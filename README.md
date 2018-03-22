@@ -141,6 +141,10 @@ Fecha | Teoría | Recursos | Contenido
 14/03/2018 | [Clase 79](teoria/dia79.md) | [Clase 79](recursos/dia79.md) | Firebase II
 15/03/2018 | Clase 80 | Clase 80 | Prácticas: Memezinga PinHead version 
 16/03/2018 | [Clase 81](teoria/dia81.md) | Clase 80 | [#OpenSourceFriday](https://opensourcefriday.com) e Invitados sorpresa: [Lilxelo](https://github.com/lilxelo) y [Bifuer](https://github.com/Bifuer), creadores de [Pillarsjs](https://github.com/pillarsjs)
+19/03/2018 | Clase 82 | Clase 82 | Prácticas: Memezinga PinHead version 
+
+
+
 
 
 Temario
