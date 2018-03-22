@@ -143,7 +143,7 @@ Fecha | Teoría | Recursos | Contenido
 16/03/2018 | [Clase 81](teoria/dia81.md) | Clase 80 | [#OpenSourceFriday](https://opensourcefriday.com) e Invitados sorpresa: [Lilxelo](https://github.com/lilxelo) y [Bifuer](https://github.com/Bifuer), creadores de [Pillarsjs](https://github.com/pillarsjs)
 19/03/2018 | Clase 82 | Clase 82 | Prácticas: Memezinga PinHead version 
 20/03/2018 | Clase 83 | Clase 83 | Prácticas: Memezinga PinHead version 
-
+21/03/2018 | Clase 84 | Clase 84 | Prácticas: Memezinga PinHead version 
 
 
 
