@@ -64,4 +64,49 @@ body {
 .container {
   margin-top: 70px; }
 
+.notification-wrapper {
+  width: 400px;
+  height: 100px;
+  position: fixed;
+  z-index: 9999;
+  top: 85px;
+  right: 15px;
+  overflow-x: hidden; }
+
+.notification {
+  padding: 15px;
+  background-color: #fafafa;
+  border-left: 5px solid;
+  color: #37474f;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 16px;
+  position: relative;
+  transition: all 0.5s;
+  opacity: 0;
+  right: -400px; }
+  .notification p {
+    margin: 0;
+    padding: 0; }
+
+.notification--success {
+  background-color: #c5e1a5;
+  color: #33691e; }
+
+.notification--error {
+  background-color: #ffcdd2;
+  color: #b71c1c; }
+
+.notification--info {
+  background-color: #ffe082;
+  color: #37474f;
+  border-left: 5px solid #ffa000; }
+
+.notification--in {
+  opacity: 1;
+  right: 0; }
+
+.notification--out {
+  opacity: 0; }
+
 /*# sourceMappingURL=styles.css.map */

@@ -32,7 +32,7 @@ APP.behavior = {
       if (e.target.hasAttribute('data-film')) {
         let film = e.target.getAttribute('data-film');
         film = JSON.parse(e.target.getAttribute('data-film'));
-        APP.tools.makeRequest('GET', `https://${document.domain}/films/add?film=${JSON.stringify(film)}`, true, APP.ui.test);
+        APP.tools.makeRequest('GET', `https://${document.domain}/api/v1/films/add?film=${JSON.stringify(film)}`, true, APP.ui.test);
       }
     });
   }
@@ -59,6 +59,25 @@ APP.ui = {
     else {
       console.log('No hay datos');
     }
+  },
+
+  triggerNotification: (type, text, time) => {
+    var notifications = document.querySelector('.notification-wrapper');
+    notifications.innerHTML = `<div class="notification notification--${type}">
+            <p>${text}</p>
+        </div>`;
+
+    window.setTimeout(function() {
+      notifications.childNodes[0].classList.add('notification--in');
+    }, 500, notifications);
+
+    window.setTimeout(function() {
+      notifications.childNodes[0].classList.add('notification--out');
+    }, time, notifications);
+
+    window.setTimeout(function() {
+      notifications.innerHTML = '';
+    }, time + 500, notifications);
   },
 
   test: function() {
