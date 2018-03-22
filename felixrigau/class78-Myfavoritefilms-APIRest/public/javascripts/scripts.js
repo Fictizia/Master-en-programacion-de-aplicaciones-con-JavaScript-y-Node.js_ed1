@@ -121,6 +121,6 @@ APP.start();
 //TODO
 /*
 [x] Traerme los film de la base de datos por una consulta a la API. EndPoint: api/v1/films
-[ ] Habilitar CORS
+[x] Habilitar CORS
 
 */
