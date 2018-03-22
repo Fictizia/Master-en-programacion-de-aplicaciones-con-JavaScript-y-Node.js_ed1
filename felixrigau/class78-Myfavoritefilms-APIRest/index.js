@@ -2,23 +2,13 @@ const express = require("express");
 const request = require("request");
 const path = require("path");
 const firebase = require("firebase");
+const helmet = require("helmet");
 const app = express();
 
-//Firebase 
+const filmController = require("./controllers/filmController.js");
+const filmModel = require("./models/filmModel.js");
 
-var config = {
-    apiKey: "AIzaSyCuyhD-WepVZyPb5OwmEAnarSn5MvD3Xvc",
-    authDomain: "myfilms-6b0bc.firebaseapp.com",
-    databaseURL: "https://myfilms-6b0bc.firebaseio.com",
-    projectId: "myfilms-6b0bc",
-    storageBucket: "myfilms-6b0bc.appspot.com",
-    messagingSenderId: "645761269047"
-};
-firebase.initializeApp(config);
-
-//Firebase
-
-const filmsManagement = require("./controllers/films.js");
+app.use(helmet());
 
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -49,5 +39,6 @@ app.get('/films', (req, res) => {
     console.log('films', req.films)
     res.render('films', { title: "Fav Films | Mis filmes", films: req.films })
 });
+
 
 app.listen(process.env.PORT);

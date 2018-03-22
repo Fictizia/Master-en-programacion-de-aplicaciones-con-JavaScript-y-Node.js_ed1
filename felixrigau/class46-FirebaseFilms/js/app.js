@@ -11,99 +11,104 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
-    
+
 var APP = {
-    urlApi:'http://www.omdbapi.com/?apikey=b426c167&t=',
-    
-    init:function () {
+    urlApi: 'http://www.omdbapi.com/?apikey=b426c167&t=',
+
+    init: function() {
         APP.behavior.search();
         APP.behavior.viewAndDelete();
         APP.db.getAllFilm();
     },
-    
-    db:{
-        getAllFilm:function () {
-            database.ref('/films').on('value',function (snapshot) {
+
+    db: {
+        getAllFilm: function() {
+            database.ref('/films').on('value', function(snapshot) {
                 APP.view.updateFilmList(snapshot.val())
                 if (!snapshot.val()) {
                     console.log('No hay películas en la base de datos.')
                 }
             })
         },
-        
-        saveFilm:function (film) {
+
+        saveFilm: function(film) {
             if (film.Title) {
                 var exist = APP.db.filmExist(film.imdbID);
-                if(!exist){
-                    database.ref('/films/'+film.imdbID).set(film);
+                if (!exist) {
+                    database.ref('/films/' + film.imdbID).set(film);
                     document.querySelector('.search').value = '';
-                }else{
+                }
+                else {
                     console.log('La película ya está registrada en la base de datos.')
                 }
-                
-            } else {
+
+            }
+            else {
                 console.log('La película no existe o no escribió el nombre correctamente.');
             }
         },
-        
-        filmExist:function (id) {
+
+        filmExist: function(id) {
             var exist;
-            database.ref('/films').child(id).once('value', function (snapshot) {
+            database.ref('/films').child(id).once('value', function(snapshot) {
                 if (snapshot.val()) {
                     exist = true;
-                } else {
+                }
+                else {
                     exist = false;
                 }
             })
             return exist;
         },
-        
-        viewFilm:function (id) {
-            database.ref('/films').child(id).once('value', function (snapshot) {
+
+        viewFilm: function(id) {
+            database.ref('/films').child(id).once('value', function(snapshot) {
                 if (snapshot.val()) {
                     APP.view.updateDetailsFilm(snapshot.val())
                 }
             })
         },
-        
-        deleteFilm:function (id) {
+
+        deleteFilm: function(id) {
             database.ref('/films').child(id).remove();
         }
     },
-    
-    behavior:{
-        search:function () {
+
+    behavior: {
+        search: function() {
             var searchInput = document.querySelector('.search');
-            searchInput.addEventListener('keyup',function (e) {
-                if(e.keyCode === 13){
+            searchInput.addEventListener('keyup', function(e) {
+                if (e.keyCode === 13) {
                     if (e.target.value != "" && e.target.value != null) {
-                        APP.tools.makeRequest('GET', APP.urlApi+e.target.value, true, APP.db.saveFilm);
-                    } else {
+                        APP.tools.makeRequest('GET', APP.urlApi + e.target.value, true, APP.db.saveFilm);
+                    }
+                    else {
                         console.log('Debes escribir el nombre de una película.')
                     }
                 }
             })
         },
-        
-        viewAndDelete:function () {
+
+        viewAndDelete: function() {
             var filmsUL = document.querySelector('.film-list');
-            filmsUL.addEventListener('click',function (e) {
-                if(e.target.nodeName === 'I'){
-                   if (e.target.parentNode.getAttribute('data-type') === 'view') {
-                       APP.db.viewFilm(e.target.parentNode.getAttribute('data-id-film'));
-                   } else {
-                       APP.db.deleteFilm(e.target.parentNode.getAttribute('data-id-film'));
-                   } 
+            filmsUL.addEventListener('click', function(e) {
+                if (e.target.nodeName === 'I') {
+                    if (e.target.parentNode.getAttribute('data-type') === 'view') {
+                        APP.db.viewFilm(e.target.parentNode.getAttribute('data-id-film'));
+                    }
+                    else {
+                        APP.db.deleteFilm(e.target.parentNode.getAttribute('data-id-film'));
+                    }
                 }
             })
         }
     },
-    
-    view:{
-        updateFilmList:function (films) {
+
+    view: {
+        updateFilmList: function(films) {
             var filmsUL = document.querySelector('.film-list');
             filmsUL.innerHTML = '';
-            for(var key in films){
+            for (var key in films) {
                 filmsUL.innerHTML += `
                     <li class="film">
                         <span class="title">${films[key].Title}</span>
@@ -117,8 +122,8 @@ var APP = {
                 `;
             }
         },
-        
-        updateDetailsFilm:function (film) {
+
+        updateDetailsFilm: function(film) {
             var detailsContainer = document.querySelector('.details-container');
             detailsContainer.innerHTML = `
                 <div class="details">
@@ -129,21 +134,22 @@ var APP = {
                 </div>
             `;
         }
-        
+
     },
-    
-    tools:{
-        makeRequest: function (httpMethod, url, asynchronous, callback) {
+
+    tools: {
+        makeRequest: function(httpMethod, url, asynchronous, callback) {
             var request = new XMLHttpRequest();
-            request.open(httpMethod,url, asynchronous);
-            request.onreadystatechange = function () {
-            if (request.readyState === 4 && request.status === 200 && request.responseText ) {
-                var json = JSON.parse(request.responseText);
-                callback(json);
-                return true;
-            }else{
-                return false;
-            }
+            request.open(httpMethod, url, asynchronous);
+            request.onreadystatechange = function() {
+                if (request.readyState === 4 && request.status === 200 && request.responseText) {
+                    var json = JSON.parse(request.responseText);
+                    callback(json);
+                    return true;
+                }
+                else {
+                    return false;
+                }
             };
             request.send();
         },
@@ -152,4 +158,4 @@ var APP = {
 
 APP.init();
 
-//http://www.omdbapi.com/?apikey=b426c167&t=terminator
+//http://www.omdbapi.com/?apikey=b426c167&s=terminator
