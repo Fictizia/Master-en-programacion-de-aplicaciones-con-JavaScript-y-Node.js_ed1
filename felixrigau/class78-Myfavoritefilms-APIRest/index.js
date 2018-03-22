@@ -7,8 +7,11 @@ const app = express();
 
 const filmController = require("./controllers/filmController.js");
 const filmModel = require("./models/filmModel.js");
+const api = require("./routers/filmsApi.js")
 
 app.use(helmet());
+
+app.use('/api/v1', api);
 
 app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));

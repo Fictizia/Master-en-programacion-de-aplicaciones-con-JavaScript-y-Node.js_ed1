@@ -101,7 +101,6 @@ APP.start();
 
 //TODO
 /*
-[ ] Probar metodo para añadir film. endpoint: api/v1/add/params1/value1/params2/value2/...
 [ ] Traerme los film de la base de datos por una consulta a la API. EndPoint: api/v1/films
 
 */
