@@ -39,7 +39,6 @@ app.get('/getDataApi/:filmName', (req, res) => {
 });
 
 app.get('/films', (req, res) => {
-    console.log('films', req.films)
     res.render('films', { title: "Fav Films | Mis filmes", films: req.films })
 });
 

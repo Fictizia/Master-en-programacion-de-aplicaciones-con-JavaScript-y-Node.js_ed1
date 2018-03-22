@@ -16,7 +16,7 @@ APP.behavior = {
           APP.tools.makeRequest('GET', `https://${document.domain}/getDataAPi/${filmName}`, true, APP.ui.fillSelectFilm);
         }
         else {
-          console.log('Debes escribir el nombre de una película.')
+          APP.ui.triggerNotification('info', 'Debes escribir el nombre de una película.', 3000)
         }
       }
       else {
@@ -46,7 +46,6 @@ APP.ui = {
     if (data.Response !== "False") {
       data.Search.forEach((item) => {
         if (item.Poster && item.Poster.indexOf('amazon') !== -1) {
-          console.log(item.Title)
           listFilms.innerHTML += `<li class="films-list__item">
             <span><img class="films-list__item-image" src='${item.Poster}'' /></span>
             <span class="films-list__item-title">${item.Title} (${item.Year})</span>
@@ -57,7 +56,7 @@ APP.ui = {
       selectFilmSection.style.height = '332px';
     }
     else {
-      console.log('No hay datos');
+      APP.ui.triggerNotification('info', 'No se han encontrado películas con ese título.', 3000)
     }
   },
 
@@ -122,5 +121,8 @@ APP.start();
 /*
 [x] Traerme los film de la base de datos por una consulta a la API. EndPoint: api/v1/films
 [x] Habilitar CORS
+[ ] Maquetar listado de películas favoritas del usuario
+[ ] Guardar imágenes de las películas en local
+[ ] 
 
 */

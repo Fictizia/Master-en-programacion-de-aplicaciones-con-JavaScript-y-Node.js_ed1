@@ -14,7 +14,6 @@ api.get('/films', enableCORS, (req, res) => {
   // let films = filmModel.getFilms() || { response: 'No hay datos' };
   let films = {};
   filmModel.getFilms().then((films) => {
-    console.log('Films:', films);
     res.setHeader('Content-Type', 'application/json');
     res.send(JSON.stringify(films));
   });
