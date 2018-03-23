@@ -4,4 +4,17 @@ block title
   title #{title}
 block content
   h1 MIS FILMES
-  h2 #{films}
+  .cards-list
+    .cards-list__container
+      each val in [1, 2, 3, 4, 5, 6, 7, 8]
+        .cards-list__item
+          .cards-list__content
+            img(src='images/matrix.jpg', class='cards-list__image')
+            .cards-list__datas
+              .title La Matrix
+              .year 2009
+          .cards-list__actions
+           i.far.fa-trash-alt
+           i.far.fa-edit
+      
+  

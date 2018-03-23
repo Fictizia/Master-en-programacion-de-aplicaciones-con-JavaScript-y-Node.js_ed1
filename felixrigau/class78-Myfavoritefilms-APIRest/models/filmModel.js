@@ -14,15 +14,18 @@ firebase.initializeApp(config);
 const database = firebase.database();
 
 
-
-exports.save = (film) => {
-  database.ref('/films/' + film.imdbID).set(film);
-};
-
-exports.getFilms = () => {
+exports.all = () => {
   return new Promise((resolve, reject) => {
     database.ref('/films').once('value', function(snapshot) {
       resolve(snapshot.val());
     })
   });
+};
+
+exports.save = (film) => {
+  database.ref('/films/' + film.imdbID).set(film);
+};
+
+exports.delete = (id) => {
+  database.ref('/films').child(id).remove();
 };

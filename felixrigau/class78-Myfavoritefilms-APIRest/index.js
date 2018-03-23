@@ -20,6 +20,10 @@ app.get('/', (req, res) => {
     res.render('index', { title: "Fav Films | Gestiona tus filmes favoritos" })
 });
 
+app.get('/test', (req, res) => {
+    request.delete('https://fictizia-master-js-felixrigau.c9users.io/api/v1/films/tt0080684')
+});
+
 app.get('/getDataApi/:filmName', (req, res) => {
     if (req.params.filmName) {
         request('http://www.omdbapi.com/?apikey=b426c167&s=' + req.params.filmName, function(error, response, body) {

@@ -64,6 +64,49 @@ body {
 .container {
   margin-top: 70px; }
 
+.cards-list__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.cards-list__item {
+  flex: 1 1 20%;
+  margin: 16px;
+  max-width: 245px; }
+
+.cards-list__content {
+  position: relative; }
+
+.cards-list__image {
+  width: 100%; }
+
+.cards-list__datas {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(24, 30, 76, 0.7);
+  width: 100%;
+  color: #FFFFFF;
+  padding: 10px; }
+
+.title {
+  font-size: 20px; }
+
+.year {
+  font-size: 12px;
+  border-left: 3px solid #FFF;
+  padding-left: 5px; }
+
+.cards-list__actions {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-around;
+  background-color: #00bfa5;
+  font-size: 20px;
+  color: #FFFFFF; }
+  .cards-list__actions i {
+    cursor: pointer; }
+
 .notification-wrapper {
   width: 400px;
   height: 100px;

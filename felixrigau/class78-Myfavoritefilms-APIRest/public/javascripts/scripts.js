@@ -13,7 +13,7 @@ APP.behavior = {
       if (e.keyCode === 13) {
         if (e.target.value != "" && e.target.value != null) {
           let filmName = e.target.value;
-          APP.tools.makeRequest('GET', `https://${document.domain}/getDataAPi/${filmName}`, true, APP.ui.fillSelectFilm);
+          APP.tools.ajax('GET', `https://${document.domain}/getDataAPi/${filmName}`, true, APP.ui.fillSelectFilm);
         }
         else {
           APP.ui.triggerNotification('info', 'Debes escribir el nombre de una película.', 3000)
@@ -32,7 +32,7 @@ APP.behavior = {
       if (e.target.hasAttribute('data-film')) {
         let film = e.target.getAttribute('data-film');
         film = JSON.parse(e.target.getAttribute('data-film'));
-        APP.tools.makeRequest('GET', `https://${document.domain}/api/v1/films/add?film=${JSON.stringify(film)}`, true, APP.ui.test);
+        APP.tools.ajax('POST', `https://${document.domain}/api/v1/films?film=${JSON.stringify(film)}`, true, APP.ui.test);
       }
     });
   }
@@ -85,9 +85,10 @@ APP.ui = {
 }
 
 APP.tools = {
-  makeRequest: (httpMethod, url, asynchronous, callback) => {
+  ajax: (httpMethod, url, asynchronous, callback) => {
     var request = new XMLHttpRequest();
     request.open(httpMethod, url, asynchronous);
+    request.setRequestHeader('Access-Control-Allow-Origin', '*');
     request.onreadystatechange = function() {
       if (request.readyState === 4 && request.status === 200 && request.responseText) {
         var json = JSON.parse(request.responseText);
@@ -122,7 +123,16 @@ APP.start();
 [x] Traerme los film de la base de datos por una consulta a la API. EndPoint: api/v1/films
 [x] Habilitar CORS
 [ ] Maquetar listado de películas favoritas del usuario
+[ ] Insertar peliculas una pez guardada
+[ ] Editar un filme a través de la API
+[ ] Editar un filme desde el cliente
+[ ] Cambiar visualizacion del componente de notificaciones
 [ ] Guardar imágenes de las películas en local
-[ ] 
+[ ] Eliminar un filme a través de la API (BUG!)
 
+*/
+
+//Dudas
+/*
+[ ] Cual es el estandar mas utilizado para crear los endpoint de una API
 */
