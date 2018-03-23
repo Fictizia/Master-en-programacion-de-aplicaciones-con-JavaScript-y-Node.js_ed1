@@ -3,18 +3,18 @@ extends ./layout.pug
 block title
   title #{title}
 block content
-  h1 MIS FILMES
+  h1.main-title MIS FILMES
   .cards-list
     .cards-list__container
-      each val in [1, 2, 3, 4, 5, 6, 7, 8]
+      each film in films
         .cards-list__item
           .cards-list__content
-            img(src='images/matrix.jpg', class='cards-list__image')
+            img(src=`${film.Poster}`, class='cards-list__image')
             .cards-list__datas
-              .title La Matrix
-              .year 2009
+              .title #{film.Title}
+              .year #{film.Year}
           .cards-list__actions
-           i.far.fa-trash-alt
-           i.far.fa-edit
+            i.far.fa-trash-alt
+            i.far.fa-edit
       
   
