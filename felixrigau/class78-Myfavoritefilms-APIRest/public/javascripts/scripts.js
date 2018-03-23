@@ -122,8 +122,9 @@ APP.start();
 /*
 [x] Traerme los film de la base de datos por una consulta a la API. EndPoint: api/v1/films
 [x] Habilitar CORS
-[ ] Maquetar listado de películas favoritas del usuario
-[ ] Insertar peliculas una pez guardada
+[x] Maquetar listado de películas favoritas del usuario
+[x] Mostrar el listado de películas favoritas del usuario
+[ ] Insertar peliculas una vez guardada
 [ ] Editar un filme a través de la API
 [ ] Editar un filme desde el cliente
 [ ] Cambiar visualizacion del componente de notificaciones

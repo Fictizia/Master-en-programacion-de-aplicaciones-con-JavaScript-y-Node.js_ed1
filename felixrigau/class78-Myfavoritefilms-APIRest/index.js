@@ -44,8 +44,8 @@ app.get('/getDataApi/:filmName', (req, res) => {
 
 app.get('/films', (req, res) => {
     filmModel.all().then((allFilms) => {
-        console.log('Las peliculas', allFilms)
-        res.render('films', { title: "Fav Films | Mis filmes", films: allFilms })
+        allFilms = allFilms !== null ? allFilms : {};
+        res.render('films', { title: "Fav Films | Mis filmes", films: allFilms });
     });
 });
 

@@ -13,8 +13,10 @@ block content
             .cards-list__datas
               .title #{film.Title}
               .year #{film.Year}
-          .cards-list__actions
+          .cards-list__actions(data-film-id=`${film.imdbID}`)
             i.far.fa-trash-alt
             i.far.fa-edit
+      else
+        h3.info Aun no tienes pelis favoritas... Que esperas? :)
       
   
