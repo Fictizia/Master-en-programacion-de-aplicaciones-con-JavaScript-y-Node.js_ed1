@@ -32,7 +32,7 @@ APP.behavior = {
       if (e.target.hasAttribute('data-film')) {
         let film = e.target.getAttribute('data-film');
         film = JSON.parse(e.target.getAttribute('data-film'));
-        APP.tools.ajax('POST', `https://${document.domain}/api/v1/films?film=${JSON.stringify(film)}`, true, APP.ui.test);
+        APP.tools.ajax('POST', `https://${document.domain}/api/v1/films?film=${JSON.stringify(film)}`, true, APP.ui.responseAddFilmApi);
       }
     });
   }
@@ -79,8 +79,33 @@ APP.ui = {
     }, time + 500, notifications);
   },
 
-  test: function() {
+  responseAddFilmApi: function(datas) {
+    if (typeof(datas) === 'object' && datas.Title) {
+      APP.ui.addFilm(datas);
+      APP.ui.triggerNotification('success', 'El filme se ha insertado satisfactoriamente.', 3000);
+    }
+    else {
+      APP.ui.triggerNotification('error', 'Upps, ha ocurrido un error al intentar insertar el filme en la base de datos.', 3000);
+    }
+  },
 
+  addFilm: (film) => {
+    let filmListContainer = document.querySelector('.cards-list__container');
+    let filmTemplate = `
+    <div class="cards-list__item">
+      <div class="cards-list__content">
+        <img class="cards-list__image" src="${film.Poster}">
+        <div class="cards-list__datas">
+          <div class="title">${film.Title}</div>
+          <div class="year">${film.Year}</div>
+        </div>
+      </div>
+      <div class="cards-list__actions" data-film-id="${film.imdbID}">
+        <i class="far fa-trash-alt"></i>
+        <i class="far fa-edit"></i>
+      </div>
+    </div>`;
+    filmListContainer.innerHTML += filmTemplate;
   }
 }
 

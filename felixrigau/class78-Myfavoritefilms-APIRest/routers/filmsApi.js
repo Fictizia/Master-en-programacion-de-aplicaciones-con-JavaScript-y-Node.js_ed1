@@ -23,9 +23,9 @@ api.get('/films', enableCORS, (req, res) => {
 api.post('/films', enableCORS, (req, res) => {
   if (req.query.film) {
     let film = JSON.parse(req.query.film);
-    filmModel.save(film)
+    let data = filmModel.save(film);
     res.setHeader('Content-Type', 'application/json');
-    res.send(req.query.film)
+    res.send(data);
   }
 });
 
