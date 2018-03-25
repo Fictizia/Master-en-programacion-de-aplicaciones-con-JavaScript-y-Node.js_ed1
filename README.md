@@ -145,6 +145,7 @@ Fecha | Teoría | Recursos | Contenido
 20/03/2018 | Clase 83 | Clase 83 | Prácticas: Memezinga PinHead version 
 21/03/2018 | Clase 84 | Clase 84 | Prácticas: Memezinga PinHead version 
 22/03/2018 | Clase 85 | Clase 85 | Prácticas: Memezinga PinHead version 
+23/03/2018 | Clase 86 | Clase 86 | [#OpenSourceFriday](https://opensourcefriday.com)
 
 
 
