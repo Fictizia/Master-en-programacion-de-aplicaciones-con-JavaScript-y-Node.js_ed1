@@ -23,9 +23,12 @@ api.get('/films', enableCORS, (req, res) => {
 api.post('/films', enableCORS, (req, res) => {
   if (req.query.film) {
     let film = JSON.parse(req.query.film);
-    let data = filmModel.save(film);
-    res.setHeader('Content-Type', 'application/json');
-    res.send(data);
+    filmModel.save(film).then(() => {
+      res.setHeader('Content-Type', 'application/json');
+      res.send(film);
+    }, (error) => {
+      console.log('La promesa ha lanzado el siguiente error:', error)
+    });
   }
 });
 
@@ -39,11 +42,11 @@ api.put('/films/:id', enableCORS, (req, res) => {
 });
 
 api.delete('/films/:id', enableCORS, (req, res) => {
-  console.log('Llegue aki, con el id:', req.params.id)
   if (req.params.id) {
-    filmModel.delete(req.params.id)
-    res.setHeader('Content-Type', 'application/json');
-    res.send({ action: 'delete', actionStatus: true, message: 'The film has been removed successfully.' })
+    filmModel.delete(req.params.id).then(() => {
+      res.setHeader('Content-Type', 'application/json');
+      res.send({ action: 'delete', filmId: req.params.id, message: 'The film has been removed successfully.' })
+    });
   }
   else {
     res.send({ action: 'delete', actionStatus: false, message: 'You must pass an id by url' })
