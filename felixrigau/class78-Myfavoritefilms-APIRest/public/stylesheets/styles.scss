@@ -12,7 +12,11 @@ a.logo.navbar-brand {
 }
 
 body {
-  background-color: $dark-grey;
+  background-color: rgba(#2c3849, .95);
+}
+
+.bg-dark {
+  background-color: #2c3849!important;
 }
 
 .search {

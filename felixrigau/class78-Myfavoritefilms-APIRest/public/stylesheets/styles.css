@@ -4,7 +4,10 @@ a.logo.navbar-brand {
   font-size: 38px; }
 
 body {
-  background-color: #616161; }
+  background-color: rgba(44, 56, 73, 0.95); }
+
+.bg-dark {
+  background-color: #2c3849 !important; }
 
 .search {
   position: relative; }

@@ -7,15 +7,17 @@ block content
   .cards-list
     .cards-list__container
       each film in films
-        .cards-list__item
+        .cards-list__item(id=`${film.imdbID}`)
           .cards-list__content
             img(src=`${film.Poster}`, class='cards-list__image')
             .cards-list__datas
               .title #{film.Title}
               .year #{film.Year}
           .cards-list__actions(data-film-id=`${film.imdbID}`)
-            i.far.fa-trash-alt
-            i.far.fa-edit
+            span(data-film-id=`${film.imdbID}`, data-action='delete')
+              i.far.fa-trash-alt
+            span(data-film-id=`${film.imdbID}`, data-action='update')
+              i.far.fa-edit 
       else
         h3.info Eeeh! Aun no tienes pelis favoritas... Que esperas? :)
       

@@ -1,11 +1,10 @@
-let APP = {}
-
-APP.urlApi = 'http://www.omdbapi.com/?apikey=b426c167&s=';
+let APP = {};
 
 APP.start = () => {
   APP.behavior.search();
   APP.behavior.selectFilm();
-}
+  APP.behavior.deleteFilm();
+};
 
 APP.behavior = {
   search: () => {
@@ -33,6 +32,19 @@ APP.behavior = {
         let film = e.target.getAttribute('data-film');
         film = JSON.parse(e.target.getAttribute('data-film'));
         APP.tools.ajax('POST', `https://${document.domain}/api/v1/films?film=${JSON.stringify(film)}`, true, APP.ui.responseAddFilmApi);
+      }
+    });
+  },
+
+  deleteFilm: () => {
+    document.querySelector('.cards-list__container').addEventListener('click', (e) => {
+      if (e.target.parentNode.hasAttribute('data-action')) {
+        let action = e.target.parentNode.getAttribute('data-action');
+        let id = e.target.parentNode.getAttribute('data-film-id');
+        if (action === 'delete') {
+          APP.tools.ajax('DELETE', `https://${document.domain}/api/v1/films/${id}`, true, APP.ui.responseDeleteFilmApi);
+        }
+        else {}
       }
     });
   }
@@ -89,10 +101,20 @@ APP.ui = {
     }
   },
 
+  responseDeleteFilmApi: function(datas) {
+    if (typeof(datas) === 'object' && datas.filmId) {
+      APP.ui.deleteFilm(datas.filmId);
+      APP.ui.triggerNotification('success', 'El filme se ha eliminado satisfactoriamente.', 3000);
+    }
+    else {
+      APP.ui.triggerNotification('error', 'Upps, ha ocurrido un error al intentar eliminar el filme en la base de datos.', 3000);
+    }
+  },
+
   addFilm: (film) => {
     let filmListContainer = document.querySelector('.cards-list__container');
     let filmTemplate = `
-    <div class="cards-list__item">
+    <div id="${film.imdbID}" class="cards-list__item">
       <div class="cards-list__content">
         <img class="cards-list__image" src="${film.Poster}">
         <div class="cards-list__datas">
@@ -100,12 +122,26 @@ APP.ui = {
           <div class="year">${film.Year}</div>
         </div>
       </div>
-      <div class="cards-list__actions" data-film-id="${film.imdbID}">
-        <i class="far fa-trash-alt"></i>
-        <i class="far fa-edit"></i>
+      <div class="cards-list__actions">
+        <span data-action="delete" data-film-id="${film.imdbID}">
+          <i class="far fa-trash-alt"></i>
+        </span>
+        <span data-action="update" data-film-id="${film.imdbID}">
+          <i class="far fa-edit"></i>
+        </span>
       </div>
     </div>`;
-    filmListContainer.innerHTML += filmTemplate;
+    if (filmListContainer.querySelectorAll('.cards-list__item').length > 0) {
+      filmListContainer.innerHTML += filmTemplate;
+    }
+    else {
+      filmListContainer.innerHTML = filmTemplate;
+    }
+  },
+
+  deleteFilm: (id) => {
+    let film = document.getElementById(id);
+    film.remove();
   }
 }
 
@@ -113,7 +149,6 @@ APP.tools = {
   ajax: (httpMethod, url, asynchronous, callback) => {
     var request = new XMLHttpRequest();
     request.open(httpMethod, url, asynchronous);
-    request.setRequestHeader('Access-Control-Allow-Origin', '*');
     request.onreadystatechange = function() {
       if (request.readyState === 4 && request.status === 200 && request.responseText) {
         var json = JSON.parse(request.responseText);

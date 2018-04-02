@@ -23,11 +23,9 @@ exports.all = () => {
 };
 
 exports.save = (film) => {
-  database.ref('/films/' + film.imdbID).set(film).then((data) => {
-    return data;
-  });
+  return database.ref('/films/' + film.imdbID).set(film);
 };
 
 exports.delete = (id) => {
-  database.ref('/films').child(id).remove();
+  return database.ref('/films').child(id).remove();
 };
