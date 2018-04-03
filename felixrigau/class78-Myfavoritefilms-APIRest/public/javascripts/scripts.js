@@ -12,7 +12,7 @@ APP.behavior = {
       if (e.keyCode === 13) {
         if (e.target.value != "" && e.target.value != null) {
           let filmName = e.target.value;
-          APP.tools.ajax('GET', `https://${document.domain}/getDataAPi/${filmName}`, true, APP.ui.fillSelectFilm);
+          APP.tools.ajax('GET', `https://${document.domain}/getDataAPi/${filmName}`, false, APP.ui.fillSelectFilm);
         }
         else {
           APP.ui.triggerNotification('info', 'Debes escribir el nombre de una película.', 3000)
@@ -24,29 +24,41 @@ APP.behavior = {
         }
       }
     });
+
+    document.querySelector('.search-input').addEventListener('blur', (e) => {
+      document.querySelector('.films-list-select').style.height = '0px';
+    });
+
   },
 
   selectFilm: () => {
-    document.querySelector('.films-list-select').addEventListener('click', (e) => {
-      if (e.target.hasAttribute('data-film')) {
-        let film = e.target.getAttribute('data-film');
-        film = JSON.parse(e.target.getAttribute('data-film'));
-        APP.tools.ajax('POST', `https://${document.domain}/api/v1/films?film=${JSON.stringify(film)}`, true, APP.ui.responseAddFilmApi);
-      }
-    });
+    if (document.querySelector('.films-list-select')) {
+      document.querySelector('.films-list-select').addEventListener('click', (e) => {
+        if (e.target.hasAttribute('data-film')) {
+          let film = e.target.getAttribute('data-film');
+          var formData = new FormData();
+          formData.append('film', film)
+          APP.tools.ajax('POST', `https://${document.domain}/api/v1/films`, formData, APP.ui.responseAddFilmApi);
+        }
+      });
+    }
   },
 
   deleteFilm: () => {
-    document.querySelector('.cards-list__container').addEventListener('click', (e) => {
-      if (e.target.parentNode.hasAttribute('data-action')) {
-        let action = e.target.parentNode.getAttribute('data-action');
-        let id = e.target.parentNode.getAttribute('data-film-id');
-        if (action === 'delete') {
-          APP.tools.ajax('DELETE', `https://${document.domain}/api/v1/films/${id}`, true, APP.ui.responseDeleteFilmApi);
+    if (document.querySelector('.cards-list__container')) {
+      document.querySelector('.cards-list__container').addEventListener('click', (e) => {
+        if (e.target.parentNode.hasAttribute('data-action')) {
+          let action = e.target.parentNode.getAttribute('data-action');
+          let id = e.target.parentNode.getAttribute('data-film-id');
+          if (action === 'delete') {
+            APP.tools.ajax('DELETE', `https://${document.domain}/api/v1/films/${id}`, false, APP.ui.responseDeleteFilmApi);
+          }
+          else {
+            //Update action
+          }
         }
-        else {}
-      }
-    });
+      });
+    }
   }
 };
 
@@ -92,7 +104,10 @@ APP.ui = {
   },
 
   responseAddFilmApi: function(datas) {
-    if (typeof(datas) === 'object' && datas.Title) {
+    if (typeof(datas) === 'boolean' && datas === false) {
+      APP.ui.triggerNotification('info', 'Ya tienes este filme como favorito...', 3000);
+    }
+    else if (typeof(datas) === 'object' && datas.Title) {
       APP.ui.addFilm(datas);
       APP.ui.triggerNotification('success', 'El filme se ha insertado satisfactoriamente.', 3000);
     }
@@ -112,30 +127,36 @@ APP.ui = {
   },
 
   addFilm: (film) => {
-    let filmListContainer = document.querySelector('.cards-list__container');
-    let filmTemplate = `
-    <div id="${film.imdbID}" class="cards-list__item">
-      <div class="cards-list__content">
-        <img class="cards-list__image" src="${film.Poster}">
-        <div class="cards-list__datas">
-          <div class="title">${film.Title}</div>
-          <div class="year">${film.Year}</div>
+    if (document.querySelector('.cards-list__container')) {
+
+      let filmListContainer = document.querySelector('.cards-list__container');
+      let filmTemplate = `
+      <div id="${film.imdbID}" class="cards-list__item">
+        <div class="cards-list__content">
+          <img class="cards-list__image" src="${film.Poster}">
+          <div class="cards-list__datas">
+            <div class="title">${film.Title}</div>
+            <div class="year">${film.Year}</div>
+          </div>
         </div>
-      </div>
-      <div class="cards-list__actions">
-        <span data-action="delete" data-film-id="${film.imdbID}">
-          <i class="far fa-trash-alt"></i>
-        </span>
-        <span data-action="update" data-film-id="${film.imdbID}">
-          <i class="far fa-edit"></i>
-        </span>
-      </div>
-    </div>`;
-    if (filmListContainer.querySelectorAll('.cards-list__item').length > 0) {
-      filmListContainer.innerHTML += filmTemplate;
+        <div class="cards-list__actions">
+          <span data-action="delete" data-film-id="${film.imdbID}">
+            <i class="far fa-trash-alt"></i>
+          </span>
+          <span data-action="update" data-film-id="${film.imdbID}">
+            <i class="far fa-edit"></i>
+          </span>
+        </div>
+      </div>`;
+      if (filmListContainer.querySelectorAll('.cards-list__item').length > 0) {
+        filmListContainer.innerHTML += filmTemplate;
+      }
+      else {
+        filmListContainer.innerHTML = filmTemplate;
+      }
     }
     else {
-      filmListContainer.innerHTML = filmTemplate;
+      return false;
     }
   },
 
@@ -146,9 +167,9 @@ APP.ui = {
 }
 
 APP.tools = {
-  ajax: (httpMethod, url, asynchronous, callback) => {
+  ajax: (httpMethod, url, formData, callback) => {
     var request = new XMLHttpRequest();
-    request.open(httpMethod, url, asynchronous);
+    request.open(httpMethod, url, true);
     request.onreadystatechange = function() {
       if (request.readyState === 4 && request.status === 200 && request.responseText) {
         var json = JSON.parse(request.responseText);
@@ -159,7 +180,13 @@ APP.tools = {
         return false;
       }
     };
-    request.send();
+
+    if (formData) {
+      request.send(formData);
+    }
+    else {
+      request.send();
+    }
   },
 
   buildRestApiParameters: (object) => {
@@ -184,16 +211,17 @@ APP.start();
 [x] Habilitar CORS
 [x] Maquetar listado de películas favoritas del usuario
 [x] Mostrar el listado de películas favoritas del usuario
-[ ] Insertar peliculas una vez guardada
+[x] Insertar peliculas una vez guardada
+[x] Eliminar un filme a través de la API
+[x] Enviar datos en el cuerpo de la petición utilizando formDatas para insertar una película
+[x] Verificar si un filme ya existe en la base de datos
 [ ] Editar un filme a través de la API
 [ ] Editar un filme desde el cliente
 [ ] Cambiar visualizacion del componente de notificaciones
 [ ] Guardar imágenes de las películas en local
-[ ] Eliminar un filme a través de la API (BUG!)
-
 */
 
 //Dudas
 /*
-[ ] Cual es el estandar mas utilizado para crear los endpoint de una API
+[x] Cual es el estandar mas utilizado para crear los endpoint de una API
 */

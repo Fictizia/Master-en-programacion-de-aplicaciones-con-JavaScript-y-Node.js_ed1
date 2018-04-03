@@ -29,3 +29,16 @@ exports.save = (film) => {
 exports.delete = (id) => {
   return database.ref('/films').child(id).remove();
 };
+
+exports.exist = (id) => {
+  return new Promise((resolve, reject) => {
+    database.ref('/films').child(id).once('value', function(snapshot) {
+      if (snapshot.val()) {
+        resolve(true);
+      }
+      else {
+        resolve(false);
+      }
+    });
+  });
+}
