@@ -9,8 +9,6 @@
 
 ## Clase 88
 
-https://gofore.com/stop-using-bower/
-
 ### Bower
 
 ![Bower Logo](http://image.slidesharecdn.com/bower-phxjs-140515152011-phpapp02/95/bower-phoenix-javascript-meetup-1-638.jpg?cb=1400167728)
