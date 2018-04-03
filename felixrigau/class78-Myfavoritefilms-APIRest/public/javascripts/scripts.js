@@ -27,26 +27,30 @@ APP.behavior = {
   },
 
   selectFilm: () => {
-    document.querySelector('.films-list-select').addEventListener('click', (e) => {
-      if (e.target.hasAttribute('data-film')) {
-        let film = e.target.getAttribute('data-film');
-        film = JSON.parse(e.target.getAttribute('data-film'));
-        APP.tools.ajax('POST', `https://${document.domain}/api/v1/films?film=${JSON.stringify(film)}`, true, APP.ui.responseAddFilmApi);
-      }
-    });
+    if (document.querySelector('.films-list-select')) {
+      document.querySelector('.films-list-select').addEventListener('click', (e) => {
+        if (e.target.hasAttribute('data-film')) {
+          let film = e.target.getAttribute('data-film');
+          film = JSON.parse(e.target.getAttribute('data-film'));
+          APP.tools.ajax('POST', `https://${document.domain}/api/v1/films?film=${JSON.stringify(film)}`, true, APP.ui.responseAddFilmApi);
+        }
+      });
+    }
   },
 
   deleteFilm: () => {
-    document.querySelector('.cards-list__container').addEventListener('click', (e) => {
-      if (e.target.parentNode.hasAttribute('data-action')) {
-        let action = e.target.parentNode.getAttribute('data-action');
-        let id = e.target.parentNode.getAttribute('data-film-id');
-        if (action === 'delete') {
-          APP.tools.ajax('DELETE', `https://${document.domain}/api/v1/films/${id}`, true, APP.ui.responseDeleteFilmApi);
+    if (document.querySelector('.cards-list__container')) {
+      document.querySelector('.cards-list__container').addEventListener('click', (e) => {
+        if (e.target.parentNode.hasAttribute('data-action')) {
+          let action = e.target.parentNode.getAttribute('data-action');
+          let id = e.target.parentNode.getAttribute('data-film-id');
+          if (action === 'delete') {
+            APP.tools.ajax('DELETE', `https://${document.domain}/api/v1/films/${id}`, true, APP.ui.responseDeleteFilmApi);
+          }
+          else {}
         }
-        else {}
-      }
-    });
+      });
+    }
   }
 };
 
@@ -112,30 +116,36 @@ APP.ui = {
   },
 
   addFilm: (film) => {
-    let filmListContainer = document.querySelector('.cards-list__container');
-    let filmTemplate = `
-    <div id="${film.imdbID}" class="cards-list__item">
-      <div class="cards-list__content">
-        <img class="cards-list__image" src="${film.Poster}">
-        <div class="cards-list__datas">
-          <div class="title">${film.Title}</div>
-          <div class="year">${film.Year}</div>
+    if (document.querySelector('.cards-list__container')) {
+
+      let filmListContainer = document.querySelector('.cards-list__container');
+      let filmTemplate = `
+      <div id="${film.imdbID}" class="cards-list__item">
+        <div class="cards-list__content">
+          <img class="cards-list__image" src="${film.Poster}">
+          <div class="cards-list__datas">
+            <div class="title">${film.Title}</div>
+            <div class="year">${film.Year}</div>
+          </div>
         </div>
-      </div>
-      <div class="cards-list__actions">
-        <span data-action="delete" data-film-id="${film.imdbID}">
-          <i class="far fa-trash-alt"></i>
-        </span>
-        <span data-action="update" data-film-id="${film.imdbID}">
-          <i class="far fa-edit"></i>
-        </span>
-      </div>
-    </div>`;
-    if (filmListContainer.querySelectorAll('.cards-list__item').length > 0) {
-      filmListContainer.innerHTML += filmTemplate;
+        <div class="cards-list__actions">
+          <span data-action="delete" data-film-id="${film.imdbID}">
+            <i class="far fa-trash-alt"></i>
+          </span>
+          <span data-action="update" data-film-id="${film.imdbID}">
+            <i class="far fa-edit"></i>
+          </span>
+        </div>
+      </div>`;
+      if (filmListContainer.querySelectorAll('.cards-list__item').length > 0) {
+        filmListContainer.innerHTML += filmTemplate;
+      }
+      else {
+        filmListContainer.innerHTML = filmTemplate;
+      }
     }
     else {
-      filmListContainer.innerHTML = filmTemplate;
+      return false;
     }
   },
 
@@ -184,12 +194,12 @@ APP.start();
 [x] Habilitar CORS
 [x] Maquetar listado de películas favoritas del usuario
 [x] Mostrar el listado de películas favoritas del usuario
-[ ] Insertar peliculas una vez guardada
+[x] Insertar peliculas una vez guardada
+[x] Eliminar un filme a través de la API (BUG!)
 [ ] Editar un filme a través de la API
 [ ] Editar un filme desde el cliente
 [ ] Cambiar visualizacion del componente de notificaciones
 [ ] Guardar imágenes de las películas en local
-[ ] Eliminar un filme a través de la API (BUG!)
 
 */
 

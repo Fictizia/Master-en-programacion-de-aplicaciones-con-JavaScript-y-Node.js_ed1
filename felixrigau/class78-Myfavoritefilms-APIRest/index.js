@@ -5,9 +5,8 @@ const firebase = require("firebase");
 const helmet = require("helmet");
 const app = express();
 
-const filmController = require("./controllers/filmController.js");
 const filmModel = require("./models/filmModel.js");
-const api = require("./routers/filmsApi.js")
+const api = require("./routers/filmsApi.js");
 
 app.use(helmet());
 
@@ -17,7 +16,14 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-    res.render('index', { title: "Fav Films | Gestiona tus filmes favoritos" })
+    res.render('index', { title: "Fav Films | Gestiona tus filmes favoritos" });
+});
+
+app.get('/films', (req, res) => {
+    filmModel.all().then((allFilms) => {
+        allFilms = allFilms !== null ? allFilms : {};
+        res.render('films', { title: "Fav Films | Mis filmes", films: allFilms });
+    });
 });
 
 app.get('/getDataApi/:filmName', (req, res) => {
@@ -37,13 +43,5 @@ app.get('/getDataApi/:filmName', (req, res) => {
         console.log('No se encuentr el parametro: :filmName', req.params.filmName)
     }
 });
-
-app.get('/films', (req, res) => {
-    filmModel.all().then((allFilms) => {
-        allFilms = allFilms !== null ? allFilms : {};
-        res.render('films', { title: "Fav Films | Mis filmes", films: allFilms });
-    });
-});
-
 
 app.listen(process.env.PORT);

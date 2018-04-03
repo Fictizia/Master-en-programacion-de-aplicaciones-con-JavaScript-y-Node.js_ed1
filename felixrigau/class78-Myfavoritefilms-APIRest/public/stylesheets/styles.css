@@ -158,4 +158,13 @@ body {
 .notification--out {
   opacity: 0; }
 
+.main-bg {
+  width: 100%;
+  position: fixed;
+  top: 75px;
+  left: 0; }
+
+.info {
+  color: #ffc107; }
+
 /*# sourceMappingURL=styles.css.map */
