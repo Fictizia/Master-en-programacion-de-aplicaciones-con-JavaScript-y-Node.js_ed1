@@ -99,7 +99,10 @@ APP.ui = {
   },
 
   responseAddFilmApi: function(datas) {
-    if (typeof(datas) === 'object' && datas.Title) {
+    if (typeof(datas) === 'boolean' && datas === false) {
+      APP.ui.triggerNotification('info', 'Ya tienes este filme como favorito...', 3000);
+    }
+    else if (typeof(datas) === 'object' && datas.Title) {
       APP.ui.addFilm(datas);
       APP.ui.triggerNotification('success', 'El filme se ha insertado satisfactoriamente.', 3000);
     }
@@ -172,10 +175,8 @@ APP.tools = {
         return false;
       }
     };
+
     if (formData) {
-      for (var value of formData.values()) {
-        console.log(value);
-      }
       request.send(formData);
     }
     else {
@@ -206,15 +207,16 @@ APP.start();
 [x] Maquetar listado de películas favoritas del usuario
 [x] Mostrar el listado de películas favoritas del usuario
 [x] Insertar peliculas una vez guardada
-[x] Eliminar un filme a través de la API (BUG!)
+[x] Eliminar un filme a través de la API
+[x] Enviar datos en el cuerpo de la petición utilizando formDatas para insertar una película
+[ ] Verificar si un filme ya existe en la base de datos
 [ ] Editar un filme a través de la API
 [ ] Editar un filme desde el cliente
 [ ] Cambiar visualizacion del componente de notificaciones
 [ ] Guardar imágenes de las películas en local
-
 */
 
 //Dudas
 /*
-[ ] Cual es el estandar mas utilizado para crear los endpoint de una API
+[x] Cual es el estandar mas utilizado para crear los endpoint de una API
 */

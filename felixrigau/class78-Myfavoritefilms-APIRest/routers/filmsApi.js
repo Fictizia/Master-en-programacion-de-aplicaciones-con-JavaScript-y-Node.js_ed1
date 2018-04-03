@@ -22,12 +22,19 @@ api.get('/films', enableCORS, (req, res) => {
 api.post('/films', enableCORS, (req, res) => {
   if (req.body.film) {
     let film = JSON.parse(req.body.film);
-    filmModel.save(film).then(() => {
-      res.setHeader('Content-Type', 'application/json');
-      res.send(film);
-    }, (error) => {
-      console.log('La promesa ha lanzado el siguiente error:', error)
-    });
+    filmModel.exist(film.imdbID).then((value) => {
+      if (!value) {
+        filmModel.save(film).then(() => {
+          res.setHeader('Content-Type', 'application/json');
+          res.send(film);
+        }, (error) => {
+          console.log('La promesa ha lanzado el siguiente error:', error)
+        });
+      }
+      else {
+        res.send(false);
+      }
+    })
   }
 });
 
