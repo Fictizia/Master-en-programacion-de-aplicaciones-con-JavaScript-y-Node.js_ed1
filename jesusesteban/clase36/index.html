@@ -8,6 +8,11 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 </head>
 <body>
+	<style type="text/css">
+		.table-bordered td, .table-bordered th{
+			padding: 10px;
+		}
+	</style>
     <div class="container" style="padding-top: 5%;">
 	<div class="row">
 		<div class="col-md-12">
@@ -33,7 +38,7 @@
 							<label for="phone">
 								Teléfono
 							</label>
-							<input type="tel" class="form-control" id="phone" />
+							<input type="text" class="form-control" id="phone" />
 						</div>
 						<div>
         					<button type="button" class="btn btn-primary" id="anadir">
@@ -66,8 +71,20 @@
         	</div>	
         	<div class="row" style="padding-top: 40px;">
         		<div>
-            		 <ul id="lista">
-            		 </ul>
+        			<table id="data-table" class="table-bordered">
+        				<thead>
+        					<tr>
+        						<td><span>Nombre</span></td>
+        						<td><span>Teléfono</span></td>
+        					</tr>
+        				</thead>
+        				<tbody>
+	        				<tr>
+	        					<td><span id="data-nombre"></span></td>
+	        					<td><span id="data-telefono"></span></td>
+	        				</tr>
+        				</tbody>
+        			</table>
         		</div>
         	</div>	
 
@@ -76,71 +93,10 @@
 		</div>
 	</div>
 	
-	<script>
-
-	
-		// Inputs
-	    var nombre = document.getElementById("name").value;
-	    var telefono = document.getElementById("phone").value;
-
-	    var slcLista = document.getElementById("lista");
-
-		// Funcion
-		function saveItem(value){
-			
-			var currenTask = JSON.parse(localStorage.getItem("nombre") || []);
-			
-			currenTask.push(value);
-			
-			localStorage.setItem("Nombre", currenTask);
-		}
-
-		function updateHtml(item){
-			slcLista.innerHTML += `<li>${item}</Li>`;
-		}
-
-
-
-	    //Click boton
-	    document.getElementById("anadir").addEventListener("click", function(){
-            saveItem;
-        });
-	    
-	    
-	    
-	    
-	    /*
-	    document.getElementById("anadir").addEventListener("click", function(){
-            var nombre = document.getElementById("name").value;
-            var telefono = document.getElementById("phone").value;
-            localStorage.setItem("Nombre", nombre);
-            localStorage.setItem("Teléfono", telefono);
-        });
-	    */
-
-        // Borrar Contacto
-	    document.getElementById("delete").addEventListener("click", function(){
-            var nombre = document.getElementById("name").value;
-            var telefono = document.getElementById("phone").value;
-            localStorage.removeItem(nombre);
-            localStorage.removeItem(telefono);
-        });
-
-        // BorrarTodo
-	    document.getElementById("delete-all").addEventListener("click", function(){
-            localStorage.clear();
-        });
-
-        // RecuperarContacto
-	    document.getElementById("recovery").addEventListener("click", function(){
-            var nombre = document.getElementById("name").value;
-            var telefono = document.getElementById("phone").value;
-            localStorage.getItem(nombre);
-            localStorage.getItem(telefono);
-        });
-	    
-	</script>
-
 </div>
+
+
+
+<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
