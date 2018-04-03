@@ -12,7 +12,6 @@ function enableCORS(req, res, next) {
 }
 
 api.get('/films', enableCORS, (req, res) => {
-  // let films = filmModel.getFilms() || { response: 'No hay datos' };
   let films = {};
   filmModel.all().then((films) => {
     res.setHeader('Content-Type', 'application/json');
@@ -21,8 +20,8 @@ api.get('/films', enableCORS, (req, res) => {
 });
 
 api.post('/films', enableCORS, (req, res) => {
-  if (req.query.film) {
-    let film = JSON.parse(req.query.film);
+  if (req.body.film) {
+    let film = JSON.parse(req.body.film);
     filmModel.save(film).then(() => {
       res.setHeader('Content-Type', 'application/json');
       res.send(film);

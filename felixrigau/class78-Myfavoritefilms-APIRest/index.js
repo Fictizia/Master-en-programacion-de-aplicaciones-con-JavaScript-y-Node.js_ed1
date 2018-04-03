@@ -3,12 +3,15 @@ const request = require("request");
 const path = require("path");
 const firebase = require("firebase");
 const helmet = require("helmet");
+const formdataParser = require('multer')().fields([])
 const app = express();
 
 const filmModel = require("./models/filmModel.js");
 const api = require("./routers/filmsApi.js");
 
 app.use(helmet());
+
+app.use(formdataParser);
 
 app.use('/api/v1', api);
 

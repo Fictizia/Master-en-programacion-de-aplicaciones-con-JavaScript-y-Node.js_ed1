@@ -12,7 +12,7 @@ APP.behavior = {
       if (e.keyCode === 13) {
         if (e.target.value != "" && e.target.value != null) {
           let filmName = e.target.value;
-          APP.tools.ajax('GET', `https://${document.domain}/getDataAPi/${filmName}`, true, APP.ui.fillSelectFilm);
+          APP.tools.ajax('GET', `https://${document.domain}/getDataAPi/${filmName}`, false, APP.ui.fillSelectFilm);
         }
         else {
           APP.ui.triggerNotification('info', 'Debes escribir el nombre de una película.', 3000)
@@ -31,8 +31,9 @@ APP.behavior = {
       document.querySelector('.films-list-select').addEventListener('click', (e) => {
         if (e.target.hasAttribute('data-film')) {
           let film = e.target.getAttribute('data-film');
-          film = JSON.parse(e.target.getAttribute('data-film'));
-          APP.tools.ajax('POST', `https://${document.domain}/api/v1/films?film=${JSON.stringify(film)}`, true, APP.ui.responseAddFilmApi);
+          var formData = new FormData();
+          formData.append('film', film)
+          APP.tools.ajax('POST', `https://${document.domain}/api/v1/films`, formData, APP.ui.responseAddFilmApi);
         }
       });
     }
@@ -45,9 +46,11 @@ APP.behavior = {
           let action = e.target.parentNode.getAttribute('data-action');
           let id = e.target.parentNode.getAttribute('data-film-id');
           if (action === 'delete') {
-            APP.tools.ajax('DELETE', `https://${document.domain}/api/v1/films/${id}`, true, APP.ui.responseDeleteFilmApi);
+            APP.tools.ajax('DELETE', `https://${document.domain}/api/v1/films/${id}`, false, APP.ui.responseDeleteFilmApi);
           }
-          else {}
+          else {
+            //Update action
+          }
         }
       });
     }
@@ -156,9 +159,9 @@ APP.ui = {
 }
 
 APP.tools = {
-  ajax: (httpMethod, url, asynchronous, callback) => {
+  ajax: (httpMethod, url, formData, callback) => {
     var request = new XMLHttpRequest();
-    request.open(httpMethod, url, asynchronous);
+    request.open(httpMethod, url, true);
     request.onreadystatechange = function() {
       if (request.readyState === 4 && request.status === 200 && request.responseText) {
         var json = JSON.parse(request.responseText);
@@ -169,7 +172,15 @@ APP.tools = {
         return false;
       }
     };
-    request.send();
+    if (formData) {
+      for (var value of formData.values()) {
+        console.log(value);
+      }
+      request.send(formData);
+    }
+    else {
+      request.send();
+    }
   },
 
   buildRestApiParameters: (object) => {
