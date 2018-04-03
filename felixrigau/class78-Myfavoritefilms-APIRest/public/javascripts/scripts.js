@@ -24,6 +24,11 @@ APP.behavior = {
         }
       }
     });
+
+    document.querySelector('.search-input').addEventListener('blur', (e) => {
+      document.querySelector('.films-list-select').style.height = '0px';
+    });
+
   },
 
   selectFilm: () => {
@@ -209,7 +214,7 @@ APP.start();
 [x] Insertar peliculas una vez guardada
 [x] Eliminar un filme a través de la API
 [x] Enviar datos en el cuerpo de la petición utilizando formDatas para insertar una película
-[ ] Verificar si un filme ya existe en la base de datos
+[x] Verificar si un filme ya existe en la base de datos
 [ ] Editar un filme a través de la API
 [ ] Editar un filme desde el cliente
 [ ] Cambiar visualizacion del componente de notificaciones
