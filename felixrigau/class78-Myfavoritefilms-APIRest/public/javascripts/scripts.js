@@ -167,23 +167,24 @@ APP.ui = {
 
       let filmListContainer = document.querySelector('.cards-list__container');
       let filmTemplate = `
-      <div id="${film.imdbID}" class="cards-list__item">
-        <div class="cards-list__content">
-          <img class="cards-list__image" src="${film.Poster}">
-          <div class="cards-list__datas">
-            <div class="title">${film.Title}</div>
-            <div class="year">${film.Year}</div>
+        <div class="cards-list__item" id="${film.imdbID}">
+          <div class="cards-list__content"><img class="cards-list__image" src="${film.Poster}">
+            <div class="cards-list__datas">
+              <div class="cards-list__title" data-content="${film.Title}" contenteditable="false">${film.Title}</div>
+              <div class="cards-list__year" data-content="${film.Year}" contenteditable="false">${film.Year}</div>
+            </div>
           </div>
-        </div>
-        <div class="cards-list__actions">
-          <span data-action="delete" data-film-id="${film.imdbID}">
-            <i class="far fa-trash-alt"></i>
-          </span>
-          <span data-action="update" data-film-id="${film.imdbID}">
-            <i class="far fa-edit"></i>
-          </span>
-        </div>
-      </div>`;
+          <div class="cards-list__actions" data-film-id="${film.imdbID}">
+            <div class="cards-list__main-actions">
+              <span data-film-id="${film.imdbID}" data-action="delete"><i class="far fa-trash-alt"></i></span>
+              <span data-film-id="${film.imdbID}" data-action="update"><i class="far fa-edit"></i></span>
+            </div>
+            <div class="cards-list__secondary-actions">
+              <span data-film-id="${film.imdbID}" data-action="accept"><i class="fas fa-check"></i></span>
+              <span data-film-id="${film.imdbID}" data-action="cancel"><i class="fas fa-times"></i></span>
+            </div>
+          </div>
+        </div>`;
       if (filmListContainer.querySelectorAll('.cards-list__item').length > 0) {
         filmListContainer.innerHTML += filmTemplate;
       }
