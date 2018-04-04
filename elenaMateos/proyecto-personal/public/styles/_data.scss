@@ -1,0 +1,84 @@
+/*---------- MAIN INFO  -------*/
+.main-info{
+  display: flex;
+  flex-direction: column;
+}
+/*-------  DATA  -------*/
+
+.data{
+  flex-wrap: wrap;
+  display: flex;
+  border-bottom: 2px solid $secondary-color;
+  justify-content: space-around;
+  padding-bottom: 5px;
+}
+.data > p{
+  margin-left: 10px;
+}
+.aemet-link{
+  background-color: $primary-color;
+  border-radius: 3px;
+  display: block;
+  color: $background;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 5px auto;
+  text-align: center;
+  text-decoration: none;
+  padding: 7px;
+  transition: 0.3s linear 0s;
+  width: 40%;
+}
+.aemet-link:hover{
+  background-color: $secondary-color;
+}
+
+/*------- DISTRICT INFO ---------*/
+
+.district{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0px ;
+}
+.district-menu{
+  background-color: inherit;
+  border: 1px solid $secondary-color;
+}
+
+
+/*--------  AIR QUALITY  --------*/
+
+.data-container{
+  align-items: flex-end;
+  border: 2px solid $secondary-color;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+}
+
+.container--air-quality{
+  padding: 5px;
+}
+.values-list{
+  padding-left: 15px;
+}
+.values-element{
+  left: 0;
+  list-style: none;
+  margin-bottom: 5px;
+  position: relative;
+}
+/* -------  CONTAINER EMOJI --------*/
+.refresh-button{
+  background-color: inherit;
+  border: 1px solid $primary-color;
+  border-radius: 50%;
+  padding: 5px;
+  transition: 0.3s linear 0s;
+}
+.refresh-button:hover{
+  background-color: $primary-color;
+}
+.refresh-button-image{
+  width: 30px;
+}
