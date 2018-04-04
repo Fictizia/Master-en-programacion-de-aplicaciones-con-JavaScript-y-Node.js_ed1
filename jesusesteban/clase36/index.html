@@ -8,139 +8,99 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container" style="padding-top: 5%;">
-	<div class="row">
-		<div class="col-md-12">
-			<h3>
-				Clase 36 [LocalStorage]
-			</h3>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-				<div>
-					<form role="form">
-						<div class="form-group">
-							 
-							<label for="name">
-								Nombre
-							</label>
-							<input type="email" class="form-control" id="name" />
-						</div>
-						<div class="form-group">
-							 
-							<label for="phone">
-								Teléfono
-							</label>
-							<input type="tel" class="form-control" id="phone" />
-						</div>
+	<style type="text/css">
+		.table-bordered td, .table-bordered th{
+			padding: 10px;
+		}
+		.container{
+			padding-top: 5%;
+		}
+		h3.title{
+			margin-bottom: 50px;
+		}
+	</style>
+	
+	
+	<div class="container" >
+		<div class="row">
+			<div class="col-md-12">
+				<h3 class="title">
+					Clase 36 [LocalStorage]
+				</h3>
+				<div class="row">
+					<div class="col-md-6">
 						<div>
-        					<button type="button" class="btn btn-primary" id="anadir">
-        						Añadir Contacto
-        					</button> 
+							<form role="form">
+								<div class="form-group">
+									<input type="email" class="form-control" id="name" placeholder="Nombre"/>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="phone" placeholder="Teléfono"/>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control" id="mail" placeholder="Mail"/>
+								</div>
+
+								<div>
+		        					<button type="button" class="btn btn-primary" id="anadir">
+		        						Añadir Contacto
+		        					</button> 
+								</div>
+							</form>
 						</div>
-					</form>
+
+		        		<div style="padding-top: 10px;">
+		            		 <ul style="list-style: none; padding-left: 0;">
+		            		     <li style="display: inline-block; margin-right: 20px;">
+		            				<button type="button" class="btn btn-danger" id="delete">
+		            					Borrar Contacto
+		            				</button> 
+		                         </li>					         
+		            		     <li style="display: inline-block; margin-right: 20px;">
+		            				<button type="button" class="btn btn-danger" id="delete-all">
+		            					Borrar Todos
+		            				</button> 
+		                         </li>					         
+		            		     <li style="display: inline-block; margin-right: 20px;">
+		            				<button type="button" class="btn btn-info" id="recovery">
+		            					Recuperar Contacto
+		            				</button>
+		                         </li>					         
+		            		 </ul>
+		        		</div>
+
+						
+					</div>
+					<div class="col-md-6">
+
+		        		<div>
+		        			<table id="data-table" class="table-bordered" style="width: 100%;">
+		        				<thead>
+		        					<tr>
+		        						<td><span><strong>Nombre</strong></span></td>
+		        						<td><span><strong>Teléfono</strong></span></td>
+		        						<td><span><strong>Mail</strong></span></td>
+		        					</tr>
+		        				</thead>
+		        				<tbody>
+			        				<tr>
+			        					<td><span id="data-nombre"></span></td>
+			        					<td><span id="data-telefono"></span></td>
+			        					<td><span id="data-mail"></span></td>
+			        				</tr>
+		        				</tbody>
+		        			</table>
+		        		</div>
+
+						
+					</div>
 				</div>
 			</div>
-        	<div class="row" style="padding-top: 40px;">
-        		<div>
-            		 <ul style="list-style: none; padding-left: 0;">
-            		     <li style="display: inline-block; margin-right: 20px;">
-            				<button type="button" class="btn btn-danger" id="delete">
-            					Borrar Contacto
-            				</button> 
-                         </li>					         
-            		     <li style="display: inline-block; margin-right: 20px;">
-            				<button type="button" class="btn btn-danger" id="delete-all">
-            					Borrar Todos
-            				</button> 
-                         </li>					         
-            		     <li style="display: inline-block; margin-right: 20px;">
-            				<button type="button" class="btn btn-info" id="recovery">
-            					Recuperar Contacto
-            				</button>
-                         </li>					         
-            		 </ul>
-        		</div>
-        	</div>	
-        	<div class="row" style="padding-top: 40px;">
-        		<div>
-            		 <ul id="lista">
-            		 </ul>
-        		</div>
-        	</div>	
-
-
-			
 		</div>
-	</div>
+	</div>	
 	
-	<script>
-
 	
-		// Inputs
-	    var nombre = document.getElementById("name").value;
-	    var telefono = document.getElementById("phone").value;
+	<script type="text/javascript" src="app.js"></script>
 
-	    var slcLista = document.getElementById("lista");
-
-		// Funcion
-		function saveItem(value){
-			
-			var currenTask = JSON.parse(localStorage.getItem("nombre") || []);
-			
-			currenTask.push(value);
-			
-			localStorage.setItem("Nombre", currenTask);
-		}
-
-		function updateHtml(item){
-			slcLista.innerHTML += `<li>${item}</Li>`;
-		}
-
-
-
-	    //Click boton
-	    document.getElementById("anadir").addEventListener("click", function(){
-            saveItem;
-        });
-	    
-	    
-	    
-	    
-	    /*
-	    document.getElementById("anadir").addEventListener("click", function(){
-            var nombre = document.getElementById("name").value;
-            var telefono = document.getElementById("phone").value;
-            localStorage.setItem("Nombre", nombre);
-            localStorage.setItem("Teléfono", telefono);
-        });
-	    */
-
-        // Borrar Contacto
-	    document.getElementById("delete").addEventListener("click", function(){
-            var nombre = document.getElementById("name").value;
-            var telefono = document.getElementById("phone").value;
-            localStorage.removeItem(nombre);
-            localStorage.removeItem(telefono);
-        });
-
-        // BorrarTodo
-	    document.getElementById("delete-all").addEventListener("click", function(){
-            localStorage.clear();
-        });
-
-        // RecuperarContacto
-	    document.getElementById("recovery").addEventListener("click", function(){
-            var nombre = document.getElementById("name").value;
-            var telefono = document.getElementById("phone").value;
-            localStorage.getItem(nombre);
-            localStorage.getItem(telefono);
-        });
-	    
-	</script>
-
-</div>
 </body>
 </html>

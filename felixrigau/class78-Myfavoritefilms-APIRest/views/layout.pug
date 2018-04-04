@@ -3,6 +3,9 @@ html(lang='en')
   body
     include includes/navbar.pug
     // Begin page content
-    main.container
+    main.app-container.container
       block content
+    .notification-wrapper
+    script(src='https://www.gstatic.com/firebasejs/4.12.1/firebase.js')
+    script(src='javascripts/scripts.js')
     

@@ -1,15 +1,199 @@
 a.logo.navbar-brand {
-  color: #b71c1c;
+  color: #00bfa5;
   font-weight: bold;
   font-size: 38px; }
 
 body {
-  background-color: #616161; }
+  background-color: rgba(44, 56, 73, 0.95); }
+
+.bg-dark {
+  background-color: #2c3849 !important; }
 
 .search {
-  display: flex; }
+  position: relative; }
+
+.search-input {
+  width: 400px; }
+
+.films-list-select {
+  left: 0;
+  top: 30px;
+  position: absolute;
+  border-bottom: 4px solid #00bfa5;
+  width: 100%;
+  transition: height .5s;
+  background-color: #fdfcfc;
+  height: 0px;
+  overflow: hidden;
+  overflow-y: scroll; }
+
+.films-list {
+  margin: 0;
+  padding: 10px;
+  background-color: white; }
+
+.films-list__item {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  background-color: #fdfdfd;
+  box-shadow: 1px 1px 1px #e6e6e6;
+  border-right: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-bottom: 10px; }
+  .films-list__item:hover {
+    border-right: 4px solid #00bfa5; }
+  .films-list__item:last-child {
+    margin-bottom: 0; }
+
+.films-list__item-mask {
+  position: absolute;
+  width: 95%;
+  background-color: transparent;
+  height: 70px;
+  z-index: 300; }
+
+.films-list__item-image {
+  height: 70px; }
+
+.films-list__item-title {
+  margin-left: 10px; }
+
+.btn-outline-success {
+  color: #00bfa5;
+  border-color: #00bfa5; }
 
 .container {
   margin-top: 100px; }
+
+.main-title {
+  color: #FFF; }
+
+.cards-list__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; }
+
+.cards-list__item {
+  flex: 1 1 20%;
+  margin: 16px;
+  max-width: 245px; }
+
+.cards-list__content {
+  position: relative; }
+
+.cards-list__image {
+  width: 100%; }
+
+.cards-list__datas {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(24, 30, 76, 0.7);
+  width: 100%;
+  color: #FFFFFF;
+  padding: 10px; }
+
+.cards-list__title {
+  font-size: 20px;
+  margin-bottom: 4px; }
+
+.cards-list__title--editable, .cards-list__year--editable {
+  border: 1px solid #00bfa5;
+  background-color: white;
+  color: rgba(44, 56, 73, 0.95);
+  padding-left: 4px; }
+
+.cards-list__year {
+  font-size: 12px;
+  border-left: 3px solid #FFF;
+  padding-left: 5px; }
+
+.cards-list__actions {
+  padding: 10px;
+  background-color: #00bfa5;
+  font-size: 20px;
+  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+  height: 40px; }
+  .cards-list__actions i {
+    cursor: pointer; }
+
+.cards-list__main-actions, .cards-list__secondary-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.cards-list__main-actions {
+  top: 0px;
+  transition: top 0.7s cubic-bezier(0.62, -0.54, 0.98, 1.01); }
+
+.cards-list__main-actions--move {
+  top: -30px; }
+
+.cards-list__secondary-actions {
+  opacity: 0;
+  top: 15px;
+  transition: all 0.7s cubic-bezier(0.62, -0.54, 0.98, 1.01); }
+
+.cards-list__secondary-actions--move {
+  opacity: 1;
+  top: -20px; }
+
+.notification-wrapper {
+  width: 400px;
+  height: 100px;
+  position: fixed;
+  z-index: 9999;
+  top: 85px;
+  right: 15px;
+  overflow-x: hidden; }
+
+.notification {
+  padding: 15px;
+  background-color: #fafafa;
+  border-left: 5px solid;
+  color: #37474f;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 16px;
+  position: relative;
+  transition: all 0.5s;
+  opacity: 0;
+  right: -400px; }
+  .notification p {
+    margin: 0;
+    padding: 0; }
+
+.notification--success {
+  background-color: #c5e1a5;
+  color: #33691e; }
+
+.notification--error {
+  background-color: #ffcdd2;
+  color: #b71c1c; }
+
+.notification--info {
+  background-color: #ffe082;
+  color: #37474f;
+  border-left: 5px solid #ffa000; }
+
+.notification--in {
+  opacity: 1;
+  right: 0; }
+
+.notification--out {
+  opacity: 0; }
+
+.main-bg {
+  width: 100%;
+  position: fixed;
+  top: 75px;
+  left: 0; }
+
+.info {
+  color: #ffc107; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -141,6 +141,15 @@ Fecha | Teoría | Recursos | Contenido
 14/03/2018 | [Clase 79](teoria/dia79.md) | [Clase 79](recursos/dia79.md) | Firebase II
 15/03/2018 | Clase 80 | Clase 80 | Prácticas: Memezinga PinHead version 
 16/03/2018 | [Clase 81](teoria/dia81.md) | Clase 80 | [#OpenSourceFriday](https://opensourcefriday.com) e Invitados sorpresa: [Lilxelo](https://github.com/lilxelo) y [Bifuer](https://github.com/Bifuer), creadores de [Pillarsjs](https://github.com/pillarsjs)
+19/03/2018 | Clase 82 | Clase 82 | Prácticas: Memezinga PinHead version 
+20/03/2018 | Clase 83 | Clase 83 | Prácticas: Memezinga PinHead version 
+21/03/2018 | Clase 84 | Clase 84 | Prácticas: Memezinga PinHead version 
+22/03/2018 | Clase 85 | Clase 85 | Prácticas: Memezinga PinHead version 
+23/03/2018 | Clase 86 | Clase 86 | [#OpenSourceFriday](https://opensourcefriday.com)
+02/04/2018 | [Clase 87](teoria/dia87.md) | [Clase 87](recursos/dia87.md) | Socket.IO
+03/04/2018 | [Clase 88](teoria/dia88.md) | [Clase 88](recursos/dia88.md) | Bower 
+04/04/2018 | [Clase 89](teoria/dia89.md) | [Clase 89](recursos/dia89.md) | Gulp, Grunt, NPM Scripts...
+
 
 
 Temario
