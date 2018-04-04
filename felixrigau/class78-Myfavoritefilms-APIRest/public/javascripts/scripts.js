@@ -57,7 +57,7 @@ APP.behavior = {
             APP.behavior.updateAction(id);
           }
           else if (action === 'accept') {
-            //Accept action
+            APP.behavior.acceptAction(id)
           }
           else {
             APP.behavior.cancelAction(id)
@@ -80,6 +80,18 @@ APP.behavior = {
     title.setAttribute('contenteditable', true);
     year.classList.add('cards-list__year--editable');
     year.setAttribute('contenteditable', true);
+  },
+
+  acceptAction: (id) => {
+    let currentCard = document.getElementById(id),
+      imdbID = id,
+      Title = currentCard.querySelector('.cards-list__title').innerText,
+      Year = currentCard.querySelector('.cards-list__year').innerText;
+
+    let object = { imdbID, Title, Year };
+    var formData = new FormData();
+    formData.append('film', JSON.stringify(object));
+    APP.tools.ajax('PUT', `https://${document.domain}/api/v1/films/${id}`, formData, APP.ui.responseUpdateFilmApi);
   },
 
   cancelAction: (id) => {
@@ -146,6 +158,28 @@ APP.ui = {
     else if (typeof(datas) === 'object' && datas.Title) {
       APP.ui.addFilm(datas);
       APP.ui.triggerNotification('success', 'El filme se ha insertado satisfactoriamente.', 3000);
+    }
+    else {
+      APP.ui.triggerNotification('error', 'Upps, ha ocurrido un error al intentar insertar el filme en la base de datos.', 3000);
+    }
+  },
+
+  responseUpdateFilmApi: function(datas) {
+    if (datas && typeof(datas) === 'object') {
+      APP.ui.triggerNotification('info', `El filme: ${datas.Title} se ha actualizado satisfactoriamente.`, 3000);
+
+      let currentCard = document.getElementById(datas.imdbID),
+        mainActions = currentCard.querySelector('.cards-list__main-actions'),
+        secondaryActions = currentCard.querySelector('.cards-list__secondary-actions'),
+        title = currentCard.querySelector('.cards-list__title'),
+        year = currentCard.querySelector('.cards-list__year');
+
+      mainActions.classList.remove('cards-list__main-actions--move');
+      secondaryActions.classList.remove('cards-list__secondary-actions--move');
+      title.setAttribute('data-content', title.innerText);
+      title.classList.remove('cards-list__title--editable');
+      year.setAttribute('data-content', year.innerText);
+      year.classList.remove('cards-list__year--editable');
     }
     else {
       APP.ui.triggerNotification('error', 'Upps, ha ocurrido un error al intentar insertar el filme en la base de datos.', 3000);
@@ -255,6 +289,7 @@ APP.start();
 [ ] Editar un filme a través de la API
 [ ] Editar un filme desde el cliente
 [ ] Cambiar visualizacion del componente de notificaciones
+[ ] Agregar loader gif
 [ ] Guardar imágenes de las películas en local
 */
 

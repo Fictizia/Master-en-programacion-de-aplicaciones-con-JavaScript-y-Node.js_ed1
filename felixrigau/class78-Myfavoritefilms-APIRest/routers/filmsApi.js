@@ -29,6 +29,7 @@ api.post('/films', enableCORS, (req, res) => {
           res.send(film);
         }, (error) => {
           console.log('La promesa ha lanzado el siguiente error:', error)
+          res.send(error);
         });
       }
       else {
@@ -39,11 +40,15 @@ api.post('/films', enableCORS, (req, res) => {
 });
 
 api.put('/films/:id', enableCORS, (req, res) => {
-  if (req.params.id && req.query.film) {
-    let film = JSON.parse(req.query.film);
-    filmModel.update(req.params.id, film)
-    res.setHeader('Content-Type', 'application/json');
-    res.send(req.query.film)
+  if (req.params.id && req.body.film) {
+    let film = JSON.parse(req.body.film);
+    filmModel.update(req.params.id, film).then(() => {
+      res.setHeader('Content-Type', 'application/json');
+      res.send(film);
+    }, (error) => {
+      console.log('La promesa ha lanzado el siguiente error:', error);
+      res.send(error);
+    });
   }
 });
 
