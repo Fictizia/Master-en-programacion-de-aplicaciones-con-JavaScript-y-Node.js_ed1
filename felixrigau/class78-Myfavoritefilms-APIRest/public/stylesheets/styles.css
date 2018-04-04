@@ -94,24 +94,53 @@ body {
   color: #FFFFFF;
   padding: 10px; }
 
-.title {
-  font-size: 20px; }
+.cards-list__title {
+  font-size: 20px;
+  margin-bottom: 4px; }
 
-.year {
+.cards-list__title--editable, .cards-list__year--editable {
+  border: 1px solid #00bfa5;
+  background-color: white;
+  color: rgba(44, 56, 73, 0.95);
+  padding-left: 4px; }
+
+.cards-list__year {
   font-size: 12px;
   border-left: 3px solid #FFF;
   padding-left: 5px; }
 
 .cards-list__actions {
-  display: flex;
-  align-items: center;
   padding: 10px;
-  justify-content: space-around;
   background-color: #00bfa5;
   font-size: 20px;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  overflow: hidden;
+  position: relative;
+  height: 40px; }
   .cards-list__actions i {
     cursor: pointer; }
+
+.cards-list__main-actions, .cards-list__secondary-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; }
+
+.cards-list__main-actions {
+  top: 0px;
+  transition: top 0.7s cubic-bezier(0.62, -0.54, 0.98, 1.01); }
+
+.cards-list__main-actions--move {
+  top: -30px; }
+
+.cards-list__secondary-actions {
+  opacity: 0;
+  top: 15px;
+  transition: all 0.7s cubic-bezier(0.62, -0.54, 0.98, 1.01); }
+
+.cards-list__secondary-actions--move {
+  opacity: 1;
+  top: -20px; }
 
 .notification-wrapper {
   width: 400px;

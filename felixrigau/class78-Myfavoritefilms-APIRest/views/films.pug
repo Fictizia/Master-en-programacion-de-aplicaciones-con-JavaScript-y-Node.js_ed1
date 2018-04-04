@@ -11,13 +11,19 @@ block content
           .cards-list__content
             img(src=`${film.Poster}`, class='cards-list__image')
             .cards-list__datas
-              .title #{film.Title}
-              .year #{film.Year}
+              .cards-list__title(data-content=`${film.Title}`) #{film.Title}
+              .cards-list__year(data-content=`${film.Year}`) #{film.Year}
           .cards-list__actions(data-film-id=`${film.imdbID}`)
-            span(data-film-id=`${film.imdbID}`, data-action='delete')
-              i.far.fa-trash-alt
-            span(data-film-id=`${film.imdbID}`, data-action='update')
-              i.far.fa-edit 
+            .cards-list__main-actions
+              span(data-film-id=`${film.imdbID}`, data-action='delete')
+                i.far.fa-trash-alt
+              span(data-film-id=`${film.imdbID}`, data-action='update')
+                i.far.fa-edit 
+            .cards-list__secondary-actions
+              span(data-film-id=`${film.imdbID}`, data-action='accept')
+                i.fas.fa-check
+              span(data-film-id=`${film.imdbID}`, data-action='cancel')
+                i.fas.fa-times
       else
         h3.info Eeeh! Aun no tienes pelis favoritas... Que esperas? :)
       

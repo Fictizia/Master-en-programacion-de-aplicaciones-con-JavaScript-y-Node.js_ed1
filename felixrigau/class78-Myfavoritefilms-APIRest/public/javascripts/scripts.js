@@ -3,7 +3,7 @@ let APP = {};
 APP.start = () => {
   APP.behavior.search();
   APP.behavior.selectFilm();
-  APP.behavior.deleteFilm();
+  APP.behavior.actionsFilm();
 };
 
 APP.behavior = {
@@ -44,7 +44,7 @@ APP.behavior = {
     }
   },
 
-  deleteFilm: () => {
+  actionsFilm: () => {
     if (document.querySelector('.cards-list__container')) {
       document.querySelector('.cards-list__container').addEventListener('click', (e) => {
         if (e.target.parentNode.hasAttribute('data-action')) {
@@ -53,12 +53,48 @@ APP.behavior = {
           if (action === 'delete') {
             APP.tools.ajax('DELETE', `https://${document.domain}/api/v1/films/${id}`, false, APP.ui.responseDeleteFilmApi);
           }
+          else if (action === 'update') {
+            APP.behavior.updateAction(id);
+          }
+          else if (action === 'accept') {
+            //Accept action
+          }
           else {
-            //Update action
+            APP.behavior.cancelAction(id)
           }
         }
       });
     }
+  },
+
+  updateAction: (id) => {
+    let currentCard = document.getElementById(id),
+      mainActions = currentCard.querySelector('.cards-list__main-actions'),
+      secondaryActions = currentCard.querySelector('.cards-list__secondary-actions'),
+      title = currentCard.querySelector('.cards-list__title'),
+      year = currentCard.querySelector('.cards-list__year');
+
+    mainActions.classList.add('cards-list__main-actions--move');
+    secondaryActions.classList.add('cards-list__secondary-actions--move');
+    title.classList.add('cards-list__title--editable');
+    title.setAttribute('contenteditable', true);
+    year.classList.add('cards-list__year--editable');
+    year.setAttribute('contenteditable', true);
+  },
+
+  cancelAction: (id) => {
+    let currentCard = document.getElementById(id),
+      mainActions = currentCard.querySelector('.cards-list__main-actions'),
+      secondaryActions = currentCard.querySelector('.cards-list__secondary-actions'),
+      title = currentCard.querySelector('.cards-list__title'),
+      year = currentCard.querySelector('.cards-list__year');
+
+    mainActions.classList.remove('cards-list__main-actions--move');
+    secondaryActions.classList.remove('cards-list__secondary-actions--move');
+    title.innerText = title.getAttribute('data-content');
+    title.classList.remove('cards-list__title--editable');
+    year.innerText = year.getAttribute('data-content');
+    year.classList.remove('cards-list__year--editable');
   }
 };
 
