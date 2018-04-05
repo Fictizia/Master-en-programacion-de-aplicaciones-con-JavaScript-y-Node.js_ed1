@@ -55,7 +55,9 @@ Sobre el Curso
     * 30/04/2018
     * 01/05/2018
     * 02/05/2018
+    * 08/05/2018 Google IO Extended
     * 15/05/2018
+    * Open Expo 2018 (06/06/2018 - 07/06/2018)
 
 Teoría y Recursos
 =================
@@ -149,7 +151,8 @@ Fecha | Teoría | Recursos | Contenido
 02/04/2018 | [Clase 87](teoria/dia87.md) | [Clase 87](recursos/dia87.md) | Socket.IO
 03/04/2018 | [Clase 88](teoria/dia88.md) | [Clase 88](recursos/dia88.md) | Bower 
 04/04/2018 | [Clase 89](teoria/dia89.md) | [Clase 89](recursos/dia89.md) | Gulp, Grunt, NPM Scripts...
-
+05/04/2018 | [Clase 90](teoria/dia90.md) | [Clase 90](recursos/dia90.md) | Browsefy y Webpack
+06/04/2018 | Clase 91 | Clase 91 | [#OpenSourceFriday](https://opensourcefriday.com)
 
 
 Temario
