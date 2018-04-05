@@ -2,10 +2,10 @@
 function addContact(){
 
 	// Inputs
-    var nombre = document.getElementById("name").value;
-    var telefono = document.getElementById("phone").value;
-    var mail = document.getElementById("mail").value;
-    var dataTable = document.getElementById("data-table");
+    var nombre = document.getElementById("name").value,
+        telefono = document.getElementById("phone").value,
+        mail = document.getElementById("mail").value,
+        dataTable = document.getElementById("data-table");
 	
 	// Guardamos los datos en localstorage
 	
@@ -14,15 +14,14 @@ function addContact(){
 	localStorage.setItem('mail', mail);
 	
 	
-
 	// Mostramos los datos en el HTML	
-	var dataNombre = localStorage.getItem('nombre');
-	var dataTelefono = localStorage.getItem('telefono');
-	var dataMail = localStorage.getItem('mail');
+	var dataNombre = localStorage.getItem('nombre'),
+	    dataTelefono = localStorage.getItem('telefono'),
+	    dataMail = localStorage.getItem('mail');
 
-	document.getElementById("data-nombre").innerHTML = dataNombre;
-	document.getElementById("data-telefono").innerHTML = dataTelefono;
-	document.getElementById("data-mail").innerHTML = dataMail;
+    document.querySelector('.data-nombre').innerHTML = dataNombre;
+    document.querySelector('.data-telefono').innerHTML = dataTelefono;
+    document.querySelector('.data-mail').innerHTML = dataMail;
 
 }
 
