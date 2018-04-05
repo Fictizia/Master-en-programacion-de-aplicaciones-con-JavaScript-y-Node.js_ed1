@@ -8,9 +8,11 @@ function addContact(){
     var dataTable = document.getElementById("data-table");
 	
 	// Guardamos los datos en localstorage
+	
 	localStorage.setItem('nombre', nombre);
 	localStorage.setItem('telefono', telefono);
 	localStorage.setItem('mail', mail);
+	
 	
 
 	// Mostramos los datos en el HTML	
