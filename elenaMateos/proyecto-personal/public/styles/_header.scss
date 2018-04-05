@@ -1,0 +1,31 @@
+//LOGIN
+
+.login-header {
+  align-items: center;
+  border-bottom: 2px solid #106302;
+  display: flex;
+  height: 40px;
+  position: fixed;
+  top: 0;
+  width: 90%;
+}
+.user-pic {
+  width : 30px;
+  margin: 0 20px 0 20px;
+}
+
+
+// WEATHER
+.weather-info{
+  align-items: center;
+  display: flex;
+  margin-top: 50px;
+  justify-content: space-around;
+}
+.weather-gift{
+  max-width: 300px;
+  width: 30%;
+}
+.gift{
+  width: 100%;
+}

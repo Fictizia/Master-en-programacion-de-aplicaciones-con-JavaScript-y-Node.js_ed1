@@ -3,7 +3,7 @@ let APP = {};
 APP.start = () => {
   APP.behavior.search();
   APP.behavior.selectFilm();
-  APP.behavior.deleteFilm();
+  APP.behavior.actionsFilm();
 };
 
 APP.behavior = {
@@ -44,7 +44,7 @@ APP.behavior = {
     }
   },
 
-  deleteFilm: () => {
+  actionsFilm: () => {
     if (document.querySelector('.cards-list__container')) {
       document.querySelector('.cards-list__container').addEventListener('click', (e) => {
         if (e.target.parentNode.hasAttribute('data-action')) {
@@ -53,12 +53,60 @@ APP.behavior = {
           if (action === 'delete') {
             APP.tools.ajax('DELETE', `https://${document.domain}/api/v1/films/${id}`, false, APP.ui.responseDeleteFilmApi);
           }
+          else if (action === 'update') {
+            APP.behavior.updateAction(id);
+          }
+          else if (action === 'accept') {
+            APP.behavior.acceptAction(id)
+          }
           else {
-            //Update action
+            APP.behavior.cancelAction(id)
           }
         }
       });
     }
+  },
+
+  updateAction: (id) => {
+    let currentCard = document.getElementById(id),
+      mainActions = currentCard.querySelector('.cards-list__main-actions'),
+      secondaryActions = currentCard.querySelector('.cards-list__secondary-actions'),
+      title = currentCard.querySelector('.cards-list__title'),
+      year = currentCard.querySelector('.cards-list__year');
+
+    mainActions.classList.add('cards-list__main-actions--move');
+    secondaryActions.classList.add('cards-list__secondary-actions--move');
+    title.classList.add('cards-list__title--editable');
+    title.setAttribute('contenteditable', true);
+    year.classList.add('cards-list__year--editable');
+    year.setAttribute('contenteditable', true);
+  },
+
+  acceptAction: (id) => {
+    let currentCard = document.getElementById(id),
+      imdbID = id,
+      Title = currentCard.querySelector('.cards-list__title').innerText,
+      Year = currentCard.querySelector('.cards-list__year').innerText;
+
+    let object = { imdbID, Title, Year };
+    var formData = new FormData();
+    formData.append('film', JSON.stringify(object));
+    APP.tools.ajax('PUT', `https://${document.domain}/api/v1/films/${id}`, formData, APP.ui.responseUpdateFilmApi);
+  },
+
+  cancelAction: (id) => {
+    let currentCard = document.getElementById(id),
+      mainActions = currentCard.querySelector('.cards-list__main-actions'),
+      secondaryActions = currentCard.querySelector('.cards-list__secondary-actions'),
+      title = currentCard.querySelector('.cards-list__title'),
+      year = currentCard.querySelector('.cards-list__year');
+
+    mainActions.classList.remove('cards-list__main-actions--move');
+    secondaryActions.classList.remove('cards-list__secondary-actions--move');
+    title.innerText = title.getAttribute('data-content');
+    title.classList.remove('cards-list__title--editable');
+    year.innerText = year.getAttribute('data-content');
+    year.classList.remove('cards-list__year--editable');
   }
 };
 
@@ -116,6 +164,28 @@ APP.ui = {
     }
   },
 
+  responseUpdateFilmApi: function(datas) {
+    if (datas && typeof(datas) === 'object') {
+      APP.ui.triggerNotification('info', `El filme: ${datas.Title} se ha actualizado satisfactoriamente.`, 3000);
+
+      let currentCard = document.getElementById(datas.imdbID),
+        mainActions = currentCard.querySelector('.cards-list__main-actions'),
+        secondaryActions = currentCard.querySelector('.cards-list__secondary-actions'),
+        title = currentCard.querySelector('.cards-list__title'),
+        year = currentCard.querySelector('.cards-list__year');
+
+      mainActions.classList.remove('cards-list__main-actions--move');
+      secondaryActions.classList.remove('cards-list__secondary-actions--move');
+      title.setAttribute('data-content', title.innerText);
+      title.classList.remove('cards-list__title--editable');
+      year.setAttribute('data-content', year.innerText);
+      year.classList.remove('cards-list__year--editable');
+    }
+    else {
+      APP.ui.triggerNotification('error', 'Upps, ha ocurrido un error al intentar insertar el filme en la base de datos.', 3000);
+    }
+  },
+
   responseDeleteFilmApi: function(datas) {
     if (typeof(datas) === 'object' && datas.filmId) {
       APP.ui.deleteFilm(datas.filmId);
@@ -131,23 +201,24 @@ APP.ui = {
 
       let filmListContainer = document.querySelector('.cards-list__container');
       let filmTemplate = `
-      <div id="${film.imdbID}" class="cards-list__item">
-        <div class="cards-list__content">
-          <img class="cards-list__image" src="${film.Poster}">
-          <div class="cards-list__datas">
-            <div class="title">${film.Title}</div>
-            <div class="year">${film.Year}</div>
+        <div class="cards-list__item" id="${film.imdbID}">
+          <div class="cards-list__content"><img class="cards-list__image" src="${film.Poster}">
+            <div class="cards-list__datas">
+              <div class="cards-list__title" data-content="${film.Title}" contenteditable="false">${film.Title}</div>
+              <div class="cards-list__year" data-content="${film.Year}" contenteditable="false">${film.Year}</div>
+            </div>
           </div>
-        </div>
-        <div class="cards-list__actions">
-          <span data-action="delete" data-film-id="${film.imdbID}">
-            <i class="far fa-trash-alt"></i>
-          </span>
-          <span data-action="update" data-film-id="${film.imdbID}">
-            <i class="far fa-edit"></i>
-          </span>
-        </div>
-      </div>`;
+          <div class="cards-list__actions" data-film-id="${film.imdbID}">
+            <div class="cards-list__main-actions">
+              <span data-film-id="${film.imdbID}" data-action="delete"><i class="far fa-trash-alt"></i></span>
+              <span data-film-id="${film.imdbID}" data-action="update"><i class="far fa-edit"></i></span>
+            </div>
+            <div class="cards-list__secondary-actions">
+              <span data-film-id="${film.imdbID}" data-action="accept"><i class="fas fa-check"></i></span>
+              <span data-film-id="${film.imdbID}" data-action="cancel"><i class="fas fa-times"></i></span>
+            </div>
+          </div>
+        </div>`;
       if (filmListContainer.querySelectorAll('.cards-list__item').length > 0) {
         filmListContainer.innerHTML += filmTemplate;
       }
@@ -218,6 +289,7 @@ APP.start();
 [ ] Editar un filme a través de la API
 [ ] Editar un filme desde el cliente
 [ ] Cambiar visualizacion del componente de notificaciones
+[ ] Agregar loader gif
 [ ] Guardar imágenes de las películas en local
 */
 
