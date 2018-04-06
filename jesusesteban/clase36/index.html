@@ -18,6 +18,17 @@
 		h3.title{
 			margin-bottom: 50px;
 		}
+		.data-table li{
+			display: inline-block;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+		.data-table li span{
+			display: inline-block;
+			margin: 0 5px;
+			width: 100%;
+		}
+
 	</style>
 	
 	
@@ -55,28 +66,29 @@
 					<div class="col-md-6">
 
 		        		<div>
-		        			<table id="data-table" class="table-bordered" style="width: 100%;">
-		        				<thead>
-		        					<tr>
-		        						<td><span><strong>Nombre</strong></span></td>
-		        						<td><span><strong>Teléfono</strong></span></td>
-		        						<td><span><strong>Mail</strong></span></td>
-		        						<td><span><strong></strong></span></td>
-		        					</tr>
-		        				</thead>
-		        				<tbody>
-			        				<tr>
-			        					<td><span class="data-nombre"></span></td>
-			        					<td><span class="data-telefono"></span></td>
-			        					<td><span class="data-mail"></span></td>
-			        					<td>
-				            				<button type="button" class="btn btn-danger" id="delete">
-				            					Borrar Contacto
-				            				</button> 
-			        					</td>
-			        				</tr>
-		        				</tbody>
-		        			</table>
+		        			<ul class="data-table"></ul>
+		        			<!--<table id="data-table" class="data-table table-bordered" style="width: 100%;">-->
+		        			<!--	<thead>-->
+		        			<!--		<tr>-->
+		        			<!--			<td><span><strong>Nombre</strong></span></td>-->
+		        			<!--			<td><span><strong>Teléfono</strong></span></td>-->
+		        			<!--			<td><span><strong>Mail</strong></span></td>-->
+		        			<!--			<td><span><strong></strong></span></td>-->
+		        			<!--		</tr>-->
+		        			<!--	</thead>-->
+		        			<!--	<tbody>-->
+			        		<!--		<tr>-->
+			        		<!--			<td><span class="data-nombre"></span></td>-->
+			        		<!--			<td><span class="data-telefono"></span></td>-->
+			        		<!--			<td><span class="data-mail"></span></td>-->
+			        		<!--			<td>-->
+				         <!--   				<button type="button" class="btn btn-danger" id="delete">-->
+				         <!--   					Borrar Contacto-->
+				         <!--   				</button> -->
+			        		<!--			</td>-->
+			        		<!--		</tr>-->
+		        			<!--	</tbody>-->
+		        			<!--</table>-->
 		        		</div>
 
 		        		<div style="padding-top: 10px;">
