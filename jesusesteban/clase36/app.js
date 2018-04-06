@@ -39,6 +39,7 @@ function deleteContact(){
 }
 
 document.getElementById("delete").addEventListener("click", function(){
+    console.log("Delete contact");
     deleteContact();
 });
 
@@ -50,6 +51,7 @@ function deleteAll(){
 }
 
 document.getElementById("delete-all").addEventListener("click", function(){
+    console.log("Delete ALL contact");
     deleteAll();
 });
 
@@ -64,5 +66,6 @@ function recoveryContact(){
 }
 
 document.getElementById("recovery").addEventListener("click", function(){
+    console.log("Recuperar contacto");
     recoveryContact();
 });
