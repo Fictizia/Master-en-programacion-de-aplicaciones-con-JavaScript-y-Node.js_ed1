@@ -1,33 +1,33 @@
 // ADD CONTACT
-// function addContact(){
+function addContact(){
 
-// 	// Inputs
-//     var nombre = document.getElementById("name").value,
-//         telefono = document.getElementById("phone").value,
-//         mail = document.getElementById("mail").value,
-//         dataTable = document.getElementById("data-table");
+	// Inputs
+    var nombre = document.getElementById("name").value,
+        telefono = document.getElementById("phone").value,
+        mail = document.getElementById("mail").value,
+        dataTable = document.getElementById("data-table");
 	
-// 	// Guardamos los datos en localstorage
+	// Guardamos los datos en localstorage
 	
-// 	localStorage.setItem('nombre', nombre);
-// 	localStorage.setItem('telefono', telefono);
-// 	localStorage.setItem('mail', mail);
+	localStorage.setItem('nombre', nombre);
+	localStorage.setItem('telefono', telefono);
+	localStorage.setItem('mail', mail);
 	
 	
-// 	// Mostramos los datos en el HTML	
-// 	var dataNombre = localStorage.getItem('nombre'),
-// 	    dataTelefono = localStorage.getItem('telefono'),
-// 	    dataMail = localStorage.getItem('mail');
+	// Mostramos los datos en el HTML	
+	var dataNombre = localStorage.getItem('nombre'),
+	    dataTelefono = localStorage.getItem('telefono'),
+	    dataMail = localStorage.getItem('mail');
 
-//     document.querySelector('.data-nombre').innerHTML = dataNombre;
-//     document.querySelector('.data-telefono').innerHTML = dataTelefono;
-//     document.querySelector('.data-mail').innerHTML = dataMail;
+    document.querySelector('.data-nombre').innerHTML = dataNombre;
+    document.querySelector('.data-telefono').innerHTML = dataTelefono;
+    document.querySelector('.data-mail').innerHTML = dataMail;
 
-// }
+}
 
-// document.getElementById("anadir").addEventListener("click", function(){
-//     addContact();
-// });
+document.getElementById("anadir").addEventListener("click", function(){
+    addContact();
+});
 
 
 // DELETE CONTACT
