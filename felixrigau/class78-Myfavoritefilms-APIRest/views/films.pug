@@ -9,7 +9,7 @@ block content
       each film in films
         .cards-list__item(id=`${film.imdbID}`)
           .cards-list__content
-            img(src=`${film.Poster}`, class='cards-list__image')
+            img(src='images/films/'+`${film.imdbID}`+'.jpg', class='cards-list__image')
             .cards-list__datas
               .cards-list__title(data-content=`${film.Title}`) #{film.Title}
               .cards-list__year(data-content=`${film.Year}`) #{film.Year}

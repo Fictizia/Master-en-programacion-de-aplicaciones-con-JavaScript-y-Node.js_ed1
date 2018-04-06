@@ -20,6 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.render('index', { title: "Fav Films | Gestiona tus filmes favoritos" });
+    // filmModel.downloadImage('https://images-na.ssl-images-amazon.com/images/M/MV5BYzFjNzIxMmEtMzY5NS00YTgzLTkwYWEtN2FjMmY0NmNkZWY3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg', 'test');
 });
 
 app.get('/films', (req, res) => {
