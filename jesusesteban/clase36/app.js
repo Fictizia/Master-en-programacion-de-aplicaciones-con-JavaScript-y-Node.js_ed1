@@ -42,9 +42,24 @@ function printContact(contacto, indice){
             "<span class=\"data-nombre\">"+"Nombre: "+contacto.nombre+"</span>"+
             "<span class=\"data-telefono\">"+"Teléfono: "+contacto.telefono+"</span>"+
             "<span class=\"data-mail\">"+"Mail: "+contacto.mail+"</span>"+
-            "<button data-delete=\""+indice+"\" type=\"button\" class=\"delete btn btn-danger\">"+ "Borrar Contacto"+"</button>"+
+            //"<button onClick=\"this.parentNode.parentNode.removeChild(this.parentNode);\" data-delete=\""+indice+"\" type=\"button\" class=\"delete btn btn-danger\">"+ "Borrar Contacto"+"</button>"+
+            "<button onClick=\"delete_row()\" data-delete=\""+indice+"\" type=\"button\" class=\"delete btn btn-danger\">"+ "Borrar Contacto"+"</button>"+
         "</li>";
+
 }
+function delete_row(e)
+{
+    
+    var wadus = document.getElementsByClassName("delete");
+    wadus = [];
+    
+    console.log(wadus);
+    //console.log(this.document.getElementsByClassName("delete"));
+
+    //e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+}
+
+
 
 document.getElementById("anadir").addEventListener("click", function(){
     addContact();
@@ -55,11 +70,22 @@ document.getElementById("anadir").addEventListener("click", function(){
 function deleteContact(){
 
 
-}
+    
+    var botones = document.getElementsByClassName('delete');
+        for (var i=0; i< botones.length; i++){
+            console.log("hjfksdh");
 
-document.querySelector(".data-table").addEventListener("click", function(){
-    deleteContact();
-});
+            botones[0];
+            //botones[i].addEventListener("click", function(){
+              //  botones[i].parentNode.delete;
+            //});
+        }
+
+}
+//document.getElementsByClassName(".delete").addEventListener("click", function(){
+  //  console.log("jklfsdjflksd");
+    //deleteContact();
+//});
 
 
 // Borramos todos los contactos 
