@@ -151,8 +151,9 @@ Fecha | Teoría | Recursos | Contenido
 02/04/2018 | [Clase 87](teoria/dia87.md) | [Clase 87](recursos/dia87.md) | Socket.IO
 03/04/2018 | [Clase 88](teoria/dia88.md) | [Clase 88](recursos/dia88.md) | Bower 
 04/04/2018 | [Clase 89](teoria/dia89.md) | [Clase 89](recursos/dia89.md) | Gulp, Grunt, NPM Scripts...
-05/04/2018 | Clase 90 | [lase 90 | Dudas y preguntas
+05/04/2018 | Clase 90 | Clase 90 | Dudas y preguntas
 06/04/2018 | Clase 91 | Clase 91 | [#OpenSourceFriday](https://opensourcefriday.com)
+09/04/2018 | Clase 92 | Clase 92 | Prácticas: Memezinga PinHead version
 
 
 
