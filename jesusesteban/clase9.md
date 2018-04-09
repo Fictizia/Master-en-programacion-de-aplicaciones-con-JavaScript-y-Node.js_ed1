@@ -16,7 +16,7 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
     // Tu solución
     
     for(i=3;i>0;i--){
-      var contrasena = pprompt("Introduce la contraseña");
+      var contrasena = prompt("Introduce la contraseña");
       if(contrasena === "Fictizia mola mucho") {
         i=0;
         console.log("Correcto");
@@ -31,19 +31,21 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 ```javascript
     // Tu solución
     
-    
-    var count = 3
-    while(count>0) {
-      var contrasena = pprompt("Introduce la contraseña");
+    var count = 0
+
+    while(count <3) {
+      var contrasena = prompt("Introduce la contraseña");
       if(contrasena === "Fictizia mola mucho") {
         console.log("Correcto");
         break;
       } else {
-        count --;
-        console.log("Denegado, te quedan " + (i-1));
+        console.log("No es correcto ");
       }
+      count++;
     }
-    
+    if(count >=3){
+        console.log("Ya no te quedan más intentos");
+    }
     
     
     
@@ -52,6 +54,25 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 - Usando *Do...While*
 ```javascript
     // Tu solución
+    var count = 0
+    var acierto = false;
+
+    do{
+        var contrasena = prompt("Introduce la contraseña");
+        if(contrasena === "Fictizia mola mucho") {
+            acierto = true;
+            console.log("Correcto");
+        }else{
+            console.log("No es correcto");
+        }
+    }while (count <3 & acierto === false);
+    
+    if(count > 3){
+        console.log("Ya no te quedan más intentos");
+    }
+
+
+    
 ```
 
 
@@ -69,9 +90,9 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 ```javascript
     // Tu solución
     var numero = 1;
-    while(numero < 101) {
+    while(numero < 100) {
         console.log(numero);
-        number ++;
+        numero ++;
     }    
 ```
 
@@ -82,7 +103,7 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
     do {
       console.log(numero);
       numero++;
-    } while (numero < 101);    
+    } while (numero < 100);    
 ```
 
 
@@ -103,7 +124,7 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
     var numero = 100;
     while(numero >= 0) {
         console.log(numero);
-        number --;
+        numero --;
     }    
 ```
 
@@ -135,11 +156,9 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 ```javascript
     // Tu solución
     var numero = 0;
-    while(numero < 101) {
-        if(i%2 === 0){
-            console.log(i);    
-        }
-        numero ++;
+    while(numero <= 100) {
+        console.log(numero);    
+        numero += 2;
     }
     
 ```
@@ -149,11 +168,9 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
     // Tu solución
     var numero = 0;
     do {
-        if(numero%2 === 0){
-            console.log(numero);    
-        }
-      numero++;
-    } while (numero < 101);
+        console.log(numero);    
+        numero += 2;
+    } while (numero < 100);
     
 ```
 
@@ -162,40 +179,58 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 - Usando *for* (desestructurado)
 ```javascript
     // Tu solución
-    var numero = prompt("Itroduce un numero y te diré los impares hasta 50 intentos");
-    var controlador = 50;
-    
-    for(i=0;i<=controlador;i++){
-      if(numero%2 !== 0){
-        console.log(numero);    
-      }
-      numero++;
-    }
+		var impar = 0;
+		
+		console.info("Empieza la cuenta!");
+
+		for ( ; impar <= 50 ; ) {
+			
+			if (numero % 2 !== 0){
+				console.log(numero);
+				impar++
+
+			}
+
+        numero++
+			
+		};
+
+		console.info("Terminó la cuenta mágica...");
 
 ```    
 - Usando *while*
 ```javascript 
-    var numero = prompt("Itroduce un numero y te diré los impares hasta 50 intentos");
-    var controlador = 50;
-    while(control>0) {
-      if(numero%2 !== 0){
-        console.log(numero);    
-      }
-      numero++;
-      controlador--;
-    }
+		console.info("Empieza la cuenta!");
+		
+		var i = 1
+		while (i <= 50) {
+			if (numero % 2 !== 0){
+				console.log(numero);	
+			}
+			numero++
+			i++;
+		};
+
+		console.info("Terminó la cuenta mágica...");
 ```
 
 - Usando *Do...While*
 ```javascript
 
-    do {
-      if(numero%2 !== 0){
-        console.log(numero);    
-      }
-      numero++;
-      controlador--;
-    } while (controlador>0);
+		console.info("Empieza la cuenta!");
+		
+		var i = 1
+		do {
+			if (numero % 2 !== 0){
+				console.log(numero);
+				numero++
+			} else (
+				numero++
+			)
+			i ++;
+		} while (i <= 50);
+
+		console.info("Terminó la cuenta mágica...");
     
 ```
 
@@ -204,48 +239,77 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 - Usando *for*
 ```javascript
     // Tu solución
-    var numero = parseInt(pprompt("Introduce un numero y sumamos los 50 pares y contamos los impares que hemos encontrado"));
-    var suma = numero;
-    var contador = 0;
-    
-    for(i=0;i<=50;i++){
-      numero++;
-      if(numero%2) {
-        contador++;
-      }else {
-        console.log(numero);
-        suma = suma + numero;
-      }
-    }
-    console.log ("La suma de tus pares es " + suma + " y hemos encontrado " + contador + " impares");
+		var totalImpares = 0;
+		var totalPares = 0;
+
+		console.info("Empieza la cuenta!");
+
+		for (var i = 1; i <= 50; i++) {
+			
+			if (numero % 2 !== 0){
+				totalImpares += numero;
+				numero++;
+			} else {
+				totalPares += numero;
+				numero++;
+			}
+			
+		};
+
+		console.info("Total de suma de pares ", totalPares);
+		console.info("Total de suma de impares ", totalImpares);
+		console.info("Terminó la cuenta mágica...");
     
 ```
 
 - Usando *while*
 ```javascript
     // Tu solución
-    var numero = parseInt(pprompt("Introduce un numero y sumamos los 50 pares y contamos los impares que hemos encontrado"));
-    var suma = numero;
-    var contador = 0;
-    
-    i=0;
-    while(i<=50){
-      numero++;
-      if(numero%2) {
-        contador++;
-      }else {
-        console.log(numero);
-        suma = suma + numero;
-      }
-      i++;
-    }
+		var totalImpares = 0;
+		var totalPares = 0;
 
-    console.log ("La suma de tus pares es " + suma + " y hemos encontrado " + contador + " impares");
+		console.info("Empieza la cuenta!");
+		
+		var i = 1
+		while (i <= 50) {
+			if (numero % 2 !== 0){
+				totalImpares += numero;
+				numero++;
+			} else {
+				totalPares += numero;
+				numero++;
+			}
+			i++;
+		};
+
+		console.info("Total de suma de pares ", totalPares);
+		console.info("Total de suma de impares ", totalImpares);
+		console.info("Terminó la cuenta mágica...");
 ```
 
 - Usando *Do...While*
 ```javascript
     // Tu solución
+		var totalImpares = 0;
+		var totalPares = 0;
+
+		console.info("Empieza la cuenta!");
+		
+		var i = 1
+		do {
+			if (numero % 2 !== 0){
+				totalImpares += numero;
+				numero++;
+			} else {
+				totalPares += numero;
+				numero++;
+			}
+			i ++;
+		} while (i <= 50);
+
+		console.info("Total de suma de pares ", totalPares);
+		console.info("Total de suma de impares ", totalImpares);
+		console.info("Terminó la cuenta mágica...");    
 ```
 
 **7 -** Diseña un algoritmo introducido un numero y pasarlo a número romanos.
@@ -256,15 +320,165 @@ Realiza los siguientes ejercicios usando en cada uno los tres tipos de bucles (D
 - Usando *for*
 ```javascript
     // Tu solución
+		var numeroOriginal = numero;
+	  
+
+		if (numero <= 50 && numero > 0){
+
+	    var numeroRomano = "";
+	    
+			for(; numero > 0 ;){
+				
+				if(numero === 50){
+					numeroRomano = "L";
+					numero = 0;
+				} else if (numero >= 40 && numero < 50){
+					numeroRomano += "XL";
+					numero -= 40;
+				} else if (numero >= 10 && numero < 40){
+					numeroRomano += "X";
+					numero -= 10;
+				} else if(numero === 9){
+					numeroRomano += "IX";
+					numero -= 9;
+				} else if(numero === 8){
+					numeroRomano += "VIII";
+					numero -= 8;
+				} else if (numero === 7){
+					numeroRomano += "VII";
+					numero -= 7;
+				} else if (numero === 6){
+					numeroRomano += "VI";
+					numero -= 6;
+				} else if (numero === 5) {
+					numeroRomano += "V";
+					numero -= 5;
+				} else if (numero === 4){
+					numeroRomano += "IV";
+					numero -= 4;				
+				} else if(numero <= 3 && numero > 0){
+					numeroRomano += "I";
+					numero -= 1;
+				}
+	      
+			}
+
+			console.info(numeroOriginal + " en números romanos es " + numeroRomano);
+
+		} else {
+	    
+			console.warn(numeroOriginal + "NO es un número valido (0-50)");
+		
+	  	}    
     
 ```
 
 - Usando *while*
 ```javascript
     // Tu solución
+		var numeroOriginal = numero;
+	  
+
+		if (numero <= 50 && numero > 0){
+
+	    var numeroRomano = "";
+	    
+			while(numero > 0){
+				
+				if(numero === 50){
+					numeroRomano = "L";
+					numero = 0;
+				} else if (numero >= 40 && numero < 50){
+					numeroRomano += "XL";
+					numero -= 40;
+				} else if (numero >= 10 && numero < 40){
+					numeroRomano += "X";
+					numero -= 10;
+				} else if(numero === 9){
+					numeroRomano += "IX";
+					numero -= 9;
+				} else if(numero === 8){
+					numeroRomano += "VIII";
+					numero -= 8;
+				} else if (numero === 7){
+					numeroRomano += "VII";
+					numero -= 7;
+				} else if (numero === 6){
+					numeroRomano += "VI";
+					numero -= 6;
+				} else if (numero === 5) {
+					numeroRomano += "V";
+					numero -= 5;
+				} else if (numero === 4){
+					numeroRomano += "IV";
+					numero -= 4;				
+				} else if(numero <= 3 && numero > 0){
+					numeroRomano += "I";
+					numero -= 1;
+				}
+	      
+			}
+
+			console.info(numeroOriginal + " en números romanos es " + numeroRomano);
+
+		} else {
+	    
+			console.warn(numeroOriginal + "NO es un número valido (0-50)");
+		
+	  }    
 ```
 
 - Usando *Do...While*
 ```javascript
     // Tu solución
+		var numeroOriginal = numero;
+	  
+
+		if (numero <= 50 && numero > 0){
+
+	    var numeroRomano = "";
+	    
+			do{
+				
+				if(numero === 50){
+					numeroRomano = "L";
+					numero = 0;
+				} else if (numero >= 40 && numero < 50){
+					numeroRomano += "XL";
+					numero -= 40;
+				} else if (numero >= 10 && numero < 40){
+					numeroRomano += "X";
+					numero -= 10;
+				} else if(numero === 9){
+					numeroRomano += "IX";
+					numero -= 9;
+				} else if(numero === 8){
+					numeroRomano += "VIII";
+					numero -= 8;
+				} else if (numero === 7){
+					numeroRomano += "VII";
+					numero -= 7;
+				} else if (numero === 6){
+					numeroRomano += "VI";
+					numero -= 6;
+				} else if (numero === 5) {
+					numeroRomano += "V";
+					numero -= 5;
+				} else if (numero === 4){
+					numeroRomano += "IV";
+					numero -= 4;				
+				} else if(numero <= 3 && numero > 0){
+					numeroRomano += "I";
+					numero -= 1;
+				}
+	      
+			} while (numero > 0)
+
+			console.info(numeroOriginal + " en números romanos es " + numeroRomano);
+
+		} else {
+	    
+			console.warn(numeroOriginal + "NO es un número valido (0-50)");
+			
+	  	}    
 ```
