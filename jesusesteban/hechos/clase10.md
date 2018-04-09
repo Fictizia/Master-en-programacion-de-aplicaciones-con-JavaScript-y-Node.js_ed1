@@ -9,13 +9,13 @@
 ```javascript
     // Tu solución
 
-    var caraMoneda = Math.floor(Math.random() * 2);
+    var caraMoneda = Math.floor(Math.random() * 2) +1;
     
-    while(caraMoneda){
-    	console.log("Ha salido cara");
-    	var caraMoneda = Math.floor(Math.random() * 2);
+    if(caraMoneda === 1){
+        console.log("Ha salido cara");
+    }else{
+        console.log("Ha salido cruz");
     }
-    console.log("Ha salido cruz");
     
 ```
 
@@ -80,5 +80,62 @@
 		} else {
 			console.warn("Error! los datos no son correctos!");			
 		}
-	}    
+	}  
+	
+	// Solucion 2
+	function verificadorDeFechas (day, month, year) {
+		var fechaDetalle,
+		fecha = day + "/" + month + "/" + year;
+
+		if(day <= 31 && day > 0 && month <=12 && month > 0 && year >= 0){
+			console.info("La fecha es correcta", fecha);
+
+			switch (month) {
+				case 1:
+					fechaDetalle = day + " de Enero de " + year;
+					break;
+				case 2:
+					fechaDetalle = day + " de Febrero de " + year;
+					break;
+				case 3:
+					fechaDetalle = day + " de Marzo de " + year;
+					break;
+				case 4:
+					fechaDetalle = day + " de Abril de " + year;
+					break;
+				case 5:
+					fechaDetalle = day + " de Mayo de " + year;
+					break;
+				case 6:
+					fechaDetalle = day + " de Junio de " + year;
+					break;
+				case 7:
+					fechaDetalle = day + " de Julio de " + year;
+					break;
+				case 8:
+					fechaDetalle = day + " de Agosto de " + year;
+					break;
+				case 9:
+					fechaDetalle = day + " de Septiembre de " + year;
+					break;
+				case 10:
+					fechaDetalle = day + " de Octubre de " + year;
+					break;
+				case 11:
+					fechaDetalle = day + " de Noviembre de " + year;
+					break;
+				case 12:
+					fechaDetalle = day + " de Diciembre de " + year;
+					break;
+			}
+
+			console.info("La fecha en otro formato: ", fechaDetalle);
+
+		} else {
+			console.warn("Error! los datos no son correctos!");
+		}
+
+	}	
+	
+	
 ```

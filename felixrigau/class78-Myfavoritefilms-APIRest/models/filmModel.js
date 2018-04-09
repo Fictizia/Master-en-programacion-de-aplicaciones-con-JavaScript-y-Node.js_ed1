@@ -1,5 +1,9 @@
 //Firebase 
 const firebase = require("firebase");
+const http = require("http")
+const request = require("request")
+const fs = require("fs")
+
 
 var config = {
   apiKey: "AIzaSyCuyhD-WepVZyPb5OwmEAnarSn5MvD3Xvc",
@@ -18,7 +22,7 @@ exports.all = () => {
   return new Promise((resolve, reject) => {
     database.ref('/films').once('value', function(snapshot) {
       resolve(snapshot.val());
-    })
+    });
   });
 };
 
@@ -32,6 +36,12 @@ exports.delete = (id) => {
 
 exports.update = (id, object) => {
   return database.ref('/films/' + id).update(object);
+};
+
+exports.downloadImage = (src, fileName) => {
+  let dest = './public/images/films/' + fileName + '.jpg';
+  let file = fs.createWriteStream(dest);
+  request(src).pipe(file);
 };
 
 exports.exist = (id) => {

@@ -144,7 +144,7 @@ body {
 
 .notification-wrapper {
   width: 400px;
-  height: 100px;
+  height: auto;
   position: fixed;
   z-index: 9999;
   top: 85px;
