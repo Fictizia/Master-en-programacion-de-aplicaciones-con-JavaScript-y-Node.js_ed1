@@ -38,10 +38,8 @@
 	
 	console.log("El resultado es %O", anidacion);	
 	
-```
 
-- Variante (Diferentes longitudes)
-```javascript
+// Variante (Diferentes longitudes)
 	var arreglo1 = ["Oscar", "Pedro", "Marco", "Juana", true, 4, 12, 12],
 	    arreglo2 = [9897667, 81721623, 91823871, 71236123],
 	    arreglo3 = [false, true, true, false];
@@ -89,10 +87,9 @@
 	// Opcional
 	arrayPares = arrayPares.sort();
 	arrayImpares = arrayImpares.sort();
-```
 
 
-**3 -** Vamos a gestionar la lista de asistentes de un evento. 
+//**3 -** Vamos a gestionar la lista de asistentes de un evento. 
 
 - Características:
 	- Cada asistente recibirá el identificador de su posición en el Array.
@@ -102,7 +99,6 @@
 
 - Opcional:
 	- Verifica antes de asignar un asistente que no se registro previamente. 
-```javascript
 	var lista = [];
 	
 	function asignar(nombre) {
