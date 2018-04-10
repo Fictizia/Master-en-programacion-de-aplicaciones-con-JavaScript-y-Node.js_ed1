@@ -154,7 +154,7 @@ Fecha | Teoría | Recursos | Contenido
 05/04/2018 | Clase 90 | Clase 90 | Dudas y preguntas
 06/04/2018 | Clase 91 | Clase 91 | [#OpenSourceFriday](https://opensourcefriday.com)
 09/04/2018 | Clase 92 | Clase 92 | Prácticas: Memezinga PinHead version
-
+10/04/2018 | [Clase 93](teoria/dia93.md) | [Clase 93](recursos/dia93.md) | Browsefy y Webpack
 
 
 Temario
