@@ -71,7 +71,19 @@ function recoveryId(select){
       document.getElementById('linkUrl').href = showLinkUrl;
 
       /* Add position in marker map */
+      
+       map.setZoom(16);
+      
+  // setInterval(function(){
+  //       map.setZoom(3);
+  //       setTimeout(function(){
+  //           map.setZoom(16);
+  //       });
+  //   }, 500);      
+
       addMarker(locationLat, locationLong);  
+
+
       break;
     }
     
