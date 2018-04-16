@@ -157,6 +157,8 @@ Fecha | Teoría | Recursos | Contenido
 10/04/2018 | [Clase 93](teoria/dia93.md) | [Clase 93](recursos/dia93.md) | Browsefy y Webpack
 11/04/2018 | [Clase 94](teoria/dia94.md) | [Clase 94](recursos/dia94.md) | Yeoman
 12/04/2018 | Clase 95 | Clase 95 | Prácticas: Batimagen
+13/04/2018 | Clase 96 | Clase 96 | [#OpenSourceFriday](https://opensourcefriday.com)
+16/04/2018 | [Clase 97](teoria/dia97.md) | [Clase 97](recursos/dia97.md) | Deploy en Cloud, PM2, Nodemon...
 
 Temario
 =================
