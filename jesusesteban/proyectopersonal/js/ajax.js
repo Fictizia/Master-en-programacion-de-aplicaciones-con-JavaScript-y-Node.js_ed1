@@ -72,17 +72,18 @@ function recoveryId(select){
 
       /* Add position in marker map */
       
-       map.setZoom(16);
-      
-  // setInterval(function(){
-  //       map.setZoom(3);
-  //       setTimeout(function(){
-  //           map.setZoom(16);
-  //       });
-  //   }, 500);      
+      map.setZoom(16);
 
       addMarker(locationLat, locationLong);  
 
+
+
+
+      // Añadir más marcadores
+      // L.marker([50.5, 30.5]).addTo(map);
+
+      // Fly to circuit
+      // http://bl.ocks.org/sigon426/79f0aaaf25b6f978c0a7
 
       break;
     }
