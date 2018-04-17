@@ -26,24 +26,21 @@ window.onload = loadMap(1, 1);
 
 
 /* Init Map */
-function addMarker (locationLat, locationLong, wadus){
-    // var mapOptions = {
-    //   zoom: 16
-    // };
-
-
+function addMarker (locationLat, locationLong){
 
  map.removeLayer(lastMarker);
+
+
+
  
  
  lastMarker = L.marker([locationLat, locationLong]).addTo(map);
 
  var latLng = new L.LatLng(locationLat, locationLong);
+
  
  map.panTo(latLng);
 
 
 }
  
- 
-
