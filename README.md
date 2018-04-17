@@ -159,6 +159,9 @@ Fecha | Teoría | Recursos | Contenido
 12/04/2018 | Clase 95 | Clase 95 | Prácticas: Batimagen
 13/04/2018 | Clase 96 | Clase 96 | [#OpenSourceFriday](https://opensourcefriday.com)
 16/04/2018 | [Clase 97](teoria/dia97.md) | [Clase 97](recursos/dia97.md) | Deploy en Cloud, PM2, Nodemon...
+17/04/2018 | [Clase 98](teoria/dia98.md) | [Clase 98](recursos/dia98.md) | Offline, PWAs y Blob
+
+
 
 Temario
 =================
