@@ -161,7 +161,7 @@ Fecha | Teoría | Recursos | Contenido
 16/04/2018 | [Clase 97](teoria/dia97.md) | [Clase 97](recursos/dia97.md) | Deploy en Cloud, PM2, Nodemon...
 17/04/2018 | [Clase 98](teoria/dia98.md) | [Clase 98](recursos/dia98.md) | Offline, PWAs y Blob
 18/04/2018 | [Clase 99](teoria/dia99.md) | [Clase 99](recursos/dia99.md) | Fetch, Drag & Drop, Canvas, indexedDB y HTML5 Router
-
+23/04/2018 | [Clase 100](teoria/dia100.md) | [Clase 100](recursos/dia100.md) | ECMAScript Next (ES7, ES8, etc...)
 
 
 Temario
