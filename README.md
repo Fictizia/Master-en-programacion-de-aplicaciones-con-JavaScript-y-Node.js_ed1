@@ -162,7 +162,10 @@ Fecha | Teoría | Recursos | Contenido
 17/04/2018 | [Clase 98](teoria/dia98.md) | [Clase 98](recursos/dia98.md) | Offline, PWAs y Blob
 18/04/2018 | [Clase 99](teoria/dia99.md) | [Clase 99](recursos/dia99.md) | Fetch, Drag & Drop, Canvas, indexedDB y HTML5 Router
 23/04/2018 | [Clase 100](teoria/dia100.md) | [Clase 100](recursos/dia100.md) | ECMAScript Next (ES7, ES8, etc...)
-
+24/04/2018 | Clase 101 | Clase 101 | Intro a Frameworks de Frontend
+25/04/2018 | Clase 102 | Clase 102 | Angularjs I
+26/04/2018 | Clase 103 | Clase 103 | Angularjs II
+27/04/2018 | Clase 104 | Clase 104 | React y su Ecosistema con xDae
 
 Temario
 =================
