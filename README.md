@@ -166,6 +166,10 @@ Fecha | Teoría | Recursos | Contenido
 25/04/2018 | Clase 102 | Clase 102 | Angularjs I
 26/04/2018 | Clase 103 | Clase 103 | Angularjs II
 27/04/2018 | Clase 104 | Clase 104 | React y su Ecosistema con xDae
+03/05/2018 | Clase 105 | Clase 105 | Angularjs III
+04/05/2018 | Clase 106 | Clase 106 | Angularjs IV
+07/05/2018 | [Clase 107](teoria/dia107.md) | [Clase 107](recursos/dia107.md) | Empezamos NodeJS Avanzado
+
 
 Temario
 =================
