@@ -169,6 +169,7 @@ Fecha | Teoría | Recursos | Contenido
 03/05/2018 | Clase 105 | Clase 105 | Angularjs III
 04/05/2018 | Clase 106 | Clase 106 | Angularjs IV
 07/05/2018 | [Clase 107](teoria/dia107.md) | [Clase 107](recursos/dia107.md) | Empezamos NodeJS Avanzado
+09/05/2018 | [Clase 108](teoria/dia108.md) | [Clase 108](recursos/dia108.md) | Exec: Python I
 
 
 Temario
