@@ -171,6 +171,7 @@ Fecha | Teoría | Recursos | Contenido
 07/05/2018 | [Clase 107](teoria/dia107.md) | [Clase 107](recursos/dia107.md) | Empezamos NodeJS Avanzado
 09/05/2018 | [Clase 108](teoria/dia108.md) | [Clase 108](recursos/dia108.md) | Exec: Python I
 10/05/2018 | [Clase 109](teoria/dia109.md) | [Clase 109](recursos/dia109.md) | Exec: Python II
+11/05/2018 | [Clase 110](teoria/dia110.md) | [Clase 110](recursos/dia110.md) | Exec: Python III
 
 
 Temario
