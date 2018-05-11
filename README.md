@@ -1,4 +1,4 @@
-![shieldsIO](https://img.shields.io/github/issues/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
+[shieldsIO](https://img.shields.io/github/issues/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
 ![shieldsIO](https://img.shields.io/github/forks/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
 ![shieldsIO](https://img.shields.io/github/stars/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
 
@@ -170,6 +170,7 @@ Fecha | Teoría | Recursos | Contenido
 04/05/2018 | Clase 106 | Clase 106 | Angularjs IV
 07/05/2018 | [Clase 107](teoria/dia107.md) | [Clase 107](recursos/dia107.md) | Empezamos NodeJS Avanzado
 09/05/2018 | [Clase 108](teoria/dia108.md) | [Clase 108](recursos/dia108.md) | Exec: Python I
+10/05/2018 | [Clase 109](teoria/dia109.md) | [Clase 109](recursos/dia109.md) | Exec: Python II
 
 
 Temario
