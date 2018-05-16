@@ -173,6 +173,7 @@ Fecha | Teoría | Recursos | Contenido
 10/05/2018 | [Clase 109](teoria/dia109.md) | [Clase 109](recursos/dia109.md) | Exec: Python II
 11/05/2018 | [Clase 110](teoria/dia110.md) | Clase 110 | Scraping I
 14/05/2018 | [Clase 111](teoria/dia111.md) | [Clase 111](recursos/dia111.md) | Exec: Python III
+16/05/2018 | [Clase 112](teoria/dia112.md)  | Clase 112 | Ejercicios de Python
 
 Temario
 =================
