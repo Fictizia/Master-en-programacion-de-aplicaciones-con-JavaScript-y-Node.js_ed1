@@ -180,7 +180,7 @@ Fecha | Teoría | Recursos | Contenido
 23/05/2018 | Clase 115 | Clase 115 | Práctica cordova y app híbirida
 24/05/2018 | Clase 116 | Clase 116 | Práctica cordova y app híbirida
 25/05/2018 | Clase 117 | Clase 117 | Práctica cordova y app híbirida
-25/05/2018 | [Clase 118](teoria/dia118.md) | Clase 118 | Bases de datos no relacionales: MongoDB
+28/05/2018 | [Clase 118](teoria/dia118.md) | Clase 118 | Bases de datos no relacionales: MongoDB
 
 
 Temario
