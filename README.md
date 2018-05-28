@@ -175,6 +175,13 @@ Fecha | Teoría | Recursos | Contenido
 11/05/2018 | [Clase 110](teoria/dia110.md) | Clase 110 | Scraping I
 14/05/2018 | [Clase 111](teoria/dia111.md) | [Clase 111](recursos/dia111.md) | Exec: Python III
 16/05/2018 | [Clase 112](teoria/dia112.md)  | Clase 112 | Ejercicios de Python
+21/05/2018 | [Clase 113](teoria/dia113.md) | Clase 113 | Phonegap, Cordova y apps híbridas
+22/05/2018 | Clase 114 | Clase 114 | Práctica cordova y app híbirida
+23/05/2018 | Clase 115 | Clase 115 | Práctica cordova y app híbirida
+24/05/2018 | Clase 116 | Clase 116 | Práctica cordova y app híbirida
+25/05/2018 | Clase 117 | Clase 117 | Práctica cordova y app híbirida
+25/05/2018 | [Clase 118](teoria/dia118.md) | Clase 118 | Bases de datos no relacionales: MongoDB
+
 
 Temario
 =================
