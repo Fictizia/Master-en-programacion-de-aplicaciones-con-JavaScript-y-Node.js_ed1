@@ -184,6 +184,8 @@ Fecha | Teoría | Recursos | Contenido
 29/05/2018 | Clase 119 | Clase 118 | Bases de datos no relacionales: MongoDB
 30/05/2018 | [Clase 120](teoria/dia120.md) | Clase 120 | Bases de datos: MySQL I
 31/05/2018 | [Clase 121](teoria/dia121.md) | Clase 121 | Profesor Invitado: Jose Dongil (VUE)
+01/06/2018 | Clase 122 | Clase 114 | Trabajo en proyectos personales
+
 
 
 Temario
