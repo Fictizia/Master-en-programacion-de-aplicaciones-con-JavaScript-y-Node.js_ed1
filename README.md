@@ -186,6 +186,8 @@ Fecha | Teoría | Recursos | Contenido
 31/05/2018 | [Clase 121](teoria/dia121.md) | Clase 121 | Profesor Invitado: Jose Dongil (VUE)
 01/06/2018 | Clase 122 | Clase 122 | Trabajo en proyectos personales
 04/06/2018 | [Clase 123](teoria/dia123.md)  | Clase 123 | Bases de datos: MySQL II
+05/06/2018 | Clase 124 | Clase 124 | Ejercicios: MySQL
+
 
 Temario
 =================
