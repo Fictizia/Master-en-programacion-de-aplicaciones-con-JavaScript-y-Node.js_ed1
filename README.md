@@ -188,6 +188,9 @@ Fecha | Teoría | Recursos | Contenido
 04/06/2018 | [Clase 123](teoria/dia123.md)  | Clase 123 | Bases de datos: MySQL II
 05/06/2018 | Clase 124 | Clase 124 | Ejercicios: MySQL
 08/06/2018 | Clase 125 | Clase 125 | [#OpenSourceFriday](https://opensourcefriday.com)
+11/06/2018 | Clase 126 | Clase 126 | Ejercicios: MySQL
+
+
 
 Temario
 =================
