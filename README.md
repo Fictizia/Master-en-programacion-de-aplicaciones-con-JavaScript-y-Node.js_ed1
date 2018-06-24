@@ -196,6 +196,8 @@ Fecha | Teoría | Recursos | Contenido
 18/06/2018 | [Clase 131](teoria/dia131.md) | Clase 131 | Prácticas: MyBlog
 19/06/2018 | Clase 132 | Clase 132 | Prácticas: MyBlog
 20/06/2018 | Clase 133 | Clase 133 | Prácticas: MyBlog
+21/06/2018 | Clase 134 | Clase 134 | Prácticas: MyBlog
+
 
 
 Temario
