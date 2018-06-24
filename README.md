@@ -192,6 +192,7 @@ Fecha | Teoría | Recursos | Contenido
 12/06/2018 | [Clase 127](teoria/dia127.md) | [Clase 127](recursos/dia127.md)| Internet of Things (IoT) y Robótica I
 13/06/2018 | [Clase 128](teoria/dia128.md) | Clase 128 | Internet of Things (IoT) y Robótica II
 14/06/2018 | [Clase 129](teoria/dia129.md) | Clase 129 | Internet of Things (IoT) y Robótica III
+15/06/2018 | Clase 130 | Clase 130 | [#OpenSourceFriday](https://opensourcefriday.com)
 
 
 
