@@ -190,7 +190,7 @@ Fecha | Teoría | Recursos | Contenido
 08/06/2018 | Clase 125 | Clase 125 | [#OpenSourceFriday](https://opensourcefriday.com)
 11/06/2018 | Clase 126 | Clase 126 | Ejercicios: MySQL
 12/06/2018 | [Clase 127](teoria/dia127.md) | [Clase 127](recursos/dia127.md)| Internet of Things (IoT) y Robótica I
-
+13/06/2018 | [Clase 128](teoria/dia128.md) | Clase 128 | Internet of Things (IoT) y Robótica II
 
 Temario
 =================
