@@ -197,8 +197,7 @@ Fecha | Teoría | Recursos | Contenido
 19/06/2018 | Clase 132 | Clase 132 | Prácticas: MyBlog
 20/06/2018 | Clase 133 | Clase 133 | Prácticas: MyBlog
 21/06/2018 | Clase 134 | Clase 134 | Prácticas: MyBlog
-
-
+22/06/2018 | Clase 135 | Clase 135 | [#OpenSourceFriday](https://opensourcefriday.com)
 
 Temario
 =================
