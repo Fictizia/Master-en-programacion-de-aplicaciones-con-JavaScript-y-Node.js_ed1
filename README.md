@@ -189,7 +189,7 @@ Fecha | Teoría | Recursos | Contenido
 05/06/2018 | Clase 124 | Clase 124 | Ejercicios: MySQL
 08/06/2018 | Clase 125 | Clase 125 | [#OpenSourceFriday](https://opensourcefriday.com)
 11/06/2018 | Clase 126 | Clase 126 | Ejercicios: MySQL
-12/06/2018 | [Clase 127](teoria/dia127.md) | [Clase 127](recursos/dia127.md)| Internet of Things (IoT) y Robótica I
+12/06/2018 | [Clase 127](teoria/dia127.md) | [Clase 127](recursos/dia127.md) | Internet of Things (IoT) y Robótica I
 13/06/2018 | [Clase 128](teoria/dia128.md) | Clase 128 | Internet of Things (IoT) y Robótica II
 14/06/2018 | [Clase 129](teoria/dia129.md) | Clase 129 | Internet of Things (IoT) y Robótica III
 15/06/2018 | Clase 130 | Clase 130 | [#OpenSourceFriday](https://opensourcefriday.com)
@@ -198,6 +198,9 @@ Fecha | Teoría | Recursos | Contenido
 20/06/2018 | Clase 133 | Clase 133 | Prácticas: MyBlog
 21/06/2018 | Clase 134 | Clase 134 | Prácticas: MyBlog
 22/06/2018 | Clase 135 | Clase 135 | [#OpenSourceFriday](https://opensourcefriday.com)
+25/06/2018 | [Clase 136](teoria/dia136.md) | [Clase 136](recursos/dia136.md) | Pillarsjs I
+
+
 
 Temario
 =================
