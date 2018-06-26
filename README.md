@@ -199,6 +199,8 @@ Fecha | Teoría | Recursos | Contenido
 21/06/2018 | Clase 134 | Clase 134 | Prácticas: MyBlog
 22/06/2018 | Clase 135 | Clase 135 | [#OpenSourceFriday](https://opensourcefriday.com)
 25/06/2018 | [Clase 136](teoria/dia136.md) | [Clase 136](recursos/dia136.md) | Pillarsjs I
+26/06/2018 | Clase 137 | Clase 137 | Ejercicios con Pillarsjs II
+
 
 
 
