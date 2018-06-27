@@ -200,6 +200,8 @@ Fecha | Teoría | Recursos | Contenido
 22/06/2018 | Clase 135 | Clase 135 | [#OpenSourceFriday](https://opensourcefriday.com)
 25/06/2018 | [Clase 136](teoria/dia136.md) | [Clase 136](recursos/dia136.md) | Pillarsjs I
 26/06/2018 | Clase 137 | Clase 137 | Ejercicios con Pillarsjs II
+27/06/2018 | [Clase 138](teoria/dia138.md) | [Clase 138](recursos/dia138.md) | Aplicaciones CLI
+
 
 
 
