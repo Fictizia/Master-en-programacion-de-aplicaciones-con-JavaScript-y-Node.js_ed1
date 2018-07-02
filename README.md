@@ -203,6 +203,7 @@ Fecha | Teoría | Recursos | Contenido
 27/06/2018 | [Clase 138](teoria/dia138.md) | [Clase 138](recursos/dia138.md) | Aplicaciones CLI
 28/06/2018 | Clase 139 | Clase 139 | Ejercicios con Vorpal
 29/06/2018 | Clase 140 | Clase 140 | Ejercicios con Vorpal
+02/07/2018 | [Clase 141](teoria/dia141.md) | [Clase 141](recursos/dia141.md) | Electron: Aplicaciones de escritorio
 
 
 
