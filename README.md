@@ -202,6 +202,9 @@ Fecha | Teoría | Recursos | Contenido
 26/06/2018 | Clase 137 | Clase 137 | Ejercicios con Pillarsjs II
 27/06/2018 | [Clase 138](teoria/dia138.md) | [Clase 138](recursos/dia138.md) | Aplicaciones CLI
 28/06/2018 | Clase 139 | Clase 139 | Ejercicios con Vorpal
+29/06/2018 | Clase 140 | Clase 140 | Ejercicios con Vorpal
+
+
 
 
 Temario
