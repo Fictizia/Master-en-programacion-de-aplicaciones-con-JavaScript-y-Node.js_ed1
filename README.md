@@ -208,6 +208,8 @@ Fecha | Teoría | Recursos | Contenido
 04/07/2018 | Clase 143 | Clase 143 | Tiempo Proyecto Personal
 05/07/2018 | Clase 144 | Clase 144 | Tiempo Proyecto Personal
 06/07/2018 | Clase 145 | Clase 145 | Tiempo Proyecto Personal
+09/07/2018 | Clase 146 | Clase 146 | Tiempo Proyecto Personal
+
 
 Temario
 =================
