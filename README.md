@@ -204,6 +204,7 @@ Fecha | Teoría | Recursos | Contenido
 28/06/2018 | Clase 139 | Clase 139 | Ejercicios con Vorpal
 29/06/2018 | Clase 140 | Clase 140 | Ejercicios con Vorpal
 02/07/2018 | [Clase 141](teoria/dia141.md) | [Clase 141](recursos/dia141.md) | Electron: Aplicaciones de escritorio
+03/07/2018 | Clase 142 | Clase 142 | Tiempo Proyecto Personal
 
 
 
