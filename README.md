@@ -206,7 +206,7 @@ Fecha | Teoría | Recursos | Contenido
 02/07/2018 | [Clase 141](teoria/dia141.md) | [Clase 141](recursos/dia141.md) | Electron: Aplicaciones de escritorio
 03/07/2018 | Clase 142 | Clase 142 | Tiempo Proyecto Personal
 04/07/2018 | Clase 143 | Clase 143 | Tiempo Proyecto Personal
-
+05/07/2018 | Clase 144 | Clase 144 | Tiempo Proyecto Personal
 
 
 Temario
