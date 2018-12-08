@@ -7,16 +7,20 @@ var tiempoHoy = '';
 
 
 /*  PETICION ajax*/
-var url = '/proxy?url=http://airemad.com/api/v1/weather/S024';
+var url = '/proxy?url=http://airemad.com/api/v1/weather/S056';
+//var url = 'http://api.openweathermap.org/data/2.5/weather?id=3117732&APPID=2b5e87bc1a5c3866d322d24dba0f4045';
+
+console.log(url)
 var resultadoTotal = [];
 var request = new XMLHttpRequest();
 var datos = [];
-
+// id pirámides; "id": 3117732,
 request.open('GET', url);
 
 request.onreadystatechange = function () {
   if (this.readyState === 4) {
     resultadoTotal = JSON.parse(this.responseText);
+
     datos = resultadoTotal.list;
     pintaTiempo(datos);
     iconRender(tiempoHoy);
@@ -35,14 +39,22 @@ function fillData(){
 
 /*  FUNCION PINTAR DATOS  */
 function pintaTiempo(datos){
-  for (var i = 0; i < datos.length; i++) {
+  tiempoHoy = datos[0].weather[0].main
+  console.log(tiempoHoy)
+  temperature.innerHTML = datos[0].main.temp + ' ºC';
+  humidity.innerHTML = 'Humedad: ' + datos[0].main.humidity + ' %';
+  wind.innerHTML = 'Viento: ' + datos[0].wind.speed + ' m/s';
+  
+  /**
+ for (var i = 0; i < datos.length; i++) {
     temperature.innerHTML = datos[i].main.temp + ' ºC';
     humidity.innerHTML = 'Humedad: ' + datos[i].main.humidity + ' %';
     wind.innerHTML = 'Viento: ' + datos[i].wind.speed + ' m/s';
 
-    tiempoHoy = datos[i].weather[0].main;
+    tiempoHoy = datos[0].weather[0].main;
+    console.log('Tiempo de hoy es: ' + tiempoHoy)
     }
-    
+  **/
     return tiempoHoy
   
   };
@@ -50,7 +62,7 @@ function pintaTiempo(datos){
   /*  FUNCION PARA CAMBIAR ICONO DEL TIEMPO */
   function iconRender(tiempoHoy){
     //  Diferéntes parámetros: Clear, Clouds, Rain, Snow, Storm
-    //tiempoHoy = 'Clouds'
+    //tiempoHoy = 'Snow'
 
     switch (tiempoHoy) {
 
@@ -73,4 +85,5 @@ function pintaTiempo(datos){
       default:
         pic.src = 'images/sunny.gif';
     }
+    
 }
