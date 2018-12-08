@@ -22,9 +22,12 @@ api.get('/films', enableCORS, (req, res) => {
 api.post('/films', enableCORS, (req, res) => {
   if (req.body.film) {
     let film = JSON.parse(req.body.film);
+    let imageUrl = film.Poster;
     filmModel.exist(film.imdbID).then((value) => {
       if (!value) {
+        delete film.Poster;
         filmModel.save(film).then(() => {
+          filmModel.downloadImage(imageUrl, film.imdbID)
           res.setHeader('Content-Type', 'application/json');
           res.send(film);
         }, (error) => {

@@ -9,8 +9,32 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> 
  
     <style type="text/css">
+            
+            .bajo{
+                margin-top:5%;
+              }
+              
+              .box{
+        
+                  border:1px solid lightgrey;
+                  border-radius:4px;
+                  -webkit-box-shadow: 7px 7px 30px -13px rgba(163,163,163,1);
+                    -moz-box-shadow: 7px 7px 30px -13px rgba(163,163,163,1);
+                    box-shadow: 7px 7px 30px -13px rgba(163,163,163,1);
+                    margin:1rem;
+                    padding:1rem;
+              }
+              
+              .box img{
+                  max-height:250px;
+                  display: block; 
+                  margin-left: auto; 
+                  margin-right: auto;
+                  padding-bottom: 30px;
+              }
+              
+              
      </style>
- 
   </head>
  
   <body>
@@ -23,7 +47,11 @@
         </div>
         <button type="button" class="btn btn-primary col-md-2" id="go"><span class="glyphicon glyphicon-search"></span></button>
       </div>
-        <div class="container" id="list">
+        <div class="container bajo" id="list">
+          
+        </div>
+        
+        <div class="container bajo" id="print">
           
         </div>
          
@@ -32,48 +60,84 @@
       <script>
         // Initialize Firebase
         var config = {
-         //info firebase
+         Aquí van los datos de Firebase
         };
         firebase.initializeApp(config);
       </script>
   
    <script>
+   
+   
+   
+   
+        var database = firebase.database();
+        var rootRef = firebase.database().ref();
+        
+        
+        
       getData = document.getElementById("go");
    
       getData.addEventListener("click", function(e){
-          var apikey = ""
+          var apikey = "75417632"
           var movieName = document.getElementById("movie").value.trim();
           movieName = movieName.replace(" ","+")
-          
-          /*
-            movieName = movieName.split(" ");
-            for (var i=0; i < movieName.length; i++) {
-                      movieN +=(movieName[i] + "+");
-                  }
-            console.log(movieN)
-            */
           var url ="https://www.omdbapi.com/?apikey=" + apikey +"&t="+ movieName
-          
-         
-          console.log(url)
-          
           Ajax(url,printData)
+          
+          
       });
          
-    
-      function printData (data) {
-        console.log(data)
-        
-        var printList = document.getElementById("list")
-        var title = data.Title;
-        var img = data.Poster;
-        console.log(img)
-        
-        printList.innerHTML += '<div class="col-md-4"><p>'+title+'</p><img class="img-responsive" src="' + img  + '" width="150px;"></div>'
-        
+        var dataRef = rootRef.child("movies");
+          function printData (data) {
+            console.log(data)
+            
+            var printList = document.getElementById("list")
+            var title = data.Title;
+            var img = data.Poster;
+            console.log(img)
+            
+            printList.innerHTML += '<div class="box col-md-12 text-center"><h1>'+title+'</h1><img class="img-responsive" src="' + img  + '" width="150px;"></div>'
+            dataRef.push({name:title, image:img})
+          
+          }
       
-      }
+       rootRef.child("movies").on("child_added", function(snapshot) {
+           //console.log(snapshot.val())
+            var movie = snapshot.val()
+            var key = snapshot.key
+            // coger la clave y pasarla por data-id es más fácil para borrar o editar después
+            var mImg = movie.image
+            var mTitle = movie.name 
+            printList (mImg, mTitle, key)
+
+        });
+        
+        
+        function printList (mImg, mTitle, key) {
+            var movieList = document.getElementById("print")
+            movieList.innerHTML += '<div class="box col-md-3 text-center"><p>'+ mTitle +'</p><img src="'+ mImg +'" width="150px;"></p><button class="btn btn-primary del"  data-id="'+ key +'">borrar</button> </div>'
+            deleteButton();
+            
+        }
+       
+       
+       function deleteButton(){ 
+           var deleteMovie = document.getElementsByClassName('del');
+                for (var i= 0; i<deleteMovie.length; i++){
+                 
+                    deleteMovie[i].addEventListener("click", function(e){
+                        console.log(e.target.parentNode)
+                        //console.log(deleteMovie[i].innerHTML)
+                        console.log("borrar?")
+                        var movieId = e.target.getAttribute("data-id");
+                        dataRef.child(movieId).remove();
+                        e.target.parentNode.remove();
+                      
+                    });
+                }
+           }
       
+        
      
            
         //llamada AJAX

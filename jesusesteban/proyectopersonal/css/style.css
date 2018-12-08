@@ -12,18 +12,20 @@ ul{
 
 
 .main-container {
-    background: #f4f5fa;
+    /*background: #f4f5fa;*/
+    background: rgba(00,00,00,.5);
     display: inline-block;
     /*height: calc(100vh - 525px);  */
     height: 100vh;
-    position: relative;    
+    position: absolute;    
     width: 30%;
+    left: 0;
 }
 
 .box-map{
     display: inline-block;
     float: left;    
-    width: 70%;
+    width: 100%;
 }
 
 
@@ -97,8 +99,9 @@ ul{
     border-radius: 0;    
 }
 .nav-tabs>li>a, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover{
-    background: #15151e;
-    color: #FFF;
+    /*background: #15151e;*/
+    background: #FFF;
+    color: #15151e;
     height: 100%;
     border: 0 none;
     border-radius: 0;    
@@ -117,6 +120,9 @@ ul{
 .list-data li{
     font-size: 20px;
     margin-bottom: 10px;
+}
+.list-data li span{
+    color: #FAFAFA;
 }
 
 .list-data li span:first-child{

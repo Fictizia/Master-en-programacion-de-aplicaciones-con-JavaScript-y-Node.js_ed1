@@ -1,51 +1,101 @@
+
+// Creamos un array vacio para añadir todos los contactos que vayamos creando
+var contactos = [];
+
 // ADD CONTACT
-function addContact(){
+function addContact(contacto){
 
 	// Inputs
-    var nombre = document.getElementById("name").value;
-    var telefono = document.getElementById("phone").value;
-    var mail = document.getElementById("mail").value;
-    var dataTable = document.getElementById("data-table");
+    var nombre = document.getElementById("name").value,
+        telefono = document.getElementById("phone").value,
+        mail = document.getElementById("mail").value;
 	
-	// Guardamos los datos en localstorage
-	localStorage.setItem('nombre', nombre);
-	localStorage.setItem('telefono', telefono);
-	localStorage.setItem('mail', mail);
+    // var contacto
+    var contacto = {
+        nombre: nombre,
+        telefono: telefono,
+        mail: mail
+    };
+
 	
+    // Guardamos los datos en localstorage
+    if (nombre && telefono && mail) {
+        contactos.push(contacto);
+        localStorage.setItem("contactos",JSON.stringify(contactos));
+        printContact(contacto, contactos.length -1);
+        return true;
+    }else {
+        console.log("NO guarda los datos");
+        return false;
+    }
 
-	// Mostramos los datos en el HTML	
-	var dataNombre = localStorage.getItem('nombre');
-	var dataTelefono = localStorage.getItem('telefono');
-	var dataMail = localStorage.getItem('mail');
 
-	document.getElementById("data-nombre").innerHTML = dataNombre;
-	document.getElementById("data-telefono").innerHTML = dataTelefono;
-	document.getElementById("data-mail").innerHTML = dataMail;
 
 }
+
+// Mostramos los datos en el HTML	
+function printContact(contacto, indice){
+
+    var dataTable = document.querySelector(".data-table");
+    dataTable.innerHTML += 
+        "<li class=\"data-list\" data-id=\""+indice+"\">"+
+            "<span class=\"data-nombre\">"+"Nombre: "+contacto.nombre+"</span>"+
+            "<span class=\"data-telefono\">"+"Teléfono: "+contacto.telefono+"</span>"+
+            "<span class=\"data-mail\">"+"Mail: "+contacto.mail+"</span>"+
+            //"<button onClick=\"this.parentNode.parentNode.removeChild(this.parentNode);\" data-delete=\""+indice+"\" type=\"button\" class=\"delete btn btn-danger\">"+ "Borrar Contacto"+"</button>"+
+            "<button onClick=\"delete_row()\" data-delete=\""+indice+"\" type=\"button\" class=\"delete btn btn-danger\">"+ "Borrar Contacto"+"</button>"+
+        "</li>";
+
+}
+function delete_row(e)
+{
+    
+    var wadus = document.getElementsByClassName("delete");
+    wadus = [];
+    
+    console.log(wadus);
+    //console.log(this.document.getElementsByClassName("delete"));
+
+    //e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
+}
+
+
 
 document.getElementById("anadir").addEventListener("click", function(){
     addContact();
 });
 
 
-// DELETE CONTACT
+// Borramos un contacto
 function deleteContact(){
-    console.log("Borro un solo contacto");
-    localStorage.removeItem('nombre');
-    localStorage.removeItem('telefono');
-    localStorage.removeItem('mail');
+
+
+    
+    var botones = document.getElementsByClassName('delete');
+        for (var i=0; i< botones.length; i++){
+            console.log("hjfksdh");
+
+            botones[0];
+            //botones[i].addEventListener("click", function(){
+              //  botones[i].parentNode.delete;
+            //});
+        }
+
 }
+//document.getElementsByClassName(".delete").addEventListener("click", function(){
+  //  console.log("jklfsdjflksd");
+    //deleteContact();
+//});
 
-document.getElementById("delete").addEventListener("click", function(){
-    deleteContact();
-});
 
-
-// DELETE ALL
+// Borramos todos los contactos 
 function deleteAll(){
-    console.log("Borro todos los contactos contacto");
     localStorage.clear();
+    
+    var deleteAll = document.querySelectorAll('.data-table li');
+    for(var i=0; li=deleteAll[i]; i++) {
+        li.parentNode.removeChild(li);
+    }    
 }
 
 document.getElementById("delete-all").addEventListener("click", function(){
@@ -54,12 +104,9 @@ document.getElementById("delete-all").addEventListener("click", function(){
 
 
 
-// RECOVERY CONTACT
+// Recuperamos un contacto 
 function recoveryContact(){
     console.log("Recuperar contacto");
-    localStorage.getItem('nombre');
-    localStorage.getItem('telefono');
-    localStorage.getItem('mail');
 }
 
 document.getElementById("recovery").addEventListener("click", function(){

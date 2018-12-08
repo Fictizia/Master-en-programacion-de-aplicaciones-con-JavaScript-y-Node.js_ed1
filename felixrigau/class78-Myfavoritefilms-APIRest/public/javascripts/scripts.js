@@ -105,8 +105,10 @@ APP.behavior = {
     secondaryActions.classList.remove('cards-list__secondary-actions--move');
     title.innerText = title.getAttribute('data-content');
     title.classList.remove('cards-list__title--editable');
+    title.setAttribute('contenteditable', false);
     year.innerText = year.getAttribute('data-content');
     year.classList.remove('cards-list__year--editable');
+    year.setAttribute('contenteditable', false);
   }
 };
 
@@ -134,7 +136,7 @@ APP.ui = {
 
   triggerNotification: (type, text, time) => {
     var notifications = document.querySelector('.notification-wrapper');
-    notifications.innerHTML = `<div class="notification notification--${type}">
+    notifications.innerHTML += `<div class="notification notification--${type}">
             <p>${text}</p>
         </div>`;
 
@@ -177,8 +179,10 @@ APP.ui = {
       mainActions.classList.remove('cards-list__main-actions--move');
       secondaryActions.classList.remove('cards-list__secondary-actions--move');
       title.setAttribute('data-content', title.innerText);
+      title.setAttribute('contenteditable', false);
       title.classList.remove('cards-list__title--editable');
       year.setAttribute('data-content', year.innerText);
+      year.setAttribute('contenteditable', false);
       year.classList.remove('cards-list__year--editable');
     }
     else {
@@ -202,7 +206,7 @@ APP.ui = {
       let filmListContainer = document.querySelector('.cards-list__container');
       let filmTemplate = `
         <div class="cards-list__item" id="${film.imdbID}">
-          <div class="cards-list__content"><img class="cards-list__image" src="${film.Poster}">
+          <div class="cards-list__content"><img class="cards-list__image" src="images/films/${film.imdbID}.jpg">
             <div class="cards-list__datas">
               <div class="cards-list__title" data-content="${film.Title}" contenteditable="false">${film.Title}</div>
               <div class="cards-list__year" data-content="${film.Year}" contenteditable="false">${film.Year}</div>
@@ -286,11 +290,12 @@ APP.start();
 [x] Eliminar un filme a través de la API
 [x] Enviar datos en el cuerpo de la petición utilizando formDatas para insertar una película
 [x] Verificar si un filme ya existe en la base de datos
-[ ] Editar un filme a través de la API
-[ ] Editar un filme desde el cliente
+[x] Editar un filme a través de la API
+[x] Editar un filme desde el cliente
+[x] Guardar imágenes de las películas en local
+[ ] Eliminar imágenes de las películas en local
 [ ] Cambiar visualizacion del componente de notificaciones
 [ ] Agregar loader gif
-[ ] Guardar imágenes de las películas en local
 */
 
 //Dudas

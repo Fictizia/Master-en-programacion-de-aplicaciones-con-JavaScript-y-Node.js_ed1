@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AireMad APP</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta name="viewport" content="initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Raleway" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+
+      <div class="login-header">
+        <button id="githubLogin" class="btn github-login">login</button>
+        <button id="githubLogOut" class="btn github-login hidden">log out</button>
+        <img id="userPic" class="user-pic hidden" src="" alt="User Pic"/> 
+        <p id="logData" class="hidden"> Usuario: <spam id="usuario"></spam></p>
+      </div>
+
+      <div class="weather-info">
+        <div class="weather-gift">
+          <img id="emoji" class="gift" src="images/sunny.gif" alt="Dia soleado!">
+        </div>
+        <div class="time-district">
+          <div class="time">
+            <p id="hour">00:00:00</p>
+            <p id="date">DATE</p>
+          </div>
+          <div class="district">
+            <p id="city">MADRID</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="data">
+        <p id="temperature"> ºC</p>
+        <p id="humidity">Humedad: #%</p>
+        <p id="wind">Viento: # km/h</p>
+        <a class="aemet-link" href="http://www.aemet.es/es/eltiempo/prediccion/municipios/horas/madrid-id28079" target="blank">AEMET</a>
+      </div>
+
+    </header>
+    <section class="main-info">
+
+      <div class="district">
+        <h1 id="district">ESTACION</h1>
+        <button id="favorito" class="btn hidden">favorito</button>
+        <!-- El select tiene como funcion en onchange lo que renderiza lo seleccionado -->
+        <select class="district-menu" id="optionDistrict" onchange="giveId()" class="select-district" name="select-district">
+          <option  value="S056"> Pza. Fernández Ladreda</option>
+          <!-- El resto de opciones se rellena con la función de pintaDistritos() -->
+        </select>
+      </div>
+      <div class="data-container">
+
+        <div class="container--air-quality">
+          <div class="air-quality">
+            <p>Niveles de contaminación:</p>
+          </div>
+
+          <div class="values">
+            <!-- Lista de valores de contaminación: se rellena con default y luego con lo que se elija en el select -->
+            <ul class="values-list" id="values">
+              <li class="values-element"> Selecciona una estación para ver los datos </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="container--emoji">
+            <img id="giphy" src=""></img>
+            <button id="refresh" class="refresh-button" type="button" name="button"><img class="refresh-button-image"src="images/refresh.png" alt="refresh button"></button>
+        </div>
+
+      </div>
+
+
+    </section>
+    <!--  FIREBASE    -->
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAnso-JAoFUWMQK79hj5Ypfzvuv5a8_QAk",
+        authDomain: "airemadapp.firebaseapp.com",
+        databaseURL: "https://airemadapp.firebaseio.com",
+        projectId: "airemadapp",
+        storageBucket: "airemadapp.appspot.com",
+        messagingSenderId: "787373497234"
+      };
+      firebase.initializeApp(config);
+
+
+    </script>
+    <script type="text/javascript" src="time.js"> </script>
+    <!--
+    <script type="text/javascript" src="ajax.js"> </script>
+    <script type="text/javascript" src="weather.js"> </script> -->
+    <script type="text/javascript" src="geolocation.js"> </script>
+
+  </body>
+</html>
+

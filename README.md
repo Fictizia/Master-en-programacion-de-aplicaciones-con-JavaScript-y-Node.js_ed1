@@ -1,4 +1,4 @@
-![shieldsIO](https://img.shields.io/github/issues/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
+[shieldsIO](https://img.shields.io/github/issues/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
 ![shieldsIO](https://img.shields.io/github/forks/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
 ![shieldsIO](https://img.shields.io/github/stars/Fictizia/Master-en-programacion-de-aplicaciones-con-JavaScript-y-Node.js_ed1.svg)
 
@@ -6,6 +6,7 @@
 
 # Master en Programación de Aplicaciones con JavaScript y Node.js
 ### JS, Node.js, Frontend, Express, Patrones, IoT, HTML5_APIs, Asincronía, Websockets, ECMA6, ECMA7
+## https://fictizia.com/formacion/master-javascript-nodejs
 
 Aprende con este Máster en Programación de aplicaciones con JavaScript y Node.js todo lo necesario para desarrollar cualquier tipo de proyecto interactivo utilizando el lenguaje de programación más utilizado en el mundo del desarrollo interactivo.
 
@@ -55,7 +56,9 @@ Sobre el Curso
     * 30/04/2018
     * 01/05/2018
     * 02/05/2018
+    * 08/05/2018 Google IO Extended
     * 15/05/2018
+    * Open Expo 2018 (06/06/2018 - 07/06/2018)
 
 Teoría y Recursos
 =================
@@ -149,7 +152,64 @@ Fecha | Teoría | Recursos | Contenido
 02/04/2018 | [Clase 87](teoria/dia87.md) | [Clase 87](recursos/dia87.md) | Socket.IO
 03/04/2018 | [Clase 88](teoria/dia88.md) | [Clase 88](recursos/dia88.md) | Bower 
 04/04/2018 | [Clase 89](teoria/dia89.md) | [Clase 89](recursos/dia89.md) | Gulp, Grunt, NPM Scripts...
-
+05/04/2018 | Clase 90 | Clase 90 | Dudas y preguntas
+06/04/2018 | Clase 91 | Clase 91 | [#OpenSourceFriday](https://opensourcefriday.com)
+09/04/2018 | Clase 92 | Clase 92 | Prácticas: Memezinga PinHead version
+10/04/2018 | [Clase 93](teoria/dia93.md) | [Clase 93](recursos/dia93.md) | Browsefy y Webpack
+11/04/2018 | [Clase 94](teoria/dia94.md) | [Clase 94](recursos/dia94.md) | Yeoman
+12/04/2018 | Clase 95 | Clase 95 | Prácticas: Batimagen
+13/04/2018 | Clase 96 | Clase 96 | [#OpenSourceFriday](https://opensourcefriday.com)
+16/04/2018 | [Clase 97](teoria/dia97.md) | [Clase 97](recursos/dia97.md) | Deploy en Cloud, PM2, Nodemon...
+17/04/2018 | [Clase 98](teoria/dia98.md) | [Clase 98](recursos/dia98.md) | Offline, PWAs y Blob
+18/04/2018 | [Clase 99](teoria/dia99.md) | [Clase 99](recursos/dia99.md) | Fetch, Drag & Drop, Canvas, indexedDB y HTML5 Router
+23/04/2018 | [Clase 100](teoria/dia100.md) | [Clase 100](recursos/dia100.md) | ECMAScript Next (ES7, ES8, etc...)
+24/04/2018 | Clase 101 | Clase 101 | Intro a Frameworks de Frontend
+25/04/2018 | Clase 102 | Clase 102 | Angularjs I
+26/04/2018 | Clase 103 | Clase 103 | Angularjs II
+27/04/2018 | Clase 104 | Clase 104 | React y su Ecosistema con xDae
+03/05/2018 | Clase 105 | Clase 105 | Angularjs III
+04/05/2018 | Clase 106 | Clase 106 | Angularjs IV
+07/05/2018 | [Clase 107](teoria/dia107.md) | [Clase 107](recursos/dia107.md) | Empezamos NodeJS Avanzado
+09/05/2018 | [Clase 108](teoria/dia108.md) | [Clase 108](recursos/dia108.md) | Exec: Python I
+10/05/2018 | [Clase 109](teoria/dia109.md) | [Clase 109](recursos/dia109.md) | Exec: Python II
+11/05/2018 | [Clase 110](teoria/dia110.md) | Clase 110 | Scraping I
+14/05/2018 | [Clase 111](teoria/dia111.md) | [Clase 111](recursos/dia111.md) | Exec: Python III
+16/05/2018 | [Clase 112](teoria/dia112.md)  | Clase 112 | Ejercicios de Python
+21/05/2018 | [Clase 113](teoria/dia113.md) | Clase 113 | Phonegap, Cordova y apps híbridas
+22/05/2018 | Clase 114 | Clase 114 | Práctica cordova y app híbirida
+23/05/2018 | Clase 115 | Clase 115 | Práctica cordova y app híbirida
+24/05/2018 | Clase 116 | Clase 116 | Práctica cordova y app híbirida
+25/05/2018 | Clase 117 | Clase 117 | Práctica cordova y app híbirida
+28/05/2018 | [Clase 118](teoria/dia118.md) | Clase 118 | Bases de datos no relacionales: MongoDB
+29/05/2018 | Clase 119 | Clase 118 | Bases de datos no relacionales: MongoDB
+30/05/2018 | [Clase 120](teoria/dia120.md) | Clase 120 | Bases de datos: MySQL I
+31/05/2018 | [Clase 121](teoria/dia121.md) | Clase 121 | Profesor Invitado: Jose Dongil (VUE)
+01/06/2018 | Clase 122 | Clase 122 | Trabajo en proyectos personales
+04/06/2018 | [Clase 123](teoria/dia123.md)  | Clase 123 | Bases de datos: MySQL II
+05/06/2018 | Clase 124 | Clase 124 | Ejercicios: MySQL
+08/06/2018 | Clase 125 | Clase 125 | [#OpenSourceFriday](https://opensourcefriday.com)
+11/06/2018 | Clase 126 | Clase 126 | Ejercicios: MySQL
+12/06/2018 | [Clase 127](teoria/dia127.md) | [Clase 127](recursos/dia127.md) | Internet of Things (IoT) y Robótica I
+13/06/2018 | [Clase 128](teoria/dia128.md) | Clase 128 | Internet of Things (IoT) y Robótica II
+14/06/2018 | [Clase 129](teoria/dia129.md) | Clase 129 | Internet of Things (IoT) y Robótica III
+15/06/2018 | Clase 130 | Clase 130 | [#OpenSourceFriday](https://opensourcefriday.com)
+18/06/2018 | [Clase 131](teoria/dia131.md) | Clase 131 | Prácticas: MyBlog
+19/06/2018 | Clase 132 | Clase 132 | Prácticas: MyBlog
+20/06/2018 | Clase 133 | Clase 133 | Prácticas: MyBlog
+21/06/2018 | Clase 134 | Clase 134 | Prácticas: MyBlog
+22/06/2018 | Clase 135 | Clase 135 | [#OpenSourceFriday](https://opensourcefriday.com)
+25/06/2018 | [Clase 136](teoria/dia136.md) | [Clase 136](recursos/dia136.md) | Pillarsjs I
+26/06/2018 | Clase 137 | Clase 137 | Ejercicios con Pillarsjs II
+27/06/2018 | [Clase 138](teoria/dia138.md) | [Clase 138](recursos/dia138.md) | Aplicaciones CLI
+28/06/2018 | Clase 139 | Clase 139 | Ejercicios con Vorpal
+29/06/2018 | Clase 140 | Clase 140 | Ejercicios con Vorpal
+02/07/2018 | [Clase 141](teoria/dia141.md) | [Clase 141](recursos/dia141.md) | Electron: Aplicaciones de escritorio
+03/07/2018 | Clase 142 | Clase 142 | Tiempo Proyecto Personal
+04/07/2018 | Clase 143 | Clase 143 | Tiempo Proyecto Personal
+05/07/2018 | Clase 144 | Clase 144 | Tiempo Proyecto Personal
+06/07/2018 | Clase 145 | Clase 145 | Tiempo Proyecto Personal
+09/07/2018 | Clase 146 | Clase 146 | Tiempo Proyecto Personal
+10/07/2018 | [Clase 147](teoria/dia147.md) | Clase 147 | Exec: Bash Scripting
 
 
 Temario

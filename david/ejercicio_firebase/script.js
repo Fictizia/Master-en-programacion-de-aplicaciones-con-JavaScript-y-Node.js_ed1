@@ -11,7 +11,7 @@ firebase.initializeApp(config);
 programaPelis.configuracion = (function(){
     var init = function () {
         programaPelis.herramientas.inicializarBotones();
-        firebase.auth().signOut();
+        //firebase.auth().signOut();
     };
     return {inicializar: init};
 })();
@@ -153,17 +153,6 @@ programaPelis.logging = (function(){
             console.log("Fallo en lectura de datos: " + errorObject.code);
         });
     },
-    insertar: function(datos){
-        opciones.mis_pelis.push(datos, function(error) {
-        if (error) {
-          console.warn("No se han podido guardar los datos." + error);
-        } else {
-          console.info("Datos guardados con exito. : "+datos);
-          opciones.leer(opciones.mis_pelis);
-        }
-      });
-    },
-    ,
     verDetalles: function(referencia){
         referencia.once('value', function (snapshot) {
             document.querySelector('.ficha-peli').style.display = 'block';
@@ -176,16 +165,6 @@ programaPelis.logging = (function(){
         document.querySelector('.ficha-peli').style.display = 'none';
         referencia.remove();
     },
-    logginGoogle: function(){
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).then(function(result) {
-          var token = result.credential.accessToken;
-          var user = result.user;
-          console.log(user);
-        }).catch(function(error) {
-          console.error(error)
-        });
-    }
 }*/
 
 programaPelis.configuracion.inicializar();

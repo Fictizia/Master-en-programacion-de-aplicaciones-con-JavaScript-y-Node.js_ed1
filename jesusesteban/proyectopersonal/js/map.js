@@ -19,22 +19,28 @@ cartodb.createVis('map', 'https://jesusesteban.carto.com/api/v2/viz/fd0e0301-672
            }).done(function(vis, layers) {
          map = vis.getNativeMap();
          lastMarker = L.marker([latCarto, longCarto]).addTo(map);
-       })  
+       })
 }
 
 window.onload = loadMap(1, 1);
- 
+
+
 /* Init Map */
 function addMarker (locationLat, locationLong){
+
  map.removeLayer(lastMarker);
- lastMarker = L.marker([locationLat, locationLong]).addTo(map);
+
+
+
  
+ 
+ lastMarker = L.marker([locationLat, locationLong]).addTo(map);
+
  var latLng = new L.LatLng(locationLat, locationLong);
+
  
  map.panTo(latLng);
- 
- 
+
+
 }
  
- 
-
